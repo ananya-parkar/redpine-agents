@@ -28,3 +28,4 @@ DISTRESS_KEYWORDS = {
         "renovation needed", "declining", "run down", "maintenance issue"
     ]
 }
+REVIEW_LOOKBACK_MONTHS = int(os.getenv("REVIEW_LOOKBACK_MONTHS", "24"))
