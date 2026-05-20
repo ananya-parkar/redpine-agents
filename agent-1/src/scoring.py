@@ -1,6 +1,27 @@
 # agent-1/src/scoring.py
+from datetime import datetime, timezone, timedelta
 from typing import Dict, Tuple, List
-from src.config import DISTRESS_KEYWORDS
+from src.config import DISTRESS_KEYWORDS, REVIEW_LOOKBACK_MONTHS
+
+
+def filter_recent_reviews(reviews: List[Dict], months: int = REVIEW_LOOKBACK_MONTHS) -> List[Dict]:
+    cutoff = datetime.now(timezone.utc) - timedelta(days=30 * months)
+    filtered_reviews = []
+
+    for review in reviews or []:
+        publish_time = review.get("publishTime")
+        if not publish_time:
+            continue
+
+        try:
+            review_dt = datetime.fromisoformat(publish_time.replace("Z", "+00:00"))
+            if review_dt >= cutoff:
+                filtered_reviews.append(review)
+        except Exception:
+            continue
+
+    return filtered_reviews
+
 
 def distress_score(place: Dict) -> Tuple[int, List[str]]:
     score = 0
@@ -9,7 +30,7 @@ def distress_score(place: Dict) -> Tuple[int, List[str]]:
     rating = place.get("rating")
     rating_count = place.get("userRatingCount", 0)
     business_status = place.get("businessStatus", "")
-    reviews = place.get("reviews", []) or []
+    reviews = filter_recent_reviews(place.get("reviews", []) or [], months=REVIEW_LOOKBACK_MONTHS)
 
     if rating is not None and rating < 3.5:
         score += 2
