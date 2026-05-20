@@ -28,3 +28,40 @@ DISTRESS_KEYWORDS = {
         "renovation needed", "declining", "run down", "maintenance issue"
     ]
 }
+# ------------------------------------------------------------------------------
+# Franchise Detection Settings
+# ------------------------------------------------------------------------------
+FRANCHISE_BRANDS = [
+   "Marriott",
+   "Hilton",
+   "Hyatt",
+   "Holiday Inn",
+   "InterContinental",
+   "Crowne Plaza",
+   "Staybridge Suites",
+   "Candlewood Suites",
+   "Best Western",
+   "Wyndham",
+   "Ramada",
+   "Days Inn",
+   "Super 8",
+   "La Quinta",
+   "Comfort Inn",
+   "Quality Inn",
+   "Sleep Inn",
+   "Clarion",
+   "Econo Lodge",
+   "Motel 6",
+   "Red Roof Inn",
+   "Fairfield Inn",
+   "Courtyard",
+   "Residence Inn",
+   "SpringHill Suites",
+   "Hampton Inn",
+   "DoubleTree",
+   "Embassy Suites",
+   "Homewood Suites",
+   "Hyatt Place",
+   "Hyatt House"
+]
+SEARCH_TIMEOUT = 30
