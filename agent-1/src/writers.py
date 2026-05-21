@@ -1,5 +1,5 @@
-# agent-1/src/writers.py
 import csv
+
 
 BASE_FIELDNAMES = [
     "search_location",
@@ -11,8 +11,19 @@ BASE_FIELDNAMES = [
     "business_status",
     "distress_score",
     "distress_reasons",
+    "review_trend_score",
+    "review_volume_recent",
+    "review_volume_prior",
+    "review_volume_change_pct",
+    "avg_rating_recent",
+    "avg_rating_prior",
+    "review_rating_delta",
+    "complaint_rate_recent",
+    "complaint_rate_prior",
+    "review_complaint_delta",
     "google_maps_url",
 ]
+
 
 PRIORITY_EXTRA_FIELDNAMES = [
     "was_franchise",

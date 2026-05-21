@@ -1,4 +1,3 @@
-# agent-1/src/pipeline.py
 from src.google_maps import geocode_location, nearby_hotels, place_details
 from src.scoring import distress_score
 from src.enrichment import enrich_priority_hotel
@@ -60,11 +59,14 @@ def process_hotel(item, hotel, hotel_index, total_hotels):
     print(f"    [PLACE ID] {place_id}", flush=True)
 
     hotel_details = fetch_hotel_details(hotel, place_id)
-    score, reasons = distress_score(hotel_details)
+    score_data = distress_score(hotel_details)
+    score = score_data["distress_score"]
+    reasons = score_data["distress_reasons"]
     hotel_name = extract_hotel_name(hotel_details)
 
     print(
         f"    [SCORING] score={score} | "
+        f"trend_score={score_data['review_trend_score']} | "
         f"reasons={reasons[:3] if reasons else ['No distress signals found']}",
         flush=True
     )
@@ -74,8 +76,7 @@ def process_hotel(item, hotel, hotel_index, total_hotels):
         radius_km=item["radius_km"],
         hotel_name=hotel_name,
         hotel_details=hotel_details,
-        score=score,
-        reasons=reasons,
+        score_data=score_data,
     )
 
     if score >= 7:
