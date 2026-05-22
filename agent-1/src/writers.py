@@ -34,6 +34,12 @@ PRIORITY_EXTRA_FIELDNAMES = [
     "former_brand",
     "franchise_confidence",
     "franchise_evidence",
+    "cmbs_loan_status",          
+    "cmbs_delinquency_flag",     
+    "cmbs_watchlist_flag",        
+    "cmbs_special_servicing_flag", 
+    "cmbs_confidence",            
+    "cmbs_evidence",              
     "owner_name",
     "owner_company",
     "mailing_address",
@@ -45,6 +51,7 @@ PRIORITY_EXTRA_FIELDNAMES = [
     "attom_year_built",
     "is_older_than_20_years",
 ]
+
 def write_csv(path, rows, fieldnames):
     with path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
