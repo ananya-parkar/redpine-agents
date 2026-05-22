@@ -67,3 +67,13 @@ FRANCHISE_BRANDS = [
 SEARCH_TIMEOUT = 30
 
 REVIEW_LOOKBACK_MONTHS = int(os.getenv("REVIEW_LOOKBACK_MONTHS", "24"))
+# Add this after DISTRESS_KEYWORDS
+RENOVATION_KEYWORDS = [
+    "outdated", "old", "worn", "dated", "shabby", "musty", "needs renovation",
+    "run down", "needs update", "needs remodel", "tired", "aged", "weathered",
+    "faded", "peeling", "cracked", "stained carpet", "old furniture",
+    "needs work", "worn out", "past its prime"
+]
+
+# Add configuration for age threshold
+PROPERTY_AGE_THRESHOLD_YEARS = 20
