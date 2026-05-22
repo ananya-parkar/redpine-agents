@@ -34,15 +34,17 @@ PRIORITY_EXTRA_FIELDNAMES = [
     "former_brand",
     "franchise_confidence",
     "franchise_evidence",
-    "property_match_found",
-    "property_match_confidence",
-    "property_record_source",
-    "property_record_address",
-    "property_record_owner_hint",
-    "property_record_match_score",
-    "property_record_evidence",
+    "owner_name",
+    "owner_company",
+    "mailing_address",
+    "owner_phone",
+    "owner_confidence",
+    "owner_evidence",
+    "ownership_since",
+    "ownership_length_years",
+    "attom_year_built",
+    "is_older_than_20_years",
 ]
-
 def write_csv(path, rows, fieldnames):
     with path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
