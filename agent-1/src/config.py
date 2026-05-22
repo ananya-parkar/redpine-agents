@@ -77,5 +77,4 @@ RENOVATION_KEYWORDS = [
 
 # Add configuration for age threshold
 PROPERTY_AGE_THRESHOLD_YEARS = 20
-
 ATTOM_API_KEY = os.getenv("ATTOM_API_KEY")

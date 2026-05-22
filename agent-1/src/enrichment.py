@@ -1,9 +1,9 @@
 # agent-1/src/enrichment.py
 from src.franchise_detection import detect_franchise_history
-from src.property_records import default_property_record_result
 from src.owner_details import detect_owner_details
 from src.property_age import get_property_age_flags
 from src.owner_tenure import get_owner_tenure
+from src.cmbs_lookup import detect_cmbs_signals, default_cmbs_result
 
 
 def default_franchise_result():
@@ -34,6 +34,7 @@ def enrich_priority_hotel(hotel_name, address):
     result = {}
     result.update(default_franchise_result())
     result.update(default_owner_result())
+    result.update(default_cmbs_result())
 
     # Franchise detection
     try:
@@ -57,6 +58,23 @@ def enrich_priority_hotel(hotel_name, address):
             "franchise_confidence": "Error",
             "franchise_evidence": str(e)
         })
+    
+    # Step 2: CMBS lookup (ONLY if franchise was detected)
+    if result["was_franchise"]:
+        try:
+            cmbs_result = detect_cmbs_signals(
+                hotel_name=hotel_name,
+                address=address
+            )
+            result.update(cmbs_result)
+        except Exception as e:
+            print(f"    [CMBS] Failed: {e}", flush=True)
+            result.update({
+                "cmbs_confidence": "Error",
+                "cmbs_evidence": str(e)
+            })
+    else:
+        print("    [CMBS] Skipped (no franchise affiliation detected)", flush=True)
     
     # Owner enrichment via ATTOM
     try:
