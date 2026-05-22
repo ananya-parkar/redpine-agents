@@ -1,5 +1,5 @@
+# agent-1/src/writers.py
 import csv
-
 
 BASE_FIELDNAMES = [
     "search_location",
@@ -21,9 +21,13 @@ BASE_FIELDNAMES = [
     "complaint_rate_recent",
     "complaint_rate_prior",
     "review_complaint_delta",
+    "year_built",
+    "property_age",
+    "renovation_signal_rate",
+    "renovation_needed",
+    "physical_condition_score",
     "google_maps_url",
 ]
-
 
 PRIORITY_EXTRA_FIELDNAMES = [
     "was_franchise",
@@ -39,13 +43,11 @@ PRIORITY_EXTRA_FIELDNAMES = [
     "property_record_evidence",
 ]
 
-
 def write_csv(path, rows, fieldnames):
     with path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(rows)
-
 
 def save_csv_files(run_dir, all_rows):
     output_csv = run_dir / "hotel_distress_results.csv"
