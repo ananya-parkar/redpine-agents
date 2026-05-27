@@ -2,7 +2,7 @@
 import os
 from pathlib import Path
 from dotenv import load_dotenv
-load_dotenv()
+load_dotenv(override=True)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 INPUT_FILE = BASE_DIR / "inputs" / "locations.txt"
@@ -12,11 +12,12 @@ GOOGLE_MAPS_API_KEY = os.getenv("GOOGLE_MAPS_API_KEY")
 LLM_PROVIDER = os.getenv("LLM_PROVIDER")  
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 # ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
+# GROK_API_KEY = os.getenv("GROK_API_KEY")
 
 GEOCODE_URL = os.getenv("GEOCODE_URL")
 NEARBY_URL = os.getenv("NEARBY_URL")
 PLACE_DETAILS_URL_TEMPLATE = "https://places.googleapis.com/v1/places/{place_id}"
-
+DISTRESS_SCORE_THRESHOLD = 7  
 DISTRESS_KEYWORDS = {
     "negative": [
         "dirty", "filthy", "smell", "mold", "leak", "broken", "worst", "bad service",
@@ -31,39 +32,74 @@ DISTRESS_KEYWORDS = {
 # ------------------------------------------------------------------------------
 # Franchise Detection Settings
 # ------------------------------------------------------------------------------
-FRANCHISE_BRANDS = [
-   "Marriott",
-   "Hilton",
-   "Hyatt",
-   "Holiday Inn",
-   "InterContinental",
-   "Crowne Plaza",
-   "Staybridge Suites",
-   "Candlewood Suites",
-   "Best Western",
-   "Wyndham",
-   "Ramada",
-   "Days Inn",
-   "Super 8",
-   "La Quinta",
-   "Comfort Inn",
-   "Quality Inn",
-   "Sleep Inn",
-   "Clarion",
-   "Econo Lodge",
-   "Motel 6",
-   "Red Roof Inn",
-   "Fairfield Inn",
-   "Courtyard",
-   "Residence Inn",
-   "SpringHill Suites",
-   "Hampton Inn",
-   "DoubleTree",
-   "Embassy Suites",
-   "Homewood Suites",
-   "Hyatt Place",
-   "Hyatt House"
-]
+FRANCHISE_KEYWORDS = {
+    "Marriott": [
+        "marriott",
+        "sheraton",
+        "westin",
+        "aloft",
+        "renaissance",
+        "courtyard",
+        "fairfield inn",
+        "residence inn",
+        "springhill suites",
+        "four points"
+    ],
+
+    "Hilton": [
+        "hilton",
+        "hampton inn",
+        "doubletree",
+        "homewood suites",
+        "home2 suites",
+        "embassy suites",
+        "tru by hilton"
+    ],
+
+    "Hyatt": [
+        "hyatt",
+        "hyatt place",
+        "hyatt house"
+    ],
+
+    "Wyndham": [
+        "wyndham",
+        "super 8",
+        "days inn",
+        "la quinta",
+        "ramada"
+    ],
+
+    "IHG": [
+        "holiday inn",
+        "intercontinental",
+        "crowne plaza",
+        "staybridge suites",
+        "candlewood suites"
+    ],
+
+    "Choice": [
+        "comfort inn",
+        "quality inn",
+        "sleep inn",
+        "clarion",
+        "econo lodge"
+    ],
+
+    "Best Western": [
+        "best western",
+        "surestay"
+    ],
+
+    "G6": [
+        "motel 6"
+    ],
+
+    "Red Roof": [
+        "red roof inn"
+    ]
+}
+
 SEARCH_TIMEOUT = 30
 
 REVIEW_LOOKBACK_MONTHS = int(os.getenv("REVIEW_LOOKBACK_MONTHS", "24"))
@@ -78,3 +114,4 @@ RENOVATION_KEYWORDS = [
 # Add configuration for age threshold
 PROPERTY_AGE_THRESHOLD_YEARS = 20
 ATTOM_API_KEY = os.getenv("ATTOM_API_KEY")
+TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")

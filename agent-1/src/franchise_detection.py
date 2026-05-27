@@ -2,8 +2,9 @@
 import re
 import requests
 from typing import Dict, List
-from src.config import FRANCHISE_BRANDS, SEARCH_TIMEOUT
-
+from src.config import SEARCH_TIMEOUT, TAVILY_API_KEY, FRANCHISE_KEYWORDS
+from tavily import TavilyClient
+TAVILY_CLIENT = TavilyClient(api_key=TAVILY_API_KEY)
 # ------------------------------------------------------------------------------
 # Helper: Normalize text
 # ------------------------------------------------------------------------------
@@ -13,35 +14,32 @@ def normalize_text(text: str) -> str:
    return re.sub(r"\s+", " ", text).strip().lower()
 
 # ------------------------------------------------------------------------------
-# Helper: Search the web using Google search URL
+# Helper: Search the web using Tavily search API
 # ------------------------------------------------------------------------------
 def search_web(query: str) -> str:
-   """
-   Performs a lightweight web search by fetching Google search results page HTML.
-   This does not require an additional API key, but may be rate-limited if used
-   heavily. Suitable for prototype/POC usage.
-   """
-   url = "https://www.google.com/search"
-   headers = {
-       "User-Agent": (
-           "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-           "AppleWebKit/537.36 (KHTML, like Gecko) "
-           "Chrome/124.0 Safari/537.36"
-       )
-   }
-   response = requests.get(
-       url,
-       params={"q": query},
-       headers=headers,
-       timeout=SEARCH_TIMEOUT
-   )
-   response.raise_for_status()
-   # Remove HTML tags to get searchable plain text
-   html = response.text
-   text = re.sub(r"<[^>]+>", " ", html)
-   text = re.sub(r"\s+", " ", text)
-   return text
+    """
+    Search web using Tavily API.
+    Returns combined textual evidence.
+    """
 
+    response = TAVILY_CLIENT.search(
+        query=query,
+        search_depth="basic",
+        max_results=5
+    )
+
+    results = response.get("results", [])
+
+    combined_text = []
+
+    for result in results:
+        title = result.get("title", "")
+        content = result.get("content", "")
+
+        combined_text.append(title)
+        combined_text.append(content)
+
+    return " ".join(combined_text)
 # ------------------------------------------------------------------------------
 # Helper: Detect franchise brand from text
 # ------------------------------------------------------------------------------
@@ -51,55 +49,110 @@ def detect_brand(text: str) -> List[str]:
    """
    normalized = normalize_text(text)
    matches = []
-   for brand in FRANCHISE_BRANDS:
-       if brand.lower() in normalized:
-           matches.append(brand)
-   return matches
 
+   for parent_brand, keywords in FRANCHISE_KEYWORDS.items():
+       for keyword in keywords:
+           if keyword.lower() in normalized:
+               matches.append(parent_brand)
+
+   return list(set(matches))
 # ------------------------------------------------------------------------------
 # Main function: Detect if hotel was previously franchised
 # ------------------------------------------------------------------------------
-def detect_franchise_history(hotel_name: str, address: str = "") -> Dict:
-   """
-   Determines whether a hotel was previously affiliated with a known franchise.
-   """
-   queries = [
-       f'"{hotel_name}" formerly hotel',
-       f'"{hotel_name}" previous brand',
-       f'"{hotel_name}" rebranded from',
-       f'"{hotel_name}" was a Marriott',
-       f'"{hotel_name}" was a Hilton',
-       f'"{hotel_name}" former franchise'
-   ]
-   if address:
-       queries.insert(0, f'"{hotel_name}" "{address}" former brand')
-   evidence = []
-   detected_brands = []
-   for query in queries:
-       try:
-           search_text = search_web(query)
-           brands = detect_brand(search_text)
-           if brands:
-               detected_brands.extend(brands)
-               evidence.append(f"Query matched: {query}")
-       except Exception as e:
-           evidence.append(f"Search failed for '{query}': {e}")
-   # Remove duplicates while preserving order
-   unique_brands = []
-   for brand in detected_brands:
-       if brand not in unique_brands:
-           unique_brands.append(brand)
-   if unique_brands:
-       confidence = "High" if len(unique_brands) >= 2 else "Medium"
-       return {
-           "was_franchise": True,
-           "former_brand": unique_brands[0],
-           "franchise_confidence": confidence,
-           "franchise_evidence": " | ".join(evidence[:5])
-       }
-   return {
-       "was_franchise": False,
-       "former_brand": "",
-       "franchise_confidence": "Low",
-       "franchise_evidence": "No franchise affiliation detected"
-   }
+
+def detect_franchise_history(hotel_name: str, address: str = "", reviews=None) -> Dict:
+    review_text = " ".join(
+        r.get("text", {}).get("text", "")
+        for r in (reviews or [])
+    ).lower()
+
+    normalized_name = normalize_text(hotel_name)
+
+    for parent_brand, keywords in FRANCHISE_KEYWORDS.items():
+
+        for keyword in keywords:
+
+            if keyword.lower() in normalized_name:
+
+                return {
+                    "franchise_affiliated": True,
+                    "current_brand": parent_brand,
+                    "former_brand": "",
+                    "brand_status": "CURRENT",
+                    "franchise_confidence": "High",
+                    "franchise_evidence":
+                        f"Direct hotel-name franchise match: {keyword}"
+                }
+
+    # ------------------------------------------------------------------
+    # FORMER franchise / debranding detection from reviews
+    # ------------------------------------------------------------------
+
+    debrand_keywords = [
+        "no longer branded",
+        "used to be",
+        "formerly",
+        "rebranded"
+    ]
+
+    if any(k in review_text for k in debrand_keywords):
+
+        for parent_brand, keywords in FRANCHISE_KEYWORDS.items():
+
+            for keyword in keywords:
+
+                if keyword.lower() in review_text:
+
+                    return {
+                        "franchise_affiliated": True,
+                        "current_brand": "",
+                        "former_brand": parent_brand,
+                        "brand_status": "FORMER",
+                        "franchise_confidence": "Medium",
+                        "franchise_evidence":
+                            f"Detected franchise loss from reviews: {keyword}"
+                    }
+    queries = [
+        f'"{hotel_name}" formerly hotel',
+        f'"{hotel_name}" previous brand',
+        f'"{hotel_name}" rebranded from',
+        f'"{hotel_name}" was a Marriott',
+        f'"{hotel_name}" was a Hilton',
+        f'"{hotel_name}" former franchise'
+    ]
+    if address:
+        queries.insert(0, f'"{hotel_name}" "{address}" former brand')
+    evidence = []
+    detected_brands = []
+    for query in queries:
+        try:
+            search_text = search_web(query)
+            brands = detect_brand(search_text)
+            if brands:
+                detected_brands.extend(brands)
+                evidence.append(f"Query matched: {query}")
+        except Exception as e:
+            evidence.append(f"Search failed for '{query}': {e}")
+    # Remove duplicates while preserving order
+    unique_brands = []
+    for brand in detected_brands:
+        if brand not in unique_brands:
+            unique_brands.append(brand)
+    if unique_brands:
+        confidence = "High" if len(unique_brands) >= 2 else "Medium"
+        return {
+            "franchise_affiliated": True,
+                "current_brand": unique_brands[0],
+                "former_brand": "",
+                "brand_status": "CURRENT",
+                "franchise_confidence": confidence,
+            "franchise_evidence": " | ".join(evidence[:5])
+            }
+    return {
+        "franchise_affiliated": False,
+        "current_brand": "",
+        "former_brand": "",
+        "brand_status": "NONE",
+        "franchise_confidence": "Low",
+        "franchise_evidence": "No franchise affiliation detected"
+    }

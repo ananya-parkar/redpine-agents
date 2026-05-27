@@ -34,5 +34,6 @@ def build_base_row(search_location, radius_km, hotel_name, hotel_details, score_
         "renovation_signal_rate": score_data.get("renovation_signal_rate", 0.0),
         "renovation_needed": score_data.get("renovation_needed", False),
         "physical_condition_score": score_data.get("physical_condition_score", 0),
-        "google_maps_url": hotel_details.get("googleMapsUri", "")
+        "google_maps_url": hotel_details.get("googleMapsUri", ""),
+        "source_provenance": "Google Places | ATTOM | Tavily | SEC EDGAR",
     }
