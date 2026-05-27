@@ -1,0 +1,24 @@
+# Miami Beach - highest hotel density, mix of luxury and budget
+Miami Beach, Florida | 3
+South Beach, Miami Beach, Florida | 2
+Mid-Beach, Miami Beach, Florida | 2
+
+# Downtown/Brickell - business hotels
+Downtown Miami, Florida | 3
+Brickell, Miami, Florida | 2
+
+# Airport area - budget/mid-tier hotels
+Miami International Airport, Florida | 3
+
+# Other South Florida hotel clusters
+Fort Lauderdale, Florida | 4
+West Palm Beach, Florida | 4
+Key West, Florida | 3
+
+# Central Florida tourist areas
+Orlando International Drive, Florida | 3
+Kissimmee, Florida | 3
+
+Mid-Beach, Miami Beach, Florida | 2
+South Beach, Miami Beach, Florida | 2
+Miami International Airport, Florida | 3

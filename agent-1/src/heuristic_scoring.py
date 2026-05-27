@@ -86,9 +86,9 @@ def count_keyword_hits(reviews: List[Dict], keywords: List[str]) -> int:
         text = extract_review_text(review).lower()
         if not text:
             continue
-        for word in keywords:
-            if word in text:
-                hits += 1
+        if any(word in text for word in keywords):
+            hits += 1
+        
     return hits
 
 

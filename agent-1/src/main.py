@@ -5,8 +5,11 @@ from datetime import datetime
 from src.config import INPUT_FILE, RUNS_DIR, GOOGLE_MAPS_API_KEY
 from src.io_utils import parse_locations, save_json
 from src.pipeline import process_location
-from src.writers import save_csv_files
-
+from src.writers import save_excel_files
+from src.exporters import save_ai_entities
+from src.dedupe import remove_existing_leads
+from src.master_storage import append_to_master
+from src.html_report import generate_html_report
 
 def main():
     print("\n[START] Agent 1 run started\n", flush=True)
@@ -34,8 +37,11 @@ def main():
         print("[WAIT] Sleeping for 1 second before next location...", flush=True)
         time.sleep(1)
 
+    all_rows = remove_existing_leads(all_rows)
     print("\n[SORT] Sorting all hotel rows by distress_score descending", flush=True)
-    all_rows.sort(key=lambda x: x["distress_score"], reverse=True)
+    all_rows.sort(key=lambda x: x.get("final_lead_score", 0), reverse=True)
+    for idx, row in enumerate(all_rows, start=1):
+        row["rank"] = idx
 
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     run_dir = RUNS_DIR / timestamp
@@ -51,9 +57,45 @@ def main():
     save_json(details_results, run_dir / "place_details.json")
     print("[OUTPUT] Saved place_details.json", flush=True)
 
-    save_csv_files(run_dir, all_rows)
-
+    save_excel_files(run_dir, all_rows)
     print(f"\n[DONE] Saved {len(all_rows)} hotel row(s) to {run_dir}", flush=True)
+    
+    priority_rows = [
+        row for row in all_rows
+        if row.get("final_lead_score", 0) >= 40
+    ]
+    
+    append_to_master(priority_rows)
+    print("[OUTPUT] Updated master_leads.csv", flush=True)
+    
+    save_ai_entities(
+        run_dir / "priority_hotels_ai.json",
+        priority_rows
+    )
+
+    print("[OUTPUT] Saved priority_hotels_ai.json", flush=True)
+
+    priority_entities = []
+
+    for row in priority_rows:
+        entity = row.get("entity")
+        if not entity:
+            continue
+
+        entity["final_lead_score"] = row.get("final_lead_score", 0)
+        entity["rank"] = row.get("rank", 0)
+        entity["lead_reason"] = row.get("lead_reason", "")
+        priority_entities.append(entity)
+
+    generate_html_report(
+        run_dir / "hotel_acquisition_report.html",
+        priority_entities
+    )
+
+    print(
+        "[OUTPUT] Saved hotel_acquisition_report.html",
+        flush=True
+    )
 
 
 if __name__ == "__main__":

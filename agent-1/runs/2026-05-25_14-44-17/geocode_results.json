@@ -1,0 +1,68 @@
+[
+  {
+    "location": "Miami Beach, Florida",
+    "radius_km": 3.0,
+    "latitude": 25.790654,
+    "longitude": -80.1300455
+  },
+  {
+    "location": "South Beach, Miami Beach, Florida",
+    "radius_km": 2.0,
+    "latitude": 25.7826123,
+    "longitude": -80.1340772
+  },
+  {
+    "location": "Mid-Beach, Miami Beach, Florida",
+    "radius_km": 2.0,
+    "latitude": 25.8144845,
+    "longitude": -80.1226195
+  },
+  {
+    "location": "Downtown Miami, Florida",
+    "radius_km": 3.0,
+    "latitude": 25.7734295,
+    "longitude": -80.1902288
+  },
+  {
+    "location": "Brickell, Miami, Florida",
+    "radius_km": 2.0,
+    "latitude": 25.7601793,
+    "longitude": -80.1958755
+  },
+  {
+    "location": "Miami International Airport, Florida",
+    "radius_km": 3.0,
+    "latitude": 25.7923496,
+    "longitude": -80.28230590000001
+  },
+  {
+    "location": "Fort Lauderdale, Florida",
+    "radius_km": 4.0,
+    "latitude": 26.1224386,
+    "longitude": -80.13731740000001
+  },
+  {
+    "location": "West Palm Beach, Florida",
+    "radius_km": 4.0,
+    "latitude": 26.7144532,
+    "longitude": -80.0549456
+  },
+  {
+    "location": "Key West, Florida",
+    "radius_km": 3.0,
+    "latitude": 24.5550593,
+    "longitude": -81.7799871
+  },
+  {
+    "location": "Orlando International Drive, Florida",
+    "radius_km": 3.0,
+    "latitude": 28.4624091,
+    "longitude": -81.4603345
+  },
+  {
+    "location": "Kissimmee, Florida",
+    "radius_km": 3.0,
+    "latitude": 28.2955867,
+    "longitude": -81.40393139999999
+  }
+]

@@ -8,8 +8,10 @@ from src.cmbs_lookup import detect_cmbs_signals, default_cmbs_result
 
 def default_franchise_result():
     return {
-        "was_franchise": False,
+        "franchise_affiliated": False,
+        "current_brand": "",
         "former_brand": "",
+        "brand_status": "NONE",
         "franchise_confidence": "Not Checked",
         "franchise_evidence": ""
     }
@@ -30,7 +32,7 @@ def default_owner_result():
     }
 
 
-def enrich_priority_hotel(hotel_name, address):
+def enrich_priority_hotel(hotel_name, address, reviews=None):
     result = {}
     result.update(default_franchise_result())
     result.update(default_owner_result())
@@ -41,11 +43,14 @@ def enrich_priority_hotel(hotel_name, address):
         print("    [FRANCHISE] Checking historical franchise affiliation...", flush=True)
         franchise_result = detect_franchise_history(
             hotel_name=hotel_name,
-            address=address
+            address=address,
+            reviews=reviews
         )
         result.update(franchise_result)
         print(
-            f"    [FRANCHISE] was_franchise={result['was_franchise']} | "
+            f"    [FRANCHISE] affiliated={result['franchise_affiliated']} | "
+            f"brand_status={result['brand_status']} | "
+            f"current_brand={result['current_brand'] or 'N/A'} | "
             f"former_brand={result['former_brand'] or 'N/A'} | "
             f"confidence={result['franchise_confidence']}",
             flush=True
@@ -53,14 +58,16 @@ def enrich_priority_hotel(hotel_name, address):
     except Exception as e:
         print(f"    [FRANCHISE] Failed: {e}", flush=True)
         result.update({
-            "was_franchise": False,
+            "franchise_affiliated": False,
+            "current_brand": "",
             "former_brand": "",
+            "brand_status": "NONE",
             "franchise_confidence": "Error",
             "franchise_evidence": str(e)
         })
     
     # Step 2: CMBS lookup (ONLY if franchise was detected)
-    if result["was_franchise"]:
+    if result["franchise_affiliated"]:
         try:
             cmbs_result = detect_cmbs_signals(
                 hotel_name=hotel_name,

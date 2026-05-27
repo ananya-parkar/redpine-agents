@@ -1,8 +1,14 @@
 # agent-1/src/pipeline.py
+from datetime import datetime
 from src.google_maps import geocode_location, nearby_hotels, place_details
-from src.scoring import distress_score
+from src.heuristic_scoring import distress_score
 from src.enrichment import enrich_priority_hotel
 from src.utils import extract_hotel_name, build_base_row
+from src.entity_builder import build_hotel_entity
+from src.signals import build_signals
+from src.serialization import serialize_entity
+from src.llm.reasoning_agent import analyze_hotel
+from src.final_scoring import calculate_final_lead_score
 
 
 def process_location(item, loc_index, total_locations):
@@ -37,7 +43,8 @@ def process_location(item, loc_index, total_locations):
 
     for hotel_index, hotel in enumerate(hotels, start=1):
         row, hotel_details = process_hotel(item, hotel, hotel_index, len(hotels))
-        rows.append(row)
+        if row:
+            rows.append(row)
         if hotel_details:
             details_results.append(hotel_details)
 
@@ -60,10 +67,23 @@ def process_hotel(item, hotel, hotel_index, total_hotels):
     print(f"    [PLACE ID] {place_id}", flush=True)
 
     hotel_details = fetch_hotel_details(hotel, place_id)
+    entity = build_hotel_entity(
+        hotel_details,
+        source_location=item["location"],
+        radius_km=item["radius_km"]
+    )
     score_data = distress_score(hotel_details)
+    entity.heuristic_scores = score_data
     score = score_data["distress_score"]
     reasons = score_data["distress_reasons"]
     hotel_name = extract_hotel_name(hotel_details)
+    if not hotel_name or hotel_name.strip().lower() in [
+        "hotel",
+        "motel",
+        "lodging"
+    ]:
+        print("    [SKIP] Invalid hotel name", flush=True)
+        return {}, None
 
     print(
         f"    [SCORING] score={score} | "
@@ -80,12 +100,119 @@ def process_hotel(item, hotel, hotel_index, total_hotels):
         score_data=score_data,
     )
 
-    if score >= 7:
+    if score >= 4:
         enrichment = enrich_priority_hotel(
             hotel_name=hotel_name or raw_hotel_name,
-            address=hotel_details.get("formattedAddress", "")
+            address=hotel_details.get("formattedAddress", ""),
+            reviews=entity.reviews
         )
+
+        entity.owner_data = {
+            "owner_name": enrichment.get("owner_name"),
+            "owner_company": enrichment.get("owner_company"),
+            "mailing_address": enrichment.get("mailing_address"),
+            "owner_phone": enrichment.get("owner_phone"),
+            "ownership_since": enrichment.get("ownership_since"),
+            "ownership_length_years": enrichment.get("ownership_length_years"),
+        }
+
+        entity.cmbs_data = {
+            "cmbs_loan_status": enrichment.get("cmbs_loan_status"),
+            "cmbs_delinquency_flag": enrichment.get("cmbs_delinquency_flag"),
+            "cmbs_watchlist_flag": enrichment.get("cmbs_watchlist_flag"),
+            "cmbs_special_servicing_flag": enrichment.get("cmbs_special_servicing_flag"),
+        }
+
+        entity.franchise_data = {
+        "franchise_affiliated": enrichment.get("franchise_affiliated"),
+        "current_brand": enrichment.get("current_brand"),
+        "former_brand": enrichment.get("former_brand"),
+        "brand_status": enrichment.get("brand_status"),
+        "franchise_confidence": enrichment.get("franchise_confidence"),
+    }
+
         row.update(enrichment)
+
+    entity.signals = build_signals(entity)
+
+    final_lead_score = 0
+
+    if score >= 4:
+        print("    [LLM] Running reasoning agent...", flush=True)
+
+        try:
+            entity.llm_analysis = analyze_hotel(entity)
+
+            final_lead_score = calculate_final_lead_score(entity)
+
+            print(
+                f"    [LLM] opportunity_score="
+                f"{entity.llm_analysis.get('opportunity_score')}",
+                flush=True
+            )
+
+        except Exception as e:
+            print(f"    [LLM] Failed: {e}", flush=True)
+
+            entity.llm_analysis = {
+                "error": True,
+                "failure_reason": str(e)
+            }
+
+            final_lead_score = score * 4
+
+    else:
+        entity.llm_analysis = {}
+
+    row["signals"] = entity.signals
+    print(f"    [SIGNALS] {entity.signals}", flush=True)
+
+    
+    row["llm_analysis"] = entity.llm_analysis
+    row["final_lead_score"] = final_lead_score if score >= 4 else score * 4
+    row["entity"] = serialize_entity(entity)
+
+    lead_reason_parts = []
+    signals = entity.signals
+
+    if signals.get("franchise_loss"):
+        lead_reason_parts.append(f"Lost {signals.get('former_brand')} affiliation")
+
+    if signals.get("review_decline"):
+        lead_reason_parts.append("Declining reviews")
+
+    if signals.get("complaint_increase"):
+        lead_reason_parts.append("Complaint increase")
+
+    if signals.get("old_property"):
+        lead_reason_parts.append("Aging property")
+
+    if signals.get("long_term_owner"):
+        lead_reason_parts.append("Long-term ownership")
+
+    if signals.get("cmbs_special_servicing"):
+        lead_reason_parts.append("Special servicing")
+
+    if signals.get("cmbs_delinquent"):
+        lead_reason_parts.append("CMBS delinquency")
+
+    row["lead_reason"] = "; ".join(lead_reason_parts[:3])
+
+    sources = ["Google Places"]
+    if entity.owner_data.get("owner_name"):
+        sources.append("ATTOM")
+
+    if entity.franchise_data.get("franchise_affiliated"):
+        sources.append("Tavily")
+
+    if entity.cmbs_data.get("cmbs_loan_status"):
+        sources.append("SEC EDGAR")
+
+    row["source_provenance"] = " | ".join(sources)
+
+    row["entity"] = serialize_entity(entity)
+
+    row["created_at"] = datetime.utcnow().isoformat()
 
     return row, hotel_details
 
