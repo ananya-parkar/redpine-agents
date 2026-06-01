@@ -2,20 +2,25 @@
 
 def build_signals(entity):
     scores = entity.heuristic_scores
-    property_age = scores.get("property_age")
-    if not isinstance(property_age, (int, float)):
-        property_age = 0
+    attom_age_flag = (str(entity.owner_data.get("is_older_than_20_years", "")).lower()== "yes")
         
     signals = {
         # Review trend signals
         "review_decline": scores.get("review_rating_delta", 0) <= -0.3,
-        "review_rating_delta":scores.get("review_rating_delta", 0),
-        "review_volume_decline":scores.get("review_volume_change_pct", 0) <= -30,
-        "complaint_increase": scores.get("review_complaint_delta", 0) >= 0.5,
+        "review_rating_delta": scores.get("review_rating_delta", 0),
+        "review_volume_decline": (scores.get("review_volume_change_pct", 0) <= -30),
+        "complaint_increase": (scores.get("review_complaint_delta", 0)>= 0.5),
+        "sentiment_decline": scores.get("sentiment_trend") == "Declining",
+        "sentiment_trend": scores.get("sentiment_trend", "Stable"),
+        "review_activity_trend": scores.get("review_activity_trend", "Stable"),
+        "positive_reviews_recent": scores.get("positive_reviews_recent", 0),
+        "negative_reviews_recent": scores.get("negative_reviews_recent", 0),
+        "positive_reviews_prior": scores.get("positive_reviews_prior", 0),
+        "negative_reviews_prior": scores.get("negative_reviews_prior", 0),
 
         # Physical condition
         "renovation_needed": scores.get("renovation_needed", False),
-        "old_property": property_age >= 20 if property_age else False,
+        "old_property": attom_age_flag,
         "physical_condition_score": scores.get("physical_condition_score", 0),
 
         # Franchise signals

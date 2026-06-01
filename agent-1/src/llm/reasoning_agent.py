@@ -19,7 +19,7 @@ def validate_llm_response(parsed: dict):
         "recommended_action": "Monitor",
         "distress_summary": "",
         "review_summary": "",
-        "llm_star_rating": 0.0,
+        "llm_star_rating": 2.0,
     }
 
     for key, value in defaults.items():
@@ -75,31 +75,22 @@ def analyze_hotel(entity):
         )
 
         content = response.choices[0].message.content
-        # print(
-        #     f"[LLM RAW RESPONSE] {content}",
-        #     flush=True
-        # )
-        # content = content.strip()
-
-        # if content.startswith("```json"):
-        #     content = (
-        #         content
-        #         .replace("```json", "")
-        #         .replace("```", "")
-        #         .strip()
-        #     )
-
-        # start = content.find("{")
-        # end = content.rfind("}")
-
-        # if start != -1 and end != -1:
-        #     content = content[start:end+1]
         
-        parsed = json.loads(content)            
+        parsed = json.loads(content)
+        if ("acquisition_attractiveness_star_rating" in parsed and "llm_star_rating" not in parsed):
+            parsed["llm_star_rating"] = parsed["acquisition_attractiveness_star_rating"]
+
+        if ("star_rating" in parsed and "llm_star_rating" not in parsed):
+            parsed["llm_star_rating"] = parsed["star_rating"]
+
         print(f"[LLM] Parsed response: {parsed}", flush=True)
+
         validated = validate_llm_response(parsed)
+        if (validated.get("llm_star_rating", 0) == 0 and validated.get("opportunity_score", 0) > 0):
+            validated["llm_star_rating"] = round(validated["opportunity_score"] / 20, 1)
+        
         return validated
-    
+            
     except Exception as e:
         print(f"[LLM ERROR] {str(e)}",flush=True)
 

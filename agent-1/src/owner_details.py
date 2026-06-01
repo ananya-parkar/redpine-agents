@@ -67,6 +67,7 @@ def detect_owner_details(address: str = "") -> Dict:
             }
 
         property_data = property_list[0]
+        print(f"[ATTOM DEBUG] property_data keys: " f"{list(property_data.keys())}", flush=True)
 
         owner_data = property_data.get("owner", {})
         owner1_data = owner_data.get("owner1", {})
@@ -94,13 +95,8 @@ def detect_owner_details(address: str = "") -> Dict:
             except Exception:
                 is_older_than_20_years = ""
 
-        sale_history = property_data.get(
-
-            "salehistory",
-
-            []
-
-        )
+        sale_history = property_data.get("salehistory", [])
+        print(f"[ATTOM DEBUG] salehistory={sale_history}", flush=True)
 
         sale_date = ""
 

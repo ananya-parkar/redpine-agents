@@ -2,6 +2,79 @@
 from pathlib import Path
 import html, json
 
+SIGNAL_EXPLANATIONS = {
+    "review_decline": {
+        True: "Average review ratings are trending downward.",
+        False: "No meaningful rating decline detected."
+    },
+
+    "review_volume_decline": {
+        True: "Guest review activity has decreased significantly.",
+        False: "Review activity remains stable."
+    },
+
+    "complaint_increase": {
+        True: "Guest complaints have increased over time.",
+        False: "Complaint levels remain stable."
+    },
+
+    "renovation_needed": {
+        True: "Reviews indicate aging facilities or maintenance concerns.",
+        False: "No significant renovation concerns identified."
+    },
+
+    "old_property": {
+        True: "Property age exceeds configured age threshold.",
+        False: "Property age does not indicate elevated risk."
+    },
+
+    "franchise_loss": {
+        True: "Hotel appears to have lost a prior franchise affiliation.",
+        False: "No evidence of franchise loss."
+    },
+
+    "franchise_affiliated": {
+        True: "Property is currently affiliated with a major hospitality brand.",
+        False: "No active franchise affiliation detected."
+    },
+
+    "cmbs_watchlist": {
+        True: "Property loan appears on CMBS watchlist.",
+        False: "No CMBS watchlist indicators found."
+    },
+
+    "cmbs_special_servicing": {
+        True: "Property loan transferred to special servicing.",
+        False: "No special servicing indicators detected."
+    },
+
+    "cmbs_delinquent": {
+        True: "Potential loan delinquency indicators detected.",
+        False: "No delinquency indicators detected."
+    },
+
+    "long_term_owner": {
+        True: "Ownership tenure exceeds configured threshold.",
+        False: "Ownership tenure does not indicate seller fatigue."
+    },
+    "sentiment_decline": {
+        True: "Negative guest sentiment is increasing.",
+        False: "Guest sentiment remains stable."
+    },
+    "review_rating_delta": "Difference between recent and historical average review ratings.",
+    "physical_condition_score": "Composite score derived from renovation and property condition indicators.",
+    "former_brand": "Previously identified franchise affiliation.",
+    "current_brand": "Current franchise affiliation.",
+    "brand_status": "Current franchise relationship status.",
+    "ownership_length_years": "Estimated ownership duration in years.",
+    "distress_score": "Rule-based distress score generated from review, operational and property signals.",
+    "review_activity_trend": "Business-friendly classification of review activity.",
+    "positive_reviews_recent": "Positive reviews identified in the recent review period.",
+    "negative_reviews_recent": "Negative reviews identified in the recent review period.",
+    "positive_reviews_prior": "Positive reviews identified in the prior review period.",
+    "negative_reviews_prior": "Negative reviews identified in the prior review period.",
+    "sentiment_trend": "Business-friendly sentiment classification.",
+}
 
 def build_hotel_card(entity):
     hotel_name = entity.get("hotel_name", "Unknown Hotel")
@@ -12,6 +85,26 @@ def build_hotel_card(entity):
     cmbs = entity.get("cmbs_data", {})
     heuristic = entity.get("heuristic_scores", {})
     reviews = entity.get("reviews", [])[:3]
+    review_themes = entity.get("review_themes", {})
+
+    theme_rows = ""
+    if not review_themes:
+        theme_rows = """
+        <tr>
+            <td colspan="2">
+                No dominant complaint themes detected.
+            </td>
+        </tr>
+        """
+    else:
+        for theme, pct in sorted(review_themes.items(), key=lambda x: x[1], reverse=True):
+            theme_rows += f"""
+            <tr>
+                <td>{theme.title()}</td>
+                <td>{pct}%</td>
+            </tr>
+            """
+
 
     review_html = ""
     for review in reviews:
@@ -26,10 +119,57 @@ def build_hotel_card(entity):
 
     distress_signals = ""
     for key, value in signals.items():
+        explanation_data = SIGNAL_EXPLANATIONS.get(key)
+        if isinstance(explanation_data, dict):
+            explanation = explanation_data.get(bool(value), "No explanation available.")
+        else:
+            explanation = explanation_data or "No explanation available."
+        
+        if key == "review_rating_delta":
+
+            if value < 0:
+                explanation = (
+                    f"Average guest rating declined by "
+                    f"{abs(value):.2f} points."
+                )
+
+            elif value > 0:
+                explanation = (
+                    f"Average guest rating improved by "
+                    f"{value:.2f} points."
+                )
+            
+            else:
+                explanation = (
+                    "Average guest rating remained unchanged."
+                )
+
+        if key == "ownership_length_years" and value:
+            explanation = (
+                f"Property has been owned for "
+                f"{value} years."
+            )
+
+        if key == "physical_condition_score":
+            explanation = (
+                f"Physical condition score is {value}. "
+                "Higher values indicate stronger renovation signals."
+            )
+
+        if key == "distress_score":
+            explanation = (
+                f"Rule-based distress score is {value}."
+            )
+        
+        display_value = value
+        if display_value in ("", None):
+            display_value = "N/A"
+            
         distress_signals += f"""
         <tr>
             <td>{html.escape(str(key))}</td>
-            <td>{html.escape(str(value))}</td>
+            <td>{html.escape(str(display_value))}</td>
+            <td>{html.escape(explanation)}</td>
         </tr>
         """
 
@@ -50,6 +190,14 @@ def build_hotel_card(entity):
     empty_stars = 5 - filled_stars
     stars_html = ("★" * filled_stars + "☆" * empty_stars)
 
+    final_score = entity.get("final_lead_score", 0)
+    if final_score >= 80:
+        distress_category = "HIGH DISTRESS"
+    elif final_score >= 50:
+        distress_category = "MODERATE DISTRESS"
+    else:
+        distress_category = "LOW DISTRESS"
+
     return f"""
     <div class="hotel-card">
 
@@ -58,6 +206,10 @@ def build_hotel_card(entity):
         <div class="score">
             Final Opportunity Score:
             {entity.get("final_lead_score", 0)}
+        </div>
+
+        <div class="action">
+            {distress_category}
         </div>
 
         <div class="star-rating">
@@ -82,8 +234,13 @@ def build_hotel_card(entity):
         </table>
 
         <h2>Operational Distress Signals</h2>
-
+        
         <table>
+            <tr>
+                <th>Signal</th>
+                <th>Value</th>
+                <th>Explanation</th>
+            </tr>
             {distress_signals}
         </table>
 
@@ -96,9 +253,9 @@ def build_hotel_card(entity):
         <h2>Ownership Intelligence</h2>
 
         <table>
-            <tr><td>Owner</td><td>{html.escape(owner.get("owner_name", ""))}</td></tr>
-            <tr><td>Ownership Length</td><td>{html.escape(str(owner.get("ownership_length_years", "")))}</td></tr>
-            <tr><td>Mailing Address</td><td>{html.escape(owner.get("mailing_address", ""))}</td></tr>
+            <tr><td>Owner</td><td>{html.escape(owner.get("owner_name") or "N/A")}</td></tr>
+            <tr><td>Ownership Length</td><td>{html.escape(str(owner.get("ownership_length_years") or "N/A"))}</td></tr>
+            <tr><td>Mailing Address</td><td>{html.escape(owner.get("mailing_address") or "N/A")}</td></tr>
         </table>
 
         <h2>Franchise Intelligence</h2>
@@ -122,6 +279,48 @@ def build_hotel_card(entity):
         <div class="action">
             {html.escape(llm.get("recommended_action", ""))}
         </div>
+
+        <h2>Review Intelligence</h2>
+            <table>
+                <tr>
+                    <th>Complaint Theme</th>
+                    <th>Share</th>
+                </tr>
+                {theme_rows}
+            </table>
+        
+        <h2>Review Trend Intelligence</h2>
+            <table>
+                <tr>
+                    <td>Review Activity Trend</td>
+                    <td>{signals.get("review_activity_trend","N/A")}</td>
+                </tr>
+
+                <tr>
+                    <td>Sentiment Trend</td>
+                    <td>{signals.get("sentiment_trend","N/A")}</td>
+                </tr>
+
+                <tr>
+                    <td>Recent Positive Reviews</td>
+                    <td>{signals.get("positive_reviews_recent","N/A")}</td>
+                </tr>
+
+                <tr>
+                    <td>Recent Negative Reviews</td>
+                    <td>{signals.get("negative_reviews_recent","N/A")}</td>
+                </tr>
+
+                <tr>
+                    <td>Prior Positive Reviews</td>
+                    <td>{signals.get("positive_reviews_prior","N/A")}</td>
+                </tr>
+
+                <tr>
+                    <td>Prior Negative Reviews</td>
+                    <td>{signals.get("negative_reviews_prior","N/A")}</td>
+                </tr>
+            </table>
 
         <h2>AI Review Summary</h2>
 
@@ -165,10 +364,18 @@ def generate_html_report(path: Path, entities):
     table {{
         width: 100%;
         border-collapse: collapse;
+        margin-top: 10px;
     }}
     td {{
         border: 1px solid #ddd;
         padding: 10px;
+    }}
+    th {{
+        border: 1px solid #ddd;
+        padding: 10px;
+        background: #1e3a8a;
+        color: white;
+        text-align: left;
     }}
     .score {{
         font-size: 24px;
