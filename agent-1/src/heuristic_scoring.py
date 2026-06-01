@@ -1,4 +1,4 @@
-# agent-1/src/scoring.py
+# agent-1/src/heuristic_scoring.py
 from datetime import datetime, timezone, timedelta
 from typing import Dict, List
 from src.config import (
@@ -99,6 +99,41 @@ def complaint_rate(reviews: List[Dict]) -> float:
     hits = count_keyword_hits(reviews, keywords)
     return round(hits / len(reviews), 2)
 
+POSITIVE_KEYWORDS = [
+    "clean",
+    "friendly",
+    "great",
+    "excellent",
+    "amazing",
+    "comfortable",
+    "pleasant",
+    "helpful"
+]
+
+NEGATIVE_KEYWORDS = [
+    "dirty",
+    "rude",
+    "broken",
+    "bad",
+    "terrible",
+    "worst",
+    "unsafe",
+    "noise",
+    "smell"
+]
+
+
+def sentiment_counts(reviews):
+    positive = 0
+    negative = 0
+    for review in reviews:
+        text = extract_review_text(review).lower()
+        if any(word in text for word in POSITIVE_KEYWORDS):
+            positive += 1
+        if any(word in text for word in NEGATIVE_KEYWORDS):
+            negative += 1
+    return positive, negative
+
 
 def renovation_signal_rate(reviews: List[Dict]) -> float:
     if not reviews:
@@ -196,14 +231,38 @@ def distress_score(place: Dict) -> Dict:
     review_volume_recent = len(recent_reviews)
     review_volume_prior = len(prior_reviews)
     review_volume_change_pct = pct_change(review_volume_recent, review_volume_prior)
+    if review_volume_change_pct <= -30:
+        review_activity_trend = "Declining"
+    elif review_volume_change_pct >= 30:
+        review_activity_trend = "Increasing"
+    else:
+        review_activity_trend = "Stable"
 
     avg_rating_recent = average_rating(recent_reviews)
     avg_rating_prior = average_rating(prior_reviews)
-    review_rating_delta = round(avg_rating_recent - avg_rating_prior, 2)
+
+    if review_volume_prior >= 3:
+        review_rating_delta = round(
+            avg_rating_recent - avg_rating_prior,
+            2
+        )
+    else:
+        review_rating_delta = 0
 
     complaint_rate_recent = complaint_rate(recent_reviews)
     complaint_rate_prior = complaint_rate(prior_reviews)
     review_complaint_delta = round(complaint_rate_recent - complaint_rate_prior, 2)
+    positive_reviews_recent, negative_reviews_recent = (sentiment_counts(recent_reviews))
+    positive_reviews_prior, negative_reviews_prior = (sentiment_counts(prior_reviews))
+    sentiment_delta = ((negative_reviews_recent - positive_reviews_recent) - (negative_reviews_prior - positive_reviews_prior))
+    if sentiment_delta <= -2:
+        sentiment_trend = "Improving"
+
+    elif sentiment_delta >= 2:
+        sentiment_trend = "Declining"
+
+    else:
+        sentiment_trend = "Stable"
 
     review_trend_score = 0
 
@@ -218,6 +277,10 @@ def distress_score(place: Dict) -> Dict:
     if review_complaint_delta >= 0.5:
         review_trend_score += 2
         reasons.append(f"Complaint rate increase: {review_complaint_delta}")
+    
+    if sentiment_delta > 2:
+        review_trend_score += 1
+        reasons.append(f"Negative sentiment increase: {sentiment_delta}")
 
     score += review_trend_score
 
@@ -267,4 +330,11 @@ def distress_score(place: Dict) -> Dict:
         "renovation_signal_rate": renovation_rate,
         "renovation_needed": renovation_needed,
         "physical_condition_score": physical_condition_score,
+        "positive_reviews_recent": positive_reviews_recent,
+        "negative_reviews_recent": negative_reviews_recent,
+        "positive_reviews_prior": positive_reviews_prior,
+        "negative_reviews_prior": negative_reviews_prior,
+        "sentiment_delta": sentiment_delta,
+        "sentiment_trend": sentiment_trend,
+        "review_activity_trend": review_activity_trend,
     }

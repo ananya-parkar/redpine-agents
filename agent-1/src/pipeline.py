@@ -9,6 +9,7 @@ from src.signals import build_signals
 from src.serialization import serialize_entity
 from src.llm.reasoning_agent import analyze_hotel
 from src.final_scoring import calculate_final_lead_score
+from src.review_intelligence import extract_review_themes
 
 
 def process_location(item, loc_index, total_locations):
@@ -74,6 +75,10 @@ def process_hotel(item, hotel, hotel_index, total_hotels):
     )
     score_data = distress_score(hotel_details)
     entity.heuristic_scores = score_data
+
+    entity.review_themes = extract_review_themes(entity.reviews)
+    print(f"    [REVIEW THEMES] {entity.review_themes}", flush=True)
+
     score = score_data["distress_score"]
     reasons = score_data["distress_reasons"]
     hotel_name = extract_hotel_name(hotel_details)
@@ -114,6 +119,8 @@ def process_hotel(item, hotel, hotel_index, total_hotels):
             "owner_phone": enrichment.get("owner_phone"),
             "ownership_since": enrichment.get("ownership_since"),
             "ownership_length_years": enrichment.get("ownership_length_years"),
+            "attom_year_built": enrichment.get("attom_year_built"),
+            "is_older_than_20_years": enrichment.get("is_older_than_20_years"),
         }
 
         entity.cmbs_data = {
@@ -166,8 +173,8 @@ def process_hotel(item, hotel, hotel_index, total_hotels):
 
     row["signals"] = entity.signals
     print(f"    [SIGNALS] {entity.signals}", flush=True)
-
     
+    row["review_themes"] = entity.review_themes
     row["llm_analysis"] = entity.llm_analysis
     row["final_lead_score"] = final_lead_score if score >= 4 else score * 4
     row["entity"] = serialize_entity(entity)

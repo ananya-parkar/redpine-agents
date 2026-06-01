@@ -40,6 +40,7 @@ BASE_FIELDNAMES = [
     "llm_investment_thesis",
     "llm_recommended_action",
     "llm_distress_summary",
+    "llm_review_summary",
     "created_at",
 ]
 
@@ -92,6 +93,8 @@ def save_excel_files(run_dir, all_rows):
         row["llm_investment_thesis"] = llm.get("investment_thesis")
         row["llm_recommended_action"] = llm.get("recommended_action")
         row["llm_distress_summary"] = llm.get("distress_summary")
+        row["llm_review_summary"] = llm.get("review_summary")
+
     
     # Full Results Excel
     output_excel = run_dir / "hotel_distress_results.xlsx"

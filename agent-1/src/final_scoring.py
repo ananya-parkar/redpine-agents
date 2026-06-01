@@ -8,7 +8,7 @@ def calculate_final_lead_score(entity):
     signals = entity.signals
 
     # Base heuristic distress
-    score += heuristic.get("distress_score", 0) * 4
+    score += heuristic.get("distress_score", 0) * 3
 
     # LLM opportunity weighting
     score += llm.get("opportunity_score", 0) * 0.3

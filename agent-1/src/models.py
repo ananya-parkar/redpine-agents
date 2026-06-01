@@ -26,6 +26,9 @@ class HotelEntity:
     # Normalized signals
     signals: Dict = field(default_factory=dict)
 
+    # Review Intelligence
+    review_themes: Dict = field(default_factory=dict)
+
     # Heuristic scoring output
     heuristic_scores: Dict = field(default_factory=dict)
 
