@@ -17,6 +17,13 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 GEOCODE_URL = os.getenv("GEOCODE_URL")
 NEARBY_URL = os.getenv("NEARBY_URL")
 PLACE_DETAILS_URL_TEMPLATE = "https://places.googleapis.com/v1/places/{place_id}"
+
+POSTGRES_HOST = os.getenv("POSTGRES_HOST")
+POSTGRES_PORT = os.getenv("POSTGRES_PORT")
+POSTGRES_DB = os.getenv("POSTGRES_DB")
+POSTGRES_USER = os.getenv("POSTGRES_USER")
+POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD")
+
 DISTRESS_SCORE_THRESHOLD = 7  
 DISTRESS_KEYWORDS = {
     "negative": [

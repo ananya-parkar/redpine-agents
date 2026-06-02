@@ -82,9 +82,14 @@ def analyze_hotel(entity):
 
         if ("star_rating" in parsed and "llm_star_rating" not in parsed):
             parsed["llm_star_rating"] = parsed["star_rating"]
+        
+        if ("recommended_acquisition_strategy" in parsed and "recommended_action" not in parsed):
+            parsed["recommended_action"] = parsed["recommended_acquisition_strategy"]
 
-        print(f"[LLM] Parsed response: {parsed}", flush=True)
-
+        if ("acquisition_strategy" in parsed and "recommended_action" not in parsed):
+            parsed["recommended_action"] = parsed["acquisition_strategy"]
+        
+        print(f"[LLM] Parsed response: {parsed}", flush=True)       
         validated = validate_llm_response(parsed)
         if (validated.get("llm_star_rating", 0) == 0 and validated.get("opportunity_score", 0) > 0):
             validated["llm_star_rating"] = round(validated["opportunity_score"] / 20, 1)

@@ -1,0 +1,2385 @@
+[
+  {
+    "hotel_name": "Casa Boutique Hotel",
+    "address": "1334 Washington Ave, Miami Beach, FL 33139, USA",
+    "place_id": "ChIJpVfyLY602YgRW5vCULRyRfo",
+    "latitude": null,
+    "longitude": null,
+    "rating": 4.2,
+    "user_rating_count": 1098,
+    "business_status": "OPERATIONAL",
+    "google_maps_url": "https://maps.google.com/?cid=18033946401649630043&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "reviews": [
+      {
+        "name": "places/ChIJpVfyLY602YgRW5vCULRyRfo/reviews/Ci9DQUlRQUNvZENodHljRjlvT25kS2RFeE1URkZQWVU5dE1VOUpTbUk1V2tFeWNYYxAB",
+        "relativePublishTimeDescription": "2 months ago",
+        "rating": 5,
+        "text": {
+          "text": "I stayed at Casa Boutique Hotel during a recent trip to Miami Beach and overall had a pleasant experience. The biggest thing I liked was the location. It’s just a short walk to the beach and close to a lot of restaurants and shops, so it was easy to get around without needing a car.\n\nThe hotel itself is small and simple, but the room was clean and comfortable. It had everything I needed for a short stay. The staff were friendly and helpful when I had a couple of questions about the area.\n\nIt’s not a big luxury resort, but that’s part of the charm. If you’re looking for a convenient place to stay in South Beach without spending too much time in the hotel itself, it worked well for me. I’d consider staying there again on another quick trip.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "I stayed at Casa Boutique Hotel during a recent trip to Miami Beach and overall had a pleasant experience. The biggest thing I liked was the location. It’s just a short walk to the beach and close to a lot of restaurants and shops, so it was easy to get around without needing a car.\n\nThe hotel itself is small and simple, but the room was clean and comfortable. It had everything I needed for a short stay. The staff were friendly and helpful when I had a couple of questions about the area.\n\nIt’s not a big luxury resort, but that’s part of the charm. If you’re looking for a convenient place to stay in South Beach without spending too much time in the hotel itself, it worked well for me. I’d consider staying there again on another quick trip.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Daryl Franco",
+          "uri": "https://www.google.com/maps/contrib/112476066146868257010/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjW6OQ9Syv0KE5NgnReLL8aT4nCxaPl1LC3y5BvhXyLKxMtvsvc=s128-c0x00000000-cc-rp-mo-ba2"
+        },
+        "publishTime": "2026-03-09T07:14:56.682898326Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25kS2RFeE1URkZQWVU5dE1VOUpTbUk1V2tFeWNYYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25kS2RFeE1URkZQWVU5dE1VOUpTbUk1V2tFeWNYYxAB!2m1!1s0x88d9b48e2df257a5:0xfa4572b450c29b5b"
+      },
+      {
+        "name": "places/ChIJpVfyLY602YgRW5vCULRyRfo/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tWd1RFeFdWeTFDTVRacFJuSklWakZzVlRaRGNWRRAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 1,
+        "text": {
+          "text": "Most of this hotel's appeal is the location.  In all honesty it should be a 1 or 2 star hotel NOT a 3 star.  Staff is a bit unaccommodating for the most part.  Air conditioners \"break\" if you adjust them at all.  Lucky for us we visited on the coldest day in Miami in a few years.  Floors are dirty and stained.  I would recommend this hotel for someone who is looking for more or less a motel experience.  The good news is this will work for anyone who is used to a motel stay.  Linens are clean and beds comfortable, but rooms are cramped and there are no normal accomodations like holding your bags for you at check out or other things you would expect.\n\nMaybe it's a good south beach price, but you get what you pay for.\n\nSomewhat functional but NOT frilly.\n\nWould not stay again.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Most of this hotel's appeal is the location.  In all honesty it should be a 1 or 2 star hotel NOT a 3 star.  Staff is a bit unaccommodating for the most part.  Air conditioners \"break\" if you adjust them at all.  Lucky for us we visited on the coldest day in Miami in a few years.  Floors are dirty and stained.  I would recommend this hotel for someone who is looking for more or less a motel experience.  The good news is this will work for anyone who is used to a motel stay.  Linens are clean and beds comfortable, but rooms are cramped and there are no normal accomodations like holding your bags for you at check out or other things you would expect.\n\nMaybe it's a good south beach price, but you get what you pay for.\n\nSomewhat functional but NOT frilly.\n\nWould not stay again.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Andy Hollis",
+          "uri": "https://www.google.com/maps/contrib/103809102379124997258/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLR6pMgf4l7TRmvHsA86zPPEfO4MaKik_wInB9lS0ulmETNRw=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-02-04T23:59:01.991445898Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2tWd1RFeFdWeTFDTVRacFJuSklWakZzVlRaRGNWRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tWd1RFeFdWeTFDTVRacFJuSklWakZzVlRaRGNWRRAB!2m1!1s0x88d9b48e2df257a5:0xfa4572b450c29b5b"
+      },
+      {
+        "name": "places/ChIJpVfyLY602YgRW5vCULRyRfo/reviews/Ci9DQUlRQUNvZENodHljRjlvT21VelF6aDZPVVpKTlRSZlJUaERZbUkyY1RaSVIzYxAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 4,
+        "text": {
+          "text": "I stayed for a few nights at Casa Boutique Hotel on Washington Avenue, and my overall experience was mixed but honest.\n\nFirst off, the location is really convenient — it’s only a short walk from the beach and close to lots of restaurants and places I wanted to check out, which made it easy to get around without needing a car. The hotel itself has a clean, modern vibe in a small-scale, boutique kind of way, and the staff I interacted with were friendly and helpful.\n\nMy room was comfortable enough, though it felt a bit on the small side and didn’t have a lot of extra features (no pool or gym on site, for example). The continental breakfast and the fact that it’s included with the resort fee was a nice convenience, even if it wasn’t anything fancy. One thing I noticed was that because it’s right in the heart of South Beach, street noise was noticeable at night — something to keep in mind if you’re a light sleeper.\n\nOverall, I’d say it’s a good budget-friendly choice if you want to be close to the beach and nightlife without spending too much, but it’s not a place you’d stay at if you’re looking for big amenities or a super quiet retreat.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "I stayed for a few nights at Casa Boutique Hotel on Washington Avenue, and my overall experience was mixed but honest.\n\nFirst off, the location is really convenient — it’s only a short walk from the beach and close to lots of restaurants and places I wanted to check out, which made it easy to get around without needing a car. The hotel itself has a clean, modern vibe in a small-scale, boutique kind of way, and the staff I interacted with were friendly and helpful.\n\nMy room was comfortable enough, though it felt a bit on the small side and didn’t have a lot of extra features (no pool or gym on site, for example). The continental breakfast and the fact that it’s included with the resort fee was a nice convenience, even if it wasn’t anything fancy. One thing I noticed was that because it’s right in the heart of South Beach, street noise was noticeable at night — something to keep in mind if you’re a light sleeper.\n\nOverall, I’d say it’s a good budget-friendly choice if you want to be close to the beach and nightlife without spending too much, but it’s not a place you’d stay at if you’re looking for big amenities or a super quiet retreat.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "danny acanet",
+          "uri": "https://www.google.com/maps/contrib/105336003695154145769/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocIUQcPZDAxLRtqBsLW03oX14gyI7itMyJbG5NfP_Mmqc8AtBA=s128-c0x00000000-cc-rp-mo-ba2"
+        },
+        "publishTime": "2026-02-25T06:36:14.016451564Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21VelF6aDZPVVpKTlRSZlJUaERZbUkyY1RaSVIzYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21VelF6aDZPVVpKTlRSZlJUaERZbUkyY1RaSVIzYxAB!2m1!1s0x88d9b48e2df257a5:0xfa4572b450c29b5b"
+      },
+      {
+        "name": "places/ChIJpVfyLY602YgRW5vCULRyRfo/reviews/Ci9DQUlRQUNvZENodHljRjlvT25sYU5WUXdkRVJGVVVNMmMxVnJZMVptVEdsd2VsRRAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 1,
+        "text": {
+          "text": "Very poor experience here.\n\nWe arrived expecting a straightforward check in after travelling over 10 hours from the UK with our baby. What followed was one of the most stressful hotel experiences we have had.\n\nThere were no staff on site when we arrived. Guests are directed to pay at a self service machine next to a restaurant where your room key is activated.\n\nWhen we reached our room, we realised there was no cot despite having requested one in advance as we were travelling with an infant.\n\nI went back downstairs and found a sign stating that there are no staff on site after 12pm and that guests must contact a WhatsApp number if assistance is required.\n\nAfter waiting for a reply, we were told via WhatsApp that nobody was available to help until the following day. There was no attempt to resolve the situation.\n\nAll communication was via WhatsApp and the language and tone of the messages were extremely poor. The responses were badly written, informal and did not read like communication from a professionally run hotel.\n\n“Sorry about that , contact you three party and request de refund”\n\nAt a time when we needed urgent help, it felt unreliable and deeply concerning.\n\nThere was no manager, no night staff and no one physically present who could assist. We were left messaging someone remotely who could not offer any practical solution.\n\nWith no safe sleeping arrangement for our baby, staying was not an option. Late in the evening, we had to find and book alternative accommodation.\n\nAt the time, we were told that a note would be sent to management to arrange a refund. We felt reassured that although chaotic, the situation would at least be handled fairly.\n\nAfter ignoring follow up messages and emails for a six days, the hotel finally came back (again via WhatsApp) and refused to refund us. Despite informing them within an hour of check in that we had been forced to leave, they now claim the room was technically available for the duration of the stay and that a cot is not guaranteed, despite advertising free cots available on request.\n\nThe combination of no on site staff, remote only messaging and unprofessional communication left us feeling extremely uncomfortable and unsupported.\n\nWe would strongly caution others before booking. Try the Plymouth hotel instead - they were great and it actually feels like a boutique hotel.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Very poor experience here.\n\nWe arrived expecting a straightforward check in after travelling over 10 hours from the UK with our baby. What followed was one of the most stressful hotel experiences we have had.\n\nThere were no staff on site when we arrived. Guests are directed to pay at a self service machine next to a restaurant where your room key is activated.\n\nWhen we reached our room, we realised there was no cot despite having requested one in advance as we were travelling with an infant.\n\nI went back downstairs and found a sign stating that there are no staff on site after 12pm and that guests must contact a WhatsApp number if assistance is required.\n\nAfter waiting for a reply, we were told via WhatsApp that nobody was available to help until the following day. There was no attempt to resolve the situation.\n\nAll communication was via WhatsApp and the language and tone of the messages were extremely poor. The responses were badly written, informal and did not read like communication from a professionally run hotel.\n\n“Sorry about that , contact you three party and request de refund”\n\nAt a time when we needed urgent help, it felt unreliable and deeply concerning.\n\nThere was no manager, no night staff and no one physically present who could assist. We were left messaging someone remotely who could not offer any practical solution.\n\nWith no safe sleeping arrangement for our baby, staying was not an option. Late in the evening, we had to find and book alternative accommodation.\n\nAt the time, we were told that a note would be sent to management to arrange a refund. We felt reassured that although chaotic, the situation would at least be handled fairly.\n\nAfter ignoring follow up messages and emails for a six days, the hotel finally came back (again via WhatsApp) and refused to refund us. Despite informing them within an hour of check in that we had been forced to leave, they now claim the room was technically available for the duration of the stay and that a cot is not guaranteed, despite advertising free cots available on request.\n\nThe combination of no on site staff, remote only messaging and unprofessional communication left us feeling extremely uncomfortable and unsupported.\n\nWe would strongly caution others before booking. Try the Plymouth hotel instead - they were great and it actually feels like a boutique hotel.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Vicky Law",
+          "uri": "https://www.google.com/maps/contrib/104230393530503796349/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXz4QvkjKkJxL4DUdU5MhKL9F-rHROnhT3JZAnB1qIJrKx_VM4=s128-c0x00000000-cc-rp-mo-ba2"
+        },
+        "publishTime": "2026-02-16T01:54:19.830972582Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25sYU5WUXdkRVJGVVVNMmMxVnJZMVptVEdsd2VsRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25sYU5WUXdkRVJGVVVNMmMxVnJZMVptVEdsd2VsRRAB!2m1!1s0x88d9b48e2df257a5:0xfa4572b450c29b5b"
+      },
+      {
+        "name": "places/ChIJpVfyLY602YgRW5vCULRyRfo/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xSTVgwWm9Rbko1WjBOQ2FHcFZOV1ppUVRWVlFYYxAB",
+        "relativePublishTimeDescription": "4 months ago",
+        "rating": 1,
+        "text": {
+          "text": "I have stayed here twice before, and while it wasn’t great, it was tolerable. After this most recent stay, however, I will never return. This was the worst hotel experience I have ever had.\n\nWe reserved a king room but were assigned room 311, which had two full beds instead. When I spoke to the front desk, I was told the only other available room had a moldy smell and that there were no other rooms to switch to.\n\nIn room 311, the air conditioning was “master controlled,” and we were unable to lower it below 74 degrees. We asked the front desk for help, and the employee truly did everything she could. She even showed us that her system would not allow the temperature to be set any lower. By morning, the room was 81 degrees and extremely humid. I honestly would have rather slept outside. I have never stayed at a hotel where you can’t control the temp yourself...it’s completely unacceptable.\n\nThe bed sheets didn’t fit properly, and every time you sat down, one corner would come loose. The carpets were also extremely dirty, so we wore shoes the entire time.\n\nI want to emphasize that the front desk employee was very helpful, apologetic, and did her best to resolve the issues. It’s clear this is not a staff problem, but a result of ownership failing to properly maintain and manage the property.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "I have stayed here twice before, and while it wasn’t great, it was tolerable. After this most recent stay, however, I will never return. This was the worst hotel experience I have ever had.\n\nWe reserved a king room but were assigned room 311, which had two full beds instead. When I spoke to the front desk, I was told the only other available room had a moldy smell and that there were no other rooms to switch to.\n\nIn room 311, the air conditioning was “master controlled,” and we were unable to lower it below 74 degrees. We asked the front desk for help, and the employee truly did everything she could. She even showed us that her system would not allow the temperature to be set any lower. By morning, the room was 81 degrees and extremely humid. I honestly would have rather slept outside. I have never stayed at a hotel where you can’t control the temp yourself...it’s completely unacceptable.\n\nThe bed sheets didn’t fit properly, and every time you sat down, one corner would come loose. The carpets were also extremely dirty, so we wore shoes the entire time.\n\nI want to emphasize that the front desk employee was very helpful, apologetic, and did her best to resolve the issues. It’s clear this is not a staff problem, but a result of ownership failing to properly maintain and manage the property.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Justin",
+          "uri": "https://www.google.com/maps/contrib/110550754876285137640/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLIRSfivFTyWVXjVQwTaDuq0CDefYIPjWEjK4QDmRmxXBGzgw=s128-c0x00000000-cc-rp-mo-ba2"
+        },
+        "publishTime": "2026-01-22T17:19:54.070680421Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xSTVgwWm9Rbko1WjBOQ2FHcFZOV1ppUVRWVlFYYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xSTVgwWm9Rbko1WjBOQ2FHcFZOV1ppUVRWVlFYYxAB!2m1!1s0x88d9b48e2df257a5:0xfa4572b450c29b5b"
+      }
+    ],
+    "signals": {
+      "review_decline": false,
+      "review_rating_delta": 0,
+      "review_volume_decline": false,
+      "complaint_increase": true,
+      "sentiment_decline": false,
+      "sentiment_trend": "Stable",
+      "review_activity_trend": "Increasing",
+      "positive_reviews_recent": 5,
+      "negative_reviews_recent": 4,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "renovation_needed": true,
+      "old_property": true,
+      "physical_condition_score": 2,
+      "franchise_loss": false,
+      "former_brand": "",
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "brand_status": "NONE",
+      "cmbs_watchlist": false,
+      "cmbs_special_servicing": false,
+      "cmbs_delinquent": false,
+      "long_term_owner": true,
+      "ownership_length_years": 11,
+      "distress_score": 13
+    },
+    "review_themes": {
+      "staff": 50.0,
+      "cleanliness": 27.8,
+      "maintenance": 16.7,
+      "noise": 5.6
+    },
+    "heuristic_scores": {
+      "distress_score": 13,
+      "distress_reasons": [
+        "Negative review signal: dirty",
+        "Negative review signal: smell",
+        "Negative review signal: mold",
+        "Negative review signal: worst",
+        "Negative review signal: refund",
+        "Negative review signal: noise",
+        "Negative review signal: stained",
+        "Operational distress signal: no staff",
+        "Complaint rate increase: 0.8",
+        "Renovation signals in reviews: 60.0%"
+      ],
+      "review_trend_score": 2,
+      "review_volume_recent": 5,
+      "review_volume_prior": 0,
+      "review_volume_change_pct": 100.0,
+      "avg_rating_recent": 2.4,
+      "avg_rating_prior": 0.0,
+      "review_rating_delta": 0,
+      "complaint_rate_recent": 0.8,
+      "complaint_rate_prior": 0.0,
+      "review_complaint_delta": 0.8,
+      "year_built": "",
+      "property_age": "",
+      "renovation_signal_rate": 0.6,
+      "renovation_needed": true,
+      "physical_condition_score": 2,
+      "positive_reviews_recent": 5,
+      "negative_reviews_recent": 4,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "sentiment_delta": -1,
+      "sentiment_trend": "Stable",
+      "review_activity_trend": "Increasing"
+    },
+    "llm_analysis": {
+      "distress_probability": 0.75,
+      "seller_fatigue_probability": 0.7,
+      "opportunity_score": 65,
+      "llm_star_rating": 3.5,
+      "top_distress_signals": "Negative review signals including dirty conditions, smell, mold, noise, stained areas, refund requests; operational distress due to lack of staff; increased complaint rate; high renovation need indicated by reviews",
+      "investment_thesis": "Casa Boutique Hotel shows significant operational and physical distress with poor cleanliness and maintenance issues, compounded by increased guest complaints and staff shortages. Long-term ownership suggests potential seller fatigue. The property requires substantial renovation and operational overhaul, presenting a strong opportunity for a turnaround or repositioning strategy in a desirable Miami Beach location.",
+      "acquisition_strategy": "Operational Turnaround",
+      "review_summary": "Guests frequently report cleanliness problems such as dirt, mold, unpleasant smells, and stained areas, alongside noise disturbances and refund requests. Operationally, the hotel suffers from understaffing issues impacting service quality. Maintenance and renovation needs are prominent, with many reviews highlighting aging facilities. Despite these issues, guest sentiment remains stable with increasing review activity, indicating ongoing engagement but persistent dissatisfaction.",
+      "recommended_action": "Operational Turnaround",
+      "confidence": "LOW",
+      "distress_summary": ""
+    },
+    "owner_data": {
+      "owner_name": "WALDORF HOTEL LLC",
+      "owner_company": "WALDORF HOTEL LLC",
+      "mailing_address": "2701 PONCE DE LEON BLVD STE 202, CORAL GABLES, FL 33134-6020",
+      "owner_phone": "",
+      "ownership_since": "2015-03-16",
+      "ownership_length_years": 11,
+      "attom_year_built": 1925,
+      "is_older_than_20_years": "Yes"
+    },
+    "cmbs_data": {
+      "cmbs_loan_status": "",
+      "cmbs_delinquency_flag": false,
+      "cmbs_watchlist_flag": false,
+      "cmbs_special_servicing_flag": false
+    },
+    "franchise_data": {
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "former_brand": "",
+      "brand_status": "NONE",
+      "franchise_confidence": "Low"
+    },
+    "source_location": "South Beach, Miami Beach, Florida",
+    "radius_km": 2.0,
+    "final_lead_score": 93.5,
+    "rank": 1,
+    "lead_reason": "Complaint increase; Aging property; Long-term ownership"
+  },
+  {
+    "hotel_name": "The Miami Beach",
+    "address": "1018 Meridian Ave, Miami Beach, FL 33139, USA",
+    "place_id": "ChIJ2dnEdvO02YgRCiWn5w-h8aA",
+    "latitude": null,
+    "longitude": null,
+    "rating": 4.2,
+    "user_rating_count": 1352,
+    "business_status": "OPERATIONAL",
+    "google_maps_url": "https://maps.google.com/?cid=11597227605138810122&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "reviews": [
+      {
+        "name": "places/ChIJ2dnEdvO02YgRCiWn5w-h8aA/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tocVMxbEhOMXBaZURsWFIwRjFMVVY2VTE5T2NsRRAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 2,
+        "text": {
+          "text": "Great, walkable location, but the overall experience fell short. Parking is off-site and my parking fob didn’t work on arrival, with no staff available after 4 PM to help—only text support.\n\nThere was a noticeable damp, mouldy smell in the hallway and room, and soundproofing is very poor (you can hear conversations and furniture moving in neighbouring units). Cleanliness was also disappointing: stained bedding and towels, and hairs in the shower even after the cleaner returned.\n\nThe manager initially reached out, but follow-up has been difficult and the promised resolutions haven’t been delivered.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Great, walkable location, but the overall experience fell short. Parking is off-site and my parking fob didn’t work on arrival, with no staff available after 4 PM to help—only text support.\n\nThere was a noticeable damp, mouldy smell in the hallway and room, and soundproofing is very poor (you can hear conversations and furniture moving in neighbouring units). Cleanliness was also disappointing: stained bedding and towels, and hairs in the shower even after the cleaner returned.\n\nThe manager initially reached out, but follow-up has been difficult and the promised resolutions haven’t been delivered.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Quynh Nguyen-Dang",
+          "uri": "https://www.google.com/maps/contrib/113696388245200234454/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLm-mbAkOhW6VrbQ7Ic_sgKJ69lZD0SGAWVhzNRGiw9ZPDZqdg=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-03-02T10:53:01.482624409Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2tocVMxbEhOMXBaZURsWFIwRjFMVVY2VTE5T2NsRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tocVMxbEhOMXBaZURsWFIwRjFMVVY2VTE5T2NsRRAB!2m1!1s0x88d9b4f376c4d9d9:0xa0f1a10fe7a7250a"
+      },
+      {
+        "name": "places/ChIJ2dnEdvO02YgRCiWn5w-h8aA/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tKSWRERktkRmRuYzFGb1NWVnBRa1o2WkZSTE0zYxAB",
+        "relativePublishTimeDescription": "6 months ago",
+        "rating": 5,
+        "text": {
+          "text": "Stayed for 2 nights, overall great experience. The location is very convenient, and walkable to the beach. There's a nice cafe in the lobby, and the space is quiet and comfortable. The room was clean and check-in was smooth. The reception closes after 5pm, but they provide directions for self check-in. Great customer service!",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Stayed for 2 nights, overall great experience. The location is very convenient, and walkable to the beach. There's a nice cafe in the lobby, and the space is quiet and comfortable. The room was clean and check-in was smooth. The reception closes after 5pm, but they provide directions for self check-in. Great customer service!",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Kevin Ge",
+          "uri": "https://www.google.com/maps/contrib/115526332877712783282/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWmiIovEbhrnhRk1mmzv2Q9HeXBhgjR4wNFOdfsWkMboJaDmIymOw=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2025-11-06T01:32:25.255941241Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2tKSWRERktkRmRuYzFGb1NWVnBRa1o2WkZSTE0zYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tKSWRERktkRmRuYzFGb1NWVnBRa1o2WkZSTE0zYxAB!2m1!1s0x88d9b4f376c4d9d9:0xa0f1a10fe7a7250a"
+      },
+      {
+        "name": "places/ChIJ2dnEdvO02YgRCiWn5w-h8aA/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tORFExOUtWVFZpY0hoSVNXOVhaMEpYUlZsMk1VRRAB",
+        "relativePublishTimeDescription": "4 months ago",
+        "rating": 1,
+        "text": {
+          "text": "Awful experience. Do not stay here. I drove 5 hours to this hotel and upon arrival I was told there was no parking. I called the hotel (who didn’t answer the phone so I had to leave a voicemail). Instead I was greeted 10 mins later with an uninformed agent through TEXT-Not even the courtesy of a phone call-  to let me know parking is limited and they were sold out. I asked if valet was available, also no. I was suggested to find a nearby public garage, the one suggested by the uninformed agent had a 5 hour maximum.\n\nLimited parking is NOT mentioned on their website (screenshot attached). the only thing they mention is valet so I figured at a MINIMUM I could pay for valet . I drove around for an hour and a half  just to find there’s no parking nearby and couldn’t even go to the hotel. Now I’m driving 5 hours back home at 6 PM. This was an awful experience.\n\nThe parking situation is not something a guest should be surprised about upon arrival. This is disgusting.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Awful experience. Do not stay here. I drove 5 hours to this hotel and upon arrival I was told there was no parking. I called the hotel (who didn’t answer the phone so I had to leave a voicemail). Instead I was greeted 10 mins later with an uninformed agent through TEXT-Not even the courtesy of a phone call-  to let me know parking is limited and they were sold out. I asked if valet was available, also no. I was suggested to find a nearby public garage, the one suggested by the uninformed agent had a 5 hour maximum.\n\nLimited parking is NOT mentioned on their website (screenshot attached). the only thing they mention is valet so I figured at a MINIMUM I could pay for valet . I drove around for an hour and a half  just to find there’s no parking nearby and couldn’t even go to the hotel. Now I’m driving 5 hours back home at 6 PM. This was an awful experience.\n\nThe parking situation is not something a guest should be surprised about upon arrival. This is disgusting.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Kayla Hood",
+          "uri": "https://www.google.com/maps/contrib/106345354656462604071/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjV1oL7rYbnkNZ_I0b_KjDj-LpZmYqyVMFLlEY5W8aieV6HH7I_H=s128-c0x00000000-cc-rp-mo-ba3"
+        },
+        "publishTime": "2026-01-17T23:32:21.728775809Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2tORFExOUtWVFZpY0hoSVNXOVhaMEpYUlZsMk1VRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tORFExOUtWVFZpY0hoSVNXOVhaMEpYUlZsMk1VRRAB!2m1!1s0x88d9b4f376c4d9d9:0xa0f1a10fe7a7250a"
+      },
+      {
+        "name": "places/ChIJ2dnEdvO02YgRCiWn5w-h8aA/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tWSVlrZFBNakF4UmtwVlQxOHhjWFJCVjBWUE9HYxAB",
+        "relativePublishTimeDescription": "7 months ago",
+        "rating": 1,
+        "text": {
+          "text": "The only reason I’m giving it 1 star is because of the lady at the front desk, Rochelle. She was as helpful as she can be. if you can’t afford anything else, stay here, but for peace of mind, avoid it. They have no staff after 4pm, it’s all virtual check in, which can be efficient, but they don’t do it well. We waited to long (after a long day of travel) to get a text back. The pics are misleading, the rooms are SMALL. it smells musky like a wet sock. On the 2nd night, our AC broke. it was a nightmare and they didn’t even give us a fan until we requested one. The maintenance did their best, but no one spoke English so we had to call our friend to translate. Having no staff onsite when you have issues often is nuts. They moved us to another room on our final night, which was nice. They also said they’d message us about compensating us for one night, but they still haven’t sent anything. If you want a comfortable place to stay, just book a chain. Not worth it",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "The only reason I’m giving it 1 star is because of the lady at the front desk, Rochelle. She was as helpful as she can be. if you can’t afford anything else, stay here, but for peace of mind, avoid it. They have no staff after 4pm, it’s all virtual check in, which can be efficient, but they don’t do it well. We waited to long (after a long day of travel) to get a text back. The pics are misleading, the rooms are SMALL. it smells musky like a wet sock. On the 2nd night, our AC broke. it was a nightmare and they didn’t even give us a fan until we requested one. The maintenance did their best, but no one spoke English so we had to call our friend to translate. Having no staff onsite when you have issues often is nuts. They moved us to another room on our final night, which was nice. They also said they’d message us about compensating us for one night, but they still haven’t sent anything. If you want a comfortable place to stay, just book a chain. Not worth it",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Rhea Mehta",
+          "uri": "https://www.google.com/maps/contrib/104316851282505403287/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXiU8LyJ4mCk6I77aBBjgdGaOkAMGqessFiBTS30QoHMfuYzARL=s128-c0x00000000-cc-rp-mo-ba2"
+        },
+        "publishTime": "2025-10-28T01:44:06.790467995Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2tWSVlrZFBNakF4UmtwVlQxOHhjWFJCVjBWUE9HYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tWSVlrZFBNakF4UmtwVlQxOHhjWFJCVjBWUE9HYxAB!2m1!1s0x88d9b4f376c4d9d9:0xa0f1a10fe7a7250a"
+      },
+      {
+        "name": "places/ChIJ2dnEdvO02YgRCiWn5w-h8aA/reviews/Ci9DQUlRQUNvZENodHljRjlvT21NMVpWa3hhV05YUjJ0c1VFUmlTbEZGVjJGd1NVRRAB",
+        "relativePublishTimeDescription": "7 months ago",
+        "rating": 1,
+        "text": {
+          "text": "Checked into the room at 7pm and found the bedding wet!  Had to text their virtual front desk to inform them as this property doesn’t have any onsite staff.  We were sent a code to a storage room where bedding was supposed to be - but nothing in there but towels.\nWe stripped the bed and now noticed that the bed was wet from the sheets and the room smelt musky.  Texted them again and requested a new room but were told they didn’t have any available.  It’s clear that the cleaning staff put wet sheets on the bed.  With nobody returning our calls and only communicating through text we decided to leave this hotel and go to a different one across the street.\nMistakes happen but it is how this hotel is handling the aftermath that should scare you away.  The employee named Niccolo was rude and intimidating and would only agree to refund our stay if we didn’t write a bad review.  I told him the refund should not be contingent on my review. They refused to refund our stay and hung up on me.  This is not the way to handle a situation. I would never recommend this hotel.\n\nAlso:\nDifficulty getting access codes on check in\nToilet paper stuffed in door peeophole\nNo glassware\nNo way to prevent the door from being opened from the outside\nNO staff whatsoever - pray nothing goes wrong!",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Checked into the room at 7pm and found the bedding wet!  Had to text their virtual front desk to inform them as this property doesn’t have any onsite staff.  We were sent a code to a storage room where bedding was supposed to be - but nothing in there but towels.\nWe stripped the bed and now noticed that the bed was wet from the sheets and the room smelt musky.  Texted them again and requested a new room but were told they didn’t have any available.  It’s clear that the cleaning staff put wet sheets on the bed.  With nobody returning our calls and only communicating through text we decided to leave this hotel and go to a different one across the street.\nMistakes happen but it is how this hotel is handling the aftermath that should scare you away.  The employee named Niccolo was rude and intimidating and would only agree to refund our stay if we didn’t write a bad review.  I told him the refund should not be contingent on my review. They refused to refund our stay and hung up on me.  This is not the way to handle a situation. I would never recommend this hotel.\n\nAlso:\nDifficulty getting access codes on check in\nToilet paper stuffed in door peeophole\nNo glassware\nNo way to prevent the door from being opened from the outside\nNO staff whatsoever - pray nothing goes wrong!",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Jason Novakowski",
+          "uri": "https://www.google.com/maps/contrib/107041808456850573839/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJThsjJdchuI0BfC7NFYyV9Fob874dEcBdbwfF--iE6iEJslQ=s128-c0x00000000-cc-rp-mo-ba2"
+        },
+        "publishTime": "2025-10-17T23:13:16.000253355Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21NMVpWa3hhV05YUjJ0c1VFUmlTbEZGVjJGd1NVRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21NMVpWa3hhV05YUjJ0c1VFUmlTbEZGVjJGd1NVRRAB!2m1!1s0x88d9b4f376c4d9d9:0xa0f1a10fe7a7250a"
+      }
+    ],
+    "signals": {
+      "review_decline": true,
+      "review_rating_delta": -0.83,
+      "review_volume_decline": true,
+      "complaint_increase": false,
+      "sentiment_decline": false,
+      "sentiment_trend": "Stable",
+      "review_activity_trend": "Declining",
+      "positive_reviews_recent": 1,
+      "negative_reviews_recent": 1,
+      "positive_reviews_prior": 3,
+      "negative_reviews_prior": 2,
+      "renovation_needed": true,
+      "old_property": true,
+      "physical_condition_score": 2,
+      "franchise_loss": false,
+      "former_brand": "",
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "brand_status": "NONE",
+      "cmbs_watchlist": false,
+      "cmbs_special_servicing": false,
+      "cmbs_delinquent": false,
+      "long_term_owner": true,
+      "ownership_length_years": 10,
+      "distress_score": 13
+    },
+    "review_themes": {
+      "cleanliness": 20.0,
+      "staff": 60.0,
+      "maintenance": 20.0
+    },
+    "heuristic_scores": {
+      "distress_score": 13,
+      "distress_reasons": [
+        "Negative review signal: smell",
+        "Negative review signal: rude",
+        "Negative review signal: refund",
+        "Negative review signal: stained",
+        "Negative review signal: disappointing",
+        "Operational distress signal: no staff",
+        "Review volume decline: -33.33%",
+        "Rating decline: -0.83",
+        "Renovation signals in reviews: 40.0%"
+      ],
+      "review_trend_score": 4,
+      "review_volume_recent": 2,
+      "review_volume_prior": 3,
+      "review_volume_change_pct": -33.33,
+      "avg_rating_recent": 1.5,
+      "avg_rating_prior": 2.33,
+      "review_rating_delta": -0.83,
+      "complaint_rate_recent": 0.5,
+      "complaint_rate_prior": 0.67,
+      "review_complaint_delta": -0.17,
+      "year_built": "",
+      "property_age": "",
+      "renovation_signal_rate": 0.4,
+      "renovation_needed": true,
+      "physical_condition_score": 2,
+      "positive_reviews_recent": 1,
+      "negative_reviews_recent": 1,
+      "positive_reviews_prior": 3,
+      "negative_reviews_prior": 2,
+      "sentiment_delta": 1,
+      "sentiment_trend": "Stable",
+      "review_activity_trend": "Declining"
+    },
+    "llm_analysis": {
+      "distress_probability": 0.85,
+      "seller_fatigue_probability": 0.75,
+      "opportunity_score": 65,
+      "llm_star_rating": 3.5,
+      "top_distress_signals": "Negative review signals including smell, rude staff, refund issues, stained facilities, disappointing experiences; operational distress due to lack of staff; significant review volume and rating decline; high renovation need indicated by 40% renovation signals in reviews; poor physical condition score of 2",
+      "investment_thesis": "The Miami Beach hotel shows strong signs of operational and physical distress with declining guest satisfaction and deteriorating property condition. Long-term ownership and absence of brand affiliation suggest potential seller fatigue and opportunity for repositioning through renovation and operational improvements. The stable sentiment trend despite review declines indicates a base of loyal guests that could be recaptured with targeted upgrades and service enhancements.",
+      "acquisition_strategy": "Operational Turnaround",
+      "review_summary": "Guests report recurring issues with unpleasant odors, rude staff interactions, and dissatisfaction with refunds. Operationally, there are concerns about understaffing impacting service quality. Cleanliness and maintenance problems such as stained rooms are frequently mentioned. Renovation needs are significant, with many guests noting aging facilities. Overall, guest sentiment is stable but review volume and ratings are declining, indicating emerging operational and physical challenges.",
+      "recommended_action": "Operational Turnaround",
+      "confidence": "LOW",
+      "distress_summary": ""
+    },
+    "owner_data": {
+      "owner_name": "BENEDETTO 2019 INC",
+      "owner_company": "",
+      "mailing_address": "2045 BISCAYNE BLVD, MIAMI, FL 33137-5025",
+      "owner_phone": "",
+      "ownership_since": "2016-03-18",
+      "ownership_length_years": 10,
+      "attom_year_built": 1925,
+      "is_older_than_20_years": "Yes"
+    },
+    "cmbs_data": {
+      "cmbs_loan_status": "",
+      "cmbs_delinquency_flag": false,
+      "cmbs_watchlist_flag": false,
+      "cmbs_special_servicing_flag": false
+    },
+    "franchise_data": {
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "former_brand": "",
+      "brand_status": "NONE",
+      "franchise_confidence": "Low"
+    },
+    "source_location": "South Beach, Miami Beach, Florida",
+    "radius_km": 2.0,
+    "final_lead_score": 93.5,
+    "rank": 2,
+    "lead_reason": "Declining reviews; Aging property; Long-term ownership"
+  },
+  {
+    "hotel_name": "Renzzi On The Beach",
+    "address": "942 Pennsylvania Ave, Miami Beach, FL 33139, USA",
+    "place_id": "ChIJz-NxWc212YgRPLlPUN5vSZQ",
+    "latitude": null,
+    "longitude": null,
+    "rating": 2.7,
+    "user_rating_count": 61,
+    "business_status": "OPERATIONAL",
+    "google_maps_url": "https://maps.google.com/?cid=10685194591534037308&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "reviews": [
+      {
+        "name": "places/ChIJz-NxWc212YgRPLlPUN5vSZQ/reviews/Ci9DQUlRQUNvZENodHljRjlvT2poT1RuSlBTRTUwUW1RdFZFOUNUMkZ2U2sxS2VYYxAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 2,
+        "text": {
+          "text": "WOULD NOT STAY!! This hotel is a literal Catfish! I have traveled a lot and this is the first time I have ever felt Catfished by a hotel!!!! The pictures are NOT representative of the hotel rooms! Our room had no comforters ( room service never picked up the phone to remedy this and there is not an office on site to actually talk to someone. My husband and I had to crank the heat all the way up and cuddle under the fitted sheet provided!! The showers and walls of the bathroom ceiling were moldy. There was a curtain in the shower that had mold as well. I have no idea why a window curtain would be in a shower ( why not just frost the glass from the window?) It is blocks away from the beach not what is advertised. We should have checked the google reviews for this place before booking which is riddled with 1 star reviews and a few obvious 5 star planter reviews. The owner’s of this hotel are happy to take your money but have no interest in their customers actual stay.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "WOULD NOT STAY!! This hotel is a literal Catfish! I have traveled a lot and this is the first time I have ever felt Catfished by a hotel!!!! The pictures are NOT representative of the hotel rooms! Our room had no comforters ( room service never picked up the phone to remedy this and there is not an office on site to actually talk to someone. My husband and I had to crank the heat all the way up and cuddle under the fitted sheet provided!! The showers and walls of the bathroom ceiling were moldy. There was a curtain in the shower that had mold as well. I have no idea why a window curtain would be in a shower ( why not just frost the glass from the window?) It is blocks away from the beach not what is advertised. We should have checked the google reviews for this place before booking which is riddled with 1 star reviews and a few obvious 5 star planter reviews. The owner’s of this hotel are happy to take your money but have no interest in their customers actual stay.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Geneva White",
+          "uri": "https://www.google.com/maps/contrib/116271944318120200772/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVJlA01_-gJWqLMm57CqVYa25qxaoalQQjWJa4NrqIABhYpMd7rRA=s128-c0x00000000-cc-rp-mo-ba2"
+        },
+        "publishTime": "2026-02-18T05:28:09.923514592Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2poT1RuSlBTRTUwUW1RdFZFOUNUMkZ2U2sxS2VYYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2poT1RuSlBTRTUwUW1RdFZFOUNUMkZ2U2sxS2VYYxAB!2m1!1s0x88d9b5cd5971e3cf:0x94496fde504fb93c"
+      },
+      {
+        "name": "places/ChIJz-NxWc212YgRPLlPUN5vSZQ/reviews/Ci9DQUlRQUNvZENodHljRjlvT2t4ak5HcFNWRzFqTlc5Sk5YTkNORUZ1ZVdwSFpYYxAB",
+        "relativePublishTimeDescription": "6 months ago",
+        "rating": 1,
+        "text": {
+          "text": "Came here for a work trip and booked this apt for a few days. As soon as I walked in the building, (front door had no handles) open for anyone to walk in. The lobby already had a bad odor. No elevators so walked up stairs and the entire hallway smelled strong marijuana!! I have my baby with me so we literally had to plug our noses and run into the unit. The pictures appeared very nice and clean but once entering the unit it is small and just felt unclean. They had the AC blasting before arrival so it was freezing and only had a sheet to sleep that nice. It was very late so I went to sleep and woke up feeling very congested! The pillows and sheets also very damped. I notice there was mold on the walls next to the bed and also throughout the entire shower. Had to wear slippers in the shower bc I was not going to be barefoot in that shower. I had work during the day so only there at night to sleep & while inhaling the mold throughout the entire night, my baby and I became very sick. sneezing, runny nose, coughing, itchy dry throat etc. All the symptoms of inhaling mold. Huge health hazard. This is not safe habitable living space. I reached out regarding this issue and they were unable to move me to a new place. I just left before my checkout date and booked a new clean place. I’m still waiting to resolve this issue with them at this moment. Aside from this, these guys were fighting in the hallway and bunch of cops came and arrested the guy. You can also hear the unit next door blasting their tv. The building felt sketchy.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Came here for a work trip and booked this apt for a few days. As soon as I walked in the building, (front door had no handles) open for anyone to walk in. The lobby already had a bad odor. No elevators so walked up stairs and the entire hallway smelled strong marijuana!! I have my baby with me so we literally had to plug our noses and run into the unit. The pictures appeared very nice and clean but once entering the unit it is small and just felt unclean. They had the AC blasting before arrival so it was freezing and only had a sheet to sleep that nice. It was very late so I went to sleep and woke up feeling very congested! The pillows and sheets also very damped. I notice there was mold on the walls next to the bed and also throughout the entire shower. Had to wear slippers in the shower bc I was not going to be barefoot in that shower. I had work during the day so only there at night to sleep & while inhaling the mold throughout the entire night, my baby and I became very sick. sneezing, runny nose, coughing, itchy dry throat etc. All the symptoms of inhaling mold. Huge health hazard. This is not safe habitable living space. I reached out regarding this issue and they were unable to move me to a new place. I just left before my checkout date and booked a new clean place. I’m still waiting to resolve this issue with them at this moment. Aside from this, these guys were fighting in the hallway and bunch of cops came and arrested the guy. You can also hear the unit next door blasting their tv. The building felt sketchy.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Steph Rose",
+          "uri": "https://www.google.com/maps/contrib/103966561968570576411/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXCwJCg2meab0sXySJzxsDUrBGz-NW4hnN2F1cAr1yK-K1fvTDn=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2025-11-11T08:39:37.536764940Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2t4ak5HcFNWRzFqTlc5Sk5YTkNORUZ1ZVdwSFpYYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2t4ak5HcFNWRzFqTlc5Sk5YTkNORUZ1ZVdwSFpYYxAB!2m1!1s0x88d9b5cd5971e3cf:0x94496fde504fb93c"
+      },
+      {
+        "name": "places/ChIJz-NxWc212YgRPLlPUN5vSZQ/reviews/Ci9DQUlRQUNvZENodHljRjlvT21kSldXNURUVUZoT0ZCWlZXUldNVjlOZERJeVZtYxAB",
+        "relativePublishTimeDescription": "6 months ago",
+        "rating": 1,
+        "text": {
+          "text": "DO NOT BOOK THIS PLACE!\nOur stay at this place was absolutely terrible. The room was dirty and clearly not maintained — there was mold in the shower and even on the curtains. Exposed wiring and unfinished light fixtures were hanging from the ceiling, and much of the furniture was broken. The whole place also smelled strongly of sewage, making it even more unpleasant. The towels we got where dirty as well. We were offered other rooms after we contacten the host, but they all had the same problems after they where showed by the cleaning staff. The cleaning staff were aware of the issues in all the rooms but said they couldn’t do anything about them, as it’s up to the owner to fix these problems. We immediately booked something else after the first night. We still haven’t received a refund despite multiple requests. We hope this will still be possible. I would strongly advise others to avoid this place.\n\nSee the pictures of the dirty towels and the mold at different places in the room.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "DO NOT BOOK THIS PLACE!\nOur stay at this place was absolutely terrible. The room was dirty and clearly not maintained — there was mold in the shower and even on the curtains. Exposed wiring and unfinished light fixtures were hanging from the ceiling, and much of the furniture was broken. The whole place also smelled strongly of sewage, making it even more unpleasant. The towels we got where dirty as well. We were offered other rooms after we contacten the host, but they all had the same problems after they where showed by the cleaning staff. The cleaning staff were aware of the issues in all the rooms but said they couldn’t do anything about them, as it’s up to the owner to fix these problems. We immediately booked something else after the first night. We still haven’t received a refund despite multiple requests. We hope this will still be possible. I would strongly advise others to avoid this place.\n\nSee the pictures of the dirty towels and the mold at different places in the room.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Wouter Van Der Meer",
+          "uri": "https://www.google.com/maps/contrib/101493707439575604725/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocL2qd9ItDx1LtQYCpiihNmFVFDUsTmrlGDVp0YYDm1iqmfmTA=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2025-11-11T03:31:12.712848584Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21kSldXNURUVUZoT0ZCWlZXUldNVjlOZERJeVZtYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21kSldXNURUVUZoT0ZCWlZXUldNVjlOZERJeVZtYxAB!2m1!1s0x88d9b5cd5971e3cf:0x94496fde504fb93c"
+      },
+      {
+        "name": "places/ChIJz-NxWc212YgRPLlPUN5vSZQ/reviews/Ci9DQUlRQUNvZENodHljRjlvT2kxNVVIWklVVVV0VFZOTlJuUndiMWhTWTB0U1FuYxAB",
+        "relativePublishTimeDescription": "6 months ago",
+        "rating": 1,
+        "text": {
+          "text": "I stayed at this hotel for four days and, honestly, I wouldn't come back. From the first day the stairs were completely dark. There was no light working and every time I had to go up or down, I had to turn on the phone's flashlight so I wouldn't fall. It is unacceptable for a hotel to allow something so dangerous.\n\nIn addition, the room included an induction cooker that turned out to be useless. I decided to use it on the last day and it was a disaster: it kept marking an error and it didn't heat anything at all. To top it off, the whole room had a strong smell of paint, which was quite uncomfortable.\nThe TV control didn't work either and the screen froze. The dishes in the kitchen were also dirty.\n\nOverall, the experience was disappointing. I expected basic conditions of security and functionality, but this place did not comply with any of that. I don't recommend it.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "I stayed at this hotel for four days and, honestly, I wouldn't come back. From the first day the stairs were completely dark. There was no light working and every time I had to go up or down, I had to turn on the phone's flashlight so I wouldn't fall. It is unacceptable for a hotel to allow something so dangerous.\n\nIn addition, the room included an induction cooker that turned out to be useless. I decided to use it on the last day and it was a disaster: it kept marking an error and it didn't heat anything at all. To top it off, the whole room had a strong smell of paint, which was quite uncomfortable.\nThe TV control didn't work either and the screen froze. The dishes in the kitchen were also dirty.\n\nOverall, the experience was disappointing. I expected basic conditions of security and functionality, but this place did not comply with any of that. I don't recommend it.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Chabely Gonzalez",
+          "uri": "https://www.google.com/maps/contrib/100388463119236677168/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocIV-do2myfYoHCcREcfVut7Sx1pJ-7Q2kw8ksBCqDZ80f--PQ=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2025-11-24T23:21:30.567024158Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2kxNVVIWklVVVV0VFZOTlJuUndiMWhTWTB0U1FuYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2kxNVVIWklVVVV0VFZOTlJuUndiMWhTWTB0U1FuYxAB!2m1!1s0x88d9b5cd5971e3cf:0x94496fde504fb93c"
+      },
+      {
+        "name": "places/ChIJz-NxWc212YgRPLlPUN5vSZQ/reviews/Ci9DQUlRQUNvZENodHljRjlvT2paUWVYQXhUamxJUVhOV2JtSlhTVWR2TFVwa2RFRRAB",
+        "relativePublishTimeDescription": "5 months ago",
+        "rating": 1,
+        "text": {
+          "text": "I had an incredibly disappointing stay at this hotel. Despite booking a room for three people, there were not enough towels, blankets, or pillows for everyone. The room and bathroom had visible mold, which is completely unacceptable and a serious health concern.\n\nWe requested the missing items, but were told they would only be delivered the next day, which made no sense since we were staying for just one night. The hotel advertisement clearly stated that there is a 24-hour front desk, but there was no staff available at all during our stay.\n\nExtremely poor service, misleading information, and unacceptable conditions. I would strongly advise others to avoid this hotel. Only good thing about this place it’s the location and luckily we just stayed for one night.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "I had an incredibly disappointing stay at this hotel. Despite booking a room for three people, there were not enough towels, blankets, or pillows for everyone. The room and bathroom had visible mold, which is completely unacceptable and a serious health concern.\n\nWe requested the missing items, but were told they would only be delivered the next day, which made no sense since we were staying for just one night. The hotel advertisement clearly stated that there is a 24-hour front desk, but there was no staff available at all during our stay.\n\nExtremely poor service, misleading information, and unacceptable conditions. I would strongly advise others to avoid this hotel. Only good thing about this place it’s the location and luckily we just stayed for one night.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Victoria Nascimento",
+          "uri": "https://www.google.com/maps/contrib/101699703589106708030/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKF6cU7Gl1wbWy1x2CtF36UnebvkqlkOiLlrKHxzXPMhncR=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-01-01T19:33:51.498075560Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2paUWVYQXhUamxJUVhOV2JtSlhTVWR2TFVwa2RFRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2paUWVYQXhUamxJUVhOV2JtSlhTVWR2TFVwa2RFRRAB!2m1!1s0x88d9b5cd5971e3cf:0x94496fde504fb93c"
+      }
+    ],
+    "signals": {
+      "review_decline": false,
+      "review_rating_delta": 0.5,
+      "review_volume_decline": true,
+      "complaint_increase": false,
+      "sentiment_decline": false,
+      "sentiment_trend": "Stable",
+      "review_activity_trend": "Declining",
+      "positive_reviews_recent": 0,
+      "negative_reviews_recent": 0,
+      "positive_reviews_prior": 3,
+      "negative_reviews_prior": 3,
+      "renovation_needed": true,
+      "old_property": true,
+      "physical_condition_score": 2,
+      "franchise_loss": false,
+      "former_brand": "",
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "brand_status": "NONE",
+      "cmbs_watchlist": false,
+      "cmbs_special_servicing": false,
+      "cmbs_delinquent": false,
+      "long_term_owner": false,
+      "ownership_length_years": "",
+      "distress_score": 16
+    },
+    "review_themes": {
+      "cleanliness": 43.5,
+      "staff": 21.7,
+      "maintenance": 26.1,
+      "safety": 8.7
+    },
+    "heuristic_scores": {
+      "distress_score": 16,
+      "distress_reasons": [
+        "Low rating: 2.7",
+        "Moderate-to-low rating with enough reviews: 61",
+        "Negative review signal: dirty",
+        "Negative review signal: smell",
+        "Negative review signal: mold",
+        "Negative review signal: broken",
+        "Negative review signal: refund",
+        "Negative review signal: not maintained",
+        "Negative review signal: disappointing",
+        "Operational distress signal: no staff"
+      ],
+      "review_trend_score": 2,
+      "review_volume_recent": 2,
+      "review_volume_prior": 3,
+      "review_volume_change_pct": -33.33,
+      "avg_rating_recent": 1.5,
+      "avg_rating_prior": 1.0,
+      "review_rating_delta": 0.5,
+      "complaint_rate_recent": 1.0,
+      "complaint_rate_prior": 1.0,
+      "review_complaint_delta": 0.0,
+      "year_built": "",
+      "property_age": "",
+      "renovation_signal_rate": 0.8,
+      "renovation_needed": true,
+      "physical_condition_score": 2,
+      "positive_reviews_recent": 0,
+      "negative_reviews_recent": 0,
+      "positive_reviews_prior": 3,
+      "negative_reviews_prior": 3,
+      "sentiment_delta": 0,
+      "sentiment_trend": "Stable",
+      "review_activity_trend": "Declining"
+    },
+    "llm_analysis": {
+      "distress_probability": 0.85,
+      "seller_fatigue_probability": 0.65,
+      "opportunity_score": 55,
+      "llm_star_rating": 2.7,
+      "top_distress_signals": "Low rating of 2.7 with 61 reviews, declining review volume, multiple negative review themes including cleanliness issues (dirty, mold, smell), maintenance problems (broken, not maintained), operational issues (no staff), and high renovation need with poor physical condition score of 2",
+      "investment_thesis": "Renzzi On The Beach exhibits clear signs of operational and physical distress, reflected in poor guest ratings and declining review activity. The property requires significant renovation and operational improvements. While the distress level is moderate, the opportunity lies in repositioning through renovation and operational turnaround to restore guest confidence and improve market competitiveness.",
+      "acquisition_strategy": "Operational Turnaround",
+      "review_summary": "Guests consistently report cleanliness and maintenance issues, including dirty rooms, unpleasant odors, mold presence, and broken facilities. Operational concerns such as lack of staff availability further impact guest experience. The property shows clear signs of aging and deferred maintenance, with renovation needs evident. Overall guest sentiment remains stable but review volume is declining, indicating waning engagement and potential operational fatigue.",
+      "recommended_action": "Operational Turnaround",
+      "confidence": "LOW",
+      "distress_summary": ""
+    },
+    "owner_data": {
+      "owner_name": "942 PENNSYLVANIA OWNER LLC",
+      "owner_company": "942 PENNSYLVANIA OWNER LLC",
+      "mailing_address": "1400 BROADWAY, NEW YORK, NY 10018-5300",
+      "owner_phone": "",
+      "ownership_since": null,
+      "ownership_length_years": "",
+      "attom_year_built": 1925,
+      "is_older_than_20_years": "Yes"
+    },
+    "cmbs_data": {
+      "cmbs_loan_status": "",
+      "cmbs_delinquency_flag": false,
+      "cmbs_watchlist_flag": false,
+      "cmbs_special_servicing_flag": false
+    },
+    "franchise_data": {
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "former_brand": "",
+      "brand_status": "NONE",
+      "franchise_confidence": "Low"
+    },
+    "source_location": "South Beach, Miami Beach, Florida",
+    "radius_km": 2.0,
+    "final_lead_score": 79.5,
+    "rank": 3,
+    "lead_reason": "Aging property"
+  },
+  {
+    "hotel_name": "Kenmore Village Hotel",
+    "address": "1050 Washington Ave, Miami Beach, FL 33139, USA",
+    "place_id": "ChIJO1VF3I202YgRdf78bmI-7EU",
+    "latitude": null,
+    "longitude": null,
+    "rating": 3.7,
+    "user_rating_count": 733,
+    "business_status": "OPERATIONAL",
+    "google_maps_url": "https://maps.google.com/?cid=5038470675610533493&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "reviews": [
+      {
+        "name": "places/ChIJO1VF3I202YgRdf78bmI-7EU/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pCS1p5MVJjbEJVUkRScFVFNXRRVVpqYzJOc1ZFRRAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 3,
+        "text": {
+          "text": "We stayed at the building, called Davis for at least three nights. As soon as we walked into our building, the elevator was out of order, when we stepped into our room, I noticed there were chocolate smudges in an area of the floor. I thought no biggie the following morning. I woke up to realize that there was also chocolate smudged on my sheets, I raise this concern to the front lobby and they put in a request to switch my sheets, when I came back, they were switched. Then our first night here the Wi-Fi was out when I brought it up to the front lobby. They were very rude and told us they were working on it. It was fixed the next day.\nIf you’re planning to eat out and want to bring your leftovers with you, I would advise you not to, the fridge only stays cold for two hours, and there are no microwaves anywhere. Our bathroom was very small. The toilet was nearly touching the wall and there is no ventilation in the bathroom.\nI will give credit to the outside area. It is very nice and there are lots of seatings. The pool though is very small, but that is not a big deal as there is a beach two blocks away.\nYou definitely get what you pay for and nothing more when booking this hotel.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "We stayed at the building, called Davis for at least three nights. As soon as we walked into our building, the elevator was out of order, when we stepped into our room, I noticed there were chocolate smudges in an area of the floor. I thought no biggie the following morning. I woke up to realize that there was also chocolate smudged on my sheets, I raise this concern to the front lobby and they put in a request to switch my sheets, when I came back, they were switched. Then our first night here the Wi-Fi was out when I brought it up to the front lobby. They were very rude and told us they were working on it. It was fixed the next day.\nIf you’re planning to eat out and want to bring your leftovers with you, I would advise you not to, the fridge only stays cold for two hours, and there are no microwaves anywhere. Our bathroom was very small. The toilet was nearly touching the wall and there is no ventilation in the bathroom.\nI will give credit to the outside area. It is very nice and there are lots of seatings. The pool though is very small, but that is not a big deal as there is a beach two blocks away.\nYou definitely get what you pay for and nothing more when booking this hotel.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Nancy Hernandez",
+          "uri": "https://www.google.com/maps/contrib/109330450967614704940/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocK1rCNYA4PxDUp_oBkWdH3VMEWJQ8_Yh5bnmjNSlWqXwb-7BQ=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-03-03T22:26:32.426256127Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pCS1p5MVJjbEJVUkRScFVFNXRRVVpqYzJOc1ZFRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pCS1p5MVJjbEJVUkRScFVFNXRRVVpqYzJOc1ZFRRAB!2m1!1s0x88d9b48ddc45553b:0x45ec3e626efcfe75"
+      },
+      {
+        "name": "places/ChIJO1VF3I202YgRdf78bmI-7EU/reviews/Ci9DQUlRQUNvZENodHljRjlvT2w4MGVXNW9NMTh3WW5JeFQxWm5abGxWUkVaaGFVRRAB",
+        "relativePublishTimeDescription": "2 months ago",
+        "rating": 2,
+        "text": {
+          "text": "I’m not quite sure how I feel about this hotel. When we first arrived, I was impressed by the exterior and the pool area, it looked really nice and gave a great first impression. However, once we received our room, I was very disappointed.\n\nOne of the main reasons we chose this hotel was because the listing clearly stated that the room had two washrooms. When we arrived, the room only had one bathroom for our double queen booking plus sofa pull out bed. When we raised this issue with the staff, we were told there was nothing they could do, which was extremely frustrating since this incorrect information directly influenced our decision to book the property.\n\nAdditionally, the cleanliness of the room was unacceptable. The room appeared dirty and poorly maintained, which made our stay very uncomfortable. The sofa bed was especially concerning, it had visible stains and looked so unhygienic that we didn’t feel comfortable using it at all. Because of this, our group of six had to squeeze three people onto each bed.\n\nFor a property listed on Expedia, we expected a much higher standard of cleanliness and accuracy in the listing. Overall, the experience felt very misleading and disappointing.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "I’m not quite sure how I feel about this hotel. When we first arrived, I was impressed by the exterior and the pool area, it looked really nice and gave a great first impression. However, once we received our room, I was very disappointed.\n\nOne of the main reasons we chose this hotel was because the listing clearly stated that the room had two washrooms. When we arrived, the room only had one bathroom for our double queen booking plus sofa pull out bed. When we raised this issue with the staff, we were told there was nothing they could do, which was extremely frustrating since this incorrect information directly influenced our decision to book the property.\n\nAdditionally, the cleanliness of the room was unacceptable. The room appeared dirty and poorly maintained, which made our stay very uncomfortable. The sofa bed was especially concerning, it had visible stains and looked so unhygienic that we didn’t feel comfortable using it at all. Because of this, our group of six had to squeeze three people onto each bed.\n\nFor a property listed on Expedia, we expected a much higher standard of cleanliness and accuracy in the listing. Overall, the experience felt very misleading and disappointing.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "leesa tran",
+          "uri": "https://www.google.com/maps/contrib/110113844333621118253/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUWsWaHyhzcw7kKPh9V3HkvTK5TTa81TdmCDp9IylYllx4puXIy=s128-c0x00000000-cc-rp-mo-ba6"
+        },
+        "publishTime": "2026-03-07T02:34:36.571929375Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2w4MGVXNW9NMTh3WW5JeFQxWm5abGxWUkVaaGFVRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2w4MGVXNW9NMTh3WW5JeFQxWm5abGxWUkVaaGFVRRAB!2m1!1s0x88d9b48ddc45553b:0x45ec3e626efcfe75"
+      },
+      {
+        "name": "places/ChIJO1VF3I202YgRdf78bmI-7EU/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tOaFExZEJUM28wYmtsd2VIRk1jMUpKVTFoVGFHYxAB",
+        "relativePublishTimeDescription": "2 months ago",
+        "rating": 1,
+        "text": {
+          "text": "This hotel at first glance seems fine, but LISTEN TO THE BAD REVIEWS!!!! The elevators are all broken, and once I arrived in my room I was shocked. My room smelled like mildew and was so hot. I had an old food wrapper next to my bed on the table. A hole in the wall. Dust on all areas seeming like it had not been cleaned. I travel a lot so I pulled my black light out and found TONS of nasty stains on the bed and pillows that are not noticeable to just the eye. I found hair in my bed as well. I left immediately do not stay!",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "This hotel at first glance seems fine, but LISTEN TO THE BAD REVIEWS!!!! The elevators are all broken, and once I arrived in my room I was shocked. My room smelled like mildew and was so hot. I had an old food wrapper next to my bed on the table. A hole in the wall. Dust on all areas seeming like it had not been cleaned. I travel a lot so I pulled my black light out and found TONS of nasty stains on the bed and pillows that are not noticeable to just the eye. I found hair in my bed as well. I left immediately do not stay!",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Caitlin Ather",
+          "uri": "https://www.google.com/maps/contrib/112618725561333130828/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJVR24IU21nCymCuKmVXwuGG2v3QIXu9ySm53rteGgF7WOuIg=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-03-07T13:40:28.714957912Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2tOaFExZEJUM28wYmtsd2VIRk1jMUpKVTFoVGFHYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tOaFExZEJUM28wYmtsd2VIRk1jMUpKVTFoVGFHYxAB!2m1!1s0x88d9b48ddc45553b:0x45ec3e626efcfe75"
+      },
+      {
+        "name": "places/ChIJO1VF3I202YgRdf78bmI-7EU/reviews/Ci9DQUlRQUNvZENodHljRjlvT2toelYxOWFlRGRYWlhkUlFURlViV1U0YVV4YUxXYxAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 1,
+        "text": {
+          "text": "I stayed at the hotel for a week with my fiancé. Until checkout, we were genuinely happy with our stay, so much so that I even encouraged a friend to book a room there as well. Unfortunately, the way the hotel handled a simple lost item completely changed my impression.\n\nAfter checking out on Saturday morning, we left our luggage at the hotel as our flight was later that evening. Around two hours after checkout, I realised I had left a shirt hanging on the bathroom door hook. My fiancé immediately called the hotel, but the call was disconnected…tried to call minimum 5 times after that - no answer.\n\nWhen we returned to collect our luggage, I informed reception about the item. The staff member immediately stated that nothing had been found - without checking. Only after I insisted did she go to speak with housekeeping. She then returned and repeated that nothing had been found.\n\nI am absolutely certain where I left the shirt. While it had little monetary value, it was a sentimental souvenir from travels. What is most disappointing is not the loss itself, but the dismissive and unprofessional way the situation was handled. There was no genuine attempt to assist, no empathy, and no accountability.\n\nIt is frustrating to leave what was otherwise a pleasant stay with the feeling that concerns are dismissed rather than properly addressed. Unfortunately, this experience has significantly affected my overall impression of the hotel.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "I stayed at the hotel for a week with my fiancé. Until checkout, we were genuinely happy with our stay, so much so that I even encouraged a friend to book a room there as well. Unfortunately, the way the hotel handled a simple lost item completely changed my impression.\n\nAfter checking out on Saturday morning, we left our luggage at the hotel as our flight was later that evening. Around two hours after checkout, I realised I had left a shirt hanging on the bathroom door hook. My fiancé immediately called the hotel, but the call was disconnected…tried to call minimum 5 times after that - no answer.\n\nWhen we returned to collect our luggage, I informed reception about the item. The staff member immediately stated that nothing had been found - without checking. Only after I insisted did she go to speak with housekeeping. She then returned and repeated that nothing had been found.\n\nI am absolutely certain where I left the shirt. While it had little monetary value, it was a sentimental souvenir from travels. What is most disappointing is not the loss itself, but the dismissive and unprofessional way the situation was handled. There was no genuine attempt to assist, no empathy, and no accountability.\n\nIt is frustrating to leave what was otherwise a pleasant stay with the feeling that concerns are dismissed rather than properly addressed. Unfortunately, this experience has significantly affected my overall impression of the hotel.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Mina Sinsk",
+          "uri": "https://www.google.com/maps/contrib/115239902850003359921/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUS2gsw6cNTTkMJFp922AYPuXevm-L7oc98mjnjKkKBJZH6Ic8=s128-c0x00000000-cc-rp-mo-ba2"
+        },
+        "publishTime": "2026-02-18T18:50:11.582731682Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2toelYxOWFlRGRYWlhkUlFURlViV1U0YVV4YUxXYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2toelYxOWFlRGRYWlhkUlFURlViV1U0YVV4YUxXYxAB!2m1!1s0x88d9b48ddc45553b:0x45ec3e626efcfe75"
+      },
+      {
+        "name": "places/ChIJO1VF3I202YgRdf78bmI-7EU/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pkeWVHNXZSMUIxTUZNeWVrdEtVa1U0ZEdsemVXYxAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 5,
+        "text": {
+          "text": "I had an amazing stay! From the moment I arrived, everything was smooth and welcoming. The property was clean, comfortable, and well maintained, which made my experience even better.\nI especially want to recognize Erica at the front desk. She provided outstanding customer service; professional, friendly, and incredibly helpful. She went above and beyond to make sure all my questions were answered and that I felt taken care of throughout my stay. Her positive attitude truly made a difference.\nThank you for such a wonderful experience. I will definitely be returning!",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "I had an amazing stay! From the moment I arrived, everything was smooth and welcoming. The property was clean, comfortable, and well maintained, which made my experience even better.\nI especially want to recognize Erica at the front desk. She provided outstanding customer service; professional, friendly, and incredibly helpful. She went above and beyond to make sure all my questions were answered and that I felt taken care of throughout my stay. Her positive attitude truly made a difference.\nThank you for such a wonderful experience. I will definitely be returning!",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Vanessa Landazury",
+          "uri": "https://www.google.com/maps/contrib/113066843024771925003/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVt6HcVVwVG0HzCFVGnfB9GtJGr60a4S1QuwfHpfCNu5qOBEJmK=s128-c0x00000000-cc-rp-mo-ba2"
+        },
+        "publishTime": "2026-02-12T15:37:05.021718264Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pkeWVHNXZSMUIxTUZNeWVrdEtVa1U0ZEdsemVXYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pkeWVHNXZSMUIxTUZNeWVrdEtVa1U0ZEdsemVXYxAB!2m1!1s0x88d9b48ddc45553b:0x45ec3e626efcfe75"
+      }
+    ],
+    "signals": {
+      "review_decline": false,
+      "review_rating_delta": 0,
+      "review_volume_decline": false,
+      "complaint_increase": true,
+      "sentiment_decline": false,
+      "sentiment_trend": "Stable",
+      "review_activity_trend": "Increasing",
+      "positive_reviews_recent": 4,
+      "negative_reviews_recent": 3,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "renovation_needed": true,
+      "old_property": true,
+      "physical_condition_score": 2,
+      "franchise_loss": false,
+      "former_brand": "",
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "brand_status": "NONE",
+      "cmbs_watchlist": false,
+      "cmbs_special_servicing": false,
+      "cmbs_delinquent": false,
+      "long_term_owner": false,
+      "ownership_length_years": 5,
+      "distress_score": 11
+    },
+    "review_themes": {
+      "staff": 41.7,
+      "maintenance": 33.3,
+      "cleanliness": 25.0
+    },
+    "heuristic_scores": {
+      "distress_score": 11,
+      "distress_reasons": [
+        "Moderate-to-low rating with enough reviews: 733",
+        "Negative review signal: dirty",
+        "Negative review signal: smell",
+        "Negative review signal: broken",
+        "Negative review signal: rude",
+        "Negative review signal: unhygienic",
+        "Negative review signal: disappointing",
+        "Complaint rate increase: 0.8",
+        "Renovation signals in reviews: 80.0%"
+      ],
+      "review_trend_score": 2,
+      "review_volume_recent": 5,
+      "review_volume_prior": 0,
+      "review_volume_change_pct": 100.0,
+      "avg_rating_recent": 2.4,
+      "avg_rating_prior": 0.0,
+      "review_rating_delta": 0,
+      "complaint_rate_recent": 0.8,
+      "complaint_rate_prior": 0.0,
+      "review_complaint_delta": 0.8,
+      "year_built": "",
+      "property_age": "",
+      "renovation_signal_rate": 0.8,
+      "renovation_needed": true,
+      "physical_condition_score": 2,
+      "positive_reviews_recent": 4,
+      "negative_reviews_recent": 3,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "sentiment_delta": -1,
+      "sentiment_trend": "Stable",
+      "review_activity_trend": "Increasing"
+    },
+    "llm_analysis": {
+      "distress_probability": 0.75,
+      "seller_fatigue_probability": 0.3,
+      "opportunity_score": 55,
+      "acquisition_attractiveness_star_rating": 2.7,
+      "top_distress_signals": "Moderate-to-low rating with 733 reviews, increased complaints related to cleanliness and maintenance, high renovation need, poor physical condition score, increasing negative review signals such as dirty, smell, broken facilities, rude service, and unhygienic conditions.",
+      "investment_thesis": "Kenmore Village Hotel presents a moderate distress opportunity driven by aging physical condition and increasing guest complaints primarily about cleanliness and maintenance. The property requires significant renovation and operational improvements but benefits from stable review sentiment and increasing review activity, indicating potential for repositioning with targeted investment and operational turnaround.",
+      "recommended_acquisition_strategy": "Operational Turnaround",
+      "review_summary": "Guests frequently report issues with cleanliness, including dirty rooms and unpleasant odors, alongside maintenance problems such as broken fixtures. Service quality concerns, including rude staff, have also been noted. Despite these challenges, guest sentiment remains stable with increasing review activity, highlighting the need for renovation and operational improvements to enhance overall guest experience.",
+      "llm_star_rating": 2.7,
+      "recommended_action": "Operational Turnaround",
+      "confidence": "LOW",
+      "distress_summary": ""
+    },
+    "owner_data": {
+      "owner_name": "WPH PROPERTIES LLC",
+      "owner_company": "WPH PROPERTIES LLC",
+      "mailing_address": "8701 WILSHIRE BLVD, BEVERLY HILLS, CA 90211-2701",
+      "owner_phone": "",
+      "ownership_since": "2021-02-19",
+      "ownership_length_years": 5,
+      "attom_year_built": 1936,
+      "is_older_than_20_years": "Yes"
+    },
+    "cmbs_data": {
+      "cmbs_loan_status": "",
+      "cmbs_delinquency_flag": false,
+      "cmbs_watchlist_flag": false,
+      "cmbs_special_servicing_flag": false
+    },
+    "franchise_data": {
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "former_brand": "",
+      "brand_status": "NONE",
+      "franchise_confidence": "Low"
+    },
+    "source_location": "South Beach, Miami Beach, Florida",
+    "radius_km": 2.0,
+    "final_lead_score": 74.5,
+    "rank": 4,
+    "lead_reason": "Complaint increase; Aging property"
+  },
+  {
+    "hotel_name": "Viscay Hotel",
+    "address": "960 Collins Ave, Miami Beach, FL 33139, USA",
+    "place_id": "ChIJBWpDio202YgRczfceIU1G2U",
+    "latitude": null,
+    "longitude": null,
+    "rating": 3.9,
+    "user_rating_count": 185,
+    "business_status": "OPERATIONAL",
+    "google_maps_url": "https://maps.google.com/?cid=7285475669576529779&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "reviews": [
+      {
+        "name": "places/ChIJBWpDio202YgRczfceIU1G2U/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xGNE5WbDZYMUZuVDBKYWJXSnJWV1Y2TlVRNFEwRRAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 4,
+        "text": {
+          "text": "3.5/5 stars. The best thing about the hotel is its location. 2 minutes from the beach, many cafes and restaurants, grocery stores, clubs, etc. With that, it was quite noisy at night - you can clearly hear all of the street traffic. Not sure about other rooms, but ours had a window that was taped shut so we couldn’t open it. Probably wouldn’t have wanted to anyway since the view was an alleyway. The room itself is outdated and the bathroom could use an upgrade, but overall it was pretty comfortable and had what we needed. The second best thing is the reception staff and service. They are so kind, attentive, and helpful if you have any questions or requests. I would stay here again, but with ear plugs!",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "3.5/5 stars. The best thing about the hotel is its location. 2 minutes from the beach, many cafes and restaurants, grocery stores, clubs, etc. With that, it was quite noisy at night - you can clearly hear all of the street traffic. Not sure about other rooms, but ours had a window that was taped shut so we couldn’t open it. Probably wouldn’t have wanted to anyway since the view was an alleyway. The room itself is outdated and the bathroom could use an upgrade, but overall it was pretty comfortable and had what we needed. The second best thing is the reception staff and service. They are so kind, attentive, and helpful if you have any questions or requests. I would stay here again, but with ear plugs!",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Olivia",
+          "uri": "https://www.google.com/maps/contrib/116476772464906574446/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVIIyWbhziKkk5EWc9c9fjtw2pQSousSr0-P677TRMZetW-t0k=s128-c0x00000000-cc-rp-mo-ba3"
+        },
+        "publishTime": "2026-03-02T13:36:25.893966797Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xGNE5WbDZYMUZuVDBKYWJXSnJWV1Y2TlVRNFEwRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xGNE5WbDZYMUZuVDBKYWJXSnJWV1Y2TlVRNFEwRRAB!2m1!1s0x88d9b48d8a436a05:0x651b358578dc3773"
+      },
+      {
+        "name": "places/ChIJBWpDio202YgRczfceIU1G2U/reviews/Ci9DQUlRQUNvZENodHljRjlvT25SSFdUZ3lWV3RTYjNWZlZEWTFjVVE1V0VOc2IyYxAB",
+        "relativePublishTimeDescription": "4 months ago",
+        "rating": 5,
+        "text": {
+          "text": "I have to say it's a wonderful place. The friendly receptionist treated us very well; we were very tired when we arrived to check in, and he helped us. The service is wonderful. He'll remember us as the family Chilena . Thank you very much.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "I have to say it's a wonderful place. The friendly receptionist treated us very well; we were very tired when we arrived to check in, and he helped us. The service is wonderful. He'll remember us as the family Chilena . Thank you very much.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Oso's Tattoo",
+          "uri": "https://www.google.com/maps/contrib/114875421669089996720/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXz0SK7qaLzAhRUGQ9lyXanDwxYVuanpav42JlrM2U0Wvy-B_g=s128-c0x00000000-cc-rp-mo-ba3"
+        },
+        "publishTime": "2026-01-29T21:09:06.005500576Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25SSFdUZ3lWV3RTYjNWZlZEWTFjVVE1V0VOc2IyYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25SSFdUZ3lWV3RTYjNWZlZEWTFjVVE1V0VOc2IyYxAB!2m1!1s0x88d9b48d8a436a05:0x651b358578dc3773"
+      },
+      {
+        "name": "places/ChIJBWpDio202YgRczfceIU1G2U/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pFeFFVTjJNSGt5V0dSNFlWcExlV0l3VEVaaVRsRRAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 1,
+        "text": {
+          "text": "DONT EVER BOOK HERE - I just called this hotel to inquire because I'm trying to set something special up for my son's birthday legitimate I picked up the phone I asked him questions about the reviews I saw online as any traveler will do before going to a location never been to. After I ask him a question he immediately said\" who are you, I don't know who you are, you sound like a scam a setup, don't call her ever again\" I am appalled by her rude he was I literally have been calling all hotels because I want to plan something special for my child this is the first hotel who told me my questions were a scam I would never stay here or consider staying here and I don't advise anyone else to stay here I have never been treated so rude that is disgusting. And just so everyone's aware I read reviews before I book anything that's anyone should and I only asked him two questions 1. Reviews online indicate that the air conditioners don't always work can you please speak to that? 2. Reviews online indicated there are mixed reviews on our friendly the front desk staff is I just want to make sure we have a great trip can you please speak to that?",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "DONT EVER BOOK HERE - I just called this hotel to inquire because I'm trying to set something special up for my son's birthday legitimate I picked up the phone I asked him questions about the reviews I saw online as any traveler will do before going to a location never been to. After I ask him a question he immediately said\" who are you, I don't know who you are, you sound like a scam a setup, don't call her ever again\" I am appalled by her rude he was I literally have been calling all hotels because I want to plan something special for my child this is the first hotel who told me my questions were a scam I would never stay here or consider staying here and I don't advise anyone else to stay here I have never been treated so rude that is disgusting. And just so everyone's aware I read reviews before I book anything that's anyone should and I only asked him two questions 1. Reviews online indicate that the air conditioners don't always work can you please speak to that? 2. Reviews online indicated there are mixed reviews on our friendly the front desk staff is I just want to make sure we have a great trip can you please speak to that?",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Iam Mehi",
+          "uri": "https://www.google.com/maps/contrib/104365461655742395308/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWTYSrMjYQ33xnjOd-9u_MiUExQSdkiThcCjBBEwCKZE7NUzy0TRg=s128-c0x00000000-cc-rp-mo-ba4"
+        },
+        "publishTime": "2026-02-05T15:54:29.700426106Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pFeFFVTjJNSGt5V0dSNFlWcExlV0l3VEVaaVRsRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pFeFFVTjJNSGt5V0dSNFlWcExlV0l3VEVaaVRsRRAB!2m1!1s0x88d9b48d8a436a05:0x651b358578dc3773"
+      },
+      {
+        "name": "places/ChIJBWpDio202YgRczfceIU1G2U/reviews/ChdDSUhNMG9nS0VJQ0FnTUNveThiSzJ3RRAB",
+        "relativePublishTimeDescription": "a year ago",
+        "rating": 5,
+        "text": {
+          "text": "Excellent Stay in the Heart of South Beach\n\nI had a wonderful experience at this hotel! The cleanliness was truly outstanding — everything was spotless and well-maintained. The hosts were extremely kind, welcoming, and always ready to help with a smile. The location couldn’t be better — right in the heart of South Beach, close to everything you need: the beach, restaurants, and nightlife. Highly recommended for anyone looking for a comfortable and friendly stay in Miami!",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Excellent Stay in the Heart of South Beach\n\nI had a wonderful experience at this hotel! The cleanliness was truly outstanding — everything was spotless and well-maintained. The hosts were extremely kind, welcoming, and always ready to help with a smile. The location couldn’t be better — right in the heart of South Beach, close to everything you need: the beach, restaurants, and nightlife. Highly recommended for anyone looking for a comfortable and friendly stay in Miami!",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Αναστασια Κοκονα",
+          "uri": "https://www.google.com/maps/contrib/101219776175453422577/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJ3N5f4MR3B4BKp-tY2F83AnsTDThtYCXFpus1kiu2dxIbLjw=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2025-04-19T23:24:28.885680Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=ChdDSUhNMG9nS0VJQ0FnTUNveThiSzJ3RRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnTUNveThiSzJ3RRAB!2m1!1s0x88d9b48d8a436a05:0x651b358578dc3773"
+      },
+      {
+        "name": "places/ChIJBWpDio202YgRczfceIU1G2U/reviews/ChdDSUhNMG9nS0VKQ0Z3X1RLNThmaHNBRRAB",
+        "relativePublishTimeDescription": "12 months ago",
+        "rating": 1,
+        "text": {
+          "text": "Don’t let the cheap prices trick you. The owner, who also works at the front desk, was arrogant and unhelpful. When we asked about parking, he just said: ‘Do whatever you want.’ Very poor hospitality. We paid 200 bucks more to parking. We woke up 2–3 times during the night because of noise from the street. The sound insulation was terrible.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Don’t let the cheap prices trick you. The owner, who also works at the front desk, was arrogant and unhelpful. When we asked about parking, he just said: ‘Do whatever you want.’ Very poor hospitality. We paid 200 bucks more to parking. We woke up 2–3 times during the night because of noise from the street. The sound insulation was terrible.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Sezin AK",
+          "uri": "https://www.google.com/maps/contrib/100337012960723425837/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJlGlXs0JSIIT3Ni4ppbCk7-22_TMwXF4XlOdXPkc2jhhmQkw=s128-c0x00000000-cc-rp-mo-ba3"
+        },
+        "publishTime": "2025-06-06T14:19:11.615908Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=ChdDSUhNMG9nS0VKQ0Z3X1RLNThmaHNBRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VKQ0Z3X1RLNThmaHNBRRAB!2m1!1s0x88d9b48d8a436a05:0x651b358578dc3773"
+      }
+    ],
+    "signals": {
+      "review_decline": false,
+      "review_rating_delta": 0,
+      "review_volume_decline": false,
+      "complaint_increase": false,
+      "sentiment_decline": false,
+      "sentiment_trend": "Improving",
+      "review_activity_trend": "Increasing",
+      "positive_reviews_recent": 3,
+      "negative_reviews_recent": 1,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "renovation_needed": true,
+      "old_property": true,
+      "physical_condition_score": 2,
+      "franchise_loss": false,
+      "former_brand": "",
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "brand_status": "NONE",
+      "cmbs_watchlist": false,
+      "cmbs_special_servicing": false,
+      "cmbs_delinquent": false,
+      "long_term_owner": true,
+      "ownership_length_years": 17,
+      "distress_score": 5
+    },
+    "review_themes": {
+      "staff": 63.6,
+      "maintenance": 18.2,
+      "noise": 18.2
+    },
+    "heuristic_scores": {
+      "distress_score": 5,
+      "distress_reasons": [
+        "Moderate-to-low rating with enough reviews: 185",
+        "Negative review signal: rude",
+        "Negative review signal: noise",
+        "Renovation signals in reviews: 60.0%"
+      ],
+      "review_trend_score": 0,
+      "review_volume_recent": 3,
+      "review_volume_prior": 0,
+      "review_volume_change_pct": 100.0,
+      "avg_rating_recent": 3.33,
+      "avg_rating_prior": 0.0,
+      "review_rating_delta": 0,
+      "complaint_rate_recent": 0.33,
+      "complaint_rate_prior": 0.0,
+      "review_complaint_delta": 0.33,
+      "year_built": "",
+      "property_age": "",
+      "renovation_signal_rate": 0.6,
+      "renovation_needed": true,
+      "physical_condition_score": 2,
+      "positive_reviews_recent": 3,
+      "negative_reviews_recent": 1,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "sentiment_delta": -2,
+      "sentiment_trend": "Improving",
+      "review_activity_trend": "Increasing"
+    },
+    "llm_analysis": {
+      "distress_probability": 0.65,
+      "seller_fatigue_probability": 0.7,
+      "opportunity_score": 62,
+      "acquisition_attractiveness_star_rating": 3.5,
+      "top_distress_signals": "Moderate-to-low rating with sufficient reviews, renovation needed with 60% renovation signal rate, physical condition score of 2, negative review signals including complaints about rudeness and noise, long-term ownership of 17 years indicating potential seller fatigue",
+      "investment_thesis": "Viscay Hotel presents a moderate distress opportunity driven by aging physical condition and renovation needs, coupled with operational challenges reflected in guest complaints. The long-term ownership suggests potential seller fatigue, making it suitable for a strategic acquisition focused on renovation and operational improvements to enhance guest experience and reposition the asset.",
+      "recommended_acquisition_strategy": "Light Renovation Play",
+      "review_summary": "Guests report occasional issues with noise and staff rudeness, but overall sentiment is improving with increasing review activity. While the property shows signs of aging and requires renovation, cleanliness and service issues are not prominently reported. Guest feedback indicates a positive trajectory in experience despite the need for physical upgrades.",
+      "llm_star_rating": 3.5,
+      "recommended_action": "Light Renovation Play",
+      "confidence": "LOW",
+      "distress_summary": ""
+    },
+    "owner_data": {
+      "owner_name": "VISCAY LLC",
+      "owner_company": "VISCAY LLC",
+      "mailing_address": "960 COLLINS AVE, MIAMI BEACH, FL 33139-5010",
+      "owner_phone": "",
+      "ownership_since": "2009-07-06",
+      "ownership_length_years": 17,
+      "attom_year_built": 1941,
+      "is_older_than_20_years": "Yes"
+    },
+    "cmbs_data": {
+      "cmbs_loan_status": "",
+      "cmbs_delinquency_flag": false,
+      "cmbs_watchlist_flag": false,
+      "cmbs_special_servicing_flag": false
+    },
+    "franchise_data": {
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "former_brand": "",
+      "brand_status": "NONE",
+      "franchise_confidence": "Low"
+    },
+    "source_location": "South Beach, Miami Beach, Florida",
+    "radius_km": 2.0,
+    "final_lead_score": 58.6,
+    "rank": 5,
+    "lead_reason": "Aging property; Long-term ownership"
+  },
+  {
+    "hotel_name": "Miami International Apartments by Lowkl",
+    "address": "1051 Collins Ave, Miami Beach, FL 33139, USA",
+    "place_id": "ChIJh1ubBZK02YgR1nNpGrSJlLc",
+    "latitude": null,
+    "longitude": null,
+    "rating": 3.9,
+    "user_rating_count": 1041,
+    "business_status": "OPERATIONAL",
+    "google_maps_url": "https://maps.google.com/?cid=13228349412124226518&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "reviews": [
+      {
+        "name": "places/ChIJh1ubBZK02YgR1nNpGrSJlLc/reviews/Ci9DQUlRQUNvZENodHljRjlvT2w5aWFIWlVWRFJOWnpWYWRVRnNWMUJDZUVoMlkyYxAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 5,
+        "text": {
+          "text": "This place was very nice. The room was clean and  spacious. The girl that checked me Gabrielle was amazing  and attentive. I asked for an early check-in she did not promise that I would get it however she was able to get me in sooner. The area of the lactation was close to many stores and restaurants. I look forward to returning soon. If you are looking for a hotel in the Miami Beach area look no further the is the place you want to be.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "This place was very nice. The room was clean and  spacious. The girl that checked me Gabrielle was amazing  and attentive. I asked for an early check-in she did not promise that I would get it however she was able to get me in sooner. The area of the lactation was close to many stores and restaurants. I look forward to returning soon. If you are looking for a hotel in the Miami Beach area look no further the is the place you want to be.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Minerva DeJesus",
+          "uri": "https://www.google.com/maps/contrib/113704417473584691916/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVdOTrVeV7ZutvDF2tLX2nQtJzMcK1r9R4p1kTjLMd9TJTo0IwI=s128-c0x00000000-cc-rp-mo-ba3"
+        },
+        "publishTime": "2026-02-17T16:59:16.730392491Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2w5aWFIWlVWRFJOWnpWYWRVRnNWMUJDZUVoMlkyYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2w5aWFIWlVWRFJOWnpWYWRVRnNWMUJDZUVoMlkyYxAB!2m1!1s0x88d9b492059b5b87:0xb79489b41a6973d6"
+      },
+      {
+        "name": "places/ChIJh1ubBZK02YgR1nNpGrSJlLc/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xSaGNTMXhXR0UxU1ZwTWJrczFOSG94WjE5NllVRRAB",
+        "relativePublishTimeDescription": "5 months ago",
+        "rating": 1,
+        "text": {
+          "text": "WARNING…DO NOT BOOK…CANCELLED and was charged anyway!!! I was looking forward to staying here. When I showed up, the hallways were dark and depressing and smelled. When I got into the room, the smell was even worse. It was a combination of mildew, sex and cheap perfume…the kind that a prostitute would wear. The bed was squeaky and the sheets seemed very old and thin. There was a sign in the cabinet saying that the glasses and plates were “cleaned using things in the room, but NOT sanitized up to standard.” I was discussed and simply could NOT stay there.  I went to the front desk and told them that I would have to cancel the booking, they told me to call booking.com. When I called booking.com booking.com told me that they have sent a request to LOWKY allowing me to cancel without a fee. When I went downstairs to talk to the lady at the front desk she said it shouldn’t be a problem and she would wait to get the email from booking.com. Then today I wake up with messages saying that low-key refusing to cancel my stay and that it is still active and they will charge me the full $1200 for my stay. This is horrible customer service and unacceptable. Now I have paid for two hotel stays even though booking.com was graciously going to allow me to cancel. What horrible customer service…Miami International ruined my vacation. They seem\nvery scammy! The pictures were much nicer than what you get and the smell is unbearable…DON’T DO IT!",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "WARNING…DO NOT BOOK…CANCELLED and was charged anyway!!! I was looking forward to staying here. When I showed up, the hallways were dark and depressing and smelled. When I got into the room, the smell was even worse. It was a combination of mildew, sex and cheap perfume…the kind that a prostitute would wear. The bed was squeaky and the sheets seemed very old and thin. There was a sign in the cabinet saying that the glasses and plates were “cleaned using things in the room, but NOT sanitized up to standard.” I was discussed and simply could NOT stay there.  I went to the front desk and told them that I would have to cancel the booking, they told me to call booking.com. When I called booking.com booking.com told me that they have sent a request to LOWKY allowing me to cancel without a fee. When I went downstairs to talk to the lady at the front desk she said it shouldn’t be a problem and she would wait to get the email from booking.com. Then today I wake up with messages saying that low-key refusing to cancel my stay and that it is still active and they will charge me the full $1200 for my stay. This is horrible customer service and unacceptable. Now I have paid for two hotel stays even though booking.com was graciously going to allow me to cancel. What horrible customer service…Miami International ruined my vacation. They seem\nvery scammy! The pictures were much nicer than what you get and the smell is unbearable…DON’T DO IT!",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Wayne Escoffery",
+          "uri": "https://www.google.com/maps/contrib/107856269299736656065/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVObiTz6QcclWD6CS3L4C5t4nIvmpNby74ihYUUq1aL-lhzZoVS=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2025-12-30T17:33:33.788918560Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xSaGNTMXhXR0UxU1ZwTWJrczFOSG94WjE5NllVRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xSaGNTMXhXR0UxU1ZwTWJrczFOSG94WjE5NllVRRAB!2m1!1s0x88d9b492059b5b87:0xb79489b41a6973d6"
+      },
+      {
+        "name": "places/ChIJh1ubBZK02YgR1nNpGrSJlLc/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tSUmFVcHhhRkJYVjBwU1JtUllRekZsTVhKUFZsRRAB",
+        "relativePublishTimeDescription": "4 months ago",
+        "rating": 1,
+        "text": {
+          "text": "This property is managed by Lowkl.\n\nDespite having a confirmed booking through Airbnb for a special personal trip (birthday anniversary), no check-in instructions were provided on the day of arrival. After multiple attempts to get assistance, we were informed that the unit was not ready and could not accommodate us.\n\nThis resulted in a last-minute cancellation and forced emergency rebooking, completely disrupting our plans. For a professional management company operating multiple properties, this level of communication and reliability is unacceptable.\n\nI would not recommend booking properties managed by Lowkl based on this experience.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "This property is managed by Lowkl.\n\nDespite having a confirmed booking through Airbnb for a special personal trip (birthday anniversary), no check-in instructions were provided on the day of arrival. After multiple attempts to get assistance, we were informed that the unit was not ready and could not accommodate us.\n\nThis resulted in a last-minute cancellation and forced emergency rebooking, completely disrupting our plans. For a professional management company operating multiple properties, this level of communication and reliability is unacceptable.\n\nI would not recommend booking properties managed by Lowkl based on this experience.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "SIMON BOGDANOV",
+          "uri": "https://www.google.com/maps/contrib/106748065066455299692/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUZFLUseRnzcRFlkOx12CqBlt-6zDY3_iZDDtRDAB1Ft8eFVKE=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-01-21T06:04:08.519860234Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2tSUmFVcHhhRkJYVjBwU1JtUllRekZsTVhKUFZsRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tSUmFVcHhhRkJYVjBwU1JtUllRekZsTVhKUFZsRRAB!2m1!1s0x88d9b492059b5b87:0xb79489b41a6973d6"
+      },
+      {
+        "name": "places/ChIJh1ubBZK02YgR1nNpGrSJlLc/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pOYWNFSmhaVWgzUkZSb04yWnpjekpGT1dOSWRIYxAB",
+        "relativePublishTimeDescription": "6 months ago",
+        "rating": 5,
+        "text": {
+          "text": "I’m so grateful for Lowkl and the entire staff. I’ll like to personally acknowledge Lissette for making my stay stress-free and comfortable. Her kindness, professionalism, and genuine warm hearted energy made me feel so welcomed. From your MIA to FTL locations, its clear the team love what they do as it shows through their amazing customer service and cleanliness of the rooms/facilities. 10/10 — Highly recommend!",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "I’m so grateful for Lowkl and the entire staff. I’ll like to personally acknowledge Lissette for making my stay stress-free and comfortable. Her kindness, professionalism, and genuine warm hearted energy made me feel so welcomed. From your MIA to FTL locations, its clear the team love what they do as it shows through their amazing customer service and cleanliness of the rooms/facilities. 10/10 — Highly recommend!",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Shakira Benjamin",
+          "uri": "https://www.google.com/maps/contrib/112714303860737718447/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVLZri5jPbZE4jGSKjlLO26_ezg10v5xe_tQtDfrrX2r_wohmY=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2025-12-03T22:05:51.143715597Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pOYWNFSmhaVWgzUkZSb04yWnpjekpGT1dOSWRIYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pOYWNFSmhaVWgzUkZSb04yWnpjekpGT1dOSWRIYxAB!2m1!1s0x88d9b492059b5b87:0xb79489b41a6973d6"
+      },
+      {
+        "name": "places/ChIJh1ubBZK02YgR1nNpGrSJlLc/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xOT05UQm5aemxvYVU1Q1JUSjBORWRwTVZkalgxRRAB",
+        "relativePublishTimeDescription": "6 months ago",
+        "rating": 3,
+        "text": {
+          "text": "Honest review: very basic, acceptable level of cleanliness. If you’re fussy with appearance, this place will turn you off as it’s not very appealing the entrance and the hallway.\n\nThe check in is managed remotely by another company. Seems like an AirBnb situation where the owner just rents out each room - strange setup I must say.\n\nVery economical choice in South Beach. WiFi is very good. Served its purpose as a cheap stay low frills for one night.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Honest review: very basic, acceptable level of cleanliness. If you’re fussy with appearance, this place will turn you off as it’s not very appealing the entrance and the hallway.\n\nThe check in is managed remotely by another company. Seems like an AirBnb situation where the owner just rents out each room - strange setup I must say.\n\nVery economical choice in South Beach. WiFi is very good. Served its purpose as a cheap stay low frills for one night.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Andrew Boylan",
+          "uri": "https://www.google.com/maps/contrib/105019538685548344501/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUDRsEVcKSPI_6ROOHc7ISCdMAFJG7MO1LlKWPchRL4MAuwRGQ=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2025-11-19T05:14:16.727367827Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xOT05UQm5aemxvYVU1Q1JUSjBORWRwTVZkalgxRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xOT05UQm5aemxvYVU1Q1JUSjBORWRwTVZkalgxRRAB!2m1!1s0x88d9b492059b5b87:0xb79489b41a6973d6"
+      }
+    ],
+    "signals": {
+      "review_decline": false,
+      "review_rating_delta": 0,
+      "review_volume_decline": false,
+      "complaint_increase": false,
+      "sentiment_decline": false,
+      "sentiment_trend": "Stable",
+      "review_activity_trend": "Increasing",
+      "positive_reviews_recent": 2,
+      "negative_reviews_recent": 1,
+      "positive_reviews_prior": 2,
+      "negative_reviews_prior": 0,
+      "renovation_needed": true,
+      "old_property": true,
+      "physical_condition_score": 2,
+      "franchise_loss": false,
+      "former_brand": "",
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "brand_status": "NONE",
+      "cmbs_watchlist": false,
+      "cmbs_special_servicing": false,
+      "cmbs_delinquent": false,
+      "long_term_owner": true,
+      "ownership_length_years": 13,
+      "distress_score": 4
+    },
+    "review_themes": {
+      "cleanliness": 16.7,
+      "staff": 66.7,
+      "maintenance": 16.7
+    },
+    "heuristic_scores": {
+      "distress_score": 4,
+      "distress_reasons": [
+        "Moderate-to-low rating with enough reviews: 1041",
+        "Negative review signal: smell",
+        "Renovation signals in reviews: 60.0%"
+      ],
+      "review_trend_score": 0,
+      "review_volume_recent": 3,
+      "review_volume_prior": 2,
+      "review_volume_change_pct": 50.0,
+      "avg_rating_recent": 2.33,
+      "avg_rating_prior": 4.0,
+      "review_rating_delta": 0,
+      "complaint_rate_recent": 0.33,
+      "complaint_rate_prior": 0.0,
+      "review_complaint_delta": 0.33,
+      "year_built": "",
+      "property_age": "",
+      "renovation_signal_rate": 0.6,
+      "renovation_needed": true,
+      "physical_condition_score": 2,
+      "positive_reviews_recent": 2,
+      "negative_reviews_recent": 1,
+      "positive_reviews_prior": 2,
+      "negative_reviews_prior": 0,
+      "sentiment_delta": 1,
+      "sentiment_trend": "Stable",
+      "review_activity_trend": "Increasing"
+    },
+    "llm_analysis": {
+      "distress_probability": 0.65,
+      "seller_fatigue_probability": 0.7,
+      "opportunity_score": 62,
+      "acquisition_attractiveness_star_rating": 3.5,
+      "top_distress_signals": "Moderate-to-low rating with substantial reviews, negative review mentions of odor issues, high renovation need indicated by 60% renovation signals, low physical condition score, increasing complaint rate.",
+      "investment_thesis": "Miami International Apartments by Lowkl presents a moderate distress opportunity driven by aging physical condition and significant renovation needs despite stable sentiment and increasing review activity. Long-term ownership suggests potential seller fatigue, making it a viable candidate for operational turnaround or light renovation plays to improve guest experience and ratings.",
+      "acquisition_strategy": "Operational Turnaround",
+      "review_summary": "Guest feedback highlights recurring issues with odors and aging facilities, pointing to a need for renovation and maintenance improvements. While service and cleanliness concerns are less prominent, the physical condition of the property scores low, impacting overall guest satisfaction. Review volume is increasing with stable sentiment, indicating steady interest but ongoing operational challenges.",
+      "llm_star_rating": 3.5,
+      "recommended_action": "Operational Turnaround",
+      "confidence": "LOW",
+      "distress_summary": ""
+    },
+    "owner_data": {
+      "owner_name": "1051 COLLINS HOTEL LLC|DAN-BRAN REALTY LLC",
+      "owner_company": "1051 COLLINS HOTEL LLC|DAN-BRAN REALTY LLC",
+      "mailing_address": "138 E 31ST ST BSMT C1, NEW YORK, NY 10016-6890",
+      "owner_phone": "",
+      "ownership_since": "2013-06-03",
+      "ownership_length_years": 13,
+      "attom_year_built": 1957,
+      "is_older_than_20_years": "Yes"
+    },
+    "cmbs_data": {
+      "cmbs_loan_status": "",
+      "cmbs_delinquency_flag": false,
+      "cmbs_watchlist_flag": false,
+      "cmbs_special_servicing_flag": false
+    },
+    "franchise_data": {
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "former_brand": "",
+      "brand_status": "NONE",
+      "franchise_confidence": "Low"
+    },
+    "source_location": "South Beach, Miami Beach, Florida",
+    "radius_km": 2.0,
+    "final_lead_score": 55.6,
+    "rank": 6,
+    "lead_reason": "Aging property; Long-term ownership"
+  },
+  {
+    "hotel_name": "Fairwind Hotel Miami",
+    "address": "1000 Collins Ave, Miami Beach, FL 33139, USA",
+    "place_id": "ChIJvfdO9Y202YgRcm10hdLzb80",
+    "latitude": null,
+    "longitude": null,
+    "rating": 3.9,
+    "user_rating_count": 1464,
+    "business_status": "OPERATIONAL",
+    "google_maps_url": "https://maps.google.com/?cid=14803318585697791346&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "reviews": [
+      {
+        "name": "places/ChIJvfdO9Y202YgRcm10hdLzb80/reviews/Ci9DQUlRQUNvZENodHljRjlvT2twcGFWSmxRaTF0UVZCaVNGSlZZMjQyY2xaM1MwRRAB",
+        "relativePublishTimeDescription": "4 months ago",
+        "rating": 4,
+        "text": {
+          "text": "Fernando is an absolute boss! Such a sweet guy who really made us feel cared for even though he was slammed with customers out the door. He was never impatient with anyone and made sure to answer our questions with grace. He was stoic even in the face of some rude guests. Overall hotel experience was great. The pool was incredible, woth gorgeous views and even bar/food service for us! The only points off i have is for the room. It was small and affordable but it lacks a closet or drawer for clothes. Theres no where to hang any shirts either. The beds are a bit hard, and the black wooden frame is hard to see in your peripheral against the black floors so i banged my knee a couple of times. All in all it was a pleasant stay, great for your budget if youre visiting and like a really hard mattress. It felt clean! Showers worked great, and the AC was working perfectly.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Fernando is an absolute boss! Such a sweet guy who really made us feel cared for even though he was slammed with customers out the door. He was never impatient with anyone and made sure to answer our questions with grace. He was stoic even in the face of some rude guests. Overall hotel experience was great. The pool was incredible, woth gorgeous views and even bar/food service for us! The only points off i have is for the room. It was small and affordable but it lacks a closet or drawer for clothes. Theres no where to hang any shirts either. The beds are a bit hard, and the black wooden frame is hard to see in your peripheral against the black floors so i banged my knee a couple of times. All in all it was a pleasant stay, great for your budget if youre visiting and like a really hard mattress. It felt clean! Showers worked great, and the AC was working perfectly.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Adam",
+          "uri": "https://www.google.com/maps/contrib/114319662970517931707/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXSNPkG4Llz7YeE-odXPYWWSRiWlJS1tOH500HG49bUbNwPokJa=s128-c0x00000000-cc-rp-mo-ba3"
+        },
+        "publishTime": "2026-01-27T14:32:42.742729702Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2twcGFWSmxRaTF0UVZCaVNGSlZZMjQyY2xaM1MwRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2twcGFWSmxRaTF0UVZCaVNGSlZZMjQyY2xaM1MwRRAB!2m1!1s0x88d9b48df54ef7bd:0xcd6ff3d285746d72"
+      },
+      {
+        "name": "places/ChIJvfdO9Y202YgRcm10hdLzb80/reviews/Ci9DQUlRQUNvZENodHljRjlvT210WFlXTnpSMHMyUzA5SFNHTk9hR3RNYW5sSWRXYxAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 4,
+        "text": {
+          "text": "Fairwind Hotel Miami (1000 Collins Ave) | Clean and well-located, but fee transparency and basic functionality need work.\n\nI stayed one night on Feb 6 (pre-cruise) and the biggest positives were the location and cleanliness. The hotel is in the heart of South Beach to walkable restaurants and about a block from the beach. My room was immaculately clean, and the 20% discount at the on-site restaurants with your room key was a nice perk.\n\nThat said, the experience was held back by several issues. At check-in, you pay a $35 resort fee that I did not see disclosed when booking, along with a $100 incidental hold. Also, the payment kiosks were down, and the manager said he had to manually enter my card, which created unnecessary concern.\n\nThe room (212) was much smaller than the online photos suggested and lacked basic functionality: no chair and no desk. The bathroom setup was awkward: the vent was positioned over the toilet rather than the shower, towel racks were placed over/near the toilet instead of by the shower (so you have to step out and walk to retrieve towels), and there were no power outlets in the bathroom, so shaving/grooming had to be done by the bed. The sink also drained very slowly. I reported it and was told someone would come up, but no one ever did. Bathroom lack shelving or counter top space.\n\nOverall, it served its purpose for a quick overnight before heading to PortMiami, but the surprise fees, room mismatch, and lack of follow-through on service make it hard to rate higher.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Fairwind Hotel Miami (1000 Collins Ave) | Clean and well-located, but fee transparency and basic functionality need work.\n\nI stayed one night on Feb 6 (pre-cruise) and the biggest positives were the location and cleanliness. The hotel is in the heart of South Beach to walkable restaurants and about a block from the beach. My room was immaculately clean, and the 20% discount at the on-site restaurants with your room key was a nice perk.\n\nThat said, the experience was held back by several issues. At check-in, you pay a $35 resort fee that I did not see disclosed when booking, along with a $100 incidental hold. Also, the payment kiosks were down, and the manager said he had to manually enter my card, which created unnecessary concern.\n\nThe room (212) was much smaller than the online photos suggested and lacked basic functionality: no chair and no desk. The bathroom setup was awkward: the vent was positioned over the toilet rather than the shower, towel racks were placed over/near the toilet instead of by the shower (so you have to step out and walk to retrieve towels), and there were no power outlets in the bathroom, so shaving/grooming had to be done by the bed. The sink also drained very slowly. I reported it and was told someone would come up, but no one ever did. Bathroom lack shelving or counter top space.\n\nOverall, it served its purpose for a quick overnight before heading to PortMiami, but the surprise fees, room mismatch, and lack of follow-through on service make it hard to rate higher.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Precision Timed Media Group",
+          "uri": "https://www.google.com/maps/contrib/100291512057302141255/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjU0bQ9TTdiMqQzmVTiCBPTA_PtXKGskQVmQTtfhBzfK5p4jEUzX=s128-c0x00000000-cc-rp-mo-ba6"
+        },
+        "publishTime": "2026-02-09T18:07:10.115343176Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT210WFlXTnpSMHMyUzA5SFNHTk9hR3RNYW5sSWRXYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT210WFlXTnpSMHMyUzA5SFNHTk9hR3RNYW5sSWRXYxAB!2m1!1s0x88d9b48df54ef7bd:0xcd6ff3d285746d72"
+      },
+      {
+        "name": "places/ChIJvfdO9Y202YgRcm10hdLzb80/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tORlpsZGtNM2RyTW1aRk9HdHVMV2xzVld0bVJXYxAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 2,
+        "text": {
+          "text": "We stayed at this hotel for a few days while in Miami . Check in was quick , there was a fee for incidentals and another fee for the deposit . We had the King room with balcony, which was located next door . The room was clean and spacious with the furniture being outdated . Upon check in we had a question and discovered that the phone in the room was not working. We called the front desk with our cell phone and informed them of this and no one NEVER came to replace the phone . So if you wanted room service, housekeeping, etc you had to call using your cell phone .  Also if you wanted to watch any TV , they did not have service, so that was out . Fortunately we had other things to do to keep us occupied. The shower was hot , the bed was comfortable and the location was perfect. The rooftop pool was cute ,but they really need to invest in some new pool chairs . There is a bar and you are able to order food from the onsite  restaurant while enjoying the pool .",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "We stayed at this hotel for a few days while in Miami . Check in was quick , there was a fee for incidentals and another fee for the deposit . We had the King room with balcony, which was located next door . The room was clean and spacious with the furniture being outdated . Upon check in we had a question and discovered that the phone in the room was not working. We called the front desk with our cell phone and informed them of this and no one NEVER came to replace the phone . So if you wanted room service, housekeeping, etc you had to call using your cell phone .  Also if you wanted to watch any TV , they did not have service, so that was out . Fortunately we had other things to do to keep us occupied. The shower was hot , the bed was comfortable and the location was perfect. The rooftop pool was cute ,but they really need to invest in some new pool chairs . There is a bar and you are able to order food from the onsite  restaurant while enjoying the pool .",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "MrsKay S",
+          "uri": "https://www.google.com/maps/contrib/102728542077804018877/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWULGEV8jli_XWN5P1DLuuRfpDbk-G8knb9eEn0nIU8D9VMLyhcTg=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-02-20T05:57:50.849317939Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2tORlpsZGtNM2RyTW1aRk9HdHVMV2xzVld0bVJXYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tORlpsZGtNM2RyTW1aRk9HdHVMV2xzVld0bVJXYxAB!2m1!1s0x88d9b48df54ef7bd:0xcd6ff3d285746d72"
+      },
+      {
+        "name": "places/ChIJvfdO9Y202YgRcm10hdLzb80/reviews/Ci9DQUlRQUNvZENodHljRjlvT2toWVRFeEJWakE1WlhCNmJUTkpOMU4wTVhsblYwRRAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 5,
+        "text": {
+          "text": "Absolutely spectacular experience at the Fairwind! From the moment we arrived, the service was impeccable and the staff went above and beyond to make us feel welcome. The location is perfect—right in the heart of everything but still feels like a relaxing oasis. The room was spotless, stylish, and incredibly comfortable. The experience in Sola Restaurant was definitely incredible. The food was so good, and the music and vibes were just amazing. The rooftop pool and bar area were the wry good as well in our stay. Highly recommend this gem in Miami!",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Absolutely spectacular experience at the Fairwind! From the moment we arrived, the service was impeccable and the staff went above and beyond to make us feel welcome. The location is perfect—right in the heart of everything but still feels like a relaxing oasis. The room was spotless, stylish, and incredibly comfortable. The experience in Sola Restaurant was definitely incredible. The food was so good, and the music and vibes were just amazing. The rooftop pool and bar area were the wry good as well in our stay. Highly recommend this gem in Miami!",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Leonardo Acosta Martinez",
+          "uri": "https://www.google.com/maps/contrib/106230877751232927334/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWrf0EOXK3lZ1X7EzAiwFflCpQpi-MSPqYMEcpsQz5vj1Om8UIx=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-02-15T20:38:33.392649147Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2toWVRFeEJWakE1WlhCNmJUTkpOMU4wTVhsblYwRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2toWVRFeEJWakE1WlhCNmJUTkpOMU4wTVhsblYwRRAB!2m1!1s0x88d9b48df54ef7bd:0xcd6ff3d285746d72"
+      },
+      {
+        "name": "places/ChIJvfdO9Y202YgRcm10hdLzb80/reviews/Ci9DQUlRQUNvZENodHljRjlvT2s5dU1FWk9aRWx2T1d4NlZWaGFTRTQwU3pCNGFIYxAB",
+        "relativePublishTimeDescription": "2 months ago",
+        "rating": 4,
+        "text": {
+          "text": "The room that I booked wasn’t as I expected. I’d say that it requires a slight touch of renovation.   Concierge Daniela was extremely helpful! She kindly showed those few rooms that been available and let us pick the one that suit us the best. I appreciate Daniela’s service and late check out she gave us.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "The room that I booked wasn’t as I expected. I’d say that it requires a slight touch of renovation.   Concierge Daniela was extremely helpful! She kindly showed those few rooms that been available and let us pick the one that suit us the best. I appreciate Daniela’s service and late check out she gave us.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Mira Myrtsalo",
+          "uri": "https://www.google.com/maps/contrib/112404652270768927552/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocIat5igkuHlJAL5GVMeTKwzU5BEmjVeP9gthGIvIUwX4FoFAA=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-03-08T17:05:59.970081221Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2s5dU1FWk9aRWx2T1d4NlZWaGFTRTQwU3pCNGFIYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2s5dU1FWk9aRWx2T1d4NlZWaGFTRTQwU3pCNGFIYxAB!2m1!1s0x88d9b48df54ef7bd:0xcd6ff3d285746d72"
+      }
+    ],
+    "signals": {
+      "review_decline": false,
+      "review_rating_delta": 0,
+      "review_volume_decline": false,
+      "complaint_increase": false,
+      "sentiment_decline": false,
+      "sentiment_trend": "Improving",
+      "review_activity_trend": "Increasing",
+      "positive_reviews_recent": 5,
+      "negative_reviews_recent": 1,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "renovation_needed": true,
+      "old_property": true,
+      "physical_condition_score": 2,
+      "franchise_loss": false,
+      "former_brand": "",
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "brand_status": "NONE",
+      "cmbs_watchlist": false,
+      "cmbs_special_servicing": false,
+      "cmbs_delinquent": false,
+      "long_term_owner": false,
+      "ownership_length_years": 1,
+      "distress_score": 6
+    },
+    "review_themes": {
+      "staff": 69.2,
+      "maintenance": 23.1,
+      "noise": 7.7
+    },
+    "heuristic_scores": {
+      "distress_score": 6,
+      "distress_reasons": [
+        "Moderate-to-low rating with enough reviews: 1464",
+        "Negative review signal: rude",
+        "Operational distress signal: closed",
+        "Renovation signals in reviews: 40.0%"
+      ],
+      "review_trend_score": 0,
+      "review_volume_recent": 5,
+      "review_volume_prior": 0,
+      "review_volume_change_pct": 100.0,
+      "avg_rating_recent": 3.8,
+      "avg_rating_prior": 0.0,
+      "review_rating_delta": 0,
+      "complaint_rate_recent": 0.4,
+      "complaint_rate_prior": 0.0,
+      "review_complaint_delta": 0.4,
+      "year_built": "",
+      "property_age": "",
+      "renovation_signal_rate": 0.4,
+      "renovation_needed": true,
+      "physical_condition_score": 2,
+      "positive_reviews_recent": 5,
+      "negative_reviews_recent": 1,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "sentiment_delta": -4,
+      "sentiment_trend": "Improving",
+      "review_activity_trend": "Increasing"
+    },
+    "llm_analysis": {
+      "distress_probability": 0.75,
+      "seller_fatigue_probability": 0.3,
+      "opportunity_score": 65,
+      "llm_star_rating": 3.5,
+      "top_distress_signals": "Moderate-to-low rating with significant review volume, operational distress indicated by closure, high renovation need with poor physical condition, recent negative review citing rudeness",
+      "investment_thesis": "Fairwind Hotel Miami presents a moderate to strong distressed acquisition opportunity due to its operational closure, aging physical condition, and need for renovation despite improving guest sentiment and increasing review activity. The lack of brand affiliation and short ownership tenure suggest potential for repositioning through renovation and operational turnaround.",
+      "recommended_acquisition_strategy": "Operational Turnaround",
+      "review_summary": "Guests report occasional rude service and highlight the need for renovation and maintenance due to the property's aging condition. While cleanliness and service issues are not prominent, the hotel is currently closed, indicating operational challenges. Guest sentiment is improving with increasing review activity, suggesting potential for recovery with targeted improvements.",
+      "recommended_action": "Operational Turnaround",
+      "confidence": "LOW",
+      "distress_summary": ""
+    },
+    "owner_data": {
+      "owner_name": "ITALPLAZA OF COLLINS LLC",
+      "owner_company": "ITALPLAZA OF COLLINS LLC",
+      "mailing_address": "1500 E HILLSBORO BLVD, DEERFIELD BEACH, FL 33441-4356",
+      "owner_phone": "",
+      "ownership_since": "2025-10-23",
+      "ownership_length_years": 1,
+      "attom_year_built": 1936,
+      "is_older_than_20_years": "Yes"
+    },
+    "cmbs_data": {
+      "cmbs_loan_status": "",
+      "cmbs_delinquency_flag": false,
+      "cmbs_watchlist_flag": false,
+      "cmbs_special_servicing_flag": false
+    },
+    "franchise_data": {
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "former_brand": "",
+      "brand_status": "NONE",
+      "franchise_confidence": "Low"
+    },
+    "source_location": "South Beach, Miami Beach, Florida",
+    "radius_km": 2.0,
+    "final_lead_score": 52.5,
+    "rank": 7,
+    "lead_reason": "Aging property"
+  },
+  {
+    "hotel_name": "The Kent Hotel",
+    "address": "1131 Collins Ave, Miami Beach, FL 33139, USA",
+    "place_id": "ChIJW7_Z-ZG02YgR3Ztbh0VR4uM",
+    "latitude": null,
+    "longitude": null,
+    "rating": 4,
+    "user_rating_count": 804,
+    "business_status": "OPERATIONAL",
+    "google_maps_url": "https://maps.google.com/?cid=16420776550411770845&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "reviews": [
+      {
+        "name": "places/ChIJW7_Z-ZG02YgR3Ztbh0VR4uM/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pWME4zZHVRak5CTVVwaE4zcDBTV0ZHTUU5TVNWRRAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 3,
+        "text": {
+          "text": "Very well placed , old hotel who was for sure very nice few decades ago , bad smells and very very noisy !!!\nImpossible to sleep without ear buds because of the loud and old Ac but most of all , the sounds goes thru the ceiling and the side walls with children's running , jumping and crying all time !!!\nHad to go the counter many times in order to ask for lowering the noise at night and in the morning from 6,30 /7.00 am....)\nView on a service door with people smoking in front of our room first floor !\nSpecial Mention to Josh , the night guy at he counter who was very professional,  very kind , helpful,  and full of effective advices.\nAvoid the restaurant beside/in  the hotel ......2 beers and 2 burgers for 90 dollars.....unbelievable !!!",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Very well placed , old hotel who was for sure very nice few decades ago , bad smells and very very noisy !!!\nImpossible to sleep without ear buds because of the loud and old Ac but most of all , the sounds goes thru the ceiling and the side walls with children's running , jumping and crying all time !!!\nHad to go the counter many times in order to ask for lowering the noise at night and in the morning from 6,30 /7.00 am....)\nView on a service door with people smoking in front of our room first floor !\nSpecial Mention to Josh , the night guy at he counter who was very professional,  very kind , helpful,  and full of effective advices.\nAvoid the restaurant beside/in  the hotel ......2 beers and 2 burgers for 90 dollars.....unbelievable !!!",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "FAURE arnaud",
+          "uri": "https://www.google.com/maps/contrib/109790472404023922830/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJ9hO3hGtt7Hdb7804bU_EMAdiVH7DBOmBdKQ7gENJFa3X20g=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-02-16T10:28:07.391242032Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pWME4zZHVRak5CTVVwaE4zcDBTV0ZHTUU5TVNWRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pWME4zZHVRak5CTVVwaE4zcDBTV0ZHTUU5TVNWRRAB!2m1!1s0x88d9b491f9d9bf5b:0xe3e25145875b9bdd"
+      },
+      {
+        "name": "places/ChIJW7_Z-ZG02YgR3Ztbh0VR4uM/reviews/Ci9DQUlRQUNvZENodHljRjlvT25SSU4xSnhkVnBYWkRRMFYwZzFSMVpKV1RGTGJWRRAB",
+        "relativePublishTimeDescription": "6 months ago",
+        "rating": 5,
+        "text": {
+          "text": "Excellent location on Collins Avenue.  You are right by Ocean Drive with restaurants and bars on your doorstep.  A charming Art Deco gem located in the heart of Miami Beach's vibrant South Beach neighbourhood.  I booked a Deluxe Double Queen room.  Huge, spacious room.  Very clean.  Staff were very friendly and pleasant.  Really helpful, they would always greet you.  As a solo female traveller, I felt safe here.  I didn't eat at the hotel but they have a restaurant and bar on site.  Good WIFI access throughout the property.  Housekeeping was done well each day.  Lovely boutique hotel.  Highly recommend.  I would stay here again if I came back to Miami.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Excellent location on Collins Avenue.  You are right by Ocean Drive with restaurants and bars on your doorstep.  A charming Art Deco gem located in the heart of Miami Beach's vibrant South Beach neighbourhood.  I booked a Deluxe Double Queen room.  Huge, spacious room.  Very clean.  Staff were very friendly and pleasant.  Really helpful, they would always greet you.  As a solo female traveller, I felt safe here.  I didn't eat at the hotel but they have a restaurant and bar on site.  Good WIFI access throughout the property.  Housekeeping was done well each day.  Lovely boutique hotel.  Highly recommend.  I would stay here again if I came back to Miami.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Taylor Deni",
+          "uri": "https://www.google.com/maps/contrib/115246929871359124898/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocIezECAs-gLigEEKKKKv-E64mzLeHo3frNfWbFRPT5OJvQBKQ=s128-c0x00000000-cc-rp-mo-ba6"
+        },
+        "publishTime": "2025-11-09T21:02:20.573433977Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25SSU4xSnhkVnBYWkRRMFYwZzFSMVpKV1RGTGJWRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25SSU4xSnhkVnBYWkRRMFYwZzFSMVpKV1RGTGJWRRAB!2m1!1s0x88d9b491f9d9bf5b:0xe3e25145875b9bdd"
+      },
+      {
+        "name": "places/ChIJW7_Z-ZG02YgR3Ztbh0VR4uM/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xNemFVcGtaa2RvU1ROM2ExWnhZbkp3YWxrNExVRRAB",
+        "relativePublishTimeDescription": "5 months ago",
+        "rating": 4,
+        "text": {
+          "text": "Stayed here after a cruise for one night. Staff is incredibly friendly and attentive. The rooms are clean and as pictured! However the walls are VERY thin as we heard every single word anyone said or any movement people made above us. We unfortunately had to wake up at 3:45am to catch an early flight and we hardly got any sleep because  it was so noisy.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Stayed here after a cruise for one night. Staff is incredibly friendly and attentive. The rooms are clean and as pictured! However the walls are VERY thin as we heard every single word anyone said or any movement people made above us. We unfortunately had to wake up at 3:45am to catch an early flight and we hardly got any sleep because  it was so noisy.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Leia Potter",
+          "uri": "https://www.google.com/maps/contrib/102682394175598765209/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjX8KdDfxdgEwP4FuJmGGgZKRb1Zx30Pr2kSy-GNUbD3s055OXY_=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2025-12-10T01:50:40.075173707Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xNemFVcGtaa2RvU1ROM2ExWnhZbkp3YWxrNExVRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xNemFVcGtaa2RvU1ROM2ExWnhZbkp3YWxrNExVRRAB!2m1!1s0x88d9b491f9d9bf5b:0xe3e25145875b9bdd"
+      },
+      {
+        "name": "places/ChIJW7_Z-ZG02YgR3Ztbh0VR4uM/reviews/Ci9DQUlRQUNvZENodHljRjlvT25kelVGbE9jVTlaUjA1aFFqVTVSM1pqTWtsNVVFRRAB",
+        "relativePublishTimeDescription": "7 months ago",
+        "rating": 3,
+        "text": {
+          "text": "The Kent Hotel offers a convenient location in the heart of South Beach, making it an ideal spot for exploring the area. The staff was courteous and welcoming throughout my stay.\n\nHowever, I was somewhat disappointed by the level of noise from the hallway and adjacent rooms, which affected the overall comfort. Additionally, the Wi-Fi was not functioning, preventing access to television or streaming services.\n\nThe property presents more as a modest accommodation, somewhat reminiscent of a motel 8 but slightly elevated. It would be suitable for a brief stay of one or two nights, but may not meet expectations for a longer visit.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "The Kent Hotel offers a convenient location in the heart of South Beach, making it an ideal spot for exploring the area. The staff was courteous and welcoming throughout my stay.\n\nHowever, I was somewhat disappointed by the level of noise from the hallway and adjacent rooms, which affected the overall comfort. Additionally, the Wi-Fi was not functioning, preventing access to television or streaming services.\n\nThe property presents more as a modest accommodation, somewhat reminiscent of a motel 8 but slightly elevated. It would be suitable for a brief stay of one or two nights, but may not meet expectations for a longer visit.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Jessica Cristancho",
+          "uri": "https://www.google.com/maps/contrib/109139079097730092268/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVpVUPzER-QXs0O3bXmV91zXtds0JRbTSSdsy3OowG-Eped8qj5=s128-c0x00000000-cc-rp-mo-ba3"
+        },
+        "publishTime": "2025-10-27T19:27:49.828343218Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25kelVGbE9jVTlaUjA1aFFqVTVSM1pqTWtsNVVFRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25kelVGbE9jVTlaUjA1aFFqVTVSM1pqTWtsNVVFRRAB!2m1!1s0x88d9b491f9d9bf5b:0xe3e25145875b9bdd"
+      },
+      {
+        "name": "places/ChIJW7_Z-ZG02YgR3Ztbh0VR4uM/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xJd1QzRkhhamRuWmxwUlVFVTFOalp1YVZaTVRGRRAB",
+        "relativePublishTimeDescription": "6 months ago",
+        "rating": 4,
+        "text": {
+          "text": "Our favorite home base in Miami Beach.\nAllways we become a very friendly and professional welcome and quick checkin. Rooms are big enough and clean, nice equipped and in not as loud in the night (for sure it's down town).\nThe Hotel is well located next to Ocean Drive and Beach and a lot is reachable by food.\nNext to the Hotel is a cheap public garage next to Police with nice rates.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Our favorite home base in Miami Beach.\nAllways we become a very friendly and professional welcome and quick checkin. Rooms are big enough and clean, nice equipped and in not as loud in the night (for sure it's down town).\nThe Hotel is well located next to Ocean Drive and Beach and a lot is reachable by food.\nNext to the Hotel is a cheap public garage next to Police with nice rates.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Andreas Fladerer",
+          "uri": "https://www.google.com/maps/contrib/114737409151814078302/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocIhNu782jpAFnkpNXeAgb6FxvkxR-2W0OW04SD6qLuWVqWAJQ=s128-c0x00000000-cc-rp-mo-ba6"
+        },
+        "publishTime": "2025-11-19T02:43:26.536828429Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xJd1QzRkhhamRuWmxwUlVFVTFOalp1YVZaTVRGRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xJd1QzRkhhamRuWmxwUlVFVTFOalp1YVZaTVRGRRAB!2m1!1s0x88d9b491f9d9bf5b:0xe3e25145875b9bdd"
+      }
+    ],
+    "signals": {
+      "review_decline": true,
+      "review_rating_delta": -0.5,
+      "review_volume_decline": true,
+      "complaint_increase": false,
+      "sentiment_decline": false,
+      "sentiment_trend": "Stable",
+      "review_activity_trend": "Declining",
+      "positive_reviews_recent": 2,
+      "negative_reviews_recent": 1,
+      "positive_reviews_prior": 2,
+      "negative_reviews_prior": 1,
+      "renovation_needed": false,
+      "old_property": true,
+      "physical_condition_score": 0,
+      "franchise_loss": false,
+      "former_brand": "",
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "brand_status": "NONE",
+      "cmbs_watchlist": false,
+      "cmbs_special_servicing": false,
+      "cmbs_delinquent": false,
+      "long_term_owner": false,
+      "ownership_length_years": "",
+      "distress_score": 6
+    },
+    "review_themes": {
+      "cleanliness": 9.1,
+      "staff": 45.5,
+      "maintenance": 9.1,
+      "noise": 36.4
+    },
+    "heuristic_scores": {
+      "distress_score": 6,
+      "distress_reasons": [
+        "Negative review signal: smell",
+        "Negative review signal: noise",
+        "Review volume decline: -33.33%",
+        "Rating decline: -0.5"
+      ],
+      "review_trend_score": 4,
+      "review_volume_recent": 2,
+      "review_volume_prior": 3,
+      "review_volume_change_pct": -33.33,
+      "avg_rating_recent": 3.5,
+      "avg_rating_prior": 4.0,
+      "review_rating_delta": -0.5,
+      "complaint_rate_recent": 0.5,
+      "complaint_rate_prior": 0.33,
+      "review_complaint_delta": 0.17,
+      "year_built": "",
+      "property_age": "",
+      "renovation_signal_rate": 0.2,
+      "renovation_needed": false,
+      "physical_condition_score": 0,
+      "positive_reviews_recent": 2,
+      "negative_reviews_recent": 1,
+      "positive_reviews_prior": 2,
+      "negative_reviews_prior": 1,
+      "sentiment_delta": 0,
+      "sentiment_trend": "Stable",
+      "review_activity_trend": "Declining"
+    },
+    "llm_analysis": {
+      "distress_probability": 0.65,
+      "seller_fatigue_probability": 0.3,
+      "opportunity_score": 55,
+      "acquisition_attractiveness_star_rating": 2.8,
+      "top_distress_signals": "Negative review signal: smell, Negative review signal: noise, Review volume decline: -33.33%, Rating decline: -0.5",
+      "investment_thesis": "The Kent Hotel shows moderate distress with declining review volume and ratings, alongside negative guest feedback related to odors and noise. Despite stable sentiment and no immediate renovation needs, the aging property and lack of brand affiliation suggest operational challenges. This presents an opportunity for operational turnaround or rebranding to improve market position.",
+      "recommended_acquisition_strategy": "Operational Turnaround",
+      "review_summary": "Guest reviews indicate recurring complaints about unpleasant smells and noise disturbances, contributing to a decline in overall ratings and fewer reviews. Operational concerns appear moderate with stable sentiment and no significant cleanliness or service issues reported. The property does not currently require renovation, but its aging condition may impact guest experience. Overall, guest sentiment is stable but declining in volume, signaling a need for operational improvements to reverse the trend.",
+      "llm_star_rating": 2.8,
+      "recommended_action": "Operational Turnaround",
+      "confidence": "LOW",
+      "distress_summary": ""
+    },
+    "owner_data": {
+      "owner_name": "1131 KENT LLC",
+      "owner_company": "1131 KENT LLC",
+      "mailing_address": "16885 DALLAS PKWY, ADDISON, TX 75001-5215",
+      "owner_phone": "",
+      "ownership_since": null,
+      "ownership_length_years": "",
+      "attom_year_built": 1939,
+      "is_older_than_20_years": "Yes"
+    },
+    "cmbs_data": {
+      "cmbs_loan_status": "",
+      "cmbs_delinquency_flag": false,
+      "cmbs_watchlist_flag": false,
+      "cmbs_special_servicing_flag": false
+    },
+    "franchise_data": {
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "former_brand": "",
+      "brand_status": "NONE",
+      "franchise_confidence": "Low"
+    },
+    "source_location": "South Beach, Miami Beach, Florida",
+    "radius_km": 2.0,
+    "final_lead_score": 49.5,
+    "rank": 8,
+    "lead_reason": "Declining reviews; Aging property"
+  },
+  {
+    "hotel_name": "The Marlin Hotel",
+    "address": "1200 Collins Ave, Miami Beach, FL 33139, USA",
+    "place_id": "ChIJrVYa45G02YgRKissEytxnS4",
+    "latitude": null,
+    "longitude": null,
+    "rating": 4.4,
+    "user_rating_count": 646,
+    "business_status": "OPERATIONAL",
+    "google_maps_url": "https://maps.google.com/?cid=3358965326907452202&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "reviews": [
+      {
+        "name": "places/ChIJrVYa45G02YgRKissEytxnS4/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pCSE1VYzVhbGR6Um5JM2RYaEhVVlYyVmtkSmNYYxAB",
+        "relativePublishTimeDescription": "5 months ago",
+        "rating": 5,
+        "text": {
+          "text": "We honestly don’t leave reviews very often, but this one is absolutely worth it.\n\nThe hotel is beautiful, very comfortable, and perfectly located. Everything is very clean and well maintained, and a big plus is that they provide beach chairs and umbrellas with no hassle at all. They also do their best to get you into your room as early as possible if you arrive early, at no extra charge, which we really appreciated.\n\nThat said, what truly made our stay exceptional was Ada, the morning shift receptionist. Her service was outstanding and genuinely made our experience so much better. She was always kind, attentive, and incredibly helpful, often going above and beyond what was expected. It’s rare to come across someone who cares this much about guests, and it really shows in everything she does.\n\nThanks to Ada, our stay was memorable. We would absolutely stay here again and highly recommend this hotel, especially because of the amazing service we received.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "We honestly don’t leave reviews very often, but this one is absolutely worth it.\n\nThe hotel is beautiful, very comfortable, and perfectly located. Everything is very clean and well maintained, and a big plus is that they provide beach chairs and umbrellas with no hassle at all. They also do their best to get you into your room as early as possible if you arrive early, at no extra charge, which we really appreciated.\n\nThat said, what truly made our stay exceptional was Ada, the morning shift receptionist. Her service was outstanding and genuinely made our experience so much better. She was always kind, attentive, and incredibly helpful, often going above and beyond what was expected. It’s rare to come across someone who cares this much about guests, and it really shows in everything she does.\n\nThanks to Ada, our stay was memorable. We would absolutely stay here again and highly recommend this hotel, especially because of the amazing service we received.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Daniel Najera",
+          "uri": "https://www.google.com/maps/contrib/108745927510121283817/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWMT9qKmEyn0R1Yova765idnGf37smoF6s_OgQwl6eilkbXF1U=s128-c0x00000000-cc-rp-mo-ba2"
+        },
+        "publishTime": "2025-12-27T14:51:35.586015984Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pCSE1VYzVhbGR6Um5JM2RYaEhVVlYyVmtkSmNYYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pCSE1VYzVhbGR6Um5JM2RYaEhVVlYyVmtkSmNYYxAB!2m1!1s0x88d9b491e31a56ad:0x2e9d712b132c2b2a"
+      },
+      {
+        "name": "places/ChIJrVYa45G02YgRKissEytxnS4/reviews/Ci9DQUlRQUNvZENodHljRjlvT25OWlYyWjZVeTFXVkRsaE9VWTJkelZqV2tsZmFIYxAB",
+        "relativePublishTimeDescription": "7 months ago",
+        "rating": 5,
+        "text": {
+          "text": "Love this hotel. Our room was super cute (550 sq ft) bed was comfy, super clean, couch was great, the throw blankets were very homey, beach bag with beach towels, they give u beach chairs n and umbrella which was amazing. The hotel smelled great and was super clean. The Italian restaurant was good too. Good location to walk to the beach, stores and restaurants. We really enjoyed our stay.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Love this hotel. Our room was super cute (550 sq ft) bed was comfy, super clean, couch was great, the throw blankets were very homey, beach bag with beach towels, they give u beach chairs n and umbrella which was amazing. The hotel smelled great and was super clean. The Italian restaurant was good too. Good location to walk to the beach, stores and restaurants. We really enjoyed our stay.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Deena Perry",
+          "uri": "https://www.google.com/maps/contrib/114696141475254110758/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXWTEKclVD-EVwHhgAOifDEoA3LfuhFkSCjdoblEwj9PI3YA6fo=s128-c0x00000000-cc-rp-mo-ba2"
+        },
+        "publishTime": "2025-10-21T17:25:56.614520308Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25OWlYyWjZVeTFXVkRsaE9VWTJkelZqV2tsZmFIYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25OWlYyWjZVeTFXVkRsaE9VWTJkelZqV2tsZmFIYxAB!2m1!1s0x88d9b491e31a56ad:0x2e9d712b132c2b2a"
+      },
+      {
+        "name": "places/ChIJrVYa45G02YgRKissEytxnS4/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xGM1VsOUdaVkkwTm1ORFNsTldNa2RZTFZWMFYyYxAB",
+        "relativePublishTimeDescription": "5 months ago",
+        "rating": 3,
+        "text": {
+          "text": "The rooms are very clean and comfortable and the customer service is very good, I can't ask for better people. I gave it 3 stars only because of the strong odors. In the hall near the rooms there are strong odors from cleaning products. I can handle this but not cigarette smoke. Upon arrival I was told smoking is not allowed, but my room smelled so much like cigarettes that I told them I needed a different room. They put me on a different room and the person I talked to said he did not smell any smoke and told me again that they don't allow smoking, so I told him I have never been in any hotel that had a strong cigarette smell like this one, and BTW I'm 59 so I've been to a lot of them. It's fine that they don't allow smoking in the rooms but I can only go by what my nose tells me. If it's hard to breathe then I will have a very hard time staying there. For people who smoke this won't be a problem at all.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "The rooms are very clean and comfortable and the customer service is very good, I can't ask for better people. I gave it 3 stars only because of the strong odors. In the hall near the rooms there are strong odors from cleaning products. I can handle this but not cigarette smoke. Upon arrival I was told smoking is not allowed, but my room smelled so much like cigarettes that I told them I needed a different room. They put me on a different room and the person I talked to said he did not smell any smoke and told me again that they don't allow smoking, so I told him I have never been in any hotel that had a strong cigarette smell like this one, and BTW I'm 59 so I've been to a lot of them. It's fine that they don't allow smoking in the rooms but I can only go by what my nose tells me. If it's hard to breathe then I will have a very hard time staying there. For people who smoke this won't be a problem at all.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "N R",
+          "uri": "https://www.google.com/maps/contrib/106967985593307637284/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocIuG-3G52gFdzC7EIC9DfO7kIIMS1XtYsdwWziVxlyqvTSZMw=s128-c0x00000000-cc-rp-mo-ba3"
+        },
+        "publishTime": "2025-12-11T04:36:23.841928966Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xGM1VsOUdaVkkwTm1ORFNsTldNa2RZTFZWMFYyYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xGM1VsOUdaVkkwTm1ORFNsTldNa2RZTFZWMFYyYxAB!2m1!1s0x88d9b491e31a56ad:0x2e9d712b132c2b2a"
+      },
+      {
+        "name": "places/ChIJrVYa45G02YgRKissEytxnS4/reviews/Ci9DQUlRQUNvZENodHljRjlvT2t0alZHRllXR0phYkZrM2IyZFBTR2htV25kbk1XYxAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 5,
+        "text": {
+          "text": "Great hotel and great employees. Be careful when making reservations. I had heavy luggage as I was going to cruise port. I had to haul it up several steps on my own for the first floor- you were warned!",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Great hotel and great employees. Be careful when making reservations. I had heavy luggage as I was going to cruise port. I had to haul it up several steps on my own for the first floor- you were warned!",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "sheila limmroth",
+          "uri": "https://www.google.com/maps/contrib/109349202194347172765/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocL2BamrufdSyVnmQUFultPLbdCCEsfn7FduHQ23QA2ui62SDw=s128-c0x00000000-cc-rp-mo-ba2"
+        },
+        "publishTime": "2026-02-07T05:39:50.912362921Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2t0alZHRllXR0phYkZrM2IyZFBTR2htV25kbk1XYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2t0alZHRllXR0phYkZrM2IyZFBTR2htV25kbk1XYxAB!2m1!1s0x88d9b491e31a56ad:0x2e9d712b132c2b2a"
+      },
+      {
+        "name": "places/ChIJrVYa45G02YgRKissEytxnS4/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pKellqWlRORFp3TUhac1Z6aFBjMUZpTVRsaGNFRRAB",
+        "relativePublishTimeDescription": "6 months ago",
+        "rating": 1,
+        "text": {
+          "text": "Unacceptably bad experience here. Hard to imagine it’s labeled as a 4-star hotel. Both my wife and I got allergic reactions. We sneezed a lot, and my wife got tearing and swollen eyes and also red spots on her skin. Our friends got sore throat and coughing. Not sure what exactly caused these, but we smelled mold in our friends’ room on 3rd floor and strong smell of fragrance in our room on 2nd floor. I guess the fragrance is used to cover up the smell of mold. We all got rid of these allergic symptoms after leaving the hotel for a day.\n\nOther issues: sweat smell from the bed, small room, loud A/C, mandatory amenity fees, and far distance to parking garage.\n\nFront desk is friendly and helpful. But understandably they can do nothing about these.\n\nP.S. We also stayed in some under-maintained Airbnb in Miami but even that doesn’t cause us any allergic symptoms.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Unacceptably bad experience here. Hard to imagine it’s labeled as a 4-star hotel. Both my wife and I got allergic reactions. We sneezed a lot, and my wife got tearing and swollen eyes and also red spots on her skin. Our friends got sore throat and coughing. Not sure what exactly caused these, but we smelled mold in our friends’ room on 3rd floor and strong smell of fragrance in our room on 2nd floor. I guess the fragrance is used to cover up the smell of mold. We all got rid of these allergic symptoms after leaving the hotel for a day.\n\nOther issues: sweat smell from the bed, small room, loud A/C, mandatory amenity fees, and far distance to parking garage.\n\nFront desk is friendly and helpful. But understandably they can do nothing about these.\n\nP.S. We also stayed in some under-maintained Airbnb in Miami but even that doesn’t cause us any allergic symptoms.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Kai Yu",
+          "uri": "https://www.google.com/maps/contrib/107251269527320098576/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjX6BbSyEUDT72sDfSGCFA9Qf-vmaMecFiuSAb9l_nfbRMlgSHmB2A=s128-c0x00000000-cc-rp-mo-ba3"
+        },
+        "publishTime": "2025-11-29T06:40:27.058054446Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pKellqWlRORFp3TUhac1Z6aFBjMUZpTVRsaGNFRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pKellqWlRORFp3TUhac1Z6aFBjMUZpTVRsaGNFRRAB!2m1!1s0x88d9b491e31a56ad:0x2e9d712b132c2b2a"
+      }
+    ],
+    "signals": {
+      "review_decline": false,
+      "review_rating_delta": 0,
+      "review_volume_decline": false,
+      "complaint_increase": false,
+      "sentiment_decline": false,
+      "sentiment_trend": "Improving",
+      "review_activity_trend": "Increasing",
+      "positive_reviews_recent": 3,
+      "negative_reviews_recent": 1,
+      "positive_reviews_prior": 2,
+      "negative_reviews_prior": 2,
+      "renovation_needed": true,
+      "old_property": true,
+      "physical_condition_score": 2,
+      "franchise_loss": false,
+      "former_brand": "",
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "brand_status": "NONE",
+      "cmbs_watchlist": false,
+      "cmbs_special_servicing": false,
+      "cmbs_delinquent": false,
+      "long_term_owner": false,
+      "ownership_length_years": "",
+      "distress_score": 4
+    },
+    "review_themes": {
+      "staff": 33.3,
+      "cleanliness": 41.7,
+      "maintenance": 16.7,
+      "noise": 8.3
+    },
+    "heuristic_scores": {
+      "distress_score": 4,
+      "distress_reasons": [
+        "Negative review signal: smell",
+        "Negative review signal: mold",
+        "Renovation signals in reviews: 40.0%"
+      ],
+      "review_trend_score": 0,
+      "review_volume_recent": 3,
+      "review_volume_prior": 2,
+      "review_volume_change_pct": 50.0,
+      "avg_rating_recent": 4.33,
+      "avg_rating_prior": 3.0,
+      "review_rating_delta": 0,
+      "complaint_rate_recent": 0.33,
+      "complaint_rate_prior": 1.0,
+      "review_complaint_delta": -0.67,
+      "year_built": "",
+      "property_age": "",
+      "renovation_signal_rate": 0.4,
+      "renovation_needed": true,
+      "physical_condition_score": 2,
+      "positive_reviews_recent": 3,
+      "negative_reviews_recent": 1,
+      "positive_reviews_prior": 2,
+      "negative_reviews_prior": 2,
+      "sentiment_delta": -2,
+      "sentiment_trend": "Improving",
+      "review_activity_trend": "Increasing"
+    },
+    "llm_analysis": {
+      "distress_probability": 0.6,
+      "seller_fatigue_probability": 0.2,
+      "opportunity_score": 55,
+      "acquisition_attractiveness_star_rating": 3.0,
+      "top_distress_signals": "Negative review signals related to smell and mold, high renovation signal rate (40%), old property with poor physical condition score (2), renovation needed",
+      "investment_thesis": "The Marlin Hotel shows moderate distress driven by physical deterioration and guest complaints about odor and mold, despite improving sentiment and increasing review activity. The property is unbranded and requires renovation, presenting an opportunity for repositioning through targeted upgrades and operational improvements.",
+      "recommended_acquisition_strategy": "Operational Turnaround",
+      "review_summary": "Guests report occasional issues with unpleasant odors and mold, indicating cleanliness and maintenance challenges. While the hotel is aging and in need of renovation, recent reviews show improving sentiment and increased guest engagement, suggesting operational improvements are underway but physical upgrades remain necessary.",
+      "llm_star_rating": 3.0,
+      "recommended_action": "Operational Turnaround",
+      "confidence": "LOW",
+      "distress_summary": ""
+    },
+    "owner_data": {
+      "owner_name": "",
+      "owner_company": "",
+      "mailing_address": "34 W DILIDO DR, MIAMI BEACH, FL 33139-1171",
+      "owner_phone": "",
+      "ownership_since": null,
+      "ownership_length_years": "",
+      "attom_year_built": 1939,
+      "is_older_than_20_years": "Yes"
+    },
+    "cmbs_data": {
+      "cmbs_loan_status": "",
+      "cmbs_delinquency_flag": false,
+      "cmbs_watchlist_flag": false,
+      "cmbs_special_servicing_flag": false
+    },
+    "franchise_data": {
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "former_brand": "",
+      "brand_status": "NONE",
+      "franchise_confidence": "Low"
+    },
+    "source_location": "South Beach, Miami Beach, Florida",
+    "radius_km": 2.0,
+    "final_lead_score": 43.5,
+    "rank": 9,
+    "lead_reason": "Aging property"
+  },
+  {
+    "hotel_name": "aeropuerto de miami",
+    "address": "1051 Collins Ave, Miami Beach, FL 33139, USA",
+    "place_id": "ChIJd-fJQgC12YgRWt2Ya-Ixg3s",
+    "latitude": null,
+    "longitude": null,
+    "rating": 3,
+    "user_rating_count": 1,
+    "business_status": "OPERATIONAL",
+    "google_maps_url": "https://maps.google.com/?cid=8900012137151782234&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "reviews": [
+      {
+        "name": "places/ChIJd-fJQgC12YgRWt2Ya-Ixg3s/reviews/Ci9DQUlRQUNvZENodHljRjlvT2toQlgyVk5XalpvY1hjMGVtUmlWekZRTFRaWU1uYxAB",
+        "relativePublishTimeDescription": "7 months ago",
+        "rating": 3,
+        "text": {
+          "text": "The airport is very large. The terminal where I departed had only one VIP area for visas, and the time slot was already closed, even though I had an open one. It didn't accept a waiting list. For everything else, there's nothing else I can do.",
+          "languageCode": "en-US"
+        },
+        "originalText": {
+          "text": "El aeropuerto es muy grande, en la terminal donde salí solo había un vip para visa y ya tenía el horario cerrado aunque cesté abierto,  no tomaba lista de espera. Para lo demás, no hay otra cosa que hacee",
+          "languageCode": "es"
+        },
+        "authorAttribution": {
+          "displayName": "Lore Guanella",
+          "uri": "https://www.google.com/maps/contrib/114574260459626196770/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVptN_qePA0yP2yTut0LZRO6_LpOzplp4OXTkbZrxaGxB6YURlzRg=s128-c0x00000000-cc-rp-mo-ba5"
+        },
+        "publishTime": "2025-10-26T05:11:15.890054084Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2toQlgyVk5XalpvY1hjMGVtUmlWekZRTFRaWU1uYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2toQlgyVk5XalpvY1hjMGVtUmlWekZRTFRaWU1uYxAB!2m1!1s0x88d9b50042c9e777:0x7b8331e26b98dd5a"
+      }
+    ],
+    "signals": {
+      "review_decline": false,
+      "review_rating_delta": 0,
+      "review_volume_decline": true,
+      "complaint_increase": false,
+      "sentiment_decline": false,
+      "sentiment_trend": "Stable",
+      "review_activity_trend": "Declining",
+      "positive_reviews_recent": 0,
+      "negative_reviews_recent": 0,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "renovation_needed": false,
+      "old_property": true,
+      "physical_condition_score": 0,
+      "franchise_loss": false,
+      "former_brand": "",
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "brand_status": "NONE",
+      "cmbs_watchlist": false,
+      "cmbs_special_servicing": false,
+      "cmbs_delinquent": false,
+      "long_term_owner": true,
+      "ownership_length_years": 13,
+      "distress_score": 4
+    },
+    "review_themes": {},
+    "heuristic_scores": {
+      "distress_score": 4,
+      "distress_reasons": [
+        "Low rating: 3",
+        "Operational distress signal: closed"
+      ],
+      "review_trend_score": 0,
+      "review_volume_recent": 0,
+      "review_volume_prior": 1,
+      "review_volume_change_pct": -100.0,
+      "avg_rating_recent": 0.0,
+      "avg_rating_prior": 3.0,
+      "review_rating_delta": 0,
+      "complaint_rate_recent": 0.0,
+      "complaint_rate_prior": 1.0,
+      "review_complaint_delta": -1.0,
+      "year_built": "",
+      "property_age": "",
+      "renovation_signal_rate": 0.0,
+      "renovation_needed": false,
+      "physical_condition_score": 0,
+      "positive_reviews_recent": 0,
+      "negative_reviews_recent": 0,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "sentiment_delta": 0,
+      "sentiment_trend": "Stable",
+      "review_activity_trend": "Declining"
+    },
+    "llm_analysis": {
+      "distress_probability": 0.75,
+      "seller_fatigue_probability": 0.6,
+      "opportunity_score": 55,
+      "acquisition_attractiveness_star_rating": 2.8,
+      "top_distress_signals": "Low rating: 3, Operational distress signal: closed, Declining review volume, Long-term ownership (13 years)",
+      "investment_thesis": "The hotel shows moderate distress with a low rating and operational closure signals, compounded by a significant decline in guest reviews and long-term ownership indicating potential seller fatigue. Despite no immediate renovation needs, the property's aging condition and lack of brand affiliation suggest repositioning opportunities through operational improvements or rebranding.",
+      "recommended_acquisition_strategy": "Operational Turnaround",
+      "review_summary": "Guest review volume has sharply declined to zero recently, with no new positive or negative feedback, indicating possible closure or operational pause. Overall guest sentiment remains stable but lacks recent engagement, and there are no reported complaints or renovation concerns. The hotel’s low rating and declining activity suggest operational challenges rather than service or cleanliness issues.",
+      "llm_star_rating": 2.8,
+      "recommended_action": "Operational Turnaround",
+      "confidence": "LOW",
+      "distress_summary": ""
+    },
+    "owner_data": {
+      "owner_name": "1051 COLLINS HOTEL LLC|DAN-BRAN REALTY LLC",
+      "owner_company": "1051 COLLINS HOTEL LLC|DAN-BRAN REALTY LLC",
+      "mailing_address": "138 E 31ST ST BSMT C1, NEW YORK, NY 10016-6890",
+      "owner_phone": "",
+      "ownership_since": "2013-06-03",
+      "ownership_length_years": 13,
+      "attom_year_built": 1957,
+      "is_older_than_20_years": "Yes"
+    },
+    "cmbs_data": {
+      "cmbs_loan_status": "",
+      "cmbs_delinquency_flag": false,
+      "cmbs_watchlist_flag": false,
+      "cmbs_special_servicing_flag": false
+    },
+    "franchise_data": {
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "former_brand": "",
+      "brand_status": "NONE",
+      "franchise_confidence": "Low"
+    },
+    "source_location": "South Beach, Miami Beach, Florida",
+    "radius_km": 2.0,
+    "final_lead_score": 43.5,
+    "rank": 10,
+    "lead_reason": "Aging property; Long-term ownership"
+  },
+  {
+    "hotel_name": "Dream South Beach, by Hyatt",
+    "address": "1111 Collins Ave, Miami Beach, FL 33139, USA",
+    "place_id": "ChIJu3CJAZK02YgR-QYhx166gQE",
+    "latitude": null,
+    "longitude": null,
+    "rating": 4.1,
+    "user_rating_count": 1394,
+    "business_status": "OPERATIONAL",
+    "google_maps_url": "https://maps.google.com/?cid=108572782264125177&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "reviews": [
+      {
+        "name": "places/ChIJu3CJAZK02YgR-QYhx166gQE/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tsdFFtWnZNWE5rVjI1UFdHSmZNbUZNTm1KWlFuYxAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 4,
+        "text": {
+          "text": "Feb 26 couple's winter beach vacation. Great hotel in a prime location! Love the loaner beach chairs, umbrellas, towels and bikes! Rooftop pool and bar were wonderful! Outstanding front desk staff! Each and every person was extremely helpful! Standard room was clean and somewhat small, but was just fine for a couple. Definitely will come back. Docked a star for flat bottom sheet on the bed. PLEASE use fitted sheets just like you have at home and I have at home and every sheet retailer sells. NOBODY wants to strain their back to remake the bed after pulling out the top sheet and duvet. Also, the alarm clock went off at 6 AM on our first morning. Please remind the housekeeping staff to ensure the alarm is turned off. Upgrade to fitted bottom sheets and the review is five stars!",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Feb 26 couple's winter beach vacation. Great hotel in a prime location! Love the loaner beach chairs, umbrellas, towels and bikes! Rooftop pool and bar were wonderful! Outstanding front desk staff! Each and every person was extremely helpful! Standard room was clean and somewhat small, but was just fine for a couple. Definitely will come back. Docked a star for flat bottom sheet on the bed. PLEASE use fitted sheets just like you have at home and I have at home and every sheet retailer sells. NOBODY wants to strain their back to remake the bed after pulling out the top sheet and duvet. Also, the alarm clock went off at 6 AM on our first morning. Please remind the housekeeping staff to ensure the alarm is turned off. Upgrade to fitted bottom sheets and the review is five stars!",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "stephen walker",
+          "uri": "https://www.google.com/maps/contrib/117187922327169300263/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXlR8WMz1ZeOhnCyqHu93g9as7JhWakL8MN1pwOAdeWFqdR2e3G-g=s128-c0x00000000-cc-rp-mo-ba3"
+        },
+        "publishTime": "2026-02-24T20:56:01.448905923Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2tsdFFtWnZNWE5rVjI1UFdHSmZNbUZNTm1KWlFuYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tsdFFtWnZNWE5rVjI1UFdHSmZNbUZNTm1KWlFuYxAB!2m1!1s0x88d9b492018970bb:0x181ba5ec72106f9"
+      },
+      {
+        "name": "places/ChIJu3CJAZK02YgR-QYhx166gQE/reviews/Ci9DQUlRQUNvZENodHljRjlvT25sYWFEUnBjVWRrZDA1bFFubDVjbHByZWtKak1WRRAB",
+        "relativePublishTimeDescription": "2 months ago",
+        "rating": 5,
+        "text": {
+          "text": "I’ve stayed at Dream South Beach multiple times, and the staff remain the property’s biggest asset—consistently friendly, welcoming, and attentive.\n\nThe location is great if you want to be in South Beach, just a few minutes’ walk to the beach. The rooftop pool is also a nice feature for a hotel of this size.\n\nBreakfast hours are very generous—until 2pm on weekdays and 4pm on weekends.\n\nThe rooms are a bit outdated and could use a renovation, especially the carpets, but the service and location keep me coming back.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "I’ve stayed at Dream South Beach multiple times, and the staff remain the property’s biggest asset—consistently friendly, welcoming, and attentive.\n\nThe location is great if you want to be in South Beach, just a few minutes’ walk to the beach. The rooftop pool is also a nice feature for a hotel of this size.\n\nBreakfast hours are very generous—until 2pm on weekdays and 4pm on weekends.\n\nThe rooms are a bit outdated and could use a renovation, especially the carpets, but the service and location keep me coming back.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Hoang Nguyen",
+          "uri": "https://www.google.com/maps/contrib/118410680531773241145/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLo7Wv_Ltvle-sFu8_rP7EJhr0yeQ_ipyjnUndMgqswzL633g=s128-c0x00000000-cc-rp-mo-ba3"
+        },
+        "publishTime": "2026-03-07T17:43:57.402073484Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25sYWFEUnBjVWRrZDA1bFFubDVjbHByZWtKak1WRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25sYWFEUnBjVWRrZDA1bFFubDVjbHByZWtKak1WRRAB!2m1!1s0x88d9b492018970bb:0x181ba5ec72106f9"
+      },
+      {
+        "name": "places/ChIJu3CJAZK02YgR-QYhx166gQE/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pWRVRFdGplbkJVZDI5RlVFRXlUWGRvYkhOTVlWRRAB",
+        "relativePublishTimeDescription": "4 months ago",
+        "rating": 3,
+        "text": {
+          "text": "Small Boutique hotel. Not the standard of other Marriott hotels, but good location.\nOur suite (269 & 270) is quite loud during the night, you hear the people walking around on the floor above and there is a lot of music and people partying on the street and the restaurant below, all through the night to sunrise. If you are a light sleeper, you definitely need earplugs.\nAlso a lot of light coming in from under the doors from the corridor at night.\nEverything is looking like in need of some cleaning and fixing...in that sense fits very much Miami Beach.\nRoof terrace is nice, small 3 foot deep pool, the building is right behind Versace Villa, and you can even see a sliver of the ocean.\nBeach is very close, less than a 5 Minute walk. Very central location in the Art Deco district.\nThey have a few bikes for free for 2 hours max. And beach chairs and umbrellas and towels you can bring to the beach.\nStaff is very nice.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Small Boutique hotel. Not the standard of other Marriott hotels, but good location.\nOur suite (269 & 270) is quite loud during the night, you hear the people walking around on the floor above and there is a lot of music and people partying on the street and the restaurant below, all through the night to sunrise. If you are a light sleeper, you definitely need earplugs.\nAlso a lot of light coming in from under the doors from the corridor at night.\nEverything is looking like in need of some cleaning and fixing...in that sense fits very much Miami Beach.\nRoof terrace is nice, small 3 foot deep pool, the building is right behind Versace Villa, and you can even see a sliver of the ocean.\nBeach is very close, less than a 5 Minute walk. Very central location in the Art Deco district.\nThey have a few bikes for free for 2 hours max. And beach chairs and umbrellas and towels you can bring to the beach.\nStaff is very nice.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Rainer Schrom",
+          "uri": "https://www.google.com/maps/contrib/108239522019462145274/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUB9sNiacq7zisQVDtsaiJFVxLktHFPS59LbkjJWiJM4AZjGiyz=s128-c0x00000000-cc-rp-mo-ba4"
+        },
+        "publishTime": "2026-01-24T14:28:48.198713401Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pWRVRFdGplbkJVZDI5RlVFRXlUWGRvYkhOTVlWRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pWRVRFdGplbkJVZDI5RlVFRXlUWGRvYkhOTVlWRRAB!2m1!1s0x88d9b492018970bb:0x181ba5ec72106f9"
+      },
+      {
+        "name": "places/ChIJu3CJAZK02YgR-QYhx166gQE/reviews/Ci9DQUlRQUNvZENodHljRjlvT25KRU9URmFNRTV5Ym10UVkzUnlkems0VGkxNWNuYxAB",
+        "relativePublishTimeDescription": "4 months ago",
+        "rating": 4,
+        "text": {
+          "text": "Overall: solid 3.5 stars\n\nThe good:\n•\tLocation is perfect. You’re one block from the beach and in the middle of everything.\n•\tService was genuinely excellent. Check-in with Melody was great, she was friendly, welcoming, and went out of her way to get us into a room early. We arrived on a morning flight fully expecting to wait until the official check-in time, so being able to shower and reset right away was a big deal.\n•\tAmenities are impressive for South Beach. Beach towels and chairs, bikes for rent, gym passes, water, coffee, etc. Not every hotel in the area offers that without nickel-and-diming.\n•\tHousekeeping was solid. Daily cleanup, nicely refreshed room, and bottled water (oddly 2 out of 3 days but still appreciated).\n•\tBathroom was great. Spacious shower and good water pressure.\n\nWhat needs work:\n•\tNoise insulation is basically non-existent. Besides the usual Ocean Drive evening noise, our room was directly above a bar that blasted repetitive music with the same beat over and over- enough to drive anyone insane when you’re trying to sleep. At minimum they should offer proper earplugs for families or light sleepers.\n•\tRooms are on the smaller side (fine for a couple, tight for a family of 3), and the layout is odd. There’s a little entry area separated by doors from the sleeping space, which is nice, but then there’s a transparent glass wall between that area and the shower. With a teenage daughter, it meant constantly watching who was going where while someone was showering or using the restroom.\n•\tWe were placed in the building next door, not the main hotel building. To reach our room we had to walk through the “Naked Taco” restaurant, which takes up the entire lobby. The smell inside that lobby was honestly awful: a mix of throw-up, spilled liquor, and sewage. All three of us commented on it every single time. The main building lobby smelled fine, so I wish we’d been placed there instead. They really need to address the ventilation/cleanliness because no hotel guest wants that.\n•\tPool is just okay. Nice to have, but only 3 ft deep and feels more like a bar/drinking scene than an actual pool where adults can swim or relax.\n\nBottom line:\nGreat location, great staff, surprisingly good amenities for South Beach, but noise, layout quirks, and that awful restaurant smell hold it back. If we stayed again, we’d only do it with a room in the main building and away from the bar",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Overall: solid 3.5 stars\n\nThe good:\n•\tLocation is perfect. You’re one block from the beach and in the middle of everything.\n•\tService was genuinely excellent. Check-in with Melody was great, she was friendly, welcoming, and went out of her way to get us into a room early. We arrived on a morning flight fully expecting to wait until the official check-in time, so being able to shower and reset right away was a big deal.\n•\tAmenities are impressive for South Beach. Beach towels and chairs, bikes for rent, gym passes, water, coffee, etc. Not every hotel in the area offers that without nickel-and-diming.\n•\tHousekeeping was solid. Daily cleanup, nicely refreshed room, and bottled water (oddly 2 out of 3 days but still appreciated).\n•\tBathroom was great. Spacious shower and good water pressure.\n\nWhat needs work:\n•\tNoise insulation is basically non-existent. Besides the usual Ocean Drive evening noise, our room was directly above a bar that blasted repetitive music with the same beat over and over- enough to drive anyone insane when you’re trying to sleep. At minimum they should offer proper earplugs for families or light sleepers.\n•\tRooms are on the smaller side (fine for a couple, tight for a family of 3), and the layout is odd. There’s a little entry area separated by doors from the sleeping space, which is nice, but then there’s a transparent glass wall between that area and the shower. With a teenage daughter, it meant constantly watching who was going where while someone was showering or using the restroom.\n•\tWe were placed in the building next door, not the main hotel building. To reach our room we had to walk through the “Naked Taco” restaurant, which takes up the entire lobby. The smell inside that lobby was honestly awful: a mix of throw-up, spilled liquor, and sewage. All three of us commented on it every single time. The main building lobby smelled fine, so I wish we’d been placed there instead. They really need to address the ventilation/cleanliness because no hotel guest wants that.\n•\tPool is just okay. Nice to have, but only 3 ft deep and feels more like a bar/drinking scene than an actual pool where adults can swim or relax.\n\nBottom line:\nGreat location, great staff, surprisingly good amenities for South Beach, but noise, layout quirks, and that awful restaurant smell hold it back. If we stayed again, we’d only do it with a room in the main building and away from the bar",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Hike and Trade",
+          "uri": "https://www.google.com/maps/contrib/101802608520082729970/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJKy7jCiya_MreonmFr9YnEtNtF5yYjl4GmLJMHb1QxdyJqCw=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-01-21T17:54:36.654920554Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25KRU9URmFNRTV5Ym10UVkzUnlkems0VGkxNWNuYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25KRU9URmFNRTV5Ym10UVkzUnlkems0VGkxNWNuYxAB!2m1!1s0x88d9b492018970bb:0x181ba5ec72106f9"
+      },
+      {
+        "name": "places/ChIJu3CJAZK02YgR-QYhx166gQE/reviews/Ci9DQUlRQUNvZENodHljRjlvT2toVlowYzFXazlWUkRkaVQzWkJjVkpwYkU0d1NHYxAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 3,
+        "text": {
+          "text": "The room was very clean although the water was warm at best not great! Yes we got free water and coffee in the lobby but no facilities in the room. The Gym was off site with 2 passes allowed not ideal if you stay for more than 2 nights. Location was excellent near the ocean and restaurants. The reception staff were very helpful. However 45 dollars service charge per night given the amenities is too much and was totally overpriced.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "The room was very clean although the water was warm at best not great! Yes we got free water and coffee in the lobby but no facilities in the room. The Gym was off site with 2 passes allowed not ideal if you stay for more than 2 nights. Location was excellent near the ocean and restaurants. The reception staff were very helpful. However 45 dollars service charge per night given the amenities is too much and was totally overpriced.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Katherine DOUGLAS",
+          "uri": "https://www.google.com/maps/contrib/105359525902627883968/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJMb_adiEWplEIGeyR3gGe90BcATwP6sxWuiltP-fHErpZPHg=s128-c0x00000000-cc-rp-mo-ba2"
+        },
+        "publishTime": "2026-02-06T20:51:58.403742924Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2toVlowYzFXazlWUkRkaVQzWkJjVkpwYkU0d1NHYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2toVlowYzFXazlWUkRkaVQzWkJjVkpwYkU0d1NHYxAB!2m1!1s0x88d9b492018970bb:0x181ba5ec72106f9"
+      }
+    ],
+    "signals": {
+      "review_decline": false,
+      "review_rating_delta": 0,
+      "review_volume_decline": false,
+      "complaint_increase": false,
+      "sentiment_decline": false,
+      "sentiment_trend": "Improving",
+      "review_activity_trend": "Increasing",
+      "positive_reviews_recent": 5,
+      "negative_reviews_recent": 1,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "renovation_needed": true,
+      "old_property": false,
+      "physical_condition_score": 2,
+      "franchise_loss": false,
+      "former_brand": "",
+      "franchise_affiliated": true,
+      "current_brand": "Hyatt",
+      "brand_status": "CURRENT",
+      "cmbs_watchlist": false,
+      "cmbs_special_servicing": false,
+      "cmbs_delinquent": false,
+      "long_term_owner": false,
+      "ownership_length_years": "",
+      "distress_score": 4
+    },
+    "review_themes": {
+      "staff": 52.9,
+      "maintenance": 17.6,
+      "noise": 23.5,
+      "cleanliness": 5.9
+    },
+    "heuristic_scores": {
+      "distress_score": 4,
+      "distress_reasons": [
+        "Negative review signal: smell",
+        "Negative review signal: noise",
+        "Renovation signals in reviews: 40.0%"
+      ],
+      "review_trend_score": 0,
+      "review_volume_recent": 5,
+      "review_volume_prior": 0,
+      "review_volume_change_pct": 100.0,
+      "avg_rating_recent": 3.8,
+      "avg_rating_prior": 0.0,
+      "review_rating_delta": 0,
+      "complaint_rate_recent": 0.2,
+      "complaint_rate_prior": 0.0,
+      "review_complaint_delta": 0.2,
+      "year_built": "",
+      "property_age": "",
+      "renovation_signal_rate": 0.4,
+      "renovation_needed": true,
+      "physical_condition_score": 2,
+      "positive_reviews_recent": 5,
+      "negative_reviews_recent": 1,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "sentiment_delta": -4,
+      "sentiment_trend": "Improving",
+      "review_activity_trend": "Increasing"
+    },
+    "llm_analysis": {
+      "distress_probability": 0.45,
+      "seller_fatigue_probability": 0.15,
+      "opportunity_score": 50,
+      "acquisition_attractiveness_star_rating": 3.0,
+      "top_distress_signals": "Negative review signals related to smell and noise, high renovation signal rate at 40%, low physical condition score of 2, renovation needed",
+      "investment_thesis": "The Dream South Beach by Hyatt shows moderate distress driven by physical condition issues and guest complaints about smell and noise, despite improving sentiment and increasing review activity. The property requires renovation but benefits from current brand affiliation and no franchise risk, presenting a moderate opportunity for repositioning through targeted renovations and operational improvements.",
+      "acquisition_strategy": "Light Renovation Play",
+      "review_summary": "Guest feedback highlights issues with unpleasant odors and noise disturbances, alongside concerns about the property's physical condition and need for renovation. However, overall guest sentiment is improving with increasing review activity, indicating operational efforts may be positively impacting guest experience despite ongoing maintenance challenges.",
+      "llm_star_rating": 3.0,
+      "recommended_action": "Light Renovation Play",
+      "confidence": "LOW",
+      "distress_summary": ""
+    },
+    "owner_data": {
+      "owner_name": "",
+      "owner_company": "",
+      "mailing_address": "",
+      "owner_phone": "",
+      "ownership_since": null,
+      "ownership_length_years": "",
+      "attom_year_built": "",
+      "is_older_than_20_years": ""
+    },
+    "cmbs_data": {
+      "cmbs_loan_status": "Not Found",
+      "cmbs_delinquency_flag": false,
+      "cmbs_watchlist_flag": false,
+      "cmbs_special_servicing_flag": false
+    },
+    "franchise_data": {
+      "franchise_affiliated": true,
+      "current_brand": "Hyatt",
+      "former_brand": "",
+      "brand_status": "CURRENT",
+      "franchise_confidence": "High"
+    },
+    "source_location": "South Beach, Miami Beach, Florida",
+    "radius_km": 2.0,
+    "final_lead_score": 42.0,
+    "rank": 11,
+    "lead_reason": ""
+  }
+]

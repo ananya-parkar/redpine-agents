@@ -7,9 +7,12 @@ from src.io_utils import parse_locations, save_json
 from src.pipeline import process_location
 from src.writers import save_excel_files
 from src.exporters import save_ai_entities
-from src.dedupe import remove_existing_leads
-from src.master_storage import append_to_master
+# from src.dedupe import remove_existing_leads
+from src.postgres_dedupe import remove_existing_postgres_leads
+# from src.master_storage import append_to_master
 from src.html_report import generate_html_report
+from src.postgres_storage import insert_priority_leads
+
 
 def main():
     print("\n[START] Agent 1 run started\n", flush=True)
@@ -37,16 +40,14 @@ def main():
         print("[WAIT] Sleeping for 1 second before next location...", flush=True)
         time.sleep(1)
 
-    all_rows = remove_existing_leads(all_rows)
-    print("\n[SORT] Sorting all hotel rows by distress_score descending", flush=True)
-    all_rows.sort(key=lambda x: x.get("final_lead_score", 0), reverse=True)
-    for idx, row in enumerate(all_rows, start=1):
-        row["rank"] = idx
-
+    # all_rows = remove_existing_leads(all_rows)
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     run_dir = RUNS_DIR / timestamp
     run_dir.mkdir(parents=True, exist_ok=True)
     print(f"[OUTPUT] Created run directory: {run_dir}", flush=True)
+
+    save_excel_files(run_dir, all_rows)
+    print(f"\n[DONE] Saved {len(all_rows)} hotel row(s) to {run_dir}", flush=True)
 
     save_json(geocode_results, run_dir / "geocode_results.json")
     print("[OUTPUT] Saved geocode_results.json", flush=True)
@@ -57,17 +58,23 @@ def main():
     save_json(details_results, run_dir / "place_details.json")
     print("[OUTPUT] Saved place_details.json", flush=True)
 
-    save_excel_files(run_dir, all_rows)
-    print(f"\n[DONE] Saved {len(all_rows)} hotel row(s) to {run_dir}", flush=True)
-    
+    all_rows = remove_existing_postgres_leads(all_rows)
+    print("\n[SORT] Sorting all hotel rows by distress_score descending", flush=True)
+    all_rows.sort(key=lambda x: x.get("final_lead_score", 0), reverse=True)
+    for idx, row in enumerate(all_rows, start=1):
+        row["rank"] = idx
+
     priority_rows = [
         row for row in all_rows
         if row.get("final_lead_score", 0) >= 40
     ]
     
-    append_to_master(priority_rows)
-    print("[OUTPUT] Updated master_leads.csv", flush=True)
-    
+    # append_to_master(priority_rows)
+    # print("[OUTPUT] Updated master_leads.csv", flush=True)
+
+    insert_priority_leads(priority_rows)
+    print("[POSTGRES] Priority leads stored", flush=True)
+
     save_ai_entities(
         run_dir / "priority_hotels_ai.json",
         priority_rows

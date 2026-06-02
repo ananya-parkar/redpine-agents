@@ -1,9 +1,11 @@
 # agent-1/src/enrichment.py
+from datetime import datetime
 from src.franchise_detection import detect_franchise_history
 from src.owner_details import detect_owner_details
 from src.property_age import get_property_age_flags
-from src.owner_tenure import get_owner_tenure
+# from src.owner_tenure import get_owner_tenure
 from src.cmbs_lookup import detect_cmbs_signals, default_cmbs_result
+from src.attom_sales import get_sale_data
 
 
 def default_franchise_result():
@@ -98,17 +100,30 @@ def enrich_priority_hotel(hotel_name, address, reviews=None):
         
         # Get property data for age and tenure calculations
         property_data = property_lookup.get("property_data", {})
+        sale_data = get_sale_data(address)
+        sale_date = sale_data.get("sale_trans_date")
+        ownership_years = ""
+
+        if sale_date:
+            try:
+                ownership_years = (datetime.now().year - int(sale_date[:4]))
+            except Exception:
+                ownership_years = ""
+        result["ownership_since"] = sale_date
+        result["ownership_length_years"] = ownership_years
+        
+        print(
+            f"    [SALE] date={sale_date} | "
+            f"tenure={ownership_years}",
+            flush=True
+        )
+
         
         # Extract year built and age flag
         age_result = get_property_age_flags(property_data)
         result["attom_year_built"] = age_result.get("year_built", "")
         result["is_older_than_20_years"] = age_result.get("is_older_than_20_years", "")
-        
-        # Extract ownership tenure
-        tenure_result = get_owner_tenure(property_data)
-        result["ownership_since"] = tenure_result.get("ownership_since", "")
-        result["ownership_length_years"] = tenure_result.get("ownership_length_years", "")
-        
+                
         print(
             f"    [OWNER] owner={result['owner_name'] or 'N/A'} | "
             f"built={result['attom_year_built'] or 'N/A'} | "
