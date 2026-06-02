@@ -95,33 +95,6 @@ def detect_owner_details(address: str = "") -> Dict:
             except Exception:
                 is_older_than_20_years = ""
 
-        sale_history = property_data.get("salehistory", [])
-        print(f"[ATTOM DEBUG] salehistory={sale_history}", flush=True)
-
-        sale_date = ""
-
-        if sale_history:
-
-            latest_sale = sale_history[0]
-
-            sale_date = latest_sale.get(
-
-                "saleTransDate",
-
-                ""
-
-            )
-        
-
-        ownership_years = ""
-        if sale_date:
-            try:
-                sale_year = int(str(sale_date)[:4])
-                current_year = datetime.now().year
-                ownership_years = str(current_year - sale_year)
-            except Exception:
-                ownership_years = ""
-
         owner_company = ""
         if owner_name and "llc" in owner_name.lower():
             owner_company = owner_name
@@ -131,8 +104,6 @@ def detect_owner_details(address: str = "") -> Dict:
             "owner_company": owner_company,
             "mailing_address": mailing,
             "owner_phone": "",
-            "ownership_since": sale_date,
-            "ownership_length_years": ownership_years,
             "year_built": year_built,
             "is_older_than_20_years": is_older_than_20_years,
             "owner_confidence": "High" if owner_name else "Low",
