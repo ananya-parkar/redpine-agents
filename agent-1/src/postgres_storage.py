@@ -45,6 +45,7 @@ def insert_priority_leads(rows):
             investment_thesis,
             recommended_action,
             distress_summary,
+            llm_star_rating,
 
             ownership_since,
             ownership_length_years,
@@ -57,6 +58,7 @@ def insert_priority_leads(rows):
         VALUES (
             %s,%s,%s,%s,%s,%s,%s,
             %s,%s,%s,%s,%s,%s,
+            %s,
             %s,%s,%s,
             %s,%s,%s
         )
@@ -74,6 +76,7 @@ def insert_priority_leads(rows):
             investment_thesis = EXCLUDED.investment_thesis,
             recommended_action = EXCLUDED.recommended_action,
             distress_summary = EXCLUDED.distress_summary,
+            llm_star_rating = EXCLUDED.llm_star_rating,
 
             ownership_length_years = EXCLUDED.ownership_length_years,
             attom_year_built = EXCLUDED.attom_year_built,
@@ -96,6 +99,7 @@ def insert_priority_leads(rows):
             llm.get("investment_thesis"),
             llm.get("recommended_action"),
             llm.get("distress_summary"),
+            llm.get("llm_star_rating"),
             row.get("ownership_since"),
             int(row["ownership_length_years"])
             if str(row.get("ownership_length_years", "")).isdigit()
