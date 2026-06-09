@@ -123,6 +123,13 @@ def main():
     dashboard_file = export_dashboard(reports_dir)
     print(f"[OUTPUT] Dashboard exported to: {dashboard_file}", flush=True)
 
+    for row in priority_rows:
+        print(
+            row.get("hotel_name"),
+            "suppress_digest=", row.get("suppress_digest"),
+            "is_pursuing=", row.get("is_pursuing"),
+            "score_change=", row.get("score_change")
+        )
     send_run_digest(
         priority_rows=priority_rows,
         dashboard_file=dashboard_file,

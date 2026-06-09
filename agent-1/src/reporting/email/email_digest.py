@@ -22,12 +22,20 @@ def send_run_digest(
         for r in priority_rows
         if not r.get("suppress_digest")
     ][:10]
+    print(
+        f"[EMAIL] Priority rows={len(priority_rows)} "
+        f"Digest rows={len(top_leads)}",
+        flush=True
+    )
+
+    digest_count = len(top_leads)
+
 
     msg = EmailMessage()
 
     msg["Subject"] = (
         f"Hotel Acquisition Agent | "
-        f"{len(priority_rows)} Priority Acquisition Opportunities"
+        f"{len(top_leads)} New / Resurfaced Opportunities"
     )
 
     msg["From"] = EMAIL_FROM
@@ -52,18 +60,26 @@ Please view this email in HTML format for the full report.
     # --------------------------------------------------
 
     rows_html = ""
-
-    for row in top_leads:
-
-        rows_html += f"""
+    if not top_leads:
+        rows_html = """
         <tr>
-            <td>{row.get('rank')}</td>
-            <td>{row.get('hotel_name')}</td>
-            <td>{row.get('final_lead_score')}</td>
-            <td>{row.get('llm_analysis', {}).get('opportunity_score', '')}</td>
-            <td>{row.get('lead_reason')}</td>
+            <td colspan="5">
+            No new or resurfaced acquisition opportunities identified in this run.
+            </td>
         </tr>
         """
+    else:
+        for row in top_leads:
+
+            rows_html += f"""
+            <tr>
+                <td>{row.get('rank')}</td>
+                <td>{row.get('hotel_name')}</td>
+                <td>{row.get('final_lead_score')}</td>
+                <td>{row.get('llm_analysis', {}).get('opportunity_score', '')}</td>
+                <td>{row.get('lead_reason')}</td>
+            </tr>
+            """
 
     # --------------------------------------------------
     # HTML Email Body
@@ -89,8 +105,7 @@ and the HTML report provides a detailed acquisition review of the highest-priori
 <h3>RUN SUMMARY</h3>
 
 <p>
-<b>Priority Leads Identified:</b> {len(priority_rows)}
-</p>
+<b>New / Resurfaced Opportunities: {digest_count}</p>
 
 <h3>TOP ACQUISITION OPPORTUNITIES</h3>
 
