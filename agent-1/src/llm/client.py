@@ -1,7 +1,7 @@
 # agent-1/src/llm/client.py
 
 from openai import OpenAI
-from src.config import OPENAI_API_KEY
+from src.core.config import OPENAI_API_KEY
 
 # print(f"[LLM CONFIG] OPENAI KEY PRESENT: {bool(OPENAI_API_KEY)}",flush=True)
 # if OPENAI_API_KEY:

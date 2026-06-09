@@ -1,0 +1,445 @@
+[
+  {
+    "hotel_name": "San Juan Hotel South Beach",
+    "address": "1680 Collins Ave, Miami Beach, FL 33139, USA",
+    "place_id": "ChIJIZ8GFpu02YgRB40Vf4quT4w",
+    "latitude": null,
+    "longitude": null,
+    "rating": 4.1,
+    "user_rating_count": 1113,
+    "business_status": "OPERATIONAL",
+    "google_maps_url": "https://maps.google.com/?cid=10110491598330891527&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "reviews": [
+      {
+        "name": "places/ChIJIZ8GFpu02YgRB40Vf4quT4w/reviews/Ci9DQUlRQUNvZENodHljRjlvT21KQlRYY3labW93TUdwZlJsVlNjM2hGTTNoWE4xRRAB",
+        "relativePublishTimeDescription": "4 months ago",
+        "rating": 5,
+        "text": {
+          "text": "We ended up staying at the San Juan Hotel after a relocation, and I’m so glad we did. The location is fantastic — right in the heart of Miami Beach and easy to get everywhere.\n\nThe staff were incredibly friendly, helpful, and welcoming, which made a stressful travel day so much better. The quaint little pool area was a hidden gem — sheltered from the wind and a perfect place to relax or get a little work done while enjoying complimentary coffee. Plus, the beach location was well equipped with loungers, umbrellas, towels, and more.\n\nBreakfast was lovely, and the rooms were comfortable — not large, but absolutely everything we needed. Overall, a charming hotel with great service and a peaceful vibe. Would happily stay here again.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "We ended up staying at the San Juan Hotel after a relocation, and I’m so glad we did. The location is fantastic — right in the heart of Miami Beach and easy to get everywhere.\n\nThe staff were incredibly friendly, helpful, and welcoming, which made a stressful travel day so much better. The quaint little pool area was a hidden gem — sheltered from the wind and a perfect place to relax or get a little work done while enjoying complimentary coffee. Plus, the beach location was well equipped with loungers, umbrellas, towels, and more.\n\nBreakfast was lovely, and the rooms were comfortable — not large, but absolutely everything we needed. Overall, a charming hotel with great service and a peaceful vibe. Would happily stay here again.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Alicia Pelton",
+          "uri": "https://www.google.com/maps/contrib/113409042876306185979/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUGWiBBKyE6mL3CAFv1lX8AHXbi48K3qwCNxo1MKaaAnhhJK0IZ=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-01-25T15:59:22.682646616Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21KQlRYY3labW93TUdwZlJsVlNjM2hGTTNoWE4xRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21KQlRYY3labW93TUdwZlJsVlNjM2hGTTNoWE4xRRAB!2m1!1s0x88d9b49b16069f21:0x8c4fae8a7f158d07"
+      },
+      {
+        "name": "places/ChIJIZ8GFpu02YgRB40Vf4quT4w/reviews/Ci9DQUlRQUNvZENodHljRjlvT21aYWREbEpSRmQ0UzE5ZmRITk9hVGxDVEZWalVYYxAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 3,
+        "text": {
+          "text": "The good parts, the hotel is in a prime location and the concession it has with a nearby beach sunlounger provider is superb and saved us $50 a day. The bed was big and very comfortable. The hotel is tired and shabby and the 4 star rating is fantasy. The breakfast provided is abysmal, a desperately unattractive row of options in a glass case which are microwaved in a back room and presented on paper plates with plastic cups and cutlery. We only went once. We passed reception 6 times a day and never got a single word of greeting. It was so depressing we left 4 days early having paid up front. The owners /managment have lost enthusiasm and interest and it shows.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "The good parts, the hotel is in a prime location and the concession it has with a nearby beach sunlounger provider is superb and saved us $50 a day. The bed was big and very comfortable. The hotel is tired and shabby and the 4 star rating is fantasy. The breakfast provided is abysmal, a desperately unattractive row of options in a glass case which are microwaved in a back room and presented on paper plates with plastic cups and cutlery. We only went once. We passed reception 6 times a day and never got a single word of greeting. It was so depressing we left 4 days early having paid up front. The owners /managment have lost enthusiasm and interest and it shows.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Richard Warburton",
+          "uri": "https://www.google.com/maps/contrib/113299355327459233129/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUcabrUw6VWJ7w0iycnFjLLFPpEmpAxjxTqdm1JuPsxgsqYkCWjmw=s128-c0x00000000-cc-rp-mo-ba6"
+        },
+        "publishTime": "2026-02-25T21:03:47.839231157Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21aYWREbEpSRmQ0UzE5ZmRITk9hVGxDVEZWalVYYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21aYWREbEpSRmQ0UzE5ZmRITk9hVGxDVEZWalVYYxAB!2m1!1s0x88d9b49b16069f21:0x8c4fae8a7f158d07"
+      },
+      {
+        "name": "places/ChIJIZ8GFpu02YgRB40Vf4quT4w/reviews/Ci9DQUlRQUNvZENodHljRjlvT2t0ZlpYWkhSRXhsUzFscE16VnhYMFJRTlcxTFJXYxAB",
+        "relativePublishTimeDescription": "5 months ago",
+        "rating": 5,
+        "text": {
+          "text": "(english is my second langage)\nWe have been really well welcomed at 0h30 in the night. The stayed was great. The team there is amazing. Very helping. At the end, they let us put our luggages in their locker room for the day ! Its very helpfull when you have3 kids and have to wait the entire day until your cruise goes. So thanks to all the tean there and see you very soon hopefully 😃",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "(english is my second langage)\nWe have been really well welcomed at 0h30 in the night. The stayed was great. The team there is amazing. Very helping. At the end, they let us put our luggages in their locker room for the day ! Its very helpfull when you have3 kids and have to wait the entire day until your cruise goes. So thanks to all the tean there and see you very soon hopefully 😃",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Marie Anne Boulanger",
+          "uri": "https://www.google.com/maps/contrib/110359734035090939732/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJwnQLK3UoWTnq9A5E8r1UvJ6P4ZhoSDBtMXBluSwZjHcfckw=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2025-12-17T19:34:26.231834010Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2t0ZlpYWkhSRXhsUzFscE16VnhYMFJRTlcxTFJXYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2t0ZlpYWkhSRXhsUzFscE16VnhYMFJRTlcxTFJXYxAB!2m1!1s0x88d9b49b16069f21:0x8c4fae8a7f158d07"
+      },
+      {
+        "name": "places/ChIJIZ8GFpu02YgRB40Vf4quT4w/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xORGQyRkdSbW8yT0VwdmFHVnZOSFZ1TjA1UFRWRRAB",
+        "relativePublishTimeDescription": "5 months ago",
+        "rating": 2,
+        "text": {
+          "text": "Unfortunately, staying here wasn't the greatest experience. First and foremost, there was never any hot water. It did get mildly warm for ~2/20 showers during my 10 day stay. Enduring icy showers every day, however, was not the best.\n\nThe air conditioning barely worked, leaving me sweating in my room all night. I had to go out and buy USB fans just to sleep comfortably. Adjusting the thermostat didn’t seem to make a difference at all, I wondered if it was even connected to anything.\n\nThe TV setup was a letdown as well. There’s no HDMI port or smart TV features, so I couldn’t connect any of my devices or watch anything at all during my entire stay. When I searched behind the TV for an HDMI port, I was met with a really thick layer of sticky dust—it was quite unappealing to dig through to look for a port. I figured it was standard for most hotels to have at least one hdmi port available, without it the TV is just useless wall decor.\n\nOn the subject of cleanliness, the overall condition of my room was pretty poor. There were actual visible dust clumps everywhere: on the walls, lamps, and even in the fridge, others were hanging off fixtures and from the ceiling. It was really pretty gross and looked like the room hadn't been cleaned thoroughly in months or years. Most of the appliances were broken or had other issues, and the towel bar and bathroom mirror were starting to fall off the wall.\n\nYou could hear everything from the upstairs guests, somehow even their phones vibrating on a table. While this noise alone from neighbors wouldn't have been that big of an issue, the noise from the cleaning staff slamming doors nonstop throughout the day, seemingly as hard as they could, and starting daily around **6 AM**, made it difficult to get quality sleep or enjoy any kind of sleep in on your vacation. I noticed others complaining about outside external noise in reviews, but I found that to be expected in South Beach and wasn’t particularly bothered by it.\n\nOn the brighter side, the rooms were a decent size and furnished well. The bed was comfortable, and the limited staff interactions I had were very friendly and helpful every time. The location is good, and the pool area was really very nice.\n\nA heads-up: the front door locks at night, and staff isn’t always at the front desk. My key cards stopped working one day, so if I hadn't forgotten something and had to go back to my room in the morning, I could have easily been locked out that night.\n\nIn short, while there were some positive aspects to my stay, and while it certainly wasn't *terrible*, these issues really overshadowed my experience, particularly the lack of A/C, hot water, and the all-day door slamming. I’ve stayed at several other hotels on Collins with much better experiences.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Unfortunately, staying here wasn't the greatest experience. First and foremost, there was never any hot water. It did get mildly warm for ~2/20 showers during my 10 day stay. Enduring icy showers every day, however, was not the best.\n\nThe air conditioning barely worked, leaving me sweating in my room all night. I had to go out and buy USB fans just to sleep comfortably. Adjusting the thermostat didn’t seem to make a difference at all, I wondered if it was even connected to anything.\n\nThe TV setup was a letdown as well. There’s no HDMI port or smart TV features, so I couldn’t connect any of my devices or watch anything at all during my entire stay. When I searched behind the TV for an HDMI port, I was met with a really thick layer of sticky dust—it was quite unappealing to dig through to look for a port. I figured it was standard for most hotels to have at least one hdmi port available, without it the TV is just useless wall decor.\n\nOn the subject of cleanliness, the overall condition of my room was pretty poor. There were actual visible dust clumps everywhere: on the walls, lamps, and even in the fridge, others were hanging off fixtures and from the ceiling. It was really pretty gross and looked like the room hadn't been cleaned thoroughly in months or years. Most of the appliances were broken or had other issues, and the towel bar and bathroom mirror were starting to fall off the wall.\n\nYou could hear everything from the upstairs guests, somehow even their phones vibrating on a table. While this noise alone from neighbors wouldn't have been that big of an issue, the noise from the cleaning staff slamming doors nonstop throughout the day, seemingly as hard as they could, and starting daily around **6 AM**, made it difficult to get quality sleep or enjoy any kind of sleep in on your vacation. I noticed others complaining about outside external noise in reviews, but I found that to be expected in South Beach and wasn’t particularly bothered by it.\n\nOn the brighter side, the rooms were a decent size and furnished well. The bed was comfortable, and the limited staff interactions I had were very friendly and helpful every time. The location is good, and the pool area was really very nice.\n\nA heads-up: the front door locks at night, and staff isn’t always at the front desk. My key cards stopped working one day, so if I hadn't forgotten something and had to go back to my room in the morning, I could have easily been locked out that night.\n\nIn short, while there were some positive aspects to my stay, and while it certainly wasn't *terrible*, these issues really overshadowed my experience, particularly the lack of A/C, hot water, and the all-day door slamming. I’ve stayed at several other hotels on Collins with much better experiences.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Dallas",
+          "uri": "https://www.google.com/maps/contrib/109821162584615780840/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXNQ733gw8pM6XfnpOoYVZB7gG2_Xaoq-Y1MxJNtybDNrc0SPs=s128-c0x00000000-cc-rp-mo-ba4"
+        },
+        "publishTime": "2026-01-07T20:25:56.999972644Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xORGQyRkdSbW8yT0VwdmFHVnZOSFZ1TjA1UFRWRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xORGQyRkdSbW8yT0VwdmFHVnZOSFZ1TjA1UFRWRRAB!2m1!1s0x88d9b49b16069f21:0x8c4fae8a7f158d07"
+      },
+      {
+        "name": "places/ChIJIZ8GFpu02YgRB40Vf4quT4w/reviews/Ci9DQUlRQUNvZENodHljRjlvT25wclNrMUNNbk5wYUY5dE0wcDZUemh5VFZNNU5VRRAB",
+        "relativePublishTimeDescription": "5 months ago",
+        "rating": 4,
+        "text": {
+          "text": "In my opinion, this is definitely not a 4 star hotel.  There is no restaurant, no room service, no pool  service, pool is small and dark, no ice machine.  I forgot a razor and asked for one and they didnt have any. For the most part, the service is good to excellent, and the location is really right in the middle of everything with very easy access to the beach, shopping, and restaurants. The room itself had hard floors, loud (couls hear the outside hvac), furniture dated, tv small and old, but was relatively comfy, shower was ok, again nothing even close to 4 star. If they advertised as a 3 star hotel, id  have given them a higher rating.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "In my opinion, this is definitely not a 4 star hotel.  There is no restaurant, no room service, no pool  service, pool is small and dark, no ice machine.  I forgot a razor and asked for one and they didnt have any. For the most part, the service is good to excellent, and the location is really right in the middle of everything with very easy access to the beach, shopping, and restaurants. The room itself had hard floors, loud (couls hear the outside hvac), furniture dated, tv small and old, but was relatively comfy, shower was ok, again nothing even close to 4 star. If they advertised as a 3 star hotel, id  have given them a higher rating.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Scott Goldsmith",
+          "uri": "https://www.google.com/maps/contrib/108397465707881341865/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUUGHi7sLOR8TxNWYUdV1dnWeDfrkA6kkYIM8Y9FlBWAHgS2nv5=s128-c0x00000000-cc-rp-mo-ba3"
+        },
+        "publishTime": "2025-12-23T19:29:06.542614315Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25wclNrMUNNbk5wYUY5dE0wcDZUemh5VFZNNU5VRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25wclNrMUNNbk5wYUY5dE0wcDZUemh5VFZNNU5VRRAB!2m1!1s0x88d9b49b16069f21:0x8c4fae8a7f158d07"
+      }
+    ],
+    "signals": {
+      "review_decline": false,
+      "review_rating_delta": 0,
+      "review_volume_decline": false,
+      "complaint_increase": false,
+      "sentiment_decline": false,
+      "sentiment_trend": "Improving",
+      "review_activity_trend": "Increasing",
+      "positive_reviews_recent": 5,
+      "negative_reviews_recent": 1,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "renovation_needed": true,
+      "old_property": true,
+      "physical_condition_score": 2,
+      "franchise_loss": false,
+      "former_brand": "",
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "brand_status": "NONE",
+      "cmbs_watchlist": false,
+      "cmbs_special_servicing": false,
+      "cmbs_delinquent": false,
+      "long_term_owner": true,
+      "ownership_length_years": 18,
+      "distress_score": 4
+    },
+    "review_themes": {
+      "staff": 55.6,
+      "maintenance": 22.2,
+      "noise": 22.2
+    },
+    "heuristic_scores": {
+      "distress_score": 4,
+      "distress_reasons": [
+        "Negative review signal: broken",
+        "Negative review signal: noise",
+        "Renovation signals in reviews: 40.0%"
+      ],
+      "review_trend_score": 0,
+      "review_volume_recent": 5,
+      "review_volume_prior": 0,
+      "review_volume_change_pct": 100.0,
+      "avg_rating_recent": 3.8,
+      "avg_rating_prior": 0.0,
+      "review_rating_delta": 0,
+      "complaint_rate_recent": 0.2,
+      "complaint_rate_prior": 0.0,
+      "review_complaint_delta": 0.2,
+      "year_built": "",
+      "property_age": "",
+      "renovation_signal_rate": 0.4,
+      "renovation_needed": true,
+      "physical_condition_score": 2,
+      "positive_reviews_recent": 5,
+      "negative_reviews_recent": 1,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "sentiment_delta": -4,
+      "sentiment_trend": "Improving",
+      "review_activity_trend": "Increasing"
+    },
+    "llm_analysis": {
+      "distress_probability": 0.65,
+      "seller_fatigue_probability": 0.7,
+      "opportunity_score": 62,
+      "llm_star_rating": 3.5,
+      "top_distress_signals": "Renovation needed, old property with low physical condition score, negative review signals related to broken items and noise, increasing review volume with some complaints",
+      "investment_thesis": "San Juan Hotel South Beach presents a moderate distress opportunity driven by its aging physical condition and renovation needs despite stable and improving guest sentiment. Long-term ownership suggests potential seller fatigue, making it a viable candidate for acquisition focused on renovation and operational improvements to enhance value.",
+      "acquisition_strategy": "Operational Turnaround",
+      "review_summary": "Guests note issues with broken items and noise, indicating maintenance and operational challenges. Despite these concerns, guest sentiment is improving and review activity is increasing, reflecting a positive trend. Renovation needs are evident and impact guest experience, but overall cleanliness and service do not appear to be major issues.",
+      "recommended_action": "Operational Turnaround",
+      "confidence": "LOW",
+      "distress_summary": ""
+    },
+    "owner_data": {
+      "owner_name": "SAN JUAN HOTEL LLC",
+      "owner_company": "SAN JUAN HOTEL LLC",
+      "mailing_address": "1680 COLLINS AVE, MIAMI BEACH, FL 33139-3137",
+      "owner_phone": "",
+      "ownership_since": "2008-08-15",
+      "ownership_length_years": 18,
+      "attom_year_built": 1948,
+      "is_older_than_20_years": "Yes"
+    },
+    "cmbs_data": {
+      "cmbs_loan_status": "",
+      "cmbs_delinquency_flag": false,
+      "cmbs_watchlist_flag": false,
+      "cmbs_special_servicing_flag": false
+    },
+    "franchise_data": {
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "former_brand": "",
+      "brand_status": "NONE",
+      "franchise_confidence": "Low"
+    },
+    "source_location": "Miami Beach, Florida",
+    "radius_km": 3.0,
+    "final_lead_score": 55.6,
+    "rank": 1,
+    "lead_reason": "Aging property; Long-term ownership"
+  },
+  {
+    "hotel_name": "The Ritz-Carlton, South Beach",
+    "address": "1 Lincoln Rd, Miami Beach, FL 33139, USA",
+    "place_id": "ChIJQyikAZu02YgRsxNbsRdQjTg",
+    "latitude": null,
+    "longitude": null,
+    "rating": 4.3,
+    "user_rating_count": 3158,
+    "business_status": "OPERATIONAL",
+    "google_maps_url": "https://maps.google.com/?cid=4075001300530172851&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "reviews": [
+      {
+        "name": "places/ChIJQyikAZu02YgRsxNbsRdQjTg/reviews/Ci9DQUlRQUNvZENodHljRjlvT2kxeWFFVTRTVGRTVWpGRk5ucGZkMjFWTUUxU1luYxAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 4,
+        "text": {
+          "text": "We enjoyed the beach the most during our stay. It’s long, wide, and covered with beautiful, soft white sand — truly a highlight of the property. The hotel also has a large swimming pool, which is a great place for guests to relax.\n\nAnother thing we enjoyed was the animal visits on Sundays. The small, gentle animals were very cute and made the experience fun for everyone, especially for kids and taking photos.\n\nOur room was comfortable and had a great view. However, there was an incident involving a housekeeping staff member that unfortunately caused some disappointment during our stay.\n\nThe restaurant was decent, though not particularly memorable. One small detail we noticed was that Ritz properties usually refresh personal care amenities daily, but at this hotel they were only provided on the first day unless requested.\n\nThe small cookie and candy jars on the table are a nice gesture, though it felt a bit surprising that they were charged as extra items considering the premium price of the stay.\n\nOverall, we had some enjoyable aspects of the visit, especially the beach and pool, but there are a few areas where the experience could be improved.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "We enjoyed the beach the most during our stay. It’s long, wide, and covered with beautiful, soft white sand — truly a highlight of the property. The hotel also has a large swimming pool, which is a great place for guests to relax.\n\nAnother thing we enjoyed was the animal visits on Sundays. The small, gentle animals were very cute and made the experience fun for everyone, especially for kids and taking photos.\n\nOur room was comfortable and had a great view. However, there was an incident involving a housekeeping staff member that unfortunately caused some disappointment during our stay.\n\nThe restaurant was decent, though not particularly memorable. One small detail we noticed was that Ritz properties usually refresh personal care amenities daily, but at this hotel they were only provided on the first day unless requested.\n\nThe small cookie and candy jars on the table are a nice gesture, though it felt a bit surprising that they were charged as extra items considering the premium price of the stay.\n\nOverall, we had some enjoyable aspects of the visit, especially the beach and pool, but there are a few areas where the experience could be improved.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Love2travel",
+          "uri": "https://www.google.com/maps/contrib/100019511350298949338/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKCVlKRIftQj-0fkbeOH6zFdkysfl3Ph4wVEgCxfrRqR6Wt4A=s128-c0x00000000-cc-rp-mo-ba6"
+        },
+        "publishTime": "2026-03-08T01:35:38.623337192Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2kxeWFFVTRTVGRTVWpGRk5ucGZkMjFWTUUxU1luYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2kxeWFFVTRTVGRTVWpGRk5ucGZkMjFWTUUxU1luYxAB!2m1!1s0x88d9b49b01a42843:0x388d5017b15b13b3"
+      },
+      {
+        "name": "places/ChIJQyikAZu02YgRsxNbsRdQjTg/reviews/Ci9DQUlRQUNvZENodHljRjlvT2s0d1pHVmpVbkpxVkVSWE1IZFFSMUJMYzNKS1NsRRAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 2,
+        "text": {
+          "text": "A Disappointing Anniversary: Inconsistent Service & Poor Management\n\nWe stayed for 2 nights for our anniversary, and while there were highlights, this property is showing its age and lacks the basic standards of the Ritz-Carlton brand.\n\nThe Room & Housekeeping (The \"Ugly\"):\nThe hotel is dated and, frankly, one of the least attractive Ritz properties we’ve seen. We were upgraded to a 1-bedroom suite, but it was filthy. There was dust and someone else’s makeup under the TV stand that stayed there our entire stay. We complained on the first night, but the Housekeeping Manager didn't return our call until 5 minutes before we checked out on Day 3. What can you even do at that point?\n\nService Failures:\n* Check-in: A staff member pulled a newly arrived guest to the front of a long line because they \"just got off a flight\" (as did the rest of us). A pathetic offer of water didn't fix the frustration.\n* Anniversary: Promised champagne/strawberries took 3 follow-ups and 2 days to arrive.\n* Pool: Service is slow; we were completely ignored while staff handed out fruit to everyone else.\n* Spa: Short-staffed and unable to accommodate us. I appreciate that they called multiple times a day to give us staffing updates, but a hotel of this caliber should be prepared.\n\nDining & The \"Good\":\n* Club Lounge: The standout of the trip. Amazing service and great F&B selection. This is the only place that felt like a Ritz.\n* The Beach: Slow service, but the fish tacos and guacamole were incredible.\n* Zaytinya: Overpriced and mediocre. Good cocktails, but disappointing for a Jose Andres spot.\n* Room Service: The breakfast attendant was amazing and the food was great (though $14 for 2 eggs with no toast is a bit much).\n\nThe Verdict:\nThe 20% automatic service charge seems to have removed any incentive for the staff to provide actual \"luxury\" service. Aside from the Club Lounge and the beach food, this was a major letdown.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "A Disappointing Anniversary: Inconsistent Service & Poor Management\n\nWe stayed for 2 nights for our anniversary, and while there were highlights, this property is showing its age and lacks the basic standards of the Ritz-Carlton brand.\n\nThe Room & Housekeeping (The \"Ugly\"):\nThe hotel is dated and, frankly, one of the least attractive Ritz properties we’ve seen. We were upgraded to a 1-bedroom suite, but it was filthy. There was dust and someone else’s makeup under the TV stand that stayed there our entire stay. We complained on the first night, but the Housekeeping Manager didn't return our call until 5 minutes before we checked out on Day 3. What can you even do at that point?\n\nService Failures:\n* Check-in: A staff member pulled a newly arrived guest to the front of a long line because they \"just got off a flight\" (as did the rest of us). A pathetic offer of water didn't fix the frustration.\n* Anniversary: Promised champagne/strawberries took 3 follow-ups and 2 days to arrive.\n* Pool: Service is slow; we were completely ignored while staff handed out fruit to everyone else.\n* Spa: Short-staffed and unable to accommodate us. I appreciate that they called multiple times a day to give us staffing updates, but a hotel of this caliber should be prepared.\n\nDining & The \"Good\":\n* Club Lounge: The standout of the trip. Amazing service and great F&B selection. This is the only place that felt like a Ritz.\n* The Beach: Slow service, but the fish tacos and guacamole were incredible.\n* Zaytinya: Overpriced and mediocre. Good cocktails, but disappointing for a Jose Andres spot.\n* Room Service: The breakfast attendant was amazing and the food was great (though $14 for 2 eggs with no toast is a bit much).\n\nThe Verdict:\nThe 20% automatic service charge seems to have removed any incentive for the staff to provide actual \"luxury\" service. Aside from the Club Lounge and the beach food, this was a major letdown.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Anthony Zina",
+          "uri": "https://www.google.com/maps/contrib/105766830955523487795/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJfJf3okIUJd-kBtsbqwIV6NSe0IZpiZS2hTf785qF2vMBnSZfo=s128-c0x00000000-cc-rp-mo-ba4"
+        },
+        "publishTime": "2026-03-01T15:33:02.147595625Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2s0d1pHVmpVbkpxVkVSWE1IZFFSMUJMYzNKS1NsRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2s0d1pHVmpVbkpxVkVSWE1IZFFSMUJMYzNKS1NsRRAB!2m1!1s0x88d9b49b01a42843:0x388d5017b15b13b3"
+      },
+      {
+        "name": "places/ChIJQyikAZu02YgRsxNbsRdQjTg/reviews/Ci9DQUlRQUNvZENodHljRjlvT21SMlUzWXlRWE5WUjBOT1NXTmpXa2xXTm5SUFVHYxAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 5,
+        "text": {
+          "text": "Great hotel\nDinner was 5/5\nLunch was sub par, but service complimented it. The service here was over the top amazing. Valet had accommodated very well with the busy weekend. Price point is a little high, but you can tell with the attention to detail this place has when it comes to customer service. The placement too makes this 10/10 you’re near everything, most hotels are a headache to pull in to, but this one is like perfect. I’ll probably be staying here from now on based on that. The beach is right in front to you, which is like a must when staying in Miami.\n\nThe only bad side is the fees and up charges on some of the bills, but this is common practice in the area so no reason to fault the hotel if the market is already doing it.\n\nAlso room service isn’t good, do yourself a favor and go downstairs to have dinner. They have a great selection in the evening.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Great hotel\nDinner was 5/5\nLunch was sub par, but service complimented it. The service here was over the top amazing. Valet had accommodated very well with the busy weekend. Price point is a little high, but you can tell with the attention to detail this place has when it comes to customer service. The placement too makes this 10/10 you’re near everything, most hotels are a headache to pull in to, but this one is like perfect. I’ll probably be staying here from now on based on that. The beach is right in front to you, which is like a must when staying in Miami.\n\nThe only bad side is the fees and up charges on some of the bills, but this is common practice in the area so no reason to fault the hotel if the market is already doing it.\n\nAlso room service isn’t good, do yourself a favor and go downstairs to have dinner. They have a great selection in the evening.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Salvador Graziano",
+          "uri": "https://www.google.com/maps/contrib/109540235149246689253/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocK03UU9PUtAItXdaV5E-sK_mTquvtKM2yRVBlaGkhaaZvNtLQ=s128-c0x00000000-cc-rp-mo-ba3"
+        },
+        "publishTime": "2026-02-24T14:07:50.312416531Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21SMlUzWXlRWE5WUjBOT1NXTmpXa2xXTm5SUFVHYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21SMlUzWXlRWE5WUjBOT1NXTmpXa2xXTm5SUFVHYxAB!2m1!1s0x88d9b49b01a42843:0x388d5017b15b13b3"
+      },
+      {
+        "name": "places/ChIJQyikAZu02YgRsxNbsRdQjTg/reviews/Ci9DQUlRQUNvZENodHljRjlvT2t0R2NrRnpSbHBvZDJOWWRVZFBOVVIwTmpCb1ZVRRAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 1,
+        "text": {
+          "text": "Downgraded Without Notice on Valentine’s Day — Completely Unacceptable Experience\n\nOur Valentine’s Day stay at The Ritz-Carlton South Beach was a complete disappointment.\n\nWe booked one month in advance, a balcony with a view room yet upon arrival our room was downgraded without any notice or consent to a no view window room. As Marriott Bonvoy Gold Elite members, we expected professionalism and transparency. Instead, we were placed in Room 506 facing a rooftop full of AC units. There was no view whatsoever — we couldn’t see the ocean, the city, or even a street. In South Beach, surrounded by water and beautiful scenery, being placed in a room where you can’t even tell where you are is unacceptable. The room felt horrible and completely below expectations.\n\nEven worse, no one contacted us proactively, and customer service made no real effort to correct the situation after we reached out several times.\n\nThis was supposed to be a special Valentine’s celebration, and instead it turned into stress and disappointment.\n\nDo not trust reservations at this property if the experience and basic respect for your booking matter to you. DO NOT BOOK THIS HOTEL ON SPECIAL DATES OR BUSY TIMES IN MIAMI BEACHo. This hotel failed to deliver the level of service expected from the Ritz-Carlton name.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Downgraded Without Notice on Valentine’s Day — Completely Unacceptable Experience\n\nOur Valentine’s Day stay at The Ritz-Carlton South Beach was a complete disappointment.\n\nWe booked one month in advance, a balcony with a view room yet upon arrival our room was downgraded without any notice or consent to a no view window room. As Marriott Bonvoy Gold Elite members, we expected professionalism and transparency. Instead, we were placed in Room 506 facing a rooftop full of AC units. There was no view whatsoever — we couldn’t see the ocean, the city, or even a street. In South Beach, surrounded by water and beautiful scenery, being placed in a room where you can’t even tell where you are is unacceptable. The room felt horrible and completely below expectations.\n\nEven worse, no one contacted us proactively, and customer service made no real effort to correct the situation after we reached out several times.\n\nThis was supposed to be a special Valentine’s celebration, and instead it turned into stress and disappointment.\n\nDo not trust reservations at this property if the experience and basic respect for your booking matter to you. DO NOT BOOK THIS HOTEL ON SPECIAL DATES OR BUSY TIMES IN MIAMI BEACHo. This hotel failed to deliver the level of service expected from the Ritz-Carlton name.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Tiany Montes de Oca",
+          "uri": "https://www.google.com/maps/contrib/117920479827083409406/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUVMPVpbIF0vmYao0tGlG8FAORbi7gSa7fRrMrnssILLXi0SIs=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-02-14T22:03:30.121339244Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2t0R2NrRnpSbHBvZDJOWWRVZFBOVVIwTmpCb1ZVRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2t0R2NrRnpSbHBvZDJOWWRVZFBOVVIwTmpCb1ZVRRAB!2m1!1s0x88d9b49b01a42843:0x388d5017b15b13b3"
+      },
+      {
+        "name": "places/ChIJQyikAZu02YgRsxNbsRdQjTg/reviews/Ci9DQUlRQUNvZENodHljRjlvT21SWVJHNUVURFI2TldzeVVXSkZaR3Q2VFdSRWEyYxAB",
+        "relativePublishTimeDescription": "5 months ago",
+        "rating": 5,
+        "text": {
+          "text": "I definitely very Happy with this Hotel I had visited a lot of places and Hoteles but this one the service was more then expected Cielo was the lady to check in she help us, a lot. Thank you so much. I was there after a few days of surgery and they all very attentive send 4 more pillows and an special pillow too. During the afternoon a lady came to the room and ask if I need it anything for drink or eat I told her I couldn't drink but I could have yogurt and fruits and then a bit later there was a cart with everything and more then I ask. Also the dinning manager Ingry was amazing too all the food she send me to the room was great. Thank you to my house keeper to make sure I had a lot of water. In General great work you guys have the best of the best everyone very friendly kind and amazing hard workers that are there to make the customers have a happy time and also to leave thinking returning again with the whole family.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "I definitely very Happy with this Hotel I had visited a lot of places and Hoteles but this one the service was more then expected Cielo was the lady to check in she help us, a lot. Thank you so much. I was there after a few days of surgery and they all very attentive send 4 more pillows and an special pillow too. During the afternoon a lady came to the room and ask if I need it anything for drink or eat I told her I couldn't drink but I could have yogurt and fruits and then a bit later there was a cart with everything and more then I ask. Also the dinning manager Ingry was amazing too all the food she send me to the room was great. Thank you to my house keeper to make sure I had a lot of water. In General great work you guys have the best of the best everyone very friendly kind and amazing hard workers that are there to make the customers have a happy time and also to leave thinking returning again with the whole family.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Maray Fuentes",
+          "uri": "https://www.google.com/maps/contrib/108253456933748030241/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWLvhE7uWkpDADByHCP2EU3ABE36jvN07SfLcgexstv9LuFT9huTw=s128-c0x00000000-cc-rp-mo-ba4"
+        },
+        "publishTime": "2026-01-01T00:41:14.849478505Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21SWVJHNUVURFI2TldzeVVXSkZaR3Q2VFdSRWEyYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21SWVJHNUVURFI2TldzeVVXSkZaR3Q2VFdSRWEyYxAB!2m1!1s0x88d9b49b01a42843:0x388d5017b15b13b3"
+      }
+    ],
+    "signals": {
+      "review_decline": false,
+      "review_rating_delta": 0,
+      "review_volume_decline": false,
+      "complaint_increase": false,
+      "sentiment_decline": false,
+      "sentiment_trend": "Improving",
+      "review_activity_trend": "Increasing",
+      "positive_reviews_recent": 4,
+      "negative_reviews_recent": 1,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "renovation_needed": true,
+      "old_property": true,
+      "physical_condition_score": 2,
+      "franchise_loss": false,
+      "former_brand": "",
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "brand_status": "NONE",
+      "cmbs_watchlist": false,
+      "cmbs_special_servicing": false,
+      "cmbs_delinquent": false,
+      "long_term_owner": false,
+      "ownership_length_years": "",
+      "distress_score": 4
+    },
+    "review_themes": {
+      "staff": 72.7,
+      "cleanliness": 9.1,
+      "maintenance": 18.2
+    },
+    "heuristic_scores": {
+      "distress_score": 4,
+      "distress_reasons": [
+        "Negative review signal: filthy",
+        "Negative review signal: disappointing",
+        "Renovation signals in reviews: 80.0%"
+      ],
+      "review_trend_score": 0,
+      "review_volume_recent": 5,
+      "review_volume_prior": 0,
+      "review_volume_change_pct": 100.0,
+      "avg_rating_recent": 3.4,
+      "avg_rating_prior": 0.0,
+      "review_rating_delta": 0,
+      "complaint_rate_recent": 0.2,
+      "complaint_rate_prior": 0.0,
+      "review_complaint_delta": 0.2,
+      "year_built": "",
+      "property_age": "",
+      "renovation_signal_rate": 0.8,
+      "renovation_needed": true,
+      "physical_condition_score": 2,
+      "positive_reviews_recent": 4,
+      "negative_reviews_recent": 1,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "sentiment_delta": -3,
+      "sentiment_trend": "Improving",
+      "review_activity_trend": "Increasing"
+    },
+    "llm_analysis": {
+      "distress_probability": 0.65,
+      "seller_fatigue_probability": 0.3,
+      "opportunity_score": 62,
+      "acquisition_attractiveness_star_rating": 3.5,
+      "top_distress_signals": "High renovation need indicated by 80% of reviews, poor physical condition score of 2, recent negative reviews citing cleanliness and disappointment, increasing review volume with some complaint rate increase",
+      "investment_thesis": "The Ritz-Carlton South Beach shows moderate distress driven by aging physical condition and significant renovation needs despite stable brand status and improving sentiment trends. The property presents a strong opportunity for operational turnaround and light renovation to restore guest satisfaction and market position.",
+      "recommended_acquisition_strategy": "Operational Turnaround",
+      "review_summary": "Guest feedback highlights cleanliness and maintenance issues, with some reports of disappointing experiences despite an improving overall sentiment trend. The property is aging and in need of renovation, which is frequently mentioned in reviews. Review volume is increasing, indicating growing guest engagement, and recent sentiment is improving, suggesting operational efforts may be starting to take effect.",
+      "llm_star_rating": 3.5,
+      "recommended_action": "Operational Turnaround",
+      "confidence": "LOW",
+      "distress_summary": ""
+    },
+    "owner_data": {
+      "owner_name": "",
+      "owner_company": "",
+      "mailing_address": "605 LINCOLN RD, MIAMI BEACH, FL 33139-7974",
+      "owner_phone": "",
+      "ownership_since": null,
+      "ownership_length_years": "",
+      "attom_year_built": 1953,
+      "is_older_than_20_years": "Yes"
+    },
+    "cmbs_data": {
+      "cmbs_loan_status": "",
+      "cmbs_delinquency_flag": false,
+      "cmbs_watchlist_flag": false,
+      "cmbs_special_servicing_flag": false
+    },
+    "franchise_data": {
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "former_brand": "",
+      "brand_status": "NONE",
+      "franchise_confidence": "Low"
+    },
+    "source_location": "Miami Beach, Florida",
+    "radius_km": 3.0,
+    "final_lead_score": 45.6,
+    "rank": 2,
+    "lead_reason": "Aging property"
+  }
+]

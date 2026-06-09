@@ -1,0 +1,225 @@
+[
+  {
+    "hotel_name": "The Sagamore Hotel South Beach",
+    "address": "The Sagamore, 1671 Collins Ave, Miami Beach, FL 33139, USA",
+    "place_id": "ChIJ9VyQp5u02YgRf-LOZeoHf54",
+    "latitude": null,
+    "longitude": null,
+    "rating": 4.1,
+    "user_rating_count": 1513,
+    "business_status": "OPERATIONAL",
+    "google_maps_url": "https://maps.google.com/?cid=11420855883346666111&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "reviews": [
+      {
+        "name": "places/ChIJ9VyQp5u02YgRf-LOZeoHf54/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pKMVNHbFphbXhNUTFkR1lUbFFWa1l4TmpkbU5uYxAB",
+        "relativePublishTimeDescription": "4 months ago",
+        "rating": 5,
+        "text": {
+          "text": "We had a wonderful stay at the Sagamore Hotel.\n\nWhat really stood out was the staff. Genuinely friendly, attentive, and always willing to help. You feel welcome from the moment you arrive, and that makes a huge difference.\n\nOne of the best features is the direct back access to the beach. Being able to walk straight out to the ocean without crossing busy streets is a big plus and adds real value to the stay. The outdoor pool area is another highlight. Spacious, well maintained, and perfect for relaxing after a beach day.\n\nGreat location, great amenities, and outstanding staff. The Sagamore strikes a perfect balance between relaxed and upscale, and we’d happily stay here again.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "We had a wonderful stay at the Sagamore Hotel.\n\nWhat really stood out was the staff. Genuinely friendly, attentive, and always willing to help. You feel welcome from the moment you arrive, and that makes a huge difference.\n\nOne of the best features is the direct back access to the beach. Being able to walk straight out to the ocean without crossing busy streets is a big plus and adds real value to the stay. The outdoor pool area is another highlight. Spacious, well maintained, and perfect for relaxing after a beach day.\n\nGreat location, great amenities, and outstanding staff. The Sagamore strikes a perfect balance between relaxed and upscale, and we’d happily stay here again.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Coka' Yupo",
+          "uri": "https://www.google.com/maps/contrib/111540573168180779846/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWpTVRdFmuMVDb3QyzHIeaqnO6CoB9_aJEUhsITY_iwbNND8enR=s128-c0x00000000-cc-rp-mo-ba5"
+        },
+        "publishTime": "2026-01-28T13:43:14.524054277Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pKMVNHbFphbXhNUTFkR1lUbFFWa1l4TmpkbU5uYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pKMVNHbFphbXhNUTFkR1lUbFFWa1l4TmpkbU5uYxAB!2m1!1s0x88d9b49ba7905cf5:0x9e7f07ea65cee27f"
+      },
+      {
+        "name": "places/ChIJ9VyQp5u02YgRf-LOZeoHf54/reviews/Ci9DQUlRQUNvZENodHljRjlvT21Sb2NEaEtlR3AzT0dSallUSXlhV3g1VnkxYVFtYxAB",
+        "relativePublishTimeDescription": "4 months ago",
+        "rating": 5,
+        "text": {
+          "text": "Had a great pool day here at the sagamore. Requested a pool day pass at the front desk and was able to use the pool for a day. The pool was nice and gets progressively deeper up to 5 feet. There was good music that was not too loud.  Staff was around to grab drinks and food.  There were also plenty of towels,  beach chairs and sunscreen available for use.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Had a great pool day here at the sagamore. Requested a pool day pass at the front desk and was able to use the pool for a day. The pool was nice and gets progressively deeper up to 5 feet. There was good music that was not too loud.  Staff was around to grab drinks and food.  There were also plenty of towels,  beach chairs and sunscreen available for use.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Rita Silbernagel",
+          "uri": "https://www.google.com/maps/contrib/100669405442626371605/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXrDtFYFmXT7fzwUADVplfz2X9lH3SafVaDANaKpMIYXh17GR3Q=s128-c0x00000000-cc-rp-mo-ba5"
+        },
+        "publishTime": "2026-01-25T18:40:30.737733771Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21Sb2NEaEtlR3AzT0dSallUSXlhV3g1VnkxYVFtYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21Sb2NEaEtlR3AzT0dSallUSXlhV3g1VnkxYVFtYxAB!2m1!1s0x88d9b49ba7905cf5:0x9e7f07ea65cee27f"
+      },
+      {
+        "name": "places/ChIJ9VyQp5u02YgRf-LOZeoHf54/reviews/Ci9DQUlRQUNvZENodHljRjlvT2s5VlUwRlpNazF4UkZWUlJ5MWtSWEJhVlVGNGFuYxAB",
+        "relativePublishTimeDescription": "4 months ago",
+        "rating": 3,
+        "text": {
+          "text": "Bogus smoking charge 350 dollars added to the bill at check out!!!!\n\nThis hotel is a 3 star and definitely not a 4 star hotel, it’s great value for money but not if you expect 4 stars.\n\nWe had a lovely stay in the hotel that was completely ruined by the check out experience. While checking out I see a $350 smoking fee (which they didn’t even mention, good thing I looked at the room charged as I knew we only had $30 dollars on the room) this “surprise fee” was for smoking in the room when no one in the group smokes!!!!!\n\nHad to wait for the manager to go to the room to check if we were smoking, which delayed me leaving to the airport for an international flight.\nThen they charged the room charges to the card on file without even asking (during check in I put through accidentally a card I didn’t want to use for this because of exchange fees and was told not to worry that at check out they will ask for card, they didn’t they just charged he without asking).",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Bogus smoking charge 350 dollars added to the bill at check out!!!!\n\nThis hotel is a 3 star and definitely not a 4 star hotel, it’s great value for money but not if you expect 4 stars.\n\nWe had a lovely stay in the hotel that was completely ruined by the check out experience. While checking out I see a $350 smoking fee (which they didn’t even mention, good thing I looked at the room charged as I knew we only had $30 dollars on the room) this “surprise fee” was for smoking in the room when no one in the group smokes!!!!!\n\nHad to wait for the manager to go to the room to check if we were smoking, which delayed me leaving to the airport for an international flight.\nThen they charged the room charges to the card on file without even asking (during check in I put through accidentally a card I didn’t want to use for this because of exchange fees and was told not to worry that at check out they will ask for card, they didn’t they just charged he without asking).",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "M Z",
+          "uri": "https://www.google.com/maps/contrib/105756372797242758569/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJ0xlMV3gAPfDxdhWRAo32ON6VS1cze7tjf2MPzHCalIEpJJg=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-01-19T01:01:13.689250039Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2s5VlUwRlpNazF4UkZWUlJ5MWtSWEJhVlVGNGFuYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2s5VlUwRlpNazF4UkZWUlJ5MWtSWEJhVlVGNGFuYxAB!2m1!1s0x88d9b49ba7905cf5:0x9e7f07ea65cee27f"
+      },
+      {
+        "name": "places/ChIJ9VyQp5u02YgRf-LOZeoHf54/reviews/Ci9DQUlRQUNvZENodHljRjlvT21JeVVYVnVOVVpvYWt0R1QwNWFjbXh4T0VkNVdHYxAB",
+        "relativePublishTimeDescription": "5 months ago",
+        "rating": 3,
+        "text": {
+          "text": "The Sagamore is an interesting conundrum - on the positive side, the beach access is great. The free chairs and towels are also nice (although I think this is fairly standard for a beach-adjacent hotel). The service was also prompt as in people responded or showed up quickly when requested. However, for a hotel that is supposedly “4 stars”, here’s what I think was lacking: first - the rooms are a bit odd, definitely not “4 stars”. They are dated and sparse - very little in the way of amenities or even furniture. The “beach view” I had was actually just a view to adjacent concrete building with spray painted writing all over it (which was made more comical when I got an email after my stay asking me to rate my “beach view room”). Second - the cleaning was a bit lackluster. The room did not seem overly “clean” from the get go and when we had it cleaned, the tile floors always had hair remaining on them or sand. The bathroom never felt particularly clean and the table and chairs had stains and marks all over them. They also left a dirty cleaning rag on top of my wife’s cosmetics case and hairbrush the last day we were there. Further, each day the staff seemed to want to get out of cleaning our room and seemed like they were trying to get me to confirm I didn’t need cleaning each day in the morning when they came by. Third, the walls were like paper - there was constant noise from late evening to early morning and honestly it could by hard to sleep through it. Not to mention, there seemed to be ongoing construction at the hotel or building next door and we had no forewarning. One day my wife went to open the blinds in the morning and there were several construction workers standing right outside our 2nd floor window.  Fourth, the room has a wet bar / kitchen set up but it is completely devoid of any dishes or silverware. It was noted that you can request it, which I did, and was told I could have plastic utensils and plastic plates. That is all fine, but again, not a 4-star hotel experience. For context, I have stayed in probably 100+ hotels all over the world ranging from 3-5 star so I think I have a good sample of what 4-star in the USA generally looks/feels like. Overall, the experience felt like a lower end 3 star hotel trying to stretch to obtain a 4 star rating while  spending the least amount of money on renovations and amenities to actually deliver a 4 star experience.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "The Sagamore is an interesting conundrum - on the positive side, the beach access is great. The free chairs and towels are also nice (although I think this is fairly standard for a beach-adjacent hotel). The service was also prompt as in people responded or showed up quickly when requested. However, for a hotel that is supposedly “4 stars”, here’s what I think was lacking: first - the rooms are a bit odd, definitely not “4 stars”. They are dated and sparse - very little in the way of amenities or even furniture. The “beach view” I had was actually just a view to adjacent concrete building with spray painted writing all over it (which was made more comical when I got an email after my stay asking me to rate my “beach view room”). Second - the cleaning was a bit lackluster. The room did not seem overly “clean” from the get go and when we had it cleaned, the tile floors always had hair remaining on them or sand. The bathroom never felt particularly clean and the table and chairs had stains and marks all over them. They also left a dirty cleaning rag on top of my wife’s cosmetics case and hairbrush the last day we were there. Further, each day the staff seemed to want to get out of cleaning our room and seemed like they were trying to get me to confirm I didn’t need cleaning each day in the morning when they came by. Third, the walls were like paper - there was constant noise from late evening to early morning and honestly it could by hard to sleep through it. Not to mention, there seemed to be ongoing construction at the hotel or building next door and we had no forewarning. One day my wife went to open the blinds in the morning and there were several construction workers standing right outside our 2nd floor window.  Fourth, the room has a wet bar / kitchen set up but it is completely devoid of any dishes or silverware. It was noted that you can request it, which I did, and was told I could have plastic utensils and plastic plates. That is all fine, but again, not a 4-star hotel experience. For context, I have stayed in probably 100+ hotels all over the world ranging from 3-5 star so I think I have a good sample of what 4-star in the USA generally looks/feels like. Overall, the experience felt like a lower end 3 star hotel trying to stretch to obtain a 4 star rating while  spending the least amount of money on renovations and amenities to actually deliver a 4 star experience.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Jeff Jenkins",
+          "uri": "https://www.google.com/maps/contrib/116430435610490164550/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLynVuXacK2niT9k9EPhygU3mXBsLl9S9WtslUcIF9L_eVhwg=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2025-12-31T20:56:41.648204254Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21JeVVYVnVOVVpvYWt0R1QwNWFjbXh4T0VkNVdHYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21JeVVYVnVOVVpvYWt0R1QwNWFjbXh4T0VkNVdHYxAB!2m1!1s0x88d9b49ba7905cf5:0x9e7f07ea65cee27f"
+      },
+      {
+        "name": "places/ChIJ9VyQp5u02YgRf-LOZeoHf54/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xaeFZVbEdhbUp4Y1RSb1VIQlZXVlo1U201ZlFsRRAB",
+        "relativePublishTimeDescription": "4 months ago",
+        "rating": 2,
+        "text": {
+          "text": "This place does not deserve 4 stars. So outdated, old and dirty. The rooms do not even have basic stuff- shower caps, cotton swabs, etc…. The only good thing about this place is that the rooms are spacious. That’s about it. My booking.con reservation said that i will be getting 2 bottles of water per day but the reception desk told me that i can refill the water bottles at the water station. Huh!!!!!! I do not drink tap water and if the reservation says i will get two bottles per day it does not mean i get tap water….\nI will never stay here… staff are not helpful as well….",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "This place does not deserve 4 stars. So outdated, old and dirty. The rooms do not even have basic stuff- shower caps, cotton swabs, etc…. The only good thing about this place is that the rooms are spacious. That’s about it. My booking.con reservation said that i will be getting 2 bottles of water per day but the reception desk told me that i can refill the water bottles at the water station. Huh!!!!!! I do not drink tap water and if the reservation says i will get two bottles per day it does not mean i get tap water….\nI will never stay here… staff are not helpful as well….",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Anna Herbert",
+          "uri": "https://www.google.com/maps/contrib/112644871373719467182/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUujMAWLFxpkPAttM9NvWy0Q3kPFHM2JRW8ihl7a6sA5urlt2zw=s128-c0x00000000-cc-rp-mo-ba5"
+        },
+        "publishTime": "2026-01-19T03:43:18.805232905Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xaeFZVbEdhbUp4Y1RSb1VIQlZXVlo1U201ZlFsRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xaeFZVbEdhbUp4Y1RSb1VIQlZXVlo1U201ZlFsRRAB!2m1!1s0x88d9b49ba7905cf5:0x9e7f07ea65cee27f"
+      }
+    ],
+    "signals": {
+      "review_decline": false,
+      "review_rating_delta": 0,
+      "review_volume_decline": false,
+      "complaint_increase": false,
+      "sentiment_decline": false,
+      "sentiment_trend": "Improving",
+      "review_activity_trend": "Increasing",
+      "positive_reviews_recent": 5,
+      "negative_reviews_recent": 2,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "renovation_needed": true,
+      "old_property": true,
+      "physical_condition_score": 2,
+      "franchise_loss": false,
+      "former_brand": "",
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "brand_status": "NONE",
+      "cmbs_watchlist": false,
+      "cmbs_special_servicing": false,
+      "cmbs_delinquent": false,
+      "long_term_owner": false,
+      "ownership_length_years": "",
+      "distress_score": 4
+    },
+    "review_themes": {
+      "staff": 41.2,
+      "noise": 17.6,
+      "maintenance": 29.4,
+      "cleanliness": 11.8
+    },
+    "heuristic_scores": {
+      "distress_score": 4,
+      "distress_reasons": [
+        "Negative review signal: dirty",
+        "Negative review signal: noise",
+        "Renovation signals in reviews: 60.0%"
+      ],
+      "review_trend_score": 0,
+      "review_volume_recent": 5,
+      "review_volume_prior": 0,
+      "review_volume_change_pct": 100.0,
+      "avg_rating_recent": 3.6,
+      "avg_rating_prior": 0.0,
+      "review_rating_delta": 0,
+      "complaint_rate_recent": 0.4,
+      "complaint_rate_prior": 0.0,
+      "review_complaint_delta": 0.4,
+      "year_built": "",
+      "property_age": "",
+      "renovation_signal_rate": 0.6,
+      "renovation_needed": true,
+      "physical_condition_score": 2,
+      "positive_reviews_recent": 5,
+      "negative_reviews_recent": 2,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "sentiment_delta": -3,
+      "sentiment_trend": "Improving",
+      "review_activity_trend": "Increasing"
+    },
+    "llm_analysis": {
+      "distress_probability": 0.65,
+      "seller_fatigue_probability": 0.3,
+      "opportunity_score": 55,
+      "acquisition_attractiveness_star_rating": 3.0,
+      "top_distress_signals": "Dirty rooms, noise complaints, high renovation signal rate, poor physical condition score",
+      "investment_thesis": "The Sagamore Hotel South Beach presents a moderate distress opportunity driven by physical deterioration and guest complaints about cleanliness and noise. Despite an improving sentiment trend and increasing review activity, the property requires significant renovation and operational improvements. Its lack of brand affiliation and relatively recent ownership suggest potential for repositioning through targeted renovations and operational turnaround.",
+      "recommended_acquisition_strategy": "Operational Turnaround",
+      "review_summary": "Guests report recurring issues with cleanliness and noise, alongside concerns about the aging condition of the property. While recent reviews show an improving sentiment and increased activity, the hotel still faces operational challenges and clear renovation needs. Overall guest sentiment is trending positively but remains impacted by maintenance and service shortcomings.",
+      "llm_star_rating": 3.0,
+      "recommended_action": "Operational Turnaround",
+      "confidence": "LOW",
+      "distress_summary": ""
+    },
+    "owner_data": {
+      "owner_name": "EBJ OF INSITE SAGAMORE LLC",
+      "owner_company": "EBJ OF INSITE SAGAMORE LLC",
+      "mailing_address": "910 SE 17TH ST STE 400, FORT LAUDERDALE, FL 33316-2968",
+      "owner_phone": "",
+      "ownership_since": "",
+      "ownership_length_years": "",
+      "attom_year_built": 1948,
+      "is_older_than_20_years": "Yes"
+    },
+    "cmbs_data": {
+      "cmbs_loan_status": "",
+      "cmbs_delinquency_flag": false,
+      "cmbs_watchlist_flag": false,
+      "cmbs_special_servicing_flag": false
+    },
+    "franchise_data": {
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "former_brand": "",
+      "brand_status": "NONE",
+      "franchise_confidence": "Low"
+    },
+    "source_location": "Miami Beach, Florida",
+    "radius_km": 3.0,
+    "final_lead_score": 43.5,
+    "rank": 1,
+    "lead_reason": "Aging property"
+  }
+]

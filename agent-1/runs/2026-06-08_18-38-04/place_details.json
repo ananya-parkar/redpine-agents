@@ -1,0 +1,878 @@
+[
+  {
+    "id": "ChIJ8fI8RgC12YgRSdu8_IUC5vE",
+    "formattedAddress": "Miami Beach, FL 33139, USA",
+    "rating": 5,
+    "googleMapsUri": "https://maps.google.com/?cid=17430622182278224713&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "businessStatus": "OPERATIONAL",
+    "userRatingCount": 1,
+    "displayName": {
+      "text": "فلوريدا",
+      "languageCode": "ar"
+    },
+    "reviews": [
+      {
+        "name": "places/ChIJ8fI8RgC12YgRSdu8_IUC5vE/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xKSE0zUm5XVFJHU1Zkc2JtWkxiekZTVHpobFNtYxAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 5,
+        "text": {
+          "text": "Going back",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Going back",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Wayne Tuffin",
+          "uri": "https://www.google.com/maps/contrib/113401425804536478069/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKRW7uRNBV4AMER-2GS6bxjB7KH66NciMmrZDOB1Xk7nzkrZA=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-03-03T07:45:35.827712182Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xKSE0zUm5XVFJHU1Zkc2JtWkxiekZTVHpobFNtYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xKSE0zUm5XVFJHU1Zkc2JtWkxiekZTVHpobFNtYxAB!2m1!1s0x88d9b500463cf2f1:0xf1e60285fcbcdb49"
+      }
+    ]
+  },
+  {
+    "id": "ChIJQQLrjlW12YgRVHB2EbIfnOU",
+    "formattedAddress": "1475 James Ave, Miami Beach, FL 33139, USA",
+    "googleMapsUri": "https://maps.google.com/?cid=16545133980709974100&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "businessStatus": "OPERATIONAL",
+    "displayName": {
+      "text": "Dolce by Wyndham Miami Beach",
+      "languageCode": "en"
+    }
+  },
+  {
+    "id": "ChIJUYoK4Zq02YgRoR5WjFB1ylo",
+    "formattedAddress": "Miami Beach, FL 33139, USA",
+    "rating": 4.2,
+    "googleMapsUri": "https://maps.google.com/?cid=6542170397521354401&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "businessStatus": "OPERATIONAL",
+    "userRatingCount": 5,
+    "displayName": {
+      "text": "Hotel Holiday Inn",
+      "languageCode": "es"
+    },
+    "reviews": [
+      {
+        "name": "places/ChIJUYoK4Zq02YgRoR5WjFB1ylo/reviews/ChZDSUhNMG9nS0VJQ0FnSURNd3RLcWV3EAE",
+        "relativePublishTimeDescription": "6 years ago",
+        "rating": 5,
+        "text": {
+          "text": "I loved it for its value for money, its proximity to parks, and the fact that you can easily make friends. It has a well-maintained pool, spacious rooms, and is close to main avenues and shops with a wide variety of gift items.",
+          "languageCode": "en-US"
+        },
+        "originalText": {
+          "text": "Me encanto, por la relación precio confort, cercano a los parques, haces de muchos amigos si quieres. Piscina mantenida permanente, amplias habitaciones, cercano a avenidas principales, comercio cercano, con gran variedad de productos para regalos",
+          "languageCode": "es"
+        },
+        "authorAttribution": {
+          "displayName": "Moises perez Campos",
+          "uri": "https://www.google.com/maps/contrib/100172114153891393453/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVV_kVZt01yC7rMFEaOkdf1Pk4p0oIJsEN3i1W4JJStlWV-cfFx-A=s128-c0x00000000-cc-rp-mo-ba6"
+        },
+        "publishTime": "2019-12-22T16:19:37.064640Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=ChZDSUhNMG9nS0VJQ0FnSURNd3RLcWV3EAE&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSURNd3RLcWV3EAE!2m1!1s0x88d9b49ae10a8a51:0x5aca75508c561ea1"
+      },
+      {
+        "name": "places/ChIJUYoK4Zq02YgRoR5WjFB1ylo/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tWaVJ6SlpjWFZ2WTBGc1VsRnRkV1pXZFROS00yYxAB",
+        "relativePublishTimeDescription": "2 weeks ago",
+        "rating": 5,
+        "authorAttribution": {
+          "displayName": "Rick Waller",
+          "uri": "https://www.google.com/maps/contrib/115572021237103898560/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXmP5vaCa63izHh1AKL_sQ9CWLXSvm5lRL9RRrHIhRU-vff8PI=s128-c0x00000000-cc-rp-mo-ba4"
+        },
+        "publishTime": "2026-05-21T22:23:56.705992596Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2tWaVJ6SlpjWFZ2WTBGc1VsRnRkV1pXZFROS00yYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tWaVJ6SlpjWFZ2WTBGc1VsRnRkV1pXZFROS00yYxAB!2m1!1s0x88d9b49ae10a8a51:0x5aca75508c561ea1"
+      },
+      {
+        "name": "places/ChIJUYoK4Zq02YgRoR5WjFB1ylo/reviews/Ci9DQUlRQUNvZENodHljRjlvT21oeFQzWjBiMWRxZVZwRVptbGtVVmx4YldOaVYyYxAB",
+        "relativePublishTimeDescription": "10 months ago",
+        "rating": 5,
+        "authorAttribution": {
+          "displayName": "yannire escalante",
+          "uri": "https://www.google.com/maps/contrib/104245208420732948399/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUu0UvmhBjanxDvmwHCcXX_Q0huuB9ezaKuf9kMOmHWC8hxzEzMZQ=s128-c0x00000000-cc-rp-mo-ba2"
+        },
+        "publishTime": "2025-08-12T12:01:16.220361247Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21oeFQzWjBiMWRxZVZwRVptbGtVVmx4YldOaVYyYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21oeFQzWjBiMWRxZVZwRVptbGtVVmx4YldOaVYyYxAB!2m1!1s0x88d9b49ae10a8a51:0x5aca75508c561ea1"
+      },
+      {
+        "name": "places/ChIJUYoK4Zq02YgRoR5WjFB1ylo/reviews/ChZDSUhNMG9nS0VJQ0FnTURBem9feVFnEAE",
+        "relativePublishTimeDescription": "a year ago",
+        "rating": 5,
+        "authorAttribution": {
+          "displayName": "Miguel Caballero",
+          "uri": "https://www.google.com/maps/contrib/113357324356836590720/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVIRYmnhbMw9a_PGBesxZ0FdagLIyf6UyrbkGzm-tQtkdhnhcq-=s128-c0x00000000-cc-rp-mo-ba3"
+        },
+        "publishTime": "2025-02-09T02:51:18.142821Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=ChZDSUhNMG9nS0VJQ0FnTURBem9feVFnEAE&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnTURBem9feVFnEAE!2m1!1s0x88d9b49ae10a8a51:0x5aca75508c561ea1"
+      },
+      {
+        "name": "places/ChIJUYoK4Zq02YgRoR5WjFB1ylo/reviews/ChZDSUhNMG9nS0VJQ0FnSURBc2VpUFBBEAE",
+        "relativePublishTimeDescription": "8 years ago",
+        "rating": 1,
+        "authorAttribution": {
+          "displayName": "Alma Juarez",
+          "uri": "https://www.google.com/maps/contrib/105288126061939675528/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocIl4UQ_NTtEpFCdf6h70V-NVqYwD8YMzB9wcYmalvqTyaTxmg=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2017-08-26T15:28:26.405Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=ChZDSUhNMG9nS0VJQ0FnSURBc2VpUFBBEAE&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSURBc2VpUFBBEAE!2m1!1s0x88d9b49ae10a8a51:0x5aca75508c561ea1"
+      }
+    ]
+  },
+  {
+    "id": "ChIJkfzBSQC12YgRu4tl7XGr6ts",
+    "formattedAddress": "305 Lincoln Rd, Miami Beach, FL 33139, USA",
+    "googleMapsUri": "https://maps.google.com/?cid=15846666744659020731&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "businessStatus": "OPERATIONAL",
+    "displayName": {
+      "text": "Generator",
+      "languageCode": "de"
+    }
+  },
+  {
+    "id": "ChIJ7U41wZq02YgRmoTglBSlI_A",
+    "formattedAddress": "1610 Collins Ave, Miami Beach, FL 33139, USA",
+    "rating": 4,
+    "googleMapsUri": "https://maps.google.com/?cid=17303855701103248538&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "businessStatus": "OPERATIONAL",
+    "userRatingCount": 1276,
+    "displayName": {
+      "text": "Iberostar Waves Berkeley Shore",
+      "languageCode": "en"
+    },
+    "reviews": [
+      {
+        "name": "places/ChIJ7U41wZq02YgRmoTglBSlI_A/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pGek1FSlBZMEkyUkZSb1JYRkNVMmhXVUZJeVZFRRAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 5,
+        "text": {
+          "text": "The hotel is absolutely beautiful and I truly enjoyed my stay. The standout highlight of our trip was Alonzo. I’ve stayed at many high-end hotels, and Alonzo’s professionalism and efficiency are top-tier. He handled our requests with such speed and grace that it made our entire stay seamless. It’s clear he understands the industry inside and out. His attention to detail and proactive attitude are qualities you just can’t teach. He made us feel so valued that we’ve already decided this will be our 'go-to' hotel whenever we are in town. If the management team is looking for a model of what perfect customer service looks like, they need to look at Alonzo. The room was a perfect size and we had a balcony with a great view.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "The hotel is absolutely beautiful and I truly enjoyed my stay. The standout highlight of our trip was Alonzo. I’ve stayed at many high-end hotels, and Alonzo’s professionalism and efficiency are top-tier. He handled our requests with such speed and grace that it made our entire stay seamless. It’s clear he understands the industry inside and out. His attention to detail and proactive attitude are qualities you just can’t teach. He made us feel so valued that we’ve already decided this will be our 'go-to' hotel whenever we are in town. If the management team is looking for a model of what perfect customer service looks like, they need to look at Alonzo. The room was a perfect size and we had a balcony with a great view.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Amber M",
+          "uri": "https://www.google.com/maps/contrib/107276446272115792443/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocIPaz0QlMNFvaTZMPThKuGxwvbw39k3oJHW07R2Dn48oBrt9A=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-02-25T18:35:40.647730502Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pGek1FSlBZMEkyUkZSb1JYRkNVMmhXVUZJeVZFRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pGek1FSlBZMEkyUkZSb1JYRkNVMmhXVUZJeVZFRRAB!2m1!1s0x88d9b49ac1354eed:0xf023a51494e0849a"
+      },
+      {
+        "name": "places/ChIJ7U41wZq02YgRmoTglBSlI_A/reviews/Ci9DQUlRQUNvZENodHljRjlvT21scWRHSkxMWFJuVlVaUFZIUXhiVzh4ZVhGWE1YYxAB",
+        "relativePublishTimeDescription": "4 months ago",
+        "rating": 5,
+        "text": {
+          "text": "I enjoyed every bit of my stay from the room size, cleanliness, and noise level. Imagine back from a 10 hour day and you can enjoy some peace after good dinner.\nI wanted to specifically highlight the exceptional service provided by Apollo at the front desk. From the moment I arrived, he went above and beyond to ensure my stay was seamless. His professionalism, attention to detail, and welcoming demeanor truly set the tone for my visit. It’s rare to encounter such a high level of hospitality, and he is a fantastic asset to your team.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "I enjoyed every bit of my stay from the room size, cleanliness, and noise level. Imagine back from a 10 hour day and you can enjoy some peace after good dinner.\nI wanted to specifically highlight the exceptional service provided by Apollo at the front desk. From the moment I arrived, he went above and beyond to ensure my stay was seamless. His professionalism, attention to detail, and welcoming demeanor truly set the tone for my visit. It’s rare to encounter such a high level of hospitality, and he is a fantastic asset to your team.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Supi Bugyei",
+          "uri": "https://www.google.com/maps/contrib/112128595109412153397/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVlNx2j-VK4FLU-0SPo_U8x7MI68PAjxq5JHT91a62de_xybYYc=s128-c0x00000000-cc-rp-mo-ba4"
+        },
+        "publishTime": "2026-01-30T01:27:55.650119808Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21scWRHSkxMWFJuVlVaUFZIUXhiVzh4ZVhGWE1YYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21scWRHSkxMWFJuVlVaUFZIUXhiVzh4ZVhGWE1YYxAB!2m1!1s0x88d9b49ac1354eed:0xf023a51494e0849a"
+      },
+      {
+        "name": "places/ChIJ7U41wZq02YgRmoTglBSlI_A/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pCSWF6QnJRVFk1VFdFM1gwWlJSRGhwUkhGcmFtYxAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 5,
+        "text": {
+          "text": "My husband and I traveled to Miami for the boat show and truly enjoyed our stay. While the rooms are on the smaller side and modest, they are exceptionally clean and very comfortable — exactly what you need after a full day at the show. It is evident that the housekeeping staff take great pride in ensuring cleanliness and comfort for their guests.\n\nThe location is fantastic. It’s within easy walking distance to the conference center, wonderful restaurants, and the beach, which made everything incredibly convenient. Additionally, the hotel restaurant was exceptional with “half price drinks” Happy Hour daily.\n\nThe true highlight of our visit, however, was Abdullah at the front desk. While others were not as accommodating, Abdullah was genuinely pleasant, kind, and  welcoming. More than that, he made it his personal mission to ensure our stay was comfortable and seamless. His attentiveness and positive spirit made a lasting impression on us.\n\nWe are grateful for the hospitality and would absolutely stay again.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "My husband and I traveled to Miami for the boat show and truly enjoyed our stay. While the rooms are on the smaller side and modest, they are exceptionally clean and very comfortable — exactly what you need after a full day at the show. It is evident that the housekeeping staff take great pride in ensuring cleanliness and comfort for their guests.\n\nThe location is fantastic. It’s within easy walking distance to the conference center, wonderful restaurants, and the beach, which made everything incredibly convenient. Additionally, the hotel restaurant was exceptional with “half price drinks” Happy Hour daily.\n\nThe true highlight of our visit, however, was Abdullah at the front desk. While others were not as accommodating, Abdullah was genuinely pleasant, kind, and  welcoming. More than that, he made it his personal mission to ensure our stay was comfortable and seamless. His attentiveness and positive spirit made a lasting impression on us.\n\nWe are grateful for the hospitality and would absolutely stay again.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Amanda Felts",
+          "uri": "https://www.google.com/maps/contrib/104216242472071009792/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjViManxfnui_M7o5hY9P9BK9jMDKJ_CUSRO7LlmSDZ1wpbSXZPc=s128-c0x00000000-cc-rp-mo-ba2"
+        },
+        "publishTime": "2026-02-13T12:41:58.309336468Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pCSWF6QnJRVFk1VFdFM1gwWlJSRGhwUkhGcmFtYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pCSWF6QnJRVFk1VFdFM1gwWlJSRGhwUkhGcmFtYxAB!2m1!1s0x88d9b49ac1354eed:0xf023a51494e0849a"
+      },
+      {
+        "name": "places/ChIJ7U41wZq02YgRmoTglBSlI_A/reviews/Ci9DQUlRQUNvZENodHljRjlvT2kxM2QzTkZha1JDWVZNeFlWSldhVlUyZURSTlZsRRAB",
+        "relativePublishTimeDescription": "5 months ago",
+        "rating": 5,
+        "text": {
+          "text": "I recently stayed at the hotel in Miami Beach, just a few minutes from the beach and Lincoln Road, and had a great overall experience. The location is incredibly convenient, making it easy to enjoy everything the area has to offer.\n\nA special mention goes to Abdallah, who truly stood out during my stay. He was exceptionally attentive, warm, and always ready to help with anything I needed. His service made a real difference and added a personal touch that I really appreciated.\n\nThe rest of the team was also friendly and welcoming, creating a positive atmosphere throughout the hotel. Altogether, it was a very pleasant stay, and I would happily return.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "I recently stayed at the hotel in Miami Beach, just a few minutes from the beach and Lincoln Road, and had a great overall experience. The location is incredibly convenient, making it easy to enjoy everything the area has to offer.\n\nA special mention goes to Abdallah, who truly stood out during my stay. He was exceptionally attentive, warm, and always ready to help with anything I needed. His service made a real difference and added a personal touch that I really appreciated.\n\nThe rest of the team was also friendly and welcoming, creating a positive atmosphere throughout the hotel. Altogether, it was a very pleasant stay, and I would happily return.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Daniel Maestro",
+          "uri": "https://www.google.com/maps/contrib/102462421466084083365/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVw3m2c_s7O3mlEXYzDAwR9F4wx4b0YH_XXk1i4GQU6g8TSQUFVtA=s128-c0x00000000-cc-rp-mo-ba3"
+        },
+        "publishTime": "2025-12-10T17:43:40.519472713Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2kxM2QzTkZha1JDWVZNeFlWSldhVlUyZURSTlZsRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2kxM2QzTkZha1JDWVZNeFlWSldhVlUyZURSTlZsRRAB!2m1!1s0x88d9b49ac1354eed:0xf023a51494e0849a"
+      },
+      {
+        "name": "places/ChIJ7U41wZq02YgRmoTglBSlI_A/reviews/Ci9DQUlRQUNvZENodHljRjlvT25sc1JqSk5Sa0pCV0VOblZrczBSakZXU1ZGaU1sRRAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 5,
+        "text": {
+          "text": "What an amazing stay. Shout out to Alonzo! He made our visit so incredible after our flight being canceled due to a storm in NY. A difficult experience was made to be a wonderful stay. He welcomed us openly, was beyond helpful in every way. Excellent person and service!",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "What an amazing stay. Shout out to Alonzo! He made our visit so incredible after our flight being canceled due to a storm in NY. A difficult experience was made to be a wonderful stay. He welcomed us openly, was beyond helpful in every way. Excellent person and service!",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Karen Silverman",
+          "uri": "https://www.google.com/maps/contrib/114017680479129108287/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLbnATI57J1sROKE_0dn7WwBSwgtcTxRVbC4ah6ouEasC56Zg=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-02-25T18:31:04.703101348Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25sc1JqSk5Sa0pCV0VOblZrczBSakZXU1ZGaU1sRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25sc1JqSk5Sa0pCV0VOblZrczBSakZXU1ZGaU1sRRAB!2m1!1s0x88d9b49ac1354eed:0xf023a51494e0849a"
+      }
+    ]
+  },
+  {
+    "id": "ChIJ79nKoJu02YgR9JmY-V9V0Nc",
+    "formattedAddress": "1677 Collins Ave, Miami Beach, FL 33139, USA",
+    "rating": 4.3,
+    "googleMapsUri": "https://maps.google.com/?cid=15551023384008104436&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "businessStatus": "OPERATIONAL",
+    "userRatingCount": 2042,
+    "displayName": {
+      "text": "National Hotel",
+      "languageCode": "en"
+    },
+    "reviews": [
+      {
+        "name": "places/ChIJ79nKoJu02YgR9JmY-V9V0Nc/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tWS1YwWlhOREZGT1ZkSGFXNVlXbkpxV1ZkbVJWRRAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 4,
+        "text": {
+          "text": "We stayed here for 2 nights before a cruise. Hotel is a gem to look at, very smart and clean. Check-in was very quick and easy. Booked a cabana suite overlooking the lovely pool. Beach is right behind the hotel with a dedicated area for guests, well serviced by excellent staff. All the hotel staff we dealt with were very professional and friendly, particularly Max in the restaurant and the bar tender in the hotel bar (forget her name!). We did have an issue whilst there, as an event had been booked in the pool area that went on all day BUT, I raised the issue with the front desk manager and emailed the hotel afterwards and they all dealt with it very well, so no complaints. Would recommend for location, beach access, food, lovely hotel, great size suites and excellent staff.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "We stayed here for 2 nights before a cruise. Hotel is a gem to look at, very smart and clean. Check-in was very quick and easy. Booked a cabana suite overlooking the lovely pool. Beach is right behind the hotel with a dedicated area for guests, well serviced by excellent staff. All the hotel staff we dealt with were very professional and friendly, particularly Max in the restaurant and the bar tender in the hotel bar (forget her name!). We did have an issue whilst there, as an event had been booked in the pool area that went on all day BUT, I raised the issue with the front desk manager and emailed the hotel afterwards and they all dealt with it very well, so no complaints. Would recommend for location, beach access, food, lovely hotel, great size suites and excellent staff.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Gerry O'Mara",
+          "uri": "https://www.google.com/maps/contrib/105396683427601169850/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjU69xnH-obqt8G62xOdz3j6rbl3Sbz7DYjipefbQn-ADUukbDR4bA=s128-c0x00000000-cc-rp-mo-ba3"
+        },
+        "publishTime": "2026-03-08T23:20:14.247677385Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2tWS1YwWlhOREZGT1ZkSGFXNVlXbkpxV1ZkbVJWRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tWS1YwWlhOREZGT1ZkSGFXNVlXbkpxV1ZkbVJWRRAB!2m1!1s0x88d9b49ba0cad9ef:0xd7d0555ff99899f4"
+      },
+      {
+        "name": "places/ChIJ79nKoJu02YgR9JmY-V9V0Nc/reviews/Ci9DQUlRQUNvZENodHljRjlvT21VNWNraHdVSFJsUkRGWWF6ZzBiRTl4ZFZrM1EwRRAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 2,
+        "text": {
+          "text": "The location is a big plus—right in the heart of South Beach and close to everything. The pool is visually stunning and definitely the focal point of the property, but unfortunately it was quite dirty during our stay, which likely explains why no one was using it.\n\nThe pool bar service was excellent. The staff were friendly, attentive, and did a great job, making time poolside enjoyable even if we didn’t want to get in the water.\n\nThe rooms are in desperate need of renovation. They feel very dated and worn and don’t match the prime location or expectations for the property. With cleaner facilities and updated rooms, this hotel could be great, but right now it falls short.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "The location is a big plus—right in the heart of South Beach and close to everything. The pool is visually stunning and definitely the focal point of the property, but unfortunately it was quite dirty during our stay, which likely explains why no one was using it.\n\nThe pool bar service was excellent. The staff were friendly, attentive, and did a great job, making time poolside enjoyable even if we didn’t want to get in the water.\n\nThe rooms are in desperate need of renovation. They feel very dated and worn and don’t match the prime location or expectations for the property. With cleaner facilities and updated rooms, this hotel could be great, but right now it falls short.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Jonathan Foulk",
+          "uri": "https://www.google.com/maps/contrib/106598947844684035942/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjW7PiC195_wjCVlh7xmDNaU7nu3_BQ1lcVmRelFHZz63-LWXETDUg=s128-c0x00000000-cc-rp-mo-ba5"
+        },
+        "publishTime": "2026-03-01T17:07:58.949520569Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21VNWNraHdVSFJsUkRGWWF6ZzBiRTl4ZFZrM1EwRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21VNWNraHdVSFJsUkRGWWF6ZzBiRTl4ZFZrM1EwRRAB!2m1!1s0x88d9b49ba0cad9ef:0xd7d0555ff99899f4"
+      },
+      {
+        "name": "places/ChIJ79nKoJu02YgR9JmY-V9V0Nc/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pCaGVUZG1PV2RpUlVKaFluRk9Sa2x1UnpWelVGRRAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 5,
+        "text": {
+          "text": "We arrived to Miami Beach earlier than expected, and Robert, who personally assisted with our check-in, handled the situation with remarkable professionalism and discretion. He went well beyond what one typically expects—even at a top-tier property—by arranging an early check-in in the morning and ensuring the start of our stay was seamless. That flexibility genuinely changed the shape of our day and allowed us to settle in immediately and enjoy the property as intended.\n\nWhat stood out most was not only the accommodation itself, but the manner in which it was delivered: calm, solutions-oriented, and with a clear commitment to guest experience. Please extend my thanks to Robert , and kindly note this recognition in his record. Service like that is the reason guests return—and why I have always valued properties that treat hospitality as an art.\n\nLocation was great. Beach, heated pool, and poolside service were appreciated. Cabana King room was very comfortable.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "We arrived to Miami Beach earlier than expected, and Robert, who personally assisted with our check-in, handled the situation with remarkable professionalism and discretion. He went well beyond what one typically expects—even at a top-tier property—by arranging an early check-in in the morning and ensuring the start of our stay was seamless. That flexibility genuinely changed the shape of our day and allowed us to settle in immediately and enjoy the property as intended.\n\nWhat stood out most was not only the accommodation itself, but the manner in which it was delivered: calm, solutions-oriented, and with a clear commitment to guest experience. Please extend my thanks to Robert , and kindly note this recognition in his record. Service like that is the reason guests return—and why I have always valued properties that treat hospitality as an art.\n\nLocation was great. Beach, heated pool, and poolside service were appreciated. Cabana King room was very comfortable.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Matthew Terry",
+          "uri": "https://www.google.com/maps/contrib/116004989878767942522/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjW9Vh5OVfAu5OOSXj9M4qol40mJZXkn9eQTRAQEqYNzq7nv1hA=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-02-09T04:12:35.587566890Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pCaGVUZG1PV2RpUlVKaFluRk9Sa2x1UnpWelVGRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pCaGVUZG1PV2RpUlVKaFluRk9Sa2x1UnpWelVGRRAB!2m1!1s0x88d9b49ba0cad9ef:0xd7d0555ff99899f4"
+      },
+      {
+        "name": "places/ChIJ79nKoJu02YgR9JmY-V9V0Nc/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xOYU1HcHZWUzFRYWpFMFUzUk9jM3AxWDAwMk5IYxAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 5,
+        "text": {
+          "text": "The best part Kiki at the front,\nshe is amazing! So kind and genuinely cares for all the guests!! Great hospitality!!! Service was amazing at this hotel the pools are amazing, the beach area and location you can’t beat! We loved this spot will be returning!",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "The best part Kiki at the front,\nshe is amazing! So kind and genuinely cares for all the guests!! Great hospitality!!! Service was amazing at this hotel the pools are amazing, the beach area and location you can’t beat! We loved this spot will be returning!",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Sholeh Tashakour",
+          "uri": "https://www.google.com/maps/contrib/105181484754463333166/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKHIUpqgo_W21yE9qzzt4eAjUndfG8iqdhsg_a2PPKGdzOg8g=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-03-06T06:36:24.381535237Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xOYU1HcHZWUzFRYWpFMFUzUk9jM3AxWDAwMk5IYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xOYU1HcHZWUzFRYWpFMFUzUk9jM3AxWDAwMk5IYxAB!2m1!1s0x88d9b49ba0cad9ef:0xd7d0555ff99899f4"
+      },
+      {
+        "name": "places/ChIJ79nKoJu02YgR9JmY-V9V0Nc/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xjMU5tWlZOM2xRVEdSVlZHTk5iRXg0VEVSTWJIYxAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 1,
+        "text": {
+          "text": "Rooms are ok, not very big. Pool is nice. Stuff is nice.  Food was ok, not very good   Recommended if you travel with your dog.  The reason I want to give 1 star is cause I left a make up bag with expensive brands, and \"they didn't find it \"  that will cause me hundred of dollars.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Rooms are ok, not very big. Pool is nice. Stuff is nice.  Food was ok, not very good   Recommended if you travel with your dog.  The reason I want to give 1 star is cause I left a make up bag with expensive brands, and \"they didn't find it \"  that will cause me hundred of dollars.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Maria Ferrandis Martinez",
+          "uri": "https://www.google.com/maps/contrib/103059774150384321241/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWIYyprikhWrbwhuOCRllpCyLFsci92njF4kzms6PopVWxxLyWjRg=s128-c0x00000000-cc-rp-mo-ba4"
+        },
+        "publishTime": "2026-03-09T02:34:42.616758290Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xjMU5tWlZOM2xRVEdSVlZHTk5iRXg0VEVSTWJIYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xjMU5tWlZOM2xRVEdSVlZHTk5iRXg0VEVSTWJIYxAB!2m1!1s0x88d9b49ba0cad9ef:0xd7d0555ff99899f4"
+      }
+    ]
+  },
+  {
+    "id": "ChIJuUzd0pq02YgRVX0F6mUY_rc",
+    "formattedAddress": "Lincoln Building, 350 Lincoln Rd #2nd, Miami Beach, FL 33139, USA",
+    "googleMapsUri": "https://maps.google.com/?cid=13258061179022310741&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "businessStatus": "OPERATIONAL",
+    "displayName": {
+      "text": "Dreamers Resorts, LLP",
+      "languageCode": "en"
+    }
+  },
+  {
+    "id": "ChIJ31A585q02YgRtlqXCm80yAY",
+    "formattedAddress": "1601 Collins Ave, Miami Beach, FL 33139, USA",
+    "rating": 4.4,
+    "googleMapsUri": "https://maps.google.com/?cid=488698211093404342&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "businessStatus": "OPERATIONAL",
+    "userRatingCount": 10150,
+    "displayName": {
+      "text": "Loews Miami Beach Hotel",
+      "languageCode": "en"
+    },
+    "reviews": [
+      {
+        "name": "places/ChIJ31A585q02YgRtlqXCm80yAY/reviews/Ci9DQUlRQUNvZENodHljRjlvT21velNYVkxVVFI2VUhGdlpYSjNaWFEyZHpsVGJsRRAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 5,
+        "text": {
+          "text": "I recently had the pleasure of experiencing the outstanding service provided by the parking team at Loews Miami Beach Hotel, and I felt compelled to share just how exceptional they truly are.\n\nFrom the moment we arrived, the hospitality was evident. The parking operation runs seamlessly, efficiently, and with genuine warmth — something that immediately sets the tone for a wonderful stay.\n\nA special thank you to Raoul Hernandez, Senior Director of Parking, whose leadership clearly shines through his team. His professionalism, attention to detail, and commitment to guest experience are evident in every interaction. He goes above and beyond to ensure everything runs flawlessly.\n\nEqually impressive was Michael King, who exemplifies exceptional hospitality. Michael was courteous, attentive, and genuinely welcoming. His positive attitude and willingness to assist made a lasting impression.\n\nIt’s rare to encounter a parking team that elevates the entire hotel experience, but this group absolutely does. Their efficiency, professionalism, and heartfelt service reflect incredibly well on the property.\n\nBravo to Raoul, Michael, and the entire team for delivering five-star service from curbside to check-in. Truly exceptional hospitality!",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "I recently had the pleasure of experiencing the outstanding service provided by the parking team at Loews Miami Beach Hotel, and I felt compelled to share just how exceptional they truly are.\n\nFrom the moment we arrived, the hospitality was evident. The parking operation runs seamlessly, efficiently, and with genuine warmth — something that immediately sets the tone for a wonderful stay.\n\nA special thank you to Raoul Hernandez, Senior Director of Parking, whose leadership clearly shines through his team. His professionalism, attention to detail, and commitment to guest experience are evident in every interaction. He goes above and beyond to ensure everything runs flawlessly.\n\nEqually impressive was Michael King, who exemplifies exceptional hospitality. Michael was courteous, attentive, and genuinely welcoming. His positive attitude and willingness to assist made a lasting impression.\n\nIt’s rare to encounter a parking team that elevates the entire hotel experience, but this group absolutely does. Their efficiency, professionalism, and heartfelt service reflect incredibly well on the property.\n\nBravo to Raoul, Michael, and the entire team for delivering five-star service from curbside to check-in. Truly exceptional hospitality!",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Maryanne Salvat",
+          "uri": "https://www.google.com/maps/contrib/110351537825756515073/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjX8jpGoJa6uz2qVu00lWnm_ThESQK6GGIo29CGfpgwpiC1NDZdV=s128-c0x00000000-cc-rp-mo-ba2"
+        },
+        "publishTime": "2026-02-25T01:22:01.377110061Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21velNYVkxVVFI2VUhGdlpYSjNaWFEyZHpsVGJsRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21velNYVkxVVFI2VUhGdlpYSjNaWFEyZHpsVGJsRRAB!2m1!1s0x88d9b49af33950df:0x6c8346f0a975ab6"
+      },
+      {
+        "name": "places/ChIJ31A585q02YgRtlqXCm80yAY/reviews/Ci9DQUlRQUNvZENodHljRjlvT21oS2FEVm1URVV4VEZkVGFUYzRTbkJsYlZnMmMwRRAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 3,
+        "text": {
+          "text": "First time I came to Lowes and with excitment because i thought its luxury hotel. Beautiful people at front desk, I agree.\nBut In reality this is a 3 star hotel with a disapointing service and this is why: my flight was delayed and I arrived at midnight, I was placed in an extension of the hotel and they were nice enough to move me back as I requested, into the main building with a nice size room and a balcony. Thank you for that.  However I dont understand that there was no complimentary water which as if we are talking about gold not water they would not give even one bottle. They gave me complementary drinks, but not water they have none in the building they said. i said but i dont drink alcohol and any sugary drinks all i need is water until the morning when I can see where to get some. Forget it, they would not give in haha i just dont get this. Its a pricey hotel. Housekeeping has to be requested otherwise your room is not going to be made, I mean come on. Umbrellas for the beach are extra they would not provide that but yes you will have chairs and towells…I had no idea about this either. So my take on this is dont waste your money here. Its not worth it.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "First time I came to Lowes and with excitment because i thought its luxury hotel. Beautiful people at front desk, I agree.\nBut In reality this is a 3 star hotel with a disapointing service and this is why: my flight was delayed and I arrived at midnight, I was placed in an extension of the hotel and they were nice enough to move me back as I requested, into the main building with a nice size room and a balcony. Thank you for that.  However I dont understand that there was no complimentary water which as if we are talking about gold not water they would not give even one bottle. They gave me complementary drinks, but not water they have none in the building they said. i said but i dont drink alcohol and any sugary drinks all i need is water until the morning when I can see where to get some. Forget it, they would not give in haha i just dont get this. Its a pricey hotel. Housekeeping has to be requested otherwise your room is not going to be made, I mean come on. Umbrellas for the beach are extra they would not provide that but yes you will have chairs and towells…I had no idea about this either. So my take on this is dont waste your money here. Its not worth it.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Sanela D",
+          "uri": "https://www.google.com/maps/contrib/110200412779423336465/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWbFtcc_-5Fca0Gsk2A4SN39wrOHRzffNZ2dHE0lxA4xTkaUHVvdA=s128-c0x00000000-cc-rp-mo-ba3"
+        },
+        "publishTime": "2026-03-07T20:16:53.897168481Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21oS2FEVm1URVV4VEZkVGFUYzRTbkJsYlZnMmMwRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21oS2FEVm1URVV4VEZkVGFUYzRTbkJsYlZnMmMwRRAB!2m1!1s0x88d9b49af33950df:0x6c8346f0a975ab6"
+      },
+      {
+        "name": "places/ChIJ31A585q02YgRtlqXCm80yAY/reviews/Ci9DQUlRQUNvZENodHljRjlvT21OM1pFeGhSVWRaUlZwd1RHTlZNRlpZY2xsYVFVRRAB",
+        "relativePublishTimeDescription": "5 months ago",
+        "rating": 5,
+        "text": {
+          "text": "I had a wonderful stay at Loews Miami Beach Hotel. The location is excellent—right on the beach and close to shops and restaurants. The staff were consistently professional, welcoming, and attentive, making the stay very comfortable from check-in to check-out. The rooms were clean, spacious, and well maintained, and the overall atmosphere of the hotel was relaxing yet vibrant. I especially appreciated the high level of service and attention to detail. I would gladly recommend this hotel and look forward to staying here again",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "I had a wonderful stay at Loews Miami Beach Hotel. The location is excellent—right on the beach and close to shops and restaurants. The staff were consistently professional, welcoming, and attentive, making the stay very comfortable from check-in to check-out. The rooms were clean, spacious, and well maintained, and the overall atmosphere of the hotel was relaxing yet vibrant. I especially appreciated the high level of service and attention to detail. I would gladly recommend this hotel and look forward to staying here again",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Yazan HATAHET",
+          "uri": "https://www.google.com/maps/contrib/112309025984190533747/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWYALm92O2jdrgXCzUMY1PkUXtZ3YGr4oJR-2OS7I_De4UG9GBQ=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2025-12-31T15:23:15.554056213Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21OM1pFeGhSVWRaUlZwd1RHTlZNRlpZY2xsYVFVRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21OM1pFeGhSVWRaUlZwd1RHTlZNRlpZY2xsYVFVRRAB!2m1!1s0x88d9b49af33950df:0x6c8346f0a975ab6"
+      },
+      {
+        "name": "places/ChIJ31A585q02YgRtlqXCm80yAY/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xKVE5YRk5OM1psUXpoRFIwVTBjemhaUzFJdFNYYxAB",
+        "relativePublishTimeDescription": "4 months ago",
+        "rating": 5,
+        "text": {
+          "text": "The hotel itself is very nice. The people are mostly amazing and often go above and beyond. If there is a mistake they do their best to fix it and I very much appreciate it. The food is very good. The pool is chilly, but they do have a hot tub and we visited on cooler days (we swam for hours anyway!). They have towels and sunscreen available, which is amazing. Convenient to many restaurants. The room itself is nice. Updated and clean. Highly recommended and hope to be back one day. Thank you",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "The hotel itself is very nice. The people are mostly amazing and often go above and beyond. If there is a mistake they do their best to fix it and I very much appreciate it. The food is very good. The pool is chilly, but they do have a hot tub and we visited on cooler days (we swam for hours anyway!). They have towels and sunscreen available, which is amazing. Convenient to many restaurants. The room itself is nice. Updated and clean. Highly recommended and hope to be back one day. Thank you",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "A G",
+          "uri": "https://www.google.com/maps/contrib/110018864426056766318/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVYZLfPbak4R1hz4MvzZneO5sGkKEEfOOp06KnbpcBtLUnuNVEu=s128-c0x00000000-cc-rp-mo-ba3"
+        },
+        "publishTime": "2026-01-23T16:25:54.695790044Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xKVE5YRk5OM1psUXpoRFIwVTBjemhaUzFJdFNYYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xKVE5YRk5OM1psUXpoRFIwVTBjemhaUzFJdFNYYxAB!2m1!1s0x88d9b49af33950df:0x6c8346f0a975ab6"
+      },
+      {
+        "name": "places/ChIJ31A585q02YgRtlqXCm80yAY/reviews/Ci9DQUlRQUNvZENodHljRjlvT205M2NEQXpaV3BXUWtWYVZXWkhSbXBzYm14clVHYxAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 5,
+        "text": {
+          "text": "The place is awesome! The location is fantastic and the staff is very friendly. The rooms are clean and up to date. There is direct beach access from the fuel property as well.\n\nThe only down side is that there isn't any space readily available to take a call. I checked out of my room after a week there, tried taking a teams call in the bar area and was asked to leave.\n\nThis was a little frustrating. I don't expect them to cater to me, but I travel a lot and most hotels at least have an area to take a call or do some work.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "The place is awesome! The location is fantastic and the staff is very friendly. The rooms are clean and up to date. There is direct beach access from the fuel property as well.\n\nThe only down side is that there isn't any space readily available to take a call. I checked out of my room after a week there, tried taking a teams call in the bar area and was asked to leave.\n\nThis was a little frustrating. I don't expect them to cater to me, but I travel a lot and most hotels at least have an area to take a call or do some work.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Jeramie Crabtree",
+          "uri": "https://www.google.com/maps/contrib/100677740367729093374/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocL3HJAuFC-NXcVdG8mJrCY-hLV6WfiSnZz7mY2swgxBHjI664ex=s128-c0x00000000-cc-rp-mo-ba5"
+        },
+        "publishTime": "2026-02-26T19:43:47.989516657Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT205M2NEQXpaV3BXUWtWYVZXWkhSbXBzYm14clVHYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT205M2NEQXpaV3BXUWtWYVZXWkhSbXBzYm14clVHYxAB!2m1!1s0x88d9b49af33950df:0x6c8346f0a975ab6"
+      }
+    ]
+  },
+  {
+    "id": "ChIJazj3FJu02YgR_4npDxUJIZM",
+    "formattedAddress": "1690 Collins Ave, Miami Beach, FL 33139, USA",
+    "rating": 4,
+    "googleMapsUri": "https://maps.google.com/?cid=10601764983872784895&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "businessStatus": "OPERATIONAL",
+    "userRatingCount": 1289,
+    "displayName": {
+      "text": "Gale South Beach, Curio Collection by Hilton",
+      "languageCode": "en"
+    },
+    "reviews": [
+      {
+        "name": "places/ChIJazj3FJu02YgR_4npDxUJIZM/reviews/Ci9DQUlRQUNvZENodHljRjlvT25kemQwYzVOM1Z3TTBOa1l6WXdVVkZ1WDNVd1VYYxAB",
+        "relativePublishTimeDescription": "4 months ago",
+        "rating": 5,
+        "text": {
+          "text": "As a Hilton Diamond member who has stayed at many Hilton properties, I can confidently say this was by far one of the most seamless stays I’ve ever had. From start to finish, everything was flawless with zero issues, excellent communication, spotless rooms, and consistent daily service.\nThe Gale Hotel Curio Collection is exceptionally well operated and perfectly located in the heart of South Beach. It’s a great option for families as well as mature travelers looking for comfort while being close to everything.\nA special thank you to Manager Rudy for taking such great care of my family during our 10 day stay. His professionalism and attention truly made a difference. We couldn’t thank him enough.\nHighly recommend this hotel and would absolutely stay here again",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "As a Hilton Diamond member who has stayed at many Hilton properties, I can confidently say this was by far one of the most seamless stays I’ve ever had. From start to finish, everything was flawless with zero issues, excellent communication, spotless rooms, and consistent daily service.\nThe Gale Hotel Curio Collection is exceptionally well operated and perfectly located in the heart of South Beach. It’s a great option for families as well as mature travelers looking for comfort while being close to everything.\nA special thank you to Manager Rudy for taking such great care of my family during our 10 day stay. His professionalism and attention truly made a difference. We couldn’t thank him enough.\nHighly recommend this hotel and would absolutely stay here again",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Angelina Leo",
+          "uri": "https://www.google.com/maps/contrib/112712403013313043564/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJcjS-3YR7oj0UfwYWhPUEqLD02xic0UYdS9eOa-XTsIYSofw=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-01-10T20:35:07.066123747Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25kemQwYzVOM1Z3TTBOa1l6WXdVVkZ1WDNVd1VYYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25kemQwYzVOM1Z3TTBOa1l6WXdVVkZ1WDNVd1VYYxAB!2m1!1s0x88d9b49b14f7386b:0x932109150fe989ff"
+      },
+      {
+        "name": "places/ChIJazj3FJu02YgR_4npDxUJIZM/reviews/Ci9DQUlRQUNvZENodHljRjlvT2toM00wdE9YMHhzWDBWR1JVVk1UbXRrT0U1d1ZuYxAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 3,
+        "text": {
+          "text": "The hotel itself is nice and the location is great. My main issue is the room design. First off, the two queen rooms are tiny. No full length closet and next to no place to put anything. The shower is terrible. There is no door + there is clear glass on the shower and a window looking into the shower area from the main bedroom. Also, no lock on the toilet room and the door slides back open. This room offers ZERO privacy. Extremely overpriced hotel that needs to hire better architects and designers. L",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "The hotel itself is nice and the location is great. My main issue is the room design. First off, the two queen rooms are tiny. No full length closet and next to no place to put anything. The shower is terrible. There is no door + there is clear glass on the shower and a window looking into the shower area from the main bedroom. Also, no lock on the toilet room and the door slides back open. This room offers ZERO privacy. Extremely overpriced hotel that needs to hire better architects and designers. L",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Matthew Evans",
+          "uri": "https://www.google.com/maps/contrib/114551656600921133505/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWX_k5YyOWO2p_vEPk_VOhMD_vvz_LGFHft9U4Bb--1NeOUkF1Q=s128-c0x00000000-cc-rp-mo-ba3"
+        },
+        "publishTime": "2026-02-24T14:04:01.928025915Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2toM00wdE9YMHhzWDBWR1JVVk1UbXRrT0U1d1ZuYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2toM00wdE9YMHhzWDBWR1JVVk1UbXRrT0U1d1ZuYxAB!2m1!1s0x88d9b49b14f7386b:0x932109150fe989ff"
+      },
+      {
+        "name": "places/ChIJazj3FJu02YgR_4npDxUJIZM/reviews/Ci9DQUlRQUNvZENodHljRjlvT21oMGVqVnJTMGxDUzFCbWVFVkpXSGRNV1VkTVJVRRAB",
+        "relativePublishTimeDescription": "8 months ago",
+        "rating": 5,
+        "text": {
+          "text": "A Five-Star Stay with Historic Charm!\nFrom the moment we walked in, we were captivated by the hotel's historic Art Deco feel. The architecture and design are truly stunning, giving the whole experience a wonderful, classic Miami Beach vibe. Our room was fantastic—clean, comfortable, and beautifully decorated.\nWhat truly set this hotel apart was the amazing staff. Every single person we interacted with was friendly, professional, and went out of their way to be helpful.\nThe location is absolutely unbeatable. You're within easy walking distance of endless shopping and incredible food options. Plus, South Beach is right across the street! Despite being in a very lively area, I felt very safe and secure throughout my stay.\nI can't recommend this hotel enough! It's the perfect blend of style, service, and location.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "A Five-Star Stay with Historic Charm!\nFrom the moment we walked in, we were captivated by the hotel's historic Art Deco feel. The architecture and design are truly stunning, giving the whole experience a wonderful, classic Miami Beach vibe. Our room was fantastic—clean, comfortable, and beautifully decorated.\nWhat truly set this hotel apart was the amazing staff. Every single person we interacted with was friendly, professional, and went out of their way to be helpful.\nThe location is absolutely unbeatable. You're within easy walking distance of endless shopping and incredible food options. Plus, South Beach is right across the street! Despite being in a very lively area, I felt very safe and secure throughout my stay.\nI can't recommend this hotel enough! It's the perfect blend of style, service, and location.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "David Traylor",
+          "uri": "https://www.google.com/maps/contrib/101023782545122381615/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXVY1-GfuUPrDM-v3UMPu-fdN-ffOGvWPGPJBykVQmgI0R_Zu7IJQ=s128-c0x00000000-cc-rp-mo-ba5"
+        },
+        "publishTime": "2025-10-10T17:57:07.239318926Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21oMGVqVnJTMGxDUzFCbWVFVkpXSGRNV1VkTVJVRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21oMGVqVnJTMGxDUzFCbWVFVkpXSGRNV1VkTVJVRRAB!2m1!1s0x88d9b49b14f7386b:0x932109150fe989ff"
+      },
+      {
+        "name": "places/ChIJazj3FJu02YgR_4npDxUJIZM/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pNM1VsOUVjVzVIYlRWU1NYWllXbXRQWTIwMlYwRRAB",
+        "relativePublishTimeDescription": "6 months ago",
+        "rating": 2,
+        "text": {
+          "text": "Stayed for the weekend. The decor was lovely, with vintage photographs on the walls and dark flooring that added old-world charm. The bathroom was beautiful, and the bed was comfortable. The staff were very kind and genuinely tried to help and resolve any issues. Breakfast was a nice touch — good coffee, eggs with potatoes, and a super friendly server. There’s even a partial ocean view from the rooftop deck, and the location is great — an easy walk to everything.\n\nHowever, this property does not feel like a true 4-star hotel, and it’s unclear why it carries the Curio brand, especially when compared to the Hotel del Coronado. We were disappointed to find that the main restaurant facing Collins Street was under construction — we had been looking forward to relaxing there after our days out. The lounge on the other side was closed as well, and even the front coffee bar wasn’t open. We were not informed about the remodeling when we booked well in advance.\n\nOur room had a spacious patio, but the daybed needed cleaning. My side of the bed had no nightstand, and overall, the room could have used a deep clean. Unfortunately, the value didn’t match the experience.\n\nThank you anyway, and best of luck to the team.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Stayed for the weekend. The decor was lovely, with vintage photographs on the walls and dark flooring that added old-world charm. The bathroom was beautiful, and the bed was comfortable. The staff were very kind and genuinely tried to help and resolve any issues. Breakfast was a nice touch — good coffee, eggs with potatoes, and a super friendly server. There’s even a partial ocean view from the rooftop deck, and the location is great — an easy walk to everything.\n\nHowever, this property does not feel like a true 4-star hotel, and it’s unclear why it carries the Curio brand, especially when compared to the Hotel del Coronado. We were disappointed to find that the main restaurant facing Collins Street was under construction — we had been looking forward to relaxing there after our days out. The lounge on the other side was closed as well, and even the front coffee bar wasn’t open. We were not informed about the remodeling when we booked well in advance.\n\nOur room had a spacious patio, but the daybed needed cleaning. My side of the bed had no nightstand, and overall, the room could have used a deep clean. Unfortunately, the value didn’t match the experience.\n\nThank you anyway, and best of luck to the team.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Elna",
+          "uri": "https://www.google.com/maps/contrib/108178154414037802414/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVvY2tEFHDODKLWcyYTongv-t01a2dI1I2RAFm_Oh9Q74Fh6x8=s128-c0x00000000-cc-rp-mo-ba4"
+        },
+        "publishTime": "2025-11-13T18:16:11.804608420Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pNM1VsOUVjVzVIYlRWU1NYWllXbXRQWTIwMlYwRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pNM1VsOUVjVzVIYlRWU1NYWllXbXRQWTIwMlYwRRAB!2m1!1s0x88d9b49b14f7386b:0x932109150fe989ff"
+      },
+      {
+        "name": "places/ChIJazj3FJu02YgR_4npDxUJIZM/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xOSmJsbGtZV0ZCU21oTU1YSlVVbWR2UzE5bE5HYxAB",
+        "relativePublishTimeDescription": "4 months ago",
+        "rating": 1,
+        "text": {
+          "text": "Overpriced and not worth the money! I paid over $1200 for three nights. We arrived on Thursday. Left on Sunday, stayed in room 226 reservation for the first night was put under my friend‘s name but, reservation for the second night and third night was supposed to be put under my name because my credit card was used, but they kept it under my friend’s name. Rooms are overpriced and small. Only one elevator works and  housekeeping was horrible on the third day. Our room wasn’t cleaned after we indicated “service” by flipping on the GREEN LIGHT on the wall outside of the room so after being gone all morning and returning at 3 o’clock we were forced to be out in the street for more hours bc our room still wasn’t clean and we were sleepy and wanted to take naps. When they did clean the room they half ass cleaned it. Sink was still dirty from the morning, my bed had hair on it, sheets definitely were changed just beds remade (i have a feeding tube and the same stain was still on the sheets) we had to come in a 8:30p and request towels and wash clothes bc none were left. The accommodations were horrible! Servers were amazing at the restaurant for breakfast. Oh and on the last day we had to keep walking over a dead bird at the front entrance. I will never ever recommend this hotel to anyone and definitely will not be back… No fridge nor microwave either. That have a wine fridge.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Overpriced and not worth the money! I paid over $1200 for three nights. We arrived on Thursday. Left on Sunday, stayed in room 226 reservation for the first night was put under my friend‘s name but, reservation for the second night and third night was supposed to be put under my name because my credit card was used, but they kept it under my friend’s name. Rooms are overpriced and small. Only one elevator works and  housekeeping was horrible on the third day. Our room wasn’t cleaned after we indicated “service” by flipping on the GREEN LIGHT on the wall outside of the room so after being gone all morning and returning at 3 o’clock we were forced to be out in the street for more hours bc our room still wasn’t clean and we were sleepy and wanted to take naps. When they did clean the room they half ass cleaned it. Sink was still dirty from the morning, my bed had hair on it, sheets definitely were changed just beds remade (i have a feeding tube and the same stain was still on the sheets) we had to come in a 8:30p and request towels and wash clothes bc none were left. The accommodations were horrible! Servers were amazing at the restaurant for breakfast. Oh and on the last day we had to keep walking over a dead bird at the front entrance. I will never ever recommend this hotel to anyone and definitely will not be back… No fridge nor microwave either. That have a wine fridge.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Ray Mone",
+          "uri": "https://www.google.com/maps/contrib/110885075723977742497/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVhfwe80n1r_4VkSV7-FIps5MMotGN5yz2E595TZM4KU18WZiyL=s128-c0x00000000-cc-rp-mo-ba4"
+        },
+        "publishTime": "2026-01-25T06:45:43.250739947Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xOSmJsbGtZV0ZCU21oTU1YSlVVbWR2UzE5bE5HYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xOSmJsbGtZV0ZCU21oTU1YSlVVbWR2UzE5bE5HYxAB!2m1!1s0x88d9b49b14f7386b:0x932109150fe989ff"
+      }
+    ]
+  },
+  {
+    "id": "ChIJdWnB0oS02YgRZuCbxPbqehg",
+    "formattedAddress": "1671 Washington Ave, Miami Beach, FL 33139, USA",
+    "rating": 3.8,
+    "googleMapsUri": "https://maps.google.com/?cid=1763980549650374758&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "businessStatus": "OPERATIONAL",
+    "userRatingCount": 1540,
+    "displayName": {
+      "text": "Greenview by Lowkl",
+      "languageCode": "en"
+    },
+    "reviews": [
+      {
+        "name": "places/ChIJdWnB0oS02YgRZuCbxPbqehg/reviews/Ci9DQUlRQUNvZENodHljRjlvT2psRE5FZG1VRWhIWVZOb1RXTkJjMmR4TFhOeFRsRRAB",
+        "relativePublishTimeDescription": "3 months ago",
+        "rating": 5,
+        "text": {
+          "text": "A fantastic stay at Greenview Hotel! The room and bathroom were spotlessly clean, and all amenities were perfect for a short stay. Exceptional value for money — hard to find anything comparable in such a prime South Beach location. A special shoutout to receptionist Isabelle, who was warm, friendly, and incredibly helpful — a true one-stop solution, always prompt and full of great local recommendations. We had a truly lovely experience and highly recommend Greenview Hotel to anyone visiting Miami!",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "A fantastic stay at Greenview Hotel! The room and bathroom were spotlessly clean, and all amenities were perfect for a short stay. Exceptional value for money — hard to find anything comparable in such a prime South Beach location. A special shoutout to receptionist Isabelle, who was warm, friendly, and incredibly helpful — a true one-stop solution, always prompt and full of great local recommendations. We had a truly lovely experience and highly recommend Greenview Hotel to anyone visiting Miami!",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Subhankar Nayak",
+          "uri": "https://www.google.com/maps/contrib/107466797313262074150/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLlytN7EaQ6Nu37OMUI4_dvbPauShe5qpbeIRaVnTUxq-_9kw=s128-c0x00000000-cc-rp-mo-ba2"
+        },
+        "publishTime": "2026-03-01T20:52:21.354552789Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2psRE5FZG1VRWhIWVZOb1RXTkJjMmR4TFhOeFRsRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2psRE5FZG1VRWhIWVZOb1RXTkJjMmR4TFhOeFRsRRAB!2m1!1s0x88d9b484d2c16975:0x187aeaf6c49be066"
+      },
+      {
+        "name": "places/ChIJdWnB0oS02YgRZuCbxPbqehg/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xCTFpEVTROMDlYWDFoaFlsOXdiblZ5WVhvMmVHYxAB",
+        "relativePublishTimeDescription": "4 months ago",
+        "rating": 2,
+        "text": {
+          "text": "I stayed here one night and I cannot recommend this place:\n* You receive a code to enter the main door and your room. It worked at first but didn't work after midnight. Luckily there was an employee at the lobby who got me inside. Being locked out of your room is not fun.\n* The room was really small. The size of the bathroom sink was probably smaller than an iPad.\n* There was some music playing until morning.\n* The road was laud. I was hoping it would be away from the main drag a bit but it wasn't.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "I stayed here one night and I cannot recommend this place:\n* You receive a code to enter the main door and your room. It worked at first but didn't work after midnight. Luckily there was an employee at the lobby who got me inside. Being locked out of your room is not fun.\n* The room was really small. The size of the bathroom sink was probably smaller than an iPad.\n* There was some music playing until morning.\n* The road was laud. I was hoping it would be away from the main drag a bit but it wasn't.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Ergin Ozkucur",
+          "uri": "https://www.google.com/maps/contrib/107847726440350477530/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXNlba-DOUiaE6qqbpNgu_UXEakUXNxzprHjvhj9AvIRsy71Pyx=s128-c0x00000000-cc-rp-mo-ba2"
+        },
+        "publishTime": "2026-02-02T21:10:40.659435131Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xCTFpEVTROMDlYWDFoaFlsOXdiblZ5WVhvMmVHYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xCTFpEVTROMDlYWDFoaFlsOXdiblZ5WVhvMmVHYxAB!2m1!1s0x88d9b484d2c16975:0x187aeaf6c49be066"
+      },
+      {
+        "name": "places/ChIJdWnB0oS02YgRZuCbxPbqehg/reviews/Ci9DQUlRQUNvZENodHljRjlvT201cGMwWkRjVzV5WWpWcFJuaDFYek5GUnpWeWRFRRAB",
+        "relativePublishTimeDescription": "4 months ago",
+        "rating": 5,
+        "text": {
+          "text": "The front desk, Guadalupe was the best.\nShe didn’t hesitate to help us find activities, guide us along the beach and downtown, she recommend really good restaurants and everything we needed during our stay. If you go to this hotel, hopefully you’ll be lucky enough to meet her😄😄",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "The front desk, Guadalupe was the best.\nShe didn’t hesitate to help us find activities, guide us along the beach and downtown, she recommend really good restaurants and everything we needed during our stay. If you go to this hotel, hopefully you’ll be lucky enough to meet her😄😄",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Ludo Munoz",
+          "uri": "https://www.google.com/maps/contrib/111204454198213110418/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLv2Icn7x7LR6y5gRLQ43bkGjFGsytN5e-fbR1gC0yqh_OGQA=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-02-06T21:06:12.093623390Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT201cGMwWkRjVzV5WWpWcFJuaDFYek5GUnpWeWRFRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT201cGMwWkRjVzV5WWpWcFJuaDFYek5GUnpWeWRFRRAB!2m1!1s0x88d9b484d2c16975:0x187aeaf6c49be066"
+      },
+      {
+        "name": "places/ChIJdWnB0oS02YgRZuCbxPbqehg/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xWWVVITTVaVU5CTFdnelZrWlpXa1V5ZHpsaWEyYxAB",
+        "relativePublishTimeDescription": "4 months ago",
+        "rating": 5,
+        "text": {
+          "text": "When I arrived I met the most happy and accomodating girl ive met in a long time, Camilla. Besides that: Smooth check in/out, smooth stay, good location.\nI like the privacy of ordering room cleaning on demand and room code rather than a key you need to be responsible of. 100% recommend",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "When I arrived I met the most happy and accomodating girl ive met in a long time, Camilla. Besides that: Smooth check in/out, smooth stay, good location.\nI like the privacy of ordering room cleaning on demand and room code rather than a key you need to be responsible of. 100% recommend",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Oscar Sandström",
+          "uri": "https://www.google.com/maps/contrib/103969202114629718059/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJN4JYwS07Ueg5W0JX5RIcLaGP36k6gaV-zLF4XwIPi2o6Xow=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-01-22T00:32:41.948774215Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xWWVVITTVaVU5CTFdnelZrWlpXa1V5ZHpsaWEyYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xWWVVITTVaVU5CTFdnelZrWlpXa1V5ZHpsaWEyYxAB!2m1!1s0x88d9b484d2c16975:0x187aeaf6c49be066"
+      },
+      {
+        "name": "places/ChIJdWnB0oS02YgRZuCbxPbqehg/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xCT1NYSk9UUzEwTVhCNmRXTm1iMHROUWpWMWVVRRAB",
+        "relativePublishTimeDescription": "8 months ago",
+        "rating": 4,
+        "text": {
+          "text": "The place was clean and cozy, especially for the good price on the room! Found a good deal on hopper $42 for one night in the room with the queen bed. Having a fridge and microwave was nice as well. Check in was quick and easy, even when we arrived earlier than expected.\nNo bugs!\nThe code system for the doors were perfect and much easier than key cards, that can be easy to lose.\nI’m a fan of warm water so The only annoying thing was the shower water took a very long time to heat up, or sometimes wouldn’t heat up at all. I’m not sure why, maybe other people were also using hot water at the same time? The sink was fine though! The people who worked at the desk were nice and the other guests were as well. A few homeless people were outside but they weren’t bothering anybody.\nThe Roku TV was great for playing music and it was logged into a YouTube prime account so free movies!!\nI suggest parking at the SP+ parking Lot across from the Lincoln Mall. Parking isn’t $30+ like some other places and it’s not too far of a walk.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "The place was clean and cozy, especially for the good price on the room! Found a good deal on hopper $42 for one night in the room with the queen bed. Having a fridge and microwave was nice as well. Check in was quick and easy, even when we arrived earlier than expected.\nNo bugs!\nThe code system for the doors were perfect and much easier than key cards, that can be easy to lose.\nI’m a fan of warm water so The only annoying thing was the shower water took a very long time to heat up, or sometimes wouldn’t heat up at all. I’m not sure why, maybe other people were also using hot water at the same time? The sink was fine though! The people who worked at the desk were nice and the other guests were as well. A few homeless people were outside but they weren’t bothering anybody.\nThe Roku TV was great for playing music and it was logged into a YouTube prime account so free movies!!\nI suggest parking at the SP+ parking Lot across from the Lincoln Mall. Parking isn’t $30+ like some other places and it’s not too far of a walk.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Megan Martin",
+          "uri": "https://www.google.com/maps/contrib/101236464191772182107/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocL7dHZMVlDthSbF089v6KeIzWLngcuuSPYG-txMKTIekfSEOg=s128-c0x00000000-cc-rp-mo-ba3"
+        },
+        "publishTime": "2025-09-23T20:08:14.266481878Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xCT1NYSk9UUzEwTVhCNmRXTm1iMHROUWpWMWVVRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xCT1NYSk9UUzEwTVhCNmRXTm1iMHROUWpWMWVVRRAB!2m1!1s0x88d9b484d2c16975:0x187aeaf6c49be066"
+      }
+    ]
+  },
+  {
+    "id": "ChIJW3sC3EW12YgRsIVzP2AE5Hs",
+    "formattedAddress": "1685 Collins Ave, Miami Beach, FL 33139, USA",
+    "rating": 4.5,
+    "googleMapsUri": "https://maps.google.com/?cid=8927265172783072688&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "businessStatus": "OPERATIONAL",
+    "userRatingCount": 18,
+    "displayName": {
+      "text": "Delano Miami Beach",
+      "languageCode": "en"
+    },
+    "reviews": [
+      {
+        "name": "places/ChIJW3sC3EW12YgRsIVzP2AE5Hs/reviews/Ci9DQUlRQUNvZENodHljRjlvT21wdFUzWlpOVXQwWlhGWE1uVTVla2d5ZERKWGFXYxAB",
+        "relativePublishTimeDescription": "in the last week",
+        "rating": 5,
+        "text": {
+          "text": "Dropping by to say my time at the Delano was so memorable in the best way. The rooms were gorgeous. The entire property is a feast for the eyes. The pools make you never want to leave. The staff were excellent from the front door to the pools. I tried to remember everyone’s names so they get their flowers because there was never a time when anything was too much or someone was too busy to help.\n\nSarah (at the fourth floor pool), Tatiana, Ashley (pool) Patricia and Arele (at Gigi), and Shawn, Thomas (pool) Diego, and Nicolas were all amazing. Even when it was blazing hot outside they still greeted me each day with amazing energy. Oh, and a tall gentleman (I never got his name) at Gigi for breakfast. I didn’t even have to say what my coffee order was after day two because he remembered. I can’t wait to come back!",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "Dropping by to say my time at the Delano was so memorable in the best way. The rooms were gorgeous. The entire property is a feast for the eyes. The pools make you never want to leave. The staff were excellent from the front door to the pools. I tried to remember everyone’s names so they get their flowers because there was never a time when anything was too much or someone was too busy to help.\n\nSarah (at the fourth floor pool), Tatiana, Ashley (pool) Patricia and Arele (at Gigi), and Shawn, Thomas (pool) Diego, and Nicolas were all amazing. Even when it was blazing hot outside they still greeted me each day with amazing energy. Oh, and a tall gentleman (I never got his name) at Gigi for breakfast. I didn’t even have to say what my coffee order was after day two because he remembered. I can’t wait to come back!",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Bianca Lambert",
+          "uri": "https://www.google.com/maps/contrib/115873739876158081503/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVf_0YKbUHK_nQMKsosTSCaQDAp0_RAuwaenw4fHYjrXqR8-Gh-=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-06-01T22:05:24.201612066Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21wdFUzWlpOVXQwWlhGWE1uVTVla2d5ZERKWGFXYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21wdFUzWlpOVXQwWlhGWE1uVTVla2d5ZERKWGFXYxAB!2m1!1s0x88d9b545dc027b5b:0x7be404603f7385b0"
+      },
+      {
+        "name": "places/ChIJW3sC3EW12YgRsIVzP2AE5Hs/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xkNFR6ZEpiMWczWXpoVFJUQlZhQzFpTlVkRk1WRRAB",
+        "relativePublishTimeDescription": "a week ago",
+        "rating": 5,
+        "text": {
+          "text": "We had the pleasure of being served by Daisy during our visit, and she was absolutely wonderful.\n\nOur table wasn’t exactly the easiest group to manage, yet Daisy handled everything with grace, professionalism, warmth, and a great sense of humor. She was attentive without being intrusive, made us feel genuinely welcome, and elevated the entire experience.\n\nIn an industry where great service can make all the difference, Daisy stands out. She has a natural ability to connect with people and make them feel taken care of. Our entire group left impressed.\n\nThank you, Daisy, for making our evening so memorable. Delano is fortunate to have you on their team.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "We had the pleasure of being served by Daisy during our visit, and she was absolutely wonderful.\n\nOur table wasn’t exactly the easiest group to manage, yet Daisy handled everything with grace, professionalism, warmth, and a great sense of humor. She was attentive without being intrusive, made us feel genuinely welcome, and elevated the entire experience.\n\nIn an industry where great service can make all the difference, Daisy stands out. She has a natural ability to connect with people and make them feel taken care of. Our entire group left impressed.\n\nThank you, Daisy, for making our evening so memorable. Delano is fortunate to have you on their team.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Francesca F",
+          "uri": "https://www.google.com/maps/contrib/102522145743756718555/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocIdfrYoq9GilMuKGfGqWBIRhyESJa9IKgM5xPn5T_20Wt1wGw=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-05-29T01:27:42.985169612Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xkNFR6ZEpiMWczWXpoVFJUQlZhQzFpTlVkRk1WRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xkNFR6ZEpiMWczWXpoVFJUQlZhQzFpTlVkRk1WRRAB!2m1!1s0x88d9b545dc027b5b:0x7be404603f7385b0"
+      },
+      {
+        "name": "places/ChIJW3sC3EW12YgRsIVzP2AE5Hs/reviews/Ci9DQUlRQUNvZENodHljRjlvT21NMlpGaEdTbFE0UlZaSmFsUlBkMnRsV25wS2FuYxAB",
+        "relativePublishTimeDescription": "2 weeks ago",
+        "rating": 2,
+        "text": {
+          "text": "We came for a staycation with kids.\nPros: great beach and pool chairs. Beautifully designed hotel in a great location.\n\nUnfortunately, the service is a disaster. One towel in the room for four people, called for extras and they brought too little. Asked to speak to manager for a late checkout, 5 hours later still hadn’t heard back. No shower facilities. At check out they tried to charge for room twice. The list goes on… but they don’t have their act together, unfortunately.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "We came for a staycation with kids.\nPros: great beach and pool chairs. Beautifully designed hotel in a great location.\n\nUnfortunately, the service is a disaster. One towel in the room for four people, called for extras and they brought too little. Asked to speak to manager for a late checkout, 5 hours later still hadn’t heard back. No shower facilities. At check out they tried to charge for room twice. The list goes on… but they don’t have their act together, unfortunately.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "M F",
+          "uri": "https://www.google.com/maps/contrib/108699057247821527869/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKGPQRE5L7FV89sdtmzFoIHoErRhGolrqArUPeRNzr7be6Kyg=s128-c0x00000000-cc-rp-mo-ba2"
+        },
+        "publishTime": "2026-05-24T16:27:06.292192564Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21NMlpGaEdTbFE0UlZaSmFsUlBkMnRsV25wS2FuYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21NMlpGaEdTbFE0UlZaSmFsUlBkMnRsV25wS2FuYxAB!2m1!1s0x88d9b545dc027b5b:0x7be404603f7385b0"
+      },
+      {
+        "name": "places/ChIJW3sC3EW12YgRsIVzP2AE5Hs/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pOV2JrUkJkRGhCTW01YU1YTkJRVkIyY0ZJeE5XYxAB",
+        "relativePublishTimeDescription": "2 weeks ago",
+        "rating": 5,
+        "text": {
+          "text": "I was lucky to spend the night here and had a blast.\nIconic Miami beach hotel. Had a wonderful evening at the pool bar too BTW. Some good vives.",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "I was lucky to spend the night here and had a blast.\nIconic Miami beach hotel. Had a wonderful evening at the pool bar too BTW. Some good vives.",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Pablo Spitzky",
+          "uri": "https://www.google.com/maps/contrib/118097241489137691938/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVs3ut_AhjKY2XBUkzPkRbxZKpjZWXu8K0atfna0g4BwcTqCaIeZA=s128-c0x00000000-cc-rp-mo-ba5"
+        },
+        "publishTime": "2026-05-23T02:04:20.082864823Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pOV2JrUkJkRGhCTW01YU1YTkJRVkIyY0ZJeE5XYxAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pOV2JrUkJkRGhCTW01YU1YTkJRVkIyY0ZJeE5XYxAB!2m1!1s0x88d9b545dc027b5b:0x7be404603f7385b0"
+      },
+      {
+        "name": "places/ChIJW3sC3EW12YgRsIVzP2AE5Hs/reviews/Ci9DQUlRQUNvZENodHljRjlvT21KMmVqQktiRFp1VWtJd2JGVnVPVnBUVWxSc2JWRRAB",
+        "relativePublishTimeDescription": "3 weeks ago",
+        "rating": 5,
+        "text": {
+          "text": "The newly renovated Delano Hotel would be our go to hotel now at the Miami Beach area. The location is amazing, the pool was spectacular and the beach front was beautiful. The rooms, and amenities were done meticulously and I highly recommend staying here.\n\nNot that those are enough reasons to stay here but don’t forget about the amazing team members who will take care of you during your stay. Some names to mention, Jeremy at the pool bar, Tanya at the pool, Ethan and Thomas at the beach. Each and every team member of the Delano will make sure that you are well attended to. The people who helped us out took our stay to the next level!!\n\nWe will be back and look forward to staying here again.\n\nAlso don’t forget to check out the restaurant on the 4th floor, Mimi Kakushi. The best and most creative drinks in town! And the food is amazing too!",
+          "languageCode": "en"
+        },
+        "originalText": {
+          "text": "The newly renovated Delano Hotel would be our go to hotel now at the Miami Beach area. The location is amazing, the pool was spectacular and the beach front was beautiful. The rooms, and amenities were done meticulously and I highly recommend staying here.\n\nNot that those are enough reasons to stay here but don’t forget about the amazing team members who will take care of you during your stay. Some names to mention, Jeremy at the pool bar, Tanya at the pool, Ethan and Thomas at the beach. Each and every team member of the Delano will make sure that you are well attended to. The people who helped us out took our stay to the next level!!\n\nWe will be back and look forward to staying here again.\n\nAlso don’t forget to check out the restaurant on the 4th floor, Mimi Kakushi. The best and most creative drinks in town! And the food is amazing too!",
+          "languageCode": "en"
+        },
+        "authorAttribution": {
+          "displayName": "Raphael Barretto",
+          "uri": "https://www.google.com/maps/contrib/112636851762128535587/reviews",
+          "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVxsTGnM_DLFIrFcnZvzaBT-F_uUS9_z9AORAC6dSruIR68EdCx=s128-c0x00000000-cc-rp-mo"
+        },
+        "publishTime": "2026-05-17T12:35:47.805301498Z",
+        "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21KMmVqQktiRFp1VWtJd2JGVnVPVnBUVWxSc2JWRRAB&d=17924085&t=1",
+        "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21KMmVqQktiRFp1VWtJd2JGVnVPVnBUVWxSc2JWRRAB!2m1!1s0x88d9b545dc027b5b:0x7be404603f7385b0"
+      }
+    ]
+  },
+  {
+    "id": "ChIJc6FqHAC12YgRDerintboSYg",
+    "formattedAddress": "1650 Washington Ave, Miami Beach, FL 33139, USA",
+    "googleMapsUri": "https://maps.google.com/?cid=9820636470944393741&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "businessStatus": "OPERATIONAL",
+    "displayName": {
+      "text": "Hotel Venezia, Indian Creek,3865",
+      "languageCode": "es"
+    }
+  }
+]
