@@ -44,7 +44,10 @@ def populate_all_leads(ws, df):
         ("cmbs_watchlist","CMBS Watch",11), ("cmbs_delinquent","CMBS Delq.",11),
         ("cmbs_special_servicing","Special Svc.",11),
         ("signals_fired","Signals Fired",35),
-        ("lead_status","Lead Status ▼",14), ("notes","Notes",30),
+        ("lead_status","Lead Status ▼",14),
+        ("feedback_reason","Feedback Reason",20),
+        ("feedback_notes","Feedback Notes",30),
+        ("notes","Notes",30),
         ("price_tier", "Price Tier", 12),
         ("created_at","Date First Surfaced",18),
     ]
@@ -82,7 +85,7 @@ def populate_all_leads(ws, df):
     status_col = [k for k,_,_ in col_defs].index("lead_status") + 1
     sc_letter  = get_column_letter(status_col)
     dv = DataValidation(type="list",
-                        formula1='"New,Pursuing,Monitoring,Passed,Underwriting"',
+                        formula1='"New,Pursuing,Monitoring,Passed,Bad_Data,Underwriting"',
                         allow_blank=True, showDropDown=False)
     ws.add_data_validation(dv)
     dv.add(f"{sc_letter}2:{sc_letter}{len(df)+1}")
@@ -178,7 +181,7 @@ def populate_lead_tracker(ws, df):
                 c.font = Font(bold=True,size=9,color=sc_fg,name="Arial")
                 c.fill = _fill(sc_bg)
     dv = DataValidation(type="list",
-                        formula1='"New,Pursuing,Monitoring,Passed,Underwriting"',
+                        formula1='"New,Pursuing,Monitoring,Passed,Bad_Data,Underwriting"',
                         allow_blank=True, showDropDown=False)
     ws.add_data_validation(dv)
     dv.add(f"E2:E{len(df)+1}")

@@ -10,10 +10,13 @@ conn = get_connection()
 cur = conn.cursor()
 
 cur.execute("""
-DELETE
-FROM hotel_leads
-WHERE created_at < NOW() - INTERVAL '12 months'
-AND lead_status <> 'PURSUING'
+UPDATE hotel_leads
+SET
+    owner_name = NULL
+WHERE
+    cleanup_due_date <= NOW()
+    AND pii_retention_exempt = FALSE
+            
 """)
 
 deleted = cur.rowcount

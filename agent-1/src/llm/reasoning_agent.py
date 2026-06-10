@@ -6,6 +6,7 @@ from src.llm.prompts import (
     HOTEL_ANALYSIS_PROMPT
 )
 from src.llm.schemas import LLM_REASONING_SCHEMA
+from src.storage.postgres_storage import get_feedback_patterns
 
 def validate_llm_response(parsed: dict):
 
@@ -44,6 +45,14 @@ def default_failed_response(error_message: str):
     }
 
 def analyze_hotel(entity):
+    feedback_patterns = get_feedback_patterns()
+    feedback_text = "\n".join(
+        [
+            f"{reason} ({count})"
+            for reason, count in feedback_patterns
+        ]
+    )
+
     prompt = HOTEL_ANALYSIS_PROMPT.format(
         hotel_data={
             "hotel_name": entity.hotel_name,
@@ -53,6 +62,7 @@ def analyze_hotel(entity):
         },
         signals=entity.signals,
         heuristic_scores=entity.heuristic_scores,
+        feedback_patterns=feedback_text
     )
 
     try:

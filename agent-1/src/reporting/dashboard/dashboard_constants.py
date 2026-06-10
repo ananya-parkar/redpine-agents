@@ -18,6 +18,7 @@ STATUS_COLORS = {
     "Pursuing":     ("FEF9C3", "854D0E"),
     "Passed":       ("FEE2E2", "991B1B"),
     "Monitoring":   ("DBEAFE", "1E40AF"),
+    "Bad_Data": ("FECACA", "991B1B"),
     "Underwriting": ("F3E8FF", "6B21A8"),
 }
 

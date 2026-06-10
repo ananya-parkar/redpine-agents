@@ -183,8 +183,14 @@ def process_hotel(item, hotel, hotel_index, total_hotels):
         print(
             "[FILTER CHECK]",
             hotel_name,
+            "built=",
             row.get("attom_year_built"),
-            item.get("year_built_range")
+            "year_filter=",
+            item.get("year_built_range"),
+            "price_tier=",
+            row.get("price_tier"),
+            "requested=",
+            item.get("price_tier")
         )
 
         if not passes_filters(row, item):

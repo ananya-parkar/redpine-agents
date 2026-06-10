@@ -12,5 +12,15 @@ def passes_filters(row, search_config):
             return False
         if year_built > end_year:
             return False
-
+    
+    # Price Tier
+    requested_tier = search_config.get("price_tier")
+    if requested_tier:
+        actual_tier = row.get("price_tier")
+        if not actual_tier:
+            return False
+        
+        if actual_tier.lower().strip() != requested_tier.lower().strip():
+            return False
+        
     return True

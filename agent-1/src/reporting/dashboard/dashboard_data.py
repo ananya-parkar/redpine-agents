@@ -41,6 +41,12 @@ def prepare_leads(df):
     if "state" not in df.columns:
         df["state"] = ""
     
+    if "feedback_reason" not in df.columns:
+        df["feedback_reason"] = ""
+
+    if "feedback_notes" not in df.columns:
+        df["feedback_notes"] = ""
+        
     df["signals_fired"] = df.apply(build_signals, axis=1)
     print("\n ====== CITY VALUES =======")
     print(df["city"].value_counts().head(20))

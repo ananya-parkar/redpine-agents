@@ -32,6 +32,9 @@ def remove_existing_postgres_leads(rows):
         if status == "PASSED":
             continue
 
+        if status == "BAD_DATA":
+            continue
+
         # Existing lead still gets processed
         filtered.append(row)
 
