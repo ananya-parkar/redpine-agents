@@ -13,14 +13,35 @@ def passes_filters(row, search_config):
         if year_built > end_year:
             return False
     
-    # Price Tier
-    requested_tier = search_config.get("price_tier")
-    if requested_tier:
-        actual_tier = row.get("price_tier")
-        if not actual_tier:
+    # Minimum Room Count
+    min_rooms = search_config.get("min_rooms")
+    print(
+        "[ROOM FILTER]",
+        row.get("hotel_name"),
+        "rooms=",
+        row.get("room_count"),
+        "required=",
+        min_rooms
+    )
+    if min_rooms:
+        room_count = row.get("room_count")
+        if not room_count:
             return False
-        
-        if actual_tier.lower().strip() != requested_tier.lower().strip():
+        try:
+            room_count = int(room_count)
+            if room_count < int(min_rooms):
+                return False
+
+        except Exception:
+            return False
+    
+    # Price Tier
+    requested_price_tier = search_config.get("price_tier")
+    if requested_price_tier:
+        if (
+            row.get("price_tier")
+            and row["price_tier"] != requested_price_tier
+        ):
             return False
         
     return True

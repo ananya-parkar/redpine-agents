@@ -41,4 +41,4 @@ class HotelEntity:
 
     # Metadata
     source_location: Optional[str] = None
-    radius_km: Optional[float] = None
+    radius_miles: Optional[float] = None

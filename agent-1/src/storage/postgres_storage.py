@@ -134,14 +134,15 @@ def insert_priority_leads(rows):
             feedback_penalty,
             feedback_rule_applied,
             cleanup_due_date,
-            pii_retention_exempt
+            pii_retention_exempt,
+            mailing_address
         )
         VALUES (
             %s,%s,%s,%s,%s,%s,%s,
             %s,%s,%s,%s,%s,%s,%s,
             %s,%s,%s,%s,%s,%s,%s,
             %s,%s,%s,%s,%s,%s,%s,
-            %s,%s
+            %s,%s,%s
         )
         ON CONFLICT(lead_key)
         DO UPDATE SET
@@ -172,7 +173,8 @@ def insert_priority_leads(rows):
             feedback_penalty = EXCLUDED.feedback_penalty,
             feedback_rule_applied = EXCLUDED.feedback_rule_applied,
             cleanup_due_date = EXCLUDED.cleanup_due_date,
-            pii_retention_exempt = EXCLUDED.pii_retention_exempt    
+            pii_retention_exempt = EXCLUDED.pii_retention_exempt,
+            mailing_address = EXCLUDED.mailing_address
         """,
         (
             row.get("hotel_name"),
@@ -211,6 +213,7 @@ def insert_priority_leads(rows):
             row.get("feedback_rule_applied"),
             cleanup_due_date,
             False,
+            row.get("mailing_address")
         )
     )
         if cur.rowcount > 0:
@@ -367,7 +370,8 @@ def enforce_pii_retention():
         """
         UPDATE hotel_leads
         SET
-            owner_name = NULL
+            owner_name = NULL,
+            mailing_address = NULL
         WHERE
             COALESCE(pii_retention_exempt, FALSE) = FALSE
             AND first_surfaced <= NOW() - INTERVAL '12 months'

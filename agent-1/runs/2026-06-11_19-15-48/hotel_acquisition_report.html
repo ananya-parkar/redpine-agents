@@ -1,0 +1,694 @@
+
+    <html>
+    <head>
+    <title>Hotel Acquisition Intelligence Report</title>
+    <style>
+    body {
+        font-family: Arial;
+        background: #f4f4f4;
+        padding: 30px;
+    }
+    .hotel-card {
+        background: white;
+        padding: 25px;
+        margin-bottom: 40px;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+        color: #1e3a8a;
+    }
+    h2 {
+        margin-top: 25px;
+        color: #374151;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+    td {
+        border: 1px solid #ddd;
+        padding: 10px;
+    }
+    th {
+        border: 1px solid #ddd;
+        padding: 10px;
+        background: #1e3a8a;
+        color: white;
+        text-align: left;
+    }
+    .score {
+        font-size: 24px;
+        font-weight: bold;
+        color: #b91c1c;
+        margin-bottom: 20px;
+    }
+    .review {
+        background: #fafafa;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-left: 4px solid #2563eb;
+    }
+    .thesis {
+        background: #ccfbf1;
+        padding: 15px;
+        border-radius: 8px;
+        color: #134e4a;
+        border-left: 5px solid #14b8a6;
+        line-height: 1.6;
+    }
+    .action {
+        background: #dbeafe;
+        padding: 15px;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+    .star-rating {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: #f59e0b;
+        font-weight: bold;
+    }
+    </style>
+    </head>
+    <body>
+    <h1>Hotel Acquisition Intelligence Report</h1>
+    
+    <div class="hotel-card">
+
+        <h1>Super 8 by Wyndham Orlando International Drive</h1>
+
+        <div class="score">
+            Final Opportunity Score:
+            100
+        </div>
+
+        <div class="action">
+            HIGH DISTRESS
+        </div>
+
+        <div class="star-rating">
+            AI Acquisition Rating:
+            ★★★☆☆
+            (2.8/5)
+        </div>
+
+        <h2>AI Investment Thesis</h2>
+
+        <div class="thesis">
+            The Super 8 by Wyndham Orlando International Drive shows clear signs of operational distress with declining guest satisfaction and physical condition deterioration after long-term ownership. While the brand affiliation remains intact, the property requires renovation and operational improvements to restore competitiveness. This presents a moderate distress acquisition opportunity suitable for a focused turnaround or light renovation strategy.
+        </div>
+
+        <h2>Hotel Information</h2>
+
+        <table>
+            <tr><td>Address</td><td>5900 American Way, Orlando, FL 32819, USA</td></tr>
+            <tr><td>Google Rating</td><td>3.1</td></tr>
+            <tr><td>Total Reviews</td><td>1943</td></tr>
+            <tr><td>Google Maps</td><td><a href="https://maps.google.com/?cid=7160547498519547018&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open Map</a></td></tr>
+        </table>
+
+        <h2>Operational Distress Signals</h2>
+        
+        <table>
+            <tr>
+                <th>Signal</th>
+                <th>Value</th>
+                <th>Explanation</th>
+            </tr>
+            
+        <tr>
+            <td>review_decline</td>
+            <td>True</td>
+            <td>Average review ratings are trending downward.</td>
+        </tr>
+        
+        <tr>
+            <td>review_rating_delta</td>
+            <td>-3.0</td>
+            <td>Average guest rating declined by 3.00 points.</td>
+        </tr>
+        
+        <tr>
+            <td>review_volume_decline</td>
+            <td>True</td>
+            <td>Guest review activity has decreased significantly.</td>
+        </tr>
+        
+        <tr>
+            <td>complaint_increase</td>
+            <td>False</td>
+            <td>Complaint levels remain stable.</td>
+        </tr>
+        
+        <tr>
+            <td>sentiment_decline</td>
+            <td>True</td>
+            <td>Negative guest sentiment is increasing.</td>
+        </tr>
+        
+        <tr>
+            <td>sentiment_trend</td>
+            <td>Declining</td>
+            <td>Business-friendly sentiment classification.</td>
+        </tr>
+        
+        <tr>
+            <td>review_activity_trend</td>
+            <td>Declining</td>
+            <td>Business-friendly classification of review activity.</td>
+        </tr>
+        
+        <tr>
+            <td>positive_reviews_recent</td>
+            <td>0</td>
+            <td>Positive reviews identified in the recent review period.</td>
+        </tr>
+        
+        <tr>
+            <td>negative_reviews_recent</td>
+            <td>1</td>
+            <td>Negative reviews identified in the recent review period.</td>
+        </tr>
+        
+        <tr>
+            <td>positive_reviews_prior</td>
+            <td>3</td>
+            <td>Positive reviews identified in the prior review period.</td>
+        </tr>
+        
+        <tr>
+            <td>negative_reviews_prior</td>
+            <td>2</td>
+            <td>Negative reviews identified in the prior review period.</td>
+        </tr>
+        
+        <tr>
+            <td>renovation_needed</td>
+            <td>True</td>
+            <td>Reviews indicate aging facilities or maintenance concerns.</td>
+        </tr>
+        
+        <tr>
+            <td>old_property</td>
+            <td>True</td>
+            <td>Property age exceeds configured age threshold.</td>
+        </tr>
+        
+        <tr>
+            <td>physical_condition_score</td>
+            <td>2</td>
+            <td>Physical condition score is 2. Higher values indicate stronger renovation signals.</td>
+        </tr>
+        
+        <tr>
+            <td>franchise_loss</td>
+            <td>False</td>
+            <td>No evidence of franchise loss.</td>
+        </tr>
+        
+        <tr>
+            <td>former_brand</td>
+            <td>N/A</td>
+            <td>Previously identified franchise affiliation.</td>
+        </tr>
+        
+        <tr>
+            <td>franchise_affiliated</td>
+            <td>True</td>
+            <td>Property is currently affiliated with a major hospitality brand.</td>
+        </tr>
+        
+        <tr>
+            <td>current_brand</td>
+            <td>Wyndham</td>
+            <td>Current franchise affiliation.</td>
+        </tr>
+        
+        <tr>
+            <td>brand_status</td>
+            <td>CURRENT</td>
+            <td>Current franchise relationship status.</td>
+        </tr>
+        
+        <tr>
+            <td>cmbs_watchlist</td>
+            <td>False</td>
+            <td>No CMBS watchlist indicators found.</td>
+        </tr>
+        
+        <tr>
+            <td>cmbs_special_servicing</td>
+            <td>False</td>
+            <td>No special servicing indicators detected.</td>
+        </tr>
+        
+        <tr>
+            <td>cmbs_delinquent</td>
+            <td>False</td>
+            <td>No delinquency indicators detected.</td>
+        </tr>
+        
+        <tr>
+            <td>long_term_owner</td>
+            <td>True</td>
+            <td>Ownership tenure exceeds configured threshold.</td>
+        </tr>
+        
+        <tr>
+            <td>ownership_length_years</td>
+            <td>11</td>
+            <td>Property has been owned for 11 years.</td>
+        </tr>
+        
+        <tr>
+            <td>room_count</td>
+            <td>108</td>
+            <td>No explanation available.</td>
+        </tr>
+        
+        <tr>
+            <td>distress_score</td>
+            <td>14</td>
+            <td>Rule-based distress score is 14.</td>
+        </tr>
+        
+        </table>
+
+        <h2>Distress Reasons</h2>
+
+        <ul>
+            <li>Low rating: 3.1</li><li>Moderate-to-low rating with enough reviews: 1943</li><li>Negative review signal: dirty</li><li>Negative review signal: smell</li><li>Negative review signal: broken</li><li>Negative review signal: worst</li><li>Negative review signal: unsafe</li><li>Review volume decline: -33.33%</li><li>Rating decline: -3.0</li><li>Renovation signals in reviews: 40.0%</li>
+        </ul>
+
+        <h2>Ownership Intelligence</h2>
+
+        <table>
+            <tr><td>Owner</td><td>DONGXIANG INVESTMENT GROUP LLC</td></tr>
+            <tr><td>Ownership Length</td><td>11</td></tr>
+            <tr><td>Mailing Address</td><td>8566 NW 19TH DR, CORAL SPRINGS, FL 33071-6151</td></tr>
+        </table>
+
+        <h2>Franchise Intelligence</h2>
+
+        <table>
+            <tr><td>Current Brand</td><td>Wyndham</td></tr>
+            <tr><td>Former Brand</td><td></td></tr>
+            <tr><td>Status</td><td>CURRENT</td></tr>
+        </table>
+
+        <h2>CMBS Distress</h2>
+
+        <table>
+            <tr><td>Loan Status</td><td>Not Found</td></tr>
+            <tr><td>Watchlist</td><td>False</td></tr>
+            <tr><td>Special Servicing</td><td>False</td></tr>
+        </table>
+
+        <h2>Recommended Action</h2>
+
+        <div class="action">
+            Operational Turnaround
+        </div>
+
+        <h2>Review Intelligence</h2>
+            <table>
+                <tr>
+                    <th>Complaint Theme</th>
+                    <th>Share</th>
+                </tr>
+                
+            <tr>
+                <td>Staff</td>
+                <td>38.5%</td>
+            </tr>
+            
+            <tr>
+                <td>Maintenance</td>
+                <td>30.8%</td>
+            </tr>
+            
+            <tr>
+                <td>Cleanliness</td>
+                <td>23.1%</td>
+            </tr>
+            
+            <tr>
+                <td>Safety</td>
+                <td>7.7%</td>
+            </tr>
+            
+            </table>
+        
+        <h2>Review Trend Intelligence</h2>
+            <table>
+                <tr>
+                    <td>Review Activity Trend</td>
+                    <td>Declining</td>
+                </tr>
+
+                <tr>
+                    <td>Sentiment Trend</td>
+                    <td>Declining</td>
+                </tr>
+
+                <tr>
+                    <td>Recent Positive Reviews</td>
+                    <td>0</td>
+                </tr>
+
+                <tr>
+                    <td>Recent Negative Reviews</td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td>Prior Positive Reviews</td>
+                    <td>3</td>
+                </tr>
+
+                <tr>
+                    <td>Prior Negative Reviews</td>
+                    <td>2</td>
+                </tr>
+            </table>
+
+        <h2>AI Review Summary</h2>
+
+        <div class="thesis">
+            Guests frequently report issues with cleanliness, including dirty rooms and unpleasant odors, alongside broken and unsafe facilities. Operational concerns are evident as review volume and guest sentiment have declined significantly. Maintenance and renovation needs are prominent, reflecting aging property conditions. Overall, guest sentiment is trending downward, indicating worsening service and facility quality.
+        </div>
+    </div>
+    
+
+    <div class="hotel-card">
+
+        <h1>Orlando Inn International Drive Area</h1>
+
+        <div class="score">
+            Final Opportunity Score:
+            61.4
+        </div>
+
+        <div class="action">
+            MODERATE DISTRESS
+        </div>
+
+        <div class="star-rating">
+            AI Acquisition Rating:
+            ★★★☆☆
+            (3.2/5)
+        </div>
+
+        <h2>AI Investment Thesis</h2>
+
+        <div class="thesis">
+            The Orlando Inn International Drive Area exhibits moderate to strong distress characterized by poor guest satisfaction and operational challenges despite stable sentiment and increasing review activity. Long-term ownership and absence of recent renovations suggest potential seller fatigue. The property presents an opportunity for operational turnaround and rebranding to improve market positioning.
+        </div>
+
+        <h2>Hotel Information</h2>
+
+        <table>
+            <tr><td>Address</td><td>5900 American Way, Orlando, FL 32819, USA</td></tr>
+            <tr><td>Google Rating</td><td>2.9</td></tr>
+            <tr><td>Total Reviews</td><td>16</td></tr>
+            <tr><td>Google Maps</td><td><a href="https://maps.google.com/?cid=17291968103926665780&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open Map</a></td></tr>
+        </table>
+
+        <h2>Operational Distress Signals</h2>
+        
+        <table>
+            <tr>
+                <th>Signal</th>
+                <th>Value</th>
+                <th>Explanation</th>
+            </tr>
+            
+        <tr>
+            <td>review_decline</td>
+            <td>False</td>
+            <td>No meaningful rating decline detected.</td>
+        </tr>
+        
+        <tr>
+            <td>review_rating_delta</td>
+            <td>0</td>
+            <td>Average guest rating remained unchanged.</td>
+        </tr>
+        
+        <tr>
+            <td>review_volume_decline</td>
+            <td>False</td>
+            <td>Review activity remains stable.</td>
+        </tr>
+        
+        <tr>
+            <td>complaint_increase</td>
+            <td>False</td>
+            <td>Complaint levels remain stable.</td>
+        </tr>
+        
+        <tr>
+            <td>sentiment_decline</td>
+            <td>False</td>
+            <td>Guest sentiment remains stable.</td>
+        </tr>
+        
+        <tr>
+            <td>sentiment_trend</td>
+            <td>Stable</td>
+            <td>Business-friendly sentiment classification.</td>
+        </tr>
+        
+        <tr>
+            <td>review_activity_trend</td>
+            <td>Increasing</td>
+            <td>Business-friendly classification of review activity.</td>
+        </tr>
+        
+        <tr>
+            <td>positive_reviews_recent</td>
+            <td>1</td>
+            <td>Positive reviews identified in the recent review period.</td>
+        </tr>
+        
+        <tr>
+            <td>negative_reviews_recent</td>
+            <td>2</td>
+            <td>Negative reviews identified in the recent review period.</td>
+        </tr>
+        
+        <tr>
+            <td>positive_reviews_prior</td>
+            <td>1</td>
+            <td>Positive reviews identified in the prior review period.</td>
+        </tr>
+        
+        <tr>
+            <td>negative_reviews_prior</td>
+            <td>1</td>
+            <td>Negative reviews identified in the prior review period.</td>
+        </tr>
+        
+        <tr>
+            <td>renovation_needed</td>
+            <td>False</td>
+            <td>No significant renovation concerns identified.</td>
+        </tr>
+        
+        <tr>
+            <td>old_property</td>
+            <td>True</td>
+            <td>Property age exceeds configured age threshold.</td>
+        </tr>
+        
+        <tr>
+            <td>physical_condition_score</td>
+            <td>0</td>
+            <td>Physical condition score is 0. Higher values indicate stronger renovation signals.</td>
+        </tr>
+        
+        <tr>
+            <td>franchise_loss</td>
+            <td>False</td>
+            <td>No evidence of franchise loss.</td>
+        </tr>
+        
+        <tr>
+            <td>former_brand</td>
+            <td>N/A</td>
+            <td>Previously identified franchise affiliation.</td>
+        </tr>
+        
+        <tr>
+            <td>franchise_affiliated</td>
+            <td>False</td>
+            <td>No active franchise affiliation detected.</td>
+        </tr>
+        
+        <tr>
+            <td>current_brand</td>
+            <td>N/A</td>
+            <td>Current franchise affiliation.</td>
+        </tr>
+        
+        <tr>
+            <td>brand_status</td>
+            <td>NONE</td>
+            <td>Current franchise relationship status.</td>
+        </tr>
+        
+        <tr>
+            <td>cmbs_watchlist</td>
+            <td>False</td>
+            <td>No CMBS watchlist indicators found.</td>
+        </tr>
+        
+        <tr>
+            <td>cmbs_special_servicing</td>
+            <td>False</td>
+            <td>No special servicing indicators detected.</td>
+        </tr>
+        
+        <tr>
+            <td>cmbs_delinquent</td>
+            <td>False</td>
+            <td>No delinquency indicators detected.</td>
+        </tr>
+        
+        <tr>
+            <td>long_term_owner</td>
+            <td>True</td>
+            <td>Ownership tenure exceeds configured threshold.</td>
+        </tr>
+        
+        <tr>
+            <td>ownership_length_years</td>
+            <td>11</td>
+            <td>Property has been owned for 11 years.</td>
+        </tr>
+        
+        <tr>
+            <td>room_count</td>
+            <td>108</td>
+            <td>No explanation available.</td>
+        </tr>
+        
+        <tr>
+            <td>distress_score</td>
+            <td>7</td>
+            <td>Rule-based distress score is 7.</td>
+        </tr>
+        
+        </table>
+
+        <h2>Distress Reasons</h2>
+
+        <ul>
+            <li>Low rating: 2.9</li><li>Negative review signal: dirty</li><li>Negative review signal: filthy</li><li>Negative review signal: rude</li><li>Negative review signal: unsafe</li><li>Negative review signal: stained</li>
+        </ul>
+
+        <h2>Ownership Intelligence</h2>
+
+        <table>
+            <tr><td>Owner</td><td>DONGXIANG INVESTMENT GROUP LLC</td></tr>
+            <tr><td>Ownership Length</td><td>11</td></tr>
+            <tr><td>Mailing Address</td><td>8566 NW 19TH DR, CORAL SPRINGS, FL 33071-6151</td></tr>
+        </table>
+
+        <h2>Franchise Intelligence</h2>
+
+        <table>
+            <tr><td>Current Brand</td><td></td></tr>
+            <tr><td>Former Brand</td><td></td></tr>
+            <tr><td>Status</td><td>NONE</td></tr>
+        </table>
+
+        <h2>CMBS Distress</h2>
+
+        <table>
+            <tr><td>Loan Status</td><td></td></tr>
+            <tr><td>Watchlist</td><td>False</td></tr>
+            <tr><td>Special Servicing</td><td>False</td></tr>
+        </table>
+
+        <h2>Recommended Action</h2>
+
+        <div class="action">
+            Operational Turnaround
+        </div>
+
+        <h2>Review Intelligence</h2>
+            <table>
+                <tr>
+                    <th>Complaint Theme</th>
+                    <th>Share</th>
+                </tr>
+                
+            <tr>
+                <td>Staff</td>
+                <td>45.5%</td>
+            </tr>
+            
+            <tr>
+                <td>Cleanliness</td>
+                <td>36.4%</td>
+            </tr>
+            
+            <tr>
+                <td>Safety</td>
+                <td>9.1%</td>
+            </tr>
+            
+            <tr>
+                <td>Maintenance</td>
+                <td>9.1%</td>
+            </tr>
+            
+            </table>
+        
+        <h2>Review Trend Intelligence</h2>
+            <table>
+                <tr>
+                    <td>Review Activity Trend</td>
+                    <td>Increasing</td>
+                </tr>
+
+                <tr>
+                    <td>Sentiment Trend</td>
+                    <td>Stable</td>
+                </tr>
+
+                <tr>
+                    <td>Recent Positive Reviews</td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td>Recent Negative Reviews</td>
+                    <td>2</td>
+                </tr>
+
+                <tr>
+                    <td>Prior Positive Reviews</td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td>Prior Negative Reviews</td>
+                    <td>1</td>
+                </tr>
+            </table>
+
+        <h2>AI Review Summary</h2>
+
+        <div class="thesis">
+            Guests frequently complain about cleanliness issues including dirty and stained rooms, as well as concerns about safety and rude service. While review volume is increasing, overall guest sentiment remains stable but low, indicating persistent operational and service challenges. There are no immediate renovation needs reported, but the property’s aging condition and negative guest experiences highlight the need for management improvements.
+        </div>
+    </div>
+    
+    </body>
+    </html>
+    

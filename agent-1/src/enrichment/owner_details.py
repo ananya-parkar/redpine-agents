@@ -111,7 +111,11 @@ def detect_owner_details(address: str = "") -> Dict:
             owner_data,
             flush=True
         )
-
+        print(
+            "[ATTOM PROPERTY RAW]",
+            property_data,
+            flush=True
+        )
         owner1_data = owner_data.get("owner1", {})
         print(
             "[ATTOM OWNER1 SECTION]",
@@ -148,6 +152,23 @@ def detect_owner_details(address: str = "") -> Dict:
         if owner_name and "llc" in owner_name.lower():
             owner_company = owner_name
 
+        building_summary = (
+            property_data
+                .get("building", {})
+                .get("summary", {})
+        )
+        
+        room_count = (
+            building_summary.get("unitsCount")
+            or building_summary.get("unitscount")
+            or ""
+        )
+
+        print(
+            "[ATTOM ROOM COUNT]",
+            room_count
+        )
+
         return {
             "owner_name": owner_name,
             "owner_company": owner_company,
@@ -158,6 +179,7 @@ def detect_owner_details(address: str = "") -> Dict:
             "year_built": year_built,
             "is_older_than_20_years": is_older_than_20_years,
             "owner_confidence": "High" if owner_name else "Low",
+            "room_count": room_count,
             "owner_evidence": (
                 "Retrieved from ATTOM property records"
                 if owner_name else "Owner data unavailable"

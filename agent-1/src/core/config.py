@@ -22,6 +22,7 @@ POSTGRES_USER = os.getenv("POSTGRES_USER")
 POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD")
 
 DISTRESS_SCORE_THRESHOLD = 7  
+
 DISTRESS_KEYWORDS = {
     "negative": [
         "dirty", "filthy", "smell", "mold", "leak", "broken", "worst", "bad service",

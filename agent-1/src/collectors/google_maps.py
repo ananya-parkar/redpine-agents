@@ -14,7 +14,7 @@ def geocode_location(location: str) -> Tuple[float, float]:
     loc = data["results"][0]["geometry"]["location"]
     return loc["lat"], loc["lng"]
 
-def nearby_hotels(lat: float, lng: float, radius_km: float) -> List[Dict]:
+def nearby_hotels(lat: float, lng: float, radius_miles: float) -> List[Dict]:
     headers = {
         "Content-Type": "application/json",
         "X-Goog-Api-Key": GOOGLE_MAPS_API_KEY,
@@ -40,7 +40,7 @@ def nearby_hotels(lat: float, lng: float, radius_km: float) -> List[Dict]:
                     "latitude": lat,
                     "longitude": lng
                 },
-                "radius": radius_km * 1000
+                "radius": radius_miles * 1609.34
             }
         }
     }

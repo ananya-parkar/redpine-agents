@@ -41,7 +41,7 @@ def _write_chart_data(data_ws, df):
         data_ws.cell(101 + i, 2, cnt)
 
     # ── Distress signals (col 4-5, rows 80-85) ──
-    total_hotels = len(df)
+    total_hotels = max(len(df), 1)
 
     sig = {
         k: round((v / total_hotels) * 100)

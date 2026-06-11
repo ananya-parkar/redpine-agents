@@ -8,10 +8,10 @@ def extract_hotel_name(hotel_data):
     return ""
 
 
-def build_base_row(search_location, radius_km, hotel_name, hotel_details, score_data):
+def build_base_row(search_location, radius_miles, hotel_name, hotel_details, score_data):
     return {
         "search_location": search_location,
-        "radius_km": radius_km,
+        "radius_miles": radius_miles,
         "hotel_name": hotel_name,
         "address": hotel_details.get("formattedAddress", ""),
         "rating": hotel_details.get("rating", ""),
