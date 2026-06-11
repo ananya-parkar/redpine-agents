@@ -1,15 +1,1 @@
-Miami Beach, Florida | 3
-South Beach, Miami Beach, Florida | 2
-Mid-Beach, Miami Beach, Florida | 2
-
-Downtown Miami, Florida | 3
-Brickell, Miami, Florida | 2
-
-Miami International Airport, Florida | 3
-
-Fort Lauderdale, Florida | 4
-West Palm Beach, Florida | 4
-Key West, Florida | 3
-
-Orlando International Drive, Florida | 3
-Kissimmee, Florida | 3
+Orlando International Drive, Florida | 3 | | | | Economy

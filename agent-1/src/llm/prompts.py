@@ -102,5 +102,11 @@ Do NOT use:
 - guest_review_summary
 - guest_review_patterns
 
+HISTORICAL REVIEWER FEEDBACK:
+{feedback_patterns}
+
+Avoid recommending opportunities that match
+recurring reviewer rejection patterns.
+
 Return STRICT JSON matching the required schema.
 """
