@@ -1,6 +1,11 @@
-Owner names, mailing addresses and public contact
-information are retained for 12 months.
+PII fields retained:
 
-Records marked PURSUING are exempt.
+- owner_name
+- mailing_address
+- owner_phone
 
-Records older than 12 months are eligible for deletion.
+Retention period:
+12 months
+
+Exemption:
+lead_status = PURSUING

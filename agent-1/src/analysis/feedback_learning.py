@@ -45,6 +45,18 @@ def apply_feedback_penalties(row, rules):
     row["feedback_rule_applied"] = ""
 
     if "WRONG_OWNER" in rules:
+        owner_confidence = (
+            str(row.get("owner_confidence", ""))
+            .strip()
+            .lower()
+        )
+
+        if owner_confidence in [
+            "low",
+            "error",
+            "not checked"
+        ]:
+
             score_penalty += 15
             row["feedback_rule_applied"] = "WRONG_OWNER"
 

@@ -7,7 +7,7 @@ BASE_FIELDNAMES = [
     "final_lead_score",
     "lead_reason",
     "search_location",
-    "radius_km",
+    "radius_miles",
     "hotel_name",
     "address",
     "source_provenance",

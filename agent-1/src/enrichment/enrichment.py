@@ -32,6 +32,7 @@ def default_owner_result():
         "ownership_length_years": "",
         "attom_year_built": "",
         "is_older_than_20_years": "",
+        "room_count": "",
     }
 
 
@@ -100,6 +101,12 @@ def enrich_priority_hotel(hotel_name, address, reviews=None):
             property_lookup.keys(),
             flush=True
         )
+
+        print(
+            "[OWNER ROOM COUNT]",
+            property_lookup.get("room_count")
+        )
+        
         
         # Update with owner details
         result["owner_name"] = property_lookup.get("owner_name", "")
@@ -108,6 +115,12 @@ def enrich_priority_hotel(hotel_name, address, reviews=None):
         result["owner_phone"] = property_lookup.get("owner_phone", "")
         result["owner_confidence"] = property_lookup.get("owner_confidence", "Not Checked")
         result["owner_evidence"] = property_lookup.get("owner_evidence", "")
+        result["room_count"] = property_lookup.get("room_count", "")
+
+        print(
+            "[ENRICHMENT ROOM COUNT]",
+            result["room_count"]
+        )
         
         # Get property data for age and tenure calculations
         property_data = property_lookup.get("property_data", {})

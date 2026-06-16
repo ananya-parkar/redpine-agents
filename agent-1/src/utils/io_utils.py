@@ -16,7 +16,7 @@ def parse_locations(file_path: Path) -> List[Dict]:
 
         row = {
             "location": parts[0],
-            "radius_km": float(parts[1])
+            "radius_miles": float(parts[1])
         }
 
         if len(parts) >= 3 and parts[2]:

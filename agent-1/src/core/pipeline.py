@@ -17,7 +17,7 @@ from src.enrichment.price_tier import get_price_tier
 def process_location(item, loc_index, total_locations):
     print(
         f"\n[LOCATION {loc_index}/{total_locations}] Processing: "
-        f"{item['location']} | radius_km={item['radius_km']}",
+        f"{item['location']} | radius_miles={item['radius_miles']}",
         flush=True
     )
 
@@ -26,12 +26,12 @@ def process_location(item, loc_index, total_locations):
 
     geocode_results = [{
         "location": item["location"],
-        "radius_km": item["radius_km"],
+        "radius_miles": item["radius_miles"],
         "latitude": lat,
         "longitude": lng
     }]
 
-    hotels = nearby_hotels(lat, lng, item["radius_km"])
+    hotels = nearby_hotels(lat, lng, item["radius_miles"])
     print(f"\n[NEARBY SEARCH] Found {len(hotels)} hotel(s)", flush=True)
     seen = set()
     deduped_hotels = []
@@ -55,7 +55,7 @@ def process_location(item, loc_index, total_locations):
 
     nearby_results = [{
         "search_location": item["location"],
-        "radius_km": item["radius_km"],
+        "radius_miles": item["radius_miles"],
         "hotel_count": len(hotels),
         "hotels": hotels
     }]
@@ -120,7 +120,7 @@ def process_hotel(item, hotel, hotel_index, total_hotels):
     entity = build_hotel_entity(
         hotel_details,
         source_location=item["location"],
-        radius_km=item["radius_km"]
+        radius_miles=item["radius_miles"]
     )
     score_data = distress_score(hotel_details)
     entity.heuristic_scores = score_data
@@ -148,7 +148,7 @@ def process_hotel(item, hotel, hotel_index, total_hotels):
 
     row = build_base_row(
         search_location=item["location"],
-        radius_km=item["radius_km"],
+        radius_miles=item["radius_miles"],
         hotel_name=hotel_name,
         hotel_details=hotel_details,
         score_data=score_data,
@@ -206,6 +206,7 @@ def process_hotel(item, hotel, hotel_index, total_hotels):
             "ownership_length_years": enrichment.get("ownership_length_years"),
             "attom_year_built": enrichment.get("attom_year_built"),
             "is_older_than_20_years": enrichment.get("is_older_than_20_years"),
+            "room_count": enrichment.get("room_count"),
         }
 
         entity.cmbs_data = {

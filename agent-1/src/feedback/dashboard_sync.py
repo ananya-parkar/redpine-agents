@@ -14,17 +14,17 @@ def sync_dashboard_feedback():
         )
     )
 
-    print(f"[DEBUG] RUNS_DIR={dashboard_dir}")
+    # print(f"[DEBUG] RUNS_DIR={dashboard_dir}")
 
-    print(
-        f"[DEBUG] dashboards found={len(dashboards)}"
-    )
+    # print(
+    #     f"[DEBUG] dashboards found={len(dashboards)}"
+    # )
 
-    for d in dashboards:
-        print(d)
+    # for d in dashboards:
+    #     print(d)
 
-    if not dashboards:
-        return
+    # if not dashboards:
+    #     return
 
     latest = max(
         dashboards,
@@ -51,7 +51,7 @@ def sync_dashboard_feedback():
     )
 
     
-    print(df.columns.tolist())
+    # print(df.columns.tolist())
     for _, row in df.iterrows():
 
         status = str(

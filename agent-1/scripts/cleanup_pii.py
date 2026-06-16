@@ -12,7 +12,8 @@ cur = conn.cursor()
 cur.execute("""
 UPDATE hotel_leads
 SET
-    owner_name = NULL
+    owner_name = NULL,
+    mailing_address = NULL
 WHERE
     cleanup_due_date <= NOW()
     AND pii_retention_exempt = FALSE

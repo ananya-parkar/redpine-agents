@@ -23,3 +23,9 @@ Orlando International Drive, Florida | 3
 Mid-Beach, Miami Beach, Florida | 2
 South Beach, Miami Beach, Florida | 2
 Miami International Airport, Florida | 3
+
+
+
+
+location | radius | min_rooms | max_rooms | year_built_range | price_tier
+Orlando International Drive, Florida | 3 | 100 | | 1980-1990 | Economy

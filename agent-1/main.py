@@ -18,6 +18,7 @@ from src.storage.postgres_storage import get_feedback_patterns
 from src.analysis.feedback_learning import apply_feedback_penalties, build_feedback_rules
 from src.feedback.dashboard_sync import sync_dashboard_feedback
 from src.storage.feedback_actions import create_feedback_action, action_already_exists
+from src.input_validation import validate_inputs
 
 def main():
     print("\n[START] Agent 1 run started\n", flush=True)
@@ -28,6 +29,10 @@ def main():
     print(f"[INFO] Reading input file: {INPUT_FILE}", flush=True)
     locations = parse_locations(INPUT_FILE)
     print(f"[INFO] Loaded {len(locations)} location(s) from input", flush=True)
+
+    for item in locations:
+        validate_inputs(item)
+    print("[VALIDATION] Input validation passed", flush=True)
 
     geocode_results = []
     nearby_results = []

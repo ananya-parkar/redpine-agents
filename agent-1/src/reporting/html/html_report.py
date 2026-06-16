@@ -197,6 +197,8 @@ def build_hotel_card(entity):
         distress_category = "MODERATE DISTRESS"
     else:
         distress_category = "LOW DISTRESS"
+    
+    mailing_address = owner.get("mailing_address","N/A")
 
     return f"""
     <div class="hotel-card">

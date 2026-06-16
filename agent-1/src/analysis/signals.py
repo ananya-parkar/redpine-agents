@@ -44,6 +44,7 @@ def build_signals(entity):
             ),
 
         "ownership_length_years": entity.owner_data.get("ownership_length_years", 0),
+        "room_count": entity.owner_data.get("room_count", 0),
 
         # Final heuristic score
         "distress_score": scores.get("distress_score", 0),

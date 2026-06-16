@@ -2,7 +2,7 @@
 import re
 import requests
 from typing import Dict, List
-from src.core.config import SEARCH_TIMEOUT, TAVILY_API_KEY, FRANCHISE_KEYWORDS
+from src.core.config import TAVILY_API_KEY, FRANCHISE_KEYWORDS
 from tavily import TavilyClient
 TAVILY_CLIENT = TavilyClient(api_key=TAVILY_API_KEY)
 # ------------------------------------------------------------------------------

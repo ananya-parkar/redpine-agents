@@ -50,6 +50,7 @@ def populate_all_leads(ws, df):
         ("notes","Notes",30),
         ("price_tier", "Price Tier", 12),
         ("created_at","Date First Surfaced",18),
+        ("mailing_address","Mailing Address",30),
     ]
     for i, (_, lbl, w) in enumerate(col_defs):
         ws.column_dimensions[get_column_letter(i+1)].width = w
@@ -138,9 +139,9 @@ def populate_high_opportunity(ws, df):
 
 def populate_ownership_analysis(ws, df):
     od   = df.sort_values("ownership_length_years", ascending=False, na_position="last")
-    cols = ["hotel_name","owner_name","ownership_since","ownership_length_years",
+    cols = ["hotel_name","owner_name","mailing_address","ownership_since","ownership_length_years",
             "property_age","final_lead_score","lead_status"]
-    _sheet_header(ws,["Hotel Name","Owner","Owned Since","Years Owned","Prop. Age",
+    _sheet_header(ws,["Hotel Name","Owner","Mailing Address","Owned Since","Years Owned","Prop. Age",
                        "Lead Score","Status"],[24,22,13,11,10,11,13])
     _write_rows(ws, od, cols)
 
