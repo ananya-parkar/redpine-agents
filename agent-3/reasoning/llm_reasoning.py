@@ -1,4 +1,4 @@
-# agent-3/reasoning.py
+# agent-3/reasoning/llm_reasoning.py
 """
 Layer 6 — LLM Reasoning Layer
 
@@ -33,7 +33,7 @@ def generate_rationale(row):
         evidence_summary  - short summary of the supporting facts
         one_line_reason   - single line for the daily email digest
     """
-    evidence = row.get("Evidence", "") or "No additional evidence captured."
+    evidence = (row.get("Evidence Summary", "") or "No additional evidence captured.")
 
     prompt = f"""
         You are writing a rationale for why a company appears on an
@@ -50,14 +50,14 @@ def generate_rationale(row):
         Family Owned: {row.get("Family Owned", "")}
         Founder Age Estimate: {row.get("Founder Age Estimate", "")}
         Seller Readiness Score: {row.get("Seller Readiness Score", "")}
-        Evidence: {evidence}
+        Evidence Summary: {evidence}
 
         Write:
         1. why_selected: 2-3 sentences explaining why this company is a
            strong acquisition target, grounded in the fields above.
         2. evidence_summary: 1-2 sentences summarizing the concrete
            evidence that supports the selection (cite specifics from
-           Evidence where available; otherwise note evidence is limited).
+           Evidence Summary where available; otherwise note evidence is limited).
         3. one_line_reason: a single short sentence (under 20 words)
            suitable for a daily email digest line item.
 
@@ -116,7 +116,11 @@ def run_reasoning(deduped_file, output_file):
     """
     print("\nRunning LLM Reasoning Layer...\n")
 
-    df = pd.read_csv(deduped_file)
+    try:
+        df = pd.read_csv(deduped_file)
+    except pd.errors.EmptyDataError:
+        print(f"Deduplicated candidates file is empty: {deduped_file}")
+        df = pd.DataFrame()
 
     if df.empty:
         print("No new candidates to reason about (deduplicated_candidates.csv is empty).")

@@ -4,6 +4,7 @@ BASE_DIR = Path(__file__).parent
 DATA_FOLDER = BASE_DIR / "data"
 OUTPUT_FOLDER = BASE_DIR / "outputs"
 INPUT_FOLDER = BASE_DIR / "inputs"
+
 OUTPUT_COLUMNS = [
     "Company Name",
     "City",
@@ -24,14 +25,12 @@ OUTPUT_COLUMNS = [
 TAVILY_MAX_RESULTS = 10
 
 UNIVERSE_SEARCH_QUERIES = [
-    "private companies in {location}",
-    "largest private companies in {location}",
-    "family owned businesses in {location}",
-    "privately held companies in {location}",
-    "companies headquartered in {location}",
-    "business directory {location}",
-    "top private employers in {location}",
-    "companies based in {location}"
+    "family owned manufacturing companies in {location}",
+    "founder led companies in {location}",
+    "privately held distribution companies in {location}",
+    "privately held industrial companies in {location}",
+    "private services companies in {location} founded more than {min_years} years ago",
+    "middle market private companies in {location}"
 ]
 
 SCORED_OUTPUT_COLUMNS = [

@@ -22,7 +22,7 @@ def search_company(company_name, state):
     all_results = []
 
     for query in queries:
-        response = tavily_client.search(query=query, search_depth="advanced", max_results=3)
+        response = tavily_client.search(query=query, search_depth="advanced", max_results=2)
         all_results.extend(response.get("results", []))
 
     return {"results": all_results}

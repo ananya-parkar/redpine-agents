@@ -1,4 +1,4 @@
-# agent-3/email_digest/email_digest.py
+# agent-3/mail/email.py
 """
 Layer 7 (email half) — Daily Email Digest
 
@@ -25,7 +25,7 @@ load_dotenv(override=True)
 
 EMAIL_FROM = "stadiumleadsagent@gmail.com"
 EMAIL_PASSWORD = "nkmssmpkhnwrbiag"
-EMAIL_TO = "anshika.ranjan0926@gmail.com"
+EMAIL_TO = "anshika.ranjan0926@gmail.com", "amehta@parkar.in"
 
 SMTP_HOST = "smtp.gmail.com"
 SMTP_PORT = 587
@@ -35,7 +35,7 @@ TOP_N = 5
 DB_CONFIG = {
     "host": os.getenv("POSTGRES_HOST", "localhost"),
     "port": os.getenv("POSTGRES_PORT", "5432"),
-    "dbname": os.getenv("POSTGRES_DB", "redpine_agent3"),
+    "dbname": os.getenv("POSTGRES_DB_AGENT3", "redpine_agent3"),
     "user": os.getenv("POSTGRES_USER", "postgres"),
     "password": os.getenv("POSTGRES_PASSWORD", "postgres"),
 }
