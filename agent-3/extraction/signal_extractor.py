@@ -167,9 +167,9 @@ def extract_signals(raw_content):
             "founder_led": "",
             "family_owned": "",
             "founder_age_estimate": "",
-            "ownership_status": "",
-            "extraction_confidence": "",
-            "evidence_summary": [""],
+            "evidence_summary": [
+                ""
+            ]
         }}
 
         Content:

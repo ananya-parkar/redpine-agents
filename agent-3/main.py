@@ -13,7 +13,15 @@ from config import INPUT_FOLDER, DATA_FOLDER, OUTPUT_FOLDER
 from collection.signal_collection import collect_signals
 from extraction.signal_extractor import extract_signals
 from scoring.seller_readiness import calculate_seller_readiness
+from deduplication.dedupe import run_deduplication
+from reasoning.llm_reasoning import run_reasoning
+from mail.email import send_daily_digest
+from db.db import save_candidates_to_db, record_pipeline_run_snapshot
+from db.feedback_sync import sync_feedback_from_dashboard
+from db.pii_retention import apply_pii_retention
 
+
+from dashboard.dashboard import generate_dashboard
 def main():
     geography = load_geography(INPUT_FOLDER / "geography.json")
 
@@ -162,7 +170,38 @@ def main():
 
     output_df = pd.DataFrame(scored_rows)
     output_df.to_csv(OUTPUT_FOLDER / "agent3_scored_candidates.csv", index=False)
-    print(f"\nSaved {len(output_df)} scored companies")
+    print(f"\nSaved {len(output_df)} scored companies"
+          
+    print("\nStarting Deduplication Layer...\n")
+    deduped_df = run_deduplication(
+        scored_df=output_df,
+        output_file=OUTPUT_FOLDER / "deduplicated_candidates.csv"
+    )
+    print(f"\n{len(deduped_df)} new, deduplicated candidates ready for ranking")
+    print("\nStarting LLM Reasoning Layer...\n")
+    final_df = run_reasoning(
+        deduped_file=OUTPUT_FOLDER / "deduplicated_candidates.csv",
+        output_file=OUTPUT_FOLDER / "candidates_with_rationale.csv"
+    )
+    print(f"\nFinal output: {len(final_df)} candidates with rationale ready for dashboard")
+
+    print("\nSaving to Postgres...\n")
+    save_candidates_to_db(final_df)
+    print("\nRecording run snapshot...\n")
+    record_pipeline_run_snapshot()
+    print("\nSyncing feedback from previous run...\n")
+    sync_feedback_from_dashboard(OUTPUT_FOLDER / "agent3_dashboard.xlsx")
+
+    print("\nGenerating Excel dashboard...\n")
+    generate_dashboard(OUTPUT_FOLDER / "agent3_dashboard.xlsx")
+    print("\nSending daily email digest...\n")
+    send_daily_digest(
+    new_candidates_df=final_df,
+    dashboard_file_path=OUTPUT_FOLDER / "agent3_dashboard.xlsx")
+    print("\nChecking PII retention policy...\n")
+    apply_pii_retention(dry_run=False)
+
+    
 
 if __name__ == "__main__":
     main()
