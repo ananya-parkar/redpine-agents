@@ -28,8 +28,7 @@ def extract_signals(raw_content):
         - founder_led
         - family_owned
         - founder_age_estimate
-        - evidence
-
+        - evidence_summary
         Rules:
 
         - founder_led:
@@ -56,7 +55,7 @@ def extract_signals(raw_content):
             Only provide if evidence exists.
             Otherwise return "Unknown".
 
-        - evidence:
+        - evidence_summary:
             List the exact facts that support the extraction.
 
         Return format:
@@ -70,7 +69,7 @@ def extract_signals(raw_content):
             "founder_led": "",
             "family_owned": "",
             "founder_age_estimate": "",
-            "evidence": [
+            "evidence_summary": [
                 ""
             ]
         }}
