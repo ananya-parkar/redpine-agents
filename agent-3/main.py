@@ -1,5 +1,5 @@
 # agent-3/main.py
-
+import json, re
 from discovery.universe_builder import (
     load_geography, 
     generate_search_queries, 
@@ -36,14 +36,22 @@ def main():
         print(query)
 
     print("\nTesting Tavily Query:\n")
-    print(queries[0])
+    print(queries)
 
-    tavily_response = search_query(
-        queries[0]
-    )
+    all_results = []
+
+    for query in queries:
+        print(f"\nRunning Query: {query}")
+
+        response = search_query(query)
+
+        all_results.extend(
+            response.get("results", [])
+        )
 
     all_companies = []
-    for item in tavily_response["results"]:
+
+    for item in all_results:
         print()
         print(item["title"])
         companies = extract_companies_with_llm(
@@ -58,8 +66,36 @@ def main():
             company_names.append(
                 company["company_name"]
             )
+    
+    def normalize_company_name(name):
+        suffixes = [
+            " inc",
+            " inc.",
+            " llc",
+            " ltd",
+            " ltd.",
+            " corp",
+            " corp.",
+            " corporation",
+            " co",
+            " co.",
+            " company",
+            " holdings",
+            " holding"
+        ]
+        normalized = name.lower()
+        for suffix in suffixes:
+            if normalized.endswith(suffix):
+                normalized = normalized[:-len(suffix)]
+        return normalized.strip()
 
-    company_names = sorted(list(set(company_names)))
+    unique_companies = {}
+    for company in company_names:
+        normalized = normalize_company_name(company)
+        if normalized not in unique_companies:
+            unique_companies[normalized] = company
+
+    company_names = sorted(unique_companies.values())
 
     # # TEMP TEST
     # company_names = company_names[:20]
@@ -86,15 +122,27 @@ def main():
     
     print("\nStarting Signal Collection + Scoring...\n")
     companies_df = load_filtered_universe(DATA_FOLDER / "filtered_candidate_universe.csv")
+    raw_signal_repository = []
     scored_rows = []
 
-    for _, row in companies_df.head(5).iterrows():
+    for _, row in companies_df.head(25).iterrows():
         company_name = row["Company Name"]
         print(f"\nProcessing: {company_name}")
         
         signals = collect_signals(company_name, geography["geography_value"])
+        raw_signal_repository.append({
+            "company_name": company_name,
+            "raw_content": signals["raw_content"],
+            "source_urls": signals["source_urls"]
+        })
+
         extracted = extract_signals(signals["raw_content"])
         score = calculate_seller_readiness(extracted)
+
+        if extracted.get("extraction_confidence") == "Low":
+            print(f"Skipping {company_name} due to low confidence")
+            continue
+
         print(extracted)
         print(score)
 
@@ -110,17 +158,20 @@ def main():
             "Family Owned": extracted.get("family_owned"),
             "Founder Age Estimate": extracted.get("founder_age_estimate"),
             "Seller Readiness Score": score.get("seller_readiness_score"),
-            "Evidence Summary": " | ".join(extracted.get("evidence_summary", []))
+            "Evidence Summary": " | ".join(extracted.get("evidence_summary", [])),
+            "Evidence Sources": ";".join(sorted(set(signals["source_urls"]))),
+            "Extraction Confidence": extracted.get("extraction_confidence"),
+            "Ownership Status": extracted.get("ownership_status")
+
         })
-    
+
+    with open(DATA_FOLDER / "raw_signals.json", "w", encoding="utf-8") as f:
+        json.dump(raw_signal_repository, f, indent=2)
+
     output_df = pd.DataFrame(scored_rows)
     output_df.to_csv(OUTPUT_FOLDER / "agent3_scored_candidates.csv", index=False)
-    print(f"\nSaved {len(output_df)} scored companies")
-    
-    # Anshika Code
-    output_df.to_csv(OUTPUT_FOLDER / "agent3_scored_candidates.csv", index=False)
-    print(f"\nSaved {len(output_df)} scored companies")
-
+    print(f"\nSaved {len(output_df)} scored companies"
+          
     print("\nStarting Deduplication Layer...\n")
     deduped_df = run_deduplication(
         scored_df=output_df,

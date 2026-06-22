@@ -37,10 +37,20 @@ def classify_company(company_name):
         - University
         - Hospital
         - Non-profit
-        - Trade association
-        - Clearly not a business
-        - Obviously outside the intended acquisition profile
-        (large public mega-corporations, aerospace giants, etc.)
+
+        - Venture Capital firm
+        - Private Equity firm
+        - Investment Firm
+        - Asset Management Firm
+        - Wealth Management Firm
+        - Family Office
+        - Holding Company
+        - Search Fund
+        - Acquisition Vehicle
+        - Large public mega-corporation
+        - Fortune-scale private enterprise
+        - National mega-company
+        - Enterprise clearly too large to fit a typical lower-middle-market acquisition target
 
         Return JSON only:
         {{
@@ -58,6 +68,10 @@ def classify_company(company_name):
         - Non-profit organization
         - Not a business
         - Large public corporation
+        - Venture Capital firm
+        - Private Equity firm
+        - Investment firm
+        - Holding company
         - Unknown
 
         Company:
