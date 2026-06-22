@@ -52,6 +52,26 @@ def classify_company(company_name):
         - National mega-company
         - Enterprise clearly too large to fit a typical lower-middle-market acquisition target
 
+        Strong Name Heuristics:
+        If company name contains terms like:
+
+        Capital
+        Ventures
+        Ventures LLC
+        Partners
+        Equity
+        Fund
+        Holdings
+        Management
+        Investments
+        Family Office
+
+        and appears to be an investment business,
+        return REMOVE.
+
+        Be aggressive in removing investment entities.
+        False positives are preferred over keeping PE/VC firms.
+
         Return JSON only:
         {{
             "decision": "KEEP",

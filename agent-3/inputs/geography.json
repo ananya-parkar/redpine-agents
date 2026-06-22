@@ -1,4 +1,6 @@
 {
-    "geography_type": "state",
-    "geography_value": "Florida"
+  "geography_type": "state",
+  "geography_value": "Florida",
+  "min_years_in_business": 10,
+  "revenue_range": "$10M-$50M"
 }

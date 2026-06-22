@@ -15,10 +15,10 @@ def load_geography(input_file):
         geography = json.load(f)
     return geography
 
-def generate_search_queries(geography_type, geography_value):
+def generate_search_queries(geography_type, geography_value, revenue_range, min_years):
     queries = []
     for query in UNIVERSE_SEARCH_QUERIES:
-        queries.append(query.format(location=geography_value))
+        queries.append(query.format(location=geography_value, revenue=revenue_range, min_years=min_years))
     return queries
 
 def build_candidate_universe(geography_type, geography_value):

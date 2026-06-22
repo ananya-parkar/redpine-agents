@@ -13,7 +13,21 @@ def extract_companies_with_llm(content):
         return []
 
     prompt = f"""
-        Extract company names from the text below.
+        Extract only operating businesses.
+        Do NOT extract:
+        - Venture Capital firms
+        - Private Equity firms
+        - Investment firms
+        - Family offices
+        - Holding companies
+        - Search funds
+        - Acquisition vehicles
+        - Banks
+        - Universities
+        - Hospitals
+        - Government entities
+
+        Only extract actual operating businesses that sell products or services.
 
         Rules:
         - Return only company names.

@@ -30,7 +30,7 @@ load_dotenv(override=True)
 DB_CONFIG = {
     "host": os.getenv("POSTGRES_HOST", "localhost"),
     "port": os.getenv("POSTGRES_PORT", "5432"),
-    "dbname": os.getenv("POSTGRES_DB", "redpine_agent3"),
+    "dbname": os.getenv("POSTGRES_DB_AGENT3", "redpine_agent3"),
     "user": os.getenv("POSTGRES_USER", "postgres"),
     "password": os.getenv("POSTGRES_PASSWORD", "postgres"),
 }

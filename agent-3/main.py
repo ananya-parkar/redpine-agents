@@ -19,17 +19,19 @@ from mail.email import send_daily_digest
 from db.db import save_candidates_to_db, record_pipeline_run_snapshot
 from db.feedback_sync import sync_feedback_from_dashboard
 from db.pii_retention import apply_pii_retention
-
-
 from dashboard.dashboard import generate_dashboard
+DEV_MODE = True
 def main():
     geography = load_geography(INPUT_FOLDER / "geography.json")
+    target_geography = geography["geography_value"]
+    min_years = geography["min_years_in_business"]
+    revenue_range = geography["revenue_range"]
 
     print("\nRunning Agent 3\n")
     print("Target Geography:")
     print(geography)
 
-    queries = generate_search_queries(geography["geography_type"], geography["geography_value"])
+    queries = generate_search_queries(geography["geography_type"], geography["geography_value"], revenue_range, min_years)
 
     print("\nGenerated Queries:\n")
     for query in queries:
@@ -96,10 +98,9 @@ def main():
             unique_companies[normalized] = company
 
     company_names = sorted(unique_companies.values())
+    if DEV_MODE:
+        company_names = company_names[:20]
 
-    # # TEMP TEST
-    # company_names = company_names[:20]
-    
     raw_df = pd.DataFrame({"Company Name": company_names})
     save_candidate_universe(raw_df, DATA_FOLDER / "candidate_universe.csv")
 
@@ -125,7 +126,11 @@ def main():
     raw_signal_repository = []
     scored_rows = []
 
-    for _, row in companies_df.head(25).iterrows():
+   # for end to end testing remove later.
+    if DEV_MODE:
+        companies_df = companies_df.head(10)
+
+    for _, row in companies_df.iterrows():
         company_name = row["Company Name"]
         print(f"\nProcessing: {company_name}")
         
@@ -143,8 +148,75 @@ def main():
             print(f"Skipping {company_name} due to low confidence")
             continue
 
+        years_in_business = score.get("years_in_business", 0)
+        if years_in_business < min_years:
+            print(
+                f"Skipping {company_name} "
+                f"because age is only "
+                f"{years_in_business} years"
+            )
+            continue
+
+        revenue = extracted.get("revenue_estimate","Unknown")
+        # For the time being
+        # if revenue != revenue_range:
+        #     print(
+        #         f"Skipping {company_name} "
+        #         f"because revenue band is "
+        #         f"{revenue}"
+        #     )
+        #     continue
+
+        print(
+            f"Revenue={revenue} | "
+            f"Years={years_in_business}"
+        )
+        if revenue not in [revenue_range, "Unknown"]:
+            continue
+
+        company_state = extracted.get("state", "Unknown")
+        target_state = geography["geography_value"]
+        STATE_MAP = {
+            "Florida": "FL"
+        }
+
+        expected_state = STATE_MAP.get(
+            target_state,
+            target_state
+        )
+
+        if company_state not in [expected_state, "Unknown"]:
+            print(
+                f"Skipping {company_name} "
+                f"because state is {company_state}"
+            )
+            continue
+
+        ownership_status = extracted.get("ownership_status", "Unknown")
+        if ownership_status not in [
+            "Family Owned",
+            "Founder Owned",
+            "Unknown"
+        ]:
+            print(
+                f"Skipping {company_name} "
+                f"because ownership is {ownership_status}"
+            )
+            continue
+    
         print(extracted)
         print(score)
+
+        if (
+            extracted.get("founder_name") == "Unknown"
+            and extracted.get("family_owned") != "Yes"
+            and extracted.get("founder_led") != "Yes"
+        ):
+            print(
+                f"Skipping {company_name} "
+                "because no founder/family signal found"
+            )
+            continue
 
         scored_rows.append({
             "Company Name": company_name,
@@ -152,6 +224,7 @@ def main():
             "State": extracted.get("state"),
             "Company Type":extracted.get("company_type"),
             "Founded Year": extracted.get("founded_year"),
+            "Revenue Estimate": extracted.get("revenue_estimate"),
             "Years in Business": score.get("years_in_business"),
             "Founder Name": extracted.get("founder_name"),
             "Founder Led": extracted.get("founder_led"),
@@ -161,7 +234,8 @@ def main():
             "Evidence Summary": " | ".join(extracted.get("evidence_summary", [])),
             "Evidence Sources": ";".join(sorted(set(signals["source_urls"]))),
             "Extraction Confidence": extracted.get("extraction_confidence"),
-            "Ownership Status": extracted.get("ownership_status")
+            "Ownership Status": extracted.get("ownership_status"),
+            "Ownership Tenure Years": extracted.get("ownership_tenure_years"),
 
         })
 
@@ -170,8 +244,12 @@ def main():
 
     output_df = pd.DataFrame(scored_rows)
     output_df.to_csv(OUTPUT_FOLDER / "agent3_scored_candidates.csv", index=False)
-    print(f"\nSaved {len(output_df)} scored companies"
-          
+    
+    print(f"\nSaved {len(output_df)} scored companies")
+    if output_df.empty:
+        print("\nNo candidates survived filtering.")
+        return
+            
     print("\nStarting Deduplication Layer...\n")
     deduped_df = run_deduplication(
         scored_df=output_df,

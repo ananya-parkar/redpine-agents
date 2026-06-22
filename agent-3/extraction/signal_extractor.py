@@ -29,15 +29,27 @@ def extract_signals(raw_content):
         - state
         - company_type
         - founded_year
+        - revenue_estimate
         - founder_name
         - founder_led
         - family_owned
         - founder_age_estimate
         - ownership_status
+        - ownership_tenure_years
         - evidence_summary
         - extraction_confidence
 
         Rules:
+
+        - revenue_estimate:
+            Possible values:
+            Under $10M
+            $10M-$50M
+            $50M-$250M
+            $250M+
+            Unknown
+
+            Use only explicit evidence or conservative inference.
 
         - founder_led:
           Return "Yes" only if the founder currently serves as:
@@ -142,6 +154,17 @@ def extract_signals(raw_content):
             Corporate Owned
             Unknown
 
+        - ownership_tenure_years:
+            Years founder or family has owned the business.
+
+            Examples:
+            44
+            32
+            15
+            Unknown
+
+            Use only explicit evidence or founded year plus evidence of continuous founder/family ownership.
+
         - evidence_summary:
             List the exact facts that support the extraction.
 
@@ -163,18 +186,20 @@ def extract_signals(raw_content):
             "state": "",
             "company_type": "",
             "founded_year": "",
+            "revenue_estimate": "",
             "founder_name": "",
             "founder_led": "",
             "family_owned": "",
             "founder_age_estimate": "",
-            "evidence_summary": [
-                ""
-            ]
+            "ownership_status": "",
+            "ownership_tenure_years": "",
+            "extraction_confidence": "",
+            "evidence_summary": [""]
         }}
 
         Content:
 
-        {raw_content[:15000]}
+        {raw_content[:10000]}
     """
 
     response = client.chat.completions.create(
@@ -182,9 +207,38 @@ def extract_signals(raw_content):
         temperature=0,
         response_format={"type": "json_object"},
         messages=[{"role": "user", "content": prompt}])
+    
+    content = response.choices[0].message.content
+    try:
+        result = json.loads(content)
+    except json.JSONDecodeError:
+        print("\nJSON PARSE FAILED")
+        print(content[:1000])
 
-    result = json.loads(response.choices[0].message.content)
+        with open(
+            "failed_extractions.txt",
+            "a",
+            encoding="utf-8"
+        ) as f:
+            f.write("\n\n====================\n")
+            f.write(content)
 
+        return {
+            "industry": "Unknown",
+            "state": "Unknown",
+            "company_type": "Unknown",
+            "founded_year": "Unknown",
+            "founder_name": "Unknown",
+            "founder_led": "Unknown",
+            "family_owned": "Unknown",
+            "founder_age_estimate": "Unknown",
+            "ownership_status": "Unknown",
+            "extraction_confidence": "Low",
+            "evidence_summary": [
+                "JSON extraction failed"
+            ]
+        }
+            
     state = result.get("state")
     if state in STATE_MAPPING:
         result["state"] = STATE_MAPPING[state]

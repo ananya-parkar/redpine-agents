@@ -50,6 +50,23 @@ def score_family_owned(value):
         return 25
     return 0
 
+def score_ownership_tenure(years):
+    try:
+        years = int(years)
+
+        if years >= 40:
+            return 25
+        elif years >= 30:
+            return 20
+        elif years >= 20:
+            return 15
+        elif years >= 10:
+            return 10
+    except:
+        pass
+
+    return 0
+
 def calculate_seller_readiness(extracted):
     if extracted.get("company_type") == "Public":
         years = calculate_years_in_business(extracted.get("founded_year"))
@@ -66,7 +83,8 @@ def calculate_seller_readiness(extracted):
     years_score = score_years_in_business(years)
     family_score = score_family_owned(extracted.get("family_owned"))
     founder_led_score = score_founder_led(extracted.get("founder_led"))
-    total_score = (age_score + years_score + family_score + founder_led_score)
+    ownership_tenure_score = score_ownership_tenure(extracted.get("ownership_tenure_years"))
+    total_score = (age_score + years_score + family_score + founder_led_score + ownership_tenure_score)
     return {
         "years_in_business": years,
         "seller_readiness_score": total_score,
@@ -75,5 +93,6 @@ def calculate_seller_readiness(extracted):
             "years_in_business_score": years_score,
             "family_owned_score": family_score,
             "founder_led_score": founder_led_score,
+            "ownership_tenure_score": ownership_tenure_score
         }
     }
