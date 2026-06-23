@@ -7,9 +7,10 @@ from discovery.universe_builder import (
     save_candidate_universe
 )
 from discovery.company_extractor import (extract_companies_with_llm)
+from discovery.search_request import load_search_request
 from discovery.universe_filter import load_filtered_universe, classify_company
 import pandas as pd
-from config import INPUT_FOLDER, DATA_FOLDER, OUTPUT_FOLDER
+from config import INPUT_FOLDER, DATA_FOLDER, OUTPUT_FOLDER, US_STATE_MAP
 from collection.signal_collection import collect_signals
 from extraction.signal_extractor import extract_signals
 from scoring.seller_readiness import calculate_seller_readiness
@@ -22,16 +23,25 @@ from db.pii_retention import apply_pii_retention
 from dashboard.dashboard import generate_dashboard
 DEV_MODE = True
 def main():
-    geography = load_geography(INPUT_FOLDER / "geography.json")
-    target_geography = geography["geography_value"]
-    min_years = geography["min_years_in_business"]
-    revenue_range = geography["revenue_range"]
+
+    criteria = load_search_request(INPUT_FOLDER / "search_request.xlsx")
+    target_geography = criteria["geography"]
+    min_years = criteria["min_years"]
+    revenue_range = criteria["revenue_range"]
+    industry = criteria["industry"]
+    ownership_preference = criteria["ownership_preference"]
+    founder_age_preference = criteria["founder_age"]
 
     print("\nRunning Agent 3\n")
     print("Target Geography:")
-    print(geography)
+    print(criteria)
 
-    queries = generate_search_queries(geography["geography_type"], geography["geography_value"], revenue_range, min_years)
+    queries = generate_search_queries(
+        geography=target_geography,
+        revenue_range=revenue_range,
+        min_years=min_years,
+        ownership=ownership_preference,
+    )
 
     print("\nGenerated Queries:\n")
     for query in queries:
@@ -134,7 +144,7 @@ def main():
         company_name = row["Company Name"]
         print(f"\nProcessing: {company_name}")
         
-        signals = collect_signals(company_name, geography["geography_value"])
+        signals = collect_signals(company_name, target_geography)
         raw_signal_repository.append({
             "company_name": company_name,
             "raw_content": signals["raw_content"],
@@ -143,6 +153,23 @@ def main():
 
         extracted = extract_signals(signals["raw_content"])
         score = calculate_seller_readiness(extracted)
+        founder_age = extracted.get(
+            "founder_age_estimate",
+            "Unknown"
+        )
+
+        if (
+            founder_age_preference == "60+"
+            and founder_age != "Unknown"
+        ):
+            try:
+                age = int(founder_age.split("-")[0])
+
+                if age < 60:
+                    continue
+
+            except:
+                pass
 
         if extracted.get("extraction_confidence") == "Low":
             print(f"Skipping {company_name} due to low confidence")
@@ -175,15 +202,8 @@ def main():
             continue
 
         company_state = extracted.get("state", "Unknown")
-        target_state = geography["geography_value"]
-        STATE_MAP = {
-            "Florida": "FL"
-        }
-
-        expected_state = STATE_MAP.get(
-            target_state,
-            target_state
-        )
+        target_state = target_geography
+        expected_state = US_STATE_MAP.get(target_state, target_state)
 
         if company_state not in [expected_state, "Unknown"]:
             print(
@@ -192,18 +212,24 @@ def main():
             )
             continue
 
-        ownership_status = extracted.get("ownership_status", "Unknown")
-        if ownership_status not in [
-            "Family Owned",
-            "Founder Owned",
+        ownership_status = extracted.get(
+            "ownership_status",
             "Unknown"
-        ]:
+        )
+
+        if (
+            ownership_preference != "Any"
+            and ownership_status not in [
+                ownership_preference,
+                "Unknown"
+            ]
+        ):
             print(
                 f"Skipping {company_name} "
                 f"because ownership is {ownership_status}"
             )
             continue
-    
+
         print(extracted)
         print(score)
 
