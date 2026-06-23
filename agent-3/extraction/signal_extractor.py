@@ -3,14 +3,19 @@ import json
 import os
 from openai import OpenAI
 from dotenv import load_dotenv
+from config import US_STATE_MAP
 
 load_dotenv(override=True)
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-STATE_MAPPING = {
-    "Florida": "FL",
-    "Fla.": "FL"
-}
+STATE_MAPPING = US_STATE_MAP.copy()
+STATE_MAPPING.update({
+    "Fla.": "FL",
+    "Tex.": "TX",
+    "Calif.": "CA",
+    "N.Y.": "NY",
+    "Penn.": "PA"
+})
 
 def extract_signals(raw_content):
     prompt = f"""

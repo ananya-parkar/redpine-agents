@@ -15,11 +15,16 @@ def load_geography(input_file):
         geography = json.load(f)
     return geography
 
-def generate_search_queries(geography_type, geography_value, revenue_range, min_years):
-    queries = []
-    for query in UNIVERSE_SEARCH_QUERIES:
-        queries.append(query.format(location=geography_value, revenue=revenue_range, min_years=min_years))
-    return queries
+def generate_search_queries(geography, revenue_range, min_years, ownership):
+    
+    return [
+        f"{ownership} companies in {geography}",
+        f"family owned companies in {geography}",
+        f"founder led companies in {geography}",
+        f"private companies in {geography}",
+        f"middle market companies in {geography}",
+        f"companies in {geography} operating for more than {min_years} years"
+    ]
 
 def build_candidate_universe(geography_type, geography_value):
     pass
