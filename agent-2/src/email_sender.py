@@ -3,11 +3,13 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+load_dotenv(override=True)
 
 
-SENDER_EMAIL = "stadiumleadsagent@gmail.com"
-APP_PASSWORD = "nkmssmpkhnwrbiag"
-
+SENDER_EMAIL = os.getenv("EMAIL_FROM_AGENT2")
+APP_PASSWORD = os.getenv("EMAIL_PASSWORD_AGENT2")
 
 def send_daily_report(
     receiver_email: str,
