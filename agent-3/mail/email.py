@@ -23,9 +23,9 @@ from dotenv import load_dotenv
 
 load_dotenv(override=True)
 
-EMAIL_FROM = "stadiumleadsagent@gmail.com"
-EMAIL_PASSWORD = "nkmssmpkhnwrbiag"
-EMAIL_TO = "anshika.ranjan0926@gmail.com", "amehta@parkar.in"
+EMAIL_FROM = os.getenv("EMAIL_FROM_AGENT3")
+EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD_AGENT3")
+EMAIL_TO = os.getenv("EMAIL_TO")
 
 SMTP_HOST = "smtp.gmail.com"
 SMTP_PORT = 587

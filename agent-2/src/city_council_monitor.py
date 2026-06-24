@@ -5,6 +5,9 @@ from datetime import datetime, timezone, timedelta
 from urllib.parse import quote_plus
 from config import KEYWORDS
 import os
+from dotenv import load_dotenv
+load_dotenv(override=True)
+
 # ---------------------------------------------------
 # CITY COUNCIL MONITOR — Tier 2 Signal Source
 #
@@ -26,6 +29,8 @@ import os
 LEGISTAR_BASE = os.getenv("LEGISTAR_BASE")
 GNEWS_RSS     = os.getenv("GNEWS_RSS")
 
+LEGISTAR_BASE = os.getenv("LEGISTAR_BASE")
+GNEWS_RSS     = os.getenv("GNEWS_RSS")
 LOOKBACK_DAYS = 30
 
 # LegiStar client IDs for major US cities with venues
