@@ -7,14 +7,9 @@ load_dotenv()
 # ---------------------------------------------------
 # API KEYS
 # ---------------------------------------------------
-NEWS_API_KEY = os.environ.get("NEWS_API_KEY", "YOUR_NEWSAPI_KEY")
-GROQ_MODEL   = "llama-3.3-70b-versatile"
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
-OPENAI_MODEL   = "gpt-4o-mini"   # cheap + fast, use "gpt-4o" for best quality
+OPENAI_MODEL   = os.getenv("OPENAI_MODEL")
 GNEWS_API_KEY  = os.getenv("GNEWS_API_KEY", "")
-BING_SEARCH_KEY = os.getenv("BING_SEARCH_KEY", "")
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
-OPENAI_MODEL   = "gpt-4o-mini"
 TOP_N_FOR_LLM  = 100
 GOOGLE_MAPS_KEY = os.getenv("GOOGLE_MAPS_KEY", "")
 SEARCHAPI_KEY = os.getenv("SEARCHAPI_KEY", "")

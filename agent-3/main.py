@@ -6,6 +6,8 @@ from discovery.universe_builder import (
     search_query, 
     save_candidate_universe
 )
+from config import RUNS_FOLDER
+from datetime import datetime
 from discovery.company_extractor import (extract_companies_with_llm)
 from discovery.universe_filter import load_filtered_universe, classify_company
 import pandas as pd
@@ -267,19 +269,41 @@ def main():
     save_candidates_to_db(final_df)
     print("\nRecording run snapshot...\n")
     record_pipeline_run_snapshot()
-    print("\nSyncing feedback from previous run...\n")
-    sync_feedback_from_dashboard(OUTPUT_FOLDER / "agent3_dashboard.xlsx")
+
+    # Create runs folder
+    RUNS_FOLDER.mkdir(parents=True, exist_ok=True)
+
+    # Sync feedback from previous dashboard (if any)
+    dashboard_files = sorted(
+        RUNS_FOLDER.glob("agent3_dashboard_*.xlsx"),
+        reverse=True
+    )
+
+    if dashboard_files:
+        print("\nSyncing feedback from previous run...\n")
+        sync_feedback_from_dashboard(dashboard_files[0])
+
+    # Create today's dashboard file
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+
+    dashboard_file = (
+        RUNS_FOLDER
+        / f"agent3_dashboard_{timestamp}.xlsx"
+    )
 
     print("\nGenerating Excel dashboard...\n")
-    generate_dashboard(OUTPUT_FOLDER / "agent3_dashboard.xlsx")
+    generate_dashboard(dashboard_file)
+
     print("\nSending daily email digest...\n")
     send_daily_digest(
-    new_candidates_df=final_df,
-    dashboard_file_path=OUTPUT_FOLDER / "agent3_dashboard.xlsx")
+        new_candidates_df=final_df,
+        dashboard_file_path=dashboard_file
+    )
+
     print("\nChecking PII retention policy...\n")
     apply_pii_retention(dry_run=False)
 
-    
+        
 
 if __name__ == "__main__":
     main()

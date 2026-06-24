@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
 from urllib.parse import quote_plus
 from config import KEYWORDS
-
+import os
 # ---------------------------------------------------
 # CITY COUNCIL MONITOR — Tier 2 Signal Source
 #
@@ -23,9 +23,9 @@ from config import KEYWORDS
 #
 # signal_tier = None — LLM assigns tier in reasoning_agent
 # ---------------------------------------------------
+LEGISTAR_BASE = os.getenv("LEGISTAR_BASE")
+GNEWS_RSS     = os.getenv("GNEWS_RSS")
 
-LEGISTAR_BASE = "https://webapi.legistar.com/v1"
-GNEWS_RSS     = "https://news.google.com/rss/search"
 LOOKBACK_DAYS = 30
 
 # LegiStar client IDs for major US cities with venues

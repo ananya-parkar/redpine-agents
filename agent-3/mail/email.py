@@ -30,7 +30,7 @@ EMAIL_TO = "anshika.ranjan0926@gmail.com", "amehta@parkar.in"
 SMTP_HOST = "smtp.gmail.com"
 SMTP_PORT = 587
 
-TOP_N = 5
+TOP_N = 10
 
 DB_CONFIG = {
     "host": os.getenv("POSTGRES_HOST", "localhost"),
