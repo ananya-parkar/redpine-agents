@@ -2,17 +2,15 @@
 """
 Postgres persistence layer for Agent 3.
 
-Replaces master_reviewed_companies.csv as the cross-run source of truth.
-
 Tables:
-    candidates     - one row per unique company (matched by normalized_name + state)
+    candidates     - one row per unique company
     evidence       - evidence + LLM rationale; new row only if content changed
     review_status  - human review state, one current row per candidate
 
 Upsert behavior:
     - candidates: always refresh structured fields + last_seen_date
-    - evidence: only insert a new row if raw_evidence/why_selected/etc.
-                actually changed since the last stored evidence row
+    - evidence: only insert a new row if content actually changed since
+                the last stored evidence row
     - review_status: created as 'New' on first insert only, never
                       overwritten automatically (human-owned field)
 """
@@ -39,8 +37,7 @@ def get_connection():
 
 
 # ---------------------------------------------------------------------------
-# Name normalization (same logic as dedup.py, kept independent on purpose -
-# this module should not depend on the dedup module's internals)
+# Name normalization
 # ---------------------------------------------------------------------------
 
 _NOISE_WORDS = [
@@ -96,11 +93,15 @@ def upsert_candidate(conn, row):
                     industry = %s,
                     company_type = %s,
                     founded_year = %s,
+                    revenue_estimate = %s,
                     years_in_business = %s,
                     founder_name = %s,
                     founder_led = %s,
                     family_owned = %s,
                     founder_age_estimate = %s,
+                    ownership_status = %s,
+                    ownership_tenure_years = %s,
+                    extraction_confidence = %s,
                     seller_readiness_score = %s,
                     last_seen_date = CURRENT_DATE,
                     updated_at = NOW()
@@ -111,11 +112,15 @@ def upsert_candidate(conn, row):
                     row.get("Industry"),
                     row.get("Company Type"),
                     row.get("Founded Year"),
+                    row.get("Revenue Estimate"),
                     _safe_int(row.get("Years in Business")),
                     row.get("Founder Name"),
                     row.get("Founder Led"),
                     row.get("Family Owned"),
                     row.get("Founder Age Estimate"),
+                    row.get("Ownership Status"),
+                    row.get("Ownership Tenure Years"),
+                    row.get("Extraction Confidence"),
                     _safe_int(row.get("Seller Readiness Score")),
                     candidate_id,
                 ),
@@ -125,10 +130,12 @@ def upsert_candidate(conn, row):
                 """
                 INSERT INTO candidates (
                     company_name, normalized_name, state, industry,
-                    company_type, founded_year, years_in_business,
-                    founder_name, founder_led, family_owned,
-                    founder_age_estimate, seller_readiness_score
-                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                    company_type, founded_year, revenue_estimate,
+                    years_in_business, founder_name, founder_led,
+                    family_owned, founder_age_estimate, ownership_status,
+                    ownership_tenure_years, extraction_confidence,
+                    seller_readiness_score
+                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                 RETURNING id
                 """,
                 (
@@ -138,17 +145,20 @@ def upsert_candidate(conn, row):
                     row.get("Industry"),
                     row.get("Company Type"),
                     row.get("Founded Year"),
+                    row.get("Revenue Estimate"),
                     _safe_int(row.get("Years in Business")),
                     row.get("Founder Name"),
                     row.get("Founder Led"),
                     row.get("Family Owned"),
                     row.get("Founder Age Estimate"),
+                    row.get("Ownership Status"),
+                    row.get("Ownership Tenure Years"),
+                    row.get("Extraction Confidence"),
                     _safe_int(row.get("Seller Readiness Score")),
                 ),
             )
             candidate_id = cur.fetchone()[0]
 
-            # Create the initial review_status row only for brand new candidates
             cur.execute(
                 """
                 INSERT INTO review_status (candidate_id, status)
@@ -174,14 +184,17 @@ def _safe_int(value):
 
 def upsert_evidence(conn, candidate_id, row):
     raw_evidence = row.get("Evidence", "") or ""
+    raw_evidence_summary = row.get("Raw Evidence Summary", "") or ""
     why_selected = row.get("Why Selected", "") or ""
     evidence_summary = row.get("Evidence Summary", "") or ""
     one_line_reason = row.get("One-line Reason", "") or ""
+    evidence_sources = row.get("Evidence Sources", "") or ""
 
     with conn.cursor() as cur:
         cur.execute(
             """
-            SELECT raw_evidence, why_selected, evidence_summary, one_line_reason
+            SELECT raw_evidence, why_selected, evidence_summary, one_line_reason,
+                   evidence_sources, raw_evidence_summary
             FROM evidence
             WHERE candidate_id = %s
             ORDER BY created_at DESC
@@ -192,7 +205,8 @@ def upsert_evidence(conn, candidate_id, row):
         last = cur.fetchone()
 
         unchanged = last is not None and last == (
-            raw_evidence, why_selected, evidence_summary, one_line_reason
+            raw_evidence, why_selected, evidence_summary, one_line_reason,
+            evidence_sources, raw_evidence_summary
         )
 
         if unchanged:
@@ -202,49 +216,50 @@ def upsert_evidence(conn, candidate_id, row):
             """
             INSERT INTO evidence (
                 candidate_id, raw_evidence, why_selected,
-                evidence_summary, one_line_reason
-            ) VALUES (%s, %s, %s, %s, %s)
+                evidence_summary, one_line_reason,
+                evidence_sources, raw_evidence_summary
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s)
             """,
-            (candidate_id, raw_evidence, why_selected, evidence_summary, one_line_reason),
+            (
+                candidate_id, raw_evidence, why_selected,
+                evidence_summary, one_line_reason,
+                evidence_sources, raw_evidence_summary,
+            ),
         )
         return True
 
 
 # ---------------------------------------------------------------------------
-# Public entry point
+# Pipeline run snapshot
 # ---------------------------------------------------------------------------
+
 def record_pipeline_run_snapshot(conn_factory=get_connection):
-    """
-    Call this AFTER save_candidates_to_db() in main.py, every run.
-    Computes current KPI counts and stores a row in pipeline_runs,
-    so the dashboard can compute "vs Last Week" deltas later.
-    """
     conn = conn_factory()
     try:
         with conn.cursor() as cur:
             cur.execute("SELECT COUNT(*) FROM candidates")
             total_targets = cur.fetchone()[0]
- 
+
             cur.execute(
                 "SELECT COUNT(*) FROM candidates WHERE first_seen_date = CURRENT_DATE"
             )
             new_this_run = cur.fetchone()[0]
- 
+
             cur.execute(
                 "SELECT COUNT(*) FROM review_status WHERE status = 'Pursuing'"
             )
             shortlisted = cur.fetchone()[0]
- 
+
             cur.execute(
                 "SELECT COUNT(*) FROM review_status WHERE status = 'New'"
             )
             in_review = cur.fetchone()[0]
- 
+
             cur.execute(
                 "SELECT COUNT(*) FROM review_status WHERE status IN ('Pursuing','Passed','Bad Data')"
             )
             reviewed = cur.fetchone()[0]
- 
+
             cur.execute(
                 """
                 INSERT INTO pipeline_runs
@@ -262,14 +277,11 @@ def record_pipeline_run_snapshot(conn_factory=get_connection):
         raise
     finally:
         conn.close()
+
+
 def save_candidates_to_db(df):
     """
     df: the final enriched DataFrame (candidates_with_rationale.csv content).
-
-    For each row:
-        - upsert into candidates (refresh facts, never duplicate by name+state)
-        - upsert into evidence (only if evidence/rationale text changed)
-        - review_status created as 'New' only on first insert, untouched after
     """
     conn = get_connection()
     new_evidence_count = 0
@@ -289,4 +301,3 @@ def save_candidates_to_db(df):
         raise
     finally:
         conn.close()
-        

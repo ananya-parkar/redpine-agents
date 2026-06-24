@@ -1,4 +1,8 @@
 # Agent 2 — Stadium Construction Lead Gen — requirements.txt
+# Compiled from: main.py, venue_fetcher.py, signal_collector.py,
+# reasoning_agent.py, stakeholder_enrichment.py, excel_builder.py,
+# dashboard_writer.py, db_writer.py, feedback_reader.py, run_paths.py,
+# email_builder.py, email_sender.py, wipe_db.py
 
 # ── HTTP / scraping ─────────────────────────────────────────────
 requests>=2.31.0
@@ -22,3 +26,10 @@ psycopg2-binary>=2.9.0     # db_writer.py (PostgreSQL)
 # ── Config ───────────────────────────────────────────────────────
 python-dotenv>=1.0.0        # main.py, venue_fetcher.py, db_writer.py, etc.
 
+# ── NOTE ─────────────────────────────────────────────────────────
+# city_council_monitor.py wasn't shared with me directly in this
+# conversation, so I can't confirm its exact imports. Based on the
+# RSS-feed handling described earlier (LegiStar replaced with RSS
+# fallback), it likely needs:
+#   feedparser>=6.0.0
+# Please confirm/add if that file imports anything not listed above.

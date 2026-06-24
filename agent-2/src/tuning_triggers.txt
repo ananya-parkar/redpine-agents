@@ -1,0 +1,18 @@
+
+============================================================
+TUNING TRIGGERS — 2026-06-24 14:31
+============================================================
+
+Root cause  : wrong likelihood
+Occurrences : 4
+Venues      : Chicago Bears Stadium, New Aloha Stadium, New Huntington Bank Field, New Las Vegas Stadium†
+Fix         : Review pipeline for root cause: 'wrong likelihood'. Check heuristic_scoring.py and reasoning_agent.py prompts.
+
+============================================================
+TUNING TRIGGERS — 2026-06-24 14:33
+============================================================
+
+Root cause  : wrong likelihood
+Occurrences : 4
+Venues      : Chicago Bears Stadium, New Aloha Stadium, New Huntington Bank Field, New Las Vegas Stadium†
+Fix         : Review pipeline for root cause: 'wrong likelihood'. Check heuristic_scoring.py and reasoning_agent.py prompts.

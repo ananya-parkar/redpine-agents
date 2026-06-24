@@ -97,8 +97,9 @@ def add_rationale_to_candidates(df):
         rationale = generate_rationale(row)
 
         enriched_row = row.to_dict()
+        enriched_row["Raw Evidence Summary"] = enriched_row.get("Evidence Summary", "")  # preserve original before overwrite
         enriched_row["Why Selected"] = rationale.get("why_selected", "")
-        enriched_row["Evidence Summary"] = rationale.get("evidence_summary", "")
+        enriched_row["Evidence Summary"] = rationale.get("evidence_summary", "")  # LLM's rewritten version
         enriched_row["One-line Reason"] = rationale.get("one_line_reason", "")
 
         rationale_rows.append(enriched_row)

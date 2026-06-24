@@ -10,7 +10,8 @@ from openpyxl.utils import get_column_letter
 from dashboard_writer import write_dashboard
 
 # Import DB loader for dashboard historical data
-from db_writer import get_all_signals_for_excel, get_all_leads_for_excel
+from db_writer import get_all_signals_for_excel, get_all_leads_for_excel, get_pending_tuning_triggers
+from tuning_prompt import _match_rule
 
 # ---------------------------------------------------
 # EXCEL BUILDER — 5 sheets
@@ -205,6 +206,58 @@ def write_stakeholders(ws, stakeholder_rows):
         ws.row_dimensions[i].height=20
 
 
+# ── SHEET: TUNING REVIEW ─────────────────────────────────────────
+SCOPE_LABELS = {
+    "reasoning":   "Tier/Relevance Logic",
+    "stakeholder": "Stakeholder Extraction",
+    "code_only":   "⚠️ Code Fix Needed (not an LLM prompt)",
+}
+
+def write_tuning_review(ws, active_triggers):
+    """
+    Read-only audit trail of currently active tuning patterns — which
+    Bad Data notes were flagged 3+ times, what instruction got applied,
+    and to which prompt. Per the client's requirement, these activate
+    automatically (3+ same note = trigger) with no separate approval
+    step, so this sheet is for transparency only — nothing to fill in.
+    """
+    ws.title = "Tuning Review"
+    headers = ["ID","Root Cause","Occurrences","Example Venues",
+               "Target","Applied Instruction","Status"]
+    widths  = [6,22,12,32,24,55,12]
+    header_row(ws, headers, widths, "5D4037")
+
+    for i, t in enumerate(active_triggers, 2):
+        root = t.get("root_cause") or "unspecified"
+        rule = _match_rule(root)
+        target = SCOPE_LABELS.get(rule["scope"], rule["scope"])
+        instruction = rule.get("instruction") or "(no LLM instruction — needs a manual code/data fix instead)"
+        row = [
+            t.get("id",""), root, t.get("occurrences",""),
+            (t.get("affected_venues") or "")[:150],
+            target, instruction,
+            "Active" if rule["scope"] != "code_only" else "Logged (code fix needed)",
+        ]
+        for col, val in enumerate(row, 1):
+            c = ws.cell(row=i, column=col, value=val)
+            c.border = bdr(); c.font = fnt()
+            c.alignment = al("left" if col in (2,4,6) else "center", wrap=(col in (4,6)))
+            if col == 5 and rule["scope"] == "code_only":
+                c.fill = fill("FFF3E0")  # amber tint — flags "not LLM-fixable"
+                c.font = Font(bold=True, color="E65100", size=9, name="Calibri")
+            elif col == 7:
+                if rule["scope"] == "code_only":
+                    c.fill = fill("FFF3E0"); c.font = Font(bold=True, color="E65100", size=9, name="Calibri")
+                else:
+                    c.fill = fill("C8E6C9"); c.font = Font(bold=True, color="1B5E20", size=9, name="Calibri")
+            else:
+                c.fill = fill("F5F5F5" if i % 2 == 0 else "FFFFFF")
+        ws.row_dimensions[i].height = 42
+
+    if not active_triggers:
+        ws.cell(row=2, column=1, value="No recurring patterns flagged yet.").font = fnt()
+
+
 # ── MAIN SAVE ────────────────────────────────────────────────────
 def save_excel(venues, all_leads, act_now, stakeholder_rows,
                output_path, run_date=None):
@@ -291,6 +344,15 @@ def save_excel(venues, all_leads, act_now, stakeholder_rows,
     # ── Sheet 5: Stakeholders ────────────────────────────────────
     ws_stakes = wb.create_sheet()
     write_stakeholders(ws_stakes, stakeholder_rows)
+
+    # ── Sheet 6: Tuning Review ───────────────────────────────────
+    # Pending feedback-driven patterns awaiting Approve/Reject — see
+    # write_tuning_review() above. Fetched fresh each run so the sheet
+    # always reflects current DB state (cleared patterns disappear,
+    # new ones appear).
+    ws_tuning = wb.create_sheet()
+    pending_triggers = get_pending_tuning_triggers()
+    write_tuning_review(ws_tuning, pending_triggers)
 
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
     wb.save(output_path)

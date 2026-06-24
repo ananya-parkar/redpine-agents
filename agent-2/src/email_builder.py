@@ -1,275 +1,140 @@
+"""
+Layer 7 (email half) — Daily Email Digest for Agent 2
+
+Restyled to match Agent 3's minimal look: plain grey-bordered tables,
+simple header, no color pill badges or stat boxes. Content is the
+same as before — Top Act Now leads, New Leads Today, Tier Changes
+This Week — just presented in the simpler style.
+"""
+
 from datetime import datetime
 
-
-# ── Brand colors ──────────────────────────────────────────────
-NAVY    = "#0E2A47"
-GREEN   = "#1B5E20"
-ORANGE  = "#E65100"
-LIGHT   = "#F4F6FA"
-WHITE   = "#FFFFFF"
-MGRAY   = "#64748B"
-DGRAY   = "#1F2937"
-BORDER  = "#E2E8F0"
-
-TIER_COLORS = {
-    1: ("#FFCDD2", "#C62828", "Early Rumor"),
-    2: ("#FFE0B2", "#E65100", "Funding Committed"),
-    3: ("#C8E6C9", "#1B5E20", "Design Phase"),
-    4: ("#BBDEFB", "#1565C0", "Procurement"),
+TIER_LABELS = {
+    1: "Tier 1 — Early Rumor",
+    2: "Tier 2 — Funding Committed",
+    3: "Tier 3 — Design Phase",
+    4: "Tier 4 — Procurement",
 }
-ENG_COLORS = {
-    "engage_now":          ("#C8E6C9", "#1B5E20", "Act Now"),
-    "monitor":             ("#FFF9C4", "#F57F17", "Monitor"),
-    "too_late":            ("#FFCDD2", "#B71C1C", "Too Late"),
-    "insufficient_signal": ("#F3F4F6", "#6B7280", "Low Signal"),
+ENG_LABELS = {
+    "engage_now":          "Act Now",
+    "monitor":             "Monitor",
+    "too_late":            "Too Late",
+    "insufficient_signal": "Low Signal",
 }
 
 
-def _pill(text, bg, color):
-    return (f'<span style="background:{bg};color:{color};padding:2px 8px;'
-            f'border-radius:4px;font-size:11px;font-weight:600;">{text}</span>')
+def _escape(text):
+    if text is None:
+        return ""
+    text = str(text)
+    return (
+        text.replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+    )
 
 
-def _tier_pill(tier):
-    if not tier: return ""
-    bg, fg, label = TIER_COLORS.get(int(tier), ("#F3F4F6","#6B7280","Unknown"))
-    return _pill(f"Tier {tier} — {label}", bg, fg)
+def _tier_text(tier):
+    if not tier:
+        return ""
+    return _escape(TIER_LABELS.get(int(tier), f"Tier {tier}"))
 
 
-def _eng_pill(action):
-    bg, fg, label = ENG_COLORS.get(action, ("#F3F4F6","#6B7280", action or "—"))
-    return _pill(label, bg, fg)
-
-
-def _stat_box(label, value, color):
-    return f"""
-    <td style="width:25%;padding:12px;text-align:center;">
-      <div style="background:{color}10;border:1px solid {color}40;
-                  border-radius:8px;padding:12px 8px;">
-        <div style="font-size:26px;font-weight:700;color:{color};">{value}</div>
-        <div style="font-size:11px;color:{MGRAY};margin-top:2px;">{label}</div>
-      </div>
-    </td>"""
+def _eng_text(action):
+    return _escape(ENG_LABELS.get(action, action or "—"))
 
 
 def build_daily_email(ranked_leads, new_leads, tier_alerts):
-    today      = datetime.now().strftime("%B %d, %Y")
+    today = datetime.now().strftime("%d-%b-%Y")
+
     top_leads  = [r for r in ranked_leads
                   if r.get("engagement_action") == "engage_now"][:10]
     total      = len(ranked_leads)
     act_now_ct = sum(1 for r in ranked_leads if r.get("engagement_action") == "engage_now")
     monitor_ct = sum(1 for r in ranked_leads if r.get("engagement_action") == "monitor")
+    new_today_count = len(new_leads or [])
 
-    subject = f"Stadium Construction Lead Report — {datetime.now():%b %d, %Y}"
+    subject = (f"Stadium Construction Lead Report - {today} "
+               f"({new_today_count} new, {total} total)")
 
-    # ── Top leads table rows ───────────────────────────────────
+    style = """
+        body { font-family: Arial, Helvetica, sans-serif; color: #1a1a1a; }
+        table { border-collapse: collapse; width: 100%; max-width: 700px; }
+        th, td { border: 1px solid #cccccc; padding: 8px 10px; text-align: left; font-size: 13px; }
+        th { background-color: #ffffff; font-weight: bold; border-bottom: 2px solid #999999; }
+        h2 { font-size: 18px; margin-bottom: 4px; }
+        h3 { font-size: 14px; margin: 18px 0 6px; }
+        .meta { font-size: 13px; color: #444444; margin-bottom: 16px; }
+        .footer { font-size: 12px; color: #777777; margin-top: 20px; }
+    """
+
+    # ── Top Act Now leads rows ──────────────────────────────────
     lead_rows = ""
     for i, r in enumerate(top_leads, 1):
-        bg   = WHITE if i % 2 else LIGHT
-        score = r.get("final_score") or "—"
-        score_color = (GREEN if float(score or 0) >= 85
-                       else "#F57F17" if float(score or 0) >= 70
-                       else ORANGE)
-        reason = (r.get("engagement_reason") or "")[:120]
+        venue  = _escape(r.get("venue_name", ""))
+        place  = _escape(f"{r.get('city','')}, {r.get('state','')} · {r.get('league','')}")
+        tier   = _tier_text(r.get("signal_tier"))
+        score  = _escape(r.get("final_score") or r.get("score") or "—")
+        reason = (r.get("engagement_reason") or r.get("why_priority") or "")[:120]
         if reason.startswith("[PURSUING]"):
-            reason = "⭐ " + reason.replace("[PURSUING]", "").strip()
-
-        lead_rows += f"""
-        <tr style="background:{bg};">
-          <td style="padding:10px 12px;font-size:13px;font-weight:600;color:{NAVY};
-                     border-bottom:1px solid {BORDER};">{i}</td>
-          <td style="padding:10px 12px;font-size:13px;color:{DGRAY};
-                     border-bottom:1px solid {BORDER};">
-            <strong>{r.get('venue_name','')}</strong><br>
-            <span style="font-size:11px;color:{MGRAY};">
-              {r.get('city','')}, {r.get('state','')} · {r.get('league','')}
-            </span>
-          </td>
-          <td style="padding:10px 12px;text-align:center;border-bottom:1px solid {BORDER};">
-            {_tier_pill(r.get('signal_tier'))}
-          </td>
-          <td style="padding:10px 12px;text-align:center;border-bottom:1px solid {BORDER};">
-            <span style="font-size:18px;font-weight:700;color:{score_color};">{score}</span>
-          </td>
-          <td style="padding:10px 12px;font-size:11px;color:{MGRAY};
-                     border-bottom:1px solid {BORDER};">{reason}</td>
-        </tr>"""
-
+            reason = "[Pursuing] " + reason.replace("[PURSUING]", "").strip()
+        reason = _escape(reason)
+        lead_rows += (
+            f"<tr><td>{i}</td><td>{venue}<br>{place}</td>"
+            f"<td>{tier}</td><td>{score}</td><td>{reason}</td></tr>"
+        )
     if not lead_rows:
-        lead_rows = f"""<tr><td colspan="5" style="padding:16px;text-align:center;
-                          color:{MGRAY};font-size:13px;">No Act Now leads this run.</td></tr>"""
+        lead_rows = '<tr><td colspan="5">No Act Now leads this run.</td></tr>'
 
-    # ── New leads rows ─────────────────────────────────────────
+    # ── New leads rows ───────────────────────────────────────────
     new_rows = ""
     for r in (new_leads or [])[:8]:
-        new_rows += f"""
-        <tr>
-          <td style="padding:8px 12px;font-size:13px;color:{DGRAY};
-                     border-bottom:1px solid {BORDER};">
-            {r.get('venue_name','')}
-          </td>
-          <td style="padding:8px 12px;text-align:center;border-bottom:1px solid {BORDER};">
-            {_tier_pill(r.get('signal_tier'))}
-          </td>
-          <td style="padding:8px 12px;text-align:center;border-bottom:1px solid {BORDER};">
-            {_eng_pill(r.get('engagement_action'))}
-          </td>
-          <td style="padding:8px 12px;font-size:12px;color:{MGRAY};
-                     border-bottom:1px solid {BORDER};">
-            {(r.get('opportunity_summary') or '')[:80]}
-          </td>
-        </tr>"""
+        venue   = _escape(r.get("venue_name", ""))
+        tier    = _tier_text(r.get("signal_tier"))
+        status  = _eng_text(r.get("engagement_action") or r.get("engagement"))
+        summary = _escape((r.get("opportunity_summary") or r.get("whats_happening") or "")[:80])
+        new_rows += f"<tr><td>{venue}</td><td>{tier}</td><td>{status}</td><td>{summary}</td></tr>"
     if not new_rows:
-        new_rows = f"""<tr><td colspan="4" style="padding:16px;text-align:center;
-                        color:{MGRAY};font-size:13px;">No new leads today.</td></tr>"""
+        new_rows = '<tr><td colspan="4">No new leads today.</td></tr>'
 
-    # ── Tier change rows ───────────────────────────────────────
+    # ── Tier change rows ─────────────────────────────────────────
     tier_rows = ""
     for a in (tier_alerts or [])[:8]:
-        arrow = "⬆" if (a.get("to_tier") or 0) > (a.get("from_tier") or 0) else "⬇"
-        clr   = GREEN if arrow == "⬆" else "#C62828"
-        tier_rows += f"""
-        <tr>
-          <td style="padding:8px 12px;font-size:13px;font-weight:600;color:{NAVY};
-                     border-bottom:1px solid {BORDER};">{a.get('venue_name','')}</td>
-          <td style="padding:8px 12px;text-align:center;border-bottom:1px solid {BORDER};">
-            <span style="color:{MGRAY};">T{a.get('from_tier')}</span>
-            <span style="color:{clr};font-size:16px;margin:0 4px;">{arrow}</span>
-            <span style="color:{clr};font-weight:700;">T{a.get('to_tier')}</span>
-          </td>
-          <td style="padding:8px 12px;font-size:11px;color:{MGRAY};
-                     border-bottom:1px solid {BORDER};">
-            {str(a.get('changed_at',''))[:10]}
-          </td>
-        </tr>"""
+        venue     = _escape(a.get("venue_name", ""))
+        from_tier = a.get("from_tier")
+        to_tier   = a.get("to_tier")
+        arrow     = "up" if (to_tier or 0) > (from_tier or 0) else "down"
+        movement  = _escape(f"T{from_tier} -> T{to_tier} ({arrow})")
+        changed   = _escape(str(a.get("changed_at", ""))[:10])
+        tier_rows += f"<tr><td>{venue}</td><td>{movement}</td><td>{changed}</td></tr>"
     if not tier_rows:
-        tier_rows = f"""<tr><td colspan="3" style="padding:16px;text-align:center;
-                         color:{MGRAY};font-size:13px;">No tier changes this week.</td></tr>"""
+        tier_rows = '<tr><td colspan="3">No tier changes this week.</td></tr>'
 
-    # ── Full HTML ──────────────────────────────────────────────
-    body = f"""
-<!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8"></head>
-<body style="margin:0;padding:0;background:#F1F5F9;font-family:Calibri,Arial,sans-serif;">
-<table width="100%" cellpadding="0" cellspacing="0" style="background:#F1F5F9;padding:24px 0;">
-<tr><td align="center">
-<table width="680" cellpadding="0" cellspacing="0"
-       style="background:{WHITE};border-radius:12px;overflow:hidden;
-              box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+    html_parts = [
+        f"<html><head><meta charset='UTF-8'><style>{style}</style></head><body>",
+        "<h2>Stadium Construction Lead Report</h2>",
+        f'<div class="meta">Date: {today}<br>'
+        f"New leads found today: {new_today_count}<br>"
+        f"Total leads in database: {total}<br>"
+        f"Act Now: {act_now_ct} &nbsp;|&nbsp; Monitor: {monitor_ct}</div>",
 
-  <!-- HEADER -->
-  <tr>
-    <td style="background:{NAVY};padding:24px 32px;">
-      <div style="font-size:20px;font-weight:700;color:{WHITE};letter-spacing:0.5px;">
-        🏟 Stadium Construction Lead Report
-      </div>
-      <div style="font-size:13px;color:#93C5FD;margin-top:4px;">{today}</div>
-    </td>
-  </tr>
+        "<h3>Top Act Now Leads</h3>",
+        "<table><tr><th>#</th><th>Venue</th><th>Tier</th><th>Score</th><th>Why Now</th></tr>",
+        lead_rows, "</table>",
 
-  <!-- STAT BOXES -->
-  <tr>
-    <td style="padding:20px 24px 8px;">
-      <table width="100%" cellpadding="0" cellspacing="8">
-        <tr>
-          {_stat_box("Total Leads", total, NAVY)}
-          {_stat_box("Act Now", act_now_ct, "#E65100")}
-          {_stat_box("Monitor", monitor_ct, "#7C3AED")}
-          {_stat_box("New Today", len(new_leads or []), GREEN)}
-        </tr>
-      </table>
-    </td>
-  </tr>
+        "<h3>New Leads Discovered Today</h3>",
+        "<table><tr><th>Venue</th><th>Tier</th><th>Status</th><th>Signal Summary</th></tr>",
+        new_rows, "</table>",
 
-  <!-- TOP ACT NOW LEADS -->
-  <tr>
-    <td style="padding:16px 24px 0;">
-      <div style="background:{GREEN};color:{WHITE};font-size:13px;font-weight:700;
-                  padding:10px 16px;border-radius:6px 6px 0 0;">
-        🎯 TOP ACT NOW LEADS
-      </div>
-      <table width="100%" cellpadding="0" cellspacing="0"
-             style="border:1px solid {BORDER};border-top:none;border-radius:0 0 6px 6px;">
-        <tr style="background:{LIGHT};">
-          <th style="padding:8px 12px;font-size:11px;color:{MGRAY};text-align:left;
-                     border-bottom:1px solid {BORDER};">#</th>
-          <th style="padding:8px 12px;font-size:11px;color:{MGRAY};text-align:left;
-                     border-bottom:1px solid {BORDER};">Venue</th>
-          <th style="padding:8px 12px;font-size:11px;color:{MGRAY};text-align:center;
-                     border-bottom:1px solid {BORDER};">Tier</th>
-          <th style="padding:8px 12px;font-size:11px;color:{MGRAY};text-align:center;
-                     border-bottom:1px solid {BORDER};">Score</th>
-          <th style="padding:8px 12px;font-size:11px;color:{MGRAY};text-align:left;
-                     border-bottom:1px solid {BORDER};">Why Now</th>
-        </tr>
-        {lead_rows}
-      </table>
-    </td>
-  </tr>
+        "<h3>Tier Changes This Week</h3>",
+        "<table><tr><th>Venue</th><th>Tier Movement</th><th>Date</th></tr>",
+        tier_rows, "</table>",
 
-  <!-- NEW LEADS -->
-  <tr>
-    <td style="padding:16px 24px 0;">
-      <div style="background:{NAVY};color:{WHITE};font-size:13px;font-weight:700;
-                  padding:10px 16px;border-radius:6px 6px 0 0;">
-        ✨ NEW LEADS DISCOVERED TODAY
-      </div>
-      <table width="100%" cellpadding="0" cellspacing="0"
-             style="border:1px solid {BORDER};border-top:none;border-radius:0 0 6px 6px;">
-        <tr style="background:{LIGHT};">
-          <th style="padding:8px 12px;font-size:11px;color:{MGRAY};text-align:left;
-                     border-bottom:1px solid {BORDER};">Venue</th>
-          <th style="padding:8px 12px;font-size:11px;color:{MGRAY};text-align:center;
-                     border-bottom:1px solid {BORDER};">Tier</th>
-          <th style="padding:8px 12px;font-size:11px;color:{MGRAY};text-align:center;
-                     border-bottom:1px solid {BORDER};">Status</th>
-          <th style="padding:8px 12px;font-size:11px;color:{MGRAY};text-align:left;
-                     border-bottom:1px solid {BORDER};">Signal Summary</th>
-        </tr>
-        {new_rows}
-      </table>
-    </td>
-  </tr>
+        '<p class="footer">Full dashboard and all leads are in the attached '
+        "Excel file.<br>Agent 2 - Stadium Construction Lead Gen "
+        "&middot; Parkar Digital for RedPine Capital</p>",
+        "</body></html>",
+    ]
 
-  <!-- TIER CHANGES -->
-  <tr>
-    <td style="padding:16px 24px 0;">
-      <div style="background:#7C3AED;color:{WHITE};font-size:13px;font-weight:700;
-                  padding:10px 16px;border-radius:6px 6px 0 0;">
-        📈 TIER CHANGES THIS WEEK
-      </div>
-      <table width="100%" cellpadding="0" cellspacing="0"
-             style="border:1px solid {BORDER};border-top:none;border-radius:0 0 6px 6px;">
-        <tr style="background:{LIGHT};">
-          <th style="padding:8px 12px;font-size:11px;color:{MGRAY};text-align:left;
-                     border-bottom:1px solid {BORDER};">Venue</th>
-          <th style="padding:8px 12px;font-size:11px;color:{MGRAY};text-align:center;
-                     border-bottom:1px solid {BORDER};">Tier Movement</th>
-          <th style="padding:8px 12px;font-size:11px;color:{MGRAY};text-align:left;
-                     border-bottom:1px solid {BORDER};">Date</th>
-        </tr>
-        {tier_rows}
-      </table>
-    </td>
-  </tr>
-
-  <!-- FOOTER -->
-  <tr>
-    <td style="padding:24px 32px;text-align:center;border-top:1px solid {BORDER};
-               margin-top:16px;">
-      <div style="font-size:11px;color:{MGRAY};">
-        Full dashboard and all leads in the attached Excel file.<br>
-        <span style="color:#93C5FD;">Agent 2 — Stadium Construction Lead Gen</span>
-        · Parkar Digital for RedPine Capital
-      </div>
-    </td>
-  </tr>
-
-</table>
-</td></tr>
-</table>
-</body>
-</html>"""
-
+    body = "".join(html_parts)
     return subject, body

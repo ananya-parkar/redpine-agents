@@ -146,7 +146,13 @@ CREATE TABLE IF NOT EXISTS tuning_triggers (
     affected_venues  TEXT,
     recommendation   TEXT,
     triggered_at     TIMESTAMPTZ DEFAULT NOW(),
-    resolved         BOOLEAN DEFAULT FALSE
+    resolved         BOOLEAN DEFAULT FALSE,
+    -- Per the client's requirement: tagging 3+ venues with the same
+    -- Bad Data note directly triggers the tuning adjustment — no
+    -- manual approval step. log_tuning_trigger() sets this to
+    -- 'active' immediately on creation.
+    status           VARCHAR(20) DEFAULT 'active',  -- active|rejected
+    reviewed_at      TIMESTAMPTZ
 );
 
 CREATE INDEX IF NOT EXISTS idx_signals_venue   ON signals(venue_name);
@@ -158,6 +164,8 @@ CREATE INDEX IF NOT EXISTS idx_tier_changes_at  ON tier_changes(changed_at);
 -- added above — CREATE TABLE IF NOT EXISTS is a no-op on an existing
 -- table, so this ALTER ensures the column is there either way.
 ALTER TABLE leads ADD COLUMN IF NOT EXISTS feedback_at TIMESTAMPTZ;
+ALTER TABLE tuning_triggers ADD COLUMN IF NOT EXISTS status VARCHAR(20) DEFAULT 'active';
+ALTER TABLE tuning_triggers ADD COLUMN IF NOT EXISTS reviewed_at TIMESTAMPTZ;
 """
 
 
@@ -736,29 +744,85 @@ def get_bad_data_patterns() -> list[dict]:
         return []
 
 
+def get_pending_tuning_triggers() -> list[dict]:
+    """
+    Read currently ACTIVE tuning triggers — shown in the Excel
+    "Tuning Review" sheet as a read-only audit trail (which patterns
+    have auto-applied and what instruction they added). No approval
+    action needed here; this is for visibility only, per the client's
+    requirement that a 3+ pattern triggers tuning automatically.
+    """
+    try:
+        conn = get_conn()
+        cur  = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+        cur.execute("""
+            SELECT id, root_cause, occurrences, affected_venues,
+                   recommendation, triggered_at
+            FROM tuning_triggers
+            WHERE status = 'active'
+            ORDER BY occurrences DESC, triggered_at DESC
+        """)
+        rows = cur.fetchall()
+        cur.close(); conn.close()
+        return [dict(r) for r in rows]
+    except Exception as e:
+        print(f"  [DB] Active tuning triggers fetch failed: {e}", flush=True)
+        return []
+
+
 def log_tuning_trigger(root_cause: str, count: int, venues: str, recommendation: str):
-    """Log a tuning trigger to DB for tracking."""
+    """
+    Log a tuning trigger to DB and activate it immediately — per the
+    client's requirement, tagging 3+ venues with the same Bad Data
+    note should directly trigger the tuning adjustment, with no
+    separate manual approval step.
+
+    Checks for an existing active row with the same root_cause first
+    and updates the occurrence count instead of inserting a duplicate
+    — otherwise every run that re-detects an already-flagged pattern
+    would add another row for the same thing.
+    """
     try:
         conn = get_conn(); cur = conn.cursor()
         cur.execute("""
-            INSERT INTO tuning_triggers
-                (root_cause, occurrences, affected_venues, recommendation)
-            VALUES (%s, %s, %s, %s)
-        """, (root_cause, count, venues, recommendation))
+            SELECT id FROM tuning_triggers
+            WHERE root_cause = %s AND status = 'active'
+        """, (root_cause,))
+        existing = cur.fetchone()
+        if existing:
+            cur.execute("""
+                UPDATE tuning_triggers
+                SET occurrences = %s, affected_venues = %s, recommendation = %s
+                WHERE id = %s
+            """, (count, venues, recommendation, existing[0]))
+        else:
+            cur.execute("""
+                INSERT INTO tuning_triggers
+                    (root_cause, occurrences, affected_venues, recommendation, status)
+                VALUES (%s, %s, %s, %s, 'active')
+            """, (root_cause, count, venues, recommendation))
+            print(f"  [TUNING] New pattern auto-activated: '{root_cause}' "
+                  f"({count} venues) — will apply from the next run", flush=True)
         conn.commit(); cur.close(); conn.close()
     except Exception as e:
         print(f"  [DB] Could not log tuning trigger: {e}", flush=True)
 
 
 def get_active_tuning_triggers() -> list[dict]:
-    """Read unresolved tuning triggers — injected into LLM prompt."""
+    """
+    Read active tuning triggers — patterns flagged 3+ times with the
+    same root cause, auto-activated by log_tuning_trigger() (no
+    manual approval step, per the client's requirement). These get
+    injected into reasoning_agent.py's / stakeholder_enrichment.py's
+    prompts via tuning_prompt.build_tuning_block().
+    """
     try:
         conn = get_conn()
         cur  = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
         cur.execute("""
             SELECT root_cause, occurrences, affected_venues, recommendation
             FROM tuning_triggers
-            WHERE resolved = FALSE
+            WHERE status = 'active'
             ORDER BY occurrences DESC LIMIT 10
         """)
         rows = cur.fetchall()

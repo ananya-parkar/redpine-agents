@@ -315,45 +315,75 @@ def fetch_league_venues(league: str, url: str) -> tuple[list,list]:
 
 def batch_wikidata_owners(venue_names: list[str]) -> dict:
     """
-    Get owner (P127) for each venue by rdfs:label.
+    Get owner (P127) for each venue, matched via the EXACT Wikipedia
+    article title using schema:about/schema:isPartOf/schema:name —
+    the standard, documented way to look up a Wikidata item from a
+    Wikipedia article title.
+
+    FIXED: the previous version matched on rdfs:label instead, with
+    two bugs that combined to return 0 results for EVERY chunk:
+      1. VALUES literals were plain strings ("Lambeau Field") but
+         Wikidata's rdfs:label values are language-tagged
+         ("Lambeau Field"@en) — in SPARQL, a plain literal and a
+         language-tagged literal are NOT equal terms, so VALUES never
+         matched anything at all.
+      2. rdfs:label is also just unreliable for this use case in
+         general — it's the item's display label, which doesn't
+         always exactly equal the Wikipedia article title (different
+         capitalization, missing disambiguation suffix, etc).
+         schema:name on the wikipedia sitelink IS exactly the article
+         title, which is what we actually have a list of.
+
     Returns {venue_name_lower: owner_str}
     """
     if not venue_names: return {}
     print(f"  [WIKIDATA] Fetching owners for {len(venue_names)} venues...", flush=True)
     result = {}
-    CHUNK = 100
+    CHUNK = 50  # smaller chunks — large VALUES blocks were timing out
     chunks = [venue_names[i:i+CHUNK] for i in range(0, len(venue_names), CHUNK)]
 
     for idx, chunk in enumerate(chunks, 1):
-        values = " ".join(f'"{n.replace(chr(34), chr(92)+chr(34))}"' for n in chunk)
+        # @en tag is required — see bug #1 above.
+        values = " ".join(
+            f'"{n.replace(chr(34), chr(92)+chr(34))}"@en' for n in chunk
+        )
         query = f"""
 SELECT DISTINCT ?name ?ownerLabel WHERE {{
   VALUES ?name {{ {values} }}
-  ?item rdfs:label ?name .
-  FILTER(LANG(?name) = "en")
-  ?item wdt:P17 wd:Q30 .
+  ?article schema:about ?item ;
+           schema:isPartOf <https://en.wikipedia.org/> ;
+           schema:name ?name .
   OPTIONAL {{ ?item wdt:P127 ?owner }}
   SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en" . }}
 }}
-LIMIT 300
 """
-        try:
-            r = SESSION.get(SPARQL_URL,
-                            params={"query":query,"format":"json"},
-                            headers={"Accept":"application/sparql-results+json",
-                                     "User-Agent":"StadiumLeadGen/1.0"},
-                            timeout=60)
-            if not r.text: continue
-            for b in r.json().get("results",{}).get("bindings",[]):
-                name  = b.get("name",{}).get("value","").lower().strip()
-                owner = b.get("ownerLabel",{}).get("value","") or ""
-                if name and owner and not owner.startswith("Q"):
-                    result[name] = owner[:80]
-            print(f"    Chunk {idx}/{len(chunks)}: {len(result)} owners", flush=True)
-            time.sleep(1.0)
-        except Exception as e:
-            print(f"    [WIKIDATA chunk {idx}] {e}", flush=True)
+        matched_this_chunk = 0
+        for attempt in range(3):
+            try:
+                r = SESSION.get(SPARQL_URL,
+                                params={"query":query,"format":"json"},
+                                headers={"Accept":"application/sparql-results+json",
+                                         "User-Agent":"StadiumLeadGen/1.0"},
+                                timeout=60)
+                if not r.text:
+                    break
+                bindings = r.json().get("results",{}).get("bindings",[])
+                matched_this_chunk = len(bindings)
+                for b in bindings:
+                    name  = b.get("name",{}).get("value","").lower().strip()
+                    owner = b.get("ownerLabel",{}).get("value","") or ""
+                    if name and owner and not owner.startswith("Q"):
+                        result[name] = owner[:80]
+                break
+            except Exception as e:
+                print(f"    [WIKIDATA chunk {idx}] attempt {attempt+1}/3 failed: {e}", flush=True)
+                time.sleep(2 * (attempt + 1))
+                continue
+        print(f"    Chunk {idx}/{len(chunks)}: {matched_this_chunk} article matches, "
+              f"{len(result)} owners total so far", flush=True)
+        time.sleep(1.0)
 
+    print(f"  [WIKIDATA] Done — {len(result)}/{len(venue_names)} venues got an owner", flush=True)
     return result
 
 

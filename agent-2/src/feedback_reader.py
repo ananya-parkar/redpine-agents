@@ -26,9 +26,9 @@ from db_writer  import get_conn, get_bad_data_patterns, log_tuning_trigger
 from run_paths  import get_latest_previous_run_file
 from datetime   import datetime, timezone
 
-FEEDBACK_COL = 17   # col Q in All Leads
+FEEDBACK_COL = 18   # col R in All Leads
 VENUE_COL    = 2    # col B
-NOTES_COL    = 18   # col R  ← root cause goes here for Bad Data
+NOTES_COL    = 19   # col S  ← root cause goes here for Bad Data
 
 VALID_FEEDBACK = {
     "pursuing", "passed", "bad data",
@@ -147,12 +147,13 @@ def apply_feedback_to_db(entries: list[dict]) -> dict:
             elif fb_l == "bad data":
                 stats["bad_data"] += 1
                 root_cause = note or "unspecified"
-                print(f"  ❌ BAD DATA    {venue[:38]}  [{root_cause}]", flush=True)
-                # Archive bad data leads — never show again
-                cur.execute("""
-                    UPDATE leads SET current_engagement = 'archived'
-                    WHERE LOWER(venue_name) = LOWER(%s)
-                """, (venue,))
+                print(f"  ❌ BAD DATA    {venue[:38]}  [{root_cause}] "
+                      f"(recorded — not archived)", flush=True)
+                # NOTE: this venue is NOT archived/excluded on its own.
+                # A single Bad Data tag only contributes to the pattern
+                # count below (check_and_log_tuning_triggers). The venue
+                # keeps appearing in future runs and gets re-scored
+                # normally — only "Archive" removes a venue permanently.
 
             elif fb_l == "archive":
                 cur.execute("""
@@ -223,19 +224,20 @@ def run():
 
     entries = read_feedback_from_excel()
     if not entries:
-        print("  No feedback to process.")
-        return
+        print("  No lead feedback to process.")
+    else:
+        stats = apply_feedback_to_db(entries)
 
-    stats = apply_feedback_to_db(entries)
+        print(f"\n  Updated    : {stats['updated']}")
+        print(f"  Pursuing   : {stats['pursuing']}")
+        print(f"  Passed     : {stats['passed']}")
+        print(f"  Bad Data   : {stats['bad_data']}")
 
-    print(f"\n  Updated    : {stats['updated']}")
-    print(f"  Pursuing   : {stats['pursuing']}")
-    print(f"  Passed     : {stats['passed']}")
-    print(f"  Bad Data   : {stats['bad_data']}")
-
-    # Check for patterns in bad data → trigger tuning alerts
-    if stats["bad_data"] > 0:
-        check_and_log_tuning_triggers()
+        # Check for patterns in bad data → trigger tuning alerts.
+        # Per the client's requirement, a 3+ same-note pattern applies
+        # automatically — no separate manual approval step.
+        if stats["bad_data"] > 0:
+            check_and_log_tuning_triggers()
 
     print("=" * 55)
 

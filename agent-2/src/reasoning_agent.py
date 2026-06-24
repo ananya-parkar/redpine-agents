@@ -5,6 +5,8 @@ from datetime import datetime
 from openai import OpenAI
 from tavily import TavilyClient
 from config import OPENAI_API_KEY, OPENAI_MODEL, TAVILY_API_KEY
+from tuning_prompt import build_tuning_block
+from db_writer import get_active_tuning_triggers
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 tavily_client = TavilyClient(api_key=TAVILY_API_KEY)
@@ -92,10 +94,11 @@ headline/description explicitly states.
 """.strip()
 
 
-def batch_classify(signals: list[dict]) -> dict:
+def batch_classify(signals: list[dict], tuning_block: str = "") -> dict:
     print(f"\n[STEP 3A] Batch classifying {len(signals)} headlines...", flush=True)
     classified = {}
     batches = [signals[i:i+10] for i in range(0, len(signals), 10)]
+    system_prompt = BATCH_PROMPT + tuning_block
 
     for b_idx, batch in enumerate(batches):
         payload = [
@@ -120,7 +123,7 @@ def batch_classify(signals: list[dict]) -> dict:
                     model=OPENAI_MODEL, max_tokens=800, temperature=0.0,
                     response_format={"type":"json_object"},
                     messages=[
-                        {"role":"system","content":BATCH_PROMPT},
+                        {"role":"system","content":system_prompt},
                         {"role":"user","content":
                             "Classify these headlines:\n" +
                             json.dumps(payload, ensure_ascii=True)}
@@ -252,10 +255,11 @@ def _repair_truncated_json(raw: str) -> str:
     return raw
 
 
-def deep_analyze(signal: dict) -> dict | None:
+def deep_analyze(signal: dict, tuning_block: str = "") -> dict | None:
     full_text = signal.get("content","") or ""
     if not full_text and signal.get("url"):
         full_text = fetch_full_article(signal["url"])
+    system_prompt = DEEP_PROMPT + tuning_block
 
     payload = {
         "venue_name":   signal.get("venue_name",""),
@@ -279,7 +283,7 @@ def deep_analyze(signal: dict) -> dict | None:
                 model=OPENAI_MODEL, max_tokens=1100, temperature=0.1,
                 response_format={"type":"json_object"},
                 messages=[
-                    {"role":"system","content":DEEP_PROMPT},
+                    {"role":"system","content":system_prompt},
                     {"role":"user","content":json.dumps(payload, ensure_ascii=True)}
                 ]
             )
@@ -565,11 +569,23 @@ def venue_mentioned(signal: dict) -> bool:
 def run_reasoning(signals: list[dict]) -> tuple[list[dict], list[dict]]:
     for i, s in enumerate(signals): s["_idx"] = i
 
+    # Build the "known false positive patterns" block once per run, from
+    # whatever tuning triggers are currently unresolved in the DB. Only
+    # triggers whose root cause maps to a "reasoning"-scoped rule (see
+    # tuning_prompt.py) are included here — issues rooted in non-LLM
+    # data (Wikipedia/Wikidata fields, dedup logic) are intentionally
+    # left out, since no prompt instruction can change those.
+    active_triggers = get_active_tuning_triggers()
+    reasoning_tuning_block = build_tuning_block(active_triggers, scope="reasoning")
+    if reasoning_tuning_block:
+        print(f"  [TUNING] Injecting {reasoning_tuning_block.count('Pattern:')} "
+              f"known false-positive pattern(s) into LLM prompts", flush=True)
+
     pre_filtered = [s for s in signals if venue_mentioned(s)]
     skipped      = len(signals) - len(pre_filtered)
     print(f"  Pre-filter: {len(pre_filtered)} kept, {skipped} skipped", flush=True)
 
-    classified = batch_classify(pre_filtered)
+    classified = batch_classify(pre_filtered, tuning_block=reasoning_tuning_block)
 
     relevant_count = sum(1 for c in classified.values() if c.get("relevant",True))
     print(f"  Relevant signals    : {relevant_count}", flush=True)
@@ -617,7 +633,7 @@ def run_reasoning(signals: list[dict]) -> tuple[list[dict], list[dict]]:
               f" | cap={lead.get('capacity',0)} | status={lead.get('venue_status','')}", flush=True)
 
         if signal:
-            analysis = deep_analyze(signal)
+            analysis = deep_analyze(signal, tuning_block=reasoning_tuning_block)
             if analysis:
                 s1_tier = classified.get(signal.get("_idx",0),{}).get("signal_tier")
                 s2_tier = analysis.get("signal_tier")

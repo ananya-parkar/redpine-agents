@@ -21,7 +21,6 @@ from db_writer               import (
     init_db, db_available,
     upsert_signals, upsert_leads,
     get_archived_venues, get_pursuing_venues,
-    get_bad_data_patterns, log_tuning_trigger,
     get_all_leads_for_excel, get_tier_alerts,
     purge_old_pii,
 )
@@ -153,16 +152,15 @@ def main():
         # New leads this run (for email)
         new_leads_list = all_leads[:stats.get("inserted", 0)]
 
-        # Bad data pattern detection
-        patterns = get_bad_data_patterns()
-        if patterns:
-            for p in patterns:
-                print(f"  [TUNING] '{p['root_cause']}' × {p['occurrences']}", flush=True)
-                log_tuning_trigger(
-                    p["root_cause"], p["occurrences"],
-                    p["affected_venues"],
-                    f"Review prompts — '{p['root_cause']}' causing bad data"
-                )
+        # NOTE: bad-data pattern detection + tuning trigger logging is
+        # handled at STEP 0 by feedback_reader.run() -> 
+        # check_and_log_tuning_triggers(), right after feedback is read
+        # from the previous run's Excel. That version has root-cause-
+        # specific recommendations (see tuning_prompt.TUNING_RULES) and
+        # writes a tuning_triggers.txt report. Doing it again here would
+        # just re-detect the SAME patterns (nothing about feedback
+        # changes between STEP 0 and STEP 5) and double-log them with a
+        # generic recommendation text — removed to avoid duplicates.
 
         purged = purge_old_pii()
         if purged:

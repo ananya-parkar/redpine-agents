@@ -4,7 +4,11 @@ BASE_DIR = Path(__file__).parent
 DATA_FOLDER = BASE_DIR / "data"
 OUTPUT_FOLDER = BASE_DIR / "outputs"
 INPUT_FOLDER = BASE_DIR / "inputs"
+from pathlib import Path
 
+BASE_DIR = Path(__file__).resolve().parent
+
+RUNS_FOLDER = BASE_DIR / "runs"
 US_STATE_MAP = {
     "Alabama": "AL",
     "Alaska": "AK",
