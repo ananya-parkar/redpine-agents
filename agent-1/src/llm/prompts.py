@@ -105,8 +105,17 @@ Do NOT use:
 HISTORICAL REVIEWER FEEDBACK:
 {feedback_patterns}
 
-Avoid recommending opportunities that match
-recurring reviewer rejection patterns.
+The following feedback patterns were learned from
+previous analyst reviews.
+
+When evaluating this property:
+
+- Reduce confidence when similar rejection patterns exist.
+- Consider known reviewer objections.
+- Avoid recommending opportunities that match
+  recurring rejection themes.
+- Incorporate any suggested prompt fixes when
+  determining acquisition attractiveness.
 
 Return STRICT JSON matching the required schema.
 """

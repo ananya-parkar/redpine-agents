@@ -84,11 +84,11 @@ def _write_chart_data(data_ws, df):
     
     # - Seller fatigue (col 12-13, rows 100-105) -
     fatigue = {
-        "0-20":   int(len(df[df["seller_fatigue_probability"] < 0.20])),
-        "20-40":  int(len(df[(df["seller_fatigue_probability"] >= 0.20) & (df["seller_fatigue_probability"] < 0.40)])),
-        "40-60":  int(len(df[(df["seller_fatigue_probability"] >= 0.40) & (df["seller_fatigue_probability"] < 0.60)])),
-        "60-80":  int(len(df[(df["seller_fatigue_probability"] >= 0.60) & (df["seller_fatigue_probability"] < 0.80)])),
-        "80-100": int(len(df[df["seller_fatigue_probability"] >= 0.80])),
+        "0-20":   int(len(df[df["llm_seller_fatigue_probability"] < 0.20])),
+        "20-40":  int(len(df[(df["llm_seller_fatigue_probability"] >= 0.20) & (df["llm_seller_fatigue_probability"] < 0.40)])),
+        "40-60":  int(len(df[(df["llm_seller_fatigue_probability"] >= 0.40) & (df["llm_seller_fatigue_probability"] < 0.60)])),
+        "60-80":  int(len(df[(df["llm_seller_fatigue_probability"] >= 0.60) & (df["llm_seller_fatigue_probability"] < 0.80)])),
+        "80-100": int(len(df[df["llm_seller_fatigue_probability"] >= 0.80])),
     }
     data_ws.cell(1, 10, "Fatigue"); data_ws.cell(1, 11, "Count")
     for i, (bucket, count) in enumerate(fatigue.items()):

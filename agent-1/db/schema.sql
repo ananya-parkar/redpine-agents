@@ -1,10 +1,9 @@
--- agent-1/db/schema.sql
- 
 CREATE TABLE IF NOT EXISTS hotel_leads (
     id                          SERIAL PRIMARY KEY,
     hotel_name                  TEXT,
     address                     TEXT,
-    lead_key                    TEXT UNIQUE,
+    lead_key                    TEXT,
+    place_id                    TEXT UNIQUE,
     final_lead_score            NUMERIC,
     opportunity_score           NUMERIC,
     owner_name                  TEXT,
@@ -23,9 +22,6 @@ CREATE TABLE IF NOT EXISTS hotel_leads (
     attom_year_built            INTEGER,
     room_count                  INTEGER,
     price_tier                  TEXT,
-    cmbs_watchlist              BOOLEAN,
-    cmbs_delinquent             BOOLEAN,
-    cmbs_special_servicing      BOOLEAN,
     lead_reason                 TEXT,
     lead_status                 VARCHAR(20) DEFAULT 'NEW',
     first_surfaced              TIMESTAMP,
@@ -39,15 +35,25 @@ CREATE TABLE IF NOT EXISTS hotel_leads (
     pii_retention_exempt        BOOLEAN DEFAULT FALSE,
     created_at                  TIMESTAMP DEFAULT NOW()
 );
- 
+
+
+
 CREATE INDEX IF NOT EXISTS idx_hotel_leads_status
 ON hotel_leads(lead_status);
- 
+
+
 CREATE INDEX IF NOT EXISTS idx_hotel_leads_score
 ON hotel_leads(final_lead_score);
- 
+
+
 CREATE INDEX IF NOT EXISTS idx_hotel_leads_leadkey
 ON hotel_leads(lead_key);
+
+
+CREATE INDEX IF NOT EXISTS idx_hotel_leads_place_id
+ON hotel_leads(place_id);
+
+
 
 CREATE TABLE IF NOT EXISTS lead_feedback (
     id              SERIAL PRIMARY KEY,
@@ -57,15 +63,23 @@ CREATE TABLE IF NOT EXISTS lead_feedback (
     updated_at      TIMESTAMP
 );
 
+
+
 CREATE TABLE IF NOT EXISTS feedback_actions (
-    id                  SERIAL PRIMARY KEY,
-    feedback_reason     VARCHAR(100),
-    trigger_count       INTEGER,
-    action_taken        TEXT,
-    created_at          TIMESTAMP DEFAULT NOW(),
+    id                      SERIAL PRIMARY KEY,
+    feedback_reason         VARCHAR(100),
+    trigger_count           INTEGER,
+    action_taken            TEXT,
+    recommended_fix         TEXT,
+    recommendation_json     JSONB,
+    status                  VARCHAR(20) DEFAULT 'PENDING',
+    created_at              TIMESTAMP DEFAULT NOW(),
+    updated_at              TIMESTAMP,
     CONSTRAINT ux_feedback_reason
     UNIQUE(feedback_reason)
 );
+
+
 
 CREATE TABLE IF NOT EXISTS agent_runs (
     run_id                  UUID PRIMARY KEY,
@@ -77,4 +91,3 @@ CREATE TABLE IF NOT EXISTS agent_runs (
     priority_leads          INTEGER,
     email_sent              BOOLEAN
 );
- 

@@ -63,7 +63,7 @@ Please view this email in HTML format for the full report.
     if not top_leads:
         rows_html = """
         <tr>
-            <td colspan="5">
+            <td colspan="7">
             No new or resurfaced acquisition opportunities identified in this run.
             </td>
         </tr>
@@ -78,6 +78,8 @@ Please view this email in HTML format for the full report.
                 <td>{row.get('final_lead_score')}</td>
                 <td>{row.get('llm_analysis', {}).get('opportunity_score', '')}</td>
                 <td>{row.get('lead_reason')}</td>
+                <td>{row.get('address')}</td>
+                <td>{row.get('owner_name')}</td>
             </tr>
             """
 
@@ -109,13 +111,15 @@ and the HTML report provides a detailed acquisition review of the highest-priori
 
 <h3>TOP ACQUISITION OPPORTUNITIES</h3>
 
-<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse;">
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
     <tr style="background-color:#f2f2f2;">
         <th>Rank</th>
         <th>Property</th>
         <th>Lead Score</th>
         <th>Opportunity Score</th>
         <th>Key Reason</th>
+        <th>Address</th>
+        <th>Owner</th>
     </tr>
 
     {rows_html}

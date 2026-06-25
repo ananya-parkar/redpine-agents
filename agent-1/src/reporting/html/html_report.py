@@ -38,20 +38,20 @@ SIGNAL_EXPLANATIONS = {
         False: "No active franchise affiliation detected."
     },
 
-    "cmbs_watchlist": {
-        True: "Property loan appears on CMBS watchlist.",
-        False: "No CMBS watchlist indicators found."
-    },
+    # "cmbs_watchlist": {
+    #     True: "Property loan appears on CMBS watchlist.",
+    #     False: "No CMBS watchlist indicators found."
+    # },
 
-    "cmbs_special_servicing": {
-        True: "Property loan transferred to special servicing.",
-        False: "No special servicing indicators detected."
-    },
+    # "cmbs_special_servicing": {
+    #     True: "Property loan transferred to special servicing.",
+    #     False: "No special servicing indicators detected."
+    # },
 
-    "cmbs_delinquent": {
-        True: "Potential loan delinquency indicators detected.",
-        False: "No delinquency indicators detected."
-    },
+    # "cmbs_delinquent": {
+    #     True: "Potential loan delinquency indicators detected.",
+    #     False: "No delinquency indicators detected."
+    # },
 
     "long_term_owner": {
         True: "Ownership tenure exceeds configured threshold.",
@@ -82,7 +82,7 @@ def build_hotel_card(entity):
     signals = entity.get("signals", {})
     owner = entity.get("owner_data", {})
     franchise = entity.get("franchise_data", {})
-    cmbs = entity.get("cmbs_data", {})
+    # cmbs = entity.get("cmbs_data", {})
     heuristic = entity.get("heuristic_scores", {})
     reviews = entity.get("reviews", [])[:3]
     review_themes = entity.get("review_themes", {})
@@ -266,14 +266,6 @@ def build_hotel_card(entity):
             <tr><td>Current Brand</td><td>{html.escape(franchise.get("current_brand", ""))}</td></tr>
             <tr><td>Former Brand</td><td>{html.escape(franchise.get("former_brand", ""))}</td></tr>
             <tr><td>Status</td><td>{html.escape(franchise.get("brand_status", ""))}</td></tr>
-        </table>
-
-        <h2>CMBS Distress</h2>
-
-        <table>
-            <tr><td>Loan Status</td><td>{html.escape(str(cmbs.get("cmbs_loan_status", "")))}</td></tr>
-            <tr><td>Watchlist</td><td>{cmbs.get("cmbs_watchlist_flag", False)}</td></tr>
-            <tr><td>Special Servicing</td><td>{cmbs.get("cmbs_special_servicing_flag", False)}</td></tr>
         </table>
 
         <h2>Recommended Action</h2>

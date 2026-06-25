@@ -1,4 +1,4 @@
-# agent-1/src/analysis/final_scoring.py
+# agent-1/src/analysis/ranking_engine.py
 
 def calculate_final_lead_score(entity):
     score = 0
@@ -8,11 +8,10 @@ def calculate_final_lead_score(entity):
     signals = entity.signals
 
     # Base heuristic distress
-    score += heuristic.get("distress_score", 0) * 3
-
-    # LLM opportunity weighting
-    score += llm.get("opportunity_score", 0) * 0.3
-
+    heuristic_score = min(heuristic.get("distress_score", 0) * 4, 100)
+    llm_score = llm.get("opportunity_score", 0)
+    score += (heuristic_score * 0.6 + llm_score * 0.4)
+    
     # Franchise distress
     if signals.get("franchise_affiliated"):
         score += 5
@@ -21,14 +20,14 @@ def calculate_final_lead_score(entity):
         score += 20
 
     # CMBS distress
-    if signals.get("cmbs_special_servicing"):
-        score += 5
+    # if signals.get("cmbs_special_servicing"):
+    #     score += 5
 
-    if signals.get("cmbs_delinquent"):
-        score += 3
+    # if signals.get("cmbs_delinquent"):
+    #     score += 3
 
-    if signals.get("cmbs_watchlist"):
-        score += 2
+    # if signals.get("cmbs_watchlist"):
+    #     score += 2
 
     # Owner fatigue
     if signals.get("long_term_owner"):
@@ -60,10 +59,6 @@ def calculate_final_lead_score(entity):
 
         franchise_affiliated={signals.get('franchise_affiliated')}
         franchise_loss={signals.get('franchise_loss')}
-
-        cmbs_special_servicing={signals.get('cmbs_special_servicing')}
-        cmbs_delinquent={signals.get('cmbs_delinquent')}
-        cmbs_watchlist={signals.get('cmbs_watchlist')}
 
         long_term_owner={signals.get('long_term_owner')}
         review_decline={signals.get('review_decline')}

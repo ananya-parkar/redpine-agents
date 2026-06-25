@@ -87,7 +87,7 @@ def _header_and_run_history(ws, metrics, df):
     
     # Search Area
     ws["L2"] = "Search Area"
-    ws["M2"] = "Florida Markets"
+    ws["M2"] = metrics.get("search_area", "")
     
     # Radius
     ws["L3"] = "Leads Found"
@@ -151,7 +151,7 @@ def _top_opportunities_table(ws, df):
     "Rank","Hotel Name","City","State","Opp. Score","AI Rating",
     "Distress Prob.","Franchise Status","Signals",
     "Owner Name","Own. Years",
-    "Lead Status","Date Surfaced","CMBS Status","Rooms","Notes",
+    "Lead Status","Date Surfaced","Rooms","Notes",
     ]
     hrow = base + 1
     ws.row_dimensions[hrow].height = 20
@@ -167,17 +167,17 @@ def _top_opportunities_table(ws, df):
         r = hrow + rank
         ws.row_dimensions[r].height = 20
 
-        def cmbs_lbl(row):
-            if row.get("cmbs_delinquent"):        return "Delinquent"
-            if row.get("cmbs_special_servicing"): return "Special Svc."
-            if row.get("cmbs_watchlist"):         return "Watchlist"
-            return "—"
+        # def cmbs_lbl(row):
+        #     if row.get("cmbs_delinquent"):        return "Delinquent"
+        #     if row.get("cmbs_special_servicing"): return "Special Svc."
+        #     if row.get("cmbs_watchlist"):         return "Watchlist"
+        #     return "—"
 
         def fran_lbl(row):
             brand = row.get("current_brand","")
             if row.get("franchise_affiliated"):
                 return f"Affiliated ({brand})" if brand else "Affiliated"
-            if "Franchise" in str(row.get("signals_fired","")):
+            if "Franchise" in str(row.get("llm_top_distress_signals","")):
                 return f"Lost ({brand})" if brand else "Lost"
             return "Independent"
 
@@ -191,14 +191,14 @@ def _top_opportunities_table(ws, df):
             row.get("state",""),
             row.get("final_lead_score",""),
             f"★ {row.get('llm_star_rating','')}",
-            f"{round(row.get('distress_probability',0)*100)}%",
+            f"{round(row.get('llm_distress_probability',0)*100)}%",
             fran_lbl(row),
-            str(row.get("signals_fired",""))[:40],
+            str(row.get("llm_top_distress_signals",""))[:40],
             row.get("owner_name",""),
             row.get("ownership_length_years",""),
             status,
             str(row.get("created_at",""))[:10],
-            cmbs_lbl(row),
+            # cmbs_lbl(row),
             row.get("room_count",""),
             row.get("notes",""),
             ]
@@ -217,9 +217,9 @@ def _top_opportunities_table(ws, df):
                 c.fill = _fill(sc_bg)
             
             # CMBS Status
-            if i ==13 and val not in ("-", ""):
-                c.fill = _fill("FEE2E2")
-                c.font = Font(bold=True, size=9, color="991B1B", name="Arial")
+            # if i ==13 and val not in ("-", ""):
+            #     c.fill = _fill("FEE2E2")
+            #     c.font = Font(bold=True, size=9, color="991B1B", name="Arial")
             # Score color
             if i == 4:
                 sv = row.get("final_lead_score", 0) or 0
@@ -332,9 +332,9 @@ def _bottom_section(ws, df, metrics, data_ws):
 
     run_data = [
         datetime.now().strftime("%b %d %Y"),
-        "All Markets",
-        metrics["total_hotels"],
-        metrics["high_opportunity"],
+        metrics.get("search_area", ""),
+        metrics.get("total_hotels", 0),
+        metrics.get("high_opportunity", 0),
         0
     ]
     

@@ -2,6 +2,7 @@
 import json
 from pathlib import Path
 from typing import List, Dict
+import numpy as np
 
 def parse_locations(file_path: Path) -> List[Dict]:
     rows = []
@@ -31,5 +32,26 @@ def parse_locations(file_path: Path) -> List[Dict]:
         rows.append(row)
     return rows
 
-def save_json(data, file_path: Path):
-    file_path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+def json_converter(obj):
+    if isinstance(obj, np.integer):
+        return int(obj)
+
+    if isinstance(obj, np.floating):
+        return float(obj)
+
+    if isinstance(obj, np.ndarray):
+        return obj.tolist()
+
+    return str(obj)
+
+
+def save_json(data, file_path):
+    file_path.write_text(
+        json.dumps(
+            data,
+            indent=2,
+            ensure_ascii=False,
+            default=json_converter
+        ),
+        encoding="utf-8"
+    )

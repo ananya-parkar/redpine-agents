@@ -8,10 +8,11 @@ from src.utils.entity_builder import build_hotel_entity
 from src.analysis.signals import build_signals
 from src.utils.serialization import serialize_entity
 from src.llm.reasoning_agent import analyze_hotel
-from src.analysis.final_scoring import calculate_final_lead_score
+from src.analysis.ranking_engine import calculate_final_lead_score
 from src.analysis.review_intelligence import extract_review_themes
 from src.analysis.property_filters import passes_filters
 from src.enrichment.price_tier import get_price_tier
+from src.collectors.grid_search import generate_grid_points
 
 
 def process_location(item, loc_index, total_locations):
@@ -31,12 +32,28 @@ def process_location(item, loc_index, total_locations):
         "longitude": lng
     }]
 
-    hotels = nearby_hotels(lat, lng, item["radius_miles"])
-    print(f"\n[NEARBY SEARCH] Found {len(hotels)} hotel(s)", flush=True)
+    all_hotels = []
+    seen_place_ids = set()
+
+    grid_points = generate_grid_points(lat, lng, item["radius_miles"])
+
+    for point_lat, point_lng in grid_points:
+
+        hotels = nearby_hotels(point_lat, point_lng, item["radius_miles"])
+
+        for hotel in hotels:
+            place_id = hotel.get("id")
+            if place_id in seen_place_ids:
+                continue
+
+            seen_place_ids.add(place_id)
+            all_hotels.append(hotel)
+
+    print(f"\n[NEARBY SEARCH] Found {len(all_hotels)} hotel(s)", flush=True)
     seen = set()
     deduped_hotels = []
 
-    for hotel in hotels:
+    for hotel in all_hotels:
         key = (
             hotel.get("displayName", {})
                 .get("text", "")
@@ -165,20 +182,21 @@ def process_hotel(item, hotel, hotel_index, total_hotels):
         row["price_tier"] = get_price_tier(
             enrichment.get("current_brand")
         )
-        row["cmbs_watchlist"] = enrichment.get(
-            "cmbs_watchlist_flag",
-            False
-        )
+        
+        # row["cmbs_watchlist"] = enrichment.get(
+        #     "cmbs_watchlist_flag",
+        #     False
+        # )
 
-        row["cmbs_delinquent"] = enrichment.get(
-            "cmbs_delinquency_flag",
-            False
-        )
+        # row["cmbs_delinquent"] = enrichment.get(
+        #     "cmbs_delinquency_flag",
+        #     False
+        # )
 
-        row["cmbs_special_servicing"] = enrichment.get(
-            "cmbs_special_servicing_flag",
-            False
-        )
+        # row["cmbs_special_servicing"] = enrichment.get(
+        #     "cmbs_special_servicing_flag",
+        #     False
+        # )
 
         print(
             "[FILTER CHECK]",
@@ -209,12 +227,12 @@ def process_hotel(item, hotel, hotel_index, total_hotels):
             "room_count": enrichment.get("room_count"),
         }
 
-        entity.cmbs_data = {
-            "cmbs_loan_status": enrichment.get("cmbs_loan_status"),
-            "cmbs_delinquency_flag": enrichment.get("cmbs_delinquency_flag"),
-            "cmbs_watchlist_flag": enrichment.get("cmbs_watchlist_flag"),
-            "cmbs_special_servicing_flag": enrichment.get("cmbs_special_servicing_flag"),
-        }
+        # entity.cmbs_data = {
+        #     "cmbs_loan_status": enrichment.get("cmbs_loan_status"),
+        #     "cmbs_delinquency_flag": enrichment.get("cmbs_delinquency_flag"),
+        #     "cmbs_watchlist_flag": enrichment.get("cmbs_watchlist_flag"),
+        #     "cmbs_special_servicing_flag": enrichment.get("cmbs_special_servicing_flag"),
+        # }
 
         entity.franchise_data = {
             "franchise_affiliated": enrichment.get("franchise_affiliated"),
@@ -280,11 +298,11 @@ def process_hotel(item, hotel, hotel_index, total_hotels):
     if signals.get("long_term_owner"):
         lead_reason_parts.append("Long-term ownership")
 
-    if signals.get("cmbs_special_servicing"):
-        lead_reason_parts.append("Special servicing")
+    # if signals.get("cmbs_special_servicing"):
+    #     lead_reason_parts.append("Special servicing")
 
-    if signals.get("cmbs_delinquent"):
-        lead_reason_parts.append("CMBS delinquency")
+    # if signals.get("cmbs_delinquent"):
+    #     lead_reason_parts.append("CMBS delinquency")
 
     row["lead_reason"] = "; ".join(lead_reason_parts[:3])
 
@@ -295,14 +313,15 @@ def process_hotel(item, hotel, hotel_index, total_hotels):
     if entity.franchise_data.get("franchise_affiliated"):
         sources.append("Tavily")
 
-    if entity.cmbs_data.get("cmbs_loan_status"):
-        sources.append("SEC EDGAR")
+    # if entity.cmbs_data.get("cmbs_loan_status"):
+    #     sources.append("SEC EDGAR")
 
     row["source_provenance"] = " | ".join(sources)
 
     row["entity"] = serialize_entity(entity)
 
     row["created_at"] = datetime.utcnow().isoformat()
+    row["place_id"] = place_id
 
     return row, hotel_details
 

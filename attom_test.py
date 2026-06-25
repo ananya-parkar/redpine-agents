@@ -14,14 +14,29 @@ bp_params = {
     "address": "468 SEQUOIA DR, SMYRNA, DE 19977"  # use any test address you know is valid
 }
 bp_resp = requests.get(f"{base}/property/basicprofile", headers=headers, params=bp_params)
+print("BASIC PROFILE STATUS:", bp_resp.status_code)
+print(bp_resp.text[:2000])
 bp_resp.raise_for_status()
 bp_json = bp_resp.json()
 
 # 2) Call Detail Owner
+properties = bp_json.get("property", [])
+
+if not properties:
+    print("NO PROPERTY RETURNED FROM BASIC PROFILE")
+    exit()
+
+attom_id = properties[0].get("identifier", {}).get("attomId")
+
+print("ATTOM ID:", attom_id)
+
 do_params = {
-    "attomId": 184196315  # or from previous response
+    "attomId": attom_id
 }
+
 do_resp = requests.get(f"{base}/property/detailowner", headers=headers, params=do_params)
+print("DETAIL OWNER STATUS:", do_resp.status_code)
+print(do_resp.text[:2000])
 do_resp.raise_for_status()
 do_json = do_resp.json()
 
@@ -45,6 +60,12 @@ print("BasicProfile fields:")
 for p in sorted(paths_basic):
     print(p)
 
+print("BASIC PROFILE STATUS:", bp_resp.status_code)
+print(bp_resp.text[:2000])
+
 print("\nDetailOwner fields:")
 for p in sorted(paths_detailowner):
     print(p)
+
+print("DETAIL OWNER STATUS:", do_resp.status_code)
+print(do_resp.text[:2000])

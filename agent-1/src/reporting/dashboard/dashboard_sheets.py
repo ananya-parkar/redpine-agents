@@ -6,7 +6,7 @@ from openpyxl.formatting.rule import ColorScaleRule
 from openpyxl.worksheet.datavalidation import DataValidation
 from src.reporting.dashboard.dashboard_constants import *
 from src.reporting.dashboard.dashboard_styles import _fill, _font, _align, _border, _apply, _section_title
-
+from src.storage.postgres_storage import get_feedback_learning_rows
 
 def _sheet_header(ws, headers, widths=None):
     ws.row_dimensions[1].height = 22
@@ -36,20 +36,20 @@ def _write_rows(ws, df, columns, start_row=2):
 def populate_all_leads(ws, df):
     col_defs = [
         ("hotel_name","Hotel Name",22), ("city","City",14), ("state","State",7),
-        ("final_lead_score","Lead Score",11), ("opportunity_score","Opp. Score",11),
-        ("llm_star_rating","AI Rating",10), ("distress_probability","Distress Prob.",13),
+        ("final_lead_score","Lead Score",11), ("llm_opportunity_score","Opp. Score",11),
+        ("llm_star_rating","AI Rating",10), ("llm_distress_probability","Distress Prob.",13),
         ("owner_name","Owner Name",22), ("ownership_length_years","Own. Years",10),
         ("property_age","Prop. Age",10), ("room_count","Rooms",8),
         ("current_brand","Brand",14), ("franchise_affiliated","Franchise",10),
-        ("cmbs_watchlist","CMBS Watch",11), ("cmbs_delinquent","CMBS Delq.",11),
-        ("cmbs_special_servicing","Special Svc.",11),
+        # ("cmbs_watchlist","CMBS Watch",11), ("cmbs_delinquent","CMBS Delq.",11),
+        # ("cmbs_special_servicing","Special Svc.",11),
         ("signals_fired","Signals Fired",35),
         ("lead_status","Lead Status ▼",14),
         ("feedback_reason","Feedback Reason",20),
         ("feedback_notes","Feedback Notes",30),
         ("notes","Notes",30),
         ("price_tier", "Price Tier", 12),
-        ("created_at","Date First Surfaced",18),
+        ("first_surfaced","Date First Surfaced",18),
         ("mailing_address","Mailing Address",30),
     ]
     for i, (_, lbl, w) in enumerate(col_defs):
@@ -66,7 +66,7 @@ def populate_all_leads(ws, df):
         for ci, (key, _, _) in enumerate(col_defs, start=1):
             val = row.get(key, "")
             if isinstance(val, float) and pd.isna(val): val = ""
-            if key == "distress_probability" and val != "": val = round(float(val), 2)
+            if key == "llm_distress_probability" and val != "": val = round(float(val), 2)
             c = ws.cell(row=ri, column=ci, value=val)
             c.font = Font(size=9, color=TEXT_DARK, name="Arial")
             c.alignment = _align("left" if ci in [1,2,8,17,19] else "center")
@@ -145,25 +145,25 @@ def populate_ownership_analysis(ws, df):
                        "Lead Score","Status"],[24,22,13,11,10,11,13])
     _write_rows(ws, od, cols)
 
-def populate_cmbs_sheet(ws, df):
-    cmbs = df[df["cmbs_watchlist"].fillna(False)|df["cmbs_delinquent"].fillna(False)|
-              df["cmbs_special_servicing"].fillna(False)]
-    cols = ["hotel_name","city","state","final_lead_score","cmbs_watchlist",
-            "cmbs_delinquent","cmbs_special_servicing","lead_status"]
-    _sheet_header(ws,["Hotel Name","City","State","Lead Score","Watchlist",
-                       "Delinquent","Special Svc.","Status"],[24,14,7,11,12,12,14,13])
-    _write_rows(ws, cmbs, cols)
+# def populate_cmbs_sheet(ws, df):
+#     cmbs = df[df["cmbs_watchlist"].fillna(False)|df["cmbs_delinquent"].fillna(False)|
+#               df["cmbs_special_servicing"].fillna(False)]
+#     cols = ["hotel_name","city","state","final_lead_score","cmbs_watchlist",
+#             "cmbs_delinquent","cmbs_special_servicing","lead_status"]
+#     _sheet_header(ws,["Hotel Name","City","State","Lead Score","Watchlist",
+#                        "Delinquent","Special Svc.","Status"],[24,14,7,11,12,12,14,13])
+#     _write_rows(ws, cmbs, cols)
 
 def populate_distress_sheet(ws, df):
-    dd   = df.sort_values("distress_probability", ascending=False)
-    cols = ["hotel_name","signals_fired","distress_probability",
-            "seller_fatigue_probability","final_lead_score","lead_status"]
+    dd   = df.sort_values("llm_distress_probability", ascending=False)
+    cols = ["hotel_name","signals_fired","llm_distress_probability",
+            "llm_seller_fatigue_probability","final_lead_score","lead_status"]
     _sheet_header(ws,["Hotel Name","Signals","Distress Prob.","Seller Fatigue",
                        "Lead Score","Status"],[24,35,14,18,11,13])
     _write_rows(ws, dd, cols)
 
 def populate_lead_tracker(ws, df):
-    cols   = ["hotel_name","city","state","final_lead_score","lead_status","notes","created_at"]
+    cols   = ["hotel_name","city","state","final_lead_score","lead_status","notes","first_surfaced"]
     widths = [24,14,7,11,13,35,18]
     _sheet_header(ws,["Hotel Name","City","State","Lead Score","Status ▼",
                        "Notes","Date Surfaced"], widths)
@@ -195,3 +195,31 @@ def populate_lead_tracker(ws, df):
     nc.alignment = _align("left")
     ws.freeze_panes = "A2"
     ws.auto_filter.ref = ws.dimensions
+
+def populate_feedback_learning(ws):
+
+    rows = get_feedback_learning_rows()
+
+    headers = [
+        "Reason",
+        "Count",
+        "Pipeline Fix",
+        "Prompt Fix",
+        "Scoring Fix",
+        "Status"
+    ]
+
+    _sheet_header(
+        ws,
+        headers,
+        [25,10,50,50, 50,15]
+    )
+
+    for idx, row in enumerate(rows,start=2):
+
+        ws.cell(idx,1,row["feedback_reason"])
+        ws.cell(idx,2,row["trigger_count"])
+        ws.cell(idx,3,row["pipeline_fix"])
+        ws.cell(idx,4,row["prompt_fix"])
+        ws.cell(idx,5,row["scoring_fix"])
+        ws.cell(idx,6,row["status"])

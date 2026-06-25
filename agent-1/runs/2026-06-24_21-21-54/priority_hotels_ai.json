@@ -1,0 +1,330 @@
+[
+  {
+    "search_location": "Kissimmee, Florida",
+    "radius_miles": 5,
+    "hotel_name": "Extended Stay America Select Suites- Orlando - South",
+    "address": "10401 S John Young Pkwy, Orlando, FL 32837, USA",
+    "rating": 3.2,
+    "user_rating_count": 218,
+    "business_status": "OPERATIONAL",
+    "distress_score": 6,
+    "distress_reasons": "Low rating: 3.2 | Moderate-to-low rating with enough reviews: 218 | Negative review signal: smell | Negative review signal: rude | Negative review signal: stained",
+    "review_trend_score": 0,
+    "review_volume_recent": 5,
+    "review_volume_prior": 0,
+    "review_volume_change_pct": 100.0,
+    "avg_rating_recent": 3.0,
+    "avg_rating_prior": 0.0,
+    "review_rating_delta": 0,
+    "complaint_rate_recent": 0.4,
+    "complaint_rate_prior": 0.0,
+    "review_complaint_delta": 0.4,
+    "year_built": "",
+    "property_age": "",
+    "renovation_signal_rate": 0.2,
+    "renovation_needed": false,
+    "physical_condition_score": 0,
+    "google_maps_url": "https://maps.google.com/?cid=13921816575853351287&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "source_provenance": "Google Places | ATTOM",
+    "franchise_affiliated": false,
+    "current_brand": "",
+    "former_brand": "",
+    "brand_status": "NONE",
+    "franchise_confidence": "Low",
+    "franchise_evidence": "No franchise affiliation detected",
+    "owner_name": "TIGER ORLANDO SOUTH LLC",
+    "owner_company": "TIGER ORLANDO SOUTH LLC",
+    "mailing_address": "13024 BALLANTYNE CORPORATE PL, CHARLOTTE, NC 28277-2113",
+    "owner_phone": "",
+    "owner_confidence": "High",
+    "owner_evidence": "Retrieved from ATTOM property records",
+    "ownership_since": "2013-09-27",
+    "ownership_length_years": 13,
+    "attom_year_built": 2008,
+    "is_older_than_20_years": "No",
+    "room_count": "121",
+    "price_tier": "",
+    "signals": {
+      "review_decline": false,
+      "review_rating_delta": 0,
+      "review_volume_decline": false,
+      "complaint_increase": false,
+      "sentiment_decline": false,
+      "sentiment_trend": "Improving",
+      "review_activity_trend": "Increasing",
+      "positive_reviews_recent": 5,
+      "negative_reviews_recent": 3,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "renovation_needed": false,
+      "old_property": false,
+      "physical_condition_score": 0,
+      "franchise_loss": false,
+      "former_brand": "",
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "brand_status": "NONE",
+      "cmbs_watchlist": false,
+      "cmbs_special_servicing": false,
+      "cmbs_delinquent": false,
+      "long_term_owner": true,
+      "ownership_length_years": 13,
+      "room_count": "121",
+      "distress_score": 6
+    },
+    "review_themes": {
+      "staff": 60.0,
+      "maintenance": 10.0,
+      "cleanliness": 30.0
+    },
+    "llm_analysis": {
+      "distress_probability": 0.65,
+      "seller_fatigue_probability": 0.7,
+      "opportunity_score": 55,
+      "llm_star_rating": 2.8,
+      "top_distress_signals": "Low rating of 3.2 with moderate review volume, recurring negative guest comments about smell, rude staff, and stained rooms, increasing complaint rate, and long-term ownership of 13 years.",
+      "investment_thesis": "This Extended Stay America property shows moderate distress characterized by low guest satisfaction and operational challenges despite stable physical condition and no immediate renovation needs. The long-term ownership suggests potential seller fatigue, creating an opportunity for operational improvements or repositioning to enhance value.",
+      "recommended_acquisition_strategy": "Operational Turnaround",
+      "review_summary": "Guests report recurring issues with unpleasant odors, rude service, and stained rooms, indicating operational and cleanliness challenges. While there are no significant renovation concerns, the property experiences moderate negative feedback. Overall guest sentiment is improving with increasing review activity, suggesting potential for recovery with focused management improvements.",
+      "recommended_action": "Operational Turnaround",
+      "confidence": "LOW",
+      "distress_summary": ""
+    },
+    "final_lead_score": 51.4,
+    "entity": {
+      "hotel_name": "Extended Stay America Select Suites- Orlando - South",
+      "address": "10401 S John Young Pkwy, Orlando, FL 32837, USA",
+      "place_id": "ChIJ6Zacr-R954gRd1HiL2o6NME",
+      "latitude": null,
+      "longitude": null,
+      "rating": 3.2,
+      "user_rating_count": 218,
+      "business_status": "OPERATIONAL",
+      "google_maps_url": "https://maps.google.com/?cid=13921816575853351287&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+      "reviews": [
+        {
+          "name": "places/ChIJ6Zacr-R954gRd1HiL2o6NME/reviews/Ci9DQUlRQUNvZENodHljRjlvT2sxQ1pXeFVVMlZrYUU1cVJteEthR05FVkc1b2IwRRAB",
+          "relativePublishTimeDescription": "a month ago",
+          "rating": 5,
+          "text": {
+            "text": "I stayed here overnight last month and forgot a bag of mine along with other belongings. At first, I didn’t even know I had left it there, and I didn’t figure it out until over a week later. Past their 3 day policy for holding forgotten items. Luckily for me, they’re awesome and when I called them, they knew exactly who I was and had been holding my stuff for a little bit longer in case I called them back. I was able to come the next day and grab all my stuff, and I just wanted to thank the staff again for their courtesy! Great customer service!",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "I stayed here overnight last month and forgot a bag of mine along with other belongings. At first, I didn’t even know I had left it there, and I didn’t figure it out until over a week later. Past their 3 day policy for holding forgotten items. Luckily for me, they’re awesome and when I called them, they knew exactly who I was and had been holding my stuff for a little bit longer in case I called them back. I was able to come the next day and grab all my stuff, and I just wanted to thank the staff again for their courtesy! Great customer service!",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Adam Younger",
+            "uri": "https://www.google.com/maps/contrib/106496649142804752789/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjX3BfHlUR8Sol3qnOWXMOAyKiDDuNKqt7xakHsK5DAcTmkfsu0C=s128-c0x00000000-cc-rp-mo-ba2"
+          },
+          "publishTime": "2026-05-17T19:40:21.537162155Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2sxQ1pXeFVVMlZrYUU1cVJteEthR05FVkc1b2IwRRAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2sxQ1pXeFVVMlZrYUU1cVJteEthR05FVkc1b2IwRRAB!2m1!1s0x88e77de4af9c96e9:0xc1343a6a2fe25177"
+        },
+        {
+          "name": "places/ChIJ6Zacr-R954gRd1HiL2o6NME/reviews/Ci9DQUlRQUNvZENodHljRjlvT25kVVNrUTJWVTlEUWxoZk4wSktiRmd5V1RSUFMzYxAB",
+          "relativePublishTimeDescription": "3 months ago",
+          "rating": 1,
+          "text": {
+            "text": "This hotel is absolutely horrible. There is a terrible smell throughout the entire hotel. The elevator is disgusting, and the room smells awful. The toilet was stained as if it hadn’t been properly cleaned, there was hair stuck to the bathtub, and the refrigerator had technical issues.\n\nOn top of that, the staff was extremely rude, especially Kenny, who handled our problems with complete ignorance and disrespect.\n\nI will never stay at this hotel again and I would never recommend it to anyone. Even one star is too much for this dump.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "This hotel is absolutely horrible. There is a terrible smell throughout the entire hotel. The elevator is disgusting, and the room smells awful. The toilet was stained as if it hadn’t been properly cleaned, there was hair stuck to the bathtub, and the refrigerator had technical issues.\n\nOn top of that, the staff was extremely rude, especially Kenny, who handled our problems with complete ignorance and disrespect.\n\nI will never stay at this hotel again and I would never recommend it to anyone. Even one star is too much for this dump.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "kevynho",
+            "uri": "https://www.google.com/maps/contrib/103708343433449471045/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXFkfy0mLxgaieWbLKHD0-Bg5B13I_sPxBpp8LQ1F3mCzRHa0rr=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2026-02-25T15:05:29.675557018Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25kVVNrUTJWVTlEUWxoZk4wSktiRmd5V1RSUFMzYxAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25kVVNrUTJWVTlEUWxoZk4wSktiRmd5V1RSUFMzYxAB!2m1!1s0x88e77de4af9c96e9:0xc1343a6a2fe25177"
+        },
+        {
+          "name": "places/ChIJ6Zacr-R954gRd1HiL2o6NME/reviews/Ci9DQUlRQUNvZENodHljRjlvT2sxU05WaEZlVVZ3ZUZZMFJDMVBibTFVY3padGIwRRAB",
+          "relativePublishTimeDescription": "a month ago",
+          "rating": 5,
+          "text": {
+            "text": "Love the staff! Tracey and Rose at the front desk are actually the nicest people in the world and they really take care of this place and their guests! The hotel room is also clean, quiet and cozy and really has a ‘home’ quality. Thanks for all you guys do! ♥️",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Love the staff! Tracey and Rose at the front desk are actually the nicest people in the world and they really take care of this place and their guests! The hotel room is also clean, quiet and cozy and really has a ‘home’ quality. Thanks for all you guys do! ♥️",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "K",
+            "uri": "https://www.google.com/maps/contrib/110785300085039733570/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWQxGawh7qfvAMEJMRHnO6YvdB10bZsaijvoKGpZ6keinnwKFqspA=s128-c0x00000000-cc-rp-mo-ba3"
+          },
+          "publishTime": "2026-05-05T22:42:59.322246148Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2sxU05WaEZlVVZ3ZUZZMFJDMVBibTFVY3padGIwRRAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2sxU05WaEZlVVZ3ZUZZMFJDMVBibTFVY3padGIwRRAB!2m1!1s0x88e77de4af9c96e9:0xc1343a6a2fe25177"
+        },
+        {
+          "name": "places/ChIJ6Zacr-R954gRd1HiL2o6NME/reviews/Ci9DQUlRQUNvZENodHljRjlvT2s5U01HdFpMVjlQZEdsbE9YTmFiR00wVVV4eVgzYxAB",
+          "relativePublishTimeDescription": "3 months ago",
+          "rating": 1,
+          "text": {
+            "text": "We only stayed here because our flight was canceled and everything else nearby was booked. Even for $83, this place was disgusting.\n\nThe second we walked into the room it smelled like urine. The elevator smelled just as bad. When we checked the bed there were black curly hairs not only on top of the bedding but under the covers. There were also black curly hairs in the shower and bugs crawling around (photos attached).\n\nThere are absolutely no excuses for a room to be this unclean.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "We only stayed here because our flight was canceled and everything else nearby was booked. Even for $83, this place was disgusting.\n\nThe second we walked into the room it smelled like urine. The elevator smelled just as bad. When we checked the bed there were black curly hairs not only on top of the bedding but under the covers. There were also black curly hairs in the shower and bugs crawling around (photos attached).\n\nThere are absolutely no excuses for a room to be this unclean.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Lauren Hickey",
+            "uri": "https://www.google.com/maps/contrib/109926092069161310499/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLecwIY2_NuT_Ym9QVtVgW1slbEdjsdMNLeaNUWxBCN6ucgtA=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2026-03-16T20:43:27.009858217Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2s5U01HdFpMVjlQZEdsbE9YTmFiR00wVVV4eVgzYxAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2s5U01HdFpMVjlQZEdsbE9YTmFiR00wVVV4eVgzYxAB!2m1!1s0x88e77de4af9c96e9:0xc1343a6a2fe25177"
+        },
+        {
+          "name": "places/ChIJ6Zacr-R954gRd1HiL2o6NME/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pFMlpuSldZMFV6TWtObVNFcERiVkF5ZFZkYVlWRRAB",
+          "relativePublishTimeDescription": "2 months ago",
+          "rating": 3,
+          "text": {
+            "text": "Not sure if these rooms are thoroughly cleaned after pet owners stay. Allergies were pretty bad, so I know a dog was in that room recently. The pillows are atrocious, bring your own. There were only 3 pillows for two people. 😞",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Not sure if these rooms are thoroughly cleaned after pet owners stay. Allergies were pretty bad, so I know a dog was in that room recently. The pillows are atrocious, bring your own. There were only 3 pillows for two people. 😞",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Matthew August",
+            "uri": "https://www.google.com/maps/contrib/108034841114179944929/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXAZO9Ga0y-3PSKLvG_YBHK9kFPRPxqPs-zSBK4Y02-12Dew-gK=s128-c0x00000000-cc-rp-mo-ba5"
+          },
+          "publishTime": "2026-04-01T10:11:46.316302004Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pFMlpuSldZMFV6TWtObVNFcERiVkF5ZFZkYVlWRRAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pFMlpuSldZMFV6TWtObVNFcERiVkF5ZFZkYVlWRRAB!2m1!1s0x88e77de4af9c96e9:0xc1343a6a2fe25177"
+        }
+      ],
+      "signals": {
+        "review_decline": false,
+        "review_rating_delta": 0,
+        "review_volume_decline": false,
+        "complaint_increase": false,
+        "sentiment_decline": false,
+        "sentiment_trend": "Improving",
+        "review_activity_trend": "Increasing",
+        "positive_reviews_recent": 5,
+        "negative_reviews_recent": 3,
+        "positive_reviews_prior": 0,
+        "negative_reviews_prior": 0,
+        "renovation_needed": false,
+        "old_property": false,
+        "physical_condition_score": 0,
+        "franchise_loss": false,
+        "former_brand": "",
+        "franchise_affiliated": false,
+        "current_brand": "",
+        "brand_status": "NONE",
+        "cmbs_watchlist": false,
+        "cmbs_special_servicing": false,
+        "cmbs_delinquent": false,
+        "long_term_owner": true,
+        "ownership_length_years": 13,
+        "room_count": "121",
+        "distress_score": 6
+      },
+      "review_themes": {
+        "staff": 60.0,
+        "maintenance": 10.0,
+        "cleanliness": 30.0
+      },
+      "heuristic_scores": {
+        "distress_score": 6,
+        "distress_reasons": [
+          "Low rating: 3.2",
+          "Moderate-to-low rating with enough reviews: 218",
+          "Negative review signal: smell",
+          "Negative review signal: rude",
+          "Negative review signal: stained"
+        ],
+        "review_trend_score": 0,
+        "review_volume_recent": 5,
+        "review_volume_prior": 0,
+        "review_volume_change_pct": 100.0,
+        "avg_rating_recent": 3.0,
+        "avg_rating_prior": 0.0,
+        "review_rating_delta": 0,
+        "complaint_rate_recent": 0.4,
+        "complaint_rate_prior": 0.0,
+        "review_complaint_delta": 0.4,
+        "year_built": "",
+        "property_age": "",
+        "renovation_signal_rate": 0.2,
+        "renovation_needed": false,
+        "physical_condition_score": 0,
+        "positive_reviews_recent": 5,
+        "negative_reviews_recent": 3,
+        "positive_reviews_prior": 0,
+        "negative_reviews_prior": 0,
+        "sentiment_delta": -2,
+        "sentiment_trend": "Improving",
+        "review_activity_trend": "Increasing"
+      },
+      "llm_analysis": {
+        "distress_probability": 0.65,
+        "seller_fatigue_probability": 0.7,
+        "opportunity_score": 55,
+        "llm_star_rating": 2.8,
+        "top_distress_signals": "Low rating of 3.2 with moderate review volume, recurring negative guest comments about smell, rude staff, and stained rooms, increasing complaint rate, and long-term ownership of 13 years.",
+        "investment_thesis": "This Extended Stay America property shows moderate distress characterized by low guest satisfaction and operational challenges despite stable physical condition and no immediate renovation needs. The long-term ownership suggests potential seller fatigue, creating an opportunity for operational improvements or repositioning to enhance value.",
+        "recommended_acquisition_strategy": "Operational Turnaround",
+        "review_summary": "Guests report recurring issues with unpleasant odors, rude service, and stained rooms, indicating operational and cleanliness challenges. While there are no significant renovation concerns, the property experiences moderate negative feedback. Overall guest sentiment is improving with increasing review activity, suggesting potential for recovery with focused management improvements.",
+        "recommended_action": "Operational Turnaround",
+        "confidence": "LOW",
+        "distress_summary": ""
+      },
+      "owner_data": {
+        "owner_name": "TIGER ORLANDO SOUTH LLC",
+        "owner_company": "TIGER ORLANDO SOUTH LLC",
+        "mailing_address": "13024 BALLANTYNE CORPORATE PL, CHARLOTTE, NC 28277-2113",
+        "owner_phone": "",
+        "ownership_since": "2013-09-27",
+        "ownership_length_years": 13,
+        "attom_year_built": 2008,
+        "is_older_than_20_years": "No",
+        "room_count": "121"
+      },
+      "cmbs_data": {},
+      "franchise_data": {
+        "franchise_affiliated": false,
+        "current_brand": "",
+        "former_brand": "",
+        "brand_status": "NONE",
+        "franchise_confidence": "Low"
+      },
+      "source_location": "Kissimmee, Florida",
+      "radius_miles": 5
+    },
+    "lead_reason": "Long-term ownership",
+    "created_at": "2026-06-24T15:49:24.422308",
+    "place_id": "ChIJ6Zacr-R954gRd1HiL2o6NME",
+    "feedback_rule_applied": "",
+    "feedback_penalty": 0,
+    "rank": 1,
+    "llm_distress_probability": 0.65,
+    "llm_seller_fatigue_probability": 0.7,
+    "llm_opportunity_score": 55,
+    "llm_confidence": "LOW",
+    "llm_top_distress_signals": "L | o | w |   | r | a | t | i | n | g |   | o | f |   | 3 | . | 2 |   | w | i | t | h |   | m | o | d | e | r | a | t | e |   | r | e | v | i | e | w |   | v | o | l | u | m | e | , |   | r | e | c | u | r | r | i | n | g |   | n | e | g | a | t | i | v | e |   | g | u | e | s | t |   | c | o | m | m | e | n | t | s |   | a | b | o | u | t |   | s | m | e | l | l | , |   | r | u | d | e |   | s | t | a | f | f | , |   | a | n | d |   | s | t | a | i | n | e | d |   | r | o | o | m | s | , |   | i | n | c | r | e | a | s | i | n | g |   | c | o | m | p | l | a | i | n | t |   | r | a | t | e | , |   | a | n | d |   | l | o | n | g | - | t | e | r | m |   | o | w | n | e | r | s | h | i | p |   | o | f |   | 1 | 3 |   | y | e | a | r | s | .",
+    "llm_investment_thesis": "This Extended Stay America property shows moderate distress characterized by low guest satisfaction and operational challenges despite stable physical condition and no immediate renovation needs. The long-term ownership suggests potential seller fatigue, creating an opportunity for operational improvements or repositioning to enhance value.",
+    "llm_recommended_action": "Operational Turnaround",
+    "llm_distress_summary": "",
+    "llm_review_summary": "Guests report recurring issues with unpleasant odors, rude service, and stained rooms, indicating operational and cleanliness challenges. While there are no significant renovation concerns, the property experiences moderate negative feedback. Overall guest sentiment is improving with increasing review activity, suggesting potential for recovery with focused management improvements.",
+    "suppress_digest": true,
+    "last_score": 51.4,
+    "last_resurfaced": null
+  }
+]

@@ -1,26 +1,29 @@
 #agent-1/src/filters/hotel_filter.py
-BAD_NAME_KEYWORDS = [
-    "llc",
-    "llp",
-    "inc",
-    "corporation",
-    "holdings",
-    "properties"
+HOTEL_KEYWORDS = [
+    "hotel",
+    "inn",
+    "motel",
+    "resort",
+    "suites",
+    "lodge"
 ]
 
-def is_valid_hotel(place):
-    name = place.get("name", "").strip().lower()
+EXCLUDED_KEYWORDS = [
+    "consulting",
+    "meeting",
+    "conference",
+    "spa",
+    "travel agency",
+    "receptive",
+]
 
+def is_valid_hotel(name):
     if not name:
         return False
-
-    # remove arabic / garbage names
-    if len(name.split()) == 1:
+    
+    name_lower = name.lower()
+    if any(x in name_lower for x in EXCLUDED_KEYWORDS):
         return False
 
-    # remove company entities
-    for keyword in BAD_NAME_KEYWORDS:
-        if keyword in name:
-            return False
+    return any(x in name_lower for x in HOTEL_KEYWORDS)
 
-    return True
