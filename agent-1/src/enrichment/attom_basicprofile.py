@@ -76,7 +76,7 @@ def get_basic_profile(address):
 
     except Exception as e:
         print(
-            f"[ATTOM BASICPROFILE ERROR] {e}",
+            f"[ATTOM] No property match found for: {address}, {address2}",
             flush=True
         )
         return {}

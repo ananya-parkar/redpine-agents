@@ -2,8 +2,9 @@
 import time
 from datetime import datetime
 
-from src.core.config import INPUT_FILE, RUNS_DIR, GOOGLE_MAPS_API_KEY
+from src.core.config import INPUT_FILE, INPUT_FOLDER, RUNS_DIR, GOOGLE_MAPS_API_KEY
 from src.utils.io_utils import parse_locations, save_json
+from src.input.search_request import load_search_request
 from src.core.pipeline import process_location
 from src.utils.writers import save_excel_files
 from src.utils.exporters import save_ai_entities
@@ -14,10 +15,11 @@ from src.reporting.html.html_report import generate_html_report
 from src.storage.postgres_storage import insert_priority_leads
 from src.reporting.dashboard.dashboard_export import export_dashboard
 from src.reporting.email.email_digest import send_run_digest
-from src.storage.postgres_storage import get_feedback_patterns
+from src.storage.postgres_storage import get_feedback_patterns, get_feedback_examples
 from src.analysis.feedback_learning import apply_feedback_penalties, build_feedback_rules
 from src.feedback.dashboard_sync import sync_dashboard_feedback
-from src.storage.feedback_actions import create_feedback_action, action_already_exists
+from src.feedback.feedback_recommendation_engine import generate_feedback_recommendation
+from src.storage.feedback_actions import create_feedback_action, get_existing_trigger_count
 from src.input_validation import validate_inputs
 
 def main():
@@ -27,28 +29,34 @@ def main():
         raise ValueError("Please set GOOGLE_MAPS_API_KEY in your environment.")
     
     print(f"[INFO] Reading input file: {INPUT_FILE}", flush=True)
-    locations = parse_locations(INPUT_FILE)
-    print(f"[INFO] Loaded {len(locations)} location(s) from input", flush=True)
+    request = load_search_request(INPUT_FILE)
+    location = request["location"]
+    radius_miles = request["radius_miles"]
+    print(f"[INFO] Loaded search request: {location}", flush=True)
 
-    for item in locations:
-        validate_inputs(item)
+    validate_inputs({
+        "location": location,
+        "radius_miles": radius_miles
+    })
     print("[VALIDATION] Input validation passed", flush=True)
 
-    geocode_results = []
-    nearby_results = []
-    details_results = []
-    all_rows = []
+    result = process_location(
+    item={
+            "location": request["location"],
+            "radius_miles": request["radius_miles"],
+            "min_rooms": request["min_rooms"],
+            "max_rooms": request["max_rooms"],
+            "year_built_range": request["year_built_range"],
+            "price_tier": request["price_tier"]
+        },
+        loc_index=1,
+        total_locations=1
+    )
 
-    for loc_index, item in enumerate(locations, start=1):
-        result = process_location(item=item, loc_index=loc_index, total_locations=len(locations))
-
-        geocode_results.extend(result["geocode_results"])
-        nearby_results.extend(result["nearby_results"])
-        details_results.extend(result["details_results"])
-        all_rows.extend(result["rows"])
-
-        print("[WAIT] Sleeping for 1 second before next location...", flush=True)
-        time.sleep(1)
+    geocode_results = result["geocode_results"]
+    nearby_results = result["nearby_results"]
+    details_results = result["details_results"]
+    all_rows = result["rows"]
 
     # all_rows = remove_existing_leads(all_rows)
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
@@ -88,6 +96,9 @@ def main():
     save_excel_files(run_dir, all_rows)
     print(f"\n[DONE] Saved {len(all_rows)} hotel row(s) to {run_dir}", flush=True)
 
+    print(type(geocode_results[0]))
+    print(geocode_results[0])
+
     save_json(geocode_results, run_dir / "geocode_results.json")
     print("[OUTPUT] Saved geocode_results.json", flush=True)
 
@@ -108,13 +119,11 @@ def main():
 
     for reason, count in patterns:
         if count >= 3:
-            if not action_already_exists(reason):
-
-                create_feedback_action(
-                    reason=reason,
-                    count=count,
-                    action=f"Applied scoring rule for {reason}"
-                )
+            existing_trigger_count = get_existing_trigger_count(reason)
+            if count > existing_trigger_count:
+                examples = get_feedback_examples(reason)
+                recommendation = (generate_feedback_recommendation(reason, examples))
+                create_feedback_action(reason=reason, count=count, action=recommendation["pipeline_fix"], recommendation_json=recommendation)
 
                 print(
                     f"[FEEDBACK ACTION] "
@@ -154,7 +163,29 @@ def main():
 
     reports_dir = run_dir / "reports"
     reports_dir.mkdir(exist_ok=True)
-    dashboard_file = export_dashboard(reports_dir)
+    print("\n===== CURRENT RUN =====")
+
+    print(
+        "Priority rows:",
+        len(priority_rows)
+    )
+
+    for row in priority_rows[:20]:
+        print(
+            row.get("hotel_name"),
+            row.get("final_lead_score"),
+            row.get("suppress_digest")
+        )
+        
+    print("\n===== SAMPLE ROW =====")
+    print(priority_rows[0].keys())
+
+    print("owner_name =", priority_rows[0].get("owner_name"))
+    print("ownership_length_years =", priority_rows[0].get("ownership_length_years"))
+    print("signals =", priority_rows[0].get("signals"))
+    print("lead_reason =", priority_rows[0].get("lead_reason"))
+    print("llm_top_distress_signals =", priority_rows[0].get("llm_top_distress_signals"))
+    dashboard_file = export_dashboard(reports_dir, all_rows, search_area=request["location"])
     print(f"[OUTPUT] Dashboard exported to: {dashboard_file}", flush=True)
 
     for row in priority_rows:
@@ -164,6 +195,29 @@ def main():
             "is_pursuing=", row.get("is_pursuing"),
             "score_change=", row.get("score_change")
         )
+
+    print("\n===== EMAIL DEBUG =====")
+
+    for row in priority_rows:
+        print(
+            row.get("hotel_name"),
+            "suppress_digest=",
+            row.get("suppress_digest")
+        )
+
+    print(
+        "TOTAL PRIORITY:",
+        len(priority_rows)
+    )
+
+    print(
+        "TOTAL UNSUPPRESSED:",
+        len([
+            r for r in priority_rows
+            if not r.get("suppress_digest")
+        ])
+    )
+    
     send_run_digest(
         priority_rows=priority_rows,
         dashboard_file=dashboard_file,

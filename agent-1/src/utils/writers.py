@@ -52,12 +52,12 @@ PRIORITY_EXTRA_FIELDNAMES = [
     "franchise_confidence",
     "franchise_evidence",
 
-    "cmbs_loan_status",
-    "cmbs_delinquency_flag",
-    "cmbs_watchlist_flag",
-    "cmbs_special_servicing_flag",
-    "cmbs_confidence",
-    "cmbs_evidence",
+    # "cmbs_loan_status",
+    # "cmbs_delinquency_flag",
+    # "cmbs_watchlist_flag",
+    # "cmbs_special_servicing_flag",
+    # "cmbs_confidence",
+    # "cmbs_evidence",
 
     "owner_name",
     "owner_company",
@@ -69,6 +69,7 @@ PRIORITY_EXTRA_FIELDNAMES = [
     "ownership_length_years",
     "attom_year_built",
     "is_older_than_20_years",
+    "room_count",
 ]
 
 def write_excel(path, rows, fieldnames):
@@ -83,13 +84,18 @@ def write_excel(path, rows, fieldnames):
     print(f"\n[OUTPUT] Saved Excel: {path}", flush=True)
 
 def save_excel_files(run_dir, all_rows):
+    
+
     for row in all_rows:
         llm = row.get("llm_analysis", {})
         row["llm_distress_probability"] = llm.get("distress_probability")
         row["llm_seller_fatigue_probability"] = llm.get("seller_fatigue_probability")
         row["llm_opportunity_score"] = llm.get("opportunity_score")
         row["llm_confidence"] = llm.get("confidence")
-        row["llm_top_distress_signals"] = " | ".join(llm.get("top_distress_signals", []))
+        signals = llm.get("top_distress_signals", "")
+        if isinstance(signals, list):
+            signals = " | ".join(signals)
+        row["llm_top_distress_signals"] = signals
         row["llm_investment_thesis"] = llm.get("investment_thesis")
         row["llm_recommended_action"] = llm.get("recommended_action")
         row["llm_distress_summary"] = llm.get("distress_summary")

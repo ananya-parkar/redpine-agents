@@ -39,19 +39,22 @@ def insert_priority_leads(rows):
         llm = row.get("llm_analysis", {})
         print(
                 row.get("hotel_name"),
-                row.get("cmbs_watchlist_flag"),
-                row.get("cmbs_delinquency_flag"),
-                row.get("cmbs_special_servicing_flag"),
+                # row.get("cmbs_watchlist_flag"),
+                # row.get("cmbs_delinquency_flag"),
+                # row.get("cmbs_special_servicing_flag"),
             )
         
         cur.execute(
         """
-        SELECT final_lead_score,
+        SELECT
+            final_lead_score,
             lead_status
         FROM hotel_leads
-        WHERE lead_key=%s
+        WHERE place_id = %s
+        OR lead_key = %s
+        LIMIT 1
         """,
-        (build_lead_key(row),)
+        (row.get("place_id"), build_lead_key(row))
         )
 
         existing = cur.fetchone()
@@ -83,6 +86,19 @@ def insert_priority_leads(rows):
             if score_delta < 10:
                 row["suppress_digest"] = True
 
+            print(
+                "[DIGEST CHECK]",
+                row.get("hotel_name"),
+                "old_score=",
+                old_score,
+                "new_score=",
+                row.get("final_lead_score"),
+                "delta=",
+                score_delta,
+                "suppressed=",
+                row.get("suppress_digest")
+            )
+
             if not row["suppress_digest"]:
                 row["last_resurfaced"] = datetime.utcnow()
             
@@ -102,6 +118,7 @@ def insert_priority_leads(rows):
         cur.execute(
         """
         INSERT INTO hotel_leads (
+            place_id,
             hotel_name,
             address,
             lead_key,
@@ -142,9 +159,9 @@ def insert_priority_leads(rows):
             %s,%s,%s,%s,%s,%s,%s,
             %s,%s,%s,%s,%s,%s,%s,
             %s,%s,%s,%s,%s,%s,%s,
-            %s,%s,%s
+            %s,%s,%s,%s
         )
-        ON CONFLICT(lead_key)
+        ON CONFLICT(place_id)
         DO UPDATE SET
             final_lead_score = EXCLUDED.final_lead_score,
             opportunity_score = EXCLUDED.opportunity_score,
@@ -177,6 +194,7 @@ def insert_priority_leads(rows):
             mailing_address = EXCLUDED.mailing_address
         """,
         (
+            row.get("place_id"),
             row.get("hotel_name"),
             row.get("address"),
             build_lead_key(row),
@@ -266,6 +284,7 @@ def get_existing_leads():
     cur.execute(
         """
         SELECT
+            place_id,
             lead_key,
             final_lead_score,
             lead_status
@@ -278,13 +297,21 @@ def get_existing_leads():
     cur.close()
     conn.close()
 
-    return {
-        lead_key: {
+    existing = {}
+
+    for place_id, lead_key, score, status in rows:
+
+        row_data = {
             "score": score,
             "status": status
         }
-        for lead_key, score, status in rows
-    }
+
+        if place_id:
+            existing[place_id] = row_data
+
+        existing[lead_key] = row_data
+
+    return existing
 
 def update_feedback(
     hotel_name,
@@ -329,10 +356,13 @@ def get_feedback_patterns():
         SELECT
             feedback_reason,
             COUNT(*)
-            FROM hotel_leads
-            WHERE lead_status='BAD_DATA'
-            GROUP BY feedback_reason
-            HAVING COUNT(*) >= 3
+        FROM hotel_leads
+        WHERE lead_status='BAD_DATA'
+        AND feedback_reason IS NOT NULL
+        AND feedback_reason <> ''
+        GROUP BY feedback_reason
+        HAVING COUNT(*) >= 3
+
         """
     )
 
@@ -389,6 +419,105 @@ def enforce_pii_retention():
         f"[PII RETENTION] Cleaned PII for {cleaned} leads",
         flush=True
     )
+
+def get_feedback_examples(reason, limit=10):
+    conn = get_connection()
+    cur = conn.cursor()
+
+    cur.execute(
+        """
+        SELECT
+            hotel_name,
+            final_lead_score,
+            owner_name,
+            ownership_length_years,
+            room_count,
+            feedback_reason,
+            lead_status
+        FROM hotel_leads
+        WHERE feedback_reason = %s
+        ORDER BY first_surfaced DESC
+        LIMIT %s
+        """,
+        (reason, limit)
+    )
+
+    rows = cur.fetchall()
+
+    columns = [
+        "hotel_name",
+        "final_lead_score",
+        "owner_name",
+        "ownership_length_years",
+        "room_count",
+        "feedback_reason",
+        "lead_status"
+    ]
+
+    result = [dict(zip(columns, row)) for row in rows]
+
+    cur.close()
+    conn.close()
+
+    return result
+
+def get_feedback_recommendations():
+    conn = get_connection()
+    cur = conn.cursor()
+
+    cur.execute(
+        """
+        SELECT
+            feedback_reason,
+            recommendation_json
+        FROM feedback_actions
+        """
+    )
+
+    rows = cur.fetchall()
+
+    cur.close()
+    conn.close()
+
+    return [
+        {"feedback_reason": row[0], "recommendation_json": row[1]}
+        for row in rows
+    ]
+
+def get_feedback_learning_rows():
+    conn = get_connection()
+    cur = conn.cursor()
+
+    cur.execute(
+        """
+        SELECT
+            feedback_reason,
+            trigger_count,
+            recommendation_json->>'pipeline_fix' AS pipeline_fix,
+            recommendation_json->>'prompt_fix' AS prompt_fix,
+            recommendation_json->>'scoring_fix' AS scoring_fix,
+            COALESCE(status,'ACTIVE') AS status
+        FROM feedback_actions
+        ORDER BY trigger_count DESC
+        """
+    )
+
+    rows = cur.fetchall()
+    columns = [
+        "feedback_reason",
+        "trigger_count",
+        "pipeline_fix",
+        "prompt_fix",
+        "scoring_fix",
+        "status"
+    ]
+
+    results = [dict(zip(columns, row)) for row in rows]
+
+    cur.close()
+    conn.close()
+
+    return results
 
 if __name__ == "__main__":
     conn = get_connection()

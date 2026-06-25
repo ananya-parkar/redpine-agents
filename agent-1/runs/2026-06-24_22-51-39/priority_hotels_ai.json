@@ -1,0 +1,1318 @@
+[
+  {
+    "search_location": "Dallas, TX",
+    "radius_miles": 20,
+    "hotel_name": "Magnolia Dallas Downtown",
+    "address": "1401 Commerce St, Dallas, TX 75201, USA",
+    "rating": 3.9,
+    "user_rating_count": 2929,
+    "business_status": "OPERATIONAL",
+    "distress_score": 9,
+    "distress_reasons": "Moderate-to-low rating with enough reviews: 2929 | Negative review signal: broken | Negative review signal: refund | Negative review signal: noise | Negative review signal: disappointing | Complaint rate increase: 0.75 | Renovation signals in reviews: 80.0%",
+    "review_trend_score": 2,
+    "review_volume_recent": 4,
+    "review_volume_prior": 1,
+    "review_volume_change_pct": 300.0,
+    "avg_rating_recent": 2.5,
+    "avg_rating_prior": 1.0,
+    "review_rating_delta": 0,
+    "complaint_rate_recent": 0.75,
+    "complaint_rate_prior": 0.0,
+    "review_complaint_delta": 0.75,
+    "year_built": "",
+    "property_age": "",
+    "renovation_signal_rate": 0.8,
+    "renovation_needed": true,
+    "physical_condition_score": 2,
+    "google_maps_url": "https://maps.google.com/?cid=12179770780704989290&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "source_provenance": "Google Places | ATTOM",
+    "franchise_affiliated": false,
+    "current_brand": "",
+    "former_brand": "",
+    "brand_status": "NONE",
+    "franchise_confidence": "Low",
+    "franchise_evidence": "No franchise affiliation detected",
+    "owner_name": "SUPREME BRIGHT DALLAS IV LLC",
+    "owner_company": "SUPREME BRIGHT DALLAS IV LLC",
+    "mailing_address": "1785 STATE HIGHWAY 26, GRAPEVINE, TX 76051-2217",
+    "owner_phone": "",
+    "owner_confidence": "High",
+    "owner_evidence": "Retrieved from ATTOM property records",
+    "ownership_since": "",
+    "ownership_length_years": 0,
+    "attom_year_built": 1923,
+    "is_older_than_20_years": "Yes",
+    "room_count": "325",
+    "price_tier": "",
+    "signals": {
+      "review_decline": false,
+      "review_rating_delta": 0,
+      "review_volume_decline": false,
+      "complaint_increase": true,
+      "sentiment_decline": false,
+      "sentiment_trend": "Stable",
+      "review_activity_trend": "Increasing",
+      "positive_reviews_recent": 1,
+      "negative_reviews_recent": 2,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "renovation_needed": true,
+      "old_property": true,
+      "physical_condition_score": 2,
+      "franchise_loss": false,
+      "former_brand": "",
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "brand_status": "NONE",
+      "cmbs_watchlist": false,
+      "cmbs_special_servicing": false,
+      "cmbs_delinquent": false,
+      "long_term_owner": false,
+      "ownership_length_years": 0,
+      "room_count": "325",
+      "distress_score": 9
+    },
+    "review_themes": {
+      "staff": 30.0,
+      "maintenance": 50.0,
+      "noise": 20.0
+    },
+    "llm_analysis": {
+      "distress_probability": 0.85,
+      "seller_fatigue_probability": 0.3,
+      "opportunity_score": 65,
+      "llm_star_rating": 3.2,
+      "top_distress_signals": "Moderate-to-low rating with significant review volume, increased complaint rate, high renovation need, poor physical condition, and negative guest feedback on broken amenities, noise, and disappointing experiences.",
+      "investment_thesis": "Magnolia Dallas Downtown shows strong distress indicators including a low rating despite high review volume, rising complaints, and significant renovation needs. The property is aging with poor physical condition and lacks brand affiliation, suggesting repositioning potential through operational improvements and renovation. Moderate seller fatigue indicates some willingness to transact, making this a viable operational turnaround opportunity.",
+      "acquisition_strategy": "Operational Turnaround",
+      "review_summary": "Guests frequently complain about broken amenities, noise disturbances, and disappointing experiences. Operational concerns include increased complaints and service inconsistencies. Cleanliness issues are not prominently reported, but the property’s aging condition and high renovation signals indicate maintenance deficiencies. Overall guest sentiment remains stable but with increasing negative feedback, highlighting the need for targeted improvements to reverse the trend.",
+      "recommended_action": "Operational Turnaround",
+      "confidence": "LOW",
+      "distress_summary": ""
+    },
+    "final_lead_score": 72.6,
+    "entity": {
+      "hotel_name": "Magnolia Dallas Downtown",
+      "address": "1401 Commerce St, Dallas, TX 75201, USA",
+      "place_id": "ChIJEceT6RiZToYRamCabf48B6k",
+      "latitude": null,
+      "longitude": null,
+      "rating": 3.9,
+      "user_rating_count": 2929,
+      "business_status": "OPERATIONAL",
+      "google_maps_url": "https://maps.google.com/?cid=12179770780704989290&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+      "reviews": [
+        {
+          "name": "places/ChIJEceT6RiZToYRamCabf48B6k/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xocVNuQnlVbTFZTFVKeFNFOUtORUptYzBjMmVXYxAB",
+          "relativePublishTimeDescription": "3 weeks ago",
+          "rating": 2,
+          "text": {
+            "text": "As a native of Dallas, I needed to stay closer to the city for a conference and chose The Magnolia Hotel based off of the pictures and Expedia reviews. I checked in and checked out literally within 20 min, knowing I wouldn't receive a refund. The room was listed as a Deluxe Queen Room. Upon walking into the room I noticed how old everything was. The lampshade had a hole in it. The furniture was worn. No comforter on the bed, only sheets. I felt like I was in a motel and not a hotel. The front desk staff was very monotone and unapologetic. There was NO concern whatsoever when I clearly checked in and out in less than 30 min. That was disappointing. I understand being Historic, but this was horrible.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "As a native of Dallas, I needed to stay closer to the city for a conference and chose The Magnolia Hotel based off of the pictures and Expedia reviews. I checked in and checked out literally within 20 min, knowing I wouldn't receive a refund. The room was listed as a Deluxe Queen Room. Upon walking into the room I noticed how old everything was. The lampshade had a hole in it. The furniture was worn. No comforter on the bed, only sheets. I felt like I was in a motel and not a hotel. The front desk staff was very monotone and unapologetic. There was NO concern whatsoever when I clearly checked in and out in less than 30 min. That was disappointing. I understand being Historic, but this was horrible.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Shertial Bennett",
+            "uri": "https://www.google.com/maps/contrib/118368310021529152597/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJpucfRUQr3MxdUO3c60IiHPPPNAUAzQRBqPjZakt4Y---W7g=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2026-05-31T18:36:05.075728270Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xocVNuQnlVbTFZTFVKeFNFOUtORUptYzBjMmVXYxAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xocVNuQnlVbTFZTFVKeFNFOUtORUptYzBjMmVXYxAB!2m1!1s0x864e9918e993c711:0xa9073cfe6d9a606a"
+        },
+        {
+          "name": "places/ChIJEceT6RiZToYRamCabf48B6k/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pZemRrMVFUR2h0Vm1sUFlYVlBaRVIyVHpoUFIyYxAB",
+          "relativePublishTimeDescription": "a month ago",
+          "rating": 4,
+          "text": {
+            "text": "Our stay at Magnolia Hotel Dallas Downtown was very enjoyable overall. First, this is not a knock on the hotel itself, but downtown Dallas traffic is pretty horrible, so be prepared for that when arriving and leaving.\n\nThe hotel has a classic old-school feel that gives it a lot of character, and the old Mobil Oil décor throughout the property was a really nice touch. The staff was attentive, friendly, and helpful during our stay, which always makes a difference.\n\nThe rooms were comfortable, well-kept, and the bed was especially comfortable for a good night’s sleep. The room rate itself felt fair for the location and quality of the hotel, although the $50 per night parking charge seemed a bit high.\n\nThe location worked well for us since there were several very good restaurants nearby, and it provided a quick exit to the tollway the next morning. Overall, it was a comfortable stay with plenty of charm and a convenient downtown location.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Our stay at Magnolia Hotel Dallas Downtown was very enjoyable overall. First, this is not a knock on the hotel itself, but downtown Dallas traffic is pretty horrible, so be prepared for that when arriving and leaving.\n\nThe hotel has a classic old-school feel that gives it a lot of character, and the old Mobil Oil décor throughout the property was a really nice touch. The staff was attentive, friendly, and helpful during our stay, which always makes a difference.\n\nThe rooms were comfortable, well-kept, and the bed was especially comfortable for a good night’s sleep. The room rate itself felt fair for the location and quality of the hotel, although the $50 per night parking charge seemed a bit high.\n\nThe location worked well for us since there were several very good restaurants nearby, and it provided a quick exit to the tollway the next morning. Overall, it was a comfortable stay with plenty of charm and a convenient downtown location.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Terry Holtz",
+            "uri": "https://www.google.com/maps/contrib/113042070306992755280/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJA46ymroVcUsVFHj7FxNKaJAGIPkvP_00yDG3L5acNHvuFlA=s128-c0x00000000-cc-rp-mo-ba3"
+          },
+          "publishTime": "2026-05-08T18:18:59.517270810Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pZemRrMVFUR2h0Vm1sUFlYVlBaRVIyVHpoUFIyYxAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pZemRrMVFUR2h0Vm1sUFlYVlBaRVIyVHpoUFIyYxAB!2m1!1s0x864e9918e993c711:0xa9073cfe6d9a606a"
+        },
+        {
+          "name": "places/ChIJEceT6RiZToYRamCabf48B6k/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tKS2JqaFpWMEY1TVZWZlZrWnVUVk5pVlZOaGJYYxAB",
+          "relativePublishTimeDescription": "6 months ago",
+          "rating": 1,
+          "text": {
+            "text": "Mandatory single valet charge of $54. I didn’t have an issue with the charge, I have an issue when I’m walking back from Starbucks at 6am and I see the headlights on with someone inside. It was valet “taking my car to the off site garage a few blocks away.”\nI understand there are only like 10 spaces to park next to the building, but when half of them are empty at 6am and the owner isn’t notified to this first. Had it been two seconds later, I would have walked by to see my car gone and thought it was stolen. They literally asked for my number at the little valet booth during check in, seems sensible there’s a reason for this.\n\nThis incident made it hard to keep overlooking the outdated room/appliances. If the company can’t be bothered to offer any sort of onsite food,  put an ice machine on more than a single floor of a 21 story building, or contract a single valet fluent in English….  Clearly the guests experience is not high on the priority list.\n\nMy dogs bath water was yellow. Stepping in human urine on sidewalks can’t be avoided with the homeless presence on every block. It’s actually insulting that your carpet can’t be changed once in a decade.\n\nRecommend anywhere else if you want to feel even slightly valued as a $157/night guest.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Mandatory single valet charge of $54. I didn’t have an issue with the charge, I have an issue when I’m walking back from Starbucks at 6am and I see the headlights on with someone inside. It was valet “taking my car to the off site garage a few blocks away.”\nI understand there are only like 10 spaces to park next to the building, but when half of them are empty at 6am and the owner isn’t notified to this first. Had it been two seconds later, I would have walked by to see my car gone and thought it was stolen. They literally asked for my number at the little valet booth during check in, seems sensible there’s a reason for this.\n\nThis incident made it hard to keep overlooking the outdated room/appliances. If the company can’t be bothered to offer any sort of onsite food,  put an ice machine on more than a single floor of a 21 story building, or contract a single valet fluent in English….  Clearly the guests experience is not high on the priority list.\n\nMy dogs bath water was yellow. Stepping in human urine on sidewalks can’t be avoided with the homeless presence on every block. It’s actually insulting that your carpet can’t be changed once in a decade.\n\nRecommend anywhere else if you want to feel even slightly valued as a $157/night guest.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Xx C",
+            "uri": "https://www.google.com/maps/contrib/102516669893184084151/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWOzWoLM-ONco4B71dfLhICaXSTQRcUvptOY5kdoycVs5N2zF6t=s128-c0x00000000-cc-rp-mo-ba3"
+          },
+          "publishTime": "2025-12-23T20:57:50.772416531Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2tKS2JqaFpWMEY1TVZWZlZrWnVUVk5pVlZOaGJYYxAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tKS2JqaFpWMEY1TVZWZlZrWnVUVk5pVlZOaGJYYxAB!2m1!1s0x864e9918e993c711:0xa9073cfe6d9a606a"
+        },
+        {
+          "name": "places/ChIJEceT6RiZToYRamCabf48B6k/reviews/Ci9DQUlRQUNvZENodHljRjlvT25rMVgycDFlRGRJY1VGSmVuWlZkbTB4T0VwMWVHYxAB",
+          "relativePublishTimeDescription": "2 weeks ago",
+          "rating": 1,
+          "text": {
+            "text": "🚫Reasons you shouldn’t stay here🚫\n\n-Ac doesn’t work, we set it to 50 and still sweaty, felt like 80.😵\n\n-Bed is literally a rock and when I called for a foam topper or anything soft they said no, we went downstairs and were able to get another blanket which helped.🪨🛌\n\n-There was food wrappers under the mattress?? 🗑️\n\n-Shower was wired wrong so we thought there was no hot water until we figured out you have to turn it twice to get it too hot setting. 🥶🚿\n\n-shower was super rusty 💉\n\n-the shampoo and soap bottles were obviously refilled with water and shook. 😷\n\n-curtains were broken 🚫\n\n-couch had grease stains 🤢\n\n-floor had weird stains 🤢\n\n-It costs way too much for what you get. It seemed cheap online so we were ready for it to be bad (not this bad sheesh) but after all the random fees (destination fee???) it was 190 dollars save your back and time and pay a little extra to avoid this place.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "🚫Reasons you shouldn’t stay here🚫\n\n-Ac doesn’t work, we set it to 50 and still sweaty, felt like 80.😵\n\n-Bed is literally a rock and when I called for a foam topper or anything soft they said no, we went downstairs and were able to get another blanket which helped.🪨🛌\n\n-There was food wrappers under the mattress?? 🗑️\n\n-Shower was wired wrong so we thought there was no hot water until we figured out you have to turn it twice to get it too hot setting. 🥶🚿\n\n-shower was super rusty 💉\n\n-the shampoo and soap bottles were obviously refilled with water and shook. 😷\n\n-curtains were broken 🚫\n\n-couch had grease stains 🤢\n\n-floor had weird stains 🤢\n\n-It costs way too much for what you get. It seemed cheap online so we were ready for it to be bad (not this bad sheesh) but after all the random fees (destination fee???) it was 190 dollars save your back and time and pay a little extra to avoid this place.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Adel Leyba",
+            "uri": "https://www.google.com/maps/contrib/108579896745283392399/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWLBpyYzY6hxjFZjuNK1IZTU0x2msltwor3Gi8mtz86WWmqkqRe=s128-c0x00000000-cc-rp-mo-ba3"
+          },
+          "publishTime": "2026-06-04T17:02:27.069968860Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25rMVgycDFlRGRJY1VGSmVuWlZkbTB4T0VwMWVHYxAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25rMVgycDFlRGRJY1VGSmVuWlZkbTB4T0VwMWVHYxAB!2m1!1s0x864e9918e993c711:0xa9073cfe6d9a606a"
+        },
+        {
+          "name": "places/ChIJEceT6RiZToYRamCabf48B6k/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tOb2NGbHJhMngyVjFaNVFXNXdORTB0VHpCd1gzYxAB",
+          "relativePublishTimeDescription": "2 months ago",
+          "rating": 3,
+          "text": {
+            "text": "Pros: very very convenient location. Building looks cool. Rooms look very nice and have plush rugs. Pretty affordable in comparison to other hotels.\n\nCons: Nothing works. Elevators are a nightmare. Very old (historic?) building…odd noises in the rooms. WiFi is pretty much non-existent. Shower water pressure was laughably weak.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Pros: very very convenient location. Building looks cool. Rooms look very nice and have plush rugs. Pretty affordable in comparison to other hotels.\n\nCons: Nothing works. Elevators are a nightmare. Very old (historic?) building…odd noises in the rooms. WiFi is pretty much non-existent. Shower water pressure was laughably weak.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Emmanuel Daughtry",
+            "uri": "https://www.google.com/maps/contrib/115473033251935048879/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjURIcZZW59wdsT0No0x-B-ZVmRiKlSLBD-CavCmiU67ovzkIB6G=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2026-04-19T20:32:51.019702364Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2tOb2NGbHJhMngyVjFaNVFXNXdORTB0VHpCd1gzYxAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tOb2NGbHJhMngyVjFaNVFXNXdORTB0VHpCd1gzYxAB!2m1!1s0x864e9918e993c711:0xa9073cfe6d9a606a"
+        }
+      ],
+      "signals": {
+        "review_decline": false,
+        "review_rating_delta": 0,
+        "review_volume_decline": false,
+        "complaint_increase": true,
+        "sentiment_decline": false,
+        "sentiment_trend": "Stable",
+        "review_activity_trend": "Increasing",
+        "positive_reviews_recent": 1,
+        "negative_reviews_recent": 2,
+        "positive_reviews_prior": 0,
+        "negative_reviews_prior": 0,
+        "renovation_needed": true,
+        "old_property": true,
+        "physical_condition_score": 2,
+        "franchise_loss": false,
+        "former_brand": "",
+        "franchise_affiliated": false,
+        "current_brand": "",
+        "brand_status": "NONE",
+        "cmbs_watchlist": false,
+        "cmbs_special_servicing": false,
+        "cmbs_delinquent": false,
+        "long_term_owner": false,
+        "ownership_length_years": 0,
+        "room_count": "325",
+        "distress_score": 9
+      },
+      "review_themes": {
+        "staff": 30.0,
+        "maintenance": 50.0,
+        "noise": 20.0
+      },
+      "heuristic_scores": {
+        "distress_score": 9,
+        "distress_reasons": [
+          "Moderate-to-low rating with enough reviews: 2929",
+          "Negative review signal: broken",
+          "Negative review signal: refund",
+          "Negative review signal: noise",
+          "Negative review signal: disappointing",
+          "Complaint rate increase: 0.75",
+          "Renovation signals in reviews: 80.0%"
+        ],
+        "review_trend_score": 2,
+        "review_volume_recent": 4,
+        "review_volume_prior": 1,
+        "review_volume_change_pct": 300.0,
+        "avg_rating_recent": 2.5,
+        "avg_rating_prior": 1.0,
+        "review_rating_delta": 0,
+        "complaint_rate_recent": 0.75,
+        "complaint_rate_prior": 0.0,
+        "review_complaint_delta": 0.75,
+        "year_built": "",
+        "property_age": "",
+        "renovation_signal_rate": 0.8,
+        "renovation_needed": true,
+        "physical_condition_score": 2,
+        "positive_reviews_recent": 1,
+        "negative_reviews_recent": 2,
+        "positive_reviews_prior": 0,
+        "negative_reviews_prior": 0,
+        "sentiment_delta": 1,
+        "sentiment_trend": "Stable",
+        "review_activity_trend": "Increasing"
+      },
+      "llm_analysis": {
+        "distress_probability": 0.85,
+        "seller_fatigue_probability": 0.3,
+        "opportunity_score": 65,
+        "llm_star_rating": 3.2,
+        "top_distress_signals": "Moderate-to-low rating with significant review volume, increased complaint rate, high renovation need, poor physical condition, and negative guest feedback on broken amenities, noise, and disappointing experiences.",
+        "investment_thesis": "Magnolia Dallas Downtown shows strong distress indicators including a low rating despite high review volume, rising complaints, and significant renovation needs. The property is aging with poor physical condition and lacks brand affiliation, suggesting repositioning potential through operational improvements and renovation. Moderate seller fatigue indicates some willingness to transact, making this a viable operational turnaround opportunity.",
+        "acquisition_strategy": "Operational Turnaround",
+        "review_summary": "Guests frequently complain about broken amenities, noise disturbances, and disappointing experiences. Operational concerns include increased complaints and service inconsistencies. Cleanliness issues are not prominently reported, but the property’s aging condition and high renovation signals indicate maintenance deficiencies. Overall guest sentiment remains stable but with increasing negative feedback, highlighting the need for targeted improvements to reverse the trend.",
+        "recommended_action": "Operational Turnaround",
+        "confidence": "LOW",
+        "distress_summary": ""
+      },
+      "owner_data": {
+        "owner_name": "SUPREME BRIGHT DALLAS IV LLC",
+        "owner_company": "SUPREME BRIGHT DALLAS IV LLC",
+        "mailing_address": "1785 STATE HIGHWAY 26, GRAPEVINE, TX 76051-2217",
+        "owner_phone": "",
+        "ownership_since": "",
+        "ownership_length_years": 0,
+        "attom_year_built": 1923,
+        "is_older_than_20_years": "Yes",
+        "room_count": "325"
+      },
+      "cmbs_data": {},
+      "franchise_data": {
+        "franchise_affiliated": false,
+        "current_brand": "",
+        "former_brand": "",
+        "brand_status": "NONE",
+        "franchise_confidence": "Low"
+      },
+      "source_location": "Dallas, TX",
+      "radius_miles": 20
+    },
+    "lead_reason": "Complaint increase; Aging property",
+    "created_at": "2026-06-24T17:16:54.217003",
+    "place_id": "ChIJEceT6RiZToYRamCabf48B6k",
+    "feedback_rule_applied": "",
+    "feedback_penalty": 0,
+    "rank": 1,
+    "llm_distress_probability": 0.85,
+    "llm_seller_fatigue_probability": 0.3,
+    "llm_opportunity_score": 65,
+    "llm_confidence": "LOW",
+    "llm_top_distress_signals": "M | o | d | e | r | a | t | e | - | t | o | - | l | o | w |   | r | a | t | i | n | g |   | w | i | t | h |   | s | i | g | n | i | f | i | c | a | n | t |   | r | e | v | i | e | w |   | v | o | l | u | m | e | , |   | i | n | c | r | e | a | s | e | d |   | c | o | m | p | l | a | i | n | t |   | r | a | t | e | , |   | h | i | g | h |   | r | e | n | o | v | a | t | i | o | n |   | n | e | e | d | , |   | p | o | o | r |   | p | h | y | s | i | c | a | l |   | c | o | n | d | i | t | i | o | n | , |   | a | n | d |   | n | e | g | a | t | i | v | e |   | g | u | e | s | t |   | f | e | e | d | b | a | c | k |   | o | n |   | b | r | o | k | e | n |   | a | m | e | n | i | t | i | e | s | , |   | n | o | i | s | e | , |   | a | n | d |   | d | i | s | a | p | p | o | i | n | t | i | n | g |   | e | x | p | e | r | i | e | n | c | e | s | .",
+    "llm_investment_thesis": "Magnolia Dallas Downtown shows strong distress indicators including a low rating despite high review volume, rising complaints, and significant renovation needs. The property is aging with poor physical condition and lacks brand affiliation, suggesting repositioning potential through operational improvements and renovation. Moderate seller fatigue indicates some willingness to transact, making this a viable operational turnaround opportunity.",
+    "llm_recommended_action": "Operational Turnaround",
+    "llm_distress_summary": "",
+    "llm_review_summary": "Guests frequently complain about broken amenities, noise disturbances, and disappointing experiences. Operational concerns include increased complaints and service inconsistencies. Cleanliness issues are not prominently reported, but the property’s aging condition and high renovation signals indicate maintenance deficiencies. Overall guest sentiment remains stable but with increasing negative feedback, highlighting the need for targeted improvements to reverse the trend.",
+    "suppress_digest": false,
+    "last_score": 72.6,
+    "last_resurfaced": null
+  },
+  {
+    "search_location": "Dallas, TX",
+    "radius_miles": 20,
+    "hotel_name": "Holiday Inn Express & Suites Garland E - Lake Hubbard I30 by IHG",
+    "address": "4412 Bass Pro Dr, Garland, TX 75043, USA",
+    "rating": 4,
+    "user_rating_count": 878,
+    "business_status": "OPERATIONAL",
+    "distress_score": 9,
+    "distress_reasons": "Negative review signal: smell | Negative review signal: leak | Negative review signal: broken | Negative review signal: noise | Negative review signal: disappointing | Complaint rate increase: 0.8 | Renovation signals in reviews: 60.0%",
+    "review_trend_score": 2,
+    "review_volume_recent": 5,
+    "review_volume_prior": 0,
+    "review_volume_change_pct": 100.0,
+    "avg_rating_recent": 3.2,
+    "avg_rating_prior": 0.0,
+    "review_rating_delta": 0,
+    "complaint_rate_recent": 0.8,
+    "complaint_rate_prior": 0.0,
+    "review_complaint_delta": 0.8,
+    "year_built": "",
+    "property_age": "",
+    "renovation_signal_rate": 0.6,
+    "renovation_needed": true,
+    "physical_condition_score": 2,
+    "google_maps_url": "https://maps.google.com/?cid=3728080969948751034&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "source_provenance": "Google Places | ATTOM | Tavily",
+    "franchise_affiliated": true,
+    "current_brand": "Holiday Inn",
+    "former_brand": "",
+    "brand_status": "CURRENT",
+    "franchise_confidence": "High",
+    "franchise_evidence": "Brand match: Holiday Inn",
+    "owner_name": "JAY & SHIVANI LLC",
+    "owner_company": "JAY & SHIVANI LLC",
+    "mailing_address": "1300 COTTONWOOD VALLEY CIR S, IRVING, TX 75038-6203",
+    "owner_phone": "",
+    "owner_confidence": "High",
+    "owner_evidence": "Retrieved from ATTOM property records",
+    "ownership_since": "",
+    "ownership_length_years": 0,
+    "attom_year_built": 2013,
+    "is_older_than_20_years": "No",
+    "room_count": "99",
+    "price_tier": "",
+    "signals": {
+      "review_decline": false,
+      "review_rating_delta": 0,
+      "review_volume_decline": false,
+      "complaint_increase": true,
+      "sentiment_decline": false,
+      "sentiment_trend": "Stable",
+      "review_activity_trend": "Increasing",
+      "positive_reviews_recent": 4,
+      "negative_reviews_recent": 4,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "renovation_needed": true,
+      "old_property": false,
+      "physical_condition_score": 2,
+      "franchise_loss": false,
+      "former_brand": "",
+      "franchise_affiliated": true,
+      "current_brand": "Holiday Inn",
+      "brand_status": "CURRENT",
+      "cmbs_watchlist": false,
+      "cmbs_special_servicing": false,
+      "cmbs_delinquent": false,
+      "long_term_owner": false,
+      "ownership_length_years": 0,
+      "room_count": "99",
+      "distress_score": 9
+    },
+    "review_themes": {
+      "staff": 54.5,
+      "maintenance": 27.3,
+      "cleanliness": 9.1,
+      "noise": 9.1
+    },
+    "llm_analysis": {
+      "distress_probability": 0.85,
+      "seller_fatigue_probability": 0.3,
+      "opportunity_score": 65,
+      "llm_star_rating": 3.5,
+      "top_distress_signals": "Negative review signals including smell, leaks, broken items, noise, and disappointment; complaint rate increase of 0.8; 60% renovation signals in reviews; low physical condition score of 2; renovation needed",
+      "investment_thesis": "This Holiday Inn Express in Garland shows strong signs of operational distress driven by maintenance and guest experience issues, reflected in increased complaints and renovation needs. Despite stable brand affiliation and increasing review activity, physical condition and guest dissatisfaction suggest a need for targeted renovation and operational improvements. The property offers a solid opportunity for a distressed acquisition with potential upside through renovation and operational turnaround.",
+      "acquisition_strategy": "Operational Turnaround",
+      "review_summary": "Guests report recurring issues with unpleasant odors, leaks, broken fixtures, and noise disturbances, contributing to a disappointing stay experience. While service and cleanliness concerns are less prominent, the property clearly requires renovation and maintenance improvements. Guest sentiment remains stable but complaint rates have increased alongside rising review volume, indicating operational challenges that need addressing to improve overall satisfaction.",
+      "recommended_action": "Operational Turnaround",
+      "confidence": "LOW",
+      "distress_summary": ""
+    },
+    "final_lead_score": 72.6,
+    "entity": {
+      "hotel_name": "Holiday Inn Express & Suites Garland E - Lake Hubbard I30 by IHG",
+      "address": "4412 Bass Pro Dr, Garland, TX 75043, USA",
+      "place_id": "ChIJOZ_RO1aoToYRumSw0-PNvDM",
+      "latitude": null,
+      "longitude": null,
+      "rating": 4,
+      "user_rating_count": 878,
+      "business_status": "OPERATIONAL",
+      "google_maps_url": "https://maps.google.com/?cid=3728080969948751034&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+      "reviews": [
+        {
+          "name": "places/ChIJOZ_RO1aoToYRumSw0-PNvDM/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xCVk5tNWxaMUUxYW5FeVJVOXRXWGRpU0hScGFVRRAB",
+          "relativePublishTimeDescription": "2 months ago",
+          "rating": 2,
+          "text": {
+            "text": "Before I start the review, I would like to say the front desk staff was very nice and helpful so any negative thing about this hotel is not towards them.\n\nI have stayed at many Holiday Inns. I have felt they are always the best for their price yet still clean. The first thing I noticed when I walked in our first room was streaks of someone’s bowel movement in the toilet where it hadn’t been cleaned good enough . I had to use the restroom anyways after a long drive and when I did the toilet leaked all over the floor from somewhere in the back and got on the bottom of my pants after I flushed. Luckily it was clean water. Other things I noticed on how banged up the furniture was in that room, as if it was second hand from another holiday inn. Old food crust was on the sofa in our first room. They did upgrade us to a king suite after that. In our new room, I noticed stains all over the furniture and the drain in the bathtub was nasty and old. The handle for the dresser on my side of the bed was gone.\nOnce again all the furniture looked second hand as if it was taken from another holiday inn that had remodeled. This place needs a remodel of the rooms bad. The front lobby looked great and from what I understand was recently remodeled. Put some more work and invest in the rooms your customers sleep in. I won’t be back at this location as it is not sanitary.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Before I start the review, I would like to say the front desk staff was very nice and helpful so any negative thing about this hotel is not towards them.\n\nI have stayed at many Holiday Inns. I have felt they are always the best for their price yet still clean. The first thing I noticed when I walked in our first room was streaks of someone’s bowel movement in the toilet where it hadn’t been cleaned good enough . I had to use the restroom anyways after a long drive and when I did the toilet leaked all over the floor from somewhere in the back and got on the bottom of my pants after I flushed. Luckily it was clean water. Other things I noticed on how banged up the furniture was in that room, as if it was second hand from another holiday inn. Old food crust was on the sofa in our first room. They did upgrade us to a king suite after that. In our new room, I noticed stains all over the furniture and the drain in the bathtub was nasty and old. The handle for the dresser on my side of the bed was gone.\nOnce again all the furniture looked second hand as if it was taken from another holiday inn that had remodeled. This place needs a remodel of the rooms bad. The front lobby looked great and from what I understand was recently remodeled. Put some more work and invest in the rooms your customers sleep in. I won’t be back at this location as it is not sanitary.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Kayla Revels",
+            "uri": "https://www.google.com/maps/contrib/103552142586117596579/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJnN8ohr5Booo3dKRsgw_ovWNqc03y2VNzfywJRj59L7mqQrQ=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2026-04-20T19:43:12.242857927Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xCVk5tNWxaMUUxYW5FeVJVOXRXWGRpU0hScGFVRRAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xCVk5tNWxaMUUxYW5FeVJVOXRXWGRpU0hScGFVRRAB!2m1!1s0x864ea8563bd19f39:0x33bccde3d3b064ba"
+        },
+        {
+          "name": "places/ChIJOZ_RO1aoToYRumSw0-PNvDM/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pCRFYyRTNXVXAyVG0xaVVrcFhRMmt3V0VaQ2RrRRAB",
+          "relativePublishTimeDescription": "5 months ago",
+          "rating": 5,
+          "text": {
+            "text": "**Review for Holiday Inn Express & Suites Garland E - Lake Hubbard**\n\nI recently had an outstanding experience at the Holiday Inn Express & Suites Garland E - Lake Hubbard. During my stay, I accidentally left my phone behind when I checked out. I was quite worried, but the staff's exceptional service put my mind at ease.\n\nAfter realizing I had forgotten my phone, I contacted the hotel, and the team was incredibly helpful. They quickly located my phone and assured me they would keep it safe until I returned. Their prompt and caring response truly exceeded my expectations.\n\nWhen I came back to retrieve my phone, the staff greeted me warmly and had it ready and waiting. Their professionalism and willingness to go the extra mile made a potentially stressful situation much easier.\n\nI highly recommend Holiday Inn Express & Suites Garland E - Lake Hubbard not only for their excellent accommodations but also for their remarkable customer service. Thank you to the wonderful staff for making my experience so positive!",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "**Review for Holiday Inn Express & Suites Garland E - Lake Hubbard**\n\nI recently had an outstanding experience at the Holiday Inn Express & Suites Garland E - Lake Hubbard. During my stay, I accidentally left my phone behind when I checked out. I was quite worried, but the staff's exceptional service put my mind at ease.\n\nAfter realizing I had forgotten my phone, I contacted the hotel, and the team was incredibly helpful. They quickly located my phone and assured me they would keep it safe until I returned. Their prompt and caring response truly exceeded my expectations.\n\nWhen I came back to retrieve my phone, the staff greeted me warmly and had it ready and waiting. Their professionalism and willingness to go the extra mile made a potentially stressful situation much easier.\n\nI highly recommend Holiday Inn Express & Suites Garland E - Lake Hubbard not only for their excellent accommodations but also for their remarkable customer service. Thank you to the wonderful staff for making my experience so positive!",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Rosa Newman",
+            "uri": "https://www.google.com/maps/contrib/105567253994408535766/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjU94F23MCk_uEwo07m3G6FiYJbqpjgqNKCob90A10rcdZzodXqc=s128-c0x00000000-cc-rp-mo-ba2"
+          },
+          "publishTime": "2026-01-07T17:41:09.947005294Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pCRFYyRTNXVXAyVG0xaVVrcFhRMmt3V0VaQ2RrRRAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pCRFYyRTNXVXAyVG0xaVVrcFhRMmt3V0VaQ2RrRRAB!2m1!1s0x864ea8563bd19f39:0x33bccde3d3b064ba"
+        },
+        {
+          "name": "places/ChIJOZ_RO1aoToYRumSw0-PNvDM/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pOZlQyNVljV3RIV21jeVdXVXdMVU5mWTNSMWNFRRAB",
+          "relativePublishTimeDescription": "3 months ago",
+          "rating": 3,
+          "text": {
+            "text": "First I love the location and the service was great. Justin was amazing.\nBut my room smelled just like wet dog! Soon as you walk in the smell knocked you out. I went to get the room replaced, but it was only one night and I was very tired. I told Justin, he would have moved us, but I was already settled in and didn't feel like packing. I still waiting for my extra points lol. But the other areas were clean and the breakfast was good.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "First I love the location and the service was great. Justin was amazing.\nBut my room smelled just like wet dog! Soon as you walk in the smell knocked you out. I went to get the room replaced, but it was only one night and I was very tired. I told Justin, he would have moved us, but I was already settled in and didn't feel like packing. I still waiting for my extra points lol. But the other areas were clean and the breakfast was good.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "H0ney c",
+            "uri": "https://www.google.com/maps/contrib/115473617722634298843/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjW5a4YQLIp0mX3hWf9VGkmdjItvFOS3g17gZ56IGzer7i2khlbYXA=s128-c0x00000000-cc-rp-mo-ba4"
+          },
+          "publishTime": "2026-03-17T20:58:44.304325421Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pOZlQyNVljV3RIV21jeVdXVXdMVU5mWTNSMWNFRRAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pOZlQyNVljV3RIV21jeVdXVXdMVU5mWTNSMWNFRRAB!2m1!1s0x864ea8563bd19f39:0x33bccde3d3b064ba"
+        },
+        {
+          "name": "places/ChIJOZ_RO1aoToYRumSw0-PNvDM/reviews/Ci9DQUlRQUNvZENodHljRjlvT210UGJqWldjM0JSYjJjMFdrOWFOR2w0VVV4TE1uYxAB",
+          "relativePublishTimeDescription": "2 weeks ago",
+          "rating": 5,
+          "text": {
+            "text": "Room was great condition.  Very large and clean. Still has coffee in room. No issues with  noise even though the hotel was full. A+ stay.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Room was great condition.  Very large and clean. Still has coffee in room. No issues with  noise even though the hotel was full. A+ stay.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "cory smith",
+            "uri": "https://www.google.com/maps/contrib/105856276572225710815/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWY0dEL745zOn4aAAi9VWrWHGYVP2FXYV5IQbbmxBkfBAFUYT4E=s128-c0x00000000-cc-rp-mo-ba2"
+          },
+          "publishTime": "2026-06-05T11:01:45.655071808Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT210UGJqWldjM0JSYjJjMFdrOWFOR2w0VVV4TE1uYxAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT210UGJqWldjM0JSYjJjMFdrOWFOR2w0VVV4TE1uYxAB!2m1!1s0x864ea8563bd19f39:0x33bccde3d3b064ba"
+        },
+        {
+          "name": "places/ChIJOZ_RO1aoToYRumSw0-PNvDM/reviews/Ci9DQUlRQUNvZENodHljRjlvT21kaVprZHVVM1pVYmsxUFVVaFFXV3h6UVZWb2VIYxAB",
+          "relativePublishTimeDescription": "2 weeks ago",
+          "rating": 1,
+          "text": {
+            "text": "Got a king suite to visit the my wife’s family a week ago on the second floor in room 201 for a single night, and the room was absolutely disgusting, stains were all over the room; multiple brown stains on one couch and a white stains on the other, stains all over the floor. Multiple lights were broken and the paint was peeling everywhere. Cobwebs above the bed right on the headboard. Suspicious clear liquid stains on the fitted sheets right near the head of the bed. Was so disgusting I took my wife and just left at midnight, where the service desk worker then asked if the previous *long term resident* had received a package? With how bad the room was, only 20% or so was taken off, which was extremely disappointing. Don’t stay here if you can avoid it.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Got a king suite to visit the my wife’s family a week ago on the second floor in room 201 for a single night, and the room was absolutely disgusting, stains were all over the room; multiple brown stains on one couch and a white stains on the other, stains all over the floor. Multiple lights were broken and the paint was peeling everywhere. Cobwebs above the bed right on the headboard. Suspicious clear liquid stains on the fitted sheets right near the head of the bed. Was so disgusting I took my wife and just left at midnight, where the service desk worker then asked if the previous *long term resident* had received a package? With how bad the room was, only 20% or so was taken off, which was extremely disappointing. Don’t stay here if you can avoid it.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Andrew Mancillas",
+            "uri": "https://www.google.com/maps/contrib/116476466074343810274/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocL1JJ8BbJEXpFkIIuVNwwg6RrDMIOoN5XgO0UpQAVtnqJ8Z-g=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2026-06-06T01:43:16.703635283Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21kaVprZHVVM1pVYmsxUFVVaFFXV3h6UVZWb2VIYxAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21kaVprZHVVM1pVYmsxUFVVaFFXV3h6UVZWb2VIYxAB!2m1!1s0x864ea8563bd19f39:0x33bccde3d3b064ba"
+        }
+      ],
+      "signals": {
+        "review_decline": false,
+        "review_rating_delta": 0,
+        "review_volume_decline": false,
+        "complaint_increase": true,
+        "sentiment_decline": false,
+        "sentiment_trend": "Stable",
+        "review_activity_trend": "Increasing",
+        "positive_reviews_recent": 4,
+        "negative_reviews_recent": 4,
+        "positive_reviews_prior": 0,
+        "negative_reviews_prior": 0,
+        "renovation_needed": true,
+        "old_property": false,
+        "physical_condition_score": 2,
+        "franchise_loss": false,
+        "former_brand": "",
+        "franchise_affiliated": true,
+        "current_brand": "Holiday Inn",
+        "brand_status": "CURRENT",
+        "cmbs_watchlist": false,
+        "cmbs_special_servicing": false,
+        "cmbs_delinquent": false,
+        "long_term_owner": false,
+        "ownership_length_years": 0,
+        "room_count": "99",
+        "distress_score": 9
+      },
+      "review_themes": {
+        "staff": 54.5,
+        "maintenance": 27.3,
+        "cleanliness": 9.1,
+        "noise": 9.1
+      },
+      "heuristic_scores": {
+        "distress_score": 9,
+        "distress_reasons": [
+          "Negative review signal: smell",
+          "Negative review signal: leak",
+          "Negative review signal: broken",
+          "Negative review signal: noise",
+          "Negative review signal: disappointing",
+          "Complaint rate increase: 0.8",
+          "Renovation signals in reviews: 60.0%"
+        ],
+        "review_trend_score": 2,
+        "review_volume_recent": 5,
+        "review_volume_prior": 0,
+        "review_volume_change_pct": 100.0,
+        "avg_rating_recent": 3.2,
+        "avg_rating_prior": 0.0,
+        "review_rating_delta": 0,
+        "complaint_rate_recent": 0.8,
+        "complaint_rate_prior": 0.0,
+        "review_complaint_delta": 0.8,
+        "year_built": "",
+        "property_age": "",
+        "renovation_signal_rate": 0.6,
+        "renovation_needed": true,
+        "physical_condition_score": 2,
+        "positive_reviews_recent": 4,
+        "negative_reviews_recent": 4,
+        "positive_reviews_prior": 0,
+        "negative_reviews_prior": 0,
+        "sentiment_delta": 0,
+        "sentiment_trend": "Stable",
+        "review_activity_trend": "Increasing"
+      },
+      "llm_analysis": {
+        "distress_probability": 0.85,
+        "seller_fatigue_probability": 0.3,
+        "opportunity_score": 65,
+        "llm_star_rating": 3.5,
+        "top_distress_signals": "Negative review signals including smell, leaks, broken items, noise, and disappointment; complaint rate increase of 0.8; 60% renovation signals in reviews; low physical condition score of 2; renovation needed",
+        "investment_thesis": "This Holiday Inn Express in Garland shows strong signs of operational distress driven by maintenance and guest experience issues, reflected in increased complaints and renovation needs. Despite stable brand affiliation and increasing review activity, physical condition and guest dissatisfaction suggest a need for targeted renovation and operational improvements. The property offers a solid opportunity for a distressed acquisition with potential upside through renovation and operational turnaround.",
+        "acquisition_strategy": "Operational Turnaround",
+        "review_summary": "Guests report recurring issues with unpleasant odors, leaks, broken fixtures, and noise disturbances, contributing to a disappointing stay experience. While service and cleanliness concerns are less prominent, the property clearly requires renovation and maintenance improvements. Guest sentiment remains stable but complaint rates have increased alongside rising review volume, indicating operational challenges that need addressing to improve overall satisfaction.",
+        "recommended_action": "Operational Turnaround",
+        "confidence": "LOW",
+        "distress_summary": ""
+      },
+      "owner_data": {
+        "owner_name": "JAY & SHIVANI LLC",
+        "owner_company": "JAY & SHIVANI LLC",
+        "mailing_address": "1300 COTTONWOOD VALLEY CIR S, IRVING, TX 75038-6203",
+        "owner_phone": "",
+        "ownership_since": "",
+        "ownership_length_years": 0,
+        "attom_year_built": 2013,
+        "is_older_than_20_years": "No",
+        "room_count": "99"
+      },
+      "cmbs_data": {},
+      "franchise_data": {
+        "franchise_affiliated": true,
+        "current_brand": "Holiday Inn",
+        "former_brand": "",
+        "brand_status": "CURRENT",
+        "franchise_confidence": "High"
+      },
+      "source_location": "Dallas, TX",
+      "radius_miles": 20
+    },
+    "lead_reason": "Complaint increase",
+    "created_at": "2026-06-24T17:19:47.978337",
+    "place_id": "ChIJOZ_RO1aoToYRumSw0-PNvDM",
+    "feedback_rule_applied": "",
+    "feedback_penalty": 0,
+    "rank": 2,
+    "llm_distress_probability": 0.85,
+    "llm_seller_fatigue_probability": 0.3,
+    "llm_opportunity_score": 65,
+    "llm_confidence": "LOW",
+    "llm_top_distress_signals": "N | e | g | a | t | i | v | e |   | r | e | v | i | e | w |   | s | i | g | n | a | l | s |   | i | n | c | l | u | d | i | n | g |   | s | m | e | l | l | , |   | l | e | a | k | s | , |   | b | r | o | k | e | n |   | i | t | e | m | s | , |   | n | o | i | s | e | , |   | a | n | d |   | d | i | s | a | p | p | o | i | n | t | m | e | n | t | ; |   | c | o | m | p | l | a | i | n | t |   | r | a | t | e |   | i | n | c | r | e | a | s | e |   | o | f |   | 0 | . | 8 | ; |   | 6 | 0 | % |   | r | e | n | o | v | a | t | i | o | n |   | s | i | g | n | a | l | s |   | i | n |   | r | e | v | i | e | w | s | ; |   | l | o | w |   | p | h | y | s | i | c | a | l |   | c | o | n | d | i | t | i | o | n |   | s | c | o | r | e |   | o | f |   | 2 | ; |   | r | e | n | o | v | a | t | i | o | n |   | n | e | e | d | e | d",
+    "llm_investment_thesis": "This Holiday Inn Express in Garland shows strong signs of operational distress driven by maintenance and guest experience issues, reflected in increased complaints and renovation needs. Despite stable brand affiliation and increasing review activity, physical condition and guest dissatisfaction suggest a need for targeted renovation and operational improvements. The property offers a solid opportunity for a distressed acquisition with potential upside through renovation and operational turnaround.",
+    "llm_recommended_action": "Operational Turnaround",
+    "llm_distress_summary": "",
+    "llm_review_summary": "Guests report recurring issues with unpleasant odors, leaks, broken fixtures, and noise disturbances, contributing to a disappointing stay experience. While service and cleanliness concerns are less prominent, the property clearly requires renovation and maintenance improvements. Guest sentiment remains stable but complaint rates have increased alongside rising review volume, indicating operational challenges that need addressing to improve overall satisfaction.",
+    "suppress_digest": false,
+    "last_score": 72.6,
+    "last_resurfaced": null
+  },
+  {
+    "search_location": "Dallas, TX",
+    "radius_miles": 20,
+    "hotel_name": "Amyfinehouse Luxury Downtown Stay",
+    "address": "500 S Ervay St, Dallas, TX 75201, USA",
+    "rating": 4.5,
+    "user_rating_count": 622,
+    "business_status": "OPERATIONAL",
+    "distress_score": 5,
+    "distress_reasons": "Negative review signal: smell | Negative review signal: unsafe | Negative review signal: refund | Renovation signals in reviews: 60.0%",
+    "review_trend_score": 0,
+    "review_volume_recent": 4,
+    "review_volume_prior": 1,
+    "review_volume_change_pct": 300.0,
+    "avg_rating_recent": 4.0,
+    "avg_rating_prior": 5.0,
+    "review_rating_delta": 0,
+    "complaint_rate_recent": 0.25,
+    "complaint_rate_prior": 1.0,
+    "review_complaint_delta": -0.75,
+    "year_built": "",
+    "property_age": "",
+    "renovation_signal_rate": 0.6,
+    "renovation_needed": true,
+    "physical_condition_score": 2,
+    "google_maps_url": "https://maps.google.com/?cid=8542264298391243714&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "source_provenance": "Google Places | ATTOM",
+    "franchise_affiliated": false,
+    "current_brand": "",
+    "former_brand": "",
+    "brand_status": "NONE",
+    "franchise_confidence": "Low",
+    "franchise_evidence": "No franchise affiliation detected",
+    "owner_name": "EVERGREEN DALLAS HOSPITALITY LP",
+    "owner_company": "",
+    "mailing_address": "1920 ENCHANTED WAY, GRAPEVINE, TX 76051-1029",
+    "owner_phone": "",
+    "owner_confidence": "High",
+    "owner_evidence": "Retrieved from ATTOM property records",
+    "ownership_since": "2014-02-03",
+    "ownership_length_years": 12,
+    "attom_year_built": 1911,
+    "is_older_than_20_years": "Yes",
+    "room_count": "270",
+    "price_tier": "",
+    "signals": {
+      "review_decline": false,
+      "review_rating_delta": 0,
+      "review_volume_decline": false,
+      "complaint_increase": false,
+      "sentiment_decline": false,
+      "sentiment_trend": "Improving",
+      "review_activity_trend": "Increasing",
+      "positive_reviews_recent": 4,
+      "negative_reviews_recent": 1,
+      "positive_reviews_prior": 1,
+      "negative_reviews_prior": 1,
+      "renovation_needed": true,
+      "old_property": true,
+      "physical_condition_score": 2,
+      "franchise_loss": false,
+      "former_brand": "",
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "brand_status": "NONE",
+      "cmbs_watchlist": false,
+      "cmbs_special_servicing": false,
+      "cmbs_delinquent": false,
+      "long_term_owner": true,
+      "ownership_length_years": 12,
+      "room_count": "270",
+      "distress_score": 5
+    },
+    "review_themes": {
+      "cleanliness": 25.0,
+      "staff": 37.5,
+      "maintenance": 25.0,
+      "safety": 12.5
+    },
+    "llm_analysis": {
+      "distress_probability": 0.65,
+      "seller_fatigue_probability": 0.7,
+      "opportunity_score": 62,
+      "llm_star_rating": 3.5,
+      "top_distress_signals": "Negative review signals related to smell, safety concerns, refund issues, and high renovation signals in reviews (60%). Physical condition score is low (2) and the property is old with renovation needed.",
+      "investment_thesis": "Amyfinehouse Luxury Downtown Stay shows moderate distress with operational and physical condition challenges despite improving guest sentiment and increasing review activity. The long-term ownership and significant renovation needs suggest potential seller fatigue and opportunity for repositioning through renovation and operational improvements.",
+      "acquisition_strategy": "Operational Turnaround",
+      "review_summary": "Guests report occasional issues with unpleasant odors, safety concerns, and refund difficulties, though overall sentiment is improving with more positive reviews recently. The property is aging and in need of renovation, which aligns with guest feedback on maintenance and physical condition. Service and cleanliness issues are not prominent, but renovation needs are clear. Guest sentiment is trending upward, indicating potential for recovery with targeted improvements.",
+      "recommended_action": "Operational Turnaround",
+      "confidence": "LOW",
+      "distress_summary": ""
+    },
+    "final_lead_score": 66.8,
+    "entity": {
+      "hotel_name": "Amyfinehouse Luxury Downtown Stay",
+      "address": "500 S Ervay St, Dallas, TX 75201, USA",
+      "place_id": "ChIJoypulB6ZToYRwosc2x44jHY",
+      "latitude": null,
+      "longitude": null,
+      "rating": 4.5,
+      "user_rating_count": 622,
+      "business_status": "OPERATIONAL",
+      "google_maps_url": "https://maps.google.com/?cid=8542264298391243714&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+      "reviews": [
+        {
+          "name": "places/ChIJoypulB6ZToYRwosc2x44jHY/reviews/Ci9DQUlRQUNvZENodHljRjlvT200eFZuRlRUalZ3Y1hWdFEzVjJURXBxVVRselkxRRAB",
+          "relativePublishTimeDescription": "3 months ago",
+          "rating": 1,
+          "text": {
+            "text": "DO NOT STAY HERE\nNothing luxury about this, not a hotel, not a place to bring kids, no one knows what they’re doing, they will lie to you and when you follow up about it everyone says it’s someone else’s job to handle it.\nPromised me 2pm check-in over the phone.  Also told me there’s a restaurant in the building I could sit in (was cold outside) until room was ready if I arrived before 2. When I arrived at 2 the room had not been cleaned from previous guest.  I had to flag down a cleaner who had to radio to another cleaner to “rush the cleaning” and it was still not ready until after 3 which is the advertised check-in time. The “restaurant” is a bodega where they serve food.  There are no seats inside.  You can sit outside in an alley where I was with all my luggage as a circle of homeless guys smoked a blunt right next to me.  Room smelled like some kind of wood finish or adhesive.  Had my door pounded down randomly by a maintenance guy answering a call from the previous guest that I was never made aware of and he had to work on the fridge during my stay.  Other than a girl Janelle who was helpful, no one that works here knows anything.  I received wrong information from everyone else I was in contact with on all matters.  I was told they offer a shuttle to the airport.  They never said they charge for this but they do.  They texted me during my stay a coupon for $5 to the “restaurant” downstairs with a link.  Clicked link > restaurant menu > ordered food, no $5.  They’ve been telling me they’ll refund me and it’s weeks later they never did.  I’m told the CEO is reviewing my requests lol.  The CEO… Don’t stay here.\n\nUPDATE: Responding to management’s response.  I have the audio file of the phone call where they promised 2pm checkin BEFORE I booked the room. They didn't say \"try\" they said I could checkin at 2.  They still haven’t even sent me the $5.  The guy I spoke to told me he’d personally refund me the money for the uber to the hotel admitting the confusion over the shuttle service was on them and I told him not to worry as he told me he has 4 daughters and he told me the “CEO” would likely reimburse me. She did not.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "DO NOT STAY HERE\nNothing luxury about this, not a hotel, not a place to bring kids, no one knows what they’re doing, they will lie to you and when you follow up about it everyone says it’s someone else’s job to handle it.\nPromised me 2pm check-in over the phone.  Also told me there’s a restaurant in the building I could sit in (was cold outside) until room was ready if I arrived before 2. When I arrived at 2 the room had not been cleaned from previous guest.  I had to flag down a cleaner who had to radio to another cleaner to “rush the cleaning” and it was still not ready until after 3 which is the advertised check-in time. The “restaurant” is a bodega where they serve food.  There are no seats inside.  You can sit outside in an alley where I was with all my luggage as a circle of homeless guys smoked a blunt right next to me.  Room smelled like some kind of wood finish or adhesive.  Had my door pounded down randomly by a maintenance guy answering a call from the previous guest that I was never made aware of and he had to work on the fridge during my stay.  Other than a girl Janelle who was helpful, no one that works here knows anything.  I received wrong information from everyone else I was in contact with on all matters.  I was told they offer a shuttle to the airport.  They never said they charge for this but they do.  They texted me during my stay a coupon for $5 to the “restaurant” downstairs with a link.  Clicked link > restaurant menu > ordered food, no $5.  They’ve been telling me they’ll refund me and it’s weeks later they never did.  I’m told the CEO is reviewing my requests lol.  The CEO… Don’t stay here.\n\nUPDATE: Responding to management’s response.  I have the audio file of the phone call where they promised 2pm checkin BEFORE I booked the room. They didn't say \"try\" they said I could checkin at 2.  They still haven’t even sent me the $5.  The guy I spoke to told me he’d personally refund me the money for the uber to the hotel admitting the confusion over the shuttle service was on them and I told him not to worry as he told me he has 4 daughters and he told me the “CEO” would likely reimburse me. She did not.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Blake Tevnan",
+            "uri": "https://www.google.com/maps/contrib/109235858350121187022/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKWWNaVWXnG3o6aXRrc-N9FFDWadIdkMHgQBQOsL__bjYkfYw=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2026-03-12T19:09:24.685255715Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT200eFZuRlRUalZ3Y1hWdFEzVjJURXBxVVRselkxRRAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT200eFZuRlRUalZ3Y1hWdFEzVjJURXBxVVRselkxRRAB!2m1!1s0x864e991e946e2aa3:0x768c381edb1c8bc2"
+        },
+        {
+          "name": "places/ChIJoypulB6ZToYRwosc2x44jHY/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pWalluTXlVVWg2UmtaaGNFVldkVzlRVG1WNFUwRRAB",
+          "relativePublishTimeDescription": "a month ago",
+          "rating": 5,
+          "text": {
+            "text": "Amy Finehouse Lofts and Vacation Rentals were exceptional to rent from. I needed a last-minute local stay for a couple of nights and booked a place in Downtown Dallas. In my rush, I accidentally reserved the wrong unit. At first, it seemed like they might not be able to make the change, but the amazing team at Amy Finehouse went above and beyond. Not only did they help correct the booking, they upgraded me as well.\n\nFrom reservation to checkout, the customer service and hospitality were truly outstanding. The loft itself was extraordinary: beautiful, comfortable, and exactly what I needed for a stress-free, relaxing stay. Thank you for elevating the bar and providing 10-star service. I highly recommend Amy Finehouse Lofts and Vacation Rentals!",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Amy Finehouse Lofts and Vacation Rentals were exceptional to rent from. I needed a last-minute local stay for a couple of nights and booked a place in Downtown Dallas. In my rush, I accidentally reserved the wrong unit. At first, it seemed like they might not be able to make the change, but the amazing team at Amy Finehouse went above and beyond. Not only did they help correct the booking, they upgraded me as well.\n\nFrom reservation to checkout, the customer service and hospitality were truly outstanding. The loft itself was extraordinary: beautiful, comfortable, and exactly what I needed for a stress-free, relaxing stay. Thank you for elevating the bar and providing 10-star service. I highly recommend Amy Finehouse Lofts and Vacation Rentals!",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Clark Wilson",
+            "uri": "https://www.google.com/maps/contrib/104803036695133432006/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLMBn1lWODGsNVeq6_BOoLlFX7jC09Ig-YieVuq_tMaaWafSQ=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2026-04-30T01:55:36.483891144Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pWalluTXlVVWg2UmtaaGNFVldkVzlRVG1WNFUwRRAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pWalluTXlVVWg2UmtaaGNFVldkVzlRVG1WNFUwRRAB!2m1!1s0x864e991e946e2aa3:0x768c381edb1c8bc2"
+        },
+        {
+          "name": "places/ChIJoypulB6ZToYRwosc2x44jHY/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xCUU9Ga3pia3BRU2t3MVNrRTJMVmh4ZGpSZk9YYxAB",
+          "relativePublishTimeDescription": "7 months ago",
+          "rating": 5,
+          "text": {
+            "text": "Unfortunately this is not as advertised. Very poor area with an increased amount of homelessness. Trying to enter the building was a task. The building and room had a toxic chemical smell about it. The apartment is far from luxurious.\nPeople standing and shouting in the hallway all night - the room was right by the lift.\nThe multi story car park is close by but the parking staff are not friendly and keep your car keys in an open, unlocked drawer, free for anyone to help themselves.\nWe didn’t even last 12hours and we checked out and went elsewhere. When asking for a refund the host stated that no refund was possible and they could have resolved the issues - this is not true as I had messaged them for help to enter the building and I got no response.\nThis room was not booked under my name, it was booked under my husbands.\nDo not stay here!\n\n10/11/2025 - response to owners reply.\nAs stated, it was booked under my husbands name.\nAlso, the communication is under my husbands name.\nIf you carefully read through the multiple reviews from previous guests, we all complain about the same thing - the safety and smell being the main concern.\nYour response seems to be automated to a lot of the responses.\nIt doesn’t matter that it is close an authority’s office, it is still unsafe at night time.\nOn a better note, we had a fabulous 2 night stay at the Fairmont Dallas and it was walkable distance to some lovely restaurants and we felt much safer as we were able to relax.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Unfortunately this is not as advertised. Very poor area with an increased amount of homelessness. Trying to enter the building was a task. The building and room had a toxic chemical smell about it. The apartment is far from luxurious.\nPeople standing and shouting in the hallway all night - the room was right by the lift.\nThe multi story car park is close by but the parking staff are not friendly and keep your car keys in an open, unlocked drawer, free for anyone to help themselves.\nWe didn’t even last 12hours and we checked out and went elsewhere. When asking for a refund the host stated that no refund was possible and they could have resolved the issues - this is not true as I had messaged them for help to enter the building and I got no response.\nThis room was not booked under my name, it was booked under my husbands.\nDo not stay here!\n\n10/11/2025 - response to owners reply.\nAs stated, it was booked under my husbands name.\nAlso, the communication is under my husbands name.\nIf you carefully read through the multiple reviews from previous guests, we all complain about the same thing - the safety and smell being the main concern.\nYour response seems to be automated to a lot of the responses.\nIt doesn’t matter that it is close an authority’s office, it is still unsafe at night time.\nOn a better note, we had a fabulous 2 night stay at the Fairmont Dallas and it was walkable distance to some lovely restaurants and we felt much safer as we were able to relax.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "M T",
+            "uri": "https://www.google.com/maps/contrib/102184905813446045396/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVtXVnMDAt14xS18-SHu1rBXbzJdeFTDEdDt00MtrUhkZy3B3ii=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2025-11-10T20:20:22.238023752Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xCUU9Ga3pia3BRU2t3MVNrRTJMVmh4ZGpSZk9YYxAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xCUU9Ga3pia3BRU2t3MVNrRTJMVmh4ZGpSZk9YYxAB!2m1!1s0x864e991e946e2aa3:0x768c381edb1c8bc2"
+        },
+        {
+          "name": "places/ChIJoypulB6ZToYRwosc2x44jHY/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xGcmRVdEljM1JrU0ZaNVVVTkRSbk41UlVoeVgzYxAB",
+          "relativePublishTimeDescription": "2 months ago",
+          "rating": 5,
+          "text": {
+            "text": "This was a really nice property. Grace was very responsive. It’s an updated building right in downtown Dallas so there was so much you could walk to and see. This was my first time to Dallas and this spot was a great way to explore while there. I would definitely book again.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "This was a really nice property. Grace was very responsive. It’s an updated building right in downtown Dallas so there was so much you could walk to and see. This was my first time to Dallas and this spot was a great way to explore while there. I would definitely book again.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Joseph L. Clark",
+            "uri": "https://www.google.com/maps/contrib/109620500570854411867/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjW7XyUh_2f1Q3Ola_T2oKao4ayLy03hp0lWNiO5wzQ8v7VzccXd=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2026-04-10T02:37:58.742628044Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xGcmRVdEljM1JrU0ZaNVVVTkRSbk41UlVoeVgzYxAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xGcmRVdEljM1JrU0ZaNVVVTkRSbk41UlVoeVgzYxAB!2m1!1s0x864e991e946e2aa3:0x768c381edb1c8bc2"
+        },
+        {
+          "name": "places/ChIJoypulB6ZToYRwosc2x44jHY/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pNMlRUa3RkbnB2UkdOMFlVMVBSRTVSZFdNM2QwRRAB",
+          "relativePublishTimeDescription": "2 months ago",
+          "rating": 5,
+          "text": {
+            "text": "Amazing all the way around. Checkin and check out was a breeze. They provide you with everything you need in an easy to understand way. It was really nice and clean. Free valet parking. This is definitely my new go to place whenever i visit Dallas. Highly recommended!! Stayed 1 night in Mar 2026",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Amazing all the way around. Checkin and check out was a breeze. They provide you with everything you need in an easy to understand way. It was really nice and clean. Free valet parking. This is definitely my new go to place whenever i visit Dallas. Highly recommended!! Stayed 1 night in Mar 2026",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Aaron",
+            "uri": "https://www.google.com/maps/contrib/101281284662246718701/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJv-TtY6pneRfNOslTf5UJcOkrdZi7kpj8kez7ISRbVfEhZ6w=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2026-03-31T23:39:03.978585745Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pNMlRUa3RkbnB2UkdOMFlVMVBSRTVSZFdNM2QwRRAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pNMlRUa3RkbnB2UkdOMFlVMVBSRTVSZFdNM2QwRRAB!2m1!1s0x864e991e946e2aa3:0x768c381edb1c8bc2"
+        }
+      ],
+      "signals": {
+        "review_decline": false,
+        "review_rating_delta": 0,
+        "review_volume_decline": false,
+        "complaint_increase": false,
+        "sentiment_decline": false,
+        "sentiment_trend": "Improving",
+        "review_activity_trend": "Increasing",
+        "positive_reviews_recent": 4,
+        "negative_reviews_recent": 1,
+        "positive_reviews_prior": 1,
+        "negative_reviews_prior": 1,
+        "renovation_needed": true,
+        "old_property": true,
+        "physical_condition_score": 2,
+        "franchise_loss": false,
+        "former_brand": "",
+        "franchise_affiliated": false,
+        "current_brand": "",
+        "brand_status": "NONE",
+        "cmbs_watchlist": false,
+        "cmbs_special_servicing": false,
+        "cmbs_delinquent": false,
+        "long_term_owner": true,
+        "ownership_length_years": 12,
+        "room_count": "270",
+        "distress_score": 5
+      },
+      "review_themes": {
+        "cleanliness": 25.0,
+        "staff": 37.5,
+        "maintenance": 25.0,
+        "safety": 12.5
+      },
+      "heuristic_scores": {
+        "distress_score": 5,
+        "distress_reasons": [
+          "Negative review signal: smell",
+          "Negative review signal: unsafe",
+          "Negative review signal: refund",
+          "Renovation signals in reviews: 60.0%"
+        ],
+        "review_trend_score": 0,
+        "review_volume_recent": 4,
+        "review_volume_prior": 1,
+        "review_volume_change_pct": 300.0,
+        "avg_rating_recent": 4.0,
+        "avg_rating_prior": 5.0,
+        "review_rating_delta": 0,
+        "complaint_rate_recent": 0.25,
+        "complaint_rate_prior": 1.0,
+        "review_complaint_delta": -0.75,
+        "year_built": "",
+        "property_age": "",
+        "renovation_signal_rate": 0.6,
+        "renovation_needed": true,
+        "physical_condition_score": 2,
+        "positive_reviews_recent": 4,
+        "negative_reviews_recent": 1,
+        "positive_reviews_prior": 1,
+        "negative_reviews_prior": 1,
+        "sentiment_delta": -3,
+        "sentiment_trend": "Improving",
+        "review_activity_trend": "Increasing"
+      },
+      "llm_analysis": {
+        "distress_probability": 0.65,
+        "seller_fatigue_probability": 0.7,
+        "opportunity_score": 62,
+        "llm_star_rating": 3.5,
+        "top_distress_signals": "Negative review signals related to smell, safety concerns, refund issues, and high renovation signals in reviews (60%). Physical condition score is low (2) and the property is old with renovation needed.",
+        "investment_thesis": "Amyfinehouse Luxury Downtown Stay shows moderate distress with operational and physical condition challenges despite improving guest sentiment and increasing review activity. The long-term ownership and significant renovation needs suggest potential seller fatigue and opportunity for repositioning through renovation and operational improvements.",
+        "acquisition_strategy": "Operational Turnaround",
+        "review_summary": "Guests report occasional issues with unpleasant odors, safety concerns, and refund difficulties, though overall sentiment is improving with more positive reviews recently. The property is aging and in need of renovation, which aligns with guest feedback on maintenance and physical condition. Service and cleanliness issues are not prominent, but renovation needs are clear. Guest sentiment is trending upward, indicating potential for recovery with targeted improvements.",
+        "recommended_action": "Operational Turnaround",
+        "confidence": "LOW",
+        "distress_summary": ""
+      },
+      "owner_data": {
+        "owner_name": "EVERGREEN DALLAS HOSPITALITY LP",
+        "owner_company": "",
+        "mailing_address": "1920 ENCHANTED WAY, GRAPEVINE, TX 76051-1029",
+        "owner_phone": "",
+        "ownership_since": "2014-02-03",
+        "ownership_length_years": 12,
+        "attom_year_built": 1911,
+        "is_older_than_20_years": "Yes",
+        "room_count": "270"
+      },
+      "cmbs_data": {},
+      "franchise_data": {
+        "franchise_affiliated": false,
+        "current_brand": "",
+        "former_brand": "",
+        "brand_status": "NONE",
+        "franchise_confidence": "Low"
+      },
+      "source_location": "Dallas, TX",
+      "radius_miles": 20
+    },
+    "lead_reason": "Aging property; Long-term ownership",
+    "created_at": "2026-06-24T17:16:13.887813",
+    "place_id": "ChIJoypulB6ZToYRwosc2x44jHY",
+    "feedback_rule_applied": "",
+    "feedback_penalty": 0,
+    "rank": 3,
+    "llm_distress_probability": 0.65,
+    "llm_seller_fatigue_probability": 0.7,
+    "llm_opportunity_score": 62,
+    "llm_confidence": "LOW",
+    "llm_top_distress_signals": "N | e | g | a | t | i | v | e |   | r | e | v | i | e | w |   | s | i | g | n | a | l | s |   | r | e | l | a | t | e | d |   | t | o |   | s | m | e | l | l | , |   | s | a | f | e | t | y |   | c | o | n | c | e | r | n | s | , |   | r | e | f | u | n | d |   | i | s | s | u | e | s | , |   | a | n | d |   | h | i | g | h |   | r | e | n | o | v | a | t | i | o | n |   | s | i | g | n | a | l | s |   | i | n |   | r | e | v | i | e | w | s |   | ( | 6 | 0 | % | ) | . |   | P | h | y | s | i | c | a | l |   | c | o | n | d | i | t | i | o | n |   | s | c | o | r | e |   | i | s |   | l | o | w |   | ( | 2 | ) |   | a | n | d |   | t | h | e |   | p | r | o | p | e | r | t | y |   | i | s |   | o | l | d |   | w | i | t | h |   | r | e | n | o | v | a | t | i | o | n |   | n | e | e | d | e | d | .",
+    "llm_investment_thesis": "Amyfinehouse Luxury Downtown Stay shows moderate distress with operational and physical condition challenges despite improving guest sentiment and increasing review activity. The long-term ownership and significant renovation needs suggest potential seller fatigue and opportunity for repositioning through renovation and operational improvements.",
+    "llm_recommended_action": "Operational Turnaround",
+    "llm_distress_summary": "",
+    "llm_review_summary": "Guests report occasional issues with unpleasant odors, safety concerns, and refund difficulties, though overall sentiment is improving with more positive reviews recently. The property is aging and in need of renovation, which aligns with guest feedback on maintenance and physical condition. Service and cleanliness issues are not prominent, but renovation needs are clear. Guest sentiment is trending upward, indicating potential for recovery with targeted improvements.",
+    "suppress_digest": false,
+    "last_score": 66.8,
+    "last_resurfaced": null
+  },
+  {
+    "search_location": "Dallas, TX",
+    "radius_miles": 20,
+    "hotel_name": "Staybridge Suites Plano North - Frisco by IHG",
+    "address": "8355 Parkwood Blvd, Plano, TX 75024, USA",
+    "rating": 4.2,
+    "user_rating_count": 624,
+    "business_status": "OPERATIONAL",
+    "distress_score": 6,
+    "distress_reasons": "Negative review signal: leak | Negative review signal: disappointing | Operational distress signal: maintenance issue | Renovation signals in reviews: 60.0%",
+    "review_trend_score": 0,
+    "review_volume_recent": 5,
+    "review_volume_prior": 0,
+    "review_volume_change_pct": 100.0,
+    "avg_rating_recent": 3.6,
+    "avg_rating_prior": 0.0,
+    "review_rating_delta": 0,
+    "complaint_rate_recent": 0.4,
+    "complaint_rate_prior": 0.0,
+    "review_complaint_delta": 0.4,
+    "year_built": "",
+    "property_age": "",
+    "renovation_signal_rate": 0.6,
+    "renovation_needed": true,
+    "physical_condition_score": 2,
+    "google_maps_url": "https://maps.google.com/?cid=11817325757866637392&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "source_provenance": "Google Places | ATTOM | Tavily",
+    "franchise_affiliated": true,
+    "current_brand": "IHG",
+    "former_brand": "",
+    "brand_status": "CURRENT",
+    "franchise_confidence": "High",
+    "franchise_evidence": "Brand match: IHG",
+    "owner_name": "AGP SBS PF LLC",
+    "owner_company": "AGP SBS PF LLC",
+    "mailing_address": "2209 LORING DR, ALLEN, TX 75013-5840",
+    "owner_phone": "",
+    "owner_confidence": "High",
+    "owner_evidence": "Retrieved from ATTOM property records",
+    "ownership_since": "2018-02-08",
+    "ownership_length_years": 8,
+    "attom_year_built": 2014,
+    "is_older_than_20_years": "No",
+    "room_count": "101",
+    "price_tier": "Midscale",
+    "signals": {
+      "review_decline": false,
+      "review_rating_delta": 0,
+      "review_volume_decline": false,
+      "complaint_increase": false,
+      "sentiment_decline": false,
+      "sentiment_trend": "Improving",
+      "review_activity_trend": "Increasing",
+      "positive_reviews_recent": 4,
+      "negative_reviews_recent": 0,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "renovation_needed": true,
+      "old_property": false,
+      "physical_condition_score": 2,
+      "franchise_loss": false,
+      "former_brand": "",
+      "franchise_affiliated": true,
+      "current_brand": "IHG",
+      "brand_status": "CURRENT",
+      "cmbs_watchlist": false,
+      "cmbs_special_servicing": false,
+      "cmbs_delinquent": false,
+      "long_term_owner": false,
+      "ownership_length_years": 8,
+      "room_count": "101",
+      "distress_score": 6
+    },
+    "review_themes": {
+      "maintenance": 22.2,
+      "staff": 77.8
+    },
+    "llm_analysis": {
+      "distress_probability": 0.65,
+      "seller_fatigue_probability": 0.3,
+      "opportunity_score": 55,
+      "llm_star_rating": 3.0,
+      "top_distress_signals": "Negative review signals related to leaks and disappointing experiences, maintenance issues, high renovation signals in reviews (60%), low physical condition score (2)",
+      "investment_thesis": "The Staybridge Suites Plano North - Frisco shows moderate distress driven by maintenance and renovation needs despite improving guest sentiment and increasing review activity. The property benefits from a strong brand affiliation with IHG and a relatively recent ownership period, but physical condition and operational issues suggest potential for value creation through targeted renovations and operational improvements.",
+      "recommended_acquisition_strategy": "Operational Turnaround",
+      "review_summary": "Guest reviews highlight maintenance issues such as leaks and disappointing experiences, though no recent negative reviews were recorded. The property shows signs of needed renovation and has a low physical condition score. Overall guest sentiment is improving with increasing review activity, indicating operational improvements but ongoing maintenance and renovation concerns remain.",
+      "recommended_action": "Operational Turnaround",
+      "confidence": "LOW",
+      "distress_summary": ""
+    },
+    "final_lead_score": 51.4,
+    "entity": {
+      "hotel_name": "Staybridge Suites Plano North - Frisco by IHG",
+      "address": "8355 Parkwood Blvd, Plano, TX 75024, USA",
+      "place_id": "ChIJ1Ruzfb88TIYRUPi2eCqT_6M",
+      "latitude": null,
+      "longitude": null,
+      "rating": 4.2,
+      "user_rating_count": 624,
+      "business_status": "OPERATIONAL",
+      "google_maps_url": "https://maps.google.com/?cid=11817325757866637392&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+      "reviews": [
+        {
+          "name": "places/ChIJ1Ruzfb88TIYRUPi2eCqT_6M/reviews/Ci9DQUlRQUNvZENodHljRjlvT25OQ1MxVm5VR3BGZG5BM2RETktURWxRV2pObmNuYxAB",
+          "relativePublishTimeDescription": "2 weeks ago",
+          "rating": 1,
+          "text": {
+            "text": "Stayed here during a business trip and had a suite with a kitchen and two sleeping areas. The room was clean and the location was convenient, which were definitely positives.\nThat said, there were several design and maintenance issues that would keep me from staying here again. The separate bedroom doesn't have its own A/C unit, so if you close the door for privacy, very little cool air reaches the room. The shower had extremely low water pressure, the tub diverter didn't fully seal, and the shower head leaked continuously. There were also large holes in the wall where a thermostat or HVAC controller had apparently been removed. The dishwasher is not attached to the wall.\n\nThe bedroom door was on spring hinges with no doorstop, making it difficult to keep open without wedging it against the dresser. The bathroom sink drained very slowly as well.\nMy biggest complaint is the layout. The suite sleeps a lot of people with three beds plus a pullout sofa, yet there is only one bathroom. It would have made much more sense to have two connecting rooms with two bathrooms rather than trying to fit so many sleeping spaces into a single-bathroom setup.\nOverall, the room was clean and the location was good, but the combination of maintenance issues and the room design means I would choose a different hotel next time.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Stayed here during a business trip and had a suite with a kitchen and two sleeping areas. The room was clean and the location was convenient, which were definitely positives.\nThat said, there were several design and maintenance issues that would keep me from staying here again. The separate bedroom doesn't have its own A/C unit, so if you close the door for privacy, very little cool air reaches the room. The shower had extremely low water pressure, the tub diverter didn't fully seal, and the shower head leaked continuously. There were also large holes in the wall where a thermostat or HVAC controller had apparently been removed. The dishwasher is not attached to the wall.\n\nThe bedroom door was on spring hinges with no doorstop, making it difficult to keep open without wedging it against the dresser. The bathroom sink drained very slowly as well.\nMy biggest complaint is the layout. The suite sleeps a lot of people with three beds plus a pullout sofa, yet there is only one bathroom. It would have made much more sense to have two connecting rooms with two bathrooms rather than trying to fit so many sleeping spaces into a single-bathroom setup.\nOverall, the room was clean and the location was good, but the combination of maintenance issues and the room design means I would choose a different hotel next time.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Justin C",
+            "uri": "https://www.google.com/maps/contrib/106019643037872955863/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJ6s0kMaI0fVggIkK9nztuVVmEDRc7kFklbLxpZQDGkn8621g=s128-c0x00000000-cc-rp-mo-ba6"
+          },
+          "publishTime": "2026-06-08T05:21:56.243360659Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25OQ1MxVm5VR3BGZG5BM2RETktURWxRV2pObmNuYxAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25OQ1MxVm5VR3BGZG5BM2RETktURWxRV2pObmNuYxAB!2m1!1s0x864c3cbf7db31bd5:0xa3ff932a78b6f850"
+        },
+        {
+          "name": "places/ChIJ1Ruzfb88TIYRUPi2eCqT_6M/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xWS1NsbFhOVFZWVlRaVlUxTjVNemxoWlhCaFlYYxAB",
+          "relativePublishTimeDescription": "a month ago",
+          "rating": 5,
+          "text": {
+            "text": "Hotel was a little dated then others iv stayed at in the past. But the location was super convenient and the customer service at the front desk definitely made up for everything else! Specifically front desk Shawna, she was very friendly and pleasant. I had went down several times for recommendations on different things I was needing in the area and she was amazing help! I know I can be a handful but she never left me feeling that way. The rooms were clean, definitely not enough towels. Everything else was standard for this type of hotel. Shawna deserves a raise! I’ll definitely be back. Thanks again - Jason Martin",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Hotel was a little dated then others iv stayed at in the past. But the location was super convenient and the customer service at the front desk definitely made up for everything else! Specifically front desk Shawna, she was very friendly and pleasant. I had went down several times for recommendations on different things I was needing in the area and she was amazing help! I know I can be a handful but she never left me feeling that way. The rooms were clean, definitely not enough towels. Everything else was standard for this type of hotel. Shawna deserves a raise! I’ll definitely be back. Thanks again - Jason Martin",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Jason Martin",
+            "uri": "https://www.google.com/maps/contrib/114771951475308125544/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocL8qbvTM7fCJ7gsvaljbNx_u9ooovEqhxkDIZf8mFo36LZXZg=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2026-05-08T01:35:38.505988875Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xWS1NsbFhOVFZWVlRaVlUxTjVNemxoWlhCaFlYYxAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xWS1NsbFhOVFZWVlRaVlUxTjVNemxoWlhCaFlYYxAB!2m1!1s0x864c3cbf7db31bd5:0xa3ff932a78b6f850"
+        },
+        {
+          "name": "places/ChIJ1Ruzfb88TIYRUPi2eCqT_6M/reviews/Ci9DQUlRQUNvZENodHljRjlvT25SVFltNXZTREpmWTJoRFN6VlhUMHhMYkVabFQwRRAB",
+          "relativePublishTimeDescription": "3 months ago",
+          "rating": 5,
+          "text": {
+            "text": "I stayed at this location last week for 1 ngt only but ended up staying another 3 ngts..\n\nFront desk Ali was awesome. She was very welcoming and helped me out with extending my stay for multiple days, even though they had low availability. She made it work\n\nTheir manager Rony, superstar ! I was with my grandma and we had a lot of bags. Rony saw us struggle and he came from inside, because he saw us on camera and told me not to worry about my luggage. He and his team helped us with all our bags, all the way to the room. I have a lot of respect for his sincerity and respect for elders. He made me and my grandmother feel welcome and made our stay painless.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "I stayed at this location last week for 1 ngt only but ended up staying another 3 ngts..\n\nFront desk Ali was awesome. She was very welcoming and helped me out with extending my stay for multiple days, even though they had low availability. She made it work\n\nTheir manager Rony, superstar ! I was with my grandma and we had a lot of bags. Rony saw us struggle and he came from inside, because he saw us on camera and told me not to worry about my luggage. He and his team helped us with all our bags, all the way to the room. I have a lot of respect for his sincerity and respect for elders. He made me and my grandmother feel welcome and made our stay painless.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Vyk Sahai",
+            "uri": "https://www.google.com/maps/contrib/115545828106461172646/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLe5VLzuQUe2UnX7pKKv3e6Fclkv0VvMDRH9ThZ79jyEAei1A=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2026-03-13T03:29:59.901591026Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25SVFltNXZTREpmWTJoRFN6VlhUMHhMYkVabFQwRRAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25SVFltNXZTREpmWTJoRFN6VlhUMHhMYkVabFQwRRAB!2m1!1s0x864c3cbf7db31bd5:0xa3ff932a78b6f850"
+        },
+        {
+          "name": "places/ChIJ1Ruzfb88TIYRUPi2eCqT_6M/reviews/Ci9DQUlRQUNvZENodHljRjlvT25kUlpGbFRlQzFTVkZCQ2JHUjZjbWx4U0ZwSVgwRRAB",
+          "relativePublishTimeDescription": "a month ago",
+          "rating": 2,
+          "text": {
+            "text": "I don’t usually leave reviews, but I felt compelled to share my experience before even heading to my flight. Unfortunately, this Staybridge Suites fell well below expectations. The property feels dated, with worn furniture that gives the impression of a budget motel rather than a hotel in such a prime location.\n\nThe overall aesthetic doesn’t align with the surrounding area, which makes the experience even more disappointing. Management was another concern the GM came across as dismissive and overly talkative, without actually addressing guest needs in a meaningful way.\n\nThat said, one bright spot was a front desk associate Shawna, if I recall correctly who was exceptionally helpful and professional. She stood out as the only truly positive part of the stay.\n\nThe social hour offerings were underwhelming and lacked quality. As someone who works as a trade show market manager, I pay close attention to service standards, and it was clear the team is not aligned with what guests expect at this level.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "I don’t usually leave reviews, but I felt compelled to share my experience before even heading to my flight. Unfortunately, this Staybridge Suites fell well below expectations. The property feels dated, with worn furniture that gives the impression of a budget motel rather than a hotel in such a prime location.\n\nThe overall aesthetic doesn’t align with the surrounding area, which makes the experience even more disappointing. Management was another concern the GM came across as dismissive and overly talkative, without actually addressing guest needs in a meaningful way.\n\nThat said, one bright spot was a front desk associate Shawna, if I recall correctly who was exceptionally helpful and professional. She stood out as the only truly positive part of the stay.\n\nThe social hour offerings were underwhelming and lacked quality. As someone who works as a trade show market manager, I pay close attention to service standards, and it was clear the team is not aligned with what guests expect at this level.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Joe Blew",
+            "uri": "https://www.google.com/maps/contrib/116561340074060694610/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjU_FTwnqHPg75_bQjmLKhc9RSHSMYv4U2g5b_F0MFq0GvTxC8Y=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2026-04-26T19:24:20.969008812Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25kUlpGbFRlQzFTVkZCQ2JHUjZjbWx4U0ZwSVgwRRAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25kUlpGbFRlQzFTVkZCQ2JHUjZjbWx4U0ZwSVgwRRAB!2m1!1s0x864c3cbf7db31bd5:0xa3ff932a78b6f850"
+        },
+        {
+          "name": "places/ChIJ1Ruzfb88TIYRUPi2eCqT_6M/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pOYVIxZzBUamQ0ZG5kMGNYRnJMVGN6ZDNvMlZFRRAB",
+          "relativePublishTimeDescription": "4 months ago",
+          "rating": 5,
+          "text": {
+            "text": "I came to this hotel looking for a safe place to escape to with my toddler from a stressful day and Priscilla was so kind to me. She really made sure that I got a room with my son that was clean and made me feel welcome. She gave me an amazing customer experience and made things happen when others couldn't . I really can't thank her enough and wanted to stay another night because I felt safe and sound. The bed was comfortable and my son slept like a baby. I will continue to recommend this location to others simply because she was so kind, efficient and helpful.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "I came to this hotel looking for a safe place to escape to with my toddler from a stressful day and Priscilla was so kind to me. She really made sure that I got a room with my son that was clean and made me feel welcome. She gave me an amazing customer experience and made things happen when others couldn't . I really can't thank her enough and wanted to stay another night because I felt safe and sound. The bed was comfortable and my son slept like a baby. I will continue to recommend this location to others simply because she was so kind, efficient and helpful.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "mercedes lewis",
+            "uri": "https://www.google.com/maps/contrib/100801146167770780757/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjU1sOkYPONB2Qli2urrSpaIu_-scfi6Kj693RY-XDtq8kxQm3JJ=s128-c0x00000000-cc-rp-mo-ba3"
+          },
+          "publishTime": "2026-02-08T20:39:40.301622266Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pOYVIxZzBUamQ0ZG5kMGNYRnJMVGN6ZDNvMlZFRRAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pOYVIxZzBUamQ0ZG5kMGNYRnJMVGN6ZDNvMlZFRRAB!2m1!1s0x864c3cbf7db31bd5:0xa3ff932a78b6f850"
+        }
+      ],
+      "signals": {
+        "review_decline": false,
+        "review_rating_delta": 0,
+        "review_volume_decline": false,
+        "complaint_increase": false,
+        "sentiment_decline": false,
+        "sentiment_trend": "Improving",
+        "review_activity_trend": "Increasing",
+        "positive_reviews_recent": 4,
+        "negative_reviews_recent": 0,
+        "positive_reviews_prior": 0,
+        "negative_reviews_prior": 0,
+        "renovation_needed": true,
+        "old_property": false,
+        "physical_condition_score": 2,
+        "franchise_loss": false,
+        "former_brand": "",
+        "franchise_affiliated": true,
+        "current_brand": "IHG",
+        "brand_status": "CURRENT",
+        "cmbs_watchlist": false,
+        "cmbs_special_servicing": false,
+        "cmbs_delinquent": false,
+        "long_term_owner": false,
+        "ownership_length_years": 8,
+        "room_count": "101",
+        "distress_score": 6
+      },
+      "review_themes": {
+        "maintenance": 22.2,
+        "staff": 77.8
+      },
+      "heuristic_scores": {
+        "distress_score": 6,
+        "distress_reasons": [
+          "Negative review signal: leak",
+          "Negative review signal: disappointing",
+          "Operational distress signal: maintenance issue",
+          "Renovation signals in reviews: 60.0%"
+        ],
+        "review_trend_score": 0,
+        "review_volume_recent": 5,
+        "review_volume_prior": 0,
+        "review_volume_change_pct": 100.0,
+        "avg_rating_recent": 3.6,
+        "avg_rating_prior": 0.0,
+        "review_rating_delta": 0,
+        "complaint_rate_recent": 0.4,
+        "complaint_rate_prior": 0.0,
+        "review_complaint_delta": 0.4,
+        "year_built": "",
+        "property_age": "",
+        "renovation_signal_rate": 0.6,
+        "renovation_needed": true,
+        "physical_condition_score": 2,
+        "positive_reviews_recent": 4,
+        "negative_reviews_recent": 0,
+        "positive_reviews_prior": 0,
+        "negative_reviews_prior": 0,
+        "sentiment_delta": -4,
+        "sentiment_trend": "Improving",
+        "review_activity_trend": "Increasing"
+      },
+      "llm_analysis": {
+        "distress_probability": 0.65,
+        "seller_fatigue_probability": 0.3,
+        "opportunity_score": 55,
+        "llm_star_rating": 3.0,
+        "top_distress_signals": "Negative review signals related to leaks and disappointing experiences, maintenance issues, high renovation signals in reviews (60%), low physical condition score (2)",
+        "investment_thesis": "The Staybridge Suites Plano North - Frisco shows moderate distress driven by maintenance and renovation needs despite improving guest sentiment and increasing review activity. The property benefits from a strong brand affiliation with IHG and a relatively recent ownership period, but physical condition and operational issues suggest potential for value creation through targeted renovations and operational improvements.",
+        "recommended_acquisition_strategy": "Operational Turnaround",
+        "review_summary": "Guest reviews highlight maintenance issues such as leaks and disappointing experiences, though no recent negative reviews were recorded. The property shows signs of needed renovation and has a low physical condition score. Overall guest sentiment is improving with increasing review activity, indicating operational improvements but ongoing maintenance and renovation concerns remain.",
+        "recommended_action": "Operational Turnaround",
+        "confidence": "LOW",
+        "distress_summary": ""
+      },
+      "owner_data": {
+        "owner_name": "AGP SBS PF LLC",
+        "owner_company": "AGP SBS PF LLC",
+        "mailing_address": "2209 LORING DR, ALLEN, TX 75013-5840",
+        "owner_phone": "",
+        "ownership_since": "2018-02-08",
+        "ownership_length_years": 8,
+        "attom_year_built": 2014,
+        "is_older_than_20_years": "No",
+        "room_count": "101"
+      },
+      "cmbs_data": {},
+      "franchise_data": {
+        "franchise_affiliated": true,
+        "current_brand": "IHG",
+        "former_brand": "",
+        "brand_status": "CURRENT",
+        "franchise_confidence": "High"
+      },
+      "source_location": "Dallas, TX",
+      "radius_miles": 20
+    },
+    "lead_reason": "",
+    "created_at": "2026-06-24T17:17:47.251855",
+    "place_id": "ChIJ1Ruzfb88TIYRUPi2eCqT_6M",
+    "feedback_rule_applied": "",
+    "feedback_penalty": 0,
+    "rank": 4,
+    "llm_distress_probability": 0.65,
+    "llm_seller_fatigue_probability": 0.3,
+    "llm_opportunity_score": 55,
+    "llm_confidence": "LOW",
+    "llm_top_distress_signals": "N | e | g | a | t | i | v | e |   | r | e | v | i | e | w |   | s | i | g | n | a | l | s |   | r | e | l | a | t | e | d |   | t | o |   | l | e | a | k | s |   | a | n | d |   | d | i | s | a | p | p | o | i | n | t | i | n | g |   | e | x | p | e | r | i | e | n | c | e | s | , |   | m | a | i | n | t | e | n | a | n | c | e |   | i | s | s | u | e | s | , |   | h | i | g | h |   | r | e | n | o | v | a | t | i | o | n |   | s | i | g | n | a | l | s |   | i | n |   | r | e | v | i | e | w | s |   | ( | 6 | 0 | % | ) | , |   | l | o | w |   | p | h | y | s | i | c | a | l |   | c | o | n | d | i | t | i | o | n |   | s | c | o | r | e |   | ( | 2 | )",
+    "llm_investment_thesis": "The Staybridge Suites Plano North - Frisco shows moderate distress driven by maintenance and renovation needs despite improving guest sentiment and increasing review activity. The property benefits from a strong brand affiliation with IHG and a relatively recent ownership period, but physical condition and operational issues suggest potential for value creation through targeted renovations and operational improvements.",
+    "llm_recommended_action": "Operational Turnaround",
+    "llm_distress_summary": "",
+    "llm_review_summary": "Guest reviews highlight maintenance issues such as leaks and disappointing experiences, though no recent negative reviews were recorded. The property shows signs of needed renovation and has a low physical condition score. Overall guest sentiment is improving with increasing review activity, indicating operational improvements but ongoing maintenance and renovation concerns remain.",
+    "suppress_digest": false,
+    "last_score": 51.4,
+    "last_resurfaced": null
+  }
+]

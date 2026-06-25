@@ -1,4 +1,5 @@
 # agent-1/src/storage/feedback_actions.py
+from psycopg2.extras import Json
 from src.storage.postgres_storage import get_connection
 
 def action_already_exists(reason):
@@ -18,27 +19,9 @@ def action_already_exists(reason):
     conn.close()
     return exists
 
-def create_feedback_action(
-    reason,
-    count,
-    action
-):
+def create_feedback_action(reason, count, action, recommendation_json=None):
     conn = get_connection()
     cur = conn.cursor()
-
-    cur.execute(
-        """
-        SELECT 1
-        FROM feedback_actions
-        WHERE feedback_reason=%s
-        """,
-        (reason,)
-    )
-
-    if cur.fetchone():
-        cur.close()
-        conn.close()
-        return
 
     cur.execute(
         """
@@ -46,17 +29,45 @@ def create_feedback_action(
         (
             feedback_reason,
             trigger_count,
-            action_taken
+            action_taken,
+            recommendation_json
         )
-        VALUES (%s,%s,%s)
+        VALUES (%s,%s,%s,%s)
+
+        ON CONFLICT (feedback_reason)
+        DO UPDATE SET
+            trigger_count = EXCLUDED.trigger_count,
+            action_taken = EXCLUDED.action_taken,
+            recommendation_json = EXCLUDED.recommendation_json
         """,
         (
             reason,
             count,
-            action
+            action,
+            Json(recommendation_json)
         )
     )
 
     conn.commit()
     cur.close()
     conn.close()
+    
+def get_existing_trigger_count(reason):
+
+    conn = get_connection()
+    cur = conn.cursor()
+
+    cur.execute(
+        """
+        SELECT trigger_count
+        FROM feedback_actions
+        WHERE feedback_reason=%s
+        """,
+        (reason,)
+    )
+
+    row = cur.fetchone()
+    cur.close()
+    conn.close()
+
+    return row[0] if row else 0

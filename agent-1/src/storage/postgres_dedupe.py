@@ -12,14 +12,22 @@ def remove_existing_postgres_leads(rows):
 
     for row in rows:
 
+        place_id = row.get("place_id")
         lead_key = build_lead_key(row)
+        existing_row = None
 
-        if lead_key not in existing:
+        if place_id and place_id in existing:
+            existing_row = existing[place_id]
+
+        elif lead_key in existing:
+            existing_row = existing[lead_key]
+        
+        if not existing_row:
             filtered.append(row)
             continue
 
         status = (
-            existing[lead_key]
+            existing_row
             .get("status", "NEW")
             .upper()
         )

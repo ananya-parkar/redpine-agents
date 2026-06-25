@@ -5,7 +5,8 @@ from dotenv import load_dotenv
 load_dotenv(override=True)
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-INPUT_FILE = BASE_DIR / "inputs" / "locations.txt"
+INPUT_FOLDER = BASE_DIR / "inputs"
+INPUT_FILE = INPUT_FOLDER / "agent1_search_request.xlsx"
 RUNS_DIR = BASE_DIR / "runs"
 
 GOOGLE_MAPS_API_KEY = os.getenv("GOOGLE_MAPS_API_KEY")

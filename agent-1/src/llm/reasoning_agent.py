@@ -6,7 +6,7 @@ from src.llm.prompts import (
     HOTEL_ANALYSIS_PROMPT
 )
 from src.llm.schemas import LLM_REASONING_SCHEMA
-from src.storage.postgres_storage import get_feedback_patterns
+from src.storage.postgres_storage import get_feedback_recommendations
 
 def validate_llm_response(parsed: dict):
 
@@ -45,13 +45,15 @@ def default_failed_response(error_message: str):
     }
 
 def analyze_hotel(entity):
-    feedback_patterns = get_feedback_patterns()
-    feedback_text = "\n".join(
-        [
-            f"{reason} ({count})"
-            for reason, count in feedback_patterns
-        ]
-    )
+    recommendations = get_feedback_recommendations()
+    feedback_text = "\n".join([
+        (
+            f"Reason: {row['feedback_reason']}\n"
+            f"Prompt Guidance: "
+            f"{row['recommendation_json'].get('prompt_fix','')}"
+        )for row in recommendations])
+
+    
 
     prompt = HOTEL_ANALYSIS_PROMPT.format(
         hotel_data={

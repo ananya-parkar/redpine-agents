@@ -161,6 +161,8 @@ def detect_owner_details(address: str = "") -> Dict:
         room_count = (
             building_summary.get("unitsCount")
             or building_summary.get("unitscount")
+            or building_summary.get("roomsTotal")
+            or building_summary.get("roomstotal")
             or ""
         )
 
