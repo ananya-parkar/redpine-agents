@@ -26,6 +26,8 @@ load_dotenv(override=True)
 #
 # signal_tier = None — LLM assigns tier in reasoning_agent
 # ---------------------------------------------------
+LEGISTAR_BASE = os.getenv("LEGISTAR_BASE")
+GNEWS_RSS     = os.getenv("GNEWS_RSS")
 
 LEGISTAR_BASE = os.getenv("LEGISTAR_BASE")
 GNEWS_RSS     = os.getenv("GNEWS_RSS")

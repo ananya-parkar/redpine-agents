@@ -7,6 +7,8 @@ from openai import OpenAI
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from config import OPENAI_API_KEY, OPENAI_MODEL, SEARCHAPI_KEY
+from tuning_prompt import build_tuning_block
+from db_writer import get_active_tuning_triggers
 
 # ---------------------------------------------------
 # STAKEHOLDER ENRICHMENT — SearchAPI only
@@ -228,7 +230,7 @@ def find_contact_email(org: str) -> str:
     return ""
 
 
-def extract_stakeholders(lead: dict, search_results: list[dict]) -> list[dict]:
+def extract_stakeholders(lead: dict, search_results: list[dict], tuning_block: str = "") -> list[dict]:
     """LLM extracts stakeholders from SearchAPI results."""
     if not search_results:
         return []
@@ -249,7 +251,7 @@ def extract_stakeholders(lead: dict, search_results: list[dict]) -> list[dict]:
             model=OPENAI_MODEL, max_tokens=800, temperature=0.0,
             response_format={"type":"json_object"},
             messages=[
-                {"role":"system","content":EXTRACT_PROMPT},
+                {"role":"system","content":EXTRACT_PROMPT + tuning_block},
                 {"role":"user","content":prompt_context}
             ]
         )
@@ -278,6 +280,16 @@ def enrich_stakeholders(all_leads: list[dict],
 
     print(f"\n[STEP 4] Stakeholder enrichment via SearchAPI "
           f"({len(to_enrich)} leads)...", flush=True)
+
+    # Same tuning-trigger mechanism as reasoning_agent.py, but scoped to
+    # "stakeholder" — e.g. a "wrong owner" pattern flagged 3+ times by
+    # Matthew/Anshi targets THIS prompt, not reasoning_agent.py's (those
+    # are two separate LLM calls). See tuning_prompt.py for the scoping.
+    active_triggers = get_active_tuning_triggers()
+    stakeholder_tuning_block = build_tuning_block(active_triggers, scope="stakeholder")
+    if stakeholder_tuning_block:
+        print(f"  [TUNING] Injecting {stakeholder_tuning_block.count('Pattern:')} "
+              f"known false-positive pattern(s) into stakeholder prompt", flush=True)
 
     stakeholder_rows = []
     api_limit_failures = 0
@@ -308,7 +320,7 @@ def enrich_stakeholders(all_leads: list[dict],
             print(f"      No search results", flush=True)
             continue
 
-        stakes = extract_stakeholders(lead, search_results)
+        stakes = extract_stakeholders(lead, search_results, tuning_block=stakeholder_tuning_block)
         print(f"      → {len(stakes)} stakeholders found", flush=True)
 
         if stakes:

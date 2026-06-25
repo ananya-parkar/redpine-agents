@@ -65,3 +65,7 @@ CREATE TABLE IF NOT EXISTS review_status (
 CREATE INDEX IF NOT EXISTS idx_candidates_state ON candidates(state);
 CREATE INDEX IF NOT EXISTS idx_candidates_score ON candidates(seller_readiness_score);
 CREATE INDEX IF NOT EXISTS idx_review_status_status ON review_status(status);
+ALTER TABLE candidates ADD COLUMN IF NOT EXISTS revenue_estimate TEXT;
+ALTER TABLE candidates ADD COLUMN IF NOT EXISTS extraction_confidence TEXT;
+ALTER TABLE evidence ADD COLUMN IF NOT EXISTS evidence_sources TEXT;
+ALTER TABLE evidence ADD COLUMN IF NOT EXISTS raw_evidence_summary TEXT;
