@@ -3,10 +3,10 @@ import json
 import time
 import requests
 from urllib.parse import urlparse
-from openai import OpenAI
+from llm_client import call_llm_json
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
-from config import OPENAI_API_KEY, OPENAI_MODEL, SEARCHAPI_KEY
+from config import SEARCHAPI_KEY
 from tuning_prompt import build_tuning_block
 from db_writer import get_active_tuning_triggers
 
@@ -40,8 +40,6 @@ from db_writer import get_active_tuning_triggers
 # and stops early (default: 4 in a row) rather than burning through
 # the rest of the leads against a dead/exhausted key.
 # ---------------------------------------------------
-
-client = OpenAI(api_key=OPENAI_API_KEY)
 
 SEARCHAPI_URL = "https://www.searchapi.io/api/v1/search"
 EMAIL_REGEX   = re.compile(r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')
@@ -247,16 +245,12 @@ def extract_stakeholders(lead: dict, search_results: list[dict], tuning_block: s
             f"Project: {lead.get('whats_happening','')}\n\n"
             f"Search results:\n{context[:3000]}"
         )
-        resp = client.chat.completions.create(
-            model=OPENAI_MODEL, max_tokens=800, temperature=0.0,
-            response_format={"type":"json_object"},
-            messages=[
-                {"role":"system","content":EXTRACT_PROMPT + tuning_block},
-                {"role":"user","content":prompt_context}
-            ]
+        result = call_llm_json(
+            system=EXTRACT_PROMPT + tuning_block,
+            user_content=prompt_context,
+            max_tokens=800, temperature=0.0,
         )
-        raw = resp.choices[0].message.content.strip()
-        stakes = json.loads(raw).get("stakeholders", [])
+        stakes = result.get("stakeholders", [])
         return [s for s in stakes
                 if s.get("name","").strip()
                 and s.get("relevance","") != "low"]

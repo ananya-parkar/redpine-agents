@@ -10,11 +10,14 @@ load_dotenv(override=True)
 # ---------------------------------------------------
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 OPENAI_MODEL   = os.getenv("OPENAI_MODEL")
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
+ANTHROPIC_MODEL   = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-5")
 GNEWS_API_KEY  = os.getenv("GNEWS_API_KEY", "")
 TOP_N_FOR_LLM  = 100
 GOOGLE_MAPS_KEY = os.getenv("GOOGLE_MAPS_KEY", "")
 SEARCHAPI_KEY = os.getenv("SEARCHAPI_KEY", "")
 TAVILY_API_KEY=os.getenv("TAVILY_API_KEY","")
+NEWSAPI_KEY = os.getenv("NEWSAPI_KEY", "")
 # ---------------------------------------------------
 # PIPELINE CONFIG
 # ---------------------------------------------------

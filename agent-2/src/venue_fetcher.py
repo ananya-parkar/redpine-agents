@@ -7,11 +7,11 @@ from io import StringIO
 from datetime import datetime, timedelta
 from pathlib import Path
 from bs4 import BeautifulSoup
-from openai import OpenAI
+from llm_client import call_llm_json
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
-from config import OPENAI_API_KEY, OPENAI_MODEL, SEARCHAPI_KEY, GOOGLE_MAPS_KEY
+from config import SEARCHAPI_KEY, GOOGLE_MAPS_KEY
 
 # ==========================================================
 # VENUE FETCHER — pd.read_html architecture
@@ -48,7 +48,6 @@ REFRESH_DAYS       = 2
 SPARQL_URL         = "https://query.wikidata.org/sparql"
 WIKI_API           = "https://en.wikipedia.org/w/api.php"
 CURRENT_YEAR       = datetime.now().year
-client             = OpenAI(api_key=OPENAI_API_KEY)
 
 # Browser User-Agent — Wikipedia returns full HTML to browsers
 BROWSER_HEADERS = {
@@ -471,12 +470,12 @@ def discover_planned_venues():
         context="Search results about new/planned US sports venues:\n\n"
         for r in enriched:
             context+=f"TITLE: {r['title']}\nCONTENT: {(r.get('content') or r.get('snippet',''))[:500]}\n\n"
-        resp=client.chat.completions.create(
-            model=OPENAI_MODEL,max_tokens=1500,temperature=0.1,
-            response_format={"type":"json_object"},
-            messages=[{"role":"system","content":EXTRACT_PROMPT},
-                      {"role":"user","content":context}])
-        venues=json.loads(resp.choices[0].message.content).get("venues",[])
+        result = call_llm_json(
+            system=EXTRACT_PROMPT,
+            user_content=context,
+            max_tokens=1500, temperature=0.1,
+        )
+        venues = result.get("venues", [])
         valid=[v for v in venues
                if v.get("city","").strip()
                and v.get("state","") in US_STATES
