@@ -3,10 +3,15 @@ import requests
 from datetime import datetime, timezone, timedelta
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
-from config import GNEWS_API_KEY
+from config import NEWSAPI_KEY
 
 # ---------------------------------------------------
-# SIGNAL COLLECTOR
+# SIGNAL COLLECTOR  (NewsAPI /v2/everything)
+#
+# MIGRATED FROM GNews → NewsAPI.org. Only the HTTP layer changed
+# (endpoint, key param, rate-limit codes); all the pipeline logic —
+# priority ordering, query building, circuit breaker, confirmed_no_news
+# synthetic signals, recency filtering — is IDENTICAL to before.
 #
 # KEY DESIGN:
 #   Priority order:
@@ -18,22 +23,33 @@ from config import GNEWS_API_KEY
 #   For planned venues: search WITHOUT extra construction keywords
 #     (they're already planned — just find latest news about them)
 #
-#   CIRCUIT BREAKER: search_gnews() returns None (not []) specifically
-#   when GNews itself is refusing requests (403 daily quota / 429 retries
-#   exhausted) — distinct from a venue that legitimately has no news.
-#   collect_signals() counts CONSECUTIVE None results and stops early
-#   (default: 4 in a row) rather than burning through the rest of the
-#   batch against a dead API key.
+#   CIRCUIT BREAKER: search_news() returns None (not []) specifically
+#   when NewsAPI itself is refusing requests (429 rate limit / quota,
+#   or 401 bad key, or retries exhausted) — distinct from a venue that
+#   legitimately has no news. collect_signals() counts CONSECUTIVE None
+#   results and stops early (default: 4 in a row) rather than burning
+#   through the rest of the batch against a dead/exhausted API key.
+#
+# NEWSAPI NOTES vs GNews:
+#   - endpoint  : /v2/everything  (was gnews.io/api/v4/search)
+#   - key param : apiKey          (was token)
+#   - max param : pageSize        (was max)
+#   - sort param: sortBy          (was sortby)
+#   - NO country= filter on /everything (GNews had country=us). We keep
+#     language=en; US-relevance is already enforced downstream by the
+#     LLM reasoning stage (it rejects non-US venues).
+#   - rate limit shows as HTTP 429 (free tier = 100 requests/day),
+#     often with JSON {"status":"error","code":"rateLimited"}.
 # ---------------------------------------------------
 
-GNEWS_URL      = "https://gnews.io/api/v4/search"
+NEWSAPI_URL    = "https://newsapi.org/v2/everything"
 RECENCY_DAYS   = 90
 # -----------------------------------
 # TEMP LIMIT (free API)
 #
 # 90 -> demo mode
 # None -> production mode (all venues) — set this once client provides
-#         a paid GNEWS_API_KEY
+#         a paid NEWSAPI_KEY
 # 500 -> custom limit
 # -----------------------------------
 
@@ -41,9 +57,9 @@ DAILY_LIMIT = 90
 REQUEST_DELAY  = 1.5
 MAX_RETRIES    = 3
 
-# Circuit breaker: how many CONSECUTIVE venues can fail due to GNews
-# itself (403 quota / 429 exhausted) before we stop trying entirely
-# for the rest of this run.
+# Circuit breaker: how many CONSECUTIVE venues can fail due to NewsAPI
+# itself (429 quota / rate limit / exhausted retries) before we stop
+# trying entirely for the rest of this run.
 MAX_API_LIMIT_FAILURES = 4
 
 CONSTRUCTION_Q = (
@@ -67,7 +83,7 @@ SESSION = make_session()
 
 def _clean_venue_for_query(name: str) -> str:
     """
-    Shorten long venue names for GNews queries.
+    Shorten long venue names for news queries.
     'Steve Spurrier-Florida Field at Ben Hill Griffin Stadium'
       → 'Ben Hill Griffin Stadium'  (take last meaningful part)
     'Donald W. Reynolds Razorback Stadium, Frank Broyles Field'
@@ -98,7 +114,7 @@ def _clean_venue_for_query(name: str) -> str:
 
 def build_query(venue_name: str, team: str, is_planned: bool) -> str:
     """
-    Build GNews search query.
+    Build news search query.
     Cleans long/special venue names before querying.
     """
     clean_name    = _clean_venue_for_query(venue_name)
@@ -119,60 +135,76 @@ def build_query(venue_name: str, team: str, is_planned: bool) -> str:
         return f'"{clean_name}" ({CONSTRUCTION_Q})'
 
 
-def search_gnews(venue_name: str, team: str = "",
-                 is_planned: bool = False) -> list[dict] | None:
+def search_news(venue_name: str, team: str = "",
+                is_planned: bool = False) -> list[dict] | None:
     """
+    Query NewsAPI /v2/everything for a venue.
+
     Returns:
       list[dict]  — articles found (may be an empty list — that's a
                      normal, legitimate "no news for this venue" result)
-      None        — GNews itself refused the request (403 daily quota
-                     reached, or all retries exhausted on repeated 429s).
-                     Callers should treat this differently from an
-                     empty list — it means the API key, not the venue,
-                     is the problem.
+      None        — NewsAPI itself refused the request (429 rate limit /
+                     daily quota, 401 bad key, or all retries exhausted
+                     on repeated 429s). Callers should treat this
+                     differently from an empty list — it means the API
+                     key, not the venue, is the problem.
     """
     from_date = (datetime.now() - timedelta(days=RECENCY_DAYS)
                  ).strftime("%Y-%m-%dT%H:%M:%SZ")
     query = build_query(venue_name, team, is_planned)
     params = {
-        "q":       query,
-        "lang":    "en",
-        "country": "us",
-        "max":     10,
-        "from":    from_date,
-        "sortby":  "publishedAt",
-        "token":   GNEWS_API_KEY
+        "q":        query,
+        "language": "en",
+        "pageSize": 10,               # was GNews "max": 10
+        "from":     from_date,
+        "sortBy":   "publishedAt",    # was GNews "sortby"
+        "apiKey":   NEWSAPI_KEY,      # was GNews "token"
     }
     for attempt in range(MAX_RETRIES):
         try:
-            r = SESSION.get(GNEWS_URL, params=params, timeout=20)
+            r = SESSION.get(NEWSAPI_URL, params=params, timeout=20)
             if r.status_code == 429:
-                wait = 30 * (attempt + 1)
-                print(f"\n    [RATE LIMIT] GNews 429 — waiting {wait}s...", flush=True)
-                time.sleep(wait); continue
-            if r.status_code == 403:
-                print(f"    [GNEWS 403] Daily limit reached", flush=True)
+                # NewsAPI free tier: 100 req/day. 429 = rate/quota limit.
+                print(f"    [NEWSAPI 429] Rate limit / daily quota reached", flush=True)
                 return None  # API-level problem, not "no articles"
+            if r.status_code == 401:
+                print(f"    [NEWSAPI 401] Invalid or missing API key", flush=True)
+                return None
+            if r.status_code == 426:
+                # NewsAPI returns 426 when a free key requests articles
+                # older than the plan allows — treat as API-level.
+                print(f"    [NEWSAPI 426] Date range not allowed on this plan", flush=True)
+                return None
             r.raise_for_status()
-            return r.json().get("articles", [])
+            data = r.json()
+            # NewsAPI wraps errors in a 200-ish body too sometimes:
+            if data.get("status") == "error":
+                code = data.get("code", "")
+                if code in ("rateLimited", "maximumResultsReached",
+                            "apiKeyExhausted", "apiKeyDisabled"):
+                    print(f"    [NEWSAPI ERROR] {code}", flush=True)
+                    return None
+                print(f"    [NEWSAPI ERROR] {code}: {data.get('message','')}", flush=True)
+                return []
+            return data.get("articles", [])
         except requests.exceptions.Timeout:
             time.sleep(5)
         except Exception as e:
-            print(f"    [GNEWS ERROR] {venue_name}: {e}", flush=True)
+            print(f"    [NEWSAPI ERROR] {venue_name}: {e}", flush=True)
             # The urllib3 Retry adapter (status_forcelist=[429,...]) also
             # raises here once ITS internal retries are exhausted — that
             # shows up as "Max retries exceeded ... 429 error responses".
-            # Treat that the same as an explicit 403: API-level, not venue-level.
+            # Treat that the same as an explicit 429: API-level, not venue-level.
             if "429" in str(e) or "Max retries exceeded" in str(e):
                 return None
             return []
     # Loop ended without returning — MAX_RETRIES attempts all hit 429
-    print(f"    [GNEWS] All retries exhausted for {venue_name} — likely rate limited", flush=True)
+    print(f"    [NEWSAPI] All retries exhausted for {venue_name} — likely rate limited", flush=True)
     return None
 
 
 def collect_signals(venues: list[dict]) -> list[dict]:
-    print(f"\n[STEP 2A] Collecting GNews signals (last {RECENCY_DAYS} days)...", flush=True)
+    print(f"\n[STEP 2A] Collecting NewsAPI signals (last {RECENCY_DAYS} days)...", flush=True)
     total = len(venues)
 
     # Priority order:
@@ -221,7 +253,7 @@ def collect_signals(venues: list[dict]) -> list[dict]:
         capacity   = v.get("capacity", 0) or 0
 
         try:
-            articles = search_gnews(vname, team, is_planned)
+            articles = search_news(vname, team, is_planned)
         except Exception as e:
             print(f"    [SEARCH FAILED] {vname}: {e}", flush=True)
 
@@ -236,7 +268,7 @@ def collect_signals(venues: list[dict]) -> list[dict]:
 
             continue
 
-        # CIRCUIT BREAKER: GNews itself is refusing requests (quota/rate
+        # CIRCUIT BREAKER: NewsAPI itself is refusing requests (quota/rate
         # limit), not "this venue has no news". Count consecutive
         # occurrences and stop trying the rest of the batch once the
         # threshold is hit — no point burning requests against a dead key.
@@ -245,7 +277,7 @@ def collect_signals(venues: list[dict]) -> list[dict]:
             print(f"    [API LIMIT] {vname} — {api_limit_failures}/{MAX_API_LIMIT_FAILURES}", flush=True)
             if api_limit_failures >= MAX_API_LIMIT_FAILURES:
                 remaining = len(batch) - idx - 1
-                print(f"\n[STOPPING] GNews quota/rate-limit hit "
+                print(f"\n[STOPPING] NewsAPI quota/rate-limit hit "
                       f"{MAX_API_LIMIT_FAILURES} times in a row — "
                       f"skipping remaining {remaining} venues this run.", flush=True)
                 break

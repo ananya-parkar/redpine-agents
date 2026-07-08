@@ -2,13 +2,12 @@ import re
 import json
 import time
 from datetime import datetime
-from openai import OpenAI
 from tavily import TavilyClient
-from config import OPENAI_API_KEY, OPENAI_MODEL, TAVILY_API_KEY
+from config import TAVILY_API_KEY
+from llm_client import call_llm_json
 from tuning_prompt import build_tuning_block
 from db_writer import get_active_tuning_triggers
 
-client = OpenAI(api_key=OPENAI_API_KEY)
 tavily_client = TavilyClient(api_key=TAVILY_API_KEY)
 
 # Set to False to skip Stage 3 entirely (e.g. to save cost on a test run,
@@ -117,36 +116,25 @@ def batch_classify(signals: list[dict], tuning_block: str = "") -> dict:
             for i, s in enumerate(batch)
         ]
 
-        for attempt in range(3):
-            try:
-                resp = client.chat.completions.create(
-                    model=OPENAI_MODEL, max_tokens=800, temperature=0.0,
-                    response_format={"type":"json_object"},
-                    messages=[
-                        {"role":"system","content":system_prompt},
-                        {"role":"user","content":
-                            "Classify these headlines:\n" +
-                            json.dumps(payload, ensure_ascii=True)}
-                    ]
-                )
-                raw    = resp.choices[0].message.content.strip()
-                parsed = json.loads(raw)
-                items  = parsed.get("results", parsed) if isinstance(parsed,dict) else parsed
-                if isinstance(items, list):
-                    for item in items:
-                        classified[item["idx"]] = item
-                break
-            except Exception as e:
-                if "429" in str(e):
-                    time.sleep(30*(attempt+1)); continue
-                print(f"    [BATCH ERROR] batch {b_idx}: {e}", flush=True)
-                for p in payload:
-                    classified[p["idx"]] = {
-                        "idx":p["idx"],"relevant":False,
-                        "signal_tier":None,"engagement":"not_relevant",
-                        "reason":"classification-error"
-                    }
-                break
+        try:
+            parsed = call_llm_json(
+                system=system_prompt,
+                user_content=("Classify these headlines:\n" +
+                              json.dumps(payload, ensure_ascii=True)),
+                max_tokens=800, temperature=0.0,
+            )
+            items = parsed.get("results", parsed) if isinstance(parsed, dict) else parsed
+            if isinstance(items, list):
+                for item in items:
+                    classified[item["idx"]] = item
+        except Exception as e:
+            print(f"    [BATCH ERROR] batch {b_idx}: {e}", flush=True)
+            for p in payload:
+                classified[p["idx"]] = {
+                    "idx":p["idx"],"relevant":False,
+                    "signal_tier":None,"engagement":"not_relevant",
+                    "reason":"classification-error"
+                }
         time.sleep(0.5)
         done = (b_idx+1)*10
         print(f"  Classified {min(done,len(signals))}/{len(signals)}", end="\r", flush=True)
@@ -236,25 +224,6 @@ def fetch_full_article(url: str) -> str:
         return ""
 
 
-def _repair_truncated_json(raw: str) -> str:
-    """
-    If the LLM response got cut off mid-string (hit max_tokens),
-    try to salvage a valid JSON object by closing open strings/braces.
-    """
-    raw = raw.strip()
-    # Count unescaped quotes to detect an unterminated string
-    if raw.count('"') % 2 != 0:
-        raw += '"'
-    # Balance braces
-    open_braces  = raw.count("{")
-    close_braces = raw.count("}")
-    open_brackets  = raw.count("[")
-    close_brackets = raw.count("]")
-    raw += "]" * max(0, open_brackets - close_brackets)
-    raw += "}" * max(0, open_braces - close_braces)
-    return raw
-
-
 def deep_analyze(signal: dict, tuning_block: str = "") -> dict | None:
     full_text = signal.get("content","") or ""
     if not full_text and signal.get("url"):
@@ -277,33 +246,20 @@ def deep_analyze(signal: dict, tuning_block: str = "") -> dict | None:
         "url":          signal.get("url",""),
         "published_at": signal.get("published_at",""),
     }
-    for attempt in range(3):
+    for attempt in range(2):
         try:
-            resp = client.chat.completions.create(
-                model=OPENAI_MODEL, max_tokens=1100, temperature=0.1,
-                response_format={"type":"json_object"},
-                messages=[
-                    {"role":"system","content":system_prompt},
-                    {"role":"user","content":json.dumps(payload, ensure_ascii=True)}
-                ]
+            return call_llm_json(
+                system=system_prompt,
+                user_content=json.dumps(payload, ensure_ascii=True),
+                max_tokens=1100, temperature=0.1,
             )
-            raw = resp.choices[0].message.content.strip()
-            raw = re.sub(r'^```[a-z]*\n?','',raw).rstrip('`').strip()
-            try:
-                return json.loads(raw)
-            except json.JSONDecodeError:
-                # Try to repair a truncated response before giving up
-                repaired = _repair_truncated_json(raw)
-                return json.loads(repaired)
         except json.JSONDecodeError as e:
             print(f"    [JSON ERROR] {e} — retrying with shorter content", flush=True)
-            # Shrink article body and retry once
             payload["article_body"] = payload["article_body"][:1200]
             continue
         except Exception as e:
-            if "429" in str(e):
-                time.sleep(30*(attempt+1)); continue
-            print(f"    [LLM ERROR] {e}", flush=True); return None
+            print(f"    [LLM ERROR] {e}", flush=True)
+            return None
     return None
 
 
@@ -420,33 +376,21 @@ def verify_current_status(lead: dict) -> dict | None:
         "fresh_search_results": fresh_context,
     }
 
-    for attempt in range(2):
-        try:
-            resp = client.chat.completions.create(
-                model=OPENAI_MODEL, max_tokens=300, temperature=0.0,
-                response_format={"type": "json_object"},
-                messages=[
-                    {"role": "system", "content": VERIFY_PROMPT},
-                    {"role": "user", "content": json.dumps(verify_payload, ensure_ascii=True)},
-                ],
-            )
-            raw = resp.choices[0].message.content.strip()
-            parsed = json.loads(raw)
-            # Map the LLM's chosen result number back to a real URL.
-            src_idx = parsed.get("source_index")
-            if isinstance(src_idx, int) and 1 <= src_idx <= len(result_urls):
-                parsed["updated_source_url"] = result_urls[src_idx - 1]
-            else:
-                parsed["updated_source_url"] = None
-            return parsed
-        except json.JSONDecodeError:
-            continue
-        except Exception as e:
-            if "429" in str(e):
-                time.sleep(20 * (attempt + 1)); continue
-            print(f"         [VERIFY LLM ERROR] {e} — keeping original tier", flush=True)
-            return None
-    return None
+    try:
+        parsed = call_llm_json(
+            system=VERIFY_PROMPT,
+            user_content=json.dumps(verify_payload, ensure_ascii=True),
+            max_tokens=300, temperature=0.0,
+        )
+        src_idx = parsed.get("source_index")
+        if isinstance(src_idx, int) and 1 <= src_idx <= len(result_urls):
+            parsed["updated_source_url"] = result_urls[src_idx - 1]
+        else:
+            parsed["updated_source_url"] = None
+        return parsed
+    except Exception as e:
+        print(f"         [VERIFY LLM ERROR] {e} — keeping original tier", flush=True)
+        return None
 
 
 def compute_score(tier: int, capacity, venue_status: str, likelihood) -> int:

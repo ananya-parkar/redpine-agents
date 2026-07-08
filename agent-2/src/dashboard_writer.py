@@ -168,7 +168,7 @@ def write_dashboard(ws, signals, results):
         c.value = f"{lbl}\n{val}"; c.font = _font(bold=True, color=fg, sz=9)
         c.fill = _fill(bg); c.alignment = _align(wrap=True)
         c.border = _border("thin", "FFFFFF")
-
+    
     ws.merge_cells("S1:S3")
     ws["S1"].value = "📋  All\nLeads ↗"
     ws["S1"].hyperlink = "#'All Leads'!A1"
