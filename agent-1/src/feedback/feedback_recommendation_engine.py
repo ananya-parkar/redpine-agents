@@ -1,9 +1,12 @@
 # agent-1/src/feedback/feedback_recommendation_engine.py
-from openai import OpenAI
 from decimal import Decimal
 import json
+from anthropic import Anthropic
+from src.core.config import ANTHROPIC_API_KEY
 
-client = OpenAI()
+client = Anthropic(
+    api_key=ANTHROPIC_API_KEY
+)
 
 def clean_json(obj):
 
@@ -39,9 +42,21 @@ def generate_feedback_recommendation(reason, sample_leads):
         }}
     """
 
-    response = client.chat.completions.create(
-        model="gpt-4.1-mini",
-        response_format={"type":"json_object"},
-        messages=[{"role":"user","content":prompt}])
+    response = client.messages.create(
+        model="claude-sonnet-5",
+        messages=[
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ],
+        max_tokens=1000
+    )
 
-    return json.loads(response.choices[0].message.content)
+    content = "".join(
+        block.text
+        for block in response.content
+        if hasattr(block, "text")
+    )
+
+    return json.loads(content)

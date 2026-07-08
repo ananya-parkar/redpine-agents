@@ -25,13 +25,15 @@ import re
 import json
 import pandas as pd
 from rapidfuzz import fuzz
-from openai import OpenAI
+from anthropic import Anthropic
 from dotenv import load_dotenv
 
 from db.db import get_connection, normalize_company_name
 
 load_dotenv(override=True)
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = Anthropic(
+    api_key=os.getenv("ANTHROPIC_API_KEY")
+)
 
 # ---------------------------------------------------------------------------
 # Config
@@ -90,14 +92,24 @@ def llm_tiebreak(row_a, row_b):
         }}
     """
 
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        temperature=0,
-        response_format={"type": "json_object"},
-        messages=[{"role": "user", "content": prompt}],
+    response = client.messages.create(
+        model="claude-sonnet-5",
+        max_tokens=1000,
+        messages=[
+            {
+                "role":"user",
+                "content":prompt
+            }
+        ]
     )
 
-    result = json.loads(response.choices[0].message.content)
+    content = "".join(
+        block.text
+        for block in response.content
+        if hasattr(block,"text")
+    )
+
+    result = json.loads(content)
     return bool(result.get("same_company", False))
 
 

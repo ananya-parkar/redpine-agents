@@ -1,5 +1,6 @@
 # agent-1/src/llm/reasoning_agent.py
 import json
+from urllib import response
 from src.llm.client import client
 from src.llm.prompts import (
     SYSTEM_PROMPT,
@@ -7,6 +8,8 @@ from src.llm.prompts import (
 )
 from src.llm.schemas import LLM_REASONING_SCHEMA
 from src.storage.postgres_storage import get_feedback_recommendations
+from anthropic.types import TextBlock
+
 
 def validate_llm_response(parsed: dict):
 
@@ -68,25 +71,24 @@ def analyze_hotel(entity):
     )
 
     try:
-        response = client.chat.completions.create(
-            model="gpt-4.1-mini",
-            # model="grok-3-mini",
-            response_format={"type": "json_object"},
-            timeout=60,
+        response = client.messages.create(
+            model="claude-sonnet-5",
+            max_tokens=1500,
+            system=SYSTEM_PROMPT,
             messages=[
-                {
-                    "role": "system",
-                    "content": SYSTEM_PROMPT
-                },
                 {
                     "role": "user",
                     "content": prompt
                 }
-            ],
-            temperature=0.2
+            ]
         )
 
-        content = response.choices[0].message.content
+
+        content = "".join(
+            block.text
+            for block in response.content
+            if isinstance(block, TextBlock)
+        )        
         
         parsed = json.loads(content)
         if ("acquisition_attractiveness_star_rating" in parsed and "llm_star_rating" not in parsed):

@@ -15,13 +15,17 @@ CREATE TABLE IF NOT EXISTS candidates (
     state                   TEXT,
     industry                TEXT,
     company_type            TEXT,
-    founded_year             TEXT,
-    years_in_business        INTEGER,
-    founder_name             TEXT,
-    founder_led              TEXT,            -- Yes / No / Unknown
-    family_owned             TEXT,            -- Yes / No / Unknown
-    founder_age_estimate      TEXT,
-    seller_readiness_score     INTEGER,
+    founded_year            TEXT,
+    revenue_estimate        TEXT,
+    years_in_business       INTEGER,
+    founder_name            TEXT,
+    founder_led             TEXT,
+    family_owned            TEXT,
+    founder_age_estimate    TEXT,
+    ownership_status        TEXT,
+    ownership_tenure_years  INTEGER,
+    extraction_confidence   TEXT,
+    seller_readiness_score  INTEGER,
     first_seen_date           DATE NOT NULL DEFAULT CURRENT_DATE,
     last_seen_date            DATE NOT NULL DEFAULT CURRENT_DATE,
     created_at               TIMESTAMP NOT NULL DEFAULT NOW(),
@@ -37,15 +41,16 @@ CREATE TABLE IF NOT EXISTS candidates (
 -- and could later hold multiple evidence entries per company over time.
 -- ---------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS evidence (
-    id              SERIAL PRIMARY KEY,
-    candidate_id     INTEGER NOT NULL REFERENCES candidates(id) ON DELETE CASCADE,
-    raw_evidence      TEXT,            -- the original "Evidence" field from extraction
-    why_selected      TEXT,
-    evidence_summary   TEXT,
-    one_line_reason    TEXT,
-    created_at        TIMESTAMP NOT NULL DEFAULT NOW()
+    id                   SERIAL PRIMARY KEY,
+    candidate_id         INTEGER NOT NULL REFERENCES candidates(id) ON DELETE CASCADE,
+    raw_evidence         TEXT,
+    why_selected         TEXT,
+    evidence_summary     TEXT,
+    one_line_reason      TEXT,
+    evidence_sources     TEXT,
+    raw_evidence_summary TEXT,
+    created_at           TIMESTAMP NOT NULL DEFAULT NOW()
 );
-
 -- ---------------------------------------------------------------------------
 -- review_status: tracks human review state per company over time.
 -- Maps to Layer 8 (Review Status Storage) in the pipeline diagram.
@@ -65,7 +70,3 @@ CREATE TABLE IF NOT EXISTS review_status (
 CREATE INDEX IF NOT EXISTS idx_candidates_state ON candidates(state);
 CREATE INDEX IF NOT EXISTS idx_candidates_score ON candidates(seller_readiness_score);
 CREATE INDEX IF NOT EXISTS idx_review_status_status ON review_status(status);
-ALTER TABLE candidates ADD COLUMN IF NOT EXISTS revenue_estimate TEXT;
-ALTER TABLE candidates ADD COLUMN IF NOT EXISTS extraction_confidence TEXT;
-ALTER TABLE evidence ADD COLUMN IF NOT EXISTS evidence_sources TEXT;
-ALTER TABLE evidence ADD COLUMN IF NOT EXISTS raw_evidence_summary TEXT;

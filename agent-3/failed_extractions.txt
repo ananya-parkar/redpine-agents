@@ -1,0 +1,220 @@
+
+
+====================
+```json
+{
+    "industry": "Unknown",
+    "state": "Unknown",
+    "company_type": "Unknown",
+    "founded_year": "1980",
+    "revenue_estimate": "Unknown",
+    "founder_name": "Pauline S. Krug",
+    "founder_led": "No",
+    "family_owned": "Unknown",
+    "founder_age_estimate": "Unknown",
+    "ownership_status": "Unknown",
+    "ownership_tenure_years": "Unknown",
+    "extraction_confidence": "Low",
+    "evidence_summary": [
+        "Content contains multiple unrelated business fragments (Florida Insect Control Group, Integrated Plant Genetics, RAPiD Genomics, 2E1B LAB, Altavian, ChaoLogix, IC2 Interdisciplinary Consulting Corp, Learning About Business Inc., an AI startup transcript, and Vision Council leadership event pages) with no single coherent company profile.",
+        "Learning About Business, Inc. (LAB) founded in 1980 by Pauline S. Krug",
+        "Pauline Krug, LAB's founder, passed away on April 2, 2003",
+        "No current leadership figure identified as founder-led since founder is deceased",
+        "No explicit revenue, ownership structure, or company type (private/public) stated for any single entity",
+        "No explicit state location tied to a single coherent company (Ohio implied only via Lake Erie College and Northeast Ohio references)"
+    ]
+}
+```
+
+====================
+```json
+{
+    "industry": "Land Development / Site-Work Services (excavation, site preparation, civil infrastructure)",
+    "state": "Florida",
+    "company_type": "Unknown",
+    "founded_year": "Unknown",
+    "revenue_estimate": "$10M-$50M",
+    "founder_name": "Unknown",
+    "founder_led": "Unknown",
+    "family_owned": "Unknown",
+    "founder_age_estimate": "Unknown",
+    "ownership_status": "Unknown",
+    "ownership_tenure_years": "Unknown",
+    "extraction_confidence": "Low",
+    "evidence_summary": [
+        "Business listed as 'A Highly Profitable Land Development Platform' located in Broward County, Florida, US",
+        "Revenue explicitly stated as $13,510,527",
+        "Cash Flow explicitly stated as $3,043,958",
+        "Asking Price listed as $7,800,000",
+        "Description: 'established South Florida land development platform provides a full suite of site-work services, including excavation, site preparation, trucking coordination, and civil infrastructure support'",
+        "No explicit founder name, founding year, ownership structure, or company type (private/public) stated for this specific business",
+        "Content contains multiple unrelated business listings and profiles (e.g., The Gove Group, Nexgen Surveying, APH Marine Construction) that do not pertain to the primary land development platform being valued"
+    ]
+}
+```
+
+====================
+```json
+{
+  "industry": "Moving, Warehousing, and Logistics Services",
+  "state": "Florida",
+  "company_type": "Unknown",
+  "founded_year": "1997",
+  "revenue_estimate": "Unknown",
+  "founder_name": "Gloria Pugh and Dean Pugh",
+  "founder_led": "Yes",
+  "family_owned": "Yes",
+  "founder_age_estimate": "50-65",
+  "ownership_status": "Family Owned",
+  "ownership_tenure_years": "28",
+  "extraction_confidence": "Medium",
+  "evidence_summary": [
+    "Co-founded AMWAT Moving Warehousing Storage in 1997 by Gloria Pugh and her husband Dean Pugh",
+    "Gloria Pugh currently serves as President & CEO",
+    "Company described as 'Locally owned' and led jointly by Gloria and Dean Pugh",
+    "No explicit revenue figures or public/private designation provided",
+    "Reference to 2026 Trailblazer Honoree suggests current timeframe around 2025, implying ~28 years of continuous founder/family leadership"
+  ]
+}
+```
+
+====================
+```json
+{
+  "industry": "Telecommunications Product Testing / Communication Product Performance Testing",
+  "state": "Florida",
+  "company_type": "Unknown",
+  "founded_year": "1995",
+  "revenue_estimate": "Unknown",
+  "founder_name": "James Bress",
+  "founder_led": "Unknown",
+  "family_owned": "Unknown",
+  "founder_age_estimate": "Unknown",
+  "ownership_status": "Unknown",
+  "ownership_tenure_years": "Unknown",
+  "extraction_confidence": "Low",
+  "evidence_summary": [
+    "Prior to founding AST Technology Labs, Inc. in 1995, James Bress was a Bellcore Member of the Technical Staff (MTS) and senior engineer",
+    "James Bress (AST): Chair of TR41 2015 to present; Chair of TR41.3 2000-2007, 2010-2015 (industry standards committee roles, not company executive titles)",
+    "Don McKinnon serves as VP Testing Services at AST Technology Labs, based in Melbourne, Florida Area",
+    "No explicit statement found regarding James Bress's current title (CEO/President) at AST Technology Labs",
+    "No explicit statement of company_type (private/public) for AST Technology Labs",
+    "No revenue figures provided for AST Technology Labs",
+    "AST Technology Labs Inc. is accredited to ISO/IEC 17025:2017 by ANSI National Accreditation Board, focused on communication product testing services",
+    "Content also references unrelated companies (AST SpaceMobile - founder Abel Avellan; AST Networks - CEO Louise Hawkins) which are distinct entities and not used in this extraction"
+  ]
+}
+```
+
+====================
+```json
+{
+    "industry": "Flooring (Carpet Retail Franchise/Buying Group)",
+    "state": "Florida",
+    "company_type": "Private",
+    "founded_year": "1958",
+    "revenue_estimate": "$250M+",
+    "founder_name": "Phil Gutierrez",
+    "founder_led": "Yes",
+    "family_owned": "Unknown",
+    "founder_age_estimate": "80",
+    "ownership_status": "Founder Owned",
+    "ownership_tenure_years": "Unknown",
+    "extraction_confidence": "High",
+    "evidence_summary": [
+        "Abbey Carpet Co., Inc. was incorporated in 1958 under the laws of the State of California",
+        "Company described as the seventh largest privately held company in Florida per Florida Trend magazine",
+        "Reported $1.8 billion in sales through roughly 1,200 franchise stores nationwide",
+        "Phil Gutierrez is described as 'CEO, president and sole director and chairman' and 'sole owner' of Abbey Carpet Co.",
+        "Article celebrates 'Phil Gutierrez still a leader at 80', indicating his current age",
+        "Company started as a family owned business in 1966 but no explicit statement that it remains family-owned today under Gutierrez ownership",
+        "Principal offices located at 3471 Bonita Bay Boulevard, Bonita Springs, Florida"
+    ]
+}
+```
+
+====================
+```json
+{
+    "industry": "Retail marketing, sales, and foodservice agency services",
+    "state": "Florida",
+    "company_type": "Unknown",
+    "founded_year": "1927",
+    "revenue_estimate": "Unknown",
+    "founder_name": "Unknown",
+    "founder_led": "No",
+    "family_owned": "Unknown",
+    "founder_age_estimate": "Unknown",
+    "ownership_status": "Unknown",
+    "ownership_tenure_years": "Unknown",
+    "extraction_confidence": "Medium",
+    "evidence_summary": [
+        "Founded in 1927 as the Acosta agency, Jacksonville, Fla.-based Acosta Group",
+        "Acosta Group is headquartered in Jacksonville, Florida",
+        "Brian Wynne joined Acosta Group as President and Chief Executive Officer in 2020",
+        "No founder name is mentioned in the content",
+        "Company type (private/public) is not explicitly stated",
+        "Acosta Group has made multiple acquisitions (CROSSMARK, Product Connections, Dee Set Group) indicating scale, but no explicit revenue figure is provided"
+    ]
+}
+```
+
+====================
+```json
+{
+  "industry": "HVAC / Electrical / Plumbing Services",
+  "state": "Florida",
+  "company_type": "Unknown",
+  "founded_year": "2017",
+  "revenue_estimate": "Unknown",
+  "founder_name": "Anthony Perera",
+  "founder_led": "Yes",
+  "family_owned": "Unknown",
+  "founder_age_estimate": "35-45",
+  "ownership_status": "Founder Owned",
+  "ownership_tenure_years": "Unknown",
+  "extraction_confidence": "Medium",
+  "evidence_summary": [
+    "Anthony Perera founded Air Pros USA in 2017 in Fort Lauderdale with one truck and two employees",
+    "Perera served as founder and CEO until stepping down in March 2022",
+    "Peak Rock Capital made a strategic investment in September 2021, indicating PE involvement during that period",
+    "AFH Air Pros, LLC filed for Chapter 11 bankruptcy in March 2025 with over $250M secured debt",
+    "In June 2025, Anthony Perera reacquired Air Pros USA's Florida legacy operations through Exuma Capital Partners, described as 'Founder and Managing Partner of Exuma Capital Partners'",
+    "Press release states this 'brings Air Pros USA back under Perera's leadership'",
+    "No explicit statement of company_type as private or public",
+    "No explicit revenue figures provided for Air Pros USA operations",
+    "No explicit statement describing the company as family-owned"
+  ]
+}
+```
+
+====================
+{
+  "industry": "Sign Manufacturing / Signage & Branding Solutions",
+  "state": "FL",
+  "company_type": "Private",
+  "founded_year": "1979 (original American Signcrafters); current LLC entity established 2019",
+  "revenue_estimate": "$10M-$50M",
+  "founder_name": "Jeffrey Petersen (inferred; listed as Owner since 1979)",
+  "founder_led": "No",
+  "family_owned": "Unknown",
+  "founder_age_estimate": "70-80",
+  "ownership_status": "Family Owned",
+  "ownership_tenure_years": "45",
+  "extraction_confidence": "Medium",
+  "evidence_summary": [
+    "BBB lists 'Business Started: 1/22/2019' and 'Business Incorporated: 1/22/2019' for Interstate Signcrafters, Type of Entity: Limited Liability Company (LLC)",
+    "Alternate name listed: 'American/Interstate Signcrafters Sign Acquisition, LLC', suggesting a 2019 reorganization/acquisition of an older business",
+    "Jeffrey Petersen's LinkedIn experience lists 'Owner, American Signcrafters, Apr 1979 - Present', indicating long-standing ownership dating to 1979",
+    "Patti Petersen (Patricia Petersen) is listed as CEO of American & Interstate Signcrafters since Jan 2019 and as 'Owner' per BBB record",
+    "Both Jeffrey Petersen and Patricia Petersen share the surname 'Petersen' and both hold ownership roles, suggesting family involvement, though no explicit 'family-owned' statement appears in the content",
+
+====================
+
+
+====================
+
+
+====================
+
+====================

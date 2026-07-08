@@ -117,5 +117,15 @@ When evaluating this property:
 - Incorporate any suggested prompt fixes when
   determining acquisition attractiveness.
 
-Return STRICT JSON matching the required schema.
+IMPORTANT:
+
+Return ONLY a valid JSON object.
+Do not use markdown.
+Do not use ```.
+Do not explain your reasoning.
+Do not include any text before or after the JSON.
+The first character must be {{
+The last character must be }}
+Return exactly one JSON object matching the required schema.
+
 """

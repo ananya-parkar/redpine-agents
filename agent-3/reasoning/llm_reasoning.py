@@ -16,11 +16,13 @@ Output: candidates_with_rationale.csv (adds Why Selected, Evidence Summary,
 import os
 import json
 import pandas as pd
-from openai import OpenAI
+from anthropic import Anthropic
 from dotenv import load_dotenv
 
 load_dotenv(override=True)
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = Anthropic(
+    api_key=os.getenv("ANTHROPIC_API_KEY")
+)
 
 
 def generate_rationale(row):
@@ -72,15 +74,44 @@ def generate_rationale(row):
         }}
     """
 
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        temperature=0,
-        response_format={"type": "json_object"},
-        messages=[{"role": "user", "content": prompt}],
+    response = client.messages.create(
+        model="claude-sonnet-5",
+        max_tokens=1500,
+        messages=[
+            {
+                "role":"user",
+                "content":prompt
+            }
+        ]
     )
 
-    return json.loads(response.choices[0].message.content)
+    content = "".join(
+        block.text
+        for block in response.content
+        if hasattr(block, "text")
+    ).strip()
 
+    # Remove markdown fences
+    if content.startswith("```json"):
+        content = content[7:]
+
+    if content.startswith("```"):
+        content = content[3:]
+
+    if content.endswith("```"):
+        content = content[:-3]
+
+    content = content.strip()
+
+    # If Claude writes a sentence before the JSON,
+    # keep only the JSON object.
+    start = content.find("{")
+    end = content.rfind("}")
+
+    if start != -1 and end != -1:
+        content = content[start:end+1]
+
+    return json.loads(content)
 
 def add_rationale_to_candidates(df):
     """
