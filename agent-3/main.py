@@ -172,10 +172,13 @@ def main():
 
             except:
                 pass
+        
+        confidence = extracted.get("extraction_confidence", "Unknown")
+        print("Confidence:", confidence)
 
-        if extracted.get("extraction_confidence") == "Low":
-            print(f"Skipping {company_name} due to low confidence")
-            continue
+        # if extracted.get("extraction_confidence") == "Low":
+        #     print(f"Skipping {company_name} due to low confidence")
+        #     continue
 
         years_in_business = score.get("years_in_business", 0)
         if years_in_business < min_years:
@@ -200,8 +203,8 @@ def main():
             f"Revenue={revenue} | "
             f"Years={years_in_business}"
         )
-        if revenue not in [revenue_range, "Unknown"]:
-            continue
+        # if revenue not in [revenue_range, "Unknown"]:
+        #     continue
 
         company_state = extracted.get("state", "Unknown")
         target_state = target_geography

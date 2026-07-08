@@ -12,6 +12,7 @@ RUNS_DIR = BASE_DIR / "runs"
 GOOGLE_MAPS_API_KEY = os.getenv("GOOGLE_MAPS_API_KEY")
 LLM_PROVIDER = os.getenv("LLM_PROVIDER")  
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 GEOCODE_URL = os.getenv("GEOCODE_URL")
 NEARBY_URL = os.getenv("NEARBY_URL")
 PLACE_DETAILS_URL_TEMPLATE = "https://places.googleapis.com/v1/places/{place_id}"

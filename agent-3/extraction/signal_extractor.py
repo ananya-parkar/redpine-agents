@@ -1,12 +1,14 @@
 # agent-3/extraction/signal_extractor.py
 import json
 import os
-from openai import OpenAI
+from anthropic import Anthropic
 from dotenv import load_dotenv
 from config import US_STATE_MAP
 
 load_dotenv(override=True)
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = Anthropic(
+    api_key=os.getenv("ANTHROPIC_API_KEY")
+)
 
 STATE_MAPPING = US_STATE_MAP.copy()
 STATE_MAPPING.update({
@@ -207,18 +209,47 @@ def extract_signals(raw_content):
         {raw_content[:10000]}
     """
 
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        temperature=0,
-        response_format={"type": "json_object"},
-        messages=[{"role": "user", "content": prompt}])
+    response = client.messages.create(
+        model="claude-sonnet-5",
+        max_tokens=4000,
+        messages=[
+            {
+                "role":"user",
+                "content":prompt
+            }
+        ]
+    )
     
-    content = response.choices[0].message.content
+    content = "".join(
+        block.text
+        for block in response.content
+        if hasattr(block, "text")
+    ).strip()
+
+    # Remove markdown fences
+    if content.startswith("```json"):
+        content = content[7:]
+
+    if content.startswith("```"):
+        content = content[3:]
+
+    if content.endswith("```"):
+        content = content[:-3]
+
+    content = content.strip()
+
+    # Keep only the JSON object in case Claude adds extra text
+    start = content.find("{")
+    end = content.rfind("}")
+
+    if start != -1 and end != -1:
+        content = content[start:end + 1]
+
     try:
         result = json.loads(content)
     except json.JSONDecodeError:
         print("\nJSON PARSE FAILED")
-        print(content[:1000])
+        print(content)
 
         with open(
             "failed_extractions.txt",
@@ -227,6 +258,7 @@ def extract_signals(raw_content):
         ) as f:
             f.write("\n\n====================\n")
             f.write(content)
+            f.write("\n====================\n")
 
         return {
             "industry": "Unknown",

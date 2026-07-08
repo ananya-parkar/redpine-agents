@@ -1,12 +1,14 @@
 # agent-3/discovery/company_extractor.py
 import json
 import os
-from openai import OpenAI
+from anthropic import Anthropic
 from dotenv import load_dotenv
 
 load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
+client = Anthropic(
+    api_key=os.getenv("ANTHROPIC_API_KEY")
+)
 def extract_companies_with_llm(content):
 
     if not content.strip():
@@ -52,10 +54,10 @@ def extract_companies_with_llm(content):
         {content}
     """
 
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        temperature=0,
-        response_format={"type": "json_object"},
+    response = client.messages.create(
+        model="claude-sonnet-5",
+        max_tokens=4000,
+        thinking={"type": "disabled"},
         messages=[
             {
                 "role": "user",
@@ -63,5 +65,38 @@ def extract_companies_with_llm(content):
             }
         ]
     )
-    result = json.loads(response.choices[0].message.content)
+
+    content = "".join(
+        block.text
+        for block in response.content
+        if hasattr(block, "text")
+    ).strip()
+
+    # Remove Markdown code fences if Claude added them
+    if content.startswith("```"):
+        content = content.replace("```json", "")
+        content = content.replace("```", "")
+        content = content.strip()
+
+    content = content.strip()
+    # Remove markdown fences if present
+    if content.startswith("```json"):
+        content = content.replace("```json", "", 1)
+
+    if content.startswith("```"):
+        content = content.replace("```", "", 1)
+
+    if content.endswith("```"):
+        content = content[:-3]
+
+    content = content.strip()
+
+    # Keep only the first JSON object
+    start = content.find("{")
+    end = content.rfind("}")
+
+    content = content[start:end+1]
+
+    result = json.loads(content)
+
     return result["companies"]
