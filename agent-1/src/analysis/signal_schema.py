@@ -13,6 +13,8 @@ SIGNAL_SCHEMA = {
     "former_brand": str,
     "franchise_affiliated": bool,
     "brand_status": str,
+    "recent_distress_news": str,
+    "ownership_context": str,
 
     "cmbs_watchlist": bool,
     "cmbs_special_servicing": bool,

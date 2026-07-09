@@ -16,7 +16,10 @@ def calculate_final_lead_score(entity):
     if signals.get("franchise_affiliated"):
         score += 5
 
-    if signals.get("franchise_loss"):
+    if (
+        signals.get("franchise_loss")
+        or signals.get("brand_status") == "FORMER"
+    ):
         score += 20
 
     # CMBS distress
@@ -58,6 +61,7 @@ def calculate_final_lead_score(entity):
         opportunity_score={llm.get('opportunity_score', 0)}
 
         franchise_affiliated={signals.get('franchise_affiliated')}
+        brand_status={signals.get('brand_status')}
         franchise_loss={signals.get('franchise_loss')}
 
         long_term_owner={signals.get('long_term_owner')}

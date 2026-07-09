@@ -107,7 +107,7 @@ and the HTML report provides a detailed acquisition review of the highest-priori
 <h3>RUN SUMMARY</h3>
 
 <p>
-<b>New / Resurfaced Opportunities: {digest_count}</p>
+<b>New / Resurfaced Opportunities: </b> {digest_count}</p>
 
 <h3>TOP ACQUISITION OPPORTUNITIES</h3>
 

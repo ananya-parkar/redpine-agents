@@ -240,6 +240,8 @@ def process_hotel(item, hotel, hotel_index, total_hotels):
             "former_brand": enrichment.get("former_brand"),
             "brand_status": enrichment.get("brand_status"),
             "franchise_confidence": enrichment.get("franchise_confidence"),
+            "recent_distress_news": enrichment.get("recent_distress_news"),
+            "ownership_context": enrichment.get("ownership_context"),
         }
 
     entity.signals = build_signals(entity)
@@ -311,7 +313,7 @@ def process_hotel(item, hotel, hotel_index, total_hotels):
         sources.append("ATTOM")
 
     if entity.franchise_data.get("franchise_affiliated"):
-        sources.append("Tavily")
+        sources.append("Claude Web Search")
 
     # if entity.cmbs_data.get("cmbs_loan_status"):
     #     sources.append("SEC EDGAR")

@@ -266,6 +266,15 @@ def build_hotel_card(entity):
             <tr><td>Current Brand</td><td>{html.escape(franchise.get("current_brand", ""))}</td></tr>
             <tr><td>Former Brand</td><td>{html.escape(franchise.get("former_brand", ""))}</td></tr>
             <tr><td>Status</td><td>{html.escape(franchise.get("brand_status", ""))}</td></tr>
+            <tr>
+                <td>Recent Distress News</td>
+                <td>{html.escape(franchise.get("recent_distress_news",""))}</td>
+            </tr>
+
+            <tr>
+                <td>Ownership Context</td>
+                <td>{html.escape(franchise.get("ownership_context",""))}</td>
+            </tr>     
         </table>
 
         <h2>Recommended Action</h2>
