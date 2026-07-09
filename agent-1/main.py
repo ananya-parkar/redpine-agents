@@ -34,10 +34,7 @@ def main():
     radius_miles = request["radius_miles"]
     print(f"[INFO] Loaded search request: {location}", flush=True)
 
-    validate_inputs({
-        "location": location,
-        "radius_miles": radius_miles
-    })
+    validate_inputs(request)
     print("[VALIDATION] Input validation passed", flush=True)
 
     result = process_location(

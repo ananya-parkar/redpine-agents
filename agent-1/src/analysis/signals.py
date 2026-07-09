@@ -29,6 +29,17 @@ def build_signals(entity):
         "franchise_affiliated":entity.franchise_data.get("franchise_affiliated", False),
         "current_brand": entity.franchise_data.get("current_brand", ""),
         "brand_status": entity.franchise_data.get("brand_status", "NONE"),
+        "recent_distress_news":
+            entity.franchise_data.get(
+                "recent_distress_news",
+                ""
+            ),
+
+        "ownership_context":
+            entity.franchise_data.get(
+                "ownership_context",
+                ""
+            ),
 
         # CMBS signals
         "cmbs_watchlist": entity.cmbs_data.get("cmbs_watchlist_flag", False),

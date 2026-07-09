@@ -1,6 +1,6 @@
 # agent-1/src/enrichment/enrichment.py
 from datetime import datetime
-from src.enrichment.franchise_detection import detect_franchise_history
+from src.enrichment.claude_web_research import research_hotel
 from src.enrichment.owner_details import detect_owner_details
 from src.enrichment.property_age import get_property_age_flags
 # from src.owner_tenure import get_owner_tenure
@@ -16,9 +16,10 @@ def default_franchise_result():
         "former_brand": "",
         "brand_status": "NONE",
         "franchise_confidence": "Not Checked",
-        "franchise_evidence": ""
+        "franchise_evidence": "",
+        "recent_distress_news": "",
+        "ownership_context": ""
     }
-
 
 def default_owner_result():
     return {
@@ -44,16 +45,19 @@ def enrich_priority_hotel(hotel_name, address, reviews=None):
 
     # Franchise detection
     try:
-        print("    [FRANCHISE] Checking historical franchise affiliation...", flush=True)
+        print("    [CLAUDE WEB SEARCH] Researching hotel...")
         known_brand = detect_known_brand(hotel_name)
+
         if known_brand:
             result.update(known_brand)
+
         else:
-            franchise_result = detect_franchise_history(
+            franchise_result = research_hotel(
                 hotel_name=hotel_name,
                 address=address,
                 reviews=reviews
             )
+
             result.update(franchise_result)
         
         print(
