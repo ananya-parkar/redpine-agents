@@ -177,31 +177,22 @@ def deduplicate_batch(df):
 # Against-Postgres dedup (replaces the old CSV-based check)
 # ---------------------------------------------------------------------------
 
-def fetch_existing_candidates_for_matching():
-    """
-    Pulls a lightweight view of every candidate already in Postgres -
-    just enough fields to run the same fuzzy match used everywhere else.
-    """
+def fetch_existing_candidates_for_matching(search_request_id):
     conn = get_connection()
     try:
         with conn.cursor() as cur:
             cur.execute(
-                """
-                SELECT company_name, state, industry
-                FROM candidates
-                """
+                "SELECT company_name, state, industry FROM candidates "
+                "WHERE search_request_id = %s",
+                (search_request_id,),
             )
             rows = cur.fetchall()
     finally:
         conn.close()
-
-    return [
-        {"Company Name": r[0], "State": r[1], "Industry": r[2]}
-        for r in rows
-    ]
+    return [{"Company Name": r[0], "State": r[1], "Industry": r[2]} for r in rows]
 
 
-def deduplicate_against_postgres(df):
+def deduplicate_against_postgres(df, search_request_id):
     """
     Splits today's deduplicated batch into:
       - new_rows: not already in Postgres -> goes to reasoning + Postgres
@@ -211,7 +202,7 @@ def deduplicate_against_postgres(df):
     db.save_candidates_to_db() already handles refreshing last_seen_date
     for existing rows. This function's only job is filtering.
     """
-    existing_candidates = fetch_existing_candidates_for_matching()
+    existing_candidates = fetch_existing_candidates_for_matching(search_request_id)
     new_rows = []
 
     for _, candidate in df.iterrows():
@@ -244,7 +235,7 @@ def deduplicate_against_postgres(df):
 # Public entry point
 # ---------------------------------------------------------------------------
 
-def run_deduplication(scored_df, output_file):
+def run_deduplication(scored_df, output_file, search_request_id):
     """
     Full Layer 5 pipeline:
       1. Dedup within today's batch
@@ -256,9 +247,7 @@ def run_deduplication(scored_df, output_file):
     print("\nRunning Deduplication Layer...\n")
 
     batch_deduped = deduplicate_batch(scored_df)
-    new_df = deduplicate_against_postgres(batch_deduped)
-
+    new_df = deduplicate_against_postgres(batch_deduped, search_request_id)
     new_df.to_csv(output_file, index=False)
     print(f"Saved {len(new_df)} deduplicated rows -> {output_file}")
-
     return new_df

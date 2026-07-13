@@ -45,7 +45,7 @@ def _get_connection():
     return psycopg2.connect(**DB_CONFIG)
 
 
-def fetch_top_leads(limit=TOP_N):
+def fetch_top_leads(search_request_id, limit=TOP_N):    
     """
     Same source the dashboard uses - the full candidates table in
     Postgres, ranked by Seller Readiness Score, joined with the most
@@ -55,33 +55,37 @@ def fetch_top_leads(limit=TOP_N):
     try:
         with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
             cur.execute(
-                """
-                SELECT
-                    c.company_name,
-                    c.state,
-                    c.seller_readiness_score,
-                    e.one_line_reason,
-                    e.why_selected
-                FROM candidates c
-                LEFT JOIN LATERAL (
-                    SELECT * FROM evidence ev WHERE ev.candidate_id = c.id
-                    ORDER BY ev.created_at DESC LIMIT 1
-                ) e ON true
-                ORDER BY c.seller_readiness_score DESC NULLS LAST
-                LIMIT %s
-                """,
-                (limit,),
-            )
+            """
+            SELECT
+                c.company_name,
+                c.state,
+                c.seller_readiness_score,
+                e.one_line_reason,
+                e.why_selected
+            FROM candidates c
+            LEFT JOIN LATERAL (
+                SELECT *
+                FROM evidence ev
+                WHERE ev.candidate_id = c.id
+                ORDER BY ev.created_at DESC
+                LIMIT 1
+            ) e ON true
+            WHERE c.search_request_id = %s
+            ORDER BY c.seller_readiness_score DESC NULLS LAST
+            LIMIT %s
+            """,
+            (search_request_id, limit),
+)
             return cur.fetchall()
     finally:
         conn.close()
 
 
-def fetch_total_candidate_count():
+def fetch_total_candidate_count(search_request_id):
     conn = _get_connection()
     try:
         with conn.cursor() as cur:
-            cur.execute("SELECT COUNT(*) FROM candidates")
+            cur.execute("SELECT COUNT(*)FROM candidates WHERE search_request_id = %s",(search_request_id,),)
             return cur.fetchone()[0]
     finally:
         conn.close()
@@ -181,7 +185,7 @@ def build_html_body(top_leads, new_today_count, total_count):
     return "".join(html_parts)
 
 
-def send_daily_digest(new_candidates_df, dashboard_file_path):
+def send_daily_digest(new_candidates_df, dashboard_file_path,search_request_id,):
     """
     new_candidates_df: today's new candidates DataFrame (final_df from
                         main.py) - used ONLY to report the "new today"
@@ -195,8 +199,11 @@ def send_daily_digest(new_candidates_df, dashboard_file_path):
         )
 
     new_today_count = len(new_candidates_df)
-    top_leads = fetch_top_leads(TOP_N)
-    total_count = fetch_total_candidate_count()
+    top_leads = fetch_top_leads(
+        search_request_id=search_request_id,
+        limit=TOP_N,
+    )
+    total_count = fetch_total_candidate_count(search_request_id)
 
     plain_text = build_plain_text_fallback(top_leads, new_today_count, total_count)
     html_body = build_html_body(top_leads, new_today_count, total_count)

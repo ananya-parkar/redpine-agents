@@ -2,17 +2,17 @@
 """
 Postgres persistence layer for Agent 3.
 
-Tables:
-    candidates     - one row per unique company
-    evidence       - evidence + LLM rationale; new row only if content changed
-    review_status  - human review state, one current row per candidate
+SCOPING (important):
+Every candidate belongs to a search_request (see search_request_db.py).
+The client can change what they're searching for, so "have I seen this
+company before?" means "have I seen it FOR THIS SEARCH?" - not globally.
+Every query below is scoped by search_request_id accordingly.
 
-Upsert behavior:
-    - candidates: always refresh structured fields + last_seen_date
-    - evidence: only insert a new row if content actually changed since
-                the last stored evidence row
-    - review_status: created as 'New' on first insert only, never
-                      overwritten automatically (human-owned field)
+Tables:
+    search_requests - one row per distinct set of client search params
+    candidates      - one row per unique company PER SEARCH REQUEST
+    evidence        - evidence + LLM rationale; new row only if changed
+    review_status   - human review state, one current row per candidate
 """
 
 import os
@@ -62,14 +62,28 @@ def normalize_company_name(name):
     return name
 
 
+def _safe_int(value):
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return None
+
+
 # ---------------------------------------------------------------------------
 # Candidates
 # ---------------------------------------------------------------------------
 
-def upsert_candidate(conn, row):
+def upsert_candidate(conn, row, search_request_id):
     """
     row: dict with keys matching candidates_with_rationale.csv columns.
+    search_request_id: which client search this candidate belongs to.
+
     Returns the candidate's id (existing or newly created).
+
+    The existence check is scoped to search_request_id - the same company
+    found under a DIFFERENT search gets its own separate row, with its
+    own independent review_status. That's deliberate: the client might
+    pursue a company under one mandate and pass on it under another.
     """
     normalized_name = normalize_company_name(row.get("Company Name", ""))
     state = row.get("State") or None
@@ -78,9 +92,11 @@ def upsert_candidate(conn, row):
         cur.execute(
             """
             SELECT id FROM candidates
-            WHERE normalized_name = %s AND (state = %s OR (%s IS NULL AND state IS NULL))
+            WHERE normalized_name = %s
+              AND (state = %s OR (%s IS NULL AND state IS NULL))
+              AND search_request_id = %s
             """,
-            (normalized_name, state, state),
+            (normalized_name, state, state, search_request_id),
         )
         existing = cur.fetchone()
 
@@ -119,7 +135,7 @@ def upsert_candidate(conn, row):
                     row.get("Family Owned"),
                     row.get("Founder Age Estimate"),
                     row.get("Ownership Status"),
-                    _safe_int(row.get("Ownership Tenure Years")),
+                    row.get("Ownership Tenure Years"),
                     row.get("Extraction Confidence"),
                     _safe_int(row.get("Seller Readiness Score")),
                     candidate_id,
@@ -129,16 +145,26 @@ def upsert_candidate(conn, row):
             cur.execute(
                 """
                 INSERT INTO candidates (
+                    search_request_id,
                     company_name, normalized_name, state, industry,
                     company_type, founded_year, revenue_estimate,
                     years_in_business, founder_name, founder_led,
                     family_owned, founder_age_estimate, ownership_status,
                     ownership_tenure_years, extraction_confidence,
                     seller_readiness_score
-                ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                ) VALUES (
+                    %s,
+                    %s, %s, %s, %s,
+                    %s, %s, %s,
+                    %s, %s, %s,
+                    %s, %s, %s,
+                    %s, %s,
+                    %s
+                )
                 RETURNING id
                 """,
                 (
+                    search_request_id,
                     row.get("Company Name"),
                     normalized_name,
                     state,
@@ -152,7 +178,7 @@ def upsert_candidate(conn, row):
                     row.get("Family Owned"),
                     row.get("Founder Age Estimate"),
                     row.get("Ownership Status"),
-                    _safe_int(row.get("Ownership Tenure Years")),
+                    row.get("Ownership Tenure Years"),
                     row.get("Extraction Confidence"),
                     _safe_int(row.get("Seller Readiness Score")),
                 ),
@@ -169,13 +195,6 @@ def upsert_candidate(conn, row):
             )
 
     return candidate_id
-
-
-def _safe_int(value):
-    try:
-        return int(value)
-    except (TypeError, ValueError):
-        return None
 
 
 # ---------------------------------------------------------------------------
@@ -210,7 +229,7 @@ def upsert_evidence(conn, candidate_id, row):
         )
 
         if unchanged:
-            return False  # nothing new to store
+            return False
 
         cur.execute(
             """
@@ -230,48 +249,77 @@ def upsert_evidence(conn, candidate_id, row):
 
 
 # ---------------------------------------------------------------------------
-# Pipeline run snapshot
+# Pipeline run snapshot - SCOPED, so "vs Last Week" compares this search
+# against itself, not against whatever the client was searching for last
+# week under different params.
 # ---------------------------------------------------------------------------
 
-def record_pipeline_run_snapshot(conn_factory=get_connection):
+def record_pipeline_run_snapshot(search_request_id, conn_factory=get_connection):
     conn = conn_factory()
     try:
         with conn.cursor() as cur:
-            cur.execute("SELECT COUNT(*) FROM candidates")
+            cur.execute(
+                "SELECT COUNT(*) FROM candidates WHERE search_request_id = %s",
+                (search_request_id,),
+            )
             total_targets = cur.fetchone()[0]
 
             cur.execute(
-                "SELECT COUNT(*) FROM candidates WHERE first_seen_date = CURRENT_DATE"
+                """
+                SELECT COUNT(*) FROM candidates
+                WHERE first_seen_date = CURRENT_DATE
+                  AND search_request_id = %s
+                """,
+                (search_request_id,),
             )
             new_this_run = cur.fetchone()[0]
 
             cur.execute(
-                "SELECT COUNT(*) FROM review_status WHERE status = 'Pursuing'"
+                """
+                SELECT COUNT(*) FROM review_status rs
+                JOIN candidates c ON c.id = rs.candidate_id
+                WHERE rs.status = 'Pursuing' AND c.search_request_id = %s
+                """,
+                (search_request_id,),
             )
             shortlisted = cur.fetchone()[0]
 
             cur.execute(
-                "SELECT COUNT(*) FROM review_status WHERE status = 'New'"
+                """
+                SELECT COUNT(*) FROM review_status rs
+                JOIN candidates c ON c.id = rs.candidate_id
+                WHERE rs.status = 'New' AND c.search_request_id = %s
+                """,
+                (search_request_id,),
             )
             in_review = cur.fetchone()[0]
 
             cur.execute(
-                "SELECT COUNT(*) FROM review_status WHERE status IN ('Pursuing','Passed','Bad Data')"
+                """
+                SELECT COUNT(*) FROM review_status rs
+                JOIN candidates c ON c.id = rs.candidate_id
+                WHERE rs.status IN ('Pursuing','Passed','Bad Data')
+                  AND c.search_request_id = %s
+                """,
+                (search_request_id,),
             )
             reviewed = cur.fetchone()[0]
 
             cur.execute(
                 """
                 INSERT INTO pipeline_runs
-                    (total_targets, new_this_run, shortlisted, in_review, reviewed)
-                VALUES (%s, %s, %s, %s, %s)
+                    (search_request_id, total_targets, new_this_run,
+                     shortlisted, in_review, reviewed)
+                VALUES (%s, %s, %s, %s, %s, %s)
                 """,
-                (total_targets, new_this_run, shortlisted, in_review, reviewed),
+                (search_request_id, total_targets, new_this_run,
+                 shortlisted, in_review, reviewed),
             )
         conn.commit()
-        print(f"Recorded pipeline run snapshot: {total_targets} total, "
-              f"{new_this_run} new, {shortlisted} shortlisted, "
-              f"{in_review} in review, {reviewed} reviewed")
+        print(f"Recorded pipeline run snapshot (search {search_request_id}): "
+              f"{total_targets} total, {new_this_run} new, "
+              f"{shortlisted} shortlisted, {in_review} in review, "
+              f"{reviewed} reviewed")
     except Exception:
         conn.rollback()
         raise
@@ -279,9 +327,14 @@ def record_pipeline_run_snapshot(conn_factory=get_connection):
         conn.close()
 
 
-def save_candidates_to_db(df):
+# ---------------------------------------------------------------------------
+# Public entry point
+# ---------------------------------------------------------------------------
+
+def save_candidates_to_db(df, search_request_id):
     """
-    df: the final enriched DataFrame (candidates_with_rationale.csv content).
+    df: the final enriched DataFrame (candidates_with_rationale.csv).
+    search_request_id: which client search these candidates belong to.
     """
     conn = get_connection()
     new_evidence_count = 0
@@ -289,13 +342,14 @@ def save_candidates_to_db(df):
     try:
         for _, row in df.iterrows():
             row_dict = row.to_dict()
-            candidate_id = upsert_candidate(conn, row_dict)
+            candidate_id = upsert_candidate(conn, row_dict, search_request_id)
             added = upsert_evidence(conn, candidate_id, row_dict)
             if added:
                 new_evidence_count += 1
         conn.commit()
         print(f"Saved {len(df)} candidates to Postgres "
-              f"({new_evidence_count} new/updated evidence rows)")
+              f"(search {search_request_id}, "
+              f"{new_evidence_count} new/updated evidence rows)")
     except Exception:
         conn.rollback()
         raise

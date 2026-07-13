@@ -1,6 +1,12 @@
 # agent-3/dashboard/dashboard.py
 """
 Layer 7 - Dashboard Excel Generator
+
+SCOPING: every query is filtered by search_request_id, so the dashboard
+only ever shows leads for the search the client is CURRENTLY running.
+Switching Florida -> Texas gives a clean Texas dashboard; the Florida
+leads stay in Postgres (dedupe + feedback history intact) but don't
+leak into the Texas view.
 """
 import os
 from datetime import datetime, timedelta
@@ -64,7 +70,11 @@ def get_connection():
     return psycopg2.connect(**DB_CONFIG)
 
 
-def fetch_all_candidates():
+def fetch_all_candidates(search_request_id):
+    """
+    Scoped to the CURRENT search request. If the client switches
+    Florida -> Texas, this returns only the Texas leads.
+    """
     conn = get_connection()
     try:
         with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
@@ -86,15 +96,21 @@ def fetch_all_candidates():
                     SELECT * FROM evidence ev WHERE ev.candidate_id = c.id
                     ORDER BY ev.created_at DESC LIMIT 1
                 ) e ON true
+                WHERE c.search_request_id = %s
                 ORDER BY c.seller_readiness_score DESC NULLS LAST
-                """
+                """,
+                (search_request_id,),
             )
             return cur.fetchall()
     finally:
         conn.close()
 
 
-def fetch_last_week_snapshot():
+def fetch_last_week_snapshot(search_request_id):
+    """
+    Also scoped - otherwise "vs Last Week" would compare this week's
+    Texas run against last week's Florida run.
+    """
     conn = get_connection()
     try:
         with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
@@ -105,10 +121,11 @@ def fetch_last_week_snapshot():
             cur.execute(
                 """
                 SELECT * FROM pipeline_runs
+                WHERE search_request_id = %s
                 ORDER BY ABS(run_date - %s::date) ASC
                 LIMIT 1
                 """,
-                (target_date,),
+                (search_request_id, target_date),
             )
             return cur.fetchone()
     finally:
@@ -238,7 +255,7 @@ def build_dashboard_sheet(wb, candidates, last_week):
     ws["J2"].font = Font(name=FONT_NAME, color="FFFFFF", bold=True, size=11)
     ws["J2"].alignment = Alignment(horizontal="left", vertical="center")
 
-    # --- banner now ends at column K (was L) ---
+    # --- banner ends at column K ---
     BANNER_COLS = 11  # K is column 11
     for row in range(1, 6):
         for col in range(1, BANNER_COLS + 1):
@@ -262,13 +279,12 @@ def build_dashboard_sheet(wb, candidates, last_week):
     highest_score = max(scored_only) if scored_only else 0
 
     pill_defs = [
-    ("Founder-Led", founder_led_count, "2E7D8E"),
-    ("Family-Owned", family_owned_count, "5B3A8E"), 
-    ("Highest Score", highest_score, "1565C0"),
-    ("New Today", new_this_week, "2E7D32"),
+        ("Founder-Led", founder_led_count, "2E7D8E"),
+        ("Family-Owned", family_owned_count, "5B3A8E"),
+        ("Highest Score", highest_score, "1565C0"),
+        ("New Today", new_this_week, "2E7D32"),
     ]
-    # Pill widths sum to 11 (3+3+3+2) so the row ends at column K, matching
-    # the rest of the banner - fixed: last pill narrowed from 3 to 2.
+    # Pill widths sum to 11 (3+3+3+2) so the row ends at column K.
     pill_widths = [3, 3, 3, 2]
     start_col = 1
     for i, (label, count, color) in enumerate(pill_defs):
@@ -279,7 +295,7 @@ def build_dashboard_sheet(wb, candidates, last_week):
         cell.font = Font(name=FONT_NAME, color="FFFFFF", bold=True, size=10)
         cell.fill = PatternFill("solid", start_color=color, end_color=color)
         cell.alignment = Alignment(horizontal="left", vertical="center", indent=1)
-        start_col = end_col + 1  # advance to the next pill's starting column
+        start_col = end_col + 1
 
     kpi_defs = [
         ("\U0001F3AF Total Targets Found", total_targets, "All Time", CARD_BLUE, None),
@@ -291,7 +307,6 @@ def build_dashboard_sheet(wb, candidates, last_week):
 
     card_row = 6
     card_height_rows = 4
-    # Last card narrowed from width 3 to 2 so KPI row also ends at K.
     kpi_layout = [
         {"start_col": 1,  "width": 2},
         {"start_col": 3,  "width": 2},
@@ -376,7 +391,7 @@ def build_dashboard_sheet(wb, candidates, last_week):
 
     pie = PieChart()
     pie.title = "TARGETS BY GEOGRAPHY"
-    pie.legend.position="b"
+    pie.legend.position = "b"
     data = Reference(ws, min_col=2, min_row=geo_header_row, max_row=geo_last_row)
     cats = Reference(ws, min_col=1, min_row=geo_header_row + 1, max_row=geo_last_row)
     pie.add_data(data, titles_from_data=True)
@@ -423,7 +438,6 @@ def build_dashboard_sheet(wb, candidates, last_week):
     bar2.dataLabels.showVal = True
     bar2.y_axis.majorGridlines = None
     bar2.x_axis.majorGridlines = None
-
     bar2.y_axis.delete = True
     bar2.x_axis.delete = True
     bar2.dataLabels.showCatName = False
@@ -441,24 +455,20 @@ def build_dashboard_sheet(wb, candidates, last_week):
     top_industry = top_industries[0][0] if top_industries else "N/A"
 
     mini_cards = [
-        ("📍 TOP GEOGRAPHY", top_state_label),
-        ("⭐ HIGHEST SCORE", str(highest_score)),
-        ("🏆 TOP INDUSTRY", top_industry),
+        ("\U0001F4CD TOP GEOGRAPHY", top_state_label),
+        ("\u2B50 HIGHEST SCORE", str(highest_score)),
+        ("\U0001F3C6 TOP INDUSTRY", top_industry),
     ]
     card_colors = [
-    "E8F1FB",  # 📍 Top Geography (soft blue)
-    "FFF4D6",  # ⭐ Highest Score (soft yellow)
-    "EAF6EA",  # 🏆 Top Industry (soft green)
+        "E8F1FB",  # Top Geography (soft blue)
+        "FFF4D6",  # Highest Score (soft yellow)
+        "EAF6EA",  # Top Industry (soft green)
     ]
     card_start_rows = [11, 15, 19]
 
-    for ((title, value), start_row, color) in zip(
-        mini_cards,
-        card_start_rows,
-        card_colors
-    ):
+    for ((title, value), start_row, color) in zip(mini_cards, card_start_rows, card_colors):
 
-        if title == "🏆 TOP INDUSTRY":
+        if title.endswith("TOP INDUSTRY"):
             end_row = 22
         else:
             end_row = start_row + 2
@@ -470,50 +480,27 @@ def build_dashboard_sheet(wb, candidates, last_week):
             end_column=9        # I
         )
 
-        cell = ws.cell(
-            row=start_row,
-            column=8
-        )
-        
+        cell = ws.cell(row=start_row, column=8)
         cell.value = f"{title}\n\n{value}"
-        cell.font = Font(
-        name=FONT_NAME,
-        bold=True,
-        size=11,
-        color="1B2A4A"   # dark navy
-        )
-        cell.fill = PatternFill(
-            "solid",
-            start_color=color,
-            end_color=color
-        )
-
-
-        cell.alignment = Alignment(
-            horizontal="center",
-            vertical="center",
-            wrap_text=True
-        )
+        cell.font = Font(name=FONT_NAME, bold=True, size=11, color="1B2A4A")
+        cell.fill = PatternFill("solid", start_color=color, end_color=color)
+        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
 
         for r in range(start_row, end_row + 1):
-
             for c in range(8, 10):
-
-                ws.cell(
-                    row=r,
-                    column=c
-                ).border = Border(
+                ws.cell(row=r, column=c).border = Border(
                     left=Side(style="thin", color="D3D3D3"),
                     right=Side(style="thin", color="D3D3D3"),
                     top=Side(style="thin", color="D3D3D3"),
                     bottom=Side(style="thin", color="D3D3D3"),
                 )
+
     insights_col = 10
     insights_row = chart_data_row
     insights_end_row = 22
 
     ws.merge_cells(start_row=insights_row, start_column=insights_col,
-                    end_row=insights_row, end_column=insights_col + 1)
+                   end_row=insights_row, end_column=insights_col + 1)
     heading_cell = ws.cell(row=insights_row, column=insights_col, value="Key Insights")
     heading_cell.font = Font(name=FONT_NAME, bold=True, size=11, color="FFFFFF")
     heading_cell.fill = HEADER_FILL
@@ -521,13 +508,12 @@ def build_dashboard_sheet(wb, candidates, last_week):
     ws.row_dimensions[insights_row].height = 22
 
     insight_lines = [
-        f"✓ Founder-Led: {pct_founder_led:.0f}%",
-        f"🏠 Family-Owned: {pct_family_owned:.0f}%",
-        f"📍 Top Geography: {top_state_label}",
-        f"🆕 New Targets: {new_this_week}",
-        f"⭐ High Scorers (80+): {high_scorers}",
+        f"\u2713 Founder-Led: {pct_founder_led:.0f}%",
+        f"\U0001F3E0 Family-Owned: {pct_family_owned:.0f}%",
+        f"\U0001F4CD Top Geography: {top_state_label}",
+        f"\U0001F195 New Targets: {new_this_week}",
+        f"\u2B50 High Scorers (80+): {high_scorers}",
     ]
-        
 
     available_rows = insights_end_row - insights_row
     n = len(insight_lines)
@@ -540,7 +526,7 @@ def build_dashboard_sheet(wb, candidates, last_week):
         block_start = current_row
         block_end = current_row + this_block_size - 1
         ws.merge_cells(start_row=block_start, start_column=insights_col,
-                        end_row=block_end, end_column=insights_col + 1)
+                       end_row=block_end, end_column=insights_col + 1)
         cell = ws.cell(row=block_start, column=insights_col, value=f"\u2022 {line}")
         cell.font = Font(name=FONT_NAME, size=9)
         cell.alignment = Alignment(vertical="center", indent=1, wrap_text=True)
@@ -717,9 +703,13 @@ def build_top_companies_sheet(wb, candidates):
     return ws
 
 
-def generate_dashboard(output_file):
-    candidates = fetch_all_candidates()
-    last_week = fetch_last_week_snapshot()
+def generate_dashboard(output_file, search_request_id):
+    """
+    search_request_id scopes everything: the client only sees leads for
+    the search they're currently running.
+    """
+    candidates = fetch_all_candidates(search_request_id)
+    last_week = fetch_last_week_snapshot(search_request_id)
 
     wb = Workbook()
     wb.remove(wb.active)
@@ -729,5 +719,6 @@ def generate_dashboard(output_file):
     build_top_companies_sheet(wb, candidates)
 
     wb.save(output_file)
-    print(f"Saved dashboard workbook ({len(candidates)} total candidates) -> {output_file}")
+    print(f"Saved dashboard workbook ({len(candidates)} candidates "
+          f"for search {search_request_id}) -> {output_file}")
     return output_file
