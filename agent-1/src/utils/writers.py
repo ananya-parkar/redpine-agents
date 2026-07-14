@@ -49,6 +49,7 @@ PRIORITY_EXTRA_FIELDNAMES = [
     "current_brand",
     "former_brand",
     "brand_status",
+    "franchise_loss_date",
     "franchise_confidence",
     "franchise_evidence",
 
@@ -70,6 +71,8 @@ PRIORITY_EXTRA_FIELDNAMES = [
     "attom_year_built",
     "is_older_than_20_years",
     "room_count",
+    "recent_distress_news",
+    "ownership_context",
 ]
 
 def write_excel(path, rows, fieldnames):

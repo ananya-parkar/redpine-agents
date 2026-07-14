@@ -13,14 +13,12 @@ def calculate_final_lead_score(entity):
     score += (heuristic_score * 0.6 + llm_score * 0.4)
     
     # Franchise distress
-    if signals.get("franchise_affiliated"):
-        score += 5
-
-    if (
-        signals.get("franchise_loss")
-        or signals.get("brand_status") == "FORMER"
-    ):
+    # Hotel lost a major franchise.
+    if signals.get("brand_status") == "FORMER":
         score += 20
+
+    elif signals.get("brand_status") == "INDEPENDENT":
+        score += 10
 
     # CMBS distress
     # if signals.get("cmbs_special_servicing"):
@@ -39,6 +37,29 @@ def calculate_final_lead_score(entity):
     # Operational decline
     if signals.get("review_decline"):
         score += 10
+    
+    news = str(signals.get("recent_distress_news", "")).lower()
+
+    if news:
+        score += 3
+        severe_keywords = [
+            "closure",
+            "closed",
+            "bankruptcy",
+            "foreclosure",
+            "receivership",
+            "fire",
+            "condemned",
+            "lawsuit",
+            "franchise termination",
+            "brand termination",
+            "management change",
+            "rebranding",
+            "liquidation",
+        ]
+
+        if any(k in news for k in severe_keywords):
+            score += 5
 
     if signals.get("complaint_increase"):
         score += 10
@@ -62,7 +83,8 @@ def calculate_final_lead_score(entity):
 
         franchise_affiliated={signals.get('franchise_affiliated')}
         brand_status={signals.get('brand_status')}
-        franchise_loss={signals.get('franchise_loss')}
+        former_brand={signals.get('former_brand')}
+        franchise_loss_date={signals.get('franchise_loss_date')}
 
         long_term_owner={signals.get('long_term_owner')}
         review_decline={signals.get('review_decline')}
