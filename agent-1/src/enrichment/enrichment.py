@@ -15,6 +15,7 @@ def default_franchise_result():
         "current_brand": "",
         "former_brand": "",
         "brand_status": "NONE",
+        "franchise_loss_date": "",
         "franchise_confidence": "Not Checked",
         "franchise_evidence": "",
         "recent_distress_news": "",
@@ -46,12 +47,12 @@ def enrich_priority_hotel(hotel_name, address, latitude=None, longitude=None, re
     # Franchise detection
     try:
         print("    [CLAUDE WEB SEARCH] Researching hotel...")
-        known_brand = detect_known_brand(hotel_name)
 
+        known_brand = detect_known_brand(hotel_name)
         if known_brand:
             result.update(known_brand)
 
-        else:
+        try:
             franchise_result = research_hotel(
                 hotel_name=hotel_name,
                 address=address,
@@ -59,22 +60,30 @@ def enrich_priority_hotel(hotel_name, address, latitude=None, longitude=None, re
             )
 
             result.update(franchise_result)
+
+        except Exception as e:
+            print(f"[CLAUDE] {e}")
         
         print(
-            f"    [FRANCHISE] affiliated={result['franchise_affiliated']} | "
+            f"    [CLAUDE FRANCHISE] "
+            f"affiliated={result['franchise_affiliated']} | "
             f"brand_status={result['brand_status']} | "
             f"current_brand={result['current_brand'] or 'N/A'} | "
             f"former_brand={result['former_brand'] or 'N/A'} | "
+            f"loss_date={result.get('franchise_loss_date', 'N/A') or 'N/A'} | "
             f"confidence={result['franchise_confidence']}",
             flush=True
         )
+
     except Exception as e:
-        print(f"    [FRANCHISE] Failed: {e}", flush=True)
+        print(f"    [CLAUDE FRANCHISE] Failed: {e}", flush=True)
+
         result.update({
             "franchise_affiliated": False,
             "current_brand": "",
             "former_brand": "",
             "brand_status": "NONE",
+            "franchise_loss_date": "",
             "franchise_confidence": "Error",
             "franchise_evidence": str(e)
         })

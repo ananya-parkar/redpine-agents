@@ -127,6 +127,7 @@ def insert_priority_leads(rows):
             owner_name,
             franchise_affiliated,
             current_brand,
+            franchise_loss_date,
             lead_reason,
 
             distress_probability,
@@ -159,12 +160,15 @@ def insert_priority_leads(rows):
             %s,%s,%s,%s,%s,%s,%s,
             %s,%s,%s,%s,%s,%s,%s,
             %s,%s,%s,%s,%s,%s,%s,
-            %s,%s,%s,%s
+            %s,%s,%s,%s,%s
         )
         ON CONFLICT(place_id)
         DO UPDATE SET
             final_lead_score = EXCLUDED.final_lead_score,
             opportunity_score = EXCLUDED.opportunity_score,
+            current_brand = EXCLUDED.current_brand,
+            franchise_affiliated = EXCLUDED.franchise_affiliated,
+            franchise_loss_date = EXCLUDED.franchise_loss_date,
 
             owner_name = EXCLUDED.owner_name,
             ownership_since = EXCLUDED.ownership_since,
@@ -203,6 +207,7 @@ def insert_priority_leads(rows):
             row.get("owner_name"),
             row.get("franchise_affiliated"),
             row.get("current_brand"),
+            row.get("franchise_loss_date"),
             row.get("lead_reason"),
             llm.get("distress_probability"),
             llm.get("seller_fatigue_probability"),

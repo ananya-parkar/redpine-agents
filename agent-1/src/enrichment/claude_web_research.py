@@ -32,94 +32,193 @@ def research_hotel(
         review_text = "\n".join(snippets)
 
     prompt = f"""
-You are researching a hotel using live web search.
+        You are researching a hotel using live web search.
 
-Use web search to gather the latest publicly available information.
+        Use web search to verify information from authoritative public sources.
 
-Prefer:
-- Official hotel website
-- Official brand website
-- Google Maps
-- Recent news
-- Hospitality publications
-- Public business listings
+        Search priority:
 
-Ignore low-quality directory listings unless corroborated.
+        1. Official hotel website
+        2. Official brand website
+        3. Google Maps
+        4. Hospitality publications
+        5. Local news
+        6. Press releases
 
-Hotel
+        Ignore low-quality directory listings unless corroborated by another source.
 
-Name:
-{hotel_name}
+        Hotel
 
-Address:
-{address}
+        Name:
+        {hotel_name}
 
-Google Rating:
-{rating}
+        Address:
+        {address}
 
-Review Count:
-{review_count}
+        Google Rating:
+        {rating}
 
-Recent Google Reviews:
-{review_text}
+        Review Count:
+        {review_count}
 
-Determine:
+        Recent Google Reviews:
+        {review_text}
 
-1. Current hotel brand
-2. Previous hotel brand
-3. Whether the hotel lost a franchise
-4. Whether it is independently operated
-5. Recent operational issues
-6. Recent financial/distress indicators
-7. Confidence (High / Medium / Low)
+        Determine:
 
-Return ONLY valid JSON.
+        1. Current hotel brand.
 
-{{
-    "franchise_affiliated": true,
-    "current_brand": "",
-    "former_brand": "",
-    "brand_status": "CURRENT",
-    "franchise_confidence": "High",
-    "franchise_evidence": "",
-    "recent_distress_news": "",
-    "ownership_context": ""
-}}
-"""
+        2. Previous hotel brand, if any.
+
+        3. Whether the hotel has lost a major franchise
+        (Marriott, Hilton, IHG, Wyndham, Choice, Hyatt, Best Western).
+
+        4. If a franchise loss occurred,
+        estimate the month/year when it occurred.
+
+        5. Whether the hotel is now independently operated.
+
+        6. Search for evidence of:
+
+        - franchise termination
+        - rebranding
+        - management company change
+        - temporary closure
+        - permanent closure
+        - reopening after renovation
+
+        7. Summarize any recent operational distress reported publicly.
+
+        You MUST return ONLY a valid JSON object.
+        Do not include explanations.
+        Do not include markdown.
+        Do not include code fences.
+        Do not include any text before or after the JSON.
+
+        If a field cannot be verified from public sources, return an empty string for that field.
+        Do not invent values.
+        Do not guess.
+
+        Never omit keys.
+
+        Always return every field.
+
+        {{
+            "franchise_affiliated": true,
+            "current_brand": "",
+            "former_brand": "",
+            "brand_status": "CURRENT",
+            "franchise_loss_date": "",
+            "franchise_confidence": "High",
+            "franchise_evidence": "",
+            "recent_distress_news": "",
+            "ownership_context": ""
+        }}
+    """
 
     try:
+        last_exception = None
+        for attempt in range(2):
+            try:
+                response = client.messages.create(
+                    model="claude-sonnet-5",
+                    max_tokens=1800,
+                    tools=[
+                        {
+                            "type": "web_search_20260318",
+                            "name": "web_search",
+                            "allowed_callers": ["direct"],
+                            "max_uses": 5
+                        }
+                    ],
+                    messages=[{"role": "user", "content": prompt}]
+                )
 
-        response = client.messages.create(
-            model="claude-sonnet-5",
-            max_tokens=1200,
-            tools=[
-                {
-                    "type": "web_search_20260318",
-                    "name": "web_search",
-                    "allowed_callers": ["direct"],
-                    "max_uses": 3
-                }
-            ],
-            messages=[
-                {
-                    "role": "user",
-                    "content": prompt
-                }
-            ]
-        )
+                text = "".join(block.text for block in response.content if isinstance(block, TextBlock))
+                match = re.search(r"\{.*\}", text, re.S)
 
-        text = "".join(
-            block.text
-            for block in response.content
-            if isinstance(block, TextBlock)
-        )
+                if not match:
+                    raise ValueError("No JSON found in Claude response.")
 
-        match = re.search(r"\{.*\}", text, re.S)
+                result = json.loads(match.group())
+                break
 
-        if not match:
-            raise ValueError("No JSON found in Claude response.")
+            except Exception as e:
+                last_exception = e
+                print(
+                    f"[CLAUDE RETRY {attempt + 1}] {e}",
+                    flush=True
+                )
 
-        return json.loads(match.group())
+        else:
+
+            print("[CLAUDE WEB SEARCH ERROR]", last_exception)
+
+            return {
+                "franchise_affiliated": False,
+                "current_brand": "",
+                "former_brand": "",
+                "brand_status": "NONE",
+                "franchise_loss_date": "",
+                "franchise_confidence": "Error",
+                "franchise_evidence": str(last_exception),
+                "recent_distress_news": "",
+                "ownership_context": ""
+            }
+
+        for field in [
+            "current_brand",
+            "former_brand",
+            "franchise_loss_date",
+            "franchise_evidence",
+            "recent_distress_news",
+            "ownership_context",
+        ]:
+            value = result.get(field)
+
+            if isinstance(value, str):
+                normalized = value.strip().lower()
+
+                if normalized in {
+                    "none",
+                    "none found",
+                    "none identified",
+                    "not applicable",
+                    "n/a",
+                    "null",
+                    "unknown",
+                    "unknown brand",
+                    "not available",
+                }:
+                    result[field] = ""
+                    continue
+
+                if field in ["current_brand", "former_brand"]:
+                    cleaned = (
+                        value
+                        .replace("(independent)", "")
+                        .replace("- independent", "")
+                        .replace("independent", "")
+                        .strip(" -")
+                        .strip()
+                    )
+
+                    result[field] = cleaned
+        
+        # ------------------------------
+        # Normalize franchise output
+        # ------------------------------
+
+        brand_status = str(result.get("brand_status", "")).upper()
+        result["brand_status"] = brand_status
+
+        # Default
+        result["franchise_affiliated"] = False
+
+        if brand_status == "CURRENT" and result.get("current_brand"):
+            result["franchise_affiliated"] = True
+
+        return result
 
     except Exception as e:
 
@@ -130,6 +229,7 @@ Return ONLY valid JSON.
             "current_brand": "",
             "former_brand": "",
             "brand_status": "NONE",
+            "franchise_loss_date": "",
             "franchise_confidence": "Error",
             "franchise_evidence": str(e),
             "recent_distress_news": "",
