@@ -1,11 +1,11 @@
 # agent-1/src/enrichment/enrichment.py
 from datetime import datetime
+from unittest import result
 from src.enrichment.claude_web_research import research_hotel
 from src.enrichment.owner_details import detect_owner_details
 from src.enrichment.property_age import get_property_age_flags
 # from src.owner_tenure import get_owner_tenure
 # from src.enrichment.cmbs_lookup import detect_cmbs_signals, default_cmbs_result
-from src.enrichment.attom_basicprofile import get_basic_profile
 from src.enrichment.brand_matcher import detect_known_brand
 
 
@@ -37,7 +37,7 @@ def default_owner_result():
     }
 
 
-def enrich_priority_hotel(hotel_name, address, reviews=None):
+def enrich_priority_hotel(hotel_name, address, latitude=None, longitude=None, reviews=None):
     result = {}
     result.update(default_franchise_result())
     result.update(default_owner_result())
@@ -96,10 +96,11 @@ def enrich_priority_hotel(hotel_name, address, reviews=None):
     # else:
     #     print("    [CMBS] Skipped (no franchise affiliation detected)", flush=True)
     
-    # Owner enrichment via ATTOM
+
+    # Owner enrichment via Regrid
     try:
-        print("    [OWNER] Looking up ATTOM property details...", flush=True)
-        property_lookup = detect_owner_details(address=address)
+        print("    [OWNER] Looking up Regrid property details...")
+        property_lookup = detect_owner_details(address=address, latitude=latitude, longitude=longitude)
         print(
             "[OWNER LOOKUP KEYS]",
             property_lookup.keys(),
@@ -135,17 +136,7 @@ def enrich_priority_hotel(hotel_name, address, reviews=None):
             or property_lookup.get("sale_search_date")
             or ""
         )
-        if not sale_date:
-            print(
-                "    [SALE] DetailOwner missing sale date. Trying BasicProfile...", flush=True)
-
-            basic_profile = get_basic_profile(address)
-
-            sale_date = (
-                basic_profile.get("sale_trans_date")
-                or basic_profile.get("sale_search_date")
-                or ""
-            )
+        
         print(
             "    [SALE FINAL DATE]",
             sale_date,
@@ -165,11 +156,7 @@ def enrich_priority_hotel(hotel_name, address, reviews=None):
         result["ownership_since"] = sale_date
         result["ownership_length_years"] = ownership_years
         
-        print(
-            f"    [SALE] date={sale_date} | "
-            f"tenure={ownership_years}",
-            flush=True
-        )
+        print(f"    [SALE] date={sale_date} | " f"tenure={ownership_years}", flush=True)
 
         # Extract year built and age flag
         age_result = get_property_age_flags(property_data)

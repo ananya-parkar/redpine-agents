@@ -173,8 +173,10 @@ def process_hotel(item, hotel, hotel_index, total_hotels):
 
     if score >= 4:
         enrichment = enrich_priority_hotel(
-            hotel_name=hotel_name or raw_hotel_name,
+            hotel_name=hotel_name,
             address=hotel_details.get("formattedAddress", ""),
+            latitude=entity.latitude,
+            longitude=entity.longitude,
             reviews=entity.reviews
         )
 
@@ -310,7 +312,7 @@ def process_hotel(item, hotel, hotel_index, total_hotels):
 
     sources = ["Google Places"]
     if entity.owner_data.get("owner_name"):
-        sources.append("ATTOM")
+        sources.append("REGRID")
 
     if entity.franchise_data.get("franchise_affiliated"):
         sources.append("Claude Web Search")

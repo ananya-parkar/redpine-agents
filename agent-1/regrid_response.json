@@ -1,0 +1,383 @@
+{
+  "parcels": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -97.006057,
+                32.761512
+              ],
+              [
+                -97.0060555,
+                32.761544
+              ],
+              [
+                -97.0072905,
+                32.7615575
+              ],
+              [
+                -97.007298,
+                32.761077
+              ],
+              [
+                -97.006645,
+                32.76107
+              ],
+              [
+                -97.006374,
+                32.7610665
+              ],
+              [
+                -97.006209,
+                32.7610445
+              ],
+              [
+                -97.0062265,
+                32.760972
+              ],
+              [
+                -97.00625,
+                32.7609005
+              ],
+              [
+                -97.006125,
+                32.760866
+              ],
+              [
+                -97.0060995,
+                32.760942
+              ],
+              [
+                -97.0060805,
+                32.7610185
+              ],
+              [
+                -97.006069,
+                32.7610965
+              ],
+              [
+                -97.006064,
+                32.761175
+              ],
+              [
+                -97.006057,
+                32.761512
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "headline": "380 E Palace Pkwy",
+          "path": "/us/tx/dallas/southwest-dallas/548697",
+          "fields": {
+            "ogc_fid": 548697,
+            "geoid": "48113",
+            "parcelnumb": "281715500A0030000",
+            "parcelnumb_no_formatting": "281715500A0030000",
+            "account_number": "281715500A0030000",
+            "usecode": "2",
+            "usedesc": "COMMERCIAL IMPROVEMENTS",
+            "yearbuilt": 2015,
+            "numstories": 4.0,
+            "numunits": 85,
+            "structstyle": "HOTEL",
+            "parvaltype": "ASSESSED",
+            "improvval": 7971850.0,
+            "landval": 138520.0,
+            "parval": 8110370.0,
+            "saleprice": 0.0,
+            "saledate": "2015-05-07",
+            "last_ownership_transfer_date": "2015-05-07",
+            "owner": "SUKHI INVESTMENTS INC",
+            "mailadd": "904 WINCHESTER DR",
+            "mail_addno": "904",
+            "mail_addstr": "WINCHESTER",
+            "mail_addsttyp": "DR",
+            "mail_city": "SOUTHLAKE",
+            "mail_state2": "TX",
+            "mail_zip": "76092-1416",
+            "mail_country": "UNITED STATES OF AMERICA",
+            "original_mailing_address": "{\"mailadd\":\"904 WINCHESTER DR\",\"mail_address2\":\"\",\"mail_city\":\"SOUTHLAKE\",\"mail_state2\":\"TX\",\"mail_zip\":\"760921416\",\"mail_country\":\"UNITED STATES OF AMERICA\"}",
+            "address": "380 E PALACE PKWY",
+            "ll_address_count": 1,
+            "fema_nri_risk_rating": "Relatively Low",
+            "census_unified_school_district": "Grand Prairie Independent School District",
+            "ll_bldg_footprint_sqft": 14970,
+            "ll_bldg_count": 1,
+            "insite_score": "Low",
+            "precisely_id": "P0000M3OQ8UW",
+            "placekey": "222@5qv-x9m-9zz",
+            "dpv_status": "V",
+            "dpv_codes": "YNNNN",
+            "dpv_notes": "AABB",
+            "dpv_type": "S",
+            "cass_errorno": "11.0,11.14,A1",
+            "rdi": "N",
+            "usps_vacancy": "N",
+            "usps_vacancy_date": "2026-06-01",
+            "lbcs_activity": 2000.0,
+            "lbcs_activity_desc": "Shopping, business, or trade",
+            "lbcs_function": 2000.0,
+            "lbcs_function_desc": "General sales or services",
+            "lbcs_structure": 2000.0,
+            "lbcs_structure_desc": "Commercial buildings and other specialized structures",
+            "lbcs_site": 6000.0,
+            "lbcs_site_desc": "Developed site with buildings",
+            "lbcs_ownership": 1500.0,
+            "lbcs_ownership_desc": "Businesses and commercial entities",
+            "population_density": 2736.1,
+            "population_growth_past_5_years": 3.03,
+            "population_growth_next_5_years": -0.36,
+            "housing_growth_past_5_years": -0.47,
+            "housing_growth_next_5_years": 0.0,
+            "household_income_growth_next_5_years": 1.25,
+            "median_household_income": 73933.0,
+            "transmission_line_distance": 2269.0,
+            "roughness_rating": 0.0,
+            "highest_parcel_elevation": 137.65,
+            "lowest_parcel_elevation": 135.12,
+            "saddno": "380",
+            "saddpref": "E",
+            "saddstr": "PALACE",
+            "saddsttyp": "PKWY",
+            "scity": "GRAND PRAIRIE",
+            "original_address": "{\"address\":\"380 PALACE PKWY\",\"saddno\":\"380\",\"saddstr\":\"PALACE PKWY\",\"sunit\":\"\",\"scity\":\"GRAND PRAIRIE (DALLAS CO)\",\"szip\":\"750502300\"}",
+            "city": "southwest-dallas",
+            "county": "dallas",
+            "state2": "TX",
+            "szip": "75050-2300",
+            "szip5": "75050",
+            "address_source": "county;cass",
+            "legaldesc": "PALACE PARKWAY HOTEL BLK A LOT 3 ACS 1.59 INT201500117171 DD05062015 CO-DC 1715500A00300 5CP1715500A",
+            "plat": "17155",
+            "neighborhood_code": "N/A",
+            "subdivision": "PALACE PARKWAY HOTEL",
+            "lat": "32.761297",
+            "lon": "-97.006656",
+            "qoz": "No",
+            "census_tract": "48113015405",
+            "census_block": "481130154052000",
+            "census_blockgroup": "481130154052",
+            "census_zcta": "75050",
+            "ll_last_refresh": "2026-06-24",
+            "recrdareatx": "1.5881 Acre",
+            "area_building": 47650,
+            "area_building_definition": "TOTAL AREA",
+            "deeded_acres": 1.5881,
+            "ll_gisacre": 1.58812,
+            "ll_gissqft": 69180,
+            "path": "/us/tx/dallas/southwest-dallas/548697",
+            "ll_stable_id": "parcelnumb",
+            "ll_uuid": "9475fb7b-1ddb-4636-90e1-ec15ee8af0df",
+            "ll_updated_at": "2026-06-29 16:33:33 -0400"
+          },
+          "context": {
+            "headline": "Southwest Dallas, TX",
+            "name": "Southwest Dallas, TX",
+            "path": "/us/tx/dallas/southwest-dallas",
+            "active": true
+          },
+          "ll_uuid": "9475fb7b-1ddb-4636-90e1-ec15ee8af0df",
+          "addresses": [
+            {
+              "a_id": "186945741",
+              "a_address": "380 E Palace Pkwy",
+              "a_saddno": "380",
+              "a_saddpref": "E",
+              "a_saddstr": "Palace",
+              "a_saddsttyp": "Pkwy",
+              "a_saddstsuf": null,
+              "a_sunit": null,
+              "a_szip5": "75050",
+              "a_szip": "75050-2300",
+              "a_carte": "C068",
+              "a_crtype": "C",
+              "a_scity": "Grand Prairie",
+              "a_state2": "TX",
+              "a_county": "DALLAS",
+              "a_delvseqno": "00009",
+              "a_usps_elotseq": "0015",
+              "a_usps_elotsort": "A",
+              "a_resbus": "B",
+              "a_dpv_confirm": "Y",
+              "a_dpv_footnotes": "AABB",
+              "a_dp_digits": "80",
+              "a_dp_check": "0",
+              "a_default_match": "0",
+              "a_lacsflag": "0",
+              "a_usps_vacancy": "N",
+              "a_nostats": "N",
+              "a_error_code": "0",
+              "a_dpv_type": "S",
+              "a_geocodetype": "PC",
+              "a_moddate": "May 16 2026 12:00AM",
+              "a_census_blockgroup": "481130154052",
+              "a_lat": "32.761297",
+              "a_lon": "-97.006656",
+              "a_geoid": "48113",
+              "ll_uuid": "9475fb7b-1ddb-4636-90e1-ec15ee8af0df"
+            }
+          ],
+          "enhanced_ownership": [
+            {
+              "ll_uuid": "9475fb7b-1ddb-4636-90e1-ec15ee8af0df",
+              "attom_id": "164998072",
+              "eo_geoid": "48113",
+              "eo_last_refresh": "2022-12-15",
+              "eo_owner": "SUKHI INVESTMENTS INC",
+              "eo_ownerfirst": null,
+              "eo_ownermiddle": null,
+              "eo_ownerlast": "SUKHI INVESTMENTS INC",
+              "eo_ownersuffix": null,
+              "eo_owner2": null,
+              "eo_owner2first": null,
+              "eo_owner2middle": null,
+              "eo_owner2last": null,
+              "eo_owner2suffix": null,
+              "eo_owner3": null,
+              "eo_owner3first": null,
+              "eo_owner3middle": null,
+              "eo_owner3suffix": null,
+              "eo_owner3last": null,
+              "eo_owner4": null,
+              "eo_owner4first": null,
+              "eo_owner4middle": null,
+              "eo_owner4last": null,
+              "eo_owner4suffix": null,
+              "eo_mail_county": "TARRANT",
+              "eo_mail_geoid": "48439",
+              "eo_mail_address": "904 WINCHESTER DR",
+              "eo_mail_addno": "904",
+              "eo_mail_addpref": null,
+              "eo_mail_addstr": "WINCHESTER",
+              "eo_mail_addstsuf": "DR",
+              "eo_mail_adddir": null,
+              "eo_mail_unitpref": null,
+              "eo_mail_unit": null,
+              "eo_mail_city": "SOUTHLAKE",
+              "eo_mail_state2": "TX",
+              "eo_mail_zip": "76092",
+              "eo_mail_zip4": "1416",
+              "eo_mail_carte": "R025",
+              "eo_mail_addressinfoformat": "S",
+              "eo_deedowner": "SUKHI INVESTMENTS INC",
+              "eo_deedownerfirst": null,
+              "eo_deedownermiddle": null,
+              "eo_deedownerlast": "SUKHI INVESTMENTS INC",
+              "eo_deedownersuffix": null,
+              "eo_deedowner2": null,
+              "eo_deedowner2first": null,
+              "eo_deedowner2middle": null,
+              "eo_deedowner2last": null,
+              "eo_deedowner2suffix": null,
+              "eo_deedowner3": null,
+              "eo_deedowner3first": null,
+              "eo_deedowner3middle": null,
+              "eo_deedowner3last": null,
+              "eo_deedowner3suffix": null,
+              "eo_deedowner4": null,
+              "eo_deedowner4first": null,
+              "eo_deedowner4middle": null,
+              "eo_deedowner4last": null,
+              "eo_deedowner4suffix": null,
+              "ogc_fid": 131842684,
+              "eo_state2": "TX"
+            }
+          ],
+          "score": 92.0
+        },
+        "id": 548697
+      }
+    ]
+  },
+  "buildings": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -97.0063335,
+                32.761248
+              ],
+              [
+                -97.006332,
+                32.761396
+              ],
+              [
+                -97.0063885,
+                32.7613965
+              ],
+              [
+                -97.006388,
+                32.7614435
+              ],
+              [
+                -97.007024,
+                32.7614475
+              ],
+              [
+                -97.0070255,
+                32.761273
+              ],
+              [
+                -97.006639,
+                32.7612705
+              ],
+              [
+                -97.0066395,
+                32.7612365
+              ],
+              [
+                -97.006615,
+                32.7612365
+              ],
+              [
+                -97.006616,
+                32.761156
+              ],
+              [
+                -97.0065195,
+                32.7611555
+              ],
+              [
+                -97.0065185,
+                32.7612495
+              ],
+              [
+                -97.0063335,
+                32.761248
+              ]
+            ]
+          ]
+        },
+        "properties": {
+          "ed_str_uuid": "f6fe3639-ae1e-4d6a-ac83-acf6cd9d1b47",
+          "ed_bld_uuid": "2aeba08e-5329-49c9-b345-e9b17d33b663",
+          "ed_bldg_footprint_sqft": 14986.27,
+          "ed_geoid": "48113",
+          "ed_lat": 32.7613345,
+          "ed_lon": -97.0066787,
+          "ed_source_date": "07/04/2022",
+          "ed_source": "Aerial Imagery",
+          "ed_largest": "1",
+          "ll_uuids": [
+            "9475fb7b-1ddb-4636-90e1-ec15ee8af0df"
+          ]
+        }
+      }
+    ]
+  },
+  "zoning": {
+    "type": "FeatureCollection",
+    "features": []
+  }
+}

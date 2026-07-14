@@ -34,6 +34,16 @@ def normalize_text(text: str) -> str:
     text = re.sub(r"\s+", " ", text)
     return text.strip()
 
+def extract_street(address: str) -> str:
+    if not address:
+        return ""
+
+    # Google address format:
+    # Street, City, State ZIP, USA
+    street = address.split(",")[0]
+
+    return normalize_address(street)
+
 def normalize_address(address: str) -> str:
     text = normalize_text(address)
     parts = text.split()
@@ -45,7 +55,20 @@ def normalize_address(address: str) -> str:
 def address_similarity(a: str, b: str) -> int:
     if not a or not b:
         return 0
-    return int(SequenceMatcher(None, normalize_address(a), normalize_address(b)).ratio() * 100)
+    
+    street_a = extract_street(a)
+    street_b = extract_street(b)
+
+    if street_a == street_b:
+        return 100
+
+    return int(
+        SequenceMatcher(
+            None,
+            street_a,
+            street_b
+        ).ratio() * 100
+    )
 
 def default_property_record_result() -> Dict:
     return {

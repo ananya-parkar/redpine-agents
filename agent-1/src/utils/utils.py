@@ -35,5 +35,5 @@ def build_base_row(search_location, radius_miles, hotel_name, hotel_details, sco
         "renovation_needed": score_data.get("renovation_needed", False),
         "physical_condition_score": score_data.get("physical_condition_score", 0),
         "google_maps_url": hotel_details.get("googleMapsUri", ""),
-        "source_provenance": "Google Places | Claude Web Search | ATTOM | SEC EDGAR",
+        "source_provenance": "Google Places | Claude Web Search | Regrid",
     }
