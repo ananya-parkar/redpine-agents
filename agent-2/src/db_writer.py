@@ -23,6 +23,12 @@ load_dotenv()
 #   source          → current_url (the link)
 #   source_name     → current_source (name of publication)
 #   stakeholders_raw→ parsed into stakeholder_names / stakeholder_types
+#   team            → team          (added — was missing, so the Excel
+#                                    "Team" column came back blank when
+#                                    leads were loaded from the DB)
+#   evidence        → evidence      (added — same reason; evidence is a
+#                                    key column in the All Leads sheet
+#                                    but was never persisted)
 #
 # Keeps all original features:
 #   - Tier change logging (tier_changes table)
@@ -30,6 +36,20 @@ load_dotenv()
 #   - Feedback tracking (Archive / Pursuing / Bad Data / Passed)
 #   - Bad data pattern detection
 #   - Tuning triggers
+#
+# NEW — LEADS ARE STATE, NOT EVENTS:
+#   A stadium project lives for months; it does NOT appear in the news
+#   every single day. Previously the Excel sheets were built from ONLY
+#   the current run's leads, so a Tier 1/2 lead found last week silently
+#   vanished from "All Leads" and "Act Now" the moment it had no fresh
+#   news — even though it was still a live, actionable opportunity sitting
+#   right there in the DB (and still showing on the Dashboard, which DID
+#   read from the DB — hence the Dashboard/sheets mismatch).
+#
+#   get_leads_for_excel(days=30) fixes this: it returns every non-archived
+#   lead touched in the last N days, so the sheets and the Dashboard read
+#   from the SAME source. Today's run still inserts new leads and updates
+#   tiers on existing ones (upsert_leads) — that part already worked.
 # ---------------------------------------------------
 
 DB_CONFIG = {
@@ -71,6 +91,7 @@ CREATE TABLE IF NOT EXISTS leads (
     id                      SERIAL PRIMARY KEY,
     venue_name              VARCHAR(200) UNIQUE NOT NULL,
     league                  VARCHAR(50),
+    team                    VARCHAR(200) DEFAULT '',
     city                    VARCHAR(100),
     state                   VARCHAR(5),
     capacity                INTEGER,
@@ -86,6 +107,7 @@ CREATE TABLE IF NOT EXISTS leads (
     current_scale           VARCHAR(100),
     current_summary         TEXT,
     current_reason          TEXT,
+    evidence                TEXT        DEFAULT '',
     current_headline        TEXT,
     current_source          VARCHAR(200),
     current_url             TEXT,
@@ -158,12 +180,16 @@ CREATE TABLE IF NOT EXISTS tuning_triggers (
 CREATE INDEX IF NOT EXISTS idx_signals_venue   ON signals(venue_name);
 CREATE INDEX IF NOT EXISTS idx_signals_run_at  ON signals(run_at);
 CREATE INDEX IF NOT EXISTS idx_leads_engagement ON leads(current_engagement);
+CREATE INDEX IF NOT EXISTS idx_leads_updated    ON leads(last_updated_at);
 CREATE INDEX IF NOT EXISTS idx_tier_changes_at  ON tier_changes(changed_at);
+CREATE INDEX IF NOT EXISTS idx_stakeholders_venue ON stakeholders(venue_name);
 
--- Safety net for databases that already existed before feedback_at was
+-- Safety net for databases that already existed before these columns were
 -- added above — CREATE TABLE IF NOT EXISTS is a no-op on an existing
--- table, so this ALTER ensures the column is there either way.
+-- table, so these ALTERs ensure the columns are there either way.
 ALTER TABLE leads ADD COLUMN IF NOT EXISTS feedback_at TIMESTAMPTZ;
+ALTER TABLE leads ADD COLUMN IF NOT EXISTS team     VARCHAR(200) DEFAULT '';
+ALTER TABLE leads ADD COLUMN IF NOT EXISTS evidence TEXT         DEFAULT '';
 ALTER TABLE tuning_triggers ADD COLUMN IF NOT EXISTS status VARCHAR(20) DEFAULT 'active';
 ALTER TABLE tuning_triggers ADD COLUMN IF NOT EXISTS reviewed_at TIMESTAMPTZ;
 """
@@ -234,6 +260,7 @@ def _normalize_lead(r: dict) -> dict:
     return {
         "venue_name":     (r.get("venue_name") or "").strip(),
         "league":         r.get("league") or "",
+        "team":           r.get("team") or "",
         "city":           r.get("city") or "",
         "state":          r.get("state") or "",
         "capacity":       r.get("capacity"),
@@ -249,6 +276,7 @@ def _normalize_lead(r: dict) -> dict:
         "scale":          scale,
         "summary":        summary,
         "reason":         reason,
+        "evidence":       r.get("evidence") or "",
         "headline":       r.get("headline") or "",
         "src_name":       src_name,
         "url":            url,
@@ -268,7 +296,7 @@ def _normalize_lead(r: dict) -> dict:
 def upsert_signals(signals: list[dict], signal_type: str = "news") -> int:
     """
     Store all raw signals from current run.
-    signal_type: "news" for GNews signals, "government" for LegiStar/RSS signals.
+    signal_type: "news" for news-API signals, "government" for LegiStar/RSS.
     Skips duplicates (same venue + URL).
     """
     if not signals:
@@ -337,8 +365,20 @@ def upsert_leads(results: list[dict]) -> dict:
       NEW venue   → INSERT
       SEEN before → UPDATE (log tier change if tier moved)
     Returns stats dict.
+
+    NOTE: `feedback`, `feedback_note` and `retain_pii` are deliberately
+    NOT touched here — those are human-entered via the Excel sheet and
+    read back by feedback_reader.py. Overwriting them on every run would
+    wipe the client's own annotations.
+
+    stats["inserted_venues"] lists the venues that were genuinely NEW this
+    run. main.py used to derive the email's "new leads" as
+    all_leads[:stats["inserted"]] — i.e. just the first N leads of the
+    sorted list, which are almost never the ones that were actually
+    inserted. Returning the real names fixes that.
     """
-    stats = {"inserted": 0, "tier_changed": 0, "updated": 0, "errors": 0}
+    stats = {"inserted": 0, "tier_changed": 0, "updated": 0, "errors": 0,
+             "inserted_venues": []}
 
     try:
         conn = get_conn()
@@ -368,30 +408,30 @@ def upsert_leads(results: list[dict]) -> dict:
                 # ── INSERT — new venue ────────────────────────
                 cur.execute("""
                     INSERT INTO leads (
-                        venue_name, league, city, state, capacity,
+                        venue_name, league, team, city, state, capacity,
                         venue_status, year_built, planned_year, owner_name,
                         current_tier, current_tier_label, current_engagement,
                         current_score, current_likelihood, current_scale,
-                        current_summary, current_reason,
+                        current_summary, current_reason, evidence,
                         current_headline, current_source, current_url,
                         current_signal_type, current_matched_keywords,
                         stakeholders_raw, stakeholder_names, stakeholder_types,
                         llm_confidence, tier_last_changed_at,
                         first_detected_at, last_updated_at
                     ) VALUES (
-                        %s,%s,%s,%s,%s, %s,%s,%s,%s,
-                        %s,%s,%s, %s,%s,%s, %s,%s,
+                        %s,%s,%s,%s,%s,%s, %s,%s,%s,%s,
+                        %s,%s,%s, %s,%s,%s, %s,%s,%s,
                         %s,%s,%s, %s,%s, %s,%s,%s,
                         %s,%s, %s,%s
                     )
                 """, (
                     venue_name,
-                    n["league"], n["city"], n["state"],
+                    n["league"], n["team"], n["city"], n["state"],
                     _safe_int(n["capacity"]),
                     n["venue_status"], n["year_built"], n["planned_year"], n["owner_name"],
                     n["signal_tier"], n["tier_label"], n["engagement"],
                     n["score"], n["likelihood"], n["scale"],
-                    n["summary"], n["reason"],
+                    n["summary"], n["reason"], n["evidence"],
                     n["headline"], n["src_name"], n["url"],
                     n["signal_type"], n["matched_kw"],
                     n["stakes_raw"], n["stake_names"], n["stake_types"],
@@ -416,6 +456,7 @@ def upsert_leads(results: list[dict]) -> dict:
 
                 conn.commit()
                 stats["inserted"] += 1
+                stats["inserted_venues"].append(venue_name)
                 print(f"    [DB] NEW    {venue_name[:40]:<40} | {n['tier_label']}", flush=True)
 
             else:
@@ -426,11 +467,12 @@ def upsert_leads(results: list[dict]) -> dict:
 
                 cur.execute("""
                     UPDATE leads SET
-                        league=%s, city=%s, state=%s, capacity=%s,
+                        league=%s, team=%s, city=%s, state=%s, capacity=%s,
+                        venue_status=%s,
                         current_tier=%s, current_tier_label=%s,
                         current_engagement=%s, current_score=%s,
                         current_likelihood=%s, current_scale=%s,
-                        current_summary=%s, current_reason=%s,
+                        current_summary=%s, current_reason=%s, evidence=%s,
                         current_headline=%s, current_source=%s,
                         current_url=%s, current_signal_type=%s,
                         current_matched_keywords=%s,
@@ -444,12 +486,13 @@ def upsert_leads(results: list[dict]) -> dict:
                                                ELSE times_tier_changed END
                     WHERE venue_name=%s
                 """, (
-                    n["league"], n["city"], n["state"],
+                    n["league"], n["team"], n["city"], n["state"],
                     _safe_int(n["capacity"]),
+                    n["venue_status"],
                     n["signal_tier"], n["tier_label"],
                     n["engagement"], n["score"],
                     n["likelihood"], n["scale"],
-                    n["summary"], n["reason"],
+                    n["summary"], n["reason"], n["evidence"],
                     n["headline"], n["src_name"], n["url"],
                     n["signal_type"], n["matched_kw"],
                     n["stakes_raw"], n["stake_names"],
@@ -494,26 +537,249 @@ def upsert_leads(results: list[dict]) -> dict:
 
 
 # ============================================================
-# READ — for Excel + Dashboard
+# WRITE — STAKEHOLDERS
 # ============================================================
 
-def get_all_leads_for_excel() -> list[dict]:
+def upsert_stakeholders(stakeholder_rows: list[dict]) -> int:
     """
-    Read ALL leads from DB, sorted by score (with recency as a
-    tiebreak — see note below).
-    Returns fields matching dashboard expectations:
-      engagement_action, final_score, first_detected_at, stakeholder_names
+    Persist this run's stakeholder rows.
+
+    Previously the `stakeholders` table existed but NOTHING ever wrote to
+    it — the Stakeholders sheet was built purely from the current run's
+    in-memory rows. That meant a lead enriched last week showed zero
+    stakeholders the moment it wasn't re-enriched today, even though we'd
+    already paid to look them up.
+
+    Strategy: replace-per-venue. For each venue in this run we delete its
+    old rows and insert the fresh ones, so re-enriching a venue refreshes
+    (rather than duplicates) its contacts, while venues NOT enriched this
+    run keep whatever we found for them earlier.
+    """
+    if not stakeholder_rows:
+        return 0
+    try:
+        conn = get_conn()
+        cur  = conn.cursor()
+
+        venues = {r.get("venue_name", "") for r in stakeholder_rows if r.get("venue_name")}
+        for v in venues:
+            cur.execute("DELETE FROM stakeholders WHERE venue_name = %s", (v,))
+
+        inserted = 0
+        for r in stakeholder_rows:
+            try:
+                cur.execute("""
+                    INSERT INTO stakeholders (
+                        venue_name, league, team, signal_tier, engagement_action,
+                        stakeholder_name, title, organization, type,
+                        website, contact_email, notes, created_at
+                    ) VALUES (%s,%s,%s,%s,%s, %s,%s,%s,%s, %s,%s,%s,%s)
+                """, (
+                    r.get("venue_name", ""),
+                    r.get("league", ""),
+                    r.get("team", ""),
+                    _safe_int(r.get("signal_tier")),
+                    r.get("engagement", "") or r.get("engagement_action", ""),
+                    r.get("stakeholder_name", ""),
+                    r.get("title", ""),
+                    r.get("organization", ""),
+                    r.get("type", ""),
+                    r.get("website", ""),
+                    r.get("contact_email", ""),
+                    r.get("notes", ""),
+                    datetime.now(timezone.utc),
+                ))
+                inserted += 1
+            except Exception as e:
+                conn.rollback()
+                print(f"    [DB STAKEHOLDER ERROR] {r.get('venue_name','?')}: {e}", flush=True)
+                continue
+        conn.commit()
+        cur.close(); conn.close()
+        print(f"  [DB] {inserted} stakeholder row(s) saved "
+              f"across {len(venues)} venue(s)", flush=True)
+        return inserted
+    except Exception as e:
+        print(f"  [DB] Stakeholder write failed: {e}", flush=True)
+        return 0
+
+
+# ============================================================
+# READ — for Excel + Dashboard  (SINGLE SOURCE OF TRUTH)
+# ============================================================
+
+# Same ordering rule as reasoning_agent._lead_sort_key:
+#   confirmed projects first (planned → under_construction → existing),
+#   then earliest tier, then highest score.
+_LEAD_ORDER_SQL = """
+    ORDER BY CASE venue_status
+                 WHEN 'planned'            THEN 0
+                 WHEN 'under_construction' THEN 1
+                 ELSE 2
+             END,
+             COALESCE(current_tier, 99),
+             current_score DESC NULLS LAST,
+             last_updated_at DESC NULLS LAST
+"""
+
+
+def _row_to_lead(row: dict) -> dict:
+    """
+    One DB row → one lead dict.
+
+    Deliberately exposes BOTH naming conventions:
+      - excel_builder's sheets read `engagement` / `score` / `likelihood` / `project_type`
+      - dashboard_writer reads      `engagement_action` / `final_score`
+    Emitting both means the Dashboard and the sheets can be built from the
+    SAME list, which is the whole point — that's what keeps them aligned.
+    """
+    return {
+        "venue_name":        row["venue_name"] or "",
+        "league":            row["league"] or "",
+        "team":              row.get("team") or "",
+        "city":              row["city"] or "",
+        "state":             row["state"] or "",
+        "capacity":          row["capacity"] or "",
+        "venue_status":      row["venue_status"] or "existing",
+        "year_built":        row["year_built"] or "",
+        "planned_year":      row["planned_year"] or "",
+        "owner_name":        row["owner_name"] or "",
+        "signal_tier":       row["current_tier"],
+        "tier_label":        row["current_tier_label"] or "",
+
+        # sheet-facing names
+        "engagement":        row["current_engagement"] or "monitor",
+        "score":             row["current_score"],
+        "likelihood":        row["current_likelihood"],
+        "project_type":      row["current_scale"] or "",
+        "whats_happening":   row["current_summary"] or "",
+        "why_priority":      row["current_reason"] or "",
+        "evidence":          row.get("evidence") or "",
+        "source":            row["current_url"] or "",
+        "source_name":       row["current_source"] or "",
+        "notes":             row["feedback_note"] or "",
+        "feedback":          row["feedback"] or "",
+
+        # dashboard-facing aliases (same values, different keys)
+        "engagement_action": row["current_engagement"] or "monitor",
+        "final_score":       row["current_score"],
+        "project_likelihood":row["current_likelihood"],
+        "project_scale":     row["current_scale"] or "",
+
+        "headline":          row["current_headline"] or "",
+        "signal_type":       row["current_signal_type"] or "news",
+        "matched_keywords":  row["current_matched_keywords"] or "",
+        "stakeholders_raw":  row["stakeholders_raw"] or "[]",
+        "stakeholder_names": row["stakeholder_names"] or "",
+        "stakeholder_types": row["stakeholder_types"] or "",
+        "llm_confidence":    row["llm_confidence"] or "",
+        "first_detected_at": str(row["first_detected_at"])[:10] if row["first_detected_at"] else "",
+        "last_updated_at":   str(row["last_updated_at"])[:10] if row["last_updated_at"] else "",
+        "times_tier_changed":row["times_tier_changed"] or 0,
+        "feedback_note":     row["feedback_note"] or "",
+    }
+
+
+def get_leads_for_excel(days: int = 30) -> tuple[list[dict], list[dict]]:
+    """
+    THE loader for both the Excel sheets AND the Dashboard.
+
+    Returns (all_leads, act_now) covering every non-archived lead touched
+    in the last `days` days — not just the ones that happened to surface
+    in today's news run. A project stays a live lead until it's archived
+    or ages out, which is how the client actually thinks about it.
+
+    Ranks are assigned here so the sheets, the Act Now subset, and the
+    Dashboard all agree on ordering.
     """
     try:
         conn = get_conn()
         cur  = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
-        # NOTE: previously this was `ORDER BY current_score DESC NULLS LAST`
-        # only — a lead that scored high 60 days ago would always outrank
-        # a lead that became Act Now TODAY with a slightly lower score,
-        # since recency played no role at all. Adding last_updated_at as
-        # a secondary sort key means today's run's leads surface first
-        # among similarly-scored leads, without fully overriding score
-        # (which is still the primary, most important signal).
+        cur.execute(f"""
+            SELECT * FROM leads
+            WHERE last_updated_at >= NOW() - (%s * INTERVAL '1 day')
+              AND COALESCE(feedback, '') <> 'Archive'
+              AND COALESCE(current_engagement, '') <> 'archived'
+            {_LEAD_ORDER_SQL}
+        """, (days,))
+        rows = cur.fetchall()
+        cur.close(); conn.close()
+
+        all_leads = [_row_to_lead(r) for r in rows]
+        for i, l in enumerate(all_leads, 1):
+            l["rank"] = i
+
+        act_now = [l for l in all_leads if l.get("engagement") == "engage_now"]
+        for i, l in enumerate(act_now, 1):
+            l["act_now_rank"] = i
+
+        print(f"  [DB] Excel leads: {len(all_leads)} active in last {days} days "
+              f"({len(act_now)} Act Now)", flush=True)
+        return all_leads, act_now
+    except Exception as e:
+        print(f"  [DB] Could not read leads for Excel: {e}", flush=True)
+        return [], []
+
+
+def get_stakeholders_for_excel(days: int = 30) -> list[dict]:
+    """
+    Stakeholder rows for every lead that's still active in the last `days`
+    days — including leads that weren't re-enriched today. Joined against
+    `leads` so archived/aged-out venues drop off automatically and the
+    sheet stays in step with All Leads.
+    """
+    try:
+        conn = get_conn()
+        cur  = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+        cur.execute(f"""
+            SELECT s.*
+            FROM stakeholders s
+            JOIN leads l ON l.venue_name = s.venue_name
+            WHERE l.last_updated_at >= NOW() - (%s * INTERVAL '1 day')
+              AND COALESCE(l.feedback, '') <> 'Archive'
+            ORDER BY CASE l.venue_status
+                         WHEN 'planned'            THEN 0
+                         WHEN 'under_construction' THEN 1
+                         ELSE 2
+                     END,
+                     COALESCE(l.current_tier, 99),
+                     l.current_score DESC NULLS LAST,
+                     s.stakeholder_name
+        """, (days,))
+        rows = cur.fetchall()
+        cur.close(); conn.close()
+
+        return [{
+            "venue_name":       r["venue_name"] or "",
+            "league":           r["league"] or "",
+            "team":             r["team"] or "",
+            "signal_tier":      r["signal_tier"],
+            "engagement":       r["engagement_action"] or "",
+            "engagement_action":r["engagement_action"] or "",
+            "stakeholder_name": r["stakeholder_name"] or "",
+            "title":            r["title"] or "",
+            "organization":     r["organization"] or "",
+            "type":             r["type"] or "",
+            "website":          r["website"] or "",
+            "contact_email":    r["contact_email"] or "",
+            "notes":            r["notes"] or "",
+        } for r in rows]
+    except Exception as e:
+        print(f"  [DB] Could not read stakeholders for Excel: {e}", flush=True)
+        return []
+
+
+def get_all_leads_for_excel() -> list[dict]:
+    """
+    LEGACY reader — kept because email_builder (STEP 7) still calls it.
+    Returns every lead ever, sorted by score. For the Excel sheets and the
+    Dashboard use get_leads_for_excel(days=30) instead: it applies the
+    recency window and the archived filter, and is the single source both
+    the sheets and the Dashboard now read from.
+    """
+    try:
+        conn = get_conn()
+        cur  = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
         cur.execute("""
             SELECT * FROM leads
             ORDER BY current_score DESC NULLS LAST,
@@ -524,41 +790,9 @@ def get_all_leads_for_excel() -> list[dict]:
 
         results = []
         for i, row in enumerate(rows, 1):
-            results.append({
-                "rank":              i,
-                "venue_name":        row["venue_name"] or "",
-                "league":            row["league"] or "",
-                "city":              row["city"] or "",
-                "state":             row["state"] or "",
-                "capacity":          row["capacity"] or "",
-                "venue_status":      row["venue_status"] or "existing",
-                "year_built":        row["year_built"] or "",
-                "planned_year":      row["planned_year"] or "",
-                "owner_name":        row["owner_name"] or "",
-                "signal_tier":       row["current_tier"],
-                "tier_label":        row["current_tier_label"] or "",
-                # Dashboard-expected field names:
-                "engagement_action": row["current_engagement"] or "",
-                "final_score":       row["current_score"],
-                "project_likelihood":row["current_likelihood"],
-                "project_scale":     row["current_scale"] or "",
-                "whats_happening":   row["current_summary"] or "",
-                "why_priority":      row["current_reason"] or "",
-                "headline":          row["current_headline"] or "",
-                "source":            row["current_url"] or "",
-                "source_name":       row["current_source"] or "",
-                "signal_type":       row["current_signal_type"] or "news",
-                "matched_keywords":  row["current_matched_keywords"] or "",
-                "stakeholders_raw":  row["stakeholders_raw"] or "[]",
-                "stakeholder_names": row["stakeholder_names"] or "",
-                "stakeholder_types": row["stakeholder_types"] or "",
-                "llm_confidence":    row["llm_confidence"] or "",
-                "first_detected_at": str(row["first_detected_at"])[:10] if row["first_detected_at"] else "",
-                "last_updated_at":   str(row["last_updated_at"])[:10] if row["last_updated_at"] else "",
-                "times_tier_changed":row["times_tier_changed"] or 0,
-                "feedback":          row["feedback"] or "",
-                "feedback_note":     row["feedback_note"] or "",
-            })
+            lead = _row_to_lead(row)
+            lead["rank"] = i
+            results.append(lead)
         return results
     except Exception as e:
         print(f"  [DB] Could not read leads: {e}", flush=True)
@@ -653,6 +887,10 @@ def purge_old_pii() -> int:
     sitting in stakeholder_names survives untouched — meaning old PII
     (person names) keeps showing up on the dashboard indefinitely,
     defeating the purpose of the purge.
+
+    Also purges the matching rows in the `stakeholders` table, which now
+    actually gets written to (see upsert_stakeholders) — otherwise the
+    PII would simply move to a table the purge never looked at.
     """
     try:
         conn = get_conn()
@@ -671,6 +909,15 @@ def purge_old_pii() -> int:
                    OR stakeholder_types != '')
         """)
         count = cur.rowcount
+
+        cur.execute("""
+            DELETE FROM stakeholders s
+            USING leads l
+            WHERE l.venue_name = s.venue_name
+              AND l.first_detected_at < NOW() - INTERVAL '12 months'
+              AND (l.retain_pii IS NULL OR l.retain_pii = FALSE)
+        """)
+
         conn.commit(); cur.close(); conn.close()
         return count
     except Exception as e:
