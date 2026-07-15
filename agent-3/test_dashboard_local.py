@@ -1,15 +1,4 @@
-"""
-agent-3/dashboard/test_dashboard_local.py
-
-Quick-iteration script for dashboard formatting.
-Run this directly (no pipeline run needed) to regenerate the Excel
-dashboard from whatever is currently in Postgres:
-
-    python test_dashboard_local.py
-
-Edit dashboard.py, save, rerun this script, check the output file.
-Repeat until formatting is finalized.
-"""
+# agent-3/dashboard/test_dashboard_local.py
 
 from dashboard.dashboard import generate_dashboard
 

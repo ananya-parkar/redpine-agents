@@ -9,9 +9,9 @@ def load_search_request(file_path):
     row = df.iloc[0]
     return {
         "geography": row.get("Geography"),
-        "industry": row.get("Industry"),
+        "industry": row.get("Industry", "Any"),
         "revenue_range": row.get("Revenue Range"),
-        "min_years": row.get("Min Years"),
-        "ownership_preference": row.get("Ownership Preference"),
-        "founder_age": row.get("Founder Age")
+        "min_years": int(row.get("Min Years") or 0),
+        "ownership_preference": row.get("Ownership Preference", "Any"),
+        "founder_age": row.get("Founder Age", "Any")
     }

@@ -1,0 +1,20 @@
+I need to flag an important limitation before providing results: **I do not have live web search access in this conversation**, and the task rules explicitly require me to "search the public web" and "not invent companies." Fabricating specific revenue figures, founder ages, or ownership details for companies without verification would violate that rule and could produce inaccurate/misleading data for M&A sourcing purposes.
+
+What I can do responsibly:
+
+1. **If you have web search/browsing tools enabled for me in this environment**, let me know and I'll run actual searches (e.g., Michigan Secretary of State business filings, local business journals like Crain's Detroit Business, MiBiz, industry association member directories, Dun & Bradstreet listings) to compile a verified list.
+
+2. **Alternatively**, I can provide a small set of Michigan family-owned/founder-led companies that are **publicly documented in my training data** (news articles, local business awards, chamber of commerce features) as a starting point — but I would clearly mark that revenue, exact founder age, and "10+ years" tenure are **estimates/unconfirmed** rather than verified facts, since I cannot check current figures.
+
+3. **Best practice recommendation**: For a real sourcing list meeting these exact filters (family-owned, $10-50M revenue, founder 60+, Michigan, 10+ years operating), the most reliable approach is cross-referencing:
+   - Michigan Manufacturers Association member directory
+   - Crain's Detroit Business "Michigan's Largest Private Companies" list
+   - Secretary of State LARA business registry (for founding dates)
+   - Local chamber of commerce "family business" award winners
+   - Industry-specific trade association directories (machining, tool & die, logistics, food processing — common Michigan family-business sectors)
+
+**How would you like to proceed?** I can:
+- (A) Attempt a best-effort list clearly labeled as unverified/needing confirmation, or
+- (B) Wait for you to enable/confirm search tool access so I can pull real, current data.
+
+Please advise which you'd prefer — I want to avoid returning a JSON payload that looks authoritative but contains invented specifics.

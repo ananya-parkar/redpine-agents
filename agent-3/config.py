@@ -4,7 +4,6 @@ BASE_DIR = Path(__file__).parent
 DATA_FOLDER = BASE_DIR / "data"
 OUTPUT_FOLDER = BASE_DIR / "outputs"
 INPUT_FOLDER = BASE_DIR / "inputs"
-from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
 
@@ -79,16 +78,6 @@ OUTPUT_COLUMNS = [
     "Review Status"
 ]
 
-TAVILY_MAX_RESULTS = 10
-UNIVERSE_SEARCH_QUERIES = [
-    "family owned companies in {location}",
-    "founder led companies in {location}",
-    "privately held companies in {location}",
-    "private businesses in {location}",
-    "middle market companies in {location}",
-    "companies in {location} founded more than {min_years} years ago"
-]
-
 SCORED_OUTPUT_COLUMNS = [
     "Company Name",
     "Industry",
@@ -100,5 +89,6 @@ SCORED_OUTPUT_COLUMNS = [
     "Founder Led",
     "Family Owned",
     "Founder Age Estimate",
-    "Seller Readiness Score"
+    "Seller Readiness Score",
+    "Seller Readiness Breakdown"
 ]

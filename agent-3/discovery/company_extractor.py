@@ -3,6 +3,7 @@ import json
 import os
 from anthropic import Anthropic
 from dotenv import load_dotenv
+from utils.json_parser import parse_llm_json
 
 load_dotenv()
 
@@ -97,6 +98,10 @@ def extract_companies_with_llm(content):
 
     content = content[start:end+1]
 
-    result = json.loads(content)
-
-    return result["companies"]
+    try:
+        result = parse_llm_json(content)
+    except (json.JSONDecodeError, ValueError):
+        return {
+            "decision": "KEEP",
+            "reason": "Unknown"
+        }

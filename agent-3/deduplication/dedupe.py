@@ -109,7 +109,10 @@ def llm_tiebreak(row_a, row_b):
         if hasattr(block,"text")
     )
 
-    result = json.loads(content)
+    try:
+        result = json.loads(content)
+    except json.JSONDecodeError:
+        return False
     return bool(result.get("same_company", False))
 
 

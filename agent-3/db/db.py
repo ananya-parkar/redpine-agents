@@ -63,6 +63,14 @@ def normalize_company_name(name):
 
 
 def _safe_int(value):
+    if value in (None, "", "Unknown"):
+        return None
+
+    if isinstance(value, str):
+        match = re.search(r"\d+", value)
+        if match:
+            return int(match.group())
+
     try:
         return int(value)
     except (TypeError, ValueError):
@@ -135,7 +143,7 @@ def upsert_candidate(conn, row, search_request_id):
                     row.get("Family Owned"),
                     row.get("Founder Age Estimate"),
                     row.get("Ownership Status"),
-                    row.get("Ownership Tenure Years"),
+                    _safe_int(row.get("Ownership Tenure Years")),
                     row.get("Extraction Confidence"),
                     _safe_int(row.get("Seller Readiness Score")),
                     candidate_id,
@@ -178,7 +186,7 @@ def upsert_candidate(conn, row, search_request_id):
                     row.get("Family Owned"),
                     row.get("Founder Age Estimate"),
                     row.get("Ownership Status"),
-                    row.get("Ownership Tenure Years"),
+                    _safe_int(row.get("Ownership Tenure Years")),
                     row.get("Extraction Confidence"),
                     _safe_int(row.get("Seller Readiness Score")),
                 ),
