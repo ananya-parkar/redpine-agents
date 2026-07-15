@@ -7,11 +7,11 @@ from io import StringIO
 from datetime import datetime, timedelta
 from pathlib import Path
 from bs4 import BeautifulSoup
-from llm_client import call_llm_json
+from llm_client import call_llm_json, call_llm_web_search_json
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
-from config import SEARCHAPI_KEY, GOOGLE_MAPS_KEY
+from config import GOOGLE_MAPS_KEY
 
 # ==========================================================
 # VENUE FETCHER — pd.read_html architecture
@@ -435,53 +435,41 @@ Return ONLY valid JSON in this exact format:
 "year_built":<str>,"status":"planned","confidence":<0-1>}]}
 confidence<0.5→exclude. Canadian→exclude. City must appear in article."""
 
-def _searchapi(q):
-    if not SEARCHAPI_KEY: return []
-    try:
-        r=SESSION.get("https://www.searchapi.io/api/v1/search",
-                      params={"engine":"google","q":q,"num":5,"api_key":SEARCHAPI_KEY},
-                      timeout=15)
-        r.raise_for_status()
-        return [{"title":x.get("title",""),"snippet":x.get("snippet",""),
-                 "url":x.get("link","")} for x in r.json().get("organic_results",[])]
-    except: return []
-
-def _fetch_article(url):
-    try:
-        import trafilatura
-        return (trafilatura.extract(trafilatura.fetch_url(url)) or "")[:1500]
-    except: return ""
-
 def discover_planned_venues():
+    """
+    Discover NEW/PLANNED US venues via Claude's own web search (was
+    SearchAPI). Claude searches and extracts in one call — no SearchAPI
+    key needed. Cached for 7 days.
+    """
     if PLANNED_CACHE_FILE.exists():
         age=datetime.now()-datetime.fromtimestamp(PLANNED_CACHE_FILE.stat().st_mtime)
         if age<timedelta(days=7):
             with open(PLANNED_CACHE_FILE,encoding="utf-8") as f: cached=json.load(f)
             print(f"  [DISCOVERY] {len(cached)} planned from cache",flush=True)
             return cached
-    if not SEARCHAPI_KEY:
-        print("  [DISCOVERY] No SEARCHAPI_KEY",flush=True); return []
-    print("  [DISCOVERY] Searching planned venues...",flush=True)
-    all_res=[]
-    for q in DISCOVERY_QUERIES:
-        all_res.extend(_searchapi(q)); time.sleep(0.5)
-    enriched=[{**r,"content":_fetch_article(r["url"])} for r in all_res[:15]]
+
+    print("  [DISCOVERY] Searching planned venues via Claude web search...",flush=True)
+    discovery_instruction = (
+        "Search the web for NEW or PLANNED US sports venues (stadiums, "
+        "arenas, ballparks) that have been announced, approved, or are "
+        "under construction. Focus on NFL, NCAA, NBA, MLB, NHL, and MLS. "
+        "For each, capture venue name, team, league, city, state (2-letter), "
+        "capacity, expected year, and your confidence (0-1) that it is a "
+        "real US project. Only include venues where the city clearly "
+        "appears in the source."
+    )
     try:
-        context="Search results about new/planned US sports venues:\n\n"
-        for r in enriched:
-            context+=f"TITLE: {r['title']}\nCONTENT: {(r.get('content') or r.get('snippet',''))[:500]}\n\n"
-        result = call_llm_json(
+        result = call_llm_web_search_json(
             system=EXTRACT_PROMPT,
-            user_content=context,
-            max_tokens=1500, temperature=0.1,
+            user_content=discovery_instruction,
+            max_tokens=2500, temperature=0.1,
+            max_uses=5,
         )
-        venues = result.get("venues", [])
+        venues = result.get("venues", []) if isinstance(result, dict) else []
         valid=[v for v in venues
                if v.get("city","").strip()
                and v.get("state","") in US_STATES
-               and v.get("confidence",0)>=0.5
-               and any(v["city"].lower() in (r.get("content","")+" "+r.get("snippet","")).lower()
-                       for r in enriched)]
+               and v.get("confidence",0)>=0.5]
         with open(PLANNED_CACHE_FILE,"w",encoding="utf-8") as f: json.dump(valid,f,indent=2)
         print(f"  [DISCOVERY] {len(valid)} valid planned venues",flush=True)
         return valid

@@ -1,284 +1,200 @@
-import re
 import json
 import time
-import requests
-from urllib.parse import urlparse
-from llm_client import call_llm_json
-from requests.adapters import HTTPAdapter
-from urllib3.util.retry import Retry
-from config import SEARCHAPI_KEY
+from llm_client import call_llm_web_search_json
+from reasoning_agent import compute_score, _lead_sort_key
 from tuning_prompt import build_tuning_block
 from db_writer import get_active_tuning_triggers
 
 # ---------------------------------------------------
-# STAKEHOLDER ENRICHMENT — SearchAPI only
+# STAKEHOLDER ENRICHMENT — Claude web search
 #
-# WHY SearchAPI NOT article text:
-#   Articles cover the news event, not the full project team.
-#   SearchAPI lets us specifically hunt for:
-#     - "[venue] architect"
-#     - "[venue] general contractor"
-#     - "[venue] construction company"
-#     - "[venue] facilities director"
-#     - "[venue] procurement officer"
+# MIGRATED FROM SearchAPI → Claude's own built-in web search. No separate
+# SearchAPI vendor key needed; Claude searches AND extracts stakeholders
+# in one call using the same ANTHROPIC_API_KEY.
 #
-# WEBSITE: extracted from the search result URL whose domain matches
-#   the stakeholder's organization name (e.g. "Gensler" → gensler.com
-#   found among the result URLs) — not guessed, only if present.
+# WHY web search (not article text):
+#   Articles cover the news event, not the full project team. We ask
+#   Claude to specifically hunt for the project's:
+#     - architect
+#     - general contractor / construction company
+#     - facilities director
+#     - procurement officer
+#     - developer / owner
 #
-# EMAIL: a dedicated follow-up SearchAPI query per organization
-#   ("{org} contact email"), regex-scanned for an email address in
-#   the returned snippets. Left blank if nothing concrete is found —
-#   never fabricated (e.g. never invented as info@domain.com).
+# WEBSITE: Claude returns the org's official site URL only if it appears
+#   in its search results — not guessed.
 #
-# Runs for ALL relevant leads (engage_now + monitor)
+# EMAIL: returned ONLY if a concrete contact email actually appears in
+#   the search results. NEVER fabricated (no info@domain.com guessing).
 #
-# CIRCUIT BREAKER: searchapi_query() returns None (not []) when
-# SearchAPI itself fails (429 rate limit, network error) — distinct
-# from a query that legitimately found zero results. enrich_stakeholders()
-# counts CONSECUTIVE leads where EVERY query failed at the API level
-# and stops early (default: 4 in a row) rather than burning through
-# the rest of the leads against a dead/exhausted key.
+# Runs for ALL relevant leads (engage_now + monitor).
+#
+# FAILURE HANDLING: if the web-search call fails (returns nothing) for
+# several CONSECUTIVE leads, we stop early rather than hammering a
+# failing endpoint for the rest of the run.
 # ---------------------------------------------------
 
-SEARCHAPI_URL = "https://www.searchapi.io/api/v1/search"
-EMAIL_REGEX   = re.compile(r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')
-
-# Generic domains that are never an organization's own website
-GENERIC_DOMAINS = {
-    "wikipedia.org","linkedin.com","facebook.com","twitter.com","x.com",
-    "instagram.com","youtube.com","bing.com","google.com","yelp.com",
-    "indeed.com","glassdoor.com","crunchbase.com","bloomberg.com",
-    "espn.com","si.com","nytimes.com","forbes.com",
-}
-
-# How many CONSECUTIVE leads can have every SearchAPI query fail at the
-# API level (429 / network error) before we stop enrichment entirely
-# for the rest of this run.
-MAX_API_LIMIT_FAILURES = 4
-
-def make_session():
-    s = requests.Session()
-    retry = Retry(total=3, backoff_factor=1.0,
-                  status_forcelist=[429,500,502,503,504],
-                  allowed_methods=["GET"])
-    s.mount("https://", HTTPAdapter(max_retries=retry))
-    s.mount("http://",  HTTPAdapter(max_retries=retry))
-    return s
-
-SESSION = make_session()
-
-SEARCH_TEMPLATES = [
-    "{venue} {team} architect",
-    "{venue} {team} general contractor construction company",
-    "{venue} facilities director procurement",
-    "{venue} stadium construction project manager",
-    "{city} {team} stadium developer owner",
-]
+# How many CONSECUTIVE leads can fail at the web-search call before we
+# stop enrichment for the rest of this run.
+MAX_CONSECUTIVE_FAILURES = 4
 
 EXTRACT_PROMPT = """
-You are extracting stakeholder contacts from search results about a stadium/arena project.
+You are a BD researcher finding the project team for a specific US
+stadium/arena construction or renovation project.
 
-Extract ONLY people and companies explicitly named in the search results below.
-Do NOT invent names. Do NOT guess.
+Use the web_search tool to find the people and companies working on THIS
+specific venue's project. Search for things like the venue's architect,
+general contractor / construction manager, facilities director, developer,
+owner, and procurement/capital-projects officials.
+
+Extract ONLY people and companies that actually appear in your search
+results for THIS venue. Do NOT invent names. Do NOT guess. If you cannot
+find a real name/firm, return fewer (or zero) stakeholders — that is
+correct and expected.
+
+For contact_email: include an email address ONLY if a concrete address
+actually appears in the search results for that organization. NEVER
+fabricate or guess an email (e.g. do NOT invent "info@<domain>.com").
+Leave it as "" if none is found.
+
+For website: include the organization's official site URL ONLY if it
+appears in your search results. Leave "" if not found.
+
+If the input includes "need_capacity": true, ALSO find this venue's
+planned/expected seating capacity from your search results and return it
+as an integer in "venue_capacity". If you cannot find a specific number,
+return 0. Never guess a precise number that isn't stated.
 
 Return ONLY valid JSON:
 {
+  "venue_capacity": <integer seating capacity if need_capacity was true and
+    a specific number was found in results, else 0>,
   "stakeholders": [
     {
-      "name": <exact name from search results>,
+      "name": <exact person or firm name from search results>,
       "type": <"Architect"|"GC"|"Developer"|"Owner"|"City Official"|"Facilities Director"|"Procurement"|"Other">,
-      "organization": <company/org name if mentioned>,
-      "title": <job title if mentioned>,
+      "organization": <company/org name if mentioned, else "">,
+      "title": <job title if mentioned, else "">,
+      "website": <official site URL if found in results, else "">,
+      "contact_email": <concrete email from results, else "">,
       "relevance": <"high"|"medium"|"low">
     }
   ]
 }
 
 Rules:
-- Only names that appear in the text below
-- Skip generic company names without a person (unless they're the GC/Architect firm)
+- Only names/firms that appear in your search results for THIS venue
+- Skip generic company names with no tie to this project
 - Prioritize: Architects, GCs, Facilities Directors, Procurement officers
 - Include firm names for Architect and GC even without a person name
 """.strip()
 
 
-def searchapi_query(query: str) -> list[dict] | None:
+# League-based fallback capacity — used ONLY for scoring when a planned
+# venue has no capacity in Wikipedia AND web search couldn't find a
+# specific number. These are rough typical sizes, not real data.
+LEAGUE_DEFAULT_CAPACITY = {
+    "NFL":  65000,
+    "NCAA": 50000,
+    "MLB":  40000,
+    "MLS":  25000,
+    "NBA":  18000,
+    "NHL":  18000,
+    "Convention Center": 20000,
+}
+
+
+def extract_stakeholders_web(lead: dict, tuning_block: str = "") -> tuple[list[dict] | None, int]:
     """
+    Claude searches the web and extracts stakeholders for one lead. If the
+    lead's capacity is missing (0/blank), it ALSO asks Claude to find the
+    venue's planned capacity in the same search (no extra call).
+
     Returns:
-      list[dict]  — results found (may be an empty list — that's a
-                     normal, legitimate "nothing matched this query"
-                     result)
-      None        — SearchAPI itself failed (429 rate limit, the
-                     urllib3 Retry adapter exhausting its retries on
-                     repeated 429s, a network error, etc). Callers
-                     should treat this differently from an empty list
-                     — it means the API/key is the problem, not the query.
+      (stakeholders, capacity)
+        stakeholders : list[dict] found (possibly empty), or None if the
+                       web-search call itself failed (circuit breaker)
+        capacity     : int capacity found via web search (0 if not found
+                       or not requested)
     """
-    if not SEARCHAPI_KEY:
-        return []
+    venue = lead.get("venue_name", "")
+    team  = (lead.get("team", "") or "").split(";")[0].strip()
+    city  = lead.get("city", "")
+    state = lead.get("state", "")
+
+    # Only ask for capacity if we don't already have one.
     try:
-        r = SESSION.get(SEARCHAPI_URL, params={
-            "engine":  "google",
-            "q":       query,
-            "num":     5,
-            "api_key": SEARCHAPI_KEY,
-        }, timeout=15)
-        if r.status_code == 429:
-            print(f"      [SEARCHAPI] 429 rate limited", flush=True)
-            return None
-        r.raise_for_status()
-        results = r.json().get("organic_results", [])
-        return [{"title":x.get("title",""),
-                 "snippet":x.get("snippet",""),
-                 "url":x.get("link","")}
-                for x in results]
-    except Exception as e:
-        print(f"      [SEARCHAPI] {e}", flush=True)
-        # This is also where the urllib3 Retry adapter's exhausted-429
-        # error lands (e.g. "Max retries exceeded ... too many 429 error
-        # responses") — treat it the same as an explicit 429 above.
-        return None
+        cur_cap = int(float(lead.get("capacity") or 0))
+    except (TypeError, ValueError):
+        cur_cap = 0
+    need_capacity = cur_cap <= 0
 
+    payload = {
+        "venue_name":       venue,
+        "team":             team,
+        "city":             city,
+        "state":            state,
+        "league":           lead.get("league", ""),
+        "project_summary":  lead.get("whats_happening", ""),
+        "need_capacity":    need_capacity,
+        "instruction": (
+            f"Find the project team (architect, general contractor, "
+            f"facilities director, developer, owner, procurement officials) "
+            f"for the '{venue}' {team} stadium/arena project in {city}, "
+            f"{state}. Search the web and extract only real, named people "
+            f"and firms tied to this specific project."
+            + (f" Also find the venue's planned seating capacity."
+               if need_capacity else "")
+        ),
+    }
+    user_content = json.dumps(payload, ensure_ascii=True)
 
-def build_search_results(lead: dict) -> list[dict] | None:
-    """
-    Run targeted SearchAPI queries, return raw result list (not just text).
-
-    Returns None if EVERY query for this lead failed at the API level
-    (429 / network error) — distinct from a lead that legitimately has
-    zero search results, so the caller can tell "SearchAPI is down" from
-    "nothing exists for this venue".
-    """
-    venue = lead.get("venue_name","")
-    team  = lead.get("team","").split(";")[0].strip()
-    city  = lead.get("city","")
-
-    all_results = []
-    api_failures = 0
-    for template in SEARCH_TEMPLATES:
-        query = template.format(venue=venue, team=team, city=city).strip()
-        results = searchapi_query(query)
-        if results is None:
-            api_failures += 1
-        else:
-            all_results.extend(results)
-        time.sleep(0.5)
-
-    if api_failures == len(SEARCH_TEMPLATES):
-        return None
-    return all_results
-
-
-def _domain_of(url: str) -> str:
     try:
-        netloc = urlparse(url).netloc.lower()
-        return netloc.replace("www.","")
-    except Exception:
-        return ""
-
-
-def _org_words(org: str) -> list[str]:
-    """Significant words from an org name, for matching against domains."""
-    stop = {"inc","llc","co","company","corp","corporation","group",
-            "architects","architecture","construction","contracting",
-            "the","and","&","of","city","department","authority"}
-    words = re.findall(r"[a-zA-Z]+", org.lower())
-    return [w for w in words if w not in stop and len(w) > 2]
-
-
-def find_website(org: str, results: list[dict]) -> str:
-    """
-    Find a result URL whose domain matches the organization name.
-    Returns the URL (not just domain) if confident, else "".
-    """
-    if not org.strip(): return ""
-    words = _org_words(org)
-    if not words: return ""
-
-    for r in results:
-        domain = _domain_of(r.get("url",""))
-        if not domain or domain in GENERIC_DOMAINS: continue
-        # Match if any significant org word appears in the domain
-        if any(w in domain for w in words):
-            return r["url"]
-    return ""
-
-
-def find_contact_email(org: str) -> str:
-    """
-    Dedicated follow-up search for an organization's contact email.
-    Returns an email address if found in snippets, else "" — never
-    fabricated (no info@domain.com guessing).
-    """
-    if not org.strip() or not SEARCHAPI_KEY:
-        return ""
-    query   = f'"{org}" contact email'
-    results = searchapi_query(query)
-    if not results:
-        return ""
-    for r in results:
-        text = f"{r.get('title','')} {r.get('snippet','')}"
-        m = EMAIL_REGEX.search(text)
-        if m:
-            email = m.group(0)
-            # Skip obviously generic/placeholder matches
-            if not any(x in email.lower() for x in ("example.com","sentry.io","wixpress.com")):
-                return email
-    return ""
-
-
-def extract_stakeholders(lead: dict, search_results: list[dict], tuning_block: str = "") -> list[dict]:
-    """LLM extracts stakeholders from SearchAPI results."""
-    if not search_results:
-        return []
-    try:
-        context = "\n\n".join(
-            f"TITLE: {r['title']}\nSNIPPET: {r['snippet']}\nURL: {r['url']}"
-            for r in search_results
-        )
-        prompt_context = (
-            f"Venue: {lead.get('venue_name','')}\n"
-            f"Team: {lead.get('team','')}\n"
-            f"City: {lead.get('city','')}, {lead.get('state','')}\n"
-            f"League: {lead.get('league','')}\n"
-            f"Project: {lead.get('whats_happening','')}\n\n"
-            f"Search results:\n{context[:3000]}"
-        )
-        result = call_llm_json(
+        result = call_llm_web_search_json(
             system=EXTRACT_PROMPT + tuning_block,
-            user_content=prompt_context,
-            max_tokens=800, temperature=0.0,
+            user_content=user_content,
+            max_tokens=2000, temperature=0.0,
+            max_uses=4,   # up to 4 searches per lead — bounds cost
         )
-        stakes = result.get("stakeholders", [])
-        return [s for s in stakes
-                if s.get("name","").strip()
-                and s.get("relevance","") != "low"]
     except Exception as e:
-        print(f"      [LLM ERROR] {e}", flush=True)
-        return []
+        print(f"      [WEB-SEARCH ERROR] {e}", flush=True)
+        return None, 0
+
+    if not isinstance(result, dict):
+        return None, 0
+
+    # Parse capacity found via web search (0 if not found/not requested)
+    found_cap = 0
+    if need_capacity:
+        try:
+            found_cap = int(float(result.get("venue_capacity") or 0))
+        except (TypeError, ValueError):
+            found_cap = 0
+        # sanity bound — ignore absurd values
+        if not (1000 < found_cap < 250000):
+            found_cap = 0
+
+    stakes = result.get("stakeholders", [])
+    # Keep the same filter as before: must have a name, drop low relevance.
+    filtered = [s for s in stakes
+                if s.get("name", "").strip()
+                and s.get("relevance", "") != "low"]
+    return filtered, found_cap
 
 
 def enrich_stakeholders(all_leads: list[dict],
                         act_now:   list[dict]) -> tuple[list, list, list]:
     """
-    Enrich stakeholders via SearchAPI for engage_now + monitor leads.
-    Returns updated all_leads, act_now, and flat stakeholder_rows list.
+    Enrich stakeholders via Claude web search for engage_now + monitor
+    leads. Returns updated all_leads, act_now, and flat stakeholder_rows.
     """
-    if not SEARCHAPI_KEY:
-        print("\n[STEP 4] Skipping stakeholders — no SEARCHAPI_KEY", flush=True)
-        return all_leads, act_now, []
-
     to_enrich = [l for l in all_leads
-                 if l.get("engagement") in ("engage_now","monitor")]
+                 if l.get("engagement") in ("engage_now", "monitor")]
 
-    print(f"\n[STEP 4] Stakeholder enrichment via SearchAPI "
+    print(f"\n[STEP 4] Stakeholder enrichment via Claude web search "
           f"({len(to_enrich)} leads)...", flush=True)
 
-    # Same tuning-trigger mechanism as reasoning_agent.py, but scoped to
-    # "stakeholder" — e.g. a "wrong owner" pattern flagged 3+ times by
-    # Matthew/Anshi targets THIS prompt, not reasoning_agent.py's (those
-    # are two separate LLM calls). See tuning_prompt.py for the scoping.
+    # Same tuning-trigger mechanism as before, scoped to "stakeholder".
     active_triggers = get_active_tuning_triggers()
     stakeholder_tuning_block = build_tuning_block(active_triggers, scope="stakeholder")
     if stakeholder_tuning_block:
@@ -286,69 +202,84 @@ def enrich_stakeholders(all_leads: list[dict],
               f"known false-positive pattern(s) into stakeholder prompt", flush=True)
 
     stakeholder_rows = []
-    api_limit_failures = 0
+    consecutive_failures = 0
 
     for i, lead in enumerate(to_enrich, 1):
-        vname = lead.get("venue_name","")
-        eng   = lead.get("engagement","")
+        vname = lead.get("venue_name", "")
+        eng   = lead.get("engagement", "")
         print(f"  [{i:02d}/{len(to_enrich)}] {vname[:40]} [{eng}]", flush=True)
 
-        search_results = build_search_results(lead)
+        stakes, found_cap = extract_stakeholders_web(
+            lead, tuning_block=stakeholder_tuning_block)
 
-        # CIRCUIT BREAKER: SearchAPI itself is failing for every query on
-        # this lead (429/network) — not "this lead has no stakeholders".
-        if search_results is None:
-            api_limit_failures += 1
-            print(f"      [API LIMIT] SearchAPI failing — "
-                  f"{api_limit_failures}/{MAX_API_LIMIT_FAILURES}", flush=True)
-            if api_limit_failures >= MAX_API_LIMIT_FAILURES:
+        # CIRCUIT BREAKER: None means the web-search call itself failed
+        # (not "this lead has no stakeholders", which is an empty list).
+        if stakes is None:
+            consecutive_failures += 1
+            print(f"      [FAIL] web search failed — "
+                  f"{consecutive_failures}/{MAX_CONSECUTIVE_FAILURES}", flush=True)
+            if consecutive_failures >= MAX_CONSECUTIVE_FAILURES:
                 remaining = len(to_enrich) - i
-                print(f"\n  [STOPPING] SearchAPI rate/quota limit hit "
-                      f"{MAX_API_LIMIT_FAILURES} times in a row — "
+                print(f"\n  [STOPPING] Web search failed "
+                      f"{MAX_CONSECUTIVE_FAILURES} times in a row — "
                       f"skipping remaining {remaining} leads this run.", flush=True)
                 break
+            time.sleep(1.0)
             continue
-        api_limit_failures = 0  # any real response resets this — even []
+        consecutive_failures = 0  # any real response resets this — even []
 
-        if not search_results:
-            print(f"      No search results", flush=True)
-            continue
+        # CAPACITY BACKFILL: if this lead had no capacity and web search
+        # found one, fill it in AND recompute the score (which depends on
+        # capacity). If web search found nothing, fall back to a rough
+        # league-based default so the score isn't unfairly low — but only
+        # use the default for SCORING, keep the displayed capacity honest.
+        try:
+            cur_cap = int(float(lead.get("capacity") or 0))
+        except (TypeError, ValueError):
+            cur_cap = 0
+        if cur_cap <= 0:
+            display_cap = found_cap  # real number from web (0 if none found)
+            score_cap = found_cap or LEAGUE_DEFAULT_CAPACITY.get(
+                lead.get("league", ""), 0)
+            if display_cap > 0:
+                lead["capacity"] = display_cap
+                print(f"      [CAPACITY] found {display_cap:,} via web search", flush=True)
+            elif score_cap > 0:
+                print(f"      [CAPACITY] none found — using league default "
+                      f"{score_cap:,} for scoring only", flush=True)
+            # Recompute score with the better capacity (real or default).
+            # Engagement/likelihood don't change here — they're derived from
+            # tier, not capacity — so only the score needs refreshing.
+            if score_cap > 0:
+                new_score = compute_score(
+                    lead.get("signal_tier") or 1,
+                    score_cap,
+                    lead.get("venue_status", "existing"),
+                    lead.get("likelihood"),
+                )
+                old_score = lead.get("score")
+                lead["score"] = new_score
+                print(f"      [SCORE] {old_score} → {new_score} "
+                      f"(capacity-adjusted)", flush=True)
 
-        stakes = extract_stakeholders(lead, search_results, tuning_block=stakeholder_tuning_block)
         print(f"      → {len(stakes)} stakeholders found", flush=True)
 
         if stakes:
-            # Resolve website + email per unique organization (avoid
-            # repeating the email search for the same org twice in one lead)
-            org_cache = {}
-            for s in stakes:
-                org = (s.get("organization") or "").strip()
-                if not org:
-                    s["_website"] = ""; s["_email"] = ""
-                    continue
-                if org not in org_cache:
-                    website = find_website(org, search_results)
-                    email   = find_contact_email(org)
-                    org_cache[org] = (website, email)
-                    time.sleep(0.5)
-                s["_website"], s["_email"] = org_cache[org]
-
             lead["stakeholders_raw"] = json.dumps(stakes)
-
             for s in stakes:
                 stakeholder_rows.append({
-                    "venue_name":      vname,
-                    "league":          lead.get("league",""),
-                    "team":            lead.get("team",""),
-                    "signal_tier":     lead.get("signal_tier"),
-                    "engagement":      eng,
-                    "stakeholder_name":s.get("name",""),
-                    "title":           s.get("title",""),
-                    "organization":    s.get("organization",""),
-                    "type":            s.get("type",""),
-                    "website":         s.get("_website",""),
-                    "contact_email":   s.get("_email",""),
-                    "notes":           s.get("relevance",""),
+                    "venue_name":       vname,
+                    "league":           lead.get("league", ""),
+                    "team":             lead.get("team", ""),
+                    "signal_tier":      lead.get("signal_tier"),
+                    "engagement":       eng,
+                    "stakeholder_name": s.get("name", ""),
+                    "title":            s.get("title", ""),
+                    "organization":     s.get("organization", ""),
+                    "type":             s.get("type", ""),
+                    "website":          s.get("website", ""),
+                    "contact_email":    s.get("contact_email", ""),
+                    "notes":            s.get("relevance", ""),
                 })
 
         time.sleep(1.0)
@@ -359,7 +290,17 @@ def enrich_stakeholders(all_leads: list[dict],
     print(f"  With website        : {found_website}/{len(stakeholder_rows)}", flush=True)
     print(f"  With email          : {found_email}/{len(stakeholder_rows)}", flush=True)
 
+    # Capacity backfill above may have changed some scores, so re-sort and
+    # re-rank both lists to keep the displayed order consistent with the
+    # updated scores (same sort key / ranking scheme as reasoning_agent).
+    all_leads.sort(key=_lead_sort_key)
+    for i, r in enumerate(all_leads, 1):
+        r["rank"] = i
+
     lead_map = {l["venue_name"]: l for l in all_leads}
     act_now  = [lead_map.get(l["venue_name"], l) for l in act_now]
+    act_now.sort(key=_lead_sort_key)
+    for i, r in enumerate(act_now, 1):
+        r["act_now_rank"] = i
 
     return all_leads, act_now, stakeholder_rows

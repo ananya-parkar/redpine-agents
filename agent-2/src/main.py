@@ -19,12 +19,23 @@ from feedback_reader        import run as run_feedback_reader
 from run_paths              import get_todays_output_file
 from db_writer               import (
     init_db, db_available,
-    upsert_signals, upsert_leads,
+    upsert_signals, upsert_leads, upsert_stakeholders,
     get_archived_venues, get_pursuing_venues,
+    get_leads_for_excel, get_stakeholders_for_excel,
     get_all_leads_for_excel, get_tier_alerts,
     purge_old_pii,
 )
 EMAIL_TO = os.getenv("EMAIL_TO", "")
+
+# How far back the Excel sheets + Dashboard look.
+#
+# A stadium project lives for months and does NOT make the news every day.
+# The sheets used to show ONLY the current run's leads, so a Tier 1/2 lead
+# found last week silently vanished the moment it had no fresh article —
+# even though it was still a live opportunity sitting in the DB (and still
+# counted on the Dashboard, which DID read the DB — hence the mismatch).
+# Everything the client sees now comes from the DB over this window.
+EXCEL_LOOKBACK_DAYS = 30
 
 
 def main():
@@ -70,7 +81,7 @@ def main():
 
     # ── STEP 1: Venues ───────────────────────────────────────
     # pd.read_html → Wikipedia tables (current + planned + under construction)
-    # city/state directly from location column — no Google Maps
+    # city/state directly from location column
     venues = get_venues()
 
     if archived:
@@ -86,14 +97,14 @@ def main():
     print(f"  Under const     : {under_const} (Tier 3-4 signals)", flush=True)
     print(f"  Planned         : {planned} (Tier 1-2 signals)", flush=True)
 
-    # ── STEP 2A: GNews signals ───────────────────────────────
+    # ── STEP 2A: News signals (NewsAPI) ──────────────────────
     # Planned + under_construction venues searched first (priority)
     # Broad query for planned (no construction keywords needed)
     # Existing venues: venue+team + construction keywords
     news_signals = collect_signals(venues)
 
     # ── STEP 2B: Govt signals ────────────────────────────────
-    # Only check cities for: planned + under_construction + venues with GNews signal
+    # Only check cities for: planned + under_construction + venues with a news signal
     news_signal_venues = {s["venue_name"] for s in news_signals}
     govt_signals = get_city_council_signals(venues, news_signal_venues)
 
@@ -115,71 +126,96 @@ def main():
         upsert_signals(govt_signals, signal_type="government")
 
     if not signals:
-        print("\n[WARN] No signals found. Check GNEWS_API_KEY.")
+        print("\n[WARN] No signals found. Check NEWSAPI_KEY.")
         return
 
     # ── STEP 3: LLM reasoning ────────────────────────────────
-    # Stage 1: batch classify — planned venues get Tier 2+ minimum
-    # Stage 2: deep analyze — capacity bonus in scoring
-    all_leads, act_now = run_reasoning(signals)
+    # Stage 1: batch classify
+    # Stage 2: deep analyze (venue_confirmed gate)
+    # Stage 3: Claude web-search verification (forward-only tier moves)
+    run_leads, run_act_now = run_reasoning(signals)
 
     # Pursuing score boost (+15)
     if pursuing:
-        for lead in all_leads:
+        for lead in run_leads:
             if lead["venue_name"].lower() in pursuing:
                 lead["score"] = min(100, (lead.get("score") or 0) + 15)
                 print(f"  [BOOST] {lead['venue_name']} +15 (Pursuing)", flush=True)
 
-    if not all_leads:
-        print("\n[WARN] No relevant leads found.")
-        save_excel(venues, [], [], [], str(output_file), run_date=run_date)
-        return
-
-    # ── STEP 4: Stakeholders (SearchAPI only) ─────────────────
-    # Targeted searches: "[venue] architect", "[venue] GC" etc.
-    # Runs for engage_now + monitor leads only
-    all_leads, act_now, stakeholder_rows = enrich_stakeholders(all_leads, act_now)
+    # ── STEP 4: Stakeholders (Claude web search) ─────────────
+    # Runs on THIS RUN's leads only (engage_now + monitor) so the
+    # web-search cost stays bounded. Results are persisted at STEP 5, and
+    # STEP 6 reads back every active lead's stakeholders — so a lead
+    # enriched last week keeps its contacts even when it isn't re-enriched
+    # today.
+    if run_leads:
+        run_leads, run_act_now, stakeholder_rows = enrich_stakeholders(
+            run_leads, run_act_now)
+    else:
+        print("\n[WARN] No relevant leads found in this run.", flush=True)
+        stakeholder_rows = []
 
     # ── STEP 5: Save to DB ────────────────────────────────────
+    # upsert_leads: NEW venue → INSERT, SEEN before → UPDATE + log any
+    # tier change. This is what keeps an older lead's tier current when
+    # today's run re-detects it at a different stage.
     new_leads_list = []
     if db_available():
-        stats = upsert_leads(all_leads)
+        stats = upsert_leads(run_leads)
         print(f"\n  [DB] inserted:{stats['inserted']} "
               f"tier_changed:{stats['tier_changed']} "
               f"updated:{stats['updated']} "
               f"errors:{stats['errors']}", flush=True)
 
-        # New leads this run (for email)
-        new_leads_list = all_leads[:stats.get("inserted", 0)]
+        upsert_stakeholders(stakeholder_rows)
+
+        # New leads this run, by actual inserted venue name (the old
+        # `run_leads[:inserted]` slice just took the first N of the sorted
+        # list, which are rarely the ones that were really new).
+        inserted_names = set(stats.get("inserted_venues", []))
+        new_leads_list = [l for l in run_leads
+                          if l.get("venue_name") in inserted_names]
 
         # NOTE: bad-data pattern detection + tuning trigger logging is
-        # handled at STEP 0 by feedback_reader.run() -> 
+        # handled at STEP 0 by feedback_reader.run() ->
         # check_and_log_tuning_triggers(), right after feedback is read
-        # from the previous run's Excel. That version has root-cause-
-        # specific recommendations (see tuning_prompt.TUNING_RULES) and
-        # writes a tuning_triggers.txt report. Doing it again here would
-        # just re-detect the SAME patterns (nothing about feedback
-        # changes between STEP 0 and STEP 5) and double-log them with a
-        # generic recommendation text — removed to avoid duplicates.
+        # from the previous run's Excel.
 
         purged = purge_old_pii()
         if purged:
             print(f"  [DB] PII purged: {purged} old leads", flush=True)
 
     # ── STEP 6: Excel ─────────────────────────────────────────
-    # Dashboard loads from PostgreSQL (historical 90 days)
-    # All Leads / Act Now / Stakeholders from current run
-    save_excel(venues, all_leads, act_now, stakeholder_rows,
+    # Everything the client sees — Dashboard, All Leads, Act Now,
+    # Stakeholders — comes from ONE source: the DB, over the last
+    # EXCEL_LOOKBACK_DAYS. That means:
+    #   • a lead found last week still shows (and still counts as Act Now)
+    #     even if it had no news today
+    #   • the Dashboard KPIs and the sheets can never disagree, because
+    #     they're computed from the same list
+    # If the DB is down we fall back to this run's leads so the pipeline
+    # still produces a usable workbook.
+    if db_available():
+        excel_leads, excel_act_now = get_leads_for_excel(days=EXCEL_LOOKBACK_DAYS)
+        excel_stakeholders         = get_stakeholders_for_excel(days=EXCEL_LOOKBACK_DAYS)
+        if not excel_leads:   # empty DB (first ever run) — show this run
+            excel_leads, excel_act_now = run_leads, run_act_now
+            excel_stakeholders         = stakeholder_rows
+    else:
+        print("  [WARN] DB unavailable — Excel shows THIS RUN's leads only", flush=True)
+        excel_leads, excel_act_now = run_leads, run_act_now
+        excel_stakeholders         = stakeholder_rows
+
+    save_excel(venues, excel_leads, excel_act_now, excel_stakeholders,
                str(output_file), run_date=run_date)
 
     # ── STEP 7: Email ─────────────────────────────────────────
     if EMAIL_TO and db_available():
         print(f"\n[STEP 7] Sending email to {EMAIL_TO}...", flush=True)
         try:
-            ranked_leads = get_all_leads_for_excel()
-            tier_alerts  = get_tier_alerts()
+            tier_alerts = get_tier_alerts()
             subject, body = build_daily_email(
-                ranked_leads  = ranked_leads,
+                ranked_leads  = excel_leads,   # same set the workbook shows
                 new_leads     = new_leads_list,
                 tier_alerts   = tier_alerts,
             )
@@ -201,9 +237,10 @@ def main():
     print(f"  Total venues     : {len(venues)}")
     print(f"  News signals     : {len(news_signals)}")
     print(f"  Govt signals     : {len(govt_signals)}")
-    print(f"  All Leads        : {len(all_leads)}")
-    print(f"  Act Now          : {len(act_now)} (subset)")
-    print(f"  Stakeholders     : {len(stakeholder_rows)}")
+    print(f"  Leads this run   : {len(run_leads)} ({len(new_leads_list)} brand new)")
+    print(f"  Leads in workbook: {len(excel_leads)} (active, last {EXCEL_LOOKBACK_DAYS} days)")
+    print(f"  Act Now          : {len(excel_act_now)}")
+    print(f"  Stakeholders     : {len(excel_stakeholders)}")
     print(f"  Output           : {output_file}")
     print("="*60 + "\n")
 

@@ -9,17 +9,30 @@ from openpyxl.utils import get_column_letter
 # Import dashboard writer (your existing dashboard code)
 from dashboard_writer import write_dashboard
 
-# Import DB loader for dashboard historical data
-from db_writer import get_all_signals_for_excel, get_all_leads_for_excel, get_pending_tuning_triggers
+# Import DB loader for dashboard historical signal data
+from db_writer import get_all_signals_for_excel, get_pending_tuning_triggers
 from tuning_prompt import _match_rule
 
 # ---------------------------------------------------
-# EXCEL BUILDER — 5 sheets
-# 1. Dashboard   ← loads from PostgreSQL (historical)
+# EXCEL BUILDER — 6 sheets
+# 1. Dashboard   ← built from the SAME lead list as the sheets
 # 2. Venue Database
 # 3. All Leads
 # 4. Act Now     (subset of All Leads)
 # 5. Stakeholders
+# 6. Tuning Review
+#
+# ALIGNMENT FIX:
+#   The Dashboard used to run its OWN query (get_all_leads_for_excel())
+#   while the All Leads / Act Now sheets were written from the current
+#   run's in-memory leads. Two different datasets → the Dashboard would
+#   say "2 Act Now leads" while the Act Now sheet showed 1, and would list
+#   venues that didn't appear in All Leads at all.
+#
+#   Now main.py loads leads ONCE (from the DB, last 30 days) and passes
+#   that same list here; the Dashboard is built from it too. One source,
+#   always in step. Signals are still read from the DB directly since they
+#   feed a separate 90-day volume trend, not the lead list.
 # ---------------------------------------------------
 
 TIER_BG = {1:"C8E6C9",2:"BBDEFB",3:"FFE0B2",4:"FFCDD2"}
@@ -50,7 +63,7 @@ def header_row(ws, headers, widths, bg):
     ws.freeze_panes="A2"
     ws.auto_filter.ref=f"A1:{get_column_letter(len(headers))}1"
 
-    # Feedback dropdown (col 17) — Pursuing / Archive / Bad Data / Passed / Watch
+    # Feedback dropdown — Pursuing / Archive / Bad Data / Passed / Watch
     # NOTE: "Watch" was missing here even though feedback_reader.py
     # already handles a "watch" feedback value — without it in the
     # dropdown list, nobody could actually select it (short of typing
@@ -113,7 +126,7 @@ def _lead_row_vals(r: dict, rank_field: str = "rank") -> list:
     t   = r.get("signal_tier") or 0
     eng = r.get("engagement") or r.get("engagement_action","monitor")
     scr = r.get("score") or r.get("final_score","")
-    lkl = r.get("likelihood","")
+    lkl = r.get("likelihood") or r.get("project_likelihood","")
 
     # Stakeholders text
     try:
@@ -140,7 +153,7 @@ def _lead_row_vals(r: dict, rank_field: str = "rank") -> list:
         r.get("tier_label","") or (f"Tier {t}" if t else ""),
         scr,
         f"{lkl}%" if lkl else "",
-        r.get("project_type",""),
+        r.get("project_type","") or r.get("project_scale",""),
         r.get("whats_happening",""),
         r.get("why_priority",""),
         r.get("evidence",""),
@@ -261,17 +274,27 @@ def write_tuning_review(ws, active_triggers):
 # ── MAIN SAVE ────────────────────────────────────────────────────
 def save_excel(venues, all_leads, act_now, stakeholder_rows,
                output_path, run_date=None):
-    print("\n[STEP 5] Writing Excel...", flush=True)
+    print("\n[STEP 6] Writing Excel...", flush=True)
     run_date = run_date or date.today()
     wb = Workbook()
 
-    # ── Sheet 1: Dashboard (reads from PostgreSQL) ───────────────
+    # ── Sheet 1: Dashboard ───────────────────────────────────────
+    # Built from the SAME `all_leads` list that the sheets below use, so
+    # the KPIs, the Act Now count, and the lead tables can never disagree.
+    # (Leads loaded from the DB already carry both naming conventions;
+    # leads coming straight from a run only have engagement/score, so we
+    # add the dashboard aliases here with setdefault.)
     ws_dash = wb.active
     ws_dash.title = "Dashboard"
     try:
-        # Load from DB — last 90 days of signals + today's leads
         db_signals = get_all_signals_for_excel(days=90)
-        db_leads   = get_all_leads_for_excel()
+
+        dash_leads = []
+        for r in all_leads:
+            ml = dict(r)
+            ml.setdefault("engagement_action", r.get("engagement", "monitor"))
+            ml.setdefault("final_score",       r.get("score", ""))
+            dash_leads.append(ml)
 
         # FIX: signals.signal_tier is always NULL in the DB — it only
         # gets computed by the LLM and saved to the LEADS table, never
@@ -281,51 +304,32 @@ def save_excel(venues, all_leads, act_now, stakeholder_rows,
         # tier from the matching lead (same venue) before charting —
         # dashboard_writer.py itself stays untouched.
         tier_by_venue = {l["venue_name"]: l.get("signal_tier")
-                         for l in db_leads if l.get("venue_name")}
+                         for l in dash_leads if l.get("venue_name")}
         for s in db_signals:
             if s.get("signal_tier") is None:
                 matched_tier = tier_by_venue.get(s.get("venue_name"))
                 if matched_tier is not None:
                     s["signal_tier"] = matched_tier
 
-        # DB leads already have correct field names (engagement_action, final_score etc.)
-        # write_dashboard uses: engagement_action, final_score, signal_tier, signal_type
-        write_dashboard(ws_dash, db_signals, db_leads)
-        print("  Dashboard loaded from PostgreSQL ✅", flush=True)
+        write_dashboard(ws_dash, db_signals, dash_leads)
+        print("  Dashboard built from the same lead set as the sheets ✅", flush=True)
     except Exception as e:
-        print(f"  [WARN] Dashboard from DB failed ({e}), using current run data", flush=True)
-        # Fallback: use current run data with field name mapping
-        mapped_leads = []
-        for r in all_leads:
-            ml = dict(r)
-            ml["engagement_action"] = r.get("engagement","monitor")
-            ml["final_score"]       = r.get("score","")
-            mapped_leads.append(ml)
-        mapped_signals = []
-        for s in (all_leads or []):
-            ms = dict(s)
-            ms["signal_type"] = "news"
-            mapped_signals.append(ms)
+        # Last-resort guard: never let dashboard rendering crash the whole
+        # Excel export — write a simple placeholder instead.
+        print(f"  [WARN] Dashboard failed ({e}) — writing placeholder sheet", flush=True)
         try:
-            write_dashboard(ws_dash, mapped_signals, mapped_leads)
-        except Exception as e2:
-            # Last-resort guard: never let dashboard rendering crash the
-            # whole Excel export — write a simple placeholder instead.
-            print(f"  [WARN] Dashboard fallback also failed ({e2}) — "
-                  f"writing placeholder sheet", flush=True)
-            try:
-                # Unmerge any ranges left over from the partial write,
-                # otherwise clearing cell values below will also fail
-                # with "MergedCell is read-only".
-                for merged_range in list(ws_dash.merged_cells.ranges):
-                    ws_dash.unmerge_cells(str(merged_range))
-                for row in ws_dash.iter_rows():
-                    for cell in row:
-                        cell.value = None
-            except Exception:
-                pass  # if even cleanup fails, just leave whatever's there
-            ws_dash["B2"] = "Dashboard unavailable for this run (insufficient data)."
-            ws_dash["B3"] = "All Leads / Act Now / Venue Database sheets are unaffected."
+            # Unmerge any ranges left over from the partial write,
+            # otherwise clearing cell values below will also fail
+            # with "MergedCell is read-only".
+            for merged_range in list(ws_dash.merged_cells.ranges):
+                ws_dash.unmerge_cells(str(merged_range))
+            for row in ws_dash.iter_rows():
+                for cell in row:
+                    cell.value = None
+        except Exception:
+            pass  # if even cleanup fails, just leave whatever's there
+        ws_dash["B2"] = "Dashboard unavailable for this run (insufficient data)."
+        ws_dash["B3"] = "All Leads / Act Now / Venue Database sheets are unaffected."
 
     # ── Sheet 2: Venue Database ──────────────────────────────────
     ws_venues = wb.create_sheet()
@@ -346,10 +350,8 @@ def save_excel(venues, all_leads, act_now, stakeholder_rows,
     write_stakeholders(ws_stakes, stakeholder_rows)
 
     # ── Sheet 6: Tuning Review ───────────────────────────────────
-    # Pending feedback-driven patterns awaiting Approve/Reject — see
-    # write_tuning_review() above. Fetched fresh each run so the sheet
-    # always reflects current DB state (cleared patterns disappear,
-    # new ones appear).
+    # Active feedback-driven patterns — see write_tuning_review() above.
+    # Fetched fresh each run so the sheet always reflects current DB state.
     ws_tuning = wb.create_sheet()
     pending_triggers = get_pending_tuning_triggers()
     write_tuning_review(ws_tuning, pending_triggers)
