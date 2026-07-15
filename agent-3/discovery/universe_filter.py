@@ -5,6 +5,7 @@ import os
 import pandas as pd
 from anthropic import Anthropic
 from dotenv import load_dotenv
+from utils.json_parser import parse_llm_json
 
 load_dotenv(override=True)
 
@@ -30,6 +31,7 @@ def classify_company(company_name):
         Based only on publicly recognizable knowledge:
         
         KEEP if:
+        Missing ownership, founder or revenue information is NOT a reason to remove a company.
         - Appears to be a private business
         - Appears to be a legitimate operating company
         - Could reasonably be investigated further
@@ -131,6 +133,9 @@ def classify_company(company_name):
 
     content = content.strip()
 
-    result = json.loads(content)
+    try:
+        result = parse_llm_json(content)
+    except (json.JSONDecodeError, ValueError):
+        return False
     
     return result

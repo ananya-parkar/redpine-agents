@@ -56,7 +56,7 @@ def generate_rationale(row):
 
         Write:
         1. why_selected: 2-3 sentences explaining why this company is a
-           strong acquisition target, grounded in the fields above.
+           potential acquisition candidate, grounded in the fields above.
         2. evidence_summary: 1-2 sentences summarizing the concrete
            evidence that supports the selection (cite specifics from
            Evidence Summary where available; otherwise note evidence is limited).
@@ -111,7 +111,14 @@ def generate_rationale(row):
     if start != -1 and end != -1:
         content = content[start:end+1]
 
-    return json.loads(content)
+    try:
+        return json.loads(content)
+    except json.JSONDecodeError:
+        return {
+            "why_selected": "",
+            "evidence_summary": "",
+            "one_line_reason": ""
+        }
 
 def add_rationale_to_candidates(df):
     """
