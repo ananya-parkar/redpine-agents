@@ -1,4 +1,3 @@
-# agent-3/main.py
 from datetime import datetime
 import pandas as pd
 
@@ -15,7 +14,7 @@ from mail.email import send_daily_digest
 
 from db.db import save_candidates_to_db, record_pipeline_run_snapshot
 from db.search_request_db import get_or_create_search_request
-from db.feedback_sync import sync_feedback_from_dashboard
+from db.feedback_sync import sync_feedback_from_dashboard, get_active_learned_instructions_text
 from db.pii_retention import apply_pii_retention
 
 from dashboard.dashboard import generate_dashboard
@@ -42,6 +41,55 @@ def main():
     print("Criteria:")
     print(criteria)
 
+    # ------------------------------------------------------------------
+    # Runs folder is scoped per search too. Without this, a Florida run
+    # followed by a Texas run would leave the Texas feedback sync
+    # globbing the latest file in runs/ - which would be the FLORIDA
+    # workbook. Its candidate_ids aren't in the Texas scope so nothing
+    # would corrupt, but the Texas run would also never find its OWN
+    # previous file, and feedback would silently stop syncing.
+    # ------------------------------------------------------------------
+    search_runs_folder = RUNS_FOLDER / f"search_{search_request_id}"
+    search_runs_folder.mkdir(parents=True, exist_ok=True)
+
+    dashboard_files = sorted(
+        search_runs_folder.glob("agent3_dashboard_*.xlsx"),
+        reverse=True,
+    )
+
+    # ------------------------------------------------------------------
+    # Feedback sync now runs BEFORE discovery, not after. It only needs
+    # the PREVIOUS run's dashboard file, which already exists at this
+    # point - there's no reason to wait. This is what lets a 3+ pattern
+    # flagged after Run 1 actually affect Run 2's prompts, instead of
+    # only showing up in Run 3. (Previously this ran near the end of
+    # main(), after discovery/profiling had already happened - so any
+    # trigger it created couldn't retroactively affect the run that
+    # just used known_issues.)
+    # ------------------------------------------------------------------
+    if dashboard_files:
+        print("\nSyncing feedback from previous run...\n")
+        try:
+            sync_feedback_from_dashboard(dashboard_files[0])
+        except Exception as e:
+            print(f"  [WARN] Feedback sync failed: {e}")
+    else:
+        print("\nNo previous dashboard for this search - nothing to sync.\n")
+
+    # ------------------------------------------------------------------
+    # Learning loop: pull whatever's currently "active" in tuning_triggers
+    # - including anything the sync above JUST created this run - and
+    # pass it into both discovery and profiling prompts. This is what
+    # makes a 3+ flagged pattern change behavior on the VERY NEXT run
+    # after it crosses threshold, not the run after that.
+    # ------------------------------------------------------------------
+    known_issues = get_active_learned_instructions_text()
+    if known_issues:
+        print("\nActive learned instructions being applied this run:")
+        print(known_issues)
+    else:
+        print("\nNo active learned instructions for this run.")
+
     companies = discover_companies(
         geography=target_geography,
         industry=industry,
@@ -49,6 +97,7 @@ def main():
         min_years=min_years,
         revenue_range=revenue_range,
         founder_age=founder_age_preference,
+        known_issues=known_issues,
     )
     
     scored_rows = []
@@ -61,6 +110,7 @@ def main():
         profile = profile_company(
             company_name=company_name,
             state=row.get("state",""),
+            known_issues=known_issues,
         )
 
         # Skip public companies completely.
@@ -145,9 +195,15 @@ def main():
 
         scored_rows.append({
             "Company Name": company_name,
+            "Website": profile.get("website") or row.get("website"),
+            "City": profile.get("city") or row.get("city"),
             "Industry": profile.get("industry"),
             "State": profile.get("state"),
             "Company Type": profile.get("company_type"),
+            "Company Description": profile.get("company_description"),
+            "Why Discovered": row.get("why_discovered"),
+            "Fit Analysis": profile.get("fit_analysis"),
+            "Seller Readiness Signals": " | ".join(profile.get("seller_readiness_signals", [])),
             "Founded Year": profile.get("founded_year"),
             "Revenue Estimate": profile.get("revenue_estimate"),
             "Years in Business": score.get("years_in_business"),
@@ -200,30 +256,10 @@ def main():
     record_pipeline_run_snapshot(search_request_id)
 
     # ------------------------------------------------------------------
-    # Runs folder is scoped per search too. Without this, a Florida run
-    # followed by a Texas run would leave the Texas feedback sync
-    # globbing the latest file in runs/ - which would be the FLORIDA
-    # workbook. Its candidate_ids aren't in the Texas scope so nothing
-    # would corrupt, but the Texas run would also never find its OWN
-    # previous file, and feedback would silently stop syncing.
+    # search_runs_folder was already created earlier (before discovery),
+    # since feedback sync now needs it up there too. Just build this
+    # run's new dashboard filename here.
     # ------------------------------------------------------------------
-    search_runs_folder = RUNS_FOLDER / f"search_{search_request_id}"
-    search_runs_folder.mkdir(parents=True, exist_ok=True)
-
-    dashboard_files = sorted(
-        search_runs_folder.glob("agent3_dashboard_*.xlsx"),
-        reverse=True,
-    )
-
-    if dashboard_files:
-        print("\nSyncing feedback from previous run...\n")
-        try:
-            sync_feedback_from_dashboard(dashboard_files[0])
-        except Exception as e:
-            print(f"  [WARN] Feedback sync failed: {e}")
-    else:
-        print("\nNo previous dashboard for this search - nothing to sync.\n")
-
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     dashboard_file = search_runs_folder / f"agent3_dashboard_{timestamp}.xlsx"
 

@@ -10,6 +10,32 @@ from dotenv import load_dotenv
 load_dotenv(override=True)
 
 
+# ---------------------------------------------------------------------------
+# Citation-tag cleanup. Claude's web_search tool responses sometimes come
+# back with raw <cite index="...">...</cite> markup baked directly into
+# the JSON string values (not stripped by parse_llm_json). Left alone,
+# this leaks straight into client-facing fields like why_discovered -
+# so strip it right after parsing, before it goes anywhere else.
+# ---------------------------------------------------------------------------
+
+def _strip_citation_tags(text):
+    if not isinstance(text, str) or "<" not in text:
+        return text
+    cleaned = re.sub(r"</?cite[^>]*>", "", text)
+    cleaned = re.sub(r"\s{2,}", " ", cleaned)
+    return cleaned.strip()
+
+
+def _clean_citations(value):
+    if isinstance(value, str):
+        return _strip_citation_tags(value)
+    if isinstance(value, list):
+        return [_clean_citations(v) for v in value]
+    if isinstance(value, dict):
+        return {k: _clean_citations(v) for k, v in value.items()}
+    return value
+
+
 def discover_companies(
     geography,
     industry="Any",
@@ -18,8 +44,22 @@ def discover_companies(
     revenue_range="$10M-$50M",
     founder_age="60+",
     max_companies=10,
+    known_issues="",
 ):
 #    Discover acquisition candidates using Claude's web search.
+
+    known_issues_block = ""
+    if known_issues:
+        known_issues_block = f"""
+        Known Issues From Client Feedback
+
+        The client has flagged the following recurring problems in past
+        search results. Take extra care to avoid repeating them:
+
+        {known_issues}
+
+        """
+
     prompt = f"""
         You are an M&A sourcing analyst.
         Your task is to discover PRIVATE companies that could be acquisition targets.
@@ -78,6 +118,8 @@ def discover_companies(
 
         Missing public information should not exclude an otherwise relevant company.
         Prioritize discovering legitimate operating businesses over returning perfectly enriched profiles.
+
+        {known_issues_block}
 
         Exclude
         - Public companies
@@ -156,6 +198,7 @@ def discover_companies(
             
 
             result = parse_llm_json(text)
+            result = _clean_citations(result)
 
             companies = result.get("companies", [])
 

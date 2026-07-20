@@ -16,7 +16,8 @@ from excel_builder          import save_excel
 from email_builder          import build_daily_email
 from email_sender           import send_daily_report
 from feedback_reader        import run as run_feedback_reader
-from run_paths              import get_todays_output_file
+from stale_lead_refresher   import refresh_stale_leads
+from run_paths               import get_todays_output_file
 from db_writer               import (
     init_db, db_available,
     upsert_signals, upsert_leads, upsert_stakeholders,
@@ -185,6 +186,21 @@ def main():
         if purged:
             print(f"  [DB] PII purged: {purged} old leads", flush=True)
 
+    # ── STEP 5B: Refresh stale leads not seen in today's signals ──
+    # run_leads only contains venues that got a FRESH news/govt signal
+    # this run. Without this step, any OTHER active lead sitting in the
+    # DB keeps whatever tier it was last assigned, even if the project
+    # quietly progressed (funding approved, architect hired) with no new
+    # article to trigger a re-check. This picks a rotating slice of the
+    # rest of the active backlog (oldest-verified-first, capped at
+    # REFRESH_LIMIT) and runs the same Stage-3 web-search verification on
+    # them, persisting any tier changes — BEFORE Excel is built below, so
+    # the workbook reflects the refreshed tiers too.
+    refresh_stats = {"checked": 0, "updated": 0}
+    if db_available():
+        run_venue_names = {l.get("venue_name","") for l in run_leads}
+        refresh_stats = refresh_stale_leads(run_venue_names)
+
     # ── STEP 6: Excel ─────────────────────────────────────────
     # Everything the client sees — Dashboard, All Leads, Act Now,
     # Stakeholders — comes from ONE source: the DB, over the last
@@ -238,6 +254,8 @@ def main():
     print(f"  News signals     : {len(news_signals)}")
     print(f"  Govt signals     : {len(govt_signals)}")
     print(f"  Leads this run   : {len(run_leads)} ({len(new_leads_list)} brand new)")
+    print(f"  Stale refreshed  : {refresh_stats['checked']} checked, "
+          f"{refresh_stats['updated']} tier change(s)")
     print(f"  Leads in workbook: {len(excel_leads)} (active, last {EXCEL_LOOKBACK_DAYS} days)")
     print(f"  Act Now          : {len(excel_act_now)}")
     print(f"  Stakeholders     : {len(excel_stakeholders)}")

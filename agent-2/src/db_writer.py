@@ -989,7 +989,47 @@ def get_bad_data_patterns() -> list[dict]:
     except Exception as e:
         print(f"  [DB] Pattern check failed: {e}", flush=True)
         return []
+# ============================================================
+# ADD this function to db_writer.py, next to get_leads_for_excel().
+# Needs `_row_to_lead` which already exists in the file.
+# ============================================================
 
+def get_stale_leads_for_refresh(exclude_venues: set, limit: int = 15) -> list[dict]:
+    """
+    Active leads NOT touched by today's run (i.e. not in exclude_venues,
+    which is the set of venue_names run_reasoning() actually detected
+    this run) — these are the leads that would otherwise sit frozen at
+    whatever tier they were last assigned, until they happen to surface
+    in a fresh NewsAPI/LegiStar hit again.
+
+    Excludes:
+      - archived leads (feedback='Archive' or current_engagement='archived')
+      - already too_late leads (construction started — nothing to verify
+        forward to; re-checking them wastes a web search for no benefit)
+
+    Ordered by tier_last_changed_at ASC (oldest-verified first, NULLs —
+    i.e. never re-verified since first detection — treated as oldest),
+    so a rotating LIMIT-sized slice gets refreshed each run instead of
+    either always hitting the same leads or never hitting any.
+    """
+    try:
+        conn = get_conn()
+        cur  = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+        cur.execute("""
+            SELECT * FROM leads
+            WHERE COALESCE(feedback, '') <> 'Archive'
+              AND COALESCE(current_engagement, '') <> 'archived'
+              AND COALESCE(current_engagement, '') <> 'too_late'
+              AND venue_name <> ALL(%s)
+            ORDER BY COALESCE(tier_last_changed_at, first_detected_at) ASC NULLS FIRST
+            LIMIT %s
+        """, (list(exclude_venues) if exclude_venues else [''], limit))
+        rows = cur.fetchall()
+        cur.close(); conn.close()
+        return [_row_to_lead(r) for r in rows]
+    except Exception as e:
+        print(f"  [DB] Could not fetch stale leads for refresh: {e}", flush=True)
+        return []
 
 def get_pending_tuning_triggers() -> list[dict]:
     """

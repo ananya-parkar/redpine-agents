@@ -1,4 +1,3 @@
-# agent-3/db/db.py
 """
 Postgres persistence layer for Agent 3.
 
@@ -114,8 +113,11 @@ def upsert_candidate(conn, row, search_request_id):
                 """
                 UPDATE candidates
                 SET company_name = %s,
+                    website = %s,
+                    city = %s,
                     industry = %s,
                     company_type = %s,
+                    company_description = %s,
                     founded_year = %s,
                     revenue_estimate = %s,
                     years_in_business = %s,
@@ -127,14 +129,20 @@ def upsert_candidate(conn, row, search_request_id):
                     ownership_tenure_years = %s,
                     extraction_confidence = %s,
                     seller_readiness_score = %s,
+                    fit_analysis = %s,
+                    seller_readiness_signals = %s,
+                    why_discovered = %s,
                     last_seen_date = CURRENT_DATE,
                     updated_at = NOW()
                 WHERE id = %s
                 """,
                 (
                     row.get("Company Name"),
+                    row.get("Website"),
+                    row.get("City"),
                     row.get("Industry"),
                     row.get("Company Type"),
+                    row.get("Company Description"),
                     row.get("Founded Year"),
                     row.get("Revenue Estimate"),
                     _safe_int(row.get("Years in Business")),
@@ -146,6 +154,9 @@ def upsert_candidate(conn, row, search_request_id):
                     _safe_int(row.get("Ownership Tenure Years")),
                     row.get("Extraction Confidence"),
                     _safe_int(row.get("Seller Readiness Score")),
+                    row.get("Fit Analysis"),
+                    row.get("Seller Readiness Signals"),
+                    row.get("Why Discovered"),
                     candidate_id,
                 ),
             )
@@ -154,20 +165,24 @@ def upsert_candidate(conn, row, search_request_id):
                 """
                 INSERT INTO candidates (
                     search_request_id,
-                    company_name, normalized_name, state, industry,
-                    company_type, founded_year, revenue_estimate,
+                    company_name, normalized_name, state, website, city,
+                    industry, company_type, company_description,
+                    founded_year, revenue_estimate,
                     years_in_business, founder_name, founder_led,
                     family_owned, founder_age_estimate, ownership_status,
                     ownership_tenure_years, extraction_confidence,
-                    seller_readiness_score
+                    seller_readiness_score, fit_analysis,
+                    seller_readiness_signals, why_discovered
                 ) VALUES (
                     %s,
-                    %s, %s, %s, %s,
+                    %s, %s, %s, %s, %s,
                     %s, %s, %s,
+                    %s, %s,
                     %s, %s, %s,
                     %s, %s, %s,
                     %s, %s,
-                    %s
+                    %s, %s,
+                    %s, %s
                 )
                 RETURNING id
                 """,
@@ -176,8 +191,11 @@ def upsert_candidate(conn, row, search_request_id):
                     row.get("Company Name"),
                     normalized_name,
                     state,
+                    row.get("Website"),
+                    row.get("City"),
                     row.get("Industry"),
                     row.get("Company Type"),
+                    row.get("Company Description"),
                     row.get("Founded Year"),
                     row.get("Revenue Estimate"),
                     _safe_int(row.get("Years in Business")),
@@ -189,6 +207,9 @@ def upsert_candidate(conn, row, search_request_id):
                     _safe_int(row.get("Ownership Tenure Years")),
                     row.get("Extraction Confidence"),
                     _safe_int(row.get("Seller Readiness Score")),
+                    row.get("Fit Analysis"),
+                    row.get("Seller Readiness Signals"),
+                    row.get("Why Discovered"),
                 ),
             )
             candidate_id = cur.fetchone()[0]

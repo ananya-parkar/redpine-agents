@@ -1,4 +1,3 @@
-# agent-3/reasoning/llm_reasoning.py
 """
 Layer 6 — LLM Reasoning Layer
 
@@ -31,35 +30,43 @@ def generate_rationale(row):
     structured fields + Evidence string.
 
     Returns dict with:
-        why_selected      - 2-3 sentence explanation
+        why_selected      - 2-3 sentence neutral summary (not a verdict)
         evidence_summary  - short summary of the supporting facts
         one_line_reason   - single line for the daily email digest
     """
     evidence = (row.get("Evidence Summary", "") or "No additional evidence captured.")
+    why_discovered = (row.get("Why Discovered", "") or "Not specified.")
+    fit_analysis = (row.get("Fit Analysis", "") or "Not specified.")
 
     prompt = f"""
-        You are writing a rationale for why a company appears on an
-        acquisition target list. Base your reasoning ONLY on the data
-        given below. Do not invent facts not present here.
+        You are summarizing a company that surfaced during acquisition-target
+        discovery. This is a SOURCING list, not a verdict on quality - the
+        client wants to know what the company is and why it turned up, not
+        whether an algorithm judged it a "good" target. Do not write as if
+        you are recommending or endorsing the company. Base your summary
+        ONLY on the data given below. Do not invent facts not present here.
 
         Company Name: {row.get("Company Name", "")}
+        City: {row.get("City", "")}
         State: {row.get("State", "")}
         Industry: {row.get("Industry", "")}
+        Why Discovered: {why_discovered}
+        Fit Analysis: {fit_analysis}
         Founded Year: {row.get("Founded Year", "")}
         Years in Business: {row.get("Years in Business", "")}
         Founder Name: {row.get("Founder Name", "")}
         Founder Led: {row.get("Founder Led", "")}
         Family Owned: {row.get("Family Owned", "")}
         Founder Age Estimate: {row.get("Founder Age Estimate", "")}
-        Seller Readiness Score: {row.get("Seller Readiness Score", "")}
         Evidence Summary: {evidence}
 
         Write:
-        1. why_selected: 2-3 sentences explaining why this company is a
-           potential acquisition candidate, grounded in the fields above.
+        1. why_selected: 2-3 sentences describing what this company is and
+           why it surfaced in this search, grounded in the fields above.
+           Neutral, factual tone - not a sales pitch or recommendation.
         2. evidence_summary: 1-2 sentences summarizing the concrete
-           evidence that supports the selection (cite specifics from
-           Evidence Summary where available; otherwise note evidence is limited).
+           evidence found (cite specifics from Evidence Summary where
+           available; otherwise note evidence is limited).
         3. one_line_reason: a single short sentence (under 20 words)
            suitable for a daily email digest line item.
 

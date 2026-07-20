@@ -1,4 +1,3 @@
-# agent-3/dashboard/dashboard.py
 """
 Layer 7 - Dashboard Excel Generator
 
@@ -9,10 +8,12 @@ leads stay in Postgres (dedupe + feedback history intact) but don't
 leak into the Texas view.
 """
 import os
+import re
 from datetime import datetime, timedelta
 import psycopg2
 import psycopg2.extras
 from dotenv import load_dotenv
+from rapidfuzz import fuzz
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
@@ -62,7 +63,6 @@ STATUS_COLORS = {
     "Bad Data": "C62828",
 }
 
-SCORE_BANDS = [("20-40", 20, 40), ("40-60", 40, 60), ("60-80", 60, 80), ("80-100", 80, 100)]
 TOTAL_COLS = 20
 
 
@@ -82,11 +82,14 @@ def fetch_all_candidates(search_request_id):
                 """
                 SELECT
                     c.id AS candidate_id,
-                    c.company_name, c.state, c.industry, c.company_type,
+                    c.company_name, c.website, c.city, c.state, c.industry,
+                    c.company_type, c.company_description,
                     c.founded_year, c.years_in_business, c.founder_name,
                     c.founder_led, c.family_owned, c.founder_age_estimate,
                     c.ownership_status, c.ownership_tenure_years,
-                    c.seller_readiness_score, rs.status AS review_status,
+                    c.seller_readiness_score, c.fit_analysis,
+                    c.seller_readiness_signals, c.why_discovered,
+                    rs.status AS review_status,
                     rs.comments AS review_notes,
                     c.first_seen_date, c.last_seen_date,
                     e.why_selected, e.evidence_summary, e.one_line_reason, e.raw_evidence
@@ -97,7 +100,7 @@ def fetch_all_candidates(search_request_id):
                     ORDER BY ev.created_at DESC LIMIT 1
                 ) e ON true
                 WHERE c.search_request_id = %s
-                ORDER BY c.seller_readiness_score DESC NULLS LAST
+                ORDER BY c.first_seen_date DESC NULLS LAST, c.company_name ASC
                 """,
                 (search_request_id,),
             )
@@ -208,6 +211,55 @@ def normalize_state_name(state):
     return state.title()
 
 
+def cluster_similar_labels(labels, threshold=75):
+    """
+    Groups near-duplicate free-text labels into clusters instead of
+    counting exact strings only. Needed specifically for `industry`,
+    since that field is written fresh by the LLM per company - it might
+    write "Precision Machining" for one company and "Precision CNC
+    Machining" for another, even though a human would call both the
+    same industry. Exact-match counting (what state/ownership_status
+    use, fine there since those are controlled values) would fragment
+    this into many count=1 bars instead of one accurate count.
+
+    Same technique as fuzzy_match_score() in deduplication/dedupe.py,
+    applied here to industry labels rather than company names.
+
+    Returns [(representative_label, count), ...] - the representative
+    is whichever original label was seen first in that cluster. Not
+    sorted; caller sorts as needed.
+    """
+    clusters = []  # list of [representative_label, count]
+    for label in labels:
+        matched = False
+        for cluster in clusters:
+            if fuzz.token_sort_ratio(label, cluster[0]) >= threshold:
+                cluster[1] += 1
+                matched = True
+                break
+        if not matched:
+            clusters.append([label, 1])
+    return [(label, count) for label, count in clusters]
+
+
+def industry_primary_segment(label):
+    """
+    Industry values are LLM free text formatted like "Category /
+    Sub-category (details)" - e.g. "Precision CNC Machining /
+    Aerospace & Defense Manufacturing". The sub-category and
+    parenthetical detail add enough noise that fuzzy-matching the FULL
+    string barely ever clears a sane threshold (~64 for two things a
+    human would call the same industry) even with cluster_similar_
+    labels(). Comparing just the primary segment - before the first
+    "/" or "(" - fixes that: the same real industries then score
+    ~90-100 instead of ~64. Also makes for a cleaner chart label than
+    the full noisy string.
+    """
+    if not label:
+        return label
+    return re.split(r"[/(]", label)[0].strip()
+
+
 def build_dashboard_sheet(wb, candidates, last_week):
     ws = wb.create_sheet("Dashboard", 0)
     ws.sheet_view.showGridLines = False
@@ -277,11 +329,12 @@ def build_dashboard_sheet(wb, candidates, last_week):
     family_owned_count = sum(1 for c in candidates if c.get("family_owned") == "Yes")
     scored_only = [c.get("seller_readiness_score") for c in candidates if c.get("seller_readiness_score") is not None]
     highest_score = max(scored_only) if scored_only else 0
+    private_count = sum(1 for c in candidates if c.get("company_type") == "Private")
 
     pill_defs = [
         ("Founder-Led", founder_led_count, "2E7D8E"),
         ("Family-Owned", family_owned_count, "5B3A8E"),
-        ("Highest Score", highest_score, "1565C0"),
+        ("Private Companies Found", private_count, "1565C0"),
         ("New Today", new_this_week, "2E7D32"),
     ]
     # Pill widths sum to 11 (3+3+3+2) so the row ends at column K.
@@ -361,31 +414,57 @@ def build_dashboard_sheet(wb, candidates, last_week):
         ws.cell(row=geo_header_row + i, column=2, value=count).font = INVISIBLE_FONT
     geo_last_row = geo_header_row + len(top_states)
 
-    score_header_row = chart_data_row
-    ws.cell(row=score_header_row, column=4, value="Band").font = INVISIBLE_FONT
-    ws.cell(row=score_header_row, column=5, value="Count").font = INVISIBLE_FONT
-    for i, (label, low, high) in enumerate(SCORE_BANDS, start=1):
-        count = sum(1 for c in candidates if c.get("seller_readiness_score") is not None and low <= c["seller_readiness_score"] < high)
-        ws.cell(row=score_header_row + i, column=4, value=label).font = INVISIBLE_FONT
-        ws.cell(row=score_header_row + i, column=5, value=count).font = INVISIBLE_FONT
-    score_last_row = score_header_row + len(SCORE_BANDS)
-
-    industry_counts = {}
+    ownership_counts = {}
     for c in candidates:
-        ind = c.get("industry") or "Unknown"
-        ind = ind[:18] + "..." if len(ind) > 18 else ind
-        industry_counts[ind] = industry_counts.get(ind, 0) + 1
-    top_industries = sorted(industry_counts.items(), key=lambda x: -x[1])[:4]
+        status = c.get("ownership_status") or "Unknown"
+        ownership_counts[status] = ownership_counts.get(status, 0) + 1
+    ownership_items = sorted(ownership_counts.items(), key=lambda x: -x[1])
 
+    ownership_header_row = chart_data_row
+    ws.cell(row=ownership_header_row, column=4, value="Ownership").font = INVISIBLE_FONT
+    ws.cell(row=ownership_header_row, column=5, value="Count").font = INVISIBLE_FONT
+    for i, (status, count) in enumerate(ownership_items, start=1):
+        ws.cell(row=ownership_header_row + i, column=4, value=status).font = INVISIBLE_FONT
+        ws.cell(row=ownership_header_row + i, column=5, value=count).font = INVISIBLE_FONT
+    ownership_last_row = ownership_header_row + len(ownership_items)
+
+    # Cluster on the PRIMARY SEGMENT (before "/" or "("), not the full
+    # industry string - see industry_primary_segment() docstring for
+    # why. Threshold raised to 80 since primary segments are short and
+    # clean enough that real matches score ~90-100 here, vs ~64 on the
+    # full noisy strings (which is why the chart was collapsing to
+    # mostly count=1 bars before this).
+    industry_labels = [
+        industry_primary_segment(c.get("industry")) or "Unknown" for c in candidates
+    ]
+    industry_clusters = cluster_similar_labels(industry_labels, threshold=80)
+
+    def _truncate_label(label):
+        return label[:18] + "..." if len(label) > 18 else label
+
+    top_industries = sorted(
+        [(_truncate_label(label), count) for label, count in industry_clusters],
+        key=lambda x: -x[1],
+    )[:4]
+
+    # Columns 17-18 (not 7-8) - see comment above cluster_similar_labels
+    # usage below. Mini-cards (further down this function) write into
+    # columns 8-9 for these exact same rows (11+), so putting the
+    # industry chart's hidden source data at column 8 meant the mini-
+    # cards silently overwrote the count values with text after the
+    # fact - the chart was then plotting text instead of numbers,
+    # rendering as blank/zero bars. This does NOT move the chart itself
+    # (still visually anchored at F via ws.add_chart below) - only
+    # where its underlying data lives.
     industry_header_row = chart_data_row
-    ws.cell(row=industry_header_row, column=7, value="Industry").font = INVISIBLE_FONT
-    ws.cell(row=industry_header_row, column=8, value="Count").font = INVISIBLE_FONT
+    ws.cell(row=industry_header_row, column=17, value="Industry").font = INVISIBLE_FONT
+    ws.cell(row=industry_header_row, column=18, value="Count").font = INVISIBLE_FONT
     for i, (industry, count) in enumerate(top_industries, start=1):
-        ws.cell(row=industry_header_row + i, column=7, value=industry).font = INVISIBLE_FONT
-        ws.cell(row=industry_header_row + i, column=8, value=count).font = INVISIBLE_FONT
+        ws.cell(row=industry_header_row + i, column=17, value=industry).font = INVISIBLE_FONT
+        ws.cell(row=industry_header_row + i, column=18, value=count).font = INVISIBLE_FONT
     industry_last_row = industry_header_row + len(top_industries)
 
-    helper_block_last_row = max(geo_last_row, score_last_row, industry_last_row)
+    helper_block_last_row = max(geo_last_row, ownership_last_row, industry_last_row)
     for r in range(chart_data_row, helper_block_last_row + 1):
         ws.row_dimensions[r].height = 1
 
@@ -407,12 +486,12 @@ def build_dashboard_sheet(wb, candidates, last_week):
     ws.add_chart(pie, f"A{chart_data_row}")
 
     bar1 = BarChart()
-    bar1.title = "SELLER READINESS SCORE DISTRIBUTION"
+    bar1.title = "OWNERSHIP STATUS"
     bar1.style = 10
     bar1.legend = None
     bar1.gapWidth = 50
-    data = Reference(ws, min_col=5, min_row=score_header_row, max_row=score_last_row)
-    cats = Reference(ws, min_col=4, min_row=score_header_row + 1, max_row=score_last_row)
+    data = Reference(ws, min_col=5, min_row=ownership_header_row, max_row=ownership_last_row)
+    cats = Reference(ws, min_col=4, min_row=ownership_header_row + 1, max_row=ownership_last_row)
     bar1.add_data(data, titles_from_data=True)
     bar1.set_categories(cats)
     bar1.dataLabels = DataLabelList()
@@ -430,8 +509,8 @@ def build_dashboard_sheet(wb, candidates, last_week):
     bar2.title = "INDUSTRY BREAKDOWN"
     bar2.style = 11
     bar2.legend = None
-    data = Reference(ws, min_col=8, min_row=industry_header_row, max_row=industry_last_row)
-    cats = Reference(ws, min_col=7, min_row=industry_header_row + 1, max_row=industry_last_row)
+    data = Reference(ws, min_col=18, min_row=industry_header_row, max_row=industry_last_row)
+    cats = Reference(ws, min_col=17, min_row=industry_header_row + 1, max_row=industry_last_row)
     bar2.add_data(data, titles_from_data=True)
     bar2.set_categories(cats)
     bar2.dataLabels = DataLabelList()
@@ -445,8 +524,8 @@ def build_dashboard_sheet(wb, candidates, last_week):
     bar2.dataLabels.showLegendKey = False
     style_chart(bar2)
     bar2.height = 7
-    bar2.width = 7
-    ws.add_chart(bar2, f"E{chart_data_row}")
+    bar2.width = 10
+    ws.add_chart(bar2, f"F{chart_data_row}")
 
     pct_founder_led = round(100 * sum(1 for c in candidates if c.get("founder_led") == "Yes") / total_targets, 0) if total_targets else 0
     pct_family_owned = round(100 * sum(1 for c in candidates if c.get("family_owned") == "Yes") / total_targets, 0) if total_targets else 0
@@ -456,12 +535,12 @@ def build_dashboard_sheet(wb, candidates, last_week):
 
     mini_cards = [
         ("\U0001F4CD TOP GEOGRAPHY", top_state_label),
-        ("\u2B50 HIGHEST SCORE", str(highest_score)),
+        ("\U0001F3E0 OWNERSHIP MIX", f"{pct_founder_led:.0f}% Founder-Led / {pct_family_owned:.0f}% Family-Owned"),
         ("\U0001F3C6 TOP INDUSTRY", top_industry),
     ]
     card_colors = [
         "E8F1FB",  # Top Geography (soft blue)
-        "FFF4D6",  # Highest Score (soft yellow)
+        "FFF4D6",  # Ownership Mix (soft yellow)
         "EAF6EA",  # Top Industry (soft green)
     ]
     card_start_rows = [11, 15, 19]
@@ -538,18 +617,23 @@ def build_dashboard_sheet(wb, candidates, last_week):
 
     table_title_row = 24
 
+    # Founder Led and Family Owned removed - redundant with Ownership
+    # Status (Founder Owned / Family Owned / PE Backed / Corporate
+    # Owned / Unknown already conveys this). Website also removed.
+    # Table is now 12 columns (was 15), ends at column L instead of O.
     table_columns = [
         ("Rank", None, 6),
         ("Company Name", "company_name", 26),
-        ("Founder Name", "founder_name", 20),
-        ("Founder Age (Est.)", "founder_age_estimate", 14),
-        ("Years in Business", "years_in_business", 14),
+        ("City", "city", 18),
         ("State", "state", 10),
-        ("Readiness Score", "seller_readiness_score", 13),
+        ("Industry", "industry", 20),
+        ("Why Discovered", "why_discovered", 44),
+        ("Founder Name", "founder_name", 20),
         ("Ownership Status", "ownership_status", 16),
+        ("Years in Business", "years_in_business", 14),
         ("Status", "review_status", 12),
-        ("Why Selected", "one_line_reason", 32),
-        ("Ownership Tenure", "ownership_tenure_years", 14),
+        ("Fit Analysis", "fit_analysis", 44),
+        ("Readiness Score", "seller_readiness_score", 13),
     ]
     header_row = table_title_row + 1
     for i, (label, _, _) in enumerate(table_columns, start=1):
@@ -561,8 +645,18 @@ def build_dashboard_sheet(wb, candidates, last_week):
 
     sorted_candidates = sorted(
         candidates,
-        key=lambda r: (r.get("seller_readiness_score") is None, -(r.get("seller_readiness_score") or 0)),
+        key=lambda r: (r.get("first_seen_date") is None, r.get("first_seen_date")),
+        reverse=True,
     )
+
+    # Columns whose content is long enough to need wrapping instead of
+    # spilling visually into the next cell (which is what was happening
+    # before - text from Why Discovered/Fit Analysis/Website/etc bled
+    # into neighboring columns because only 3 columns had wrap_text set).
+    WRAP_COLUMNS = {
+        "company_name", "city", "industry", "why_discovered",
+        "founder_name", "ownership_status", "fit_analysis",
+    }
 
     for idx, row in enumerate(sorted_candidates, start=1):
         r = header_row + idx
@@ -578,7 +672,7 @@ def build_dashboard_sheet(wb, candidates, last_week):
                 cell.alignment = Alignment(horizontal="center", vertical="center")
             else:
                 cell.alignment = Alignment(
-                    wrap_text=(key in ("one_line_reason", "founder_name", "company_name")),
+                    wrap_text=(key in WRAP_COLUMNS),
                     vertical="center"
                 )
             if key == "seller_readiness_score":
@@ -588,6 +682,9 @@ def build_dashboard_sheet(wb, candidates, last_week):
                 cell.font = BOLD_FONT
             if key == "review_status":
                 cell.font = status_font(value)
+        # Fixed row height so long Why Discovered/Fit Analysis text has
+        # room to wrap instead of being clipped at default row height.
+        ws.row_dimensions[r].height = 60
 
     ws.auto_filter.ref = f"A{header_row}:{get_column_letter(len(table_columns))}{header_row}"
 
@@ -597,11 +694,17 @@ def build_dashboard_sheet(wb, candidates, last_week):
 
 
 DB_COLUMNS = [
-    ("Company Name", "company_name", 28), ("State", "state", 12),
+    ("Company Name", "company_name", 28), ("Website", "website", 24),
+    ("City", "city", 16), ("State", "state", 12),
     ("Industry", "industry", 18), ("Company Type", "company_type", 14),
+    ("Company Description", "company_description", 40),
+    ("Why Discovered", "why_discovered", 34),
     ("Founded Year", "founded_year", 12), ("Years in Business", "years_in_business", 14),
     ("Founder Name", "founder_name", 20), ("Founder Led", "founder_led", 12),
     ("Family Owned", "family_owned", 12), ("Founder Age Est.", "founder_age_estimate", 14),
+    ("Ownership Status", "ownership_status", 16),
+    ("Fit Analysis", "fit_analysis", 40),
+    ("Seller Readiness Signals", "seller_readiness_signals", 34),
     ("Seller Readiness Score", "seller_readiness_score", 16), ("Review Status", "review_status", 14),
     ("First Seen", "first_seen_date", 14), ("Last Seen", "last_seen_date", 14),
 ]
@@ -615,15 +718,26 @@ def build_companies_db_sheet(wb, candidates):
         cell.fill = HEADER_FILL
         cell.font = HEADER_FONT
         cell.alignment = Alignment(horizontal="center", wrap_text=True)
+    DB_WRAP_COLUMNS = {
+        "company_name", "city", "industry", "company_description",
+        "why_discovered", "website", "founder_name", "ownership_status",
+        "fit_analysis", "seller_readiness_signals",
+    }
+
     for r, row in enumerate(candidates, start=2):
         for c, (_, key, _) in enumerate(DB_COLUMNS, start=1):
             cell = ws.cell(row=r, column=c, value=row.get(key))
             cell.font = BODY_FONT
             cell.border = THIN_BORDER
+            cell.alignment = Alignment(
+                wrap_text=(key in DB_WRAP_COLUMNS),
+                vertical="center"
+            )
             if key == "seller_readiness_score":
                 fill = score_fill(row.get(key))
                 if fill:
                     cell.fill = fill
+        ws.row_dimensions[r].height = 60
     autosize_columns(ws, [w for _, _, w in DB_COLUMNS])
     ws.freeze_panes = "A2"
     ws.auto_filter.ref = f"A1:{get_column_letter(num_cols)}1"
@@ -644,11 +758,14 @@ def build_top_companies_sheet(wb, candidates):
     columns = [
         ("Rank", None, 6),
         ("Company Name", "company_name", 26),
-        ("Score", "seller_readiness_score", 10),
+        ("City", "city", 16),
         ("State", "state", 10),
-        ("Why Selected", "why_selected", 55),
-        ("Evidence Summary", "evidence_summary", 55),
-        ("One-line Reason", "one_line_reason", 45),
+        ("Industry", "industry", 16),
+        ("Why Discovered", "why_discovered", 40),
+        ("Founder Name", "founder_name", 20),
+        ("Founder Led", "founder_led", 12),
+        ("Family Owned", "family_owned", 12),
+        ("Readiness Score", "seller_readiness_score", 12),
         ("Feedback", "review_status", 14),
         ("Notes", "review_notes", 35),
         ("_candidate_id", "candidate_id", 1),
