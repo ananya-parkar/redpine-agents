@@ -11,8 +11,47 @@ from utils.json_parser import parse_llm_json
 load_dotenv(override=True)
 
 
-def profile_company(company_name, state=""):
+# ---------------------------------------------------------------------------
+# Citation-tag cleanup. Same issue as company_discovery.py - Claude's
+# web_search tool responses sometimes carry raw <cite index="...">...
+# </cite> markup baked into the JSON string values (not stripped by
+# parse_llm_json). Left alone, it leaks into client-facing fields like
+# fit_analysis and company_description - strip it right after parsing.
+# ---------------------------------------------------------------------------
+
+def _strip_citation_tags(text):
+    if not isinstance(text, str) or "<" not in text:
+        return text
+    cleaned = re.sub(r"</?cite[^>]*>", "", text)
+    cleaned = re.sub(r"\s{2,}", " ", cleaned)
+    return cleaned.strip()
+
+
+def _clean_citations(value):
+    if isinstance(value, str):
+        return _strip_citation_tags(value)
+    if isinstance(value, list):
+        return [_clean_citations(v) for v in value]
+    if isinstance(value, dict):
+        return {k: _clean_citations(v) for k, v in value.items()}
+    return value
+
+
+def profile_company(company_name, state="", known_issues=""):
     # Performs end-to-end company research using Claude Web Search.
+
+    known_issues_block = ""
+    if known_issues:
+        known_issues_block = f"""
+        Known Issues From Client Feedback
+
+        The client has flagged the following recurring problems in past
+        research results. Take extra care to avoid repeating them:
+
+        {known_issues}
+
+        """
+
     prompt = f"""
         You are researching a private company for acquisition sourcing.
         Use live web search.
@@ -51,6 +90,8 @@ def profile_company(company_name, state=""):
         - Use "Unknown" for categorical fields.
         - Use an empty string for descriptive text fields.
         - Never invent information.
+
+        {known_issues_block}
 
         Determine:
 
@@ -217,6 +258,7 @@ def profile_company(company_name, state=""):
             )
 
             result = parse_llm_json(text)
+            result = _clean_citations(result)
             
             result.setdefault("company_type", "Unknown")
             result.setdefault("revenue_estimate", "Unknown")

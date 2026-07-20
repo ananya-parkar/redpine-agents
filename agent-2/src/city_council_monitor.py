@@ -25,9 +25,29 @@ load_dotenv(override=True)
 #   Searches "{venue} city council bond funding approved"
 #
 # signal_tier = None — LLM assigns tier in reasoning_agent
+#
+# BUG FIX (this version):
+#   RSS fallback previously never actually ran for cities whose
+#   LegiStar client_id was invalid/unreachable — `rss_cities =
+#   rss_cities | failed` was computed but never fed into
+#   get_rss_signals(), which was instead called with
+#   `legistar_cities - set()` (== legistar_cities). That meant every
+#   city listed in LEGISTAR_CITIES was skipped from RSS regardless of
+#   whether its LegiStar call actually succeeded — silently dropping
+#   government/funding signals for any city with a bad/nonexistent
+#   LegiStar client code (Chicago, Dallas, Houston, Charlotte, etc. all
+#   return HTTP 500 for an invalid client — LegiStar has no 404 for
+#   this, so a bad client code looks identical to a real server error).
+#   Fixed in get_city_council_signals(): `rss_skip = legistar_cities -
+#   failed`, so only cities that ACTUALLY succeeded on LegiStar are
+#   skipped from the RSS pass.
+#
+# LOGGING CLEANUP (this version):
+#   fetch_legistar()/get_legistar_signals() no longer print one ERROR
+#   line per failing city. Failures are collected silently and reported
+#   as a single summary line ("[LEGISTAR] N/32 cities returned usable
+#   signals" + one line listing which cities fell back to RSS).
 # ---------------------------------------------------
-LEGISTAR_BASE = os.getenv("LEGISTAR_BASE")
-GNEWS_RSS     = os.getenv("GNEWS_RSS")
 
 LEGISTAR_BASE = os.getenv("LEGISTAR_BASE")
 GNEWS_RSS     = os.getenv("GNEWS_RSS")
@@ -148,7 +168,17 @@ def text_matches_venue(text: str, venue_name: str) -> bool:
 
 # ── LegiStar ─────────────────────────────────────────────────────
 
-def fetch_legistar(client_id: str) -> list[dict]:
+def fetch_legistar(client_id: str) -> list[dict] | None:
+    """
+    Returns:
+      list[dict] — matters found (may be empty — a valid client with
+                    genuinely no recent activity)
+      None       — the client_id itself is invalid/unreachable (LegiStar
+                    returns 500 for a bad client code instead of 404, so
+                    we can't tell "no data" from "wrong city" any other
+                    way). Callers should treat this as a permanent
+                    failure for this client, not a transient one.
+    """
     since = datetime.now(timezone.utc) - timedelta(days=LOOKBACK_DAYS)
     since_str = since.strftime("%Y-%m-%dT%H:%M:%S")
     headers = {"User-Agent": "StadiumLeadGen/1.0"}
@@ -160,9 +190,14 @@ def fetch_legistar(client_id: str) -> list[dict]:
         r = requests.get(url, timeout=15, headers=headers)
         if r.status_code == 200:
             return r.json()
-        # Fallback: simple query
+        # Fallback: simple query (some LegiStar instances reject the
+        # $filter clause but work fine without it)
         r2 = requests.get(f"{base}?$top=200", timeout=15, headers=headers)
-        r2.raise_for_status()
+        if r2.status_code != 200:
+            # Invalid/unreachable client — don't print here, the caller
+            # aggregates these into one summary line instead of one
+            # line per city.
+            return None
         cutoff = since
         matters = []
         for m in r2.json():
@@ -173,21 +208,39 @@ def fetch_legistar(client_id: str) -> list[dict]:
             except Exception:
                 matters.append(m)
         return matters
-    except Exception as e:
-        print(f"      [LEGISTAR ERROR] {client_id}: {e}", flush=True)
-        return []
+    except Exception:
+        # Network-level failure (timeout, DNS, etc.) — also treated as
+        # "this client failed", same as an invalid client code. No
+        # per-city print; summarized by the caller.
+        return None
 
 
 def get_legistar_signals(venues_by_city: dict) -> tuple[list[dict], set]:
+    """
+    Returns (signals, failed) where `failed` is the set of city keys
+    whose LegiStar client_id is invalid/unreachable OR returned zero
+    matches for our venues — these should fall back to RSS.
+    """
     signals, failed = [], set()
+
     for city, city_venues in venues_by_city.items():
         client_id = LEGISTAR_CITIES.get(city)
         if not client_id:
             continue
-        print(f"    [LEGISTAR] {city} ({client_id})...", flush=True)
+
         matters = fetch_legistar(client_id)
+
+        if matters is None:
+            # Invalid client / unreachable — always falls back to RSS
+            failed.add(city)
+            time.sleep(0.3)
+            continue
+
         if not matters:
-            failed.add(city); time.sleep(0.5); continue
+            # Valid client, just nothing in the lookback window
+            failed.add(city)
+            time.sleep(0.3)
+            continue
 
         found = 0
         for matter in matters:
@@ -215,8 +268,19 @@ def get_legistar_signals(venues_by_city: dict) -> tuple[list[dict], set]:
                 if sig:
                     signals.append(sig); found += 1; break
 
-        if found == 0: failed.add(city)
-        time.sleep(0.4)
+        if found == 0:
+            failed.add(city)
+        time.sleep(0.3)
+
+    # ONE summary line instead of one ERROR line per city.
+    ok_count = len(venues_by_city) - len(failed)
+    print(f"    [LEGISTAR] {ok_count}/{len(venues_by_city)} cities returned "
+          f"usable signals", flush=True)
+    if failed:
+        print(f"    [LEGISTAR] {len(failed)} city(ies) had no client match / "
+              f"no data → falling back to RSS: {', '.join(sorted(failed))}",
+              flush=True)
+
     return signals, failed
 
 
@@ -246,7 +310,7 @@ def fetch_gnews_rss(query: str) -> list[dict]:
         return []
 
 
-def get_rss_signals(venues_by_city: dict, skip_cities: set) -> list[dict]:
+def get_rss_signals(venues_by_city, skip_cities):
     signals = []
     for city, city_venues in venues_by_city.items():
         if city in skip_cities: continue
@@ -255,15 +319,16 @@ def get_rss_signals(venues_by_city: dict, skip_cities: set) -> list[dict]:
                      f'("city council" OR "bond" OR "referendum" OR "funding" '
                      f'OR "stadium authority" OR "capital improvement" OR "approved")')
             items = fetch_gnews_rss(query)
+            kept = 0
             for item in items:
+                if kept >= 3: break     # cap per venue, same idea as NewsAPI
                 sig = make_signal(venue, item["title"], item["description"],
                                   "Google News RSS", item["link"],
                                   item["published"], "Google News RSS")
-                if sig: signals.append(sig)
+                if sig:
+                    signals.append(sig); kept += 1
             time.sleep(0.3)
     return signals
-
-
 # ── Main entry ────────────────────────────────────────────────────
 
 def get_city_council_signals(venues: list[dict],
@@ -302,12 +367,13 @@ def get_city_council_signals(venues: list[dict],
             venues_by_city.setdefault(city_key, []).append(v)
 
     legistar_cities = {c for c in venues_by_city if c in LEGISTAR_CITIES}
-    rss_cities      = set(venues_by_city.keys()) - legistar_cities
+    rss_only_cities = set(venues_by_city.keys()) - legistar_cities
 
     print(f"  Cities with LegiStar : {len(legistar_cities)}", flush=True)
-    print(f"  Cities using RSS     : {len(rss_cities)}", flush=True)
+    print(f"  Cities using RSS only: {len(rss_only_cities)}", flush=True)
 
     all_signals = []
+    failed = set()   # always defined, even if legistar_cities is empty
 
     # LegiStar
     if legistar_cities:
@@ -316,10 +382,13 @@ def get_city_council_signals(venues: list[dict],
         )
         all_signals.extend(legistar_sigs)
         print(f"  LegiStar signals     : {len(legistar_sigs)}", flush=True)
-        rss_cities = rss_cities | failed
 
-    # RSS fallback
-    rss_sigs = get_rss_signals(venues_by_city, legistar_cities - set())
+    # RSS fallback:
+    #   - all cities that were never on LegiStar to begin with, PLUS
+    #   - LegiStar cities that failed (invalid client / no data)
+    #   Skip ONLY the LegiStar cities that actually succeeded.
+    rss_skip = legistar_cities - failed
+    rss_sigs = get_rss_signals(venues_by_city, rss_skip)
     all_signals.extend(rss_sigs)
     print(f"  RSS signals          : {len(rss_sigs)}", flush=True)
     print(f"  Govt signals total   : {len(all_signals)}", flush=True)

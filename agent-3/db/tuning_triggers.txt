@@ -1,0 +1,10 @@
+
+============================================================
+TUNING TRIGGERS - 2026-07-16 09:13
+============================================================
+
+Type        : Bad Data
+Root cause  : wrong founder
+Occurrences : 4
+Affected    : A-C-T Environmental & Infrastructure, Adventure Landing, Cone Distributing, Inc. (Team Cone), Roberson Funeral Home & Crematory
+Fix         : Review pipeline for root cause: 'wrong founder'. Check discover_companies() and profile_company() prompts, and the filtering logic in main.py.
