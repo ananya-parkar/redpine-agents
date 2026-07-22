@@ -1,8 +1,10 @@
+import os
 import time
 from datetime import datetime
 
 from reasoning_agent import (
-    verify_current_status, derive_likelihood, derive_engagement, compute_score,
+    verify_current_status, derive_likelihood, derive_engagement,
+    compute_score, _clean_lead_narrative,
 )
 from db_writer import get_stale_leads_for_refresh, upsert_leads
 
@@ -31,7 +33,7 @@ from db_writer import get_stale_leads_for_refresh, upsert_leads
 #   through the whole active-lead backlog over multiple runs rather than
 #   either hammering the same leads every day or never touching them.
 #
-# ALIAS-SYNC FIX (this version):
+# ALIAS-SYNC FIX:
 #   db_writer._row_to_lead() emits BOTH naming conventions for the same
 #   field — e.g. "engagement" AND "engagement_action", "score" AND
 #   "final_score", "likelihood" AND "project_likelihood" — both set to
@@ -40,22 +42,43 @@ from db_writer import get_stale_leads_for_refresh, upsert_leads
 #   each field with `r.get("engagement_action") or r.get("engagement")`,
 #   i.e. it prefers the *_action/final_*/project_* alias.
 #
-#   The earlier version of this file only updated the primary keys
-#   ("engagement", "score", "likelihood") after a tier change — the
-#   alias keys still held the OLD value carried over from the DB read.
-#   Because of the "or" preference above, upsert_leads() would then
-#   silently keep the STALE alias value instead of the freshly derived
-#   one: the tier would update correctly in the DB, but score/likelihood
-#   /engagement would NOT, even though a tier change should always
-#   cascade into all three (derive_likelihood -> derive_engagement ->
-#   compute_score are chained on purpose).
+#   Without syncing both, the tier would update correctly in the DB, but
+#   score/likelihood/engagement would NOT, even though a tier change
+#   should always cascade into all three (derive_likelihood ->
+#   derive_engagement -> compute_score are chained on purpose).
 #
 #   Fix: after recomputing likelihood/engagement/score, immediately
 #   mirror them into the alias keys too, so both naming conventions
 #   agree and upsert_leads() picks up the new values either way.
+#
+# NARRATIVE CLEANUP (this version):
+#   A tier-updated lead's `evidence` gets refreshed from the new web
+#   search, but `whats_happening` may still carry old "the article is
+#   about X unrelated thing" text from whenever this lead was originally
+#   analyzed (possibly weeks ago, before this file's tier update ever
+#   ran). _clean_lead_narrative() — the same safety net run_reasoning()
+#   applies to its own leads at the end of a normal run — is applied
+#   here too, so a stale-refreshed lead can't leave the DB (and
+#   therefore the client's Excel) with contradictory or garbled text
+#   next to its freshly-updated tier.
+#
+# ENV-CONTROLLED CONFIG (this version):
+#   STALE_REFRESH_ENABLED=0 in .env skips this step entirely — useful for
+#   clean cost-testing runs (e.g. a small smoke test) where you don't
+#   want the DB's older backlog leads adding extra web-search cost on
+#   top of the venues you're actually testing. Defaults to enabled (1).
+#
+#   STALE_REFRESH_LIMIT controls how many stale leads get checked per
+#   run. Default raised from 15 to 50 for a WEEKLY trigger cadence:
+#   at 15/week, a backlog of 100+ active leads would take 6-7+ weeks to
+#   fully cycle through, leaving some leads stale for over a month. At
+#   50/week the same backlog cycles in ~2 weeks — a better balance of
+#   cost vs. freshness for a once-a-week schedule. Override per-run via
+#   .env without touching this file.
 # ---------------------------------------------------
 
-REFRESH_LIMIT = 15  # bump/lower this to trade off cost vs. how fast the backlog cycles
+STALE_REFRESH_ENABLED = os.getenv("STALE_REFRESH_ENABLED", "1") == "1"
+REFRESH_LIMIT = int(os.getenv("STALE_REFRESH_LIMIT", "50"))
 
 
 def refresh_stale_leads(run_venue_names: set) -> dict:
@@ -67,6 +90,11 @@ def refresh_stale_leads(run_venue_names: set) -> dict:
 
     Returns {"checked": int, "updated": int}
     """
+    if not STALE_REFRESH_ENABLED:
+        print(f"\n[STEP 3D] Stale lead refresh disabled "
+              f"(STALE_REFRESH_ENABLED=0) — skipping.", flush=True)
+        return {"checked": 0, "updated": 0}
+
     print(f"\n[STEP 3D] Refreshing stale DB leads not seen in today's signals...", flush=True)
 
     candidates = get_stale_leads_for_refresh(run_venue_names, limit=REFRESH_LIMIT)
@@ -127,6 +155,9 @@ def refresh_stale_leads(run_venue_names: set) -> dict:
                 lead["engagement_action"]  = lead["engagement"]
                 lead["final_score"]        = lead["score"]
                 lead["project_likelihood"] = lead["likelihood"]
+
+                # NARRATIVE CLEANUP — see block comment at top of file.
+                _clean_lead_narrative(lead)
 
                 updated_leads.append(lead)
                 tier_updates += 1

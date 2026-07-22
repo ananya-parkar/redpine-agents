@@ -50,6 +50,18 @@ load_dotenv()
 #   lead touched in the last N days, so the sheets and the Dashboard read
 #   from the SAME source. Today's run still inserts new leads and updates
 #   tiers on existing ones (upsert_leads) — that part already worked.
+#
+# BUG FIX (this version) — NONE-TIER GUARD in upsert_leads():
+#   tier_changed used to be `old_tier != n["signal_tier"]`. If a lead's
+#   signal_tier ever comes through as None (e.g. deep_analyze() failed
+#   and build_lead() fell back to a classification-only lead with no
+#   tier), this compared a valid old tier (e.g. 2) against None, which is
+#   always True — triggering a FAKE tier_changes row with to_tier=NULL
+#   and (worse) clobbering last_updated_at / tier_last_changed_at on a
+#   lead that didn't actually change. get_tier_alerts() only filters on
+#   `from_tier IS NOT NULL`, not `to_tier IS NOT NULL`, so this blank
+#   row could also leak into the tier-alert email digest. Fixed by never
+#   treating a None signal_tier as a real change.
 # ---------------------------------------------------
 
 DB_CONFIG = {
@@ -463,7 +475,17 @@ def upsert_leads(results: list[dict]) -> dict:
                 # ── UPDATE — existing venue ───────────────────
                 old_tier       = existing["current_tier"]
                 old_tier_label = existing["current_tier_label"] or ""
-                tier_changed   = (old_tier != n["signal_tier"])
+
+                # BUG FIX — NONE-TIER GUARD: a lead whose signal_tier came
+                # through as None this run (e.g. deep_analyze() failed, or
+                # a classification-only fallback with no tier) must NOT be
+                # treated as a "tier change" against a valid old tier.
+                # `old_tier != None` is always True, which previously
+                # produced a fake tier_changes row (to_tier=NULL) and
+                # incorrectly bumped tier_last_changed_at / times_tier_changed
+                # on a lead that never actually changed.
+                tier_changed = (old_tier != n["signal_tier"]
+                                 and n["signal_tier"] is not None)
 
                 cur.execute("""
                     UPDATE leads SET
@@ -989,10 +1011,7 @@ def get_bad_data_patterns() -> list[dict]:
     except Exception as e:
         print(f"  [DB] Pattern check failed: {e}", flush=True)
         return []
-# ============================================================
-# ADD this function to db_writer.py, next to get_leads_for_excel().
-# Needs `_row_to_lead` which already exists in the file.
-# ============================================================
+
 
 def get_stale_leads_for_refresh(exclude_venues: set, limit: int = 15) -> list[dict]:
     """
@@ -1030,6 +1049,7 @@ def get_stale_leads_for_refresh(exclude_venues: set, limit: int = 15) -> list[di
     except Exception as e:
         print(f"  [DB] Could not fetch stale leads for refresh: {e}", flush=True)
         return []
+
 
 def get_pending_tuning_triggers() -> list[dict]:
     """
