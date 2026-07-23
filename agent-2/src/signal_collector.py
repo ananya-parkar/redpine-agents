@@ -53,7 +53,7 @@ RECENCY_DAYS   = 90
 # 500 -> custom limit
 # -----------------------------------
 
-DAILY_LIMIT = 90
+DAILY_LIMIT = 50
 REQUEST_DELAY  = 1.5
 MAX_RETRIES    = 3
 

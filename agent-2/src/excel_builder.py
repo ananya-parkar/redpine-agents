@@ -13,6 +13,11 @@ from dashboard_writer import write_dashboard
 from db_writer import get_all_signals_for_excel, get_pending_tuning_triggers
 from tuning_prompt import _match_rule
 
+# Same narrative safety net run_reasoning() applies to its own leads at
+# the end of a run — see the cleanup pass in save_excel() below for why
+# it also needs to run here.
+from reasoning_agent import _clean_lead_narrative
+
 # ---------------------------------------------------
 # EXCEL BUILDER — 6 sheets
 # 1. Dashboard   ← built from the SAME lead list as the sheets
@@ -33,6 +38,23 @@ from tuning_prompt import _match_rule
 #   that same list here; the Dashboard is built from it too. One source,
 #   always in step. Signals are still read from the DB directly since they
 #   feed a separate 90-day volume trend, not the lead list.
+#
+# NARRATIVE CLEANUP FIX (this version):
+#   run_reasoning()'s FINAL NARRATIVE CLEANUP step (in reasoning_agent.py)
+#   only ever ran on THIS RUN's freshly-processed leads — never on leads
+#   read straight from the DB via get_leads_for_excel() (leads untouched
+#   this run, or refreshed only by stale_lead_refresher.py, which doesn't
+#   call the cleanup either). That meant a lead whose whats_happening
+#   still carried old "the article is about X unrelated thing" text from
+#   whenever it was originally analyzed could sit in the DB indefinitely
+#   and keep showing that broken text in every Excel export, even weeks
+#   after the bug that caused it was fixed for NEW leads.
+#
+#   Fix: run the same _clean_lead_narrative() safety net here, once, on
+#   every lead about to be displayed — regardless of which run (or which
+#   code version) originally wrote it. This is the single place ALL
+#   leads pass through right before the client sees them, so it's the
+#   correct final backstop.
 # ---------------------------------------------------
 
 TIER_BG = {1:"C8E6C9",2:"BBDEFB",3:"FFE0B2",4:"FFCDD2"}
@@ -275,6 +297,22 @@ def write_tuning_review(ws, active_triggers):
 def save_excel(venues, all_leads, act_now, stakeholder_rows,
                output_path, run_date=None):
     print("\n[STEP 6] Writing Excel...", flush=True)
+
+    # NARRATIVE CLEANUP PASS — see block comment at top of file. Runs on
+    # EVERY lead about to be displayed, regardless of whether it was
+    # processed this run, refreshed by stale_lead_refresher.py, or read
+    # straight from the DB untouched. This is the final backstop before
+    # the client sees anything.
+    cleaned = 0
+    for lead in all_leads:
+        before = (lead.get("whats_happening",""), lead.get("evidence",""))
+        _clean_lead_narrative(lead)
+        if (lead.get("whats_happening",""), lead.get("evidence","")) != before:
+            cleaned += 1
+    if cleaned:
+        print(f"  [CLEANUP] Fixed {cleaned} lead(s) with stale bad-article text "
+              f"before display", flush=True)
+
     run_date = run_date or date.today()
     wb = Workbook()
 

@@ -74,12 +74,68 @@ def _create(system, user_content, max_tokens, temperature, tools=None):
     One raw Claude call. Handles the "`temperature` is deprecated" 400 by
     retrying WITHOUT temperature and caching that fact. Optionally passes
     server-side tools (e.g. web_search).
+
+    PROMPT CACHING (this version):
+    `system` is now sent as a content-block list with a `cache_control`
+    breakpoint instead of a plain string. Every call site in this file
+    (batch_classify's BATCH_PROMPT, deep_analyze's DEEP_PROMPT,
+    verify_current_status's VERIFY_PROMPT, rescue's RESCUE_PROMPT,
+    stakeholder enrichment's EXTRACT_PROMPT) sends the SAME system text
+    repeatedly across many venues/leads within one run — previously each
+    of those calls paid full input-token price for that multi-hundred-
+    to-multi-thousand-token prompt every single time.
+
+    With cache_control marked, Anthropic caches everything up to that
+    block for 5 minutes: the FIRST call in a series pays a ~25% premium
+    to write the cache, every subsequent call within the window reads it
+    back at ~10% of normal input-token cost. Since batch_classify runs
+    15-20+ times per run and deep_analyze/verify_current_status/
+    stakeholder-enrichment each run dozens of times with an unchanged
+    system prompt, this amortizes to a large net reduction in input-
+    token spend over a full run.
+
+    CAVEATS (read before assuming this "just works" everywhere):
+      - Minimum cacheable length: Claude requires the cached prefix to
+        be at least ~1024 tokens (Sonnet-class models) to actually take
+        effect. Below that, cache_control is silently ignored — no
+        error, no benefit, but also no harm. All the prompts in this
+        codebase are comfortably above that threshold.
+      - The tuning_block dynamic text (from tuning_prompt.py) is
+        appended to `system` by the CALLER (reasoning_agent.py /
+        stakeholder_enrichment.py) before it ever reaches this function
+        — so from here it's just part of one opaque `system` string.
+        That's fine: tuning_block is built ONCE per run_reasoning() call
+        and stays identical for every batch_classify/deep_analyze call
+        within that run, so the combined string still matches call-to-
+        call and still caches correctly. It only changes between runs
+        (when a new tuning trigger gets logged), which correctly busts
+        the cache — that's the desired behavior, not a bug.
+      - Different call TYPES (BATCH_PROMPT vs DEEP_PROMPT vs
+        VERIFY_PROMPT etc.) never share a cache entry with each other —
+        each has its own distinct system text, so each builds its own
+        cache lazily on first use within a run. That's expected; caching
+        only helps repeated calls of the SAME prompt type, which is
+        exactly the majority of this pipeline's call volume.
+      - A cache entry lives 5 minutes from last use. If a stage's calls
+        are spaced further apart than that (e.g. a very slow run with
+        long delays), some calls will miss the cache and pay full price
+        again — still no worse than before caching existed.
+      - Tool definitions (web_search_20250305 with a given max_uses) are
+        part of the cached prefix too. Calls with a DIFFERENT max_uses
+        (Stage 3 verify=3 vs stakeholder enrichment=4, for example) do
+        not share a cache entry — but calls of the SAME type in the same
+        run always use the same max_uses, so this doesn't reduce the
+        benefit in practice.
     """
     global _SUPPORTS_TEMPERATURE
     kwargs = dict(
         model=ANTHROPIC_MODEL,
         max_tokens=max_tokens,
-        system=system,
+        system=[{
+            "type": "text",
+            "text": system,
+            "cache_control": {"type": "ephemeral"},
+        }],
         messages=[{"role": "user", "content": user_content}],
     )
     if tools:
