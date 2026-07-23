@@ -138,7 +138,7 @@ def enrich_priority_hotel(hotel_name, address, latitude=None, longitude=None, re
         
         # Get property data for age and tenure calculations
         property_data = property_lookup.get("property_data", {})
-        print(address)
+        # print(address)
 
         sale_date = (
             property_lookup.get("sale_trans_date")

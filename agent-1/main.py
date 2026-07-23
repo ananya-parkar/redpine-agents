@@ -1,5 +1,5 @@
 # agent-1/main.py
-import time
+import time, pickle
 from datetime import datetime
 
 from src.core.config import INPUT_FILE, INPUT_FOLDER, RUNS_DIR, GOOGLE_MAPS_API_KEY
@@ -174,15 +174,32 @@ def main():
             row.get("suppress_digest")
         )
         
-    print("\n===== SAMPLE ROW =====")
-    print(priority_rows[0].keys())
+    # print("\n===== SAMPLE ROW =====")
+    # print(priority_rows[0].keys())
 
-    print("owner_name =", priority_rows[0].get("owner_name"))
-    print("ownership_length_years =", priority_rows[0].get("ownership_length_years"))
-    print("signals =", priority_rows[0].get("signals"))
-    print("lead_reason =", priority_rows[0].get("lead_reason"))
-    print("llm_top_distress_signals =", priority_rows[0].get("llm_top_distress_signals"))
-    dashboard_file = export_dashboard(reports_dir, all_rows, search_area=request["location"])
+    # print("owner_name =", priority_rows[0].get("owner_name"))
+    # print("ownership_length_years =", priority_rows[0].get("ownership_length_years"))
+    # print("signals =", priority_rows[0].get("signals"))
+    # print("lead_reason =", priority_rows[0].get("lead_reason"))
+    # print("llm_top_distress_signals =", priority_rows[0].get("llm_top_distress_signals"))
+
+    # Save complete dashboard source for quick regeneration
+
+    dashboard_source = run_dir / "dashboard_source.pkl"
+
+    with open(dashboard_source, "wb") as f:
+        pickle.dump(all_rows, f)
+
+    print(
+        f"[OUTPUT] Saved dashboard source: {dashboard_source}",
+        flush=True
+    )
+
+    dashboard_file = export_dashboard(
+        reports_dir,
+        all_rows,
+        search_area=request["location"]
+    )
     print(f"[OUTPUT] Dashboard exported to: {dashboard_file}", flush=True)
 
     for row in priority_rows:
@@ -193,7 +210,7 @@ def main():
             "score_change=", row.get("score_change")
         )
 
-    print("\n===== EMAIL DEBUG =====")
+    # print("\n===== EMAIL DEBUG =====")
 
     for row in priority_rows:
         print(

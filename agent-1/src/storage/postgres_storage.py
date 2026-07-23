@@ -105,13 +105,13 @@ def insert_priority_leads(rows):
         row["last_score"] = row["final_lead_score"]
         row.setdefault("last_resurfaced", None)
 
-        print(
-            "[DEBUG]",
-            row.get("hotel_name"),
-            row.get("last_score"),
-            row.get("last_resurfaced"),
-            row.get("suppress_digest")
-        )
+        # print(
+        #     "[DEBUG]",
+        #     row.get("hotel_name"),
+        #     row.get("last_score"),
+        #     row.get("last_resurfaced"),
+        #     row.get("suppress_digest")
+        # )
 
         cleanup_due_date = datetime.utcnow() + relativedelta(months=12)
 
@@ -523,6 +523,30 @@ def get_feedback_learning_rows():
     conn.close()
 
     return results
+
+def get_recent_agent_runs(limit=5):
+    conn = get_connection()
+
+    query = """
+    SELECT
+        started_at,
+        search_area,
+        hotels_found,
+        new_leads,
+        duplicates
+    FROM agent_runs
+    ORDER BY started_at DESC
+    LIMIT %s
+    """
+
+    cur = conn.cursor()
+    cur.execute(query, (limit,))
+    rows = cur.fetchall()
+
+    cur.close()
+    conn.close()
+
+    return rows
 
 if __name__ == "__main__":
     conn = get_connection()

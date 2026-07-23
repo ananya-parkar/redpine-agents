@@ -44,8 +44,8 @@ def detect_owner_details(address="", latitude=None, longitude=None):
     print("Rooms        :", fields.get("numunits"))
     print("Sale Date    :", fields.get("last_ownership_transfer_date"))
     print("==============================================\n")
-    print("\nFIELDS AVAILABLE:")
-    print(fields.keys())
+    # print("\nFIELDS AVAILABLE:")
+    # print(fields.keys())
 
     owner = fields.get("owner", "")
 
