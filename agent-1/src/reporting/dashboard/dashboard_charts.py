@@ -204,7 +204,7 @@ def _add_markets_bar(ws, df, data_ws):
     chart.x_axis.delete = False
     chart.y_axis.spPr = None
     chart.x_axis.spPr = None
-    chart.y_axis.reverseOrder=True
+    chart.y_axis.reverseOrder=False
     
     chart.width    = 10
     chart.height   = 4

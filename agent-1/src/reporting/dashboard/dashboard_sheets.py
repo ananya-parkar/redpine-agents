@@ -49,7 +49,7 @@ def populate_all_leads(ws, df):
         ("feedback_notes","Feedback Notes",30),
         ("notes","Notes",30),
         ("price_tier", "Price Tier", 12),
-        ("first_surfaced","Date First Surfaced",18),
+        ("created_at","Date First Surfaced",18),
         ("mailing_address","Mailing Address",30),
     ]
     for i, (_, lbl, w) in enumerate(col_defs):
@@ -111,7 +111,7 @@ def populate_high_opportunity(ws, df):
         "state",
         "price_tier",
         "final_lead_score",
-        "opportunity_score",
+        "llm_opportunity_score",
         "owner_name",
         "ownership_length_years",
         "signals_fired",
@@ -163,10 +163,10 @@ def populate_distress_sheet(ws, df):
     _write_rows(ws, dd, cols)
 
 def populate_lead_tracker(ws, df):
-    cols   = ["hotel_name","city","state","final_lead_score","lead_status","notes","first_surfaced"]
+    cols   = ["hotel_name","city","state","final_lead_score","lead_status","notes","created_at"]
     widths = [24,14,7,11,13,35,18]
     _sheet_header(ws,["Hotel Name","City","State","Lead Score","Status ▼",
-                       "Notes","Date Surfaced"], widths)
+                       "Notes","Date First Surfaced"], widths)
     for ri, (_, row) in enumerate(df.iterrows(), start=2):
         ws.row_dimensions[ri].height = 18
         for ci, key in enumerate(cols, start=1):

@@ -4,6 +4,64 @@ import re
 from anthropic.types import TextBlock
 from src.llm.client import client
 
+WEB_RESEARCH_SYSTEM_PROMPT = """
+You are researching a hotel using live web search.
+
+Use web search to verify information from authoritative public sources.
+
+Search priority:
+
+1. Official hotel website
+2. Official brand website
+3. Google Maps
+4. Hospitality publications
+5. Local news
+6. Press releases
+
+Ignore low-quality directory listings unless corroborated by another source.
+
+Determine:
+
+1. Current hotel brand.
+2. Previous hotel brand, if any.
+3. Whether the hotel has lost a major franchise
+(Marriott, Hilton, IHG, Wyndham, Choice, Hyatt, Best Western).
+4. If a franchise loss occurred,
+estimate the month/year when it occurred.
+5. Whether the hotel is now independently operated.
+6. Search for evidence of:
+- franchise termination
+- rebranding
+- management company change
+- temporary closure
+- permanent closure
+- reopening after renovation
+7. Summarize any recent operational distress reported publicly.
+
+Return ONLY valid JSON.
+
+Do not include explanations.
+Do not include markdown.
+Do not include code fences.
+Do not include any text before or after the JSON.
+
+If a field cannot be verified, return an empty string.
+
+Never omit keys.
+
+{
+    "franchise_affiliated": true,
+    "current_brand": "",
+    "former_brand": "",
+    "brand_status": "CURRENT",
+    "franchise_loss_date": "",
+    "franchise_confidence": "High",
+    "franchise_evidence": "",
+    "recent_distress_news": "",
+    "ownership_context": ""
+}
+"""
+
 
 def research_hotel(
     hotel_name,
@@ -32,21 +90,6 @@ def research_hotel(
         review_text = "\n".join(snippets)
 
     prompt = f"""
-        You are researching a hotel using live web search.
-
-        Use web search to verify information from authoritative public sources.
-
-        Search priority:
-
-        1. Official hotel website
-        2. Official brand website
-        3. Google Maps
-        4. Hospitality publications
-        5. Local news
-        6. Press releases
-
-        Ignore low-quality directory listings unless corroborated by another source.
-
         Hotel
 
         Name:
@@ -64,56 +107,6 @@ def research_hotel(
         Recent Google Reviews:
         {review_text}
 
-        Determine:
-
-        1. Current hotel brand.
-
-        2. Previous hotel brand, if any.
-
-        3. Whether the hotel has lost a major franchise
-        (Marriott, Hilton, IHG, Wyndham, Choice, Hyatt, Best Western).
-
-        4. If a franchise loss occurred,
-        estimate the month/year when it occurred.
-
-        5. Whether the hotel is now independently operated.
-
-        6. Search for evidence of:
-
-        - franchise termination
-        - rebranding
-        - management company change
-        - temporary closure
-        - permanent closure
-        - reopening after renovation
-
-        7. Summarize any recent operational distress reported publicly.
-
-        You MUST return ONLY a valid JSON object.
-        Do not include explanations.
-        Do not include markdown.
-        Do not include code fences.
-        Do not include any text before or after the JSON.
-
-        If a field cannot be verified from public sources, return an empty string for that field.
-        Do not invent values.
-        Do not guess.
-
-        Never omit keys.
-
-        Always return every field.
-
-        {{
-            "franchise_affiliated": true,
-            "current_brand": "",
-            "former_brand": "",
-            "brand_status": "CURRENT",
-            "franchise_loss_date": "",
-            "franchise_confidence": "High",
-            "franchise_evidence": "",
-            "recent_distress_news": "",
-            "ownership_context": ""
-        }}
     """
 
     try:
@@ -131,7 +124,19 @@ def research_hotel(
                             "max_uses": 5
                         }
                     ],
-                    messages=[{"role": "user", "content": prompt}]
+                    system=[
+                        {
+                            "type": "text",
+                            "text": WEB_RESEARCH_SYSTEM_PROMPT,
+                            "cache_control": {"type": "ephemeral"},
+                        }
+                    ],
+                    messages=[
+                        {
+                            "role": "user",
+                            "content": prompt
+                        }
+                    ]
                 )
 
                 text = "".join(block.text for block in response.content if isinstance(block, TextBlock))
