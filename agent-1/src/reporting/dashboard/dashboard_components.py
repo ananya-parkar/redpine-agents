@@ -184,6 +184,10 @@ def _top_opportunities_table(ws, df):
 
         status = str(row.get("lead_status","New"))
         sc_bg, sc_fg = STATUS_COLORS.get(status, ("E2E8F0", TEXT_DARK))
+        prob = row.get("llm_distress_probability")
+        if pd.isna(prob):
+            prob = 0
+
 
         vals = [
             rank,
@@ -192,7 +196,7 @@ def _top_opportunities_table(ws, df):
             row.get("state",""),
             row.get("final_lead_score",""),
             f"★ {row.get('llm_star_rating','')}",
-            f"{round(row.get('llm_distress_probability',0)*100)}%",
+            f"{round(prob*100)}%",
             fran_lbl(row),
             str(row.get("llm_top_distress_signals",""))[:40],
             row.get("owner_name",""),

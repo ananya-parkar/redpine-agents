@@ -207,7 +207,7 @@ def insert_priority_leads(rows):
             row.get("owner_name"),
             row.get("franchise_affiliated"),
             row.get("current_brand"),
-            row.get("franchise_loss_date"),
+            row.get("franchise_loss_date") or None,
             row.get("lead_reason"),
             llm.get("distress_probability"),
             llm.get("seller_fatigue_probability"),
@@ -523,6 +523,58 @@ def get_feedback_learning_rows():
     conn.close()
 
     return results
+
+def insert_agent_run(
+    run_id,
+    started_at,
+    completed_at,
+    search_area,
+    locations_processed,
+    hotels_found,
+    hotels_after_dedupe,
+    new_leads,
+    duplicates,
+    priority_leads,
+    email_sent,
+):
+    conn = get_connection()
+    cur = conn.cursor()
+
+    cur.execute(
+        """
+        INSERT INTO agent_runs (
+            run_id,
+            started_at,
+            completed_at,
+            search_area,
+            locations_processed,
+            hotels_found,
+            hotels_after_dedupe,
+            new_leads,
+            duplicates,
+            priority_leads,
+            email_sent
+        )
+        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+        """,
+        (
+            run_id,
+            started_at,
+            completed_at,
+            search_area,
+            locations_processed,
+            hotels_found,
+            hotels_after_dedupe,
+            new_leads,
+            duplicates,
+            priority_leads,
+            email_sent,
+        ),
+    )
+
+    conn.commit()
+    cur.close()
+    conn.close()
 
 def get_recent_agent_runs(limit=5):
     conn = get_connection()
