@@ -13,9 +13,8 @@ from openpyxl.chart import BarChart, PieChart, Reference, DoughnutChart
 from openpyxl.chart.label import DataLabelList
 from openpyxl.chart.shapes import GraphicalProperties
 
-
 load_dotenv(override=True)
-
+ 
 DB_CONFIG = {
     "host": os.getenv("POSTGRES_HOST", "localhost"),
     "port": os.getenv("POSTGRES_PORT", "5432"),
@@ -23,7 +22,7 @@ DB_CONFIG = {
     "user": os.getenv("POSTGRES_USER", "postgres"),
     "password": os.getenv("POSTGRES_PASSWORD", "postgres"),
 }
-
+ 
 FONT_NAME = "Calibri"
 NAVY = "0B1F48"
 NAVY_FILL = PatternFill("solid", start_color=NAVY, end_color=NAVY)
@@ -65,14 +64,14 @@ STATUS_COLORS = {
     "Passed": "9E9E9E",
     "Bad Data": "C62828",
 }
-
+ 
 TOTAL_COLS = 20
-
-
+ 
+ 
 def get_connection():
     return psycopg2.connect(**DB_CONFIG)
-
-
+ 
+ 
 def fetch_all_candidates(search_request_id):
     """
     Scoped to the CURRENT search request. If the client switches
@@ -110,8 +109,8 @@ def fetch_all_candidates(search_request_id):
             return cur.fetchall()
     finally:
         conn.close()
-
-
+ 
+ 
 def fetch_last_week_snapshot(search_request_id):
     """
     Also scoped - otherwise "vs Last Week" would compare this week's
@@ -136,13 +135,13 @@ def fetch_last_week_snapshot(search_request_id):
             return cur.fetchone()
     finally:
         conn.close()
-
-
+ 
+ 
 def autosize_columns(ws, widths):
     for i, width in enumerate(widths, start=1):
         ws.column_dimensions[get_column_letter(i)].width = width
-
-
+ 
+ 
 def score_fill(score):
     if score is None:
         return None
@@ -151,13 +150,13 @@ def score_fill(score):
     if score >= 40:
         return YELLOW_FILL
     return RED_FILL
-
-
+ 
+ 
 def status_font(status):
     color = STATUS_COLORS.get(status, "424242")
     return Font(name=FONT_NAME, size=10, bold=True, color=color)
-
-
+ 
+ 
 def delta_text(current, previous):
     if previous is None:
         return ""
@@ -167,16 +166,16 @@ def delta_text(current, previous):
     if diff < 0:
         return f"\u2193 {abs(diff)}"
     return "\u2014 0"
-
-
+ 
+ 
 def style_chart(chart):
     chart.y_axis.majorGridlines = None
     chart.x_axis.majorGridlines = None
     chart.y_axis.delete = True
     chart.x_axis.delete = False
     chart.graphical_properties = None
-
-
+ 
+ 
 # ---------------------------------------------------------------------------
 # Display-layer state normalization. NOTE: this is a patch, not the real
 # fix - the real fix belongs upstream in signal_extractor.py. Keep this
@@ -198,8 +197,8 @@ US_STATE_ABBREV_TO_NAME = {
     "VT": "Vermont", "VA": "Virginia", "WA": "Washington", "WV": "West Virginia",
     "WI": "Wisconsin", "WY": "Wyoming",
 }
-
-
+ 
+ 
 def normalize_state_name(state):
     """
     Collapses abbreviation/full-name inconsistencies (e.g. "FL" and
@@ -212,8 +211,8 @@ def normalize_state_name(state):
     if state.upper() in US_STATE_ABBREV_TO_NAME:
         return US_STATE_ABBREV_TO_NAME[state.upper()]
     return state.title()
-
-
+ 
+ 
 def cluster_similar_labels(labels, threshold=75):
     """
     Groups near-duplicate free-text labels into clusters instead of
@@ -224,10 +223,10 @@ def cluster_similar_labels(labels, threshold=75):
     same industry. Exact-match counting (what state/ownership_status
     use, fine there since those are controlled values) would fragment
     this into many count=1 bars instead of one accurate count.
-
+ 
     Same technique as fuzzy_match_score() in deduplication/dedupe.py,
     applied here to industry labels rather than company names.
-
+ 
     Returns [(representative_label, count), ...] - the representative
     is whichever original label was seen first in that cluster. Not
     sorted; caller sorts as needed.
@@ -243,8 +242,8 @@ def cluster_similar_labels(labels, threshold=75):
         if not matched:
             clusters.append([label, 1])
     return [(label, count) for label, count in clusters]
-
-
+ 
+ 
 def industry_primary_segment(label):
     """
     Industry values are LLM free text formatted like "Category /
@@ -435,7 +434,6 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
         ("📅", "Min Years", f"{search_request.get('min_years') or '-'}+ Years"),
         ("👤", "Founder Age", search_request.get("founder_age") or "-"),
     ]
-
 
     positions = [1,4,6,8,10]
 
@@ -646,7 +644,7 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
         ws.cell(row=geo_header_row + i, column=1, value=state).font = INVISIBLE_FONT
         ws.cell(row=geo_header_row + i, column=2, value=count).font = INVISIBLE_FONT
     geo_last_row = geo_header_row + len(top_states)
-
+ 
     ownership_counts = {}
     for c in candidates:
         status = c.get("ownership_status") or "Unknown"
@@ -660,7 +658,7 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
         ws.cell(row=ownership_header_row + i, column=4, value=status).font = INVISIBLE_FONT
         ws.cell(row=ownership_header_row + i, column=5, value=count).font = INVISIBLE_FONT
     ownership_last_row = ownership_header_row + len(ownership_items)
-
+ 
     # Cluster on the PRIMARY SEGMENT (before "/" or "("), not the full
     # industry string - see industry_primary_segment() docstring for
     # why. Threshold raised to 80 since primary segments are short and
@@ -671,15 +669,15 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
         industry_primary_segment(c.get("industry")) or "Unknown" for c in candidates
     ]
     industry_clusters = cluster_similar_labels(industry_labels, threshold=80)
-
+ 
     def _truncate_label(label):
         return label[:18] + "..." if len(label) > 18 else label
-
+ 
     top_industries = sorted(
         [(_truncate_label(label), count) for label, count in industry_clusters],
         key=lambda x: -x[1],
     )[:4]
-
+ 
     # Columns 17-18 (not 7-8) - see comment above cluster_similar_labels
     # usage below. Mini-cards (further down this function) write into
     # columns 8-9 for these exact same rows (11+), so putting the
@@ -696,7 +694,7 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
         ws.cell(row=industry_header_row + i, column=17, value=industry).font = INVISIBLE_FONT
         ws.cell(row=industry_header_row + i, column=18, value=count).font = INVISIBLE_FONT
     industry_last_row = industry_header_row + len(top_industries)
-
+ 
     helper_block_last_row = max(geo_last_row, ownership_last_row, industry_last_row)
     for r in range(helper_data_row, helper_block_last_row + 1):
         ws.row_dimensions[r].height = 1
@@ -877,7 +875,7 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
         key=lambda r: (r.get("first_seen_date") is None, r.get("first_seen_date")),
         reverse=True,
     )
-
+ 
     # Columns whose content is long enough to need wrapping instead of
     # spilling visually into the next cell (which is what was happening
     # before - text from Why Discovered/Fit Analysis/Website/etc bled
@@ -886,7 +884,7 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
         "company_name", "city", "industry", "why_discovered",
         "founder_name", "ownership_status", "fit_analysis",
     }
-
+ 
     for idx, row in enumerate(sorted_candidates, start=1):
         r = header_row + idx
         rank_cell = ws.cell(row=r, column=1, value=idx)
@@ -929,8 +927,8 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
         ws.column_dimensions[get_column_letter(col)].width = DASHBOARD_COL_WIDTH
 
     return ws
-
-
+ 
+ 
 DB_COLUMNS = [
     ("Company Name", "company_name", 28), ("Website", "website", 24),
     ("City", "city", 16), ("State", "state", 12),
@@ -946,8 +944,8 @@ DB_COLUMNS = [
     ("Seller Readiness Score", "seller_readiness_score", 16), ("Review Status", "review_status", 14),
     ("First Seen", "first_seen_date", 14), ("Last Seen", "last_seen_date", 14),
 ]
-
-
+ 
+ 
 def build_companies_db_sheet(wb, candidates):
     ws = wb.create_sheet("Companies_DB")
     header_row = 1
@@ -1002,21 +1000,21 @@ def build_companies_db_sheet(wb, candidates):
     ws.freeze_panes = "A2"
     ws.auto_filter.ref = f"A{header_row}:{get_column_letter(num_cols)}{header_row}"
     return ws
-
-
+ 
+ 
 TOP_N = 10
-
+ 
 from openpyxl.worksheet.datavalidation import DataValidation
 FEEDBACK_OPTIONS = ["New", "Pursuing", "Passed", "Bad Data"]
-
-
+ 
+ 
 def build_top_companies_sheet(wb, candidates):
     ws = wb.create_sheet("Top_Companies")
    
     header_row = 1
     scored = [c for c in candidates if c.get("seller_readiness_score") is not None]
     top = sorted(scored, key=lambda r: -r["seller_readiness_score"])[:TOP_N]
-
+ 
     columns = [
         ("Rank", None, 6),
         ("Company Name", "company_name", 26),
@@ -1032,7 +1030,7 @@ def build_top_companies_sheet(wb, candidates):
         ("Notes", "review_notes", 35),
         ("_candidate_id", "candidate_id", 1),
     ]
-
+ 
     for i, (label, _, _) in enumerate(columns, start=1):
         cell = ws.cell(row=header_row, column=i, value=label)
         cell.fill = HEADER_FILL
@@ -1047,10 +1045,10 @@ def build_top_companies_sheet(wb, candidates):
         showDropDown=False,
     )
     ws.add_data_validation(dv)
-
+ 
     feedback_col_idx = next(i for i, (label, _, _) in enumerate(columns, start=1) if label == "Feedback")
     feedback_col_letter = get_column_letter(feedback_col_idx)
-
+ 
     for idx, row in enumerate(top, start=1):
         r = header_row + idx 
         ws.cell(row=r, column=1, value=idx).font = BOLD_FONT
@@ -1072,7 +1070,7 @@ def build_top_companies_sheet(wb, candidates):
                 cell.font = BOLD_FONT
         ws.row_dimensions[r].height = 42
         dv.add(f"{feedback_col_letter}{r}")
-
+ 
     autosize_columns(ws, [w for _, _, w in columns])
     ws.auto_filter.ref = (
         f"A{header_row}:"
@@ -1082,11 +1080,11 @@ def build_top_companies_sheet(wb, candidates):
     id_col_idx = next(i for i, (label, _, _) in enumerate(columns, start=1) if label == "_candidate_id")
     ws.column_dimensions[get_column_letter(id_col_idx)].width = 0
     ws.column_dimensions[get_column_letter(id_col_idx)].hidden = True
-
+ 
     ws.freeze_panes = "A2"
     return ws
-
-
+ 
+ 
 def generate_dashboard(output_file, search_request_id):
     """
     search_request_id scopes everything: the client only sees leads for
@@ -1094,7 +1092,7 @@ def generate_dashboard(output_file, search_request_id):
     """
     candidates = fetch_all_candidates(search_request_id)
     last_week = fetch_last_week_snapshot(search_request_id)
-
+ 
     wb = Workbook()
     wb.remove(wb.active)
 
@@ -1107,7 +1105,7 @@ def generate_dashboard(output_file, search_request_id):
     )
     build_companies_db_sheet(wb, candidates)
     build_top_companies_sheet(wb, candidates)
-
+ 
     wb.save(output_file)
     print(f"Saved dashboard workbook ({len(candidates)} candidates "
           f"for search {search_request_id}) -> {output_file}")

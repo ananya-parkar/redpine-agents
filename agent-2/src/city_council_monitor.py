@@ -321,7 +321,7 @@ def get_rss_signals(venues_by_city, skip_cities):
             items = fetch_gnews_rss(query)
             kept = 0
             for item in items:
-                if kept >= 3: break     # cap per venue, same idea as NewsAPI
+                if kept >= 2: break     # cap per venue, same idea as NewsAPI
                 sig = make_signal(venue, item["title"], item["description"],
                                   "Google News RSS", item["link"],
                                   item["published"], "Google News RSS")
