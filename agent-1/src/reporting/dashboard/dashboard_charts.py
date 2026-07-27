@@ -74,6 +74,7 @@ def _write_chart_data(data_ws, df):
             .sort_values(ascending=False)
             .head(5)
         )
+        mkt = mkt.iloc[::-1]
     
     else:
         mkt = pd.Series(dtype=float)

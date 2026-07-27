@@ -1,7 +1,7 @@
 # agent-1/main.py
 import time, pickle
 from datetime import datetime
-
+from uuid import uuid4
 from src.core.config import INPUT_FILE, INPUT_FOLDER, RUNS_DIR, GOOGLE_MAPS_API_KEY
 from src.utils.io_utils import parse_locations, save_json
 from src.input.search_request import load_search_request
@@ -12,7 +12,7 @@ from src.utils.exporters import save_ai_entities
 from src.storage.postgres_dedupe import remove_existing_postgres_leads
 # from src.master_storage import append_to_master
 from src.reporting.html.html_report import generate_html_report
-from src.storage.postgres_storage import insert_priority_leads
+from src.storage.postgres_storage import insert_priority_leads, insert_agent_run
 from src.reporting.dashboard.dashboard_export import export_dashboard
 from src.reporting.email.email_digest import send_run_digest
 from src.storage.postgres_storage import get_feedback_patterns, get_feedback_examples
@@ -23,6 +23,8 @@ from src.storage.feedback_actions import create_feedback_action, get_existing_tr
 from src.input_validation import validate_inputs
 
 def main():
+    run_id = uuid4()
+    run_started = datetime.now()
     print("\n[START] Agent 1 run started\n", flush=True)
 
     if not GOOGLE_MAPS_API_KEY:
@@ -231,11 +233,30 @@ def main():
             if not r.get("suppress_digest")
         ])
     )
+
+    email_sent = True
     
     send_run_digest(
         priority_rows=priority_rows,
         dashboard_file=dashboard_file,
         html_report=run_dir / "hotel_acquisition_report.html"
+    )
+
+    run_completed = datetime.now()
+    
+    print("EMAIL SENT VALUE:", email_sent)
+    insert_agent_run(
+        run_id=str(run_id),
+        started_at=run_started,
+        completed_at=run_completed,
+        search_area=request["location"],
+        email_sent=email_sent,
+        locations_processed=1,
+        hotels_found=len(result["rows"]),
+        hotels_after_dedupe=len(all_rows),
+        new_leads=len(priority_rows),
+        duplicates=len(result["rows"]) - len(all_rows),
+        priority_leads=len(priority_rows),
     )
 
     
