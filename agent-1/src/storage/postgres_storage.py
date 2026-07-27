@@ -105,13 +105,13 @@ def insert_priority_leads(rows):
         row["last_score"] = row["final_lead_score"]
         row.setdefault("last_resurfaced", None)
 
-        print(
-            "[DEBUG]",
-            row.get("hotel_name"),
-            row.get("last_score"),
-            row.get("last_resurfaced"),
-            row.get("suppress_digest")
-        )
+        # print(
+        #     "[DEBUG]",
+        #     row.get("hotel_name"),
+        #     row.get("last_score"),
+        #     row.get("last_resurfaced"),
+        #     row.get("suppress_digest")
+        # )
 
         cleanup_due_date = datetime.utcnow() + relativedelta(months=12)
 
@@ -207,7 +207,7 @@ def insert_priority_leads(rows):
             row.get("owner_name"),
             row.get("franchise_affiliated"),
             row.get("current_brand"),
-            row.get("franchise_loss_date"),
+            row.get("franchise_loss_date") or None,
             row.get("lead_reason"),
             llm.get("distress_probability"),
             llm.get("seller_fatigue_probability"),
@@ -523,6 +523,82 @@ def get_feedback_learning_rows():
     conn.close()
 
     return results
+
+def insert_agent_run(
+    run_id,
+    started_at,
+    completed_at,
+    search_area,
+    locations_processed,
+    hotels_found,
+    hotels_after_dedupe,
+    new_leads,
+    duplicates,
+    priority_leads,
+    email_sent,
+):
+    conn = get_connection()
+    cur = conn.cursor()
+
+    cur.execute(
+        """
+        INSERT INTO agent_runs (
+            run_id,
+            started_at,
+            completed_at,
+            search_area,
+            locations_processed,
+            hotels_found,
+            hotels_after_dedupe,
+            new_leads,
+            duplicates,
+            priority_leads,
+            email_sent
+        )
+        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+        """,
+        (
+            run_id,
+            started_at,
+            completed_at,
+            search_area,
+            locations_processed,
+            hotels_found,
+            hotels_after_dedupe,
+            new_leads,
+            duplicates,
+            priority_leads,
+            email_sent,
+        ),
+    )
+
+    conn.commit()
+    cur.close()
+    conn.close()
+
+def get_recent_agent_runs(limit=5):
+    conn = get_connection()
+
+    query = """
+    SELECT
+        started_at,
+        search_area,
+        hotels_found,
+        new_leads,
+        duplicates
+    FROM agent_runs
+    ORDER BY started_at DESC
+    LIMIT %s
+    """
+
+    cur = conn.cursor()
+    cur.execute(query, (limit,))
+    rows = cur.fetchall()
+
+    cur.close()
+    conn.close()
+
+    return rows
 
 if __name__ == "__main__":
     conn = get_connection()

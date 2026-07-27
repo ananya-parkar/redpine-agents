@@ -74,6 +74,7 @@ def _write_chart_data(data_ws, df):
             .sort_values(ascending=False)
             .head(5)
         )
+        mkt = mkt.iloc[::-1]
     
     else:
         mkt = pd.Series(dtype=float)
@@ -204,7 +205,7 @@ def _add_markets_bar(ws, df, data_ws):
     chart.x_axis.delete = False
     chart.y_axis.spPr = None
     chart.x_axis.spPr = None
-    chart.y_axis.reverseOrder=True
+    chart.y_axis.reverseOrder=False
     
     chart.width    = 10
     chart.height   = 4

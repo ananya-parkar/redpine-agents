@@ -20,7 +20,7 @@ def export_dashboard(output_dir, run_rows, search_area=""):
     #     search_area = "Unknown"
    
     print("\n===== DASHBOARD COLUMNS =====")
-    print(df.columns.tolist())
+    # print(df.columns.tolist())
     print(df["owner_name"].notna().sum())
     print(df["room_count"].head(20))
     metrics = build_metrics(df, search_area=search_area)
@@ -38,6 +38,7 @@ def export_dashboard(output_dir, run_rows, search_area=""):
 
     data_ws.sheet_state = "hidden"
     build_dashboard(dashboard_ws, data_ws, metrics, df)
+    # print(df.columns.tolist())
     populate_all_leads(all_leads_ws, df)
     populate_high_opportunity(high_op_ws, df)
     populate_ownership_analysis(own_ws, df)

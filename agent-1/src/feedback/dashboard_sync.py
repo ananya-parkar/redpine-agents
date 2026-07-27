@@ -39,7 +39,7 @@ def sync_dashboard_feedback():
         latest,
         sheet_name="All Leads"
     )
-    print(df.head())
+    # print(df.head())
     print(
         df[
             [

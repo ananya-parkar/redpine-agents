@@ -10,6 +10,7 @@ from openpyxl.chart import DoughnutChart, Reference
 from openpyxl.chart.label import DataLabelList
 from src.reporting.dashboard.dashboard_charts import _dLbls, _color_series, DIST_COLORS
 from src.reporting.dashboard.dashboard_constants import *
+from src.storage.postgres_storage import get_recent_agent_runs
 
 def _col_widths(ws):
     spec = {
@@ -183,6 +184,10 @@ def _top_opportunities_table(ws, df):
 
         status = str(row.get("lead_status","New"))
         sc_bg, sc_fg = STATUS_COLORS.get(status, ("E2E8F0", TEXT_DARK))
+        prob = row.get("llm_distress_probability")
+        if pd.isna(prob):
+            prob = 0
+
 
         vals = [
             rank,
@@ -191,7 +196,7 @@ def _top_opportunities_table(ws, df):
             row.get("state",""),
             row.get("final_lead_score",""),
             f"★ {row.get('llm_star_rating','')}",
-            f"{round(row.get('llm_distress_probability',0)*100)}%",
+            f"{round(prob*100)}%",
             fran_lbl(row),
             str(row.get("llm_top_distress_signals",""))[:40],
             row.get("owner_name",""),
@@ -343,13 +348,38 @@ def _bottom_section(ws, df, metrics, data_ws):
         c.font = Font(size=8, color=TEXT_DARK, name="Arial")
         c.alignment = _align("center")
         c.border = _border()
- 
+    
+    runs = get_recent_agent_runs(5)
+
     for idx, h in enumerate(headers):
         c = ws.cell(row=br+1, column=12+idx, value=h)
         c.font      = Font(bold=True, size=8, color=WHITE, name="Arial")
         c.fill      = _fill(GREEN_PRIMARY)
         c.alignment = _align("center")
         c.border    = _border("FFFFFF")
+    
+    for row_idx, run in enumerate(runs, start=br+2):
+        values = [
+            run[0].strftime("%b %d %Y"),
+            run[1],
+            run[2],
+            run[3],
+            run[4],
+        ]
+
+        for col_idx, value in enumerate(values):
+            cell = ws.cell(
+                row=row_idx,
+                column=12 + col_idx,
+                value=value
+            )
+
+            cell.font = Font(size=8)
+            cell.alignment = _align("center")
+            cell.border = _border()
+
+            if row_idx % 2 == 0:
+                cell.fill = _fill("F8FAFC")
 
 
 def build_dashboard(ws, data_ws, metrics, df):

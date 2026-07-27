@@ -1,0 +1,675 @@
+[
+  {
+    "search_location": "Dallas, Texas",
+    "radius_miles": 10,
+    "hotel_name": "Spanish Trails Inn",
+    "address": "1129 Gross Rd, Mesquite, TX 75149, USA",
+    "rating": 3.4,
+    "user_rating_count": 689,
+    "business_status": "OPERATIONAL",
+    "distress_score": 6,
+    "distress_reasons": "Low rating: 3.4 | Moderate-to-low rating with enough reviews: 689 | Negative review signal: smell | Renovation signals in reviews: 100.0%",
+    "review_trend_score": 0,
+    "review_volume_recent": 0,
+    "review_volume_prior": 0,
+    "review_volume_change_pct": 0.0,
+    "avg_rating_recent": 0.0,
+    "avg_rating_prior": 0.0,
+    "review_rating_delta": 0,
+    "complaint_rate_recent": 0.0,
+    "complaint_rate_prior": 0.0,
+    "review_complaint_delta": 0.0,
+    "year_built": "",
+    "property_age": "",
+    "renovation_signal_rate": 1.0,
+    "renovation_needed": true,
+    "physical_condition_score": 2,
+    "google_maps_url": "https://maps.google.com/?cid=3531321902028643353&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "source_provenance": "Google Places | REGRID",
+    "franchise_affiliated": false,
+    "current_brand": "",
+    "former_brand": "",
+    "brand_status": "NONE",
+    "franchise_loss_date": "",
+    "franchise_confidence": "Error",
+    "franchise_evidence": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-08-01 at 00:00 UTC.'}, 'request_id': 'req_011CdS7x3kConi4REo73KajM'}",
+    "recent_distress_news": "",
+    "ownership_context": "",
+    "owner_name": "MESQUITE LODGING LP",
+    "owner_company": "",
+    "mailing_address": "1200 W WALNUT HILL LN IRVING TX 75038-3029",
+    "owner_phone": "",
+    "owner_confidence": "High",
+    "owner_evidence": "Retrieved from Regrid parcel 1129 Gross Rd",
+    "ownership_since": "2016-04-29",
+    "ownership_length_years": 10,
+    "attom_year_built": 1984,
+    "is_older_than_20_years": "Yes",
+    "room_count": 100,
+    "price_tier": "",
+    "signals": {
+      "review_decline": false,
+      "review_rating_delta": 0,
+      "review_volume_decline": false,
+      "complaint_increase": false,
+      "sentiment_decline": false,
+      "sentiment_trend": "Stable",
+      "review_activity_trend": "Stable",
+      "positive_reviews_recent": 0,
+      "negative_reviews_recent": 0,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "renovation_needed": true,
+      "old_property": true,
+      "physical_condition_score": 2,
+      "franchise_loss": false,
+      "former_brand": "",
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "brand_status": "NONE",
+      "recent_distress_news": "",
+      "ownership_context": "",
+      "cmbs_watchlist": false,
+      "cmbs_special_servicing": false,
+      "cmbs_delinquent": false,
+      "long_term_owner": true,
+      "ownership_length_years": 10,
+      "room_count": 100,
+      "distress_score": 6
+    },
+    "review_themes": {
+      "staff": 50.0,
+      "cleanliness": 25.0,
+      "maintenance": 25.0
+    },
+    "llm_analysis": {
+      "distress_probability": 0.0,
+      "seller_fatigue_probability": 0.0,
+      "opportunity_score": 0,
+      "confidence": "LOW",
+      "top_distress_signals": [],
+      "investment_thesis": "LLM analysis failed",
+      "recommended_action": "Monitor",
+      "distress_summary": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-08-01 at 00:00 UTC.'}, 'request_id': 'req_011CdS7x5YrbmQtmDA3ZzLhE'}",
+      "review_summary": "",
+      "llm_star_rating": 0.0,
+      "error": true
+    },
+    "final_lead_score": 44.4,
+    "entity": {
+      "hotel_name": "Spanish Trails Inn",
+      "address": "1129 Gross Rd, Mesquite, TX 75149, USA",
+      "place_id": "ChIJy3Kf81KkToYRGVz5ZY_GATE",
+      "latitude": null,
+      "longitude": null,
+      "rating": 3.4,
+      "user_rating_count": 689,
+      "business_status": "OPERATIONAL",
+      "google_maps_url": "https://maps.google.com/?cid=3531321902028643353&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+      "reviews": [
+        {
+          "name": "places/ChIJy3Kf81KkToYRGVz5ZY_GATE/reviews/Ci9DQUlRQUNvZENodHljRjlvT2kxdFIxWldabnBWVTNWSE0xVnhNMHBaTFVORGVWRRAB",
+          "relativePublishTimeDescription": "a month ago",
+          "rating": 5,
+          "text": {
+            "text": "The young lady in that office is spectacular! I had an issue and she handled it beautifully. She cares about her customers and the experience they have at the hotel. This place a studio 6 now.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "The young lady in that office is spectacular! I had an issue and she handled it beautifully. She cares about her customers and the experience they have at the hotel. This place a studio 6 now.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Camelia Kenney",
+            "uri": "https://www.google.com/maps/contrib/116966913430593729998/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUvtcsUOzcNOHvRV0wH5XJXIzzWbraCes5bubAAIQWcjOnejX0Z=s128-c0x00000000-cc-rp-mo-ba4"
+          },
+          "publishTime": "2026-06-04T11:52:46.004876537Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2kxdFIxWldabnBWVTNWSE0xVnhNMHBaTFVORGVWRRAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2kxdFIxWldabnBWVTNWSE0xVnhNMHBaTFVORGVWRRAB!2m1!1s0x864ea452f39f72cb:0x3101c68f65f95c19"
+        },
+        {
+          "name": "places/ChIJy3Kf81KkToYRGVz5ZY_GATE/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xFMGFqWlVkVlY2WWxKQ2IwSlFWR2RuYlhFNGFGRRAB",
+          "relativePublishTimeDescription": "6 months ago",
+          "rating": 5,
+          "text": {
+            "text": "Nice and clean and well lit in the parking lot and around the rooms. I felt safe and secure and enjoyed my stay here.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Nice and clean and well lit in the parking lot and around the rooms. I felt safe and secure and enjoyed my stay here.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Merlin Orr",
+            "uri": "https://www.google.com/maps/contrib/104930545506790366552/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLiUShLLkuLI4h9Kn-WxJfPvBGdYQAQtYy_rMTkZNpI-zKzjQ=s128-c0x00000000-cc-rp-mo-ba5"
+          },
+          "publishTime": "2026-01-15T21:12:36.536935051Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xFMGFqWlVkVlY2WWxKQ2IwSlFWR2RuYlhFNGFGRRAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xFMGFqWlVkVlY2WWxKQ2IwSlFWR2RuYlhFNGFGRRAB!2m1!1s0x864ea452f39f72cb:0x3101c68f65f95c19"
+        },
+        {
+          "name": "places/ChIJy3Kf81KkToYRGVz5ZY_GATE/reviews/Ci9DQUlRQUNvZENodHljRjlvT201ZlZIcHZjbDlxTlhWSVEyNVNjRzE1T1VWVFpuYxAB",
+          "relativePublishTimeDescription": "3 months ago",
+          "rating": 5,
+          "text": {
+            "text": "Paula and the manager are so nice and very welcoming!! Nice cozy place! Quiet and very nice upgraded rooms!",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Paula and the manager are so nice and very welcoming!! Nice cozy place! Quiet and very nice upgraded rooms!",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Stacey Ramirez",
+            "uri": "https://www.google.com/maps/contrib/107080654978885629783/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjW9Dqtt7_PWGCcwvsWiuiKxbZ3hNrnQ3CoC0Mk6iY5kD30qnZu_Lw=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2026-04-20T22:10:14.409305140Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT201ZlZIcHZjbDlxTlhWSVEyNVNjRzE1T1VWVFpuYxAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT201ZlZIcHZjbDlxTlhWSVEyNVNjRzE1T1VWVFpuYxAB!2m1!1s0x864ea452f39f72cb:0x3101c68f65f95c19"
+        },
+        {
+          "name": "places/ChIJy3Kf81KkToYRGVz5ZY_GATE/reviews/Ci9DQUlRQUNvZENodHljRjlvT21SUVQwRmpWRmN3TkZwSlNUUkRVVzFuUTBGeWJtYxAB",
+          "relativePublishTimeDescription": "a year ago",
+          "rating": 5,
+          "text": {
+            "text": "I just want to say thank you to the people that work the front desk at spanish trails , they are the nicest most understanding people . Our room is always clean  no bugs their prices aren't all over the place and its fair  there's no riff raff because of the strict rules they enforce . I feel safe there and so will you !! All in all in all id say this place is a 10 piece and I wouldn't spend my money any place else !",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "I just want to say thank you to the people that work the front desk at spanish trails , they are the nicest most understanding people . Our room is always clean  no bugs their prices aren't all over the place and its fair  there's no riff raff because of the strict rules they enforce . I feel safe there and so will you !! All in all in all id say this place is a 10 piece and I wouldn't spend my money any place else !",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Faelyn Rose",
+            "uri": "https://www.google.com/maps/contrib/113980785515365562380/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXTBsEewlI6gNd-4qRM5vWmhMZnK9zzZ6CstyVs7EI1BrQh2_6w=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2025-06-28T16:05:01.654774145Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21SUVQwRmpWRmN3TkZwSlNUUkRVVzFuUTBGeWJtYxAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21SUVQwRmpWRmN3TkZwSlNUUkRVVzFuUTBGeWJtYxAB!2m1!1s0x864ea452f39f72cb:0x3101c68f65f95c19"
+        },
+        {
+          "name": "places/ChIJy3Kf81KkToYRGVz5ZY_GATE/reviews/ChZDSUhNMG9nS0VJQ0FnSUM3Z0tiNVp3EAE",
+          "relativePublishTimeDescription": "a year ago",
+          "rating": 1,
+          "text": {
+            "text": "Ask for a non-smoking room at check-in and told all rooms are non-smoking. When I entered the room, the cigarette smell was overwhelming. I had brought  my own blankets and pillows because I didn’t want to sleep in the cover. The refrigerator in room doesn’t shut and was frozen up with a 6 in of ice, so no way to have food. AC was cold and water was hot, plus for that!! Our AC at home was being replaced and I needed a place that accepted my dogs. When we checked out and left all my belongings smelled horribly, that I had to leave them in my garage, bringing in one load to wash at a time. Even my glasses smelled. I travel for a living so I understand getting what you pay for, but I can’t ever go back due to the nasty smell. On the second day there, I brought my Clorox wipes, Clorox clean up, and swifter. In the end they should have paid me to stay there; I am sure the room hasn’t been that clean in a long time, but no matter how much you clean you can’t cover cigarette smoke infused curtains, ac unit, and mattresses. Again, we had cold ac and nice hot shower and my doggies were able to cool down, so we made it work. Lmbo my husband chose to stay at our house with no ac, he said he just couldn’t handle the smell. I don’t appreciate being placed in that room after specifically asking for non smoking. I’m also kinda pissed no one even mentioned coffee or breakfast snacks.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Ask for a non-smoking room at check-in and told all rooms are non-smoking. When I entered the room, the cigarette smell was overwhelming. I had brought  my own blankets and pillows because I didn’t want to sleep in the cover. The refrigerator in room doesn’t shut and was frozen up with a 6 in of ice, so no way to have food. AC was cold and water was hot, plus for that!! Our AC at home was being replaced and I needed a place that accepted my dogs. When we checked out and left all my belongings smelled horribly, that I had to leave them in my garage, bringing in one load to wash at a time. Even my glasses smelled. I travel for a living so I understand getting what you pay for, but I can’t ever go back due to the nasty smell. On the second day there, I brought my Clorox wipes, Clorox clean up, and swifter. In the end they should have paid me to stay there; I am sure the room hasn’t been that clean in a long time, but no matter how much you clean you can’t cover cigarette smoke infused curtains, ac unit, and mattresses. Again, we had cold ac and nice hot shower and my doggies were able to cool down, so we made it work. Lmbo my husband chose to stay at our house with no ac, he said he just couldn’t handle the smell. I don’t appreciate being placed in that room after specifically asking for non smoking. I’m also kinda pissed no one even mentioned coffee or breakfast snacks.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Amey Garza",
+            "uri": "https://www.google.com/maps/contrib/110739035511918901757/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocI2VSqrpeK28ygH1KOjpA_PnhyyssS7vREWFI1w-Sz8F3umKw=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2024-08-11T06:51:31.636339Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=ChZDSUhNMG9nS0VJQ0FnSUM3Z0tiNVp3EAE&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnSUM3Z0tiNVp3EAE!2m1!1s0x864ea452f39f72cb:0x3101c68f65f95c19"
+        }
+      ],
+      "signals": {
+        "review_decline": false,
+        "review_rating_delta": 0,
+        "review_volume_decline": false,
+        "complaint_increase": false,
+        "sentiment_decline": false,
+        "sentiment_trend": "Stable",
+        "review_activity_trend": "Stable",
+        "positive_reviews_recent": 0,
+        "negative_reviews_recent": 0,
+        "positive_reviews_prior": 0,
+        "negative_reviews_prior": 0,
+        "renovation_needed": true,
+        "old_property": true,
+        "physical_condition_score": 2,
+        "franchise_loss": false,
+        "former_brand": "",
+        "franchise_affiliated": false,
+        "current_brand": "",
+        "brand_status": "NONE",
+        "recent_distress_news": "",
+        "ownership_context": "",
+        "cmbs_watchlist": false,
+        "cmbs_special_servicing": false,
+        "cmbs_delinquent": false,
+        "long_term_owner": true,
+        "ownership_length_years": 10,
+        "room_count": 100,
+        "distress_score": 6
+      },
+      "review_themes": {
+        "staff": 50.0,
+        "cleanliness": 25.0,
+        "maintenance": 25.0
+      },
+      "heuristic_scores": {
+        "distress_score": 6,
+        "distress_reasons": [
+          "Low rating: 3.4",
+          "Moderate-to-low rating with enough reviews: 689",
+          "Negative review signal: smell",
+          "Renovation signals in reviews: 100.0%"
+        ],
+        "review_trend_score": 0,
+        "review_volume_recent": 0,
+        "review_volume_prior": 0,
+        "review_volume_change_pct": 0.0,
+        "avg_rating_recent": 0.0,
+        "avg_rating_prior": 0.0,
+        "review_rating_delta": 0,
+        "complaint_rate_recent": 0.0,
+        "complaint_rate_prior": 0.0,
+        "review_complaint_delta": 0.0,
+        "year_built": "",
+        "property_age": "",
+        "renovation_signal_rate": 1.0,
+        "renovation_needed": true,
+        "physical_condition_score": 2,
+        "positive_reviews_recent": 0,
+        "negative_reviews_recent": 0,
+        "positive_reviews_prior": 0,
+        "negative_reviews_prior": 0,
+        "sentiment_delta": 0,
+        "sentiment_trend": "Stable",
+        "review_activity_trend": "Stable"
+      },
+      "llm_analysis": {
+        "distress_probability": 0.0,
+        "seller_fatigue_probability": 0.0,
+        "opportunity_score": 0,
+        "confidence": "LOW",
+        "top_distress_signals": [],
+        "investment_thesis": "LLM analysis failed",
+        "recommended_action": "Monitor",
+        "distress_summary": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-08-01 at 00:00 UTC.'}, 'request_id': 'req_011CdS7x5YrbmQtmDA3ZzLhE'}",
+        "review_summary": "",
+        "llm_star_rating": 0.0,
+        "error": true
+      },
+      "owner_data": {
+        "owner_name": "MESQUITE LODGING LP",
+        "owner_company": "",
+        "mailing_address": "1200 W WALNUT HILL LN IRVING TX 75038-3029",
+        "owner_phone": "",
+        "ownership_since": "2016-04-29",
+        "ownership_length_years": 10,
+        "attom_year_built": 1984,
+        "is_older_than_20_years": "Yes",
+        "room_count": 100
+      },
+      "cmbs_data": {},
+      "franchise_data": {
+        "franchise_affiliated": false,
+        "current_brand": "",
+        "former_brand": "",
+        "brand_status": "NONE",
+        "franchise_confidence": "Error",
+        "recent_distress_news": "",
+        "ownership_context": ""
+      },
+      "source_location": "Dallas, Texas",
+      "radius_miles": 10
+    },
+    "lead_reason": "Aging property; Long-term ownership",
+    "created_at": "2026-07-27T06:52:29.506294",
+    "place_id": "ChIJy3Kf81KkToYRGVz5ZY_GATE",
+    "feedback_rule_applied": "",
+    "feedback_penalty": 0,
+    "rank": 1,
+    "llm_distress_probability": 0.0,
+    "llm_seller_fatigue_probability": 0.0,
+    "llm_opportunity_score": 0,
+    "llm_star_rating": 0.0,
+    "llm_confidence": "LOW",
+    "llm_top_distress_signals": "",
+    "llm_investment_thesis": "LLM analysis failed",
+    "llm_recommended_action": "Monitor",
+    "llm_distress_summary": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-08-01 at 00:00 UTC.'}, 'request_id': 'req_011CdS7x5YrbmQtmDA3ZzLhE'}",
+    "llm_review_summary": "",
+    "suppress_digest": true,
+    "last_score": 44.4,
+    "last_resurfaced": null
+  },
+  {
+    "search_location": "Dallas, Texas",
+    "radius_miles": 10,
+    "hotel_name": "Red Roof Inn Dallas - Mesquite/ Fair Park NE",
+    "address": "3447 I-30, Mesquite, TX 75150, USA",
+    "rating": 3.4,
+    "user_rating_count": 430,
+    "business_status": "OPERATIONAL",
+    "distress_score": 5,
+    "distress_reasons": "Low rating: 3.4 | Moderate-to-low rating with enough reviews: 430 | Renovation signals in reviews: 100.0%",
+    "review_trend_score": 0,
+    "review_volume_recent": 0,
+    "review_volume_prior": 0,
+    "review_volume_change_pct": 0.0,
+    "avg_rating_recent": 0.0,
+    "avg_rating_prior": 0.0,
+    "review_rating_delta": 0,
+    "complaint_rate_recent": 0.0,
+    "complaint_rate_prior": 0.0,
+    "review_complaint_delta": 0.0,
+    "year_built": "",
+    "property_age": "",
+    "renovation_signal_rate": 1.0,
+    "renovation_needed": true,
+    "physical_condition_score": 2,
+    "google_maps_url": "https://maps.google.com/?cid=2537773648292342463&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "source_provenance": "Google Places | REGRID",
+    "franchise_affiliated": false,
+    "current_brand": "",
+    "former_brand": "",
+    "brand_status": "NONE",
+    "franchise_loss_date": "",
+    "franchise_confidence": "Error",
+    "franchise_evidence": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-08-01 at 00:00 UTC.'}, 'request_id': 'req_011CdS7xC13cRUnr5YtUtkM5'}",
+    "recent_distress_news": "",
+    "ownership_context": "",
+    "owner_name": "HANUMAN HOLDINGS LLC",
+    "owner_company": "HANUMAN HOLDINGS LLC",
+    "mailing_address": "2600 S CESAR CHAVEZ BLVD DALLAS TX 75215-2256",
+    "owner_phone": "",
+    "owner_confidence": "High",
+    "owner_evidence": "Retrieved from Regrid parcel 3447 Interstate 30",
+    "ownership_since": "2012-01-06",
+    "ownership_length_years": 14,
+    "attom_year_built": 1996,
+    "is_older_than_20_years": "Yes",
+    "room_count": 52,
+    "price_tier": "",
+    "signals": {
+      "review_decline": false,
+      "review_rating_delta": 0,
+      "review_volume_decline": false,
+      "complaint_increase": false,
+      "sentiment_decline": false,
+      "sentiment_trend": "Stable",
+      "review_activity_trend": "Stable",
+      "positive_reviews_recent": 0,
+      "negative_reviews_recent": 0,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "renovation_needed": true,
+      "old_property": true,
+      "physical_condition_score": 2,
+      "franchise_loss": false,
+      "former_brand": "",
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "brand_status": "NONE",
+      "recent_distress_news": "",
+      "ownership_context": "",
+      "cmbs_watchlist": false,
+      "cmbs_special_servicing": false,
+      "cmbs_delinquent": false,
+      "long_term_owner": true,
+      "ownership_length_years": 14,
+      "room_count": 52,
+      "distress_score": 5
+    },
+    "review_themes": {
+      "cleanliness": 25.0,
+      "staff": 50.0,
+      "maintenance": 25.0
+    },
+    "llm_analysis": {
+      "distress_probability": 0.0,
+      "seller_fatigue_probability": 0.0,
+      "opportunity_score": 0,
+      "confidence": "LOW",
+      "top_distress_signals": [],
+      "investment_thesis": "LLM analysis failed",
+      "recommended_action": "Monitor",
+      "distress_summary": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-08-01 at 00:00 UTC.'}, 'request_id': 'req_011CdS7xEGUSRKbtXgPxutoB'}",
+      "review_summary": "",
+      "llm_star_rating": 0.0,
+      "error": true
+    },
+    "final_lead_score": 42.0,
+    "entity": {
+      "hotel_name": "Red Roof Inn Dallas - Mesquite/ Fair Park NE",
+      "address": "3447 I-30, Mesquite, TX 75150, USA",
+      "place_id": "ChIJ1RX8iKemToYRv-rP-q_7NyM",
+      "latitude": null,
+      "longitude": null,
+      "rating": 3.4,
+      "user_rating_count": 430,
+      "business_status": "OPERATIONAL",
+      "google_maps_url": "https://maps.google.com/?cid=2537773648292342463&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+      "reviews": [
+        {
+          "name": "places/ChIJ1RX8iKemToYRv-rP-q_7NyM/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xNdFFrcENTbGxJTmxKaGJYQlZOM1oyZVd4WE9GRRAB",
+          "relativePublishTimeDescription": "8 months ago",
+          "rating": 2,
+          "text": {
+            "text": "I wanted to like this location but our first room we got stank of old cigarette smoke. There were a million questionable stains, dead bugs, and holes everywhere from the walls, curtains, bed, and floor. There were cigarette burns, yellow stains on the bed sheets. Lots of holes in the curtain and the curtain doesn't fully cover the window all the way so weirdos are able to look inside of your room at an angle.\n\nI don't think they ever clean the hard floor because my bare feet got instantly dirty when walking from one side of the room to the other.\n\nWhen I left the room, I jiggled the door from the outside to make sure it was locked. If you force yourself through the door, it would unlock . I had to be at an event within 20 mins, but spent on an hour of moving everything to a new room. I had to go to the event, drop my partner off and then head back to the motel to make sure no one was breaking in our room. I informed the front desk and showed him how it was easy someone was able to get in with enough force. He wasn't convinced after 3 times when he closed the door and I was able to unlock it by force... Until the 4th time, he closed the door and I, again showed him how easy it was to force yourself in... Then he was convinced and I was able to change rooms. He was nice about the situation though.\n\nEvery time I left our room, I was worried that someone would break into our room. I didn't feel like I was in danger, but when you're not around and leaving your room to go out made me worry like crazy.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "I wanted to like this location but our first room we got stank of old cigarette smoke. There were a million questionable stains, dead bugs, and holes everywhere from the walls, curtains, bed, and floor. There were cigarette burns, yellow stains on the bed sheets. Lots of holes in the curtain and the curtain doesn't fully cover the window all the way so weirdos are able to look inside of your room at an angle.\n\nI don't think they ever clean the hard floor because my bare feet got instantly dirty when walking from one side of the room to the other.\n\nWhen I left the room, I jiggled the door from the outside to make sure it was locked. If you force yourself through the door, it would unlock . I had to be at an event within 20 mins, but spent on an hour of moving everything to a new room. I had to go to the event, drop my partner off and then head back to the motel to make sure no one was breaking in our room. I informed the front desk and showed him how it was easy someone was able to get in with enough force. He wasn't convinced after 3 times when he closed the door and I was able to unlock it by force... Until the 4th time, he closed the door and I, again showed him how easy it was to force yourself in... Then he was convinced and I was able to change rooms. He was nice about the situation though.\n\nEvery time I left our room, I was worried that someone would break into our room. I didn't feel like I was in danger, but when you're not around and leaving your room to go out made me worry like crazy.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Cathy",
+            "uri": "https://www.google.com/maps/contrib/117832341366537446429/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWT1PHAa0hCk7oLlLrlGp3OIIOM2YlP-3JpwhYFWyCda8arnJlb0w=s128-c0x00000000-cc-rp-mo-ba4"
+          },
+          "publishTime": "2025-11-20T21:21:39.472810062Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xNdFFrcENTbGxJTmxKaGJYQlZOM1oyZVd4WE9GRRAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xNdFFrcENTbGxJTmxKaGJYQlZOM1oyZVd4WE9GRRAB!2m1!1s0x864ea6a788fc15d5:0x2337fbaffacfeabf"
+        },
+        {
+          "name": "places/ChIJ1RX8iKemToYRv-rP-q_7NyM/reviews/Ci9DQUlRQUNvZENodHljRjlvT21OdFpFZDVhalJpY1dNelMycE1OR1o0UTA1dVNuYxAB",
+          "relativePublishTimeDescription": "2 months ago",
+          "rating": 5,
+          "text": {
+            "text": "The front desk was very pleasant and got me in fast and now I'm just sitting back and relaxing",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "The front desk was very pleasant and got me in fast and now I'm just sitting back and relaxing",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "kelli frye",
+            "uri": "https://www.google.com/maps/contrib/107042840704260453795/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKDaGqmd8tS8xlTQ_-8aEdsY9i2ufhoSrVvbWnC2ny892_4HQ=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2026-05-02T04:53:42.275956500Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21OdFpFZDVhalJpY1dNelMycE1OR1o0UTA1dVNuYxAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21OdFpFZDVhalJpY1dNelMycE1OR1o0UTA1dVNuYxAB!2m1!1s0x864ea6a788fc15d5:0x2337fbaffacfeabf"
+        },
+        {
+          "name": "places/ChIJ1RX8iKemToYRv-rP-q_7NyM/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tWbE9WbHZTa2hmWlZNMGFrbGplVUZQZEhOaWIzYxAB",
+          "relativePublishTimeDescription": "6 months ago",
+          "rating": 1,
+          "text": {
+            "text": "This is the nastiest place I have ever seen. All the beding was stained top cover and the sheets. Room stunk and 20+ young men checking in and smoking weed. Wasn't a safe area i do not recommend this place at all.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "This is the nastiest place I have ever seen. All the beding was stained top cover and the sheets. Room stunk and 20+ young men checking in and smoking weed. Wasn't a safe area i do not recommend this place at all.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Tonia Adams",
+            "uri": "https://www.google.com/maps/contrib/108054892482886277828/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXsl_fK31wTODSCCuLUOzwBlCcn0YA2tcay9BjIPnPqtPoNYeUOJA=s128-c0x00000000-cc-rp-mo-ba3"
+          },
+          "publishTime": "2026-01-09T14:21:35.148163221Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2tWbE9WbHZTa2hmWlZNMGFrbGplVUZQZEhOaWIzYxAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tWbE9WbHZTa2hmWlZNMGFrbGplVUZQZEhOaWIzYxAB!2m1!1s0x864ea6a788fc15d5:0x2337fbaffacfeabf"
+        },
+        {
+          "name": "places/ChIJ1RX8iKemToYRv-rP-q_7NyM/reviews/Ci9DQUlRQUNvZENodHljRjlvT25RMGEzRlRhak50TWpSelkzbHlXakp6TTFKbFNuYxAB",
+          "relativePublishTimeDescription": "a month ago",
+          "rating": 5,
+          "text": {
+            "text": "Excellent customer service the ladies in the front they go far and beyond for there guests",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Excellent customer service the ladies in the front they go far and beyond for there guests",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Labor and Compliance Services",
+            "uri": "https://www.google.com/maps/contrib/110798652155139007802/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWhbNoVSfkod0Fd2fJGUiVAhnA8RrWTXNT0eWSOcES5WbwVaMI=s128-c0x00000000-cc-rp-mo-ba2"
+          },
+          "publishTime": "2026-06-25T15:50:02.866612223Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25RMGEzRlRhak50TWpSelkzbHlXakp6TTFKbFNuYxAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25RMGEzRlRhak50TWpSelkzbHlXakp6TTFKbFNuYxAB!2m1!1s0x864ea6a788fc15d5:0x2337fbaffacfeabf"
+        },
+        {
+          "name": "places/ChIJ1RX8iKemToYRv-rP-q_7NyM/reviews/ChdDSUhNMG9nS0VPRHF5OXZsdUlMWmtRRRAB",
+          "relativePublishTimeDescription": "a year ago",
+          "rating": 1,
+          "text": {
+            "text": "I booked a handicap accessible room for one night and was so disappointed with the hotel. The accessible shower did not have any sort of shower chair, and I even called the front desk to ask and there was nothing. If my partner had not been traveling with me to physically support me, I likely would’ve hurt myself on the slippery tile trying to shower. Additionally, our air conditioner was old and busted and had to be turned back on every 10-20min, even throughout the night while we were trying to sleep. The room had a couch which was nice. The remote for the TV didn’t work and the tv was on when we got there so we had to unplug it to be able to sleep.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "I booked a handicap accessible room for one night and was so disappointed with the hotel. The accessible shower did not have any sort of shower chair, and I even called the front desk to ask and there was nothing. If my partner had not been traveling with me to physically support me, I likely would’ve hurt myself on the slippery tile trying to shower. Additionally, our air conditioner was old and busted and had to be turned back on every 10-20min, even throughout the night while we were trying to sleep. The room had a couch which was nice. The remote for the TV didn’t work and the tv was on when we got there so we had to unplug it to be able to sleep.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Mackenzie Summers",
+            "uri": "https://www.google.com/maps/contrib/117052678807550178309/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUI940HPqtuuI1rFi5R4yMjBQy3BV0Nttcnw1Cb58LjpKputKbY=s128-c0x00000000-cc-rp-mo-ba4"
+          },
+          "publishTime": "2025-05-22T17:13:29.766486Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=ChdDSUhNMG9nS0VPRHF5OXZsdUlMWmtRRRAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VPRHF5OXZsdUlMWmtRRRAB!2m1!1s0x864ea6a788fc15d5:0x2337fbaffacfeabf"
+        }
+      ],
+      "signals": {
+        "review_decline": false,
+        "review_rating_delta": 0,
+        "review_volume_decline": false,
+        "complaint_increase": false,
+        "sentiment_decline": false,
+        "sentiment_trend": "Stable",
+        "review_activity_trend": "Stable",
+        "positive_reviews_recent": 0,
+        "negative_reviews_recent": 0,
+        "positive_reviews_prior": 0,
+        "negative_reviews_prior": 0,
+        "renovation_needed": true,
+        "old_property": true,
+        "physical_condition_score": 2,
+        "franchise_loss": false,
+        "former_brand": "",
+        "franchise_affiliated": false,
+        "current_brand": "",
+        "brand_status": "NONE",
+        "recent_distress_news": "",
+        "ownership_context": "",
+        "cmbs_watchlist": false,
+        "cmbs_special_servicing": false,
+        "cmbs_delinquent": false,
+        "long_term_owner": true,
+        "ownership_length_years": 14,
+        "room_count": 52,
+        "distress_score": 5
+      },
+      "review_themes": {
+        "cleanliness": 25.0,
+        "staff": 50.0,
+        "maintenance": 25.0
+      },
+      "heuristic_scores": {
+        "distress_score": 5,
+        "distress_reasons": [
+          "Low rating: 3.4",
+          "Moderate-to-low rating with enough reviews: 430",
+          "Renovation signals in reviews: 100.0%"
+        ],
+        "review_trend_score": 0,
+        "review_volume_recent": 0,
+        "review_volume_prior": 0,
+        "review_volume_change_pct": 0.0,
+        "avg_rating_recent": 0.0,
+        "avg_rating_prior": 0.0,
+        "review_rating_delta": 0,
+        "complaint_rate_recent": 0.0,
+        "complaint_rate_prior": 0.0,
+        "review_complaint_delta": 0.0,
+        "year_built": "",
+        "property_age": "",
+        "renovation_signal_rate": 1.0,
+        "renovation_needed": true,
+        "physical_condition_score": 2,
+        "positive_reviews_recent": 0,
+        "negative_reviews_recent": 0,
+        "positive_reviews_prior": 0,
+        "negative_reviews_prior": 0,
+        "sentiment_delta": 0,
+        "sentiment_trend": "Stable",
+        "review_activity_trend": "Stable"
+      },
+      "llm_analysis": {
+        "distress_probability": 0.0,
+        "seller_fatigue_probability": 0.0,
+        "opportunity_score": 0,
+        "confidence": "LOW",
+        "top_distress_signals": [],
+        "investment_thesis": "LLM analysis failed",
+        "recommended_action": "Monitor",
+        "distress_summary": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-08-01 at 00:00 UTC.'}, 'request_id': 'req_011CdS7xEGUSRKbtXgPxutoB'}",
+        "review_summary": "",
+        "llm_star_rating": 0.0,
+        "error": true
+      },
+      "owner_data": {
+        "owner_name": "HANUMAN HOLDINGS LLC",
+        "owner_company": "HANUMAN HOLDINGS LLC",
+        "mailing_address": "2600 S CESAR CHAVEZ BLVD DALLAS TX 75215-2256",
+        "owner_phone": "",
+        "ownership_since": "2012-01-06",
+        "ownership_length_years": 14,
+        "attom_year_built": 1996,
+        "is_older_than_20_years": "Yes",
+        "room_count": 52
+      },
+      "cmbs_data": {},
+      "franchise_data": {
+        "franchise_affiliated": false,
+        "current_brand": "",
+        "former_brand": "",
+        "brand_status": "NONE",
+        "franchise_confidence": "Error",
+        "recent_distress_news": "",
+        "ownership_context": ""
+      },
+      "source_location": "Dallas, Texas",
+      "radius_miles": 10
+    },
+    "lead_reason": "Aging property; Long-term ownership",
+    "created_at": "2026-07-27T06:52:31.547866",
+    "place_id": "ChIJ1RX8iKemToYRv-rP-q_7NyM",
+    "feedback_rule_applied": "",
+    "feedback_penalty": 0,
+    "rank": 2,
+    "llm_distress_probability": 0.0,
+    "llm_seller_fatigue_probability": 0.0,
+    "llm_opportunity_score": 0,
+    "llm_star_rating": 0.0,
+    "llm_confidence": "LOW",
+    "llm_top_distress_signals": "",
+    "llm_investment_thesis": "LLM analysis failed",
+    "llm_recommended_action": "Monitor",
+    "llm_distress_summary": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-08-01 at 00:00 UTC.'}, 'request_id': 'req_011CdS7xEGUSRKbtXgPxutoB'}",
+    "llm_review_summary": "",
+    "suppress_digest": true,
+    "last_score": 42.0,
+    "last_resurfaced": null
+  }
+]

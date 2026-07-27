@@ -1,3 +1,4 @@
+# agent-3/dashboard/dashboard.py
 import os
 import re
 from datetime import datetime, timedelta
@@ -11,8 +12,7 @@ from openpyxl.utils import get_column_letter
 from openpyxl.chart import BarChart, PieChart, Reference, DoughnutChart
 from openpyxl.chart.label import DataLabelList
 from openpyxl.chart.shapes import GraphicalProperties
- 
- 
+
 load_dotenv(override=True)
  
 DB_CONFIG = {
@@ -35,20 +35,20 @@ CURRENT_SEARCH_FILL = PatternFill(
     start_color="F8F9FB",   # very light grey
     end_color="F8F9FB"
 )
- 
+
 CARD_BLUE = PatternFill("solid","EDF5FF","EDF5FF")
 CARD_GREEN = PatternFill("solid","F3FBEE","F3FBEE")
 CARD_YELLOW = PatternFill("solid","FFF9E8","FFF9E8")
 CARD_PURPLE = PatternFill("solid","F3EDF9","F3EDF9")
 CARD_LIGHTBLUE = PatternFill("solid","EEF7FF","EEF7FF")
- 
+
 HEADER_FILL = PatternFill("solid", start_color=NAVY, end_color=NAVY)
 HEADER_FONT = Font(name=FONT_NAME, color="FFFFFF", bold=True, size=10)
 BODY_FONT = Font(name=FONT_NAME, size=10)
 BOLD_FONT = Font(name=FONT_NAME, size=10, bold=True)
 SECTION_TITLE_FONT = Font(name=FONT_NAME, bold=True, size=12, color="1B2A4A")
 THIN_BORDER = Border(bottom=Side(style="hair", color="ECECEC"))
- 
+
 GREEN_FILL = PatternFill("solid", start_color="C6EFCE", end_color="C6EFCE")
 YELLOW_FILL = PatternFill("solid", start_color="FFEB9C", end_color="FFEB9C")
 RED_FILL = PatternFill("solid", start_color="FFC7CE", end_color="FFC7CE")
@@ -57,7 +57,7 @@ INSIGHT_FILL = PatternFill(
     start_color="F8FAF3",
     end_color="F8FAF3"
 )
- 
+
 STATUS_COLORS = {
     "New": "1F7A1F",
     "Pursuing": "1565C0",
@@ -260,7 +260,7 @@ def industry_primary_segment(label):
     if not label:
         return label
     return re.split(r"[/(]", label)[0].strip()
- 
+
 def fetch_search_request(search_request_id):
     conn = get_connection()
     try:
@@ -273,23 +273,23 @@ def fetch_search_request(search_request_id):
             return cur.fetchone()
     finally:
         conn.close()
- 
+
 def build_dashboard_sheet(wb, candidates, last_week, search_request):
     ws = wb.create_sheet("Dashboard", 0)
     ws.sheet_view.showGridLines = False
- 
+
     ws.merge_cells("A1:G2")
     title_cell = ws["A1"]
     title_cell.value = "Agent 3 - Business Acquisition Dashboard"
     title_cell.font = WHITE_FONT
     title_cell.alignment = Alignment(horizontal="left", vertical="center", indent=1)
- 
+
     ws.merge_cells("A3:G3")
     sub_cell = ws["A3"]
     sub_cell.value = "Surface private, founder-led and family-owned businesses that match the acquisition profile."
     sub_cell.font = WHITE_SUBFONT
     sub_cell.alignment = Alignment(horizontal="left", vertical="center", indent=1)
- 
+
     # Data as of label
     ws["H1"] = "Data as of:"
     ws["H1"].font = Font(
@@ -302,10 +302,10 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
         horizontal="right",
         vertical="center"
     )
- 
+
     # Timestamp
     ws.merge_cells("I1:J1")
- 
+
     date_value = ws["I1"]
     date_value.value = datetime.now().strftime("%d-%b-%Y %I:%M %p")
     date_value.font = Font(
@@ -329,9 +329,9 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
         horizontal="right",
         vertical="center"
     )
- 
+
     ws.merge_cells("I2:J2")
- 
+
     run_value = ws["I2"]
     run_value.value = f"RUN-{datetime.now().strftime('%Y%m%d-%H%M')}"
     run_value.font = Font(
@@ -344,7 +344,7 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
         horizontal="center",
         vertical="center"
     )
- 
+
     for row in range(1,5):
         for col in range(1,12):      # A:J
             ws.cell(row, col).fill = NAVY_FILL
@@ -358,31 +358,31 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
         ws.row_dimensions[8].height = 12
         ws.row_dimensions[9].height = 20
         ws.row_dimensions[11].height = 16
- 
+
     total_targets = len(candidates)
     new_this_week = sum(1 for c in candidates if c.get("first_seen_date") == datetime.now().date())
     shortlisted = sum(1 for c in candidates if c.get("review_status") == "Pursuing")
     in_review = sum(1 for c in candidates if c.get("review_status") == "New")
     reviewed = sum(1 for c in candidates if c.get("review_status") in ("Pursuing", "Passed", "Bad Data"))
- 
+
     founder_led_count = sum(1 for c in candidates if c.get("founder_led") == "Yes")
     family_owned_count = sum(1 for c in candidates if c.get("family_owned") == "Yes")
     scored_only = [c.get("seller_readiness_score") for c in candidates if c.get("seller_readiness_score") is not None]
     highest_score = max(scored_only) if scored_only else 0
     private_count = sum(1 for c in candidates if c.get("company_type") == "Private")
- 
+
     high_scorers = sum(
         1 for c in candidates
         if (c.get("seller_readiness_score") or 0) >= 80
     )
- 
+
     kpi_defs = [
         ("🎯", "Companies Found", total_targets, "All Time", "B35C6A"),          # Rose
         ("⭐", "High Opportunity", high_scorers, "Score ≥ 80", "D29A18"),        # Mustard
         ("🏢", "Private Companies", private_count, "100% of total", "C97A38"),  # Copper
         ("👥", "Family-Owned", family_owned_count,
         f"{round(family_owned_count*100/total_targets) if total_targets else 0}% of total",
-        "5B9A5B"),                                          
+        "5B9A5B"),                                           
         ("👤","Founder-Led",founder_led_count,
         f"{round(founder_led_count*100/total_targets) if total_targets else 0}% of total",
         "8366B8"),                                                         # Purple
@@ -390,12 +390,12 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
         f"↑ {new_this_week}",
         "149C9C"),    
     ]
- 
+
     # CURRENT SEARCH
- 
+
     # Row 5 title
     ws.merge_cells("A5:K5")
- 
+
     title = ws["A5"]
     title.value = "CURRENT SEARCH"
     title.font = Font(
@@ -408,25 +408,25 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
         horizontal="left",
         vertical="center"
     )
- 
+
     ws.row_dimensions[5].height = 22
- 
- 
+
+
     # Background card (Rows 6-8)
- 
+
     CARD_BORDER = Border(
         left=Side(style="medium", color="FFFFFF"),
         right=Side(style="medium", color="FFFFFF"),
         top=Side(style="medium", color="FFFFFF"),
         bottom=Side(style="medium", color="FFFFFF"),
     )
- 
+
     for r in range(6, 9):
         for c in range(1, 12):          # A:K
             cell = ws.cell(r, c)
             cell.fill = CURRENT_SEARCH_FILL
             cell.border = CARD_BORDER
- 
+
     search_items = [
         ("📍", "Geography", search_request.get("geography") or "-"),
         ("🏭", "Industry", search_request.get("industry") or "-"),
@@ -434,12 +434,11 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
         ("📅", "Min Years", f"{search_request.get('min_years') or '-'}+ Years"),
         ("👤", "Founder Age", search_request.get("founder_age") or "-"),
     ]
- 
- 
+
     positions = [1,4,6,8,10]
- 
+
     for (icon, heading, value), col in zip(search_items, positions):
- 
+
         merge_widths = {
             1: 3,   # A:C
             4: 2,   # D:E
@@ -447,42 +446,42 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
             8: 2,   # H:I
             10: 2,  # J:K
         }
- 
+
         ws.merge_cells(
             start_row=6,
             start_column=col,
             end_row=8,
             end_column=col + merge_widths[col] - 1
         )
- 
+
         cell = ws.cell(row=6, column=col)
- 
+
         cell.value = (
             f"{icon}\n"
             f"{heading}\n"
             f"{value}"
         )
- 
+
         cell.font = Font(
             name=FONT_NAME,
             size=11,
             bold=True,
             color="1B2A4A"
         )
- 
+
         cell.alignment = Alignment(
             horizontal="center",
             vertical="top",
             wrap_text=True
         )
- 
+
     CARD_BORDER = Border(
         left=Side(style="thin", color="ECECEC"),
         right=Side(style="thin", color="ECECEC"),
         top=Side(style="thin", color="ECECEC"),
         bottom=Side(style="thin", color="ECECEC"),
     )
- 
+
     CARD_COLS = [
         (1,2),    # A:B
         (3,4),    # C:D
@@ -491,7 +490,7 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
         (9,10),   # I:J
         (11,11),
     ]
- 
+
     ws.merge_cells("A9:K9")
     c = ws["A9"]
     c.value = "TOP SIGNALS"
@@ -501,63 +500,63 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
         bold=True,
         color="FFFFFF"
     )
- 
+
     c.fill = NAVY_FILL
     c.alignment = Alignment(
         horizontal="left",
         vertical="center"
     )
- 
+
     # ================= KPI CARDS ====================
     ws.row_dimensions[10].height = 56
     ws.row_dimensions[11].height = 12
     ws.row_dimensions[12].height = 12
     ws.row_dimensions[13].height = 12
- 
+
     for (icon, title, value, caption, color), (start_col, end_col) in zip(kpi_defs, CARD_COLS):
- 
+
         fill = PatternFill(
             "solid",
             start_color=color,
             end_color=color
         )
- 
+
         ws.merge_cells(
             start_row=10,
             start_column=start_col,
             end_row=13,
             end_column=end_col
         )
- 
+
         cell = ws.cell(row=10, column=start_col)
- 
+
         cell.value = (
             f"{icon}\n"
             f"{title}\n"
             f"{value}\n"
             f"{caption}"
         )
- 
+
         cell.fill = fill
- 
+
         cell.font = Font(
             name=FONT_NAME,
             size=13,
             bold=True,
             color="FFFFFF"
         )
- 
+
         cell.alignment = Alignment(
             horizontal="center",
             vertical="center",
             wrap_text=True
         )
- 
+
         for r in range(10,14):
             for c in range(start_col,end_col+1):
                 ws.cell(r,c).fill = fill
                 ws.cell(r,c).border = CARD_BORDER
- 
+
     # ================= CHART CARDS ====================
     section_headers = [
         ("A14:C14", "TOP GEOGRAPHIES"),
@@ -565,58 +564,58 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
         ("G14:I14", "INDUSTRY BREAKDOWN"),
         ("J14:K14", "KEY INSIGHTS"),
     ]
- 
+
     for rng, title in section_headers:
- 
+
         ws.merge_cells(rng)
- 
+
         cell = ws[rng.split(":")[0]]
         cell.value = title
         cell.fill = NAVY_FILL
- 
+
         cell.font = Font(
             name=FONT_NAME,
             size=12,
             bold=True,
             color="FFFFFF"
         )
- 
+
         cell.alignment = Alignment(
             horizontal="left",
             vertical="center"
         )
- 
+
     ws.row_dimensions[14].height = 22
- 
+
     CARD_FILL = PatternFill(
         "solid",
         start_color="FCFCFC",
         end_color="FCFCFC"
     )
- 
+
     CHART_BORDER = Border(
         left=Side(style="thin", color="D8D8D8"),
         right=Side(style="thin", color="D8D8D8"),
         top=Side(style="thin", color="D8D8D8"),
         bottom=Side(style="thin", color="D8D8D8"),
     )
- 
+
     chart_cards = [
         ("A15:C32"),
         ("D15:F32"),
         ("G15:I32"),
         ("J15:K32"),
     ]
- 
+
     for rng in chart_cards:
- 
+
         start, end = rng.split(":")
- 
+
         from openpyxl.utils.cell import coordinate_from_string, column_index_from_string
- 
+
         s_col, s_row = coordinate_from_string(start)
         e_col, e_row = coordinate_from_string(end)
- 
+
         for r in range(s_row, e_row + 1):
             for c in range(
                 column_index_from_string(s_col),
@@ -625,19 +624,19 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
                 cell = ws.cell(r, c)
                 cell.fill = CARD_FILL
                 cell.border = CHART_BORDER
- 
+
     for r in range(15, 33):
         ws.row_dimensions[r].height = 22
- 
+
     helper_data_row = 45
     chart_data_row = 15
- 
+
     state_counts = {}
     for c in candidates:
         st = normalize_state_name(c.get("state"))
         state_counts[st] = state_counts.get(st, 0) + 1
     top_states = sorted(state_counts.items(), key=lambda x: -x[1])[:5]
- 
+
     geo_header_row = helper_data_row
     ws.cell(row=geo_header_row, column=1, value="State").font = INVISIBLE_FONT
     ws.cell(row=geo_header_row, column=2, value="Count").font = INVISIBLE_FONT
@@ -651,7 +650,7 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
         status = c.get("ownership_status") or "Unknown"
         ownership_counts[status] = ownership_counts.get(status, 0) + 1
     ownership_items = sorted(ownership_counts.items(), key=lambda x: -x[1])
- 
+
     ownership_header_row = helper_data_row
     ws.cell(row=ownership_header_row, column=4, value="Ownership").font = INVISIBLE_FONT
     ws.cell(row=ownership_header_row, column=5, value="Count").font = INVISIBLE_FONT
@@ -699,7 +698,7 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
     helper_block_last_row = max(geo_last_row, ownership_last_row, industry_last_row)
     for r in range(helper_data_row, helper_block_last_row + 1):
         ws.row_dimensions[r].height = 1
- 
+
     pie = DoughnutChart()
     pie.holeSize = 58
     pie.legend.position = "r"
@@ -717,7 +716,7 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
     pie.height = 4.5
     pie.width = 9.25
     ws.add_chart(pie, "A15")
- 
+
     bar1 = BarChart()
     bar1.style = 10
     bar1.legend = None
@@ -736,7 +735,7 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
     bar1.height = 4.5
     bar1.width = 9.25
     ws.add_chart(bar1, "D15")
- 
+
     bar2 = BarChart()
     bar2.type = "bar"
     bar2.style = 11
@@ -761,16 +760,16 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
     bar2.height = 4.5
     bar2.width = 9.25
     ws.add_chart(bar2, "G15")
- 
+
     pct_founder_led = round(100 * sum(1 for c in candidates if c.get("founder_led") == "Yes") / total_targets, 0) if total_targets else 0
     pct_family_owned = round(100 * sum(1 for c in candidates if c.get("family_owned") == "Yes") / total_targets, 0) if total_targets else 0
     top_state_label = top_states[0][0] if top_states else "N/A"
     high_scorers = sum(1 for c in candidates if (c.get("seller_readiness_score") or 0) >= 80)
     top_industry = top_industries[0][0] if top_industries else "N/A"
- 
+
     insights_col = 10          # J
     start_row = 15
- 
+
     insights = [
         ("📍", "Top Geography", top_state_label),
         ("🏭", "Top Industry", top_industry),
@@ -781,47 +780,47 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
         ("🆕", "New This Run",
         f"{new_this_week} Company" if new_this_week == 1 else f"{new_this_week} Companies"),
     ]
- 
+
     row = start_row
- 
+
     for icon, heading, value in insights:
- 
+
         ws.merge_cells(
             start_row=row,
             start_column=10,
             end_row=row,
             end_column=11
         )
- 
+
         cell = ws.cell(row=row, column=10)
- 
+
         cell.value = f"{icon}  {heading}: {value}"
- 
+
         cell.font = Font(
             name=FONT_NAME,
             size=10,
             bold=False,
             color="333333"
         )
- 
+
         cell.alignment = Alignment(
             horizontal="left",
             vertical="center",
             indent=0
         )
- 
+
         cell.fill = PatternFill(
             "solid",
             start_color="FBFBF7",
             end_color="FBFBF7"
         )
- 
+
         cell.border = Border(
             bottom=Side(style="thin", color="ECECEC")
         )
- 
+
         row += 1
-   
+    
     # =====================================================
     # TOP OPPORTUNITY COMPANIES SECTION
     # =====================================================
@@ -832,7 +831,7 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
         end_row=table_title_row,
         end_column=11
     )
- 
+
     title = ws.cell(row=table_title_row, column=1)
     title.value = "TOP OPPORTUNITY COMPANIES"
     title.fill = NAVY_FILL
@@ -842,13 +841,13 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
         bold=True,
         color="FFFFFF"
     )
- 
+
     title.alignment = Alignment(
         horizontal="left",
         vertical="center",
         indent=1
     )
- 
+
     ws.row_dimensions[table_title_row].height = 24
     table_columns = [
         ("Rank", None, 1),
@@ -870,7 +869,7 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
         cell.font = HEADER_FONT
         cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
     ws.row_dimensions[header_row].height = 24
- 
+
     sorted_candidates = sorted(
         candidates,
         key=lambda r: (r.get("first_seen_date") is None, r.get("first_seen_date")),
@@ -913,20 +912,20 @@ def build_dashboard_sheet(wb, candidates, last_week, search_request):
         # Fixed row height so long Why Discovered/Fit Analysis text has
         # room to wrap instead of being clipped at default row height.
         ws.row_dimensions[r].height = 42
- 
+
     ws.auto_filter.ref = (
         f"A{header_row}:"
         f"{get_column_letter(len(table_columns))}{header_row}"
     )
- 
+
     autosize_columns(ws, [w for _, _, w in table_columns] + [12] * (TOTAL_COLS - len(table_columns)))
- 
+
     # Equal dashboard column widths (A:I)
     DASHBOARD_COL_WIDTH = 16
- 
+
     for col in range(1, 11):  # Columns A:J
         ws.column_dimensions[get_column_letter(col)].width = DASHBOARD_COL_WIDTH
- 
+
     return ws
  
  
@@ -962,7 +961,7 @@ def build_companies_db_sheet(wb, candidates):
         "why_discovered", "website", "founder_name", "ownership_status",
         "fit_analysis", "seller_readiness_signals",
     }
- 
+
     for r, row in enumerate(candidates, start=header_row + 1):
         for c, (_, key, _) in enumerate(DB_COLUMNS, start=1):
             value = row.get(key)
@@ -971,7 +970,7 @@ def build_companies_db_sheet(wb, candidates):
                 column=c,
                 value=value
             )
- 
+
             if key == "website" and value:
                 cell.hyperlink = value
                 cell.style = "Hyperlink"
@@ -993,7 +992,7 @@ def build_companies_db_sheet(wb, candidates):
                 start_color="FAFAFA",
                 end_color="FAFAFA"
             )
- 
+
             for c in range(1, num_cols + 1):
                 if DB_COLUMNS[c-1][1] != "seller_readiness_score":
                     ws.cell(r, c).fill = alt_fill
@@ -1037,7 +1036,7 @@ def build_top_companies_sheet(wb, candidates):
         cell.fill = HEADER_FILL
         cell.font = HEADER_FONT
         cell.alignment = Alignment(horizontal="center", wrap_text=True)
- 
+
     ws.row_dimensions[header_row].height = 32
     dv = DataValidation(
         type="list",
@@ -1051,7 +1050,7 @@ def build_top_companies_sheet(wb, candidates):
     feedback_col_letter = get_column_letter(feedback_col_idx)
  
     for idx, row in enumerate(top, start=1):
-        r = header_row + idx
+        r = header_row + idx 
         ws.cell(row=r, column=1, value=idx).font = BOLD_FONT
         for c, (label, key, _) in enumerate(columns[1:], start=2):
             if key == "review_status":
@@ -1077,7 +1076,7 @@ def build_top_companies_sheet(wb, candidates):
         f"A{header_row}:"
         f"{get_column_letter(len(columns))}{header_row}"
     )
- 
+
     id_col_idx = next(i for i, (label, _, _) in enumerate(columns, start=1) if label == "_candidate_id")
     ws.column_dimensions[get_column_letter(id_col_idx)].width = 0
     ws.column_dimensions[get_column_letter(id_col_idx)].hidden = True
@@ -1096,7 +1095,7 @@ def generate_dashboard(output_file, search_request_id):
  
     wb = Workbook()
     wb.remove(wb.active)
- 
+
     search_request = fetch_search_request(search_request_id)
     build_dashboard_sheet(
         wb,

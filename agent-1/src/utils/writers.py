@@ -35,6 +35,7 @@ BASE_FIELDNAMES = [
     "llm_distress_probability",
     "llm_seller_fatigue_probability",
     "llm_opportunity_score",
+    "llm_star_rating",
     "llm_confidence",
     "llm_top_distress_signals",
     "llm_investment_thesis",
@@ -94,6 +95,7 @@ def save_excel_files(run_dir, all_rows):
         row["llm_distress_probability"] = llm.get("distress_probability")
         row["llm_seller_fatigue_probability"] = llm.get("seller_fatigue_probability")
         row["llm_opportunity_score"] = llm.get("opportunity_score")
+        row["llm_star_rating"] = llm.get("llm_star_rating")
         row["llm_confidence"] = llm.get("confidence")
         signals = llm.get("top_distress_signals", "")
         if isinstance(signals, list):

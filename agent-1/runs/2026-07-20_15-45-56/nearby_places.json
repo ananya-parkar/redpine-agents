@@ -1,0 +1,1080 @@
+[
+  {
+    "search_location": "Dallas, Texas",
+    "radius_miles": 10,
+    "hotel_count": 10,
+    "hotels": [
+      {
+        "id": "ChIJoypulB6ZToYRwosc2x44jHY",
+        "formattedAddress": "500 S Ervay St, Dallas, TX 75201, USA",
+        "location": {
+          "latitude": 32.77769,
+          "longitude": -96.79596000000001
+        },
+        "rating": 4.6,
+        "googleMapsUri": "https://maps.google.com/?cid=8542264298391243714&g_mp=Cilnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaE5lYXJieRACGAQgAA",
+        "businessStatus": "OPERATIONAL",
+        "userRatingCount": 623,
+        "displayName": {
+          "text": "Amyfinehouse Luxury Downtown Stay",
+          "languageCode": "en"
+        },
+        "reviews": [
+          {
+            "name": "places/ChIJoypulB6ZToYRwosc2x44jHY/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pWalluTXlVVWg2UmtaaGNFVldkVzlRVG1WNFUwRRAB",
+            "relativePublishTimeDescription": "2 months ago",
+            "rating": 5,
+            "text": {
+              "text": "Amy Finehouse Lofts and Vacation Rentals were exceptional to rent from. I needed a last-minute local stay for a couple of nights and booked a place in Downtown Dallas. In my rush, I accidentally reserved the wrong unit. At first, it seemed like they might not be able to make the change, but the amazing team at Amy Finehouse went above and beyond. Not only did they help correct the booking, they upgraded me as well.\n\nFrom reservation to checkout, the customer service and hospitality were truly outstanding. The loft itself was extraordinary: beautiful, comfortable, and exactly what I needed for a stress-free, relaxing stay. Thank you for elevating the bar and providing 10-star service. I highly recommend Amy Finehouse Lofts and Vacation Rentals!",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "Amy Finehouse Lofts and Vacation Rentals were exceptional to rent from. I needed a last-minute local stay for a couple of nights and booked a place in Downtown Dallas. In my rush, I accidentally reserved the wrong unit. At first, it seemed like they might not be able to make the change, but the amazing team at Amy Finehouse went above and beyond. Not only did they help correct the booking, they upgraded me as well.\n\nFrom reservation to checkout, the customer service and hospitality were truly outstanding. The loft itself was extraordinary: beautiful, comfortable, and exactly what I needed for a stress-free, relaxing stay. Thank you for elevating the bar and providing 10-star service. I highly recommend Amy Finehouse Lofts and Vacation Rentals!",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Clark Wilson",
+              "uri": "https://www.google.com/maps/contrib/104803036695133432006/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLMBn1lWODGsNVeq6_BOoLlFX7jC09Ig-YieVuq_tMaaWafSQ=s128-c0x00000000-cc-rp-mo"
+            },
+            "publishTime": "2026-04-30T01:55:36.483891144Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pWalluTXlVVWg2UmtaaGNFVldkVzlRVG1WNFUwRRAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pWalluTXlVVWg2UmtaaGNFVldkVzlRVG1WNFUwRRAB!2m1!1s0x864e991e946e2aa3:0x768c381edb1c8bc2"
+          },
+          {
+            "name": "places/ChIJoypulB6ZToYRwosc2x44jHY/reviews/Ci9DQUlRQUNvZENodHljRjlvT21wcFJTMU9aVTVWVW1sYVVGRjFUMlZXTVVZeGNtYxAB",
+            "relativePublishTimeDescription": "a month ago",
+            "rating": 3,
+            "text": {
+              "text": "I was under the impression that there were 2 bedrooms like it stated in the description but it was 1 bedroom and a bed in the living room. Also, some strange guy helped himself in the apartment while my daughter was there alone! He said he was there to look at 3 spots .....?? I told him to please come back when I was there. Not sure why someone would be coming in once the space is occupied. Other than that, it was good.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "I was under the impression that there were 2 bedrooms like it stated in the description but it was 1 bedroom and a bed in the living room. Also, some strange guy helped himself in the apartment while my daughter was there alone! He said he was there to look at 3 spots .....?? I told him to please come back when I was there. Not sure why someone would be coming in once the space is occupied. Other than that, it was good.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Talesha Sharp",
+              "uri": "https://www.google.com/maps/contrib/105862185009772112457/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocK63qfk9Dy9LzJpExvyzlsF9MPuh0O8vqBd0F4fIJLLXophpA=s128-c0x00000000-cc-rp-mo"
+            },
+            "publishTime": "2026-06-13T15:35:48.216386625Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21wcFJTMU9aVTVWVW1sYVVGRjFUMlZXTVVZeGNtYxAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21wcFJTMU9aVTVWVW1sYVVGRjFUMlZXTVVZeGNtYxAB!2m1!1s0x864e991e946e2aa3:0x768c381edb1c8bc2"
+          },
+          {
+            "name": "places/ChIJoypulB6ZToYRwosc2x44jHY/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xGcmRVdEljM1JrU0ZaNVVVTkRSbk41UlVoeVgzYxAB",
+            "relativePublishTimeDescription": "3 months ago",
+            "rating": 5,
+            "text": {
+              "text": "This was a really nice property. Grace was very responsive. It’s an updated building right in downtown Dallas so there was so much you could walk to and see. This was my first time to Dallas and this spot was a great way to explore while there. I would definitely book again.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "This was a really nice property. Grace was very responsive. It’s an updated building right in downtown Dallas so there was so much you could walk to and see. This was my first time to Dallas and this spot was a great way to explore while there. I would definitely book again.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Joseph L. Clark",
+              "uri": "https://www.google.com/maps/contrib/109620500570854411867/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjW7XyUh_2f1Q3Ola_T2oKao4ayLy03hp0lWNiO5wzQ8v7VzccXd=s128-c0x00000000-cc-rp-mo"
+            },
+            "publishTime": "2026-04-10T02:37:58.742628044Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xGcmRVdEljM1JrU0ZaNVVVTkRSbk41UlVoeVgzYxAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xGcmRVdEljM1JrU0ZaNVVVTkRSbk41UlVoeVgzYxAB!2m1!1s0x864e991e946e2aa3:0x768c381edb1c8bc2"
+          },
+          {
+            "name": "places/ChIJoypulB6ZToYRwosc2x44jHY/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pNMlRUa3RkbnB2UkdOMFlVMVBSRTVSZFdNM2QwRRAB",
+            "relativePublishTimeDescription": "3 months ago",
+            "rating": 5,
+            "text": {
+              "text": "Amazing all the way around. Checkin and check out was a breeze. They provide you with everything you need in an easy to understand way. It was really nice and clean. Free valet parking. This is definitely my new go to place whenever i visit Dallas. Highly recommended!! Stayed 1 night in Mar 2026",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "Amazing all the way around. Checkin and check out was a breeze. They provide you with everything you need in an easy to understand way. It was really nice and clean. Free valet parking. This is definitely my new go to place whenever i visit Dallas. Highly recommended!! Stayed 1 night in Mar 2026",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Aaron",
+              "uri": "https://www.google.com/maps/contrib/101281284662246718701/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJv-TtY6pneRfNOslTf5UJcOkrdZi7kpj8kez7ISRbVfEhZ6w=s128-c0x00000000-cc-rp-mo"
+            },
+            "publishTime": "2026-03-31T23:39:03.978585745Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pNMlRUa3RkbnB2UkdOMFlVMVBSRTVSZFdNM2QwRRAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pNMlRUa3RkbnB2UkdOMFlVMVBSRTVSZFdNM2QwRRAB!2m1!1s0x864e991e946e2aa3:0x768c381edb1c8bc2"
+          },
+          {
+            "name": "places/ChIJoypulB6ZToYRwosc2x44jHY/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xwMFJEQm5NbXBRYVV0RVFVZG5aSFpYUm5WalUwRRAB",
+            "relativePublishTimeDescription": "2 months ago",
+            "rating": 5,
+            "text": {
+              "text": "This place is absolutely beautiful. I had a great view of Dallas and the beautiful lake across the street. The house is gorgeous in a very nice apartment loft with a pool outside very centralized for everything!\nWould stay here again",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "This place is absolutely beautiful. I had a great view of Dallas and the beautiful lake across the street. The house is gorgeous in a very nice apartment loft with a pool outside very centralized for everything!\nWould stay here again",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Avery Garcia",
+              "uri": "https://www.google.com/maps/contrib/104263997980203119684/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXgsefIu6w9KxiNUtHiYWJYocIZ7MTbv1K_MD-JizrsFMpo8to=s128-c0x00000000-cc-rp-mo"
+            },
+            "publishTime": "2026-05-01T23:03:37.496943343Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xwMFJEQm5NbXBRYVV0RVFVZG5aSFpYUm5WalUwRRAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xwMFJEQm5NbXBRYVV0RVFVZG5aSFpYUm5WalUwRRAB!2m1!1s0x864e991e946e2aa3:0x768c381edb1c8bc2"
+          }
+        ]
+      },
+      {
+        "id": "ChIJcW2RYR6ZToYRDBhvMT5vtZ8",
+        "formattedAddress": "555 Evergreen St, Dallas, TX 75201, USA",
+        "location": {
+          "latitude": 32.777546199999996,
+          "longitude": -96.7949727
+        },
+        "rating": 3.8,
+        "googleMapsUri": "https://maps.google.com/?cid=11508226735723190284&g_mp=Cilnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaE5lYXJieRACGAQgAA",
+        "businessStatus": "OPERATIONAL",
+        "userRatingCount": 399,
+        "displayName": {
+          "text": "TownePlace Suites by Marriott Dallas Downtown",
+          "languageCode": "en"
+        },
+        "reviews": [
+          {
+            "name": "places/ChIJcW2RYR6ZToYRDBhvMT5vtZ8/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tGcmEwRnNha1JIV1VWVGQxVkRRVzV5ZVVwUFFrRRAB",
+            "relativePublishTimeDescription": "6 months ago",
+            "rating": 5,
+            "text": {
+              "text": "The biggest hotel room I've stayed in and at an affordable price! So spacious for a King bed, sofa bed and a kitchenette! Convenient 12pm checkout! Hallways are wide, our room had a great view of the tall buildings in Downtown. The room was clean and welcoming, the hotel is walking distance to Main Street. The front staff are nice and friendly, always available to assist, check in and out was a breeze! Free breakfast offered a variety of items, all hot and satisfying! Parking lot across the street is affordable with an easy to pay process online. 10/10, will stay here at this hotel again!",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "The biggest hotel room I've stayed in and at an affordable price! So spacious for a King bed, sofa bed and a kitchenette! Convenient 12pm checkout! Hallways are wide, our room had a great view of the tall buildings in Downtown. The room was clean and welcoming, the hotel is walking distance to Main Street. The front staff are nice and friendly, always available to assist, check in and out was a breeze! Free breakfast offered a variety of items, all hot and satisfying! Parking lot across the street is affordable with an easy to pay process online. 10/10, will stay here at this hotel again!",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Sophie C",
+              "uri": "https://www.google.com/maps/contrib/100271658658109169622/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVrO5pKpeb7NWfon14a8S4tmyMGzN6tHNR8qzeJgEFI6fZocSo=s128-c0x00000000-cc-rp-mo-ba4"
+            },
+            "publishTime": "2026-01-02T07:43:39.957907581Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2tGcmEwRnNha1JIV1VWVGQxVkRRVzV5ZVVwUFFrRRAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tGcmEwRnNha1JIV1VWVGQxVkRRVzV5ZVVwUFFrRRAB!2m1!1s0x864e991e61916d71:0x9fb56f3e316f180c"
+          },
+          {
+            "name": "places/ChIJcW2RYR6ZToYRDBhvMT5vtZ8/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pkTE9XMW5PWFJrUWt0Nk1FOVVUMGhJYjNod1ZYYxAB",
+            "relativePublishTimeDescription": "2 weeks ago",
+            "rating": 3,
+            "text": {
+              "text": "Big room, as other reviews say, sure. I worked afternoon/late afternoon to night during the grand majority of my month & 1 week here. They only cleaned my room 3 times. Floor creek and random noises at night, guess they decide to work at night, & loudly, too? Or the guests. Not for kids. Worst or all, my shower water was hot. Not at all warm. Hot. Didn’t matter if i put the facet all the way down for cold, it would stay hot or close. It would either stay hot or would turn the way it should be after waiting for such a long time. Plumbing problems, on top of all else. The TV had a swivel, but if i would turn it too far to it’s extent, it turns turn off.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "Big room, as other reviews say, sure. I worked afternoon/late afternoon to night during the grand majority of my month & 1 week here. They only cleaned my room 3 times. Floor creek and random noises at night, guess they decide to work at night, & loudly, too? Or the guests. Not for kids. Worst or all, my shower water was hot. Not at all warm. Hot. Didn’t matter if i put the facet all the way down for cold, it would stay hot or close. It would either stay hot or would turn the way it should be after waiting for such a long time. Plumbing problems, on top of all else. The TV had a swivel, but if i would turn it too far to it’s extent, it turns turn off.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Alejandro Robles",
+              "uri": "https://www.google.com/maps/contrib/100013561251199925159/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjW9IhMnOssAUJhB-TQ_b44rZSKLF-XBCmLAd0kByagKH-p7npErgw=s128-c0x00000000-cc-rp-mo-ba3"
+            },
+            "publishTime": "2026-06-29T18:32:04.389841154Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pkTE9XMW5PWFJrUWt0Nk1FOVVUMGhJYjNod1ZYYxAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pkTE9XMW5PWFJrUWt0Nk1FOVVUMGhJYjNod1ZYYxAB!2m1!1s0x864e991e61916d71:0x9fb56f3e316f180c"
+          },
+          {
+            "name": "places/ChIJcW2RYR6ZToYRDBhvMT5vtZ8/reviews/Ci9DQUlRQUNvZENodHljRjlvT21rMWVuQXdSblI0Y2pWbU1uSm9OVTE0VWsxVVprRRAB",
+            "relativePublishTimeDescription": "2 months ago",
+            "rating": 5,
+            "text": {
+              "text": "The staff has been very accommodating. The food is great. There are no flies lol The staff is AMAZING!! The room is basically a small loft apartment. We love it here and my family that have came to visit us say that they really like the layout and would definitely stay here on their next visit. Parking is limited and they do valet but thats basically all of downtown Dallas. Yes, there are homeless people but again, that is ALL OF DOWNTOWN DALLAS. The building is over 100 years old which adds character. Everthing is close by or within reasonable distance :)",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "The staff has been very accommodating. The food is great. There are no flies lol The staff is AMAZING!! The room is basically a small loft apartment. We love it here and my family that have came to visit us say that they really like the layout and would definitely stay here on their next visit. Parking is limited and they do valet but thats basically all of downtown Dallas. Yes, there are homeless people but again, that is ALL OF DOWNTOWN DALLAS. The building is over 100 years old which adds character. Everthing is close by or within reasonable distance :)",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Kristal Munoz",
+              "uri": "https://www.google.com/maps/contrib/112752849409638715782/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUZoKWMZMTBgkU_viINI9WvWDpSGkWYPnds0btcPTSgOOkMhcACeA=s128-c0x00000000-cc-rp-mo-ba2"
+            },
+            "publishTime": "2026-04-28T19:17:01.615274961Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21rMWVuQXdSblI0Y2pWbU1uSm9OVTE0VWsxVVprRRAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21rMWVuQXdSblI0Y2pWbU1uSm9OVTE0VWsxVVprRRAB!2m1!1s0x864e991e61916d71:0x9fb56f3e316f180c"
+          },
+          {
+            "name": "places/ChIJcW2RYR6ZToYRDBhvMT5vtZ8/reviews/Ci9DQUlRQUNvZENodHljRjlvT2psSVZscFlaa1pSVm5aTmRERnlPRU5MZFhWdWVYYxAB",
+            "relativePublishTimeDescription": "2 months ago",
+            "rating": 5,
+            "text": {
+              "text": "Located in the heart of the city. Minutes from Love Field airport , myerson symphony , Perot Museum to name a few. Rooms remodeled new carpets this month. Very spacious with kitchen and sofa.  Great view . Valet parking . A few homeless hanging around outside building perimeter but didn't seem to bother anyone. Bar opens at 5pm. Free breakfast.  Nice pool.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "Located in the heart of the city. Minutes from Love Field airport , myerson symphony , Perot Museum to name a few. Rooms remodeled new carpets this month. Very spacious with kitchen and sofa.  Great view . Valet parking . A few homeless hanging around outside building perimeter but didn't seem to bother anyone. Bar opens at 5pm. Free breakfast.  Nice pool.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Kathy B",
+              "uri": "https://www.google.com/maps/contrib/106872547427627237582/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWk6Bkr5tj3-kDtkvyfXCih6j5VgcSC8ipySN2U40IaaD7CBpABdQ=s128-c0x00000000-cc-rp-mo-ba5"
+            },
+            "publishTime": "2026-05-19T15:59:08.141257959Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2psSVZscFlaa1pSVm5aTmRERnlPRU5MZFhWdWVYYxAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2psSVZscFlaa1pSVm5aTmRERnlPRU5MZFhWdWVYYxAB!2m1!1s0x864e991e61916d71:0x9fb56f3e316f180c"
+          },
+          {
+            "name": "places/ChIJcW2RYR6ZToYRDBhvMT5vtZ8/reviews/Ci9DQUlRQUNvZENodHljRjlvT25GTGFqTkZNMWRtTkhGNE9WOHlPV2QyYlRsS09WRRAB",
+            "relativePublishTimeDescription": "3 months ago",
+            "rating": 5,
+            "text": {
+              "text": "Josh at the front desk was the first person we encountered in the hotel. He quickly got us checked in and made us feel so welcome. Having had a long day of travel already behind us, this we just what we needed. We saw home a few more times while we were there, always remembering us. Everyone else we encountered were also very helpful (shout out to the valet peeps!). The room was quite spacious and had a very comfortable vibe. The location couldn’t have been better. Away from the melee of downtown center, it was a quick walk almost anywhere we wanted to go. Highly recommend!",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "Josh at the front desk was the first person we encountered in the hotel. He quickly got us checked in and made us feel so welcome. Having had a long day of travel already behind us, this we just what we needed. We saw home a few more times while we were there, always remembering us. Everyone else we encountered were also very helpful (shout out to the valet peeps!). The room was quite spacious and had a very comfortable vibe. The location couldn’t have been better. Away from the melee of downtown center, it was a quick walk almost anywhere we wanted to go. Highly recommend!",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "J NB",
+              "uri": "https://www.google.com/maps/contrib/115720719217771377821/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWOEweSPU9Uz5BEQl2PVY0K38tUxtfbgQZ_PkpTOxsOjn-OLOHM=s128-c0x00000000-cc-rp-mo"
+            },
+            "publishTime": "2026-03-23T13:49:12.671691348Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25GTGFqTkZNMWRtTkhGNE9WOHlPV2QyYlRsS09WRRAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25GTGFqTkZNMWRtTkhGNE9WOHlPV2QyYlRsS09WRRAB!2m1!1s0x864e991e61916d71:0x9fb56f3e316f180c"
+          }
+        ]
+      },
+      {
+        "id": "ChIJMQyaYR6ZToYR9L6MCBknscQ",
+        "formattedAddress": "555 Evergreen St, Dallas, TX 75201, USA",
+        "location": {
+          "latitude": 32.7776193,
+          "longitude": -96.79487689999999
+        },
+        "rating": 3.7,
+        "googleMapsUri": "https://maps.google.com/?cid=14173152490782768884&g_mp=Cilnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaE5lYXJieRACGAQgAA",
+        "businessStatus": "OPERATIONAL",
+        "userRatingCount": 706,
+        "displayName": {
+          "text": "Fairfield by Marriott Inn & Suites Dallas Downtown",
+          "languageCode": "en"
+        },
+        "reviews": [
+          {
+            "name": "places/ChIJMQyaYR6ZToYR9L6MCBknscQ/reviews/Ci9DQUlRQUNvZENodHljRjlvT214d2NqYzJabXhTZFhsaFlYUkhXRVpqWVRCdU1XYxAB",
+            "relativePublishTimeDescription": "4 months ago",
+            "rating": 5,
+            "text": {
+              "text": "I attended an event there last night and was truly impressed by the hotel's transformation, the bar area, and the staff. I didn't have a chance to see the  rooms (they were offering 'tours'), however one of my colleagues said they were enormous.  The staff at the bar were fantastic - quick, friendly, and efficient for a large event.  I will definitely be recommending it to friends soon.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "I attended an event there last night and was truly impressed by the hotel's transformation, the bar area, and the staff. I didn't have a chance to see the  rooms (they were offering 'tours'), however one of my colleagues said they were enormous.  The staff at the bar were fantastic - quick, friendly, and efficient for a large event.  I will definitely be recommending it to friends soon.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Andrew Siegel",
+              "uri": "https://www.google.com/maps/contrib/110410531880001141539/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjU26Hgr6H_8v3bw3-s2JhHuWinpWdrwDCG7W_Zf_jxylAVsQ8k=s128-c0x00000000-cc-rp-mo-ba4"
+            },
+            "publishTime": "2026-03-13T21:21:15.561179994Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT214d2NqYzJabXhTZFhsaFlYUkhXRVpqWVRCdU1XYxAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT214d2NqYzJabXhTZFhsaFlYUkhXRVpqWVRCdU1XYxAB!2m1!1s0x864e991e619a0c31:0xc4b12719088cbef4"
+          },
+          {
+            "name": "places/ChIJMQyaYR6ZToYR9L6MCBknscQ/reviews/Ci9DQUlRQUNvZENodHljRjlvT25abWMxOXhZMGRXVmxsWlRXMUNWMGx6Y1hWMmRuYxAB",
+            "relativePublishTimeDescription": "2 months ago",
+            "rating": 1,
+            "text": {
+              "text": "We did not have a very good experience with the Fairfield in Dallas. We were stuck for a night because of a flight delay so already not a great start. We called to see if they had a crib since we had our young daughter and they assured us they did. On arrival they said they didn’t have one and they only had 3 for both hotels in the building. So we had to door dash a pack and play. Super frustrating, we would’ve chose a different hotel if they were up front to begin with about not having any availability for the crib. The hotel was run down. Stains on the carpets and on the chair in the room as seen in photos. Room was big but set up kinda awkward. TV wasn’t working either just was to the point where we went to bed instead. I wouldn’t stay here again unless it was forced upon me.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "We did not have a very good experience with the Fairfield in Dallas. We were stuck for a night because of a flight delay so already not a great start. We called to see if they had a crib since we had our young daughter and they assured us they did. On arrival they said they didn’t have one and they only had 3 for both hotels in the building. So we had to door dash a pack and play. Super frustrating, we would’ve chose a different hotel if they were up front to begin with about not having any availability for the crib. The hotel was run down. Stains on the carpets and on the chair in the room as seen in photos. Room was big but set up kinda awkward. TV wasn’t working either just was to the point where we went to bed instead. I wouldn’t stay here again unless it was forced upon me.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Connor L",
+              "uri": "https://www.google.com/maps/contrib/100619440907126066668/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocIj7P838cNJTBcKZ-Of_zu42T4w_Fn3WkO3sIAC_lOCxI4JOg=s128-c0x00000000-cc-rp-mo-ba6"
+            },
+            "publishTime": "2026-04-22T01:27:25.946535299Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25abWMxOXhZMGRXVmxsWlRXMUNWMGx6Y1hWMmRuYxAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25abWMxOXhZMGRXVmxsWlRXMUNWMGx6Y1hWMmRuYxAB!2m1!1s0x864e991e619a0c31:0xc4b12719088cbef4"
+          },
+          {
+            "name": "places/ChIJMQyaYR6ZToYR9L6MCBknscQ/reviews/Ci9DQUlRQUNvZENodHljRjlvT214RFpVZDVWbVoyT0ZVeE9VbzJYMFJTTWpRd1kyYxAB",
+            "relativePublishTimeDescription": "a month ago",
+            "rating": 4,
+            "text": {
+              "text": "Staff is friendly and professional especially the employeesat the reception desk .\n\nWater pressure on 5th floor is weak.\n\nCleaning lady is wonderful and cheerful.\nParking is very expensive at $45 per night!!!\n\nHotel within walking distance of down town.\n\nNeighborhood is risky at night.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "Staff is friendly and professional especially the employeesat the reception desk .\n\nWater pressure on 5th floor is weak.\n\nCleaning lady is wonderful and cheerful.\nParking is very expensive at $45 per night!!!\n\nHotel within walking distance of down town.\n\nNeighborhood is risky at night.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Adnan Adnanchik",
+              "uri": "https://www.google.com/maps/contrib/113915151588208885772/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXXfFX5_tw5ddXJleTcUC5P_0rv0DUPj8XzzeKitvtgtwQlyg7XbQ=s128-c0x00000000-cc-rp-mo-ba3"
+            },
+            "publishTime": "2026-05-25T16:15:40.233929166Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT214RFpVZDVWbVoyT0ZVeE9VbzJYMFJTTWpRd1kyYxAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT214RFpVZDVWbVoyT0ZVeE9VbzJYMFJTTWpRd1kyYxAB!2m1!1s0x864e991e619a0c31:0xc4b12719088cbef4"
+          },
+          {
+            "name": "places/ChIJMQyaYR6ZToYR9L6MCBknscQ/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pWaVFpMTRSelZXZEVGZlREZzBNVFV6V0RWRGRGRRAB",
+            "relativePublishTimeDescription": "5 months ago",
+            "rating": 5,
+            "text": {
+              "text": "I had a great stay! The rooms are like industrial lofts and have everything you need. The front desk staff were all lovely and the bar and market are super affordable. I wish the area around the hotel had more to do and eat at night, but cabs are inexpensive and easy to get!",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "I had a great stay! The rooms are like industrial lofts and have everything you need. The front desk staff were all lovely and the bar and market are super affordable. I wish the area around the hotel had more to do and eat at night, but cabs are inexpensive and easy to get!",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Jasmin Malave",
+              "uri": "https://www.google.com/maps/contrib/103227269427359211327/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWwqIWY7mAy2Z95q0mCa74IhSIqOOIrstVSJA9nBlbniBYwS3Ni=s128-c0x00000000-cc-rp-mo-ba3"
+            },
+            "publishTime": "2026-01-30T22:20:15.873606446Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pWaVFpMTRSelZXZEVGZlREZzBNVFV6V0RWRGRGRRAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pWaVFpMTRSelZXZEVGZlREZzBNVFV6V0RWRGRGRRAB!2m1!1s0x864e991e619a0c31:0xc4b12719088cbef4"
+          },
+          {
+            "name": "places/ChIJMQyaYR6ZToYR9L6MCBknscQ/reviews/Ci9DQUlRQUNvZENodHljRjlvT21OSk5tWmplVlkzYkRGVlpERnphMmRFZWpaQllVRRAB",
+            "relativePublishTimeDescription": "7 months ago",
+            "rating": 4,
+            "text": {
+              "text": "The room was very spacious and the hotel has a chic warehouse-type feel, which was neat. Staff were very nice and helpful throughout our stay. Breakfast was served from 6:00-9:30 AM. There were plenty of restaurants within walking distance if you don’t feel like ordering delivery. This hotel was a perfect stay during marathon weekend, as the start/finish line was just a block away. Would stay again!\n\nThe two ‘cons’ I have are the location (not the best area) and parking—$45 for valet or between $30-$60 for the overflow lot and adjacent public parking lots. So keep those things in mind.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "The room was very spacious and the hotel has a chic warehouse-type feel, which was neat. Staff were very nice and helpful throughout our stay. Breakfast was served from 6:00-9:30 AM. There were plenty of restaurants within walking distance if you don’t feel like ordering delivery. This hotel was a perfect stay during marathon weekend, as the start/finish line was just a block away. Would stay again!\n\nThe two ‘cons’ I have are the location (not the best area) and parking—$45 for valet or between $30-$60 for the overflow lot and adjacent public parking lots. So keep those things in mind.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Grant Fudge",
+              "uri": "https://www.google.com/maps/contrib/116492642441862528973/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJ6H0Fhk7gaZPLXfEfrRdQB3SeMNnA2BvTO1MEGGL3Lgtq1IQ=s128-c0x00000000-cc-rp-mo-ba3"
+            },
+            "publishTime": "2025-12-15T19:25:17.953349339Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21OSk5tWmplVlkzYkRGVlpERnphMmRFZWpaQllVRRAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21OSk5tWmplVlkzYkRGVlpERnphMmRFZWpaQllVRRAB!2m1!1s0x864e991e619a0c31:0xc4b12719088cbef4"
+          }
+        ]
+      },
+      {
+        "id": "ChIJd8ztkRmZToYRoAJhaj3xwfE",
+        "formattedAddress": "1033 Young St, Dallas, TX 75202, USA",
+        "location": {
+          "latitude": 32.7771833,
+          "longitude": -96.801087
+        },
+        "rating": 4.2,
+        "googleMapsUri": "https://maps.google.com/?cid=17420470079725830816&g_mp=Cilnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaE5lYXJieRACGAQgAA",
+        "businessStatus": "OPERATIONAL",
+        "userRatingCount": 1838,
+        "displayName": {
+          "text": "Aloft by Marriott Dallas Downtown",
+          "languageCode": "en"
+        },
+        "reviews": [
+          {
+            "name": "places/ChIJd8ztkRmZToYRoAJhaj3xwfE/reviews/Ci9DQUlRQUNvZENodHljRjlvT25wTmQzbFBUMHRVVHpWTFFWcFFSMHR0WlcxTFlYYxAB",
+            "relativePublishTimeDescription": "2 months ago",
+            "rating": 4,
+            "text": {
+              "text": "The room was clean and the staff were really helpful and nice. Parking can be confusing, so make sure if you park where it says Platinum you let the staff members know. They will charge you inside the hotel. Do not pay the fee outside and inside-the hotel will give you a discounted rate for 24hrs. I made a mistake and paid double but the staff members gave me a refund without a problem.\n\nThe only complaint I have is that there was a weird smell in the room. I could not pin point what it was because the room was in fact clean. I should had let a staff member know but it wasn't that strong. Other than that everything was great. The view was great and the TV worked without problems. I checked in and out without any difficulty.  They do have karaoke nights and a bar at the bottom. This is great if you want ambience.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "The room was clean and the staff were really helpful and nice. Parking can be confusing, so make sure if you park where it says Platinum you let the staff members know. They will charge you inside the hotel. Do not pay the fee outside and inside-the hotel will give you a discounted rate for 24hrs. I made a mistake and paid double but the staff members gave me a refund without a problem.\n\nThe only complaint I have is that there was a weird smell in the room. I could not pin point what it was because the room was in fact clean. I should had let a staff member know but it wasn't that strong. Other than that everything was great. The view was great and the TV worked without problems. I checked in and out without any difficulty.  They do have karaoke nights and a bar at the bottom. This is great if you want ambience.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Lupita Guillen-Salinas",
+              "uri": "https://www.google.com/maps/contrib/114655478127248079663/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLskGDs-qOSplYUWZzH-NMKMdlZTj8AUzGI5aZK_Rrg-U1xMw=s128-c0x00000000-cc-rp-mo-ba2"
+            },
+            "publishTime": "2026-05-11T00:54:13.921795899Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25wTmQzbFBUMHRVVHpWTFFWcFFSMHR0WlcxTFlYYxAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25wTmQzbFBUMHRVVHpWTFFWcFFSMHR0WlcxTFlYYxAB!2m1!1s0x864e991991edcc77:0xf1c1f13d6a6102a0"
+          },
+          {
+            "name": "places/ChIJd8ztkRmZToYRoAJhaj3xwfE/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xoamJtaHhPWGgwZVdsYVZVdFBkbTVEWW1jMVIwRRAB",
+            "relativePublishTimeDescription": "2 months ago",
+            "rating": 5,
+            "text": {
+              "text": "I had such a beautiful and memorable stay at Aloft Austin Downtown. The hotel itself has such a vibrant and modern atmosphere, and being right in the heart of Austin made everything so convenient and enjoyable. From the moment we arrived, everything just felt easy, welcoming, and well taken care of.\n\nWhat made this stay even more special was that we were celebrating my partner’s anniversary. It turned what was already a great trip into something truly meaningful and unforgettable. Every little moment felt extra special, and the overall experience gave us memories that we’ll always hold onto.\n\nA huge thank you to Ellaine, who genuinely made our stay even more beautiful. Her warmth, kindness, and attention to detail did not go unnoticed. She went above and beyond to make sure everything felt personal and comfortable, and that kind of service really makes a difference. It’s rare to come across someone who creates such a genuine connection with guests.\n\nOverall, it was more than just a hotel stay—it was an experience filled with great energy, meaningful moments, and exceptional service. I would absolutely come back and highly recommend this place to anyone looking for something both fun and memorable in Austin.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "I had such a beautiful and memorable stay at Aloft Austin Downtown. The hotel itself has such a vibrant and modern atmosphere, and being right in the heart of Austin made everything so convenient and enjoyable. From the moment we arrived, everything just felt easy, welcoming, and well taken care of.\n\nWhat made this stay even more special was that we were celebrating my partner’s anniversary. It turned what was already a great trip into something truly meaningful and unforgettable. Every little moment felt extra special, and the overall experience gave us memories that we’ll always hold onto.\n\nA huge thank you to Ellaine, who genuinely made our stay even more beautiful. Her warmth, kindness, and attention to detail did not go unnoticed. She went above and beyond to make sure everything felt personal and comfortable, and that kind of service really makes a difference. It’s rare to come across someone who creates such a genuine connection with guests.\n\nOverall, it was more than just a hotel stay—it was an experience filled with great energy, meaningful moments, and exceptional service. I would absolutely come back and highly recommend this place to anyone looking for something both fun and memorable in Austin.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Joey McQueen",
+              "uri": "https://www.google.com/maps/contrib/109705499015071258589/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocItJsiTLg-iwyg4EHjNm3p8-tyTeFsdqSnbdHOn3m-olEvAIA=s128-c0x00000000-cc-rp-mo"
+            },
+            "publishTime": "2026-04-24T06:58:23.148987120Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xoamJtaHhPWGgwZVdsYVZVdFBkbTVEWW1jMVIwRRAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xoamJtaHhPWGgwZVdsYVZVdFBkbTVEWW1jMVIwRRAB!2m1!1s0x864e991991edcc77:0xf1c1f13d6a6102a0"
+          },
+          {
+            "name": "places/ChIJd8ztkRmZToYRoAJhaj3xwfE/reviews/Ci9DQUlRQUNvZENodHljRjlvT21ka2QzbDZWbWR3ZFVWc1dqWTJaR2wxV0ZWNVRYYxAB",
+            "relativePublishTimeDescription": "a month ago",
+            "rating": 4,
+            "text": {
+              "text": "This hotel was perfect for my last minute stay (I booked around 440 and checked in at 530). The front desk attendants that I interacted with (Christian and another taller, black guy on my Saturday night and an older black guy on Sunday at checkout) were extremely kind, professional and personable.\n\nThe hotel lobby is quite large (including a bar-I didn’t get to try, a pool table, sitting areas, grab and go breakfast cafe-didn’t try but it was pricey, gym-nice and clean) The room was clean and roomy with a decent view, the ironing board is pretty short and my toilet had issues flushing at times but it was nothing that would deter me from booking again. Overall, I enjoyed my stay here and it was conveniently located as well, I was able to walk safely and solo to the AT@T Discovery Center. Parking was $17 daily through the hotel and $30 through the actual lot so that was a nice deal. The parking lot was huge but a little ways from the front door. However, they do have carts and up front parking for overnight guests when they don’t fill up. They also have nightly entertainment in the lobby from a solo guitar player… also, the bathroom door is the side mirror and it slides (took me a second to realize that)",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "This hotel was perfect for my last minute stay (I booked around 440 and checked in at 530). The front desk attendants that I interacted with (Christian and another taller, black guy on my Saturday night and an older black guy on Sunday at checkout) were extremely kind, professional and personable.\n\nThe hotel lobby is quite large (including a bar-I didn’t get to try, a pool table, sitting areas, grab and go breakfast cafe-didn’t try but it was pricey, gym-nice and clean) The room was clean and roomy with a decent view, the ironing board is pretty short and my toilet had issues flushing at times but it was nothing that would deter me from booking again. Overall, I enjoyed my stay here and it was conveniently located as well, I was able to walk safely and solo to the AT@T Discovery Center. Parking was $17 daily through the hotel and $30 through the actual lot so that was a nice deal. The parking lot was huge but a little ways from the front door. However, they do have carts and up front parking for overnight guests when they don’t fill up. They also have nightly entertainment in the lobby from a solo guitar player… also, the bathroom door is the side mirror and it slides (took me a second to realize that)",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Halee C",
+              "uri": "https://www.google.com/maps/contrib/106042790310143699422/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWMnBaen9T31fm1FwEItrZHykH8vqBIROALBlxhcL7eWy7w1e8N=s128-c0x00000000-cc-rp-mo-ba2"
+            },
+            "publishTime": "2026-05-21T18:29:28.587983328Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21ka2QzbDZWbWR3ZFVWc1dqWTJaR2wxV0ZWNVRYYxAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21ka2QzbDZWbWR3ZFVWc1dqWTJaR2wxV0ZWNVRYYxAB!2m1!1s0x864e991991edcc77:0xf1c1f13d6a6102a0"
+          },
+          {
+            "name": "places/ChIJd8ztkRmZToYRoAJhaj3xwfE/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pCSU0xQktVbU5LUzFCemFtWXdWMUZSYTA5V1QxRRAB",
+            "relativePublishTimeDescription": "3 months ago",
+            "rating": 5,
+            "text": {
+              "text": "I'd never stayed at an Aloft prior to booking this one and I was immediately impressed. I love all things modern and this hotel is definitely that. I am huge on customer service and the entire staff was amazing! The location is top tier. There are so many restaurants and attractions within walking distance. I loved that breakfast was available and there is a bar inside for a night cap. It was the perfect hotel for my birthday staycation. I will definitely be back! Hopefully sooner than later.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "I'd never stayed at an Aloft prior to booking this one and I was immediately impressed. I love all things modern and this hotel is definitely that. I am huge on customer service and the entire staff was amazing! The location is top tier. There are so many restaurants and attractions within walking distance. I loved that breakfast was available and there is a bar inside for a night cap. It was the perfect hotel for my birthday staycation. I will definitely be back! Hopefully sooner than later.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Kaybee",
+              "uri": "https://www.google.com/maps/contrib/116209584328900358464/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocL7ejk0MJtCH3kY4TAsynu08epBXesiX_jjF2qE1dF_P06baw=s128-c0x00000000-cc-rp-mo-ba2"
+            },
+            "publishTime": "2026-04-06T16:51:23.733532271Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pCSU0xQktVbU5LUzFCemFtWXdWMUZSYTA5V1QxRRAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pCSU0xQktVbU5LUzFCemFtWXdWMUZSYTA5V1QxRRAB!2m1!1s0x864e991991edcc77:0xf1c1f13d6a6102a0"
+          },
+          {
+            "name": "places/ChIJd8ztkRmZToYRoAJhaj3xwfE/reviews/Ci9DQUlRQUNvZENodHljRjlvT25sUlRESndiR0o2UVRWVlQwZzFSRVpxVW1wSVdYYxAB",
+            "relativePublishTimeDescription": "3 months ago",
+            "rating": 5,
+            "text": {
+              "text": "My stay March 7-9 exceeded all expectations. The atmosphere was modern and comfortable, the food was consistently good, and the staff went above and beyond to make the experience enjoyable. Lovethe story on the history of the building. I especially want to highlight the bartenders—Sally, Will, and Jason. They were superb in every way: friendly, attentive, and incredibly skilled.  Thank you team TEQUILA  😉 .They turned a simple night at the bar into one of the highlights of my trip. I’ll absolutely be returning the next time I'm in the area.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "My stay March 7-9 exceeded all expectations. The atmosphere was modern and comfortable, the food was consistently good, and the staff went above and beyond to make the experience enjoyable. Lovethe story on the history of the building. I especially want to highlight the bartenders—Sally, Will, and Jason. They were superb in every way: friendly, attentive, and incredibly skilled.  Thank you team TEQUILA  😉 .They turned a simple night at the bar into one of the highlights of my trip. I’ll absolutely be returning the next time I'm in the area.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "BJa T",
+              "uri": "https://www.google.com/maps/contrib/117335090750471415620/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWodSnTO4dvdl9Fob9RDl5cdMkKCUNmTnF4SgjjVTNa8T7wkEv_=s128-c0x00000000-cc-rp-mo-ba2"
+            },
+            "publishTime": "2026-04-11T23:35:16.263487938Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25sUlRESndiR0o2UVRWVlQwZzFSRVpxVW1wSVdYYxAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25sUlRESndiR0o2UVRWVlQwZzFSRVpxVW1wSVdYYxAB!2m1!1s0x864e991991edcc77:0xf1c1f13d6a6102a0"
+          }
+        ]
+      },
+      {
+        "id": "ChIJi3cLPB-ZToYRe2eeeJl6LxU",
+        "formattedAddress": "1700 Commerce St, Dallas, TX 75201, USA",
+        "location": {
+          "latitude": 32.780257899999995,
+          "longitude": -96.7967836
+        },
+        "rating": 4.2,
+        "googleMapsUri": "https://maps.google.com/?cid=1526573598274119547&g_mp=Cilnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaE5lYXJieRACGAQgAA",
+        "businessStatus": "OPERATIONAL",
+        "userRatingCount": 1708,
+        "displayName": {
+          "text": "Hampton Inn & Suites Dallas Downtown",
+          "languageCode": "en"
+        },
+        "reviews": [
+          {
+            "name": "places/ChIJi3cLPB-ZToYRe2eeeJl6LxU/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tSUWRYRldObHBsYWt4Mk1rcDBNV1ZsTTBaYVZVRRAB",
+            "relativePublishTimeDescription": "5 months ago",
+            "rating": 5,
+            "text": {
+              "text": "Hampton Inn & Suites Dallas Downtown is a great place to stay if you want to be in the heart of the city. The hotel is in a historic building, and I loved the wall in the lobby showcasing photos of its original setting, it gives the space character and a sense of history.\n\nThe location is a major plus. It’s within walking distance to the AT&T Discovery District, restaurants, museums, JFK landmark, and more. There’s also a Starbucks on the first floor, which is super convenient, and breakfast buffet is served daily on the second floor with a solid variety of options.\n\nThe only downside during our stay was that there was no maid service during our two-night visit, which was a bit disappointing. Overall though, the experience, location, and atmosphere easily make this a recommended stay, and I’d definitely consider staying here again.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "Hampton Inn & Suites Dallas Downtown is a great place to stay if you want to be in the heart of the city. The hotel is in a historic building, and I loved the wall in the lobby showcasing photos of its original setting, it gives the space character and a sense of history.\n\nThe location is a major plus. It’s within walking distance to the AT&T Discovery District, restaurants, museums, JFK landmark, and more. There’s also a Starbucks on the first floor, which is super convenient, and breakfast buffet is served daily on the second floor with a solid variety of options.\n\nThe only downside during our stay was that there was no maid service during our two-night visit, which was a bit disappointing. Overall though, the experience, location, and atmosphere easily make this a recommended stay, and I’d definitely consider staying here again.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "D. Jones",
+              "uri": "https://www.google.com/maps/contrib/103661880716989475182/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJXWJyRG5JwtqETv1NIrdHDJPdAx_b31lxZdsw3wYnqY8mWMQ=s128-c0x00000000-cc-rp-mo-ba4"
+            },
+            "publishTime": "2026-02-16T15:46:22.257379444Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2tSUWRYRldObHBsYWt4Mk1rcDBNV1ZsTTBaYVZVRRAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tSUWRYRldObHBsYWt4Mk1rcDBNV1ZsTTBaYVZVRRAB!2m1!1s0x864e991f3c0b778b:0x152f7a99789e677b"
+          },
+          {
+            "name": "places/ChIJi3cLPB-ZToYRe2eeeJl6LxU/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xWelJFeFpOR2x2VkhkWlZtWktXR2RhZFdWVlFsRRAB",
+            "relativePublishTimeDescription": "a month ago",
+            "rating": 5,
+            "text": {
+              "text": "I arrived an hour and a half early, but since my room type was not available for early check-in, the manager upgraded my room to a junior suite that was available. The room was spacious, with a large bathroom. We loved our stay. Gabby was great, and recommended a place down the street for entertainment. Breakfast was good. Starbuck downstairs, and plenty of restaurants, and other entertainment within walking distance. Overall 10/10!!",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "I arrived an hour and a half early, but since my room type was not available for early check-in, the manager upgraded my room to a junior suite that was available. The room was spacious, with a large bathroom. We loved our stay. Gabby was great, and recommended a place down the street for entertainment. Breakfast was good. Starbuck downstairs, and plenty of restaurants, and other entertainment within walking distance. Overall 10/10!!",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Keisha S.",
+              "uri": "https://www.google.com/maps/contrib/111243758273553910064/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLImODg-WvXMUForCAh1H4tT_63k2XNgPf0MDVjMccCqS-QSA=s128-c0x00000000-cc-rp-mo"
+            },
+            "publishTime": "2026-06-04T19:35:21.198971806Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xWelJFeFpOR2x2VkhkWlZtWktXR2RhZFdWVlFsRRAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xWelJFeFpOR2x2VkhkWlZtWktXR2RhZFdWVlFsRRAB!2m1!1s0x864e991f3c0b778b:0x152f7a99789e677b"
+          },
+          {
+            "name": "places/ChIJi3cLPB-ZToYRe2eeeJl6LxU/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tSSVdrcDBYMkZsTWpneVlrVXdWMFYyY21GZmRWRRAB",
+            "relativePublishTimeDescription": "4 months ago",
+            "rating": 5,
+            "text": {
+              "text": "Súper comfy beds! The staff were wonderful and attentive, very fancy and big complimentary breakfast, the indoor pool was gorgeous and the room was super clean and spacious. We will definitely come back! Highly recommend for family, our kids had a blast at the pool!",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "Súper comfy beds! The staff were wonderful and attentive, very fancy and big complimentary breakfast, the indoor pool was gorgeous and the room was super clean and spacious. We will definitely come back! Highly recommend for family, our kids had a blast at the pool!",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Vanessa Rodriguez",
+              "uri": "https://www.google.com/maps/contrib/100422407823528548266/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocIU8JUyTppRm1J7UT7F9o9Q1cfQERDkrgoldEFMIcXL4Jir7Q=s128-c0x00000000-cc-rp-mo-ba4"
+            },
+            "publishTime": "2026-03-01T16:00:52.452047905Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2tSSVdrcDBYMkZsTWpneVlrVXdWMFYyY21GZmRWRRAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tSSVdrcDBYMkZsTWpneVlrVXdWMFYyY21GZmRWRRAB!2m1!1s0x864e991f3c0b778b:0x152f7a99789e677b"
+          },
+          {
+            "name": "places/ChIJi3cLPB-ZToYRe2eeeJl6LxU/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pGd1RFRTVVMjFWWVRsRmJXVmFabEV5YUhCd2RFRRAB",
+            "relativePublishTimeDescription": "a month ago",
+            "rating": 3,
+            "text": {
+              "text": "Check-in was seamless and very convenient, they have a pull-over area with a porter right outside, which was really helpful with our luggage. The receptionist even combined our two bookings so we could stay in the same spacious room for all three nights.\n\nThe room itself was very large with plenty of cabinet and bench space, a good fridge, and a very comfortable mattress. However, we really disliked the bedding and topper,  the feeling was unpleasant and we struggled to sleep well because of it.\n\nThe bathroom is also generously sized with a bathtub, but the shower pressure was quite weak. The touch-sensor tap only dispenses cold water, which was awkward and annoying for brushing teeth or shaving.\n\nWe also had an issue with ants getting into our clothes, which resulted in bites,  quite frustrating.\nOverall, the hotel has some strong points like the spacious room and smooth check-in, but the bedding, shower, tap, and pest issue detracted from the stay. We’d hope these get addressed for future guests.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "Check-in was seamless and very convenient, they have a pull-over area with a porter right outside, which was really helpful with our luggage. The receptionist even combined our two bookings so we could stay in the same spacious room for all three nights.\n\nThe room itself was very large with plenty of cabinet and bench space, a good fridge, and a very comfortable mattress. However, we really disliked the bedding and topper,  the feeling was unpleasant and we struggled to sleep well because of it.\n\nThe bathroom is also generously sized with a bathtub, but the shower pressure was quite weak. The touch-sensor tap only dispenses cold water, which was awkward and annoying for brushing teeth or shaving.\n\nWe also had an issue with ants getting into our clothes, which resulted in bites,  quite frustrating.\nOverall, the hotel has some strong points like the spacious room and smooth check-in, but the bedding, shower, tap, and pest issue detracted from the stay. We’d hope these get addressed for future guests.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Cherisse Vandenhoek",
+              "uri": "https://www.google.com/maps/contrib/104174249619564973315/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUzi_6uRcz3ROVPQq0gvpEYJGkP1-3NW4hbX-tRlByggX8AKVoT=s128-c0x00000000-cc-rp-mo-ba5"
+            },
+            "publishTime": "2026-06-15T17:23:43.059122347Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pGd1RFRTVVMjFWWVRsRmJXVmFabEV5YUhCd2RFRRAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pGd1RFRTVVMjFWWVRsRmJXVmFabEV5YUhCd2RFRRAB!2m1!1s0x864e991f3c0b778b:0x152f7a99789e677b"
+          },
+          {
+            "name": "places/ChIJi3cLPB-ZToYRe2eeeJl6LxU/reviews/Ci9DQUlRQUNvZENodHljRjlvT25Zd01HUm5SMkl3VW5OVmNtbEVlV1UyU0ZSMVYyYxAB",
+            "relativePublishTimeDescription": "5 months ago",
+            "rating": 5,
+            "text": {
+              "text": "My absolute favorite hotel in the Downtown area. I have stayed multiple times and never had a bad experience. Rooms are always clean, the front desk staff are amazing, I know its kind of hard to judge a continental breakfast cause they are all the same but I'm an oatmeal person and the fact that its always perfect is a win for me, not runny or to thick and the attendants are polite and quick with keeping things cleaned and restocked.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "My absolute favorite hotel in the Downtown area. I have stayed multiple times and never had a bad experience. Rooms are always clean, the front desk staff are amazing, I know its kind of hard to judge a continental breakfast cause they are all the same but I'm an oatmeal person and the fact that its always perfect is a win for me, not runny or to thick and the attendants are polite and quick with keeping things cleaned and restocked.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Angel",
+              "uri": "https://www.google.com/maps/contrib/115308874254943262903/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjU-kCgkJlMMOuZXzzKc0KLXGKgqcsjW_89XMu7ASAcQMfukYik=s128-c0x00000000-cc-rp-mo-ba3"
+            },
+            "publishTime": "2026-01-24T09:49:00.131284625Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25Zd01HUm5SMkl3VW5OVmNtbEVlV1UyU0ZSMVYyYxAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25Zd01HUm5SMkl3VW5OVmNtbEVlV1UyU0ZSMVYyYxAB!2m1!1s0x864e991f3c0b778b:0x152f7a99789e677b"
+          }
+        ]
+      },
+      {
+        "id": "ChIJD1-KPR-ZToYRckTQzqE8SoM",
+        "formattedAddress": "1712 Commerce St, Dallas, TX 75201, USA",
+        "location": {
+          "latitude": 32.780232399999996,
+          "longitude": -96.7962067
+        },
+        "rating": 4.3,
+        "googleMapsUri": "https://maps.google.com/?cid=9460440632902304882&g_mp=Cilnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaE5lYXJieRACGAQgAA",
+        "businessStatus": "OPERATIONAL",
+        "userRatingCount": 665,
+        "displayName": {
+          "text": "Residence Inn by Marriott Dallas Downtown",
+          "languageCode": "en"
+        },
+        "reviews": [
+          {
+            "name": "places/ChIJD1-KPR-ZToYRckTQzqE8SoM/reviews/Ci9DQUlRQUNvZENodHljRjlvT2twMmNXcEdTV1JrYlRGSE9EQkpiazVEYUMxV1ZVRRAB",
+            "relativePublishTimeDescription": "2 months ago",
+            "rating": 4,
+            "text": {
+              "text": "I checked out of the Element Hotel in Dallas because it felt more like staying at a no-tell motel, and the service was disappointing. Thankfully, the Residence Inn Dallas was a much better experience.\nThe location is perfect, the rooms are spacious, and having a full kitchen made the stay even more comfortable. Check-in was excellent, and the front desk staff member was kind enough to let me check in around 10 AM, which I really appreciated.\nMy only suggestion would be to add more towel holders in the bathroom. There was only one small hanger, but for a couple, at least two would be helpful.\n\nOverall, I had a great stay and would definitely recommend this hotel.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "I checked out of the Element Hotel in Dallas because it felt more like staying at a no-tell motel, and the service was disappointing. Thankfully, the Residence Inn Dallas was a much better experience.\nThe location is perfect, the rooms are spacious, and having a full kitchen made the stay even more comfortable. Check-in was excellent, and the front desk staff member was kind enough to let me check in around 10 AM, which I really appreciated.\nMy only suggestion would be to add more towel holders in the bathroom. There was only one small hanger, but for a couple, at least two would be helpful.\n\nOverall, I had a great stay and would definitely recommend this hotel.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Marie Kang-Scott",
+              "uri": "https://www.google.com/maps/contrib/116063246922556439149/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKogkj9zhHmRBryNEshq2pobemDwIL2awJB-UKRA1KrZsd6lQ=s128-c0x00000000-cc-rp-mo-ba6"
+            },
+            "publishTime": "2026-05-12T14:35:46.368027977Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2twMmNXcEdTV1JrYlRGSE9EQkpiazVEYUMxV1ZVRRAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2twMmNXcEdTV1JrYlRGSE9EQkpiazVEYUMxV1ZVRRAB!2m1!1s0x864e991f3d8a5f0f:0x834a3ca1ced04472"
+          },
+          {
+            "name": "places/ChIJD1-KPR-ZToYRckTQzqE8SoM/reviews/Ci9DQUlRQUNvZENodHljRjlvT21JMFoxWlBTMmRxTVROQlptMVlOVzVNZWtWUlZFRRAB",
+            "relativePublishTimeDescription": "a month ago",
+            "rating": 5,
+            "text": {
+              "text": "The room is very spacious and comfy. The hotel services are excellent, and the breakfast is great! Reasonable and affordable prices for my one-week's stay. A few minutes' walk from the St Paul DART station, so it is very easy to connect to the Dallas Fort Worth International Airport by using the Orange line. You can also make use of the Green line for participating in the State Fair of Texas at the Fair Park. Highly recommended if this is the first time you visit Dallas!",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "The room is very spacious and comfy. The hotel services are excellent, and the breakfast is great! Reasonable and affordable prices for my one-week's stay. A few minutes' walk from the St Paul DART station, so it is very easy to connect to the Dallas Fort Worth International Airport by using the Orange line. You can also make use of the Green line for participating in the State Fair of Texas at the Fair Park. Highly recommended if this is the first time you visit Dallas!",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "CIDA",
+              "uri": "https://www.google.com/maps/contrib/108998575306994491516/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUp5vkzgVue0CAomQGK9YNrclkdCdv4ESnvOA5p1RdcrQwhT5fB=s128-c0x00000000-cc-rp-mo-ba2"
+            },
+            "publishTime": "2026-06-07T12:43:34.024076125Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21JMFoxWlBTMmRxTVROQlptMVlOVzVNZWtWUlZFRRAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21JMFoxWlBTMmRxTVROQlptMVlOVzVNZWtWUlZFRRAB!2m1!1s0x864e991f3d8a5f0f:0x834a3ca1ced04472"
+          },
+          {
+            "name": "places/ChIJD1-KPR-ZToYRckTQzqE8SoM/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xSb01uZFFaRUZsUjFKZlRVbG5ORk5WY0ROelQxRRAB",
+            "relativePublishTimeDescription": "2 months ago",
+            "rating": 4,
+            "text": {
+              "text": "Was great as a place to stay. We got the studio room for 2 adults and was way spacious and nice. The room was clean. The only downside was that there are three different check in stations for the three different hotels and it's confusing. Valet parking is something you kind of need to opt for as parking is a full on stress. The valet parking is great but it just another cost to your travel.Rest it was a pleasant stay.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "Was great as a place to stay. We got the studio room for 2 adults and was way spacious and nice. The room was clean. The only downside was that there are three different check in stations for the three different hotels and it's confusing. Valet parking is something you kind of need to opt for as parking is a full on stress. The valet parking is great but it just another cost to your travel.Rest it was a pleasant stay.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "kristina pradhan",
+              "uri": "https://www.google.com/maps/contrib/113044896522665329674/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKSCUmO86qV3LH8lGdT68AsYXyzCmeJjyBtcslaDiXDFGvnGRM=s128-c0x00000000-cc-rp-mo-ba2"
+            },
+            "publishTime": "2026-05-10T23:33:24.811654234Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xSb01uZFFaRUZsUjFKZlRVbG5ORk5WY0ROelQxRRAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xSb01uZFFaRUZsUjFKZlRVbG5ORk5WY0ROelQxRRAB!2m1!1s0x864e991f3d8a5f0f:0x834a3ca1ced04472"
+          },
+          {
+            "name": "places/ChIJD1-KPR-ZToYRckTQzqE8SoM/reviews/Ci9DQUlRQUNvZENodHljRjlvT2w5emJHVkthVUp6TUROcFJWOUNNbG8xVGxrMVgzYxAB",
+            "relativePublishTimeDescription": "4 months ago",
+            "rating": 5,
+            "text": {
+              "text": "I only stayed here for a night before I fly back to my home country. Upon arriving the lady at the reception, I think her name Constantine or something (pardon me if I got it wrong) was so nice and polite, she made me feel so welcomed. The general manager was kind enough to give me a late check out at 2pm looking at my flight was at 10pm at night. I definitely will come back here again for sure. Thank you for the awesome hospitality!",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "I only stayed here for a night before I fly back to my home country. Upon arriving the lady at the reception, I think her name Constantine or something (pardon me if I got it wrong) was so nice and polite, she made me feel so welcomed. The general manager was kind enough to give me a late check out at 2pm looking at my flight was at 10pm at night. I definitely will come back here again for sure. Thank you for the awesome hospitality!",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Wendy’s Loving Life",
+              "uri": "https://www.google.com/maps/contrib/102499963291513258090/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVyBmj4I3vAxtN0T3DoMAY5lSG2gW2j-WVQtHxJ119sv5MOkpFC=s128-c0x00000000-cc-rp-mo-ba2"
+            },
+            "publishTime": "2026-03-07T19:34:37.782126452Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2w5emJHVkthVUp6TUROcFJWOUNNbG8xVGxrMVgzYxAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2w5emJHVkthVUp6TUROcFJWOUNNbG8xVGxrMVgzYxAB!2m1!1s0x864e991f3d8a5f0f:0x834a3ca1ced04472"
+          },
+          {
+            "name": "places/ChIJD1-KPR-ZToYRckTQzqE8SoM/reviews/Ci9DQUlRQUNvZENodHljRjlvT2poSE1GSkNORGx2V2xJNWFGaHlZazUwY1c5MldGRRAB",
+            "relativePublishTimeDescription": "a month ago",
+            "rating": 1,
+            "text": {
+              "text": "Front desk night shift person was bizarrely aggressive and rude - the man started throwing insults and literally tried to start a fight over absolutely nothing. Even when I tried to disengage and politely told him to have a nice night, he just wouldn’t stop escalating.  I’ll be recommending everyone to avoid this place to avoid having to deal with an unhinged egomaniac every time they enter the building.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "Front desk night shift person was bizarrely aggressive and rude - the man started throwing insults and literally tried to start a fight over absolutely nothing. Even when I tried to disengage and politely told him to have a nice night, he just wouldn’t stop escalating.  I’ll be recommending everyone to avoid this place to avoid having to deal with an unhinged egomaniac every time they enter the building.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Jesse Kovacs",
+              "uri": "https://www.google.com/maps/contrib/108407946561198214597/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVs6eE0FnFbdMLQrRuJ-nerf7Bw4YjU3uKv6uhTHTtcNdrbHs9D=s128-c0x00000000-cc-rp-mo-ba2"
+            },
+            "publishTime": "2026-06-05T08:06:16.526006247Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2poSE1GSkNORGx2V2xJNWFGaHlZazUwY1c5MldGRRAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2poSE1GSkNORGx2V2xJNWFGaHlZazUwY1c5MldGRRAB!2m1!1s0x864e991f3d8a5f0f:0x834a3ca1ced04472"
+          }
+        ]
+      },
+      {
+        "id": "ChIJv4gEcwCZToYRexn2wpjAddA",
+        "formattedAddress": "650 S Griffin St, Dallas, TX 75202, USA",
+        "location": {
+          "latitude": 32.774509,
+          "longitude": -96.80060519999999
+        },
+        "rating": 4.3,
+        "googleMapsUri": "https://maps.google.com/?cid=15021123894502627707&g_mp=Cilnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaE5lYXJieRACGAQgAA",
+        "businessStatus": "OPERATIONAL",
+        "userRatingCount": 3,
+        "displayName": {
+          "text": "1700 commerce dallas",
+          "languageCode": "en"
+        },
+        "reviews": [
+          {
+            "name": "places/ChIJv4gEcwCZToYRexn2wpjAddA/reviews/ChdDSUhNMG9nS0VJQ0FnSUNIMGJfUjJnRRAB",
+            "relativePublishTimeDescription": "a year ago",
+            "rating": 4,
+            "text": {
+              "text": "Very friendly staff all around. Lovely place! The scenery and vibe is incredible. Only reason I am not giving it 5 starts is location. Busy downtown dallas. If you do not vale park... you won't find parking.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "Very friendly staff all around. Lovely place! The scenery and vibe is incredible. Only reason I am not giving it 5 starts is location. Busy downtown dallas. If you do not vale park... you won't find parking.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Maria Barrera",
+              "uri": "https://www.google.com/maps/contrib/113309941097206928202/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVj88vmI5KVhQzp9DoRFMrq-lea6G8EVZH5wb4uq0m2wvcVcJo=s128-c0x00000000-cc-rp-mo-ba4"
+            },
+            "publishTime": "2024-09-05T23:50:40.418414Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=ChdDSUhNMG9nS0VJQ0FnSUNIMGJfUjJnRRAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNIMGJfUjJnRRAB!2m1!1s0x864e9900730488bf:0xd075c098c2f6197b"
+          },
+          {
+            "name": "places/ChIJv4gEcwCZToYRexn2wpjAddA/reviews/ChZDSUhNMG9nS0VJQ0FnTURROTlhZ0N3EAE",
+            "relativePublishTimeDescription": "a year ago",
+            "rating": 4,
+            "text": {
+              "text": "Very big place the people are kind and the atmosphere is really nice",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "Very big place the people are kind and the atmosphere is really nice",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Marquis",
+              "uri": "https://www.google.com/maps/contrib/105228119101810555956/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKsi99qe0azhrHZXnYi31pjQ-GA7QgEXUFrRbfCb2Nv9bpgmQ=s128-c0x00000000-cc-rp-mo"
+            },
+            "publishTime": "2025-03-15T08:13:06.428961Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=ChZDSUhNMG9nS0VJQ0FnTURROTlhZ0N3EAE&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnTURROTlhZ0N3EAE!2m1!1s0x864e9900730488bf:0xd075c098c2f6197b"
+          },
+          {
+            "name": "places/ChIJv4gEcwCZToYRexn2wpjAddA/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xZd1ZIWmFTMDFRV0hOa1dscHpkelZyZVdOc1lVRRAB",
+            "relativePublishTimeDescription": "4 months ago",
+            "rating": 5,
+            "authorAttribution": {
+              "displayName": "UDUMA THOMAS (tfxfilmz)",
+              "uri": "https://www.google.com/maps/contrib/107180458697546561490/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXyE7PVY7Vv12D69AvcdlVp9NdxwJAneGRqPu2gmy2gOrANV1Ar=s128-c0x00000000-cc-rp-mo"
+            },
+            "publishTime": "2026-03-04T04:07:05.574756550Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xZd1ZIWmFTMDFRV0hOa1dscHpkelZyZVdOc1lVRRAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xZd1ZIWmFTMDFRV0hOa1dscHpkelZyZVdOc1lVRRAB!2m1!1s0x864e9900730488bf:0xd075c098c2f6197b"
+          }
+        ]
+      },
+      {
+        "id": "ChIJD1-KPR-ZToYRmw1QdWj3J_k",
+        "formattedAddress": "1712 Commerce St, Dallas, TX 75201, USA",
+        "location": {
+          "latitude": 32.7803417,
+          "longitude": -96.7962067
+        },
+        "rating": 4.2,
+        "googleMapsUri": "https://maps.google.com/?cid=17953590467552611739&g_mp=Cilnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaE5lYXJieRACGAQgAA",
+        "businessStatus": "OPERATIONAL",
+        "userRatingCount": 1011,
+        "displayName": {
+          "text": "AC Hotel Dallas Downtown",
+          "languageCode": "en"
+        },
+        "reviews": [
+          {
+            "name": "places/ChIJD1-KPR-ZToYRmw1QdWj3J_k/reviews/Ci9DQUlRQUNvZENodHljRjlvT2toaFdUQmFkazlIYVhwRVZVOTNRazlMY1VGblpuYxAB",
+            "relativePublishTimeDescription": "a month ago",
+            "rating": 5,
+            "text": {
+              "text": "Areanna and Bibek literally were the best , I’m adhd and forgot my bank card and  they were so friendly and so helpful, compassionate . Everything was so nice. The staff was amazing. We will definitely be back. Valet was amazing as well . Nicest motel we’ve stayed at !!!\nAlso they picked me for a free breakfast ! I felt safe and Secure with my kiddos . The pool was clean and my daughter has a blast . Recommend this hotel and side note . Before leaving home . We’re from Oklahoma , check and make sure you have everything . . . Thanks everyone for making me and my babies feel safe and welcome , even though it started off with me having a crying spell because I forgot my bank card and had my Cash App card !",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "Areanna and Bibek literally were the best , I’m adhd and forgot my bank card and  they were so friendly and so helpful, compassionate . Everything was so nice. The staff was amazing. We will definitely be back. Valet was amazing as well . Nicest motel we’ve stayed at !!!\nAlso they picked me for a free breakfast ! I felt safe and Secure with my kiddos . The pool was clean and my daughter has a blast . Recommend this hotel and side note . Before leaving home . We’re from Oklahoma , check and make sure you have everything . . . Thanks everyone for making me and my babies feel safe and welcome , even though it started off with me having a crying spell because I forgot my bank card and had my Cash App card !",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Bret Hulsey",
+              "uri": "https://www.google.com/maps/contrib/109174763923693120196/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjV4-RsDhAB9UbqX2mAqYd-oqTooBF9PoDpsTwtoofYQDKxsIoj1=s128-c0x00000000-cc-rp-mo"
+            },
+            "publishTime": "2026-06-19T17:57:15.711612096Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2toaFdUQmFkazlIYVhwRVZVOTNRazlMY1VGblpuYxAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2toaFdUQmFkazlIYVhwRVZVOTNRazlMY1VGblpuYxAB!2m1!1s0x864e991f3d8a5f0f:0xf927f76875500d9b"
+          },
+          {
+            "name": "places/ChIJD1-KPR-ZToYRmw1QdWj3J_k/reviews/Ci9DQUlRQUNvZENodHljRjlvT2kwek1rRmtVVGxYTkZkRldqWmFhV0pXVlhocVkwRRAB",
+            "relativePublishTimeDescription": "a month ago",
+            "rating": 5,
+            "text": {
+              "text": "Our experience at the restaurant at the AC Hotel in Kingston JA was wonderful. This is mostly due to the service of Javaughn Granil. His glowing personality, attention to detail, and willingness to serve are stupendous. He is a raising star indeed, and as an Ambassador of the Marriott rewards program, I am reassured that Marriott knows how to attract and retain great people.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "Our experience at the restaurant at the AC Hotel in Kingston JA was wonderful. This is mostly due to the service of Javaughn Granil. His glowing personality, attention to detail, and willingness to serve are stupendous. He is a raising star indeed, and as an Ambassador of the Marriott rewards program, I am reassured that Marriott knows how to attract and retain great people.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Scott Brindley",
+              "uri": "https://www.google.com/maps/contrib/103253029280259819652/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocL3jN7IqA3yze015nooeh4l65_aYkt0PLb-5DhSr1D3FccN=s128-c0x00000000-cc-rp-mo"
+            },
+            "publishTime": "2026-05-31T16:59:24.024424749Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2kwek1rRmtVVGxYTkZkRldqWmFhV0pXVlhocVkwRRAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2kwek1rRmtVVGxYTkZkRldqWmFhV0pXVlhocVkwRRAB!2m1!1s0x864e991f3d8a5f0f:0xf927f76875500d9b"
+          },
+          {
+            "name": "places/ChIJD1-KPR-ZToYRmw1QdWj3J_k/reviews/Ci9DQUlRQUNvZENodHljRjlvT2s5RVFVWTBZa2gyY25GNk1ITTBVR3hmTmxSVVJYYxAB",
+            "relativePublishTimeDescription": "4 months ago",
+            "rating": 5,
+            "text": {
+              "text": "Wanted to take a moment to give Michelle a well-deserved shout-out. She is an incredible team member who made my check-in seamless, helped confirm key details for our group reservation, and even assisted me in grabbing a quick breakfast after a very long morning — despite the kitchen having just closed.\nHer warmth and genuinely friendly demeanor made this one of the most pleasant hotel interactions I’ve ever had. She truly put me at ease ahead of what will be a very hectic work week. The hotel itself is in a great location and the rooms are very nice and clean. What truly stands out is the service of the staff. Great job.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "Wanted to take a moment to give Michelle a well-deserved shout-out. She is an incredible team member who made my check-in seamless, helped confirm key details for our group reservation, and even assisted me in grabbing a quick breakfast after a very long morning — despite the kitchen having just closed.\nHer warmth and genuinely friendly demeanor made this one of the most pleasant hotel interactions I’ve ever had. She truly put me at ease ahead of what will be a very hectic work week. The hotel itself is in a great location and the rooms are very nice and clean. What truly stands out is the service of the staff. Great job.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Katherine .Ruane",
+              "uri": "https://www.google.com/maps/contrib/115236181096267959462/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUx7RVA8Kqkwyk3K_NKeZwB4gb2SH3fFa9yZzLWTUnj37COHMym=s128-c0x00000000-cc-rp-mo-ba3"
+            },
+            "publishTime": "2026-02-24T15:33:51.475791279Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2s5RVFVWTBZa2gyY25GNk1ITTBVR3hmTmxSVVJYYxAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2s5RVFVWTBZa2gyY25GNk1ITTBVR3hmTmxSVVJYYxAB!2m1!1s0x864e991f3d8a5f0f:0xf927f76875500d9b"
+          },
+          {
+            "name": "places/ChIJD1-KPR-ZToYRmw1QdWj3J_k/reviews/Ci9DQUlRQUNvZENodHljRjlvT21KVWRrWm9WRmRuTTBaR00xZHBjM04zY2xFM1ExRRAB",
+            "relativePublishTimeDescription": "2 months ago",
+            "rating": 5,
+            "text": {
+              "text": "A very relaxing downtown experience. I felt catered to and well serviced by all staff. Rooms clean and working. I had a kitchenette so nice to have some dishes already available for me. Very accommodating and worth the stay.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "A very relaxing downtown experience. I felt catered to and well serviced by all staff. Rooms clean and working. I had a kitchenette so nice to have some dishes already available for me. Very accommodating and worth the stay.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "LoveAll ThisIsTheWay",
+              "uri": "https://www.google.com/maps/contrib/104423882159514453376/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocIOdUukY2AvLReyKuCu5zQca31b2IDLkA1o0yCszVQHS6ASpA=s128-c0x00000000-cc-rp-mo-ba4"
+            },
+            "publishTime": "2026-05-08T03:01:26.001046510Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21KVWRrWm9WRmRuTTBaR00xZHBjM04zY2xFM1ExRRAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21KVWRrWm9WRmRuTTBaR00xZHBjM04zY2xFM1ExRRAB!2m1!1s0x864e991f3d8a5f0f:0xf927f76875500d9b"
+          },
+          {
+            "name": "places/ChIJD1-KPR-ZToYRmw1QdWj3J_k/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xkQlVHaDVZM2xOYmpkbVYxcENVVjl4VlcxRlMxRRAB",
+            "relativePublishTimeDescription": "4 months ago",
+            "rating": 3,
+            "text": {
+              "text": "⭐️⭐️⭐️ (3/5) – Great People, But I Wouldn’t Stay Again\n\nLet me start with the most important part—the staff during an emergency were absolute rockstars.\n\nMy 4-year-old son got stuck in one of their “modern” digital elevators, and it was a terrifying situation for any parent. What made the difference was the team that jumped in to help—a housekeeper, a maintenance man, and a supervisor (I believe over housekeeping). Even with limited English, their compassion, urgency, and care spoke louder than words ever could. You could tell they were parents themselves—they were just as concerned as I was.\n\nThe maintenance man had to literally shut the elevator system down from upstairs, which caused the elevator to go completely dark before resetting it to get the doors open. Not exactly comforting in the moment—but he got it done, and I’m grateful.\n\nAlso, Adrian (the manager) deserves recognition. He followed up, took the situation seriously, and made an effort to make things right with credits. That matters.\n\nNow for the honest part…\n\nWhile this is a nice hotel on the surface, I personally wouldn’t stay here again. At this price point in downtown Dallas, there are just better options—plain and simple. And after going through something like that with a child, it’s hard to overlook.\n\nSo here’s the takeaway:\n•\tCustomer service during a crisis: 10/10\n•\tOverall stay/value: Meh\n•\tElevator experience: Hard pass\n\nIf you stay here, just hope nothing goes wrong—but if it does, at least you’ve got a team that truly cares.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "⭐️⭐️⭐️ (3/5) – Great People, But I Wouldn’t Stay Again\n\nLet me start with the most important part—the staff during an emergency were absolute rockstars.\n\nMy 4-year-old son got stuck in one of their “modern” digital elevators, and it was a terrifying situation for any parent. What made the difference was the team that jumped in to help—a housekeeper, a maintenance man, and a supervisor (I believe over housekeeping). Even with limited English, their compassion, urgency, and care spoke louder than words ever could. You could tell they were parents themselves—they were just as concerned as I was.\n\nThe maintenance man had to literally shut the elevator system down from upstairs, which caused the elevator to go completely dark before resetting it to get the doors open. Not exactly comforting in the moment—but he got it done, and I’m grateful.\n\nAlso, Adrian (the manager) deserves recognition. He followed up, took the situation seriously, and made an effort to make things right with credits. That matters.\n\nNow for the honest part…\n\nWhile this is a nice hotel on the surface, I personally wouldn’t stay here again. At this price point in downtown Dallas, there are just better options—plain and simple. And after going through something like that with a child, it’s hard to overlook.\n\nSo here’s the takeaway:\n•\tCustomer service during a crisis: 10/10\n•\tOverall stay/value: Meh\n•\tElevator experience: Hard pass\n\nIf you stay here, just hope nothing goes wrong—but if it does, at least you’ve got a team that truly cares.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Jason Hayes",
+              "uri": "https://www.google.com/maps/contrib/114575544927941914766/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVEyHYTd0-vB-NQtgIKhqOvzmMCiNnTeCGxPQYaClz2bfKVlTF_=s128-c0x00000000-cc-rp-mo-ba4"
+            },
+            "publishTime": "2026-03-19T19:56:41.859875398Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xkQlVHaDVZM2xOYmpkbVYxcENVVjl4VlcxRlMxRRAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xkQlVHaDVZM2xOYmpkbVYxcENVVjl4VlcxRlMxRRAB!2m1!1s0x864e991f3d8a5f0f:0xf927f76875500d9b"
+          }
+        ]
+      },
+      {
+        "id": "ChIJHdgNZwCZToYRJ19noSfBlew",
+        "formattedAddress": "1401 Commerce St, Dallas, TX 75201, USA",
+        "location": {
+          "latitude": 32.780029899999995,
+          "longitude": -96.79922189999999
+        },
+        "googleMapsUri": "https://maps.google.com/?cid=17047744340436672295&g_mp=Cilnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaE5lYXJieRACGAQgAA",
+        "businessStatus": "OPERATIONAL",
+        "displayName": {
+          "text": "Mariposa",
+          "languageCode": "en"
+        }
+      },
+      {
+        "id": "ChIJ6W-QgheZToYR8kV9xxYEErY",
+        "formattedAddress": "1914 Commerce St, Dallas, TX 75201, USA",
+        "location": {
+          "latitude": 32.78019,
+          "longitude": -96.79500399999999
+        },
+        "rating": 4.3,
+        "googleMapsUri": "https://maps.google.com/?cid=13119553160366343666&g_mp=Cilnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaE5lYXJieRACGAQgAA",
+        "businessStatus": "OPERATIONAL",
+        "userRatingCount": 3064,
+        "displayName": {
+          "text": "The Statler Dallas, Curio Collection by Hilton",
+          "languageCode": "en"
+        },
+        "reviews": [
+          {
+            "name": "places/ChIJ6W-QgheZToYR8kV9xxYEErY/reviews/Ci9DQUlRQUNvZENodHljRjlvT25oR1JFOTBWa1p6TmpkVWFVMDVVemRTZFZaVE1GRRAB",
+            "relativePublishTimeDescription": "a month ago",
+            "rating": 4,
+            "text": {
+              "text": "I stayed in Room 709 for my birthday weekend 5/29-30 , and overall I had a really good stay. The hotel is absolutely beautiful. The pictures online look great, but they honestly don’t do it justice. My room was amazing, the view was everything, and one of the main reasons I booked this hotel was because of the soaking tub.\n\nI do want to mention one issue I had with housekeeping. When I arrived, there was hair in the tub. Not gonna lie, that was pretty disgusting. Nobody wants to arrive at their room and find someone else’s hair in the tub, especially when the soaking tub was one of the things I was most looking forward to using during my stay. I reached out to the front desk, and housekeeping came up. Unfortunately, it seemed like they only removed the hair instead of actually cleaning and sanitizing the tub. The tub was still dry and didn’t appear to have been cleaned at all. What really stood out to me was that Morgan from the front desk ended up making sure the tub was properly cleaned while I was away at my event. I appreciated that more than she knows, but honestly, that shouldn’t have fallen on her. Housekeeping should have taken care of it correctly the first time.\n\nNow, I want to give Morgan, Skylar, and Josue their flowers because they were absolutely amazing. Morgan was helpful before I even checked in. She answered my questions through the chat, was always kind, and made me feel taken care of before I ever stepped foot in the hotel. Then, while I was getting ready for an event at the Majestic Theatre, I had a wardrobe malfunction and thought my whole birthday weekend was about to be ruined. Skylar came up to help, Morgan stepped in to help, and they even got Josue involved. The teamwork between the three of them was incredible. They didn’t have to go out of their way for me, but they did, and their kindness and genuine customer service meant a lot.\n\nThe housekeeping issue definitely needs attention because something as simple as checking and properly cleaning a tub before a guest arrives can make a huge difference. But I also don’t want this review to go by without recognizing Morgan, Skylar, and Josue. They truly went above and beyond, and they played a big part in making my solo birthday weekend special. Thank you all for your kindness and for making me feel cared for during my stay.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "I stayed in Room 709 for my birthday weekend 5/29-30 , and overall I had a really good stay. The hotel is absolutely beautiful. The pictures online look great, but they honestly don’t do it justice. My room was amazing, the view was everything, and one of the main reasons I booked this hotel was because of the soaking tub.\n\nI do want to mention one issue I had with housekeeping. When I arrived, there was hair in the tub. Not gonna lie, that was pretty disgusting. Nobody wants to arrive at their room and find someone else’s hair in the tub, especially when the soaking tub was one of the things I was most looking forward to using during my stay. I reached out to the front desk, and housekeeping came up. Unfortunately, it seemed like they only removed the hair instead of actually cleaning and sanitizing the tub. The tub was still dry and didn’t appear to have been cleaned at all. What really stood out to me was that Morgan from the front desk ended up making sure the tub was properly cleaned while I was away at my event. I appreciated that more than she knows, but honestly, that shouldn’t have fallen on her. Housekeeping should have taken care of it correctly the first time.\n\nNow, I want to give Morgan, Skylar, and Josue their flowers because they were absolutely amazing. Morgan was helpful before I even checked in. She answered my questions through the chat, was always kind, and made me feel taken care of before I ever stepped foot in the hotel. Then, while I was getting ready for an event at the Majestic Theatre, I had a wardrobe malfunction and thought my whole birthday weekend was about to be ruined. Skylar came up to help, Morgan stepped in to help, and they even got Josue involved. The teamwork between the three of them was incredible. They didn’t have to go out of their way for me, but they did, and their kindness and genuine customer service meant a lot.\n\nThe housekeeping issue definitely needs attention because something as simple as checking and properly cleaning a tub before a guest arrives can make a huge difference. But I also don’t want this review to go by without recognizing Morgan, Skylar, and Josue. They truly went above and beyond, and they played a big part in making my solo birthday weekend special. Thank you all for your kindness and for making me feel cared for during my stay.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Paris Love",
+              "uri": "https://www.google.com/maps/contrib/104381183716062130535/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKjAKCwG7ICHkmWuVLV2D289AJjFxmwfK3vC0cc702KcB36BQ=s128-c0x00000000-cc-rp-mo"
+            },
+            "publishTime": "2026-06-01T01:58:06.971698672Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25oR1JFOTBWa1p6TmpkVWFVMDVVemRTZFZaVE1GRRAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25oR1JFOTBWa1p6TmpkVWFVMDVVemRTZFZaVE1GRRAB!2m1!1s0x864e991782906fe9:0xb6120416c77d45f2"
+          },
+          {
+            "name": "places/ChIJ6W-QgheZToYR8kV9xxYEErY/reviews/Ci9DQUlRQUNvZENodHljRjlvT25sclJrMVlXbk5ET0U1b1QxSnZhR1V0ZW5sSVFuYxAB",
+            "relativePublishTimeDescription": "a month ago",
+            "rating": 3,
+            "text": {
+              "text": "Overall, not a bad hotel, but the experience definitely felt more “Carnival Cruise” than luxury hotel.\n\nWe arrived before check-in and went up to the rooftop pool around 2:20 PM since rooms weren’t available until 4:00. The rooftop pool itself was honestly overhyped compared to the photos online. The website makes it look much more luxurious than it actually feels in person. There was a DJ and definitely more of a party atmosphere, but we were surprised to hear reserved seating was around $250 (if I heard correctly). Because of that vibe, we ended up going to the second pool instead, which was calmer and honestly more enjoyable. It was nice, just not much of a view.\n\nAt 4:00 PM we went to check in, and that was probably the worst part of the experience. The woman working the front desk came across like she absolutely hated her job and acted irritated the entire interaction. We had already prepaid for our room through Expedia, but they still didn’t even have a room ready for us at check-in time.\n\nOnce we finally got into the room, we immediately noticed a mold/mildew smell. Later on, we could also smell weed smoke coming through the vent from another room nearby.\n\nThe hotel itself has a cool atmosphere and the historic building is unique, but between the misleading marketing photos, check-in experience, and room issues, it just didn’t really feel like the upscale luxury experience we expected.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "Overall, not a bad hotel, but the experience definitely felt more “Carnival Cruise” than luxury hotel.\n\nWe arrived before check-in and went up to the rooftop pool around 2:20 PM since rooms weren’t available until 4:00. The rooftop pool itself was honestly overhyped compared to the photos online. The website makes it look much more luxurious than it actually feels in person. There was a DJ and definitely more of a party atmosphere, but we were surprised to hear reserved seating was around $250 (if I heard correctly). Because of that vibe, we ended up going to the second pool instead, which was calmer and honestly more enjoyable. It was nice, just not much of a view.\n\nAt 4:00 PM we went to check in, and that was probably the worst part of the experience. The woman working the front desk came across like she absolutely hated her job and acted irritated the entire interaction. We had already prepaid for our room through Expedia, but they still didn’t even have a room ready for us at check-in time.\n\nOnce we finally got into the room, we immediately noticed a mold/mildew smell. Later on, we could also smell weed smoke coming through the vent from another room nearby.\n\nThe hotel itself has a cool atmosphere and the historic building is unique, but between the misleading marketing photos, check-in experience, and room issues, it just didn’t really feel like the upscale luxury experience we expected.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "E L",
+              "uri": "https://www.google.com/maps/contrib/110395472491876075689/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKJ9ajqxQdT3t4Zsx9yFZPPW64vGmgqybp0PnFAbnktIxAcUbbp=s128-c0x00000000-cc-rp-mo-ba3"
+            },
+            "publishTime": "2026-05-25T14:02:35.359768864Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25sclJrMVlXbk5ET0U1b1QxSnZhR1V0ZW5sSVFuYxAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25sclJrMVlXbk5ET0U1b1QxSnZhR1V0ZW5sSVFuYxAB!2m1!1s0x864e991782906fe9:0xb6120416c77d45f2"
+          },
+          {
+            "name": "places/ChIJ6W-QgheZToYR8kV9xxYEErY/reviews/Ci9DQUlRQUNvZENodHljRjlvT25WU1NtOU1PSFpqWjJWa2NIcE5RbloxYlhFeWRtYxAB",
+            "relativePublishTimeDescription": "3 weeks ago",
+            "rating": 5,
+            "text": {
+              "text": "A Mid-Century Modern Gem in Downtown Dallas\nFrom the moment you pull up to The Statler, you know you are in for a unique experience. The retro, mid-century modern aesthetic is perfectly captured right at the entrance, where a rotating display of gorgeous, classic cars parked out front sets a fun, nostalgic vibe before you even step through the doors. It is the perfect nod to the hotel’s historic 1950s roots while feeling completely fresh and upscale.\nWhat really makes the experience stand out, though, is the staff. Despite the hotel's sleek, historic grandeur, every single team member—from the valet to the front desk—is incredibly down-to-earth, warm, and attentive. There is absolutely zero pretension here; just genuine hospitality that makes you feel immediately welcome.\nEpic Eats and Entertainment at Scout\nThe absolute highlight of the entertainment options on-site is Scout, the hotel's massive, high-energy social hall. It is a fantastic spot to unwind, featuring a fantastic vintage-style bowling alley right inside. Knocking down pins with a drink in hand is the ultimate way to spend an evening without ever having to leave the property.\nThe food and drink at Scout are equally exceptional. The Texas Burger is an absolute must-try—a massive, mouthwatering double patty stacked with perfectly melted pepper jack cheese, crispy onion rings, and a rich BBQ sauce that delivers a true taste of the Lone Star State. Pair it with one of their signature, expertly balanced margaritas, and you have a flawless meal.\nWhether you are looking for a lively night of bowling and great food, spectacular downtown energy, or just a comfortable stay handled by an amazing crew, The Statler delivers on every front. I will definitely be back!",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "A Mid-Century Modern Gem in Downtown Dallas\nFrom the moment you pull up to The Statler, you know you are in for a unique experience. The retro, mid-century modern aesthetic is perfectly captured right at the entrance, where a rotating display of gorgeous, classic cars parked out front sets a fun, nostalgic vibe before you even step through the doors. It is the perfect nod to the hotel’s historic 1950s roots while feeling completely fresh and upscale.\nWhat really makes the experience stand out, though, is the staff. Despite the hotel's sleek, historic grandeur, every single team member—from the valet to the front desk—is incredibly down-to-earth, warm, and attentive. There is absolutely zero pretension here; just genuine hospitality that makes you feel immediately welcome.\nEpic Eats and Entertainment at Scout\nThe absolute highlight of the entertainment options on-site is Scout, the hotel's massive, high-energy social hall. It is a fantastic spot to unwind, featuring a fantastic vintage-style bowling alley right inside. Knocking down pins with a drink in hand is the ultimate way to spend an evening without ever having to leave the property.\nThe food and drink at Scout are equally exceptional. The Texas Burger is an absolute must-try—a massive, mouthwatering double patty stacked with perfectly melted pepper jack cheese, crispy onion rings, and a rich BBQ sauce that delivers a true taste of the Lone Star State. Pair it with one of their signature, expertly balanced margaritas, and you have a flawless meal.\nWhether you are looking for a lively night of bowling and great food, spectacular downtown energy, or just a comfortable stay handled by an amazing crew, The Statler delivers on every front. I will definitely be back!",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Lily Lopez",
+              "uri": "https://www.google.com/maps/contrib/102417526151221409887/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXANh6w3H4kSLQqCyR2H7QTqYEX1sCnh0lCB1ME1PUuTiQ2Bm2vew=s128-c0x00000000-cc-rp-mo-ba3"
+            },
+            "publishTime": "2026-06-22T23:24:05.631968092Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25WU1NtOU1PSFpqWjJWa2NIcE5RbloxYlhFeWRtYxAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25WU1NtOU1PSFpqWjJWa2NIcE5RbloxYlhFeWRtYxAB!2m1!1s0x864e991782906fe9:0xb6120416c77d45f2"
+          },
+          {
+            "name": "places/ChIJ6W-QgheZToYR8kV9xxYEErY/reviews/Ci9DQUlRQUNvZENodHljRjlvT25kWGFsRktObVZzVjBsSFVXbDRVa0pMTFZsbWVHYxAB",
+            "relativePublishTimeDescription": "7 months ago",
+            "rating": 3,
+            "text": {
+              "text": "Rooms ending in 32 or 33 are notably compact. These particular rooms were not included in the recent hotel renovations. A 28-inch suitcase may be challenging to fully open within these accommodations. However, these rooms do offer desirable corner views, featuring expansive windows that provide a panoramic perspective. All even-numbered rooms from 02-12 and 24-32 have an obstructed view. For guests prioritizing a scenic outlook, alternative room selections are recommended. The bedding consists of softer, \"sink-in\" style mattresses and exceptionally plush pillows, which may not appeal to all preferences.\n\nThe speakeasy venue presented an issue with fruit flies; I personally addressed two, and a third was observed in active flight. Upon inquiry, a staff member acknowledged the persistent nature of the problem, indicating that trap deployment and drain cleaning efforts had been undertaken with limited success. The \"sports bar\" is primarily a bar area equipped with pool tables, cornhole, and a two-lane bowling alley. It was noticeably understaffed, with a single bartender managing both drink and food orders, and also responsible for delivering food orders to the restaurant and retrieving them due to the absence of a runner or bar back.\n\nOverall, my experience was subpar. Considering the price point, I believe superior accommodations can be found at establishments such as Tru, Hilton Spark, or Embassy Suites.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "Rooms ending in 32 or 33 are notably compact. These particular rooms were not included in the recent hotel renovations. A 28-inch suitcase may be challenging to fully open within these accommodations. However, these rooms do offer desirable corner views, featuring expansive windows that provide a panoramic perspective. All even-numbered rooms from 02-12 and 24-32 have an obstructed view. For guests prioritizing a scenic outlook, alternative room selections are recommended. The bedding consists of softer, \"sink-in\" style mattresses and exceptionally plush pillows, which may not appeal to all preferences.\n\nThe speakeasy venue presented an issue with fruit flies; I personally addressed two, and a third was observed in active flight. Upon inquiry, a staff member acknowledged the persistent nature of the problem, indicating that trap deployment and drain cleaning efforts had been undertaken with limited success. The \"sports bar\" is primarily a bar area equipped with pool tables, cornhole, and a two-lane bowling alley. It was noticeably understaffed, with a single bartender managing both drink and food orders, and also responsible for delivering food orders to the restaurant and retrieving them due to the absence of a runner or bar back.\n\nOverall, my experience was subpar. Considering the price point, I believe superior accommodations can be found at establishments such as Tru, Hilton Spark, or Embassy Suites.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Jeremiah Jones",
+              "uri": "https://www.google.com/maps/contrib/109990189585530989634/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJFZw9_Vz9MdQVZv78f_wNQmGKAr5i3KwNi2nd3r8nWruw2Dw=s128-c0x00000000-cc-rp-mo-ba3"
+            },
+            "publishTime": "2025-12-06T21:22:49.409773693Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25kWGFsRktObVZzVjBsSFVXbDRVa0pMTFZsbWVHYxAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25kWGFsRktObVZzVjBsSFVXbDRVa0pMTFZsbWVHYxAB!2m1!1s0x864e991782906fe9:0xb6120416c77d45f2"
+          },
+          {
+            "name": "places/ChIJ6W-QgheZToYR8kV9xxYEErY/reviews/Ci9DQUlRQUNvZENodHljRjlvT21wZmFscFphMkkyTVd0b2RWVnFNMGRXZFY5c2JWRRAB",
+            "relativePublishTimeDescription": "2 months ago",
+            "rating": 2,
+            "text": {
+              "text": "Our stay unfortunately started off on the wrong foot, as we had to request two room changes upon arrival. The first room had a persistent high-pitched noise coming from the TV which was difficult to ignore. After reporting it, we were moved to a second room, but it was clear it had not been properly prepared despite being labeled as “ready.” There was an unfolded hand towel left by the sink, and the bed linens appeared used, which made us uncomfortable.\n\nThankfully, the third room we were assigned was clean and problem-free, and we were able to settle in without further issues. Expect for the fact that we had NO HOT WATER one night and the receptionist didnt seem to really care once I brought it to their attention. Another thing to note, is that no matter what room in the hotel you are in, expect to hear frequent outside noise as the hotel is located in a busy downtown area.\n\nWe were disappointed with the lack of communication regarding benefits from the American Express Hotel Collection. Typically, we receive a clear explanation or written summary of the included credits, but that was not provided during this stay. Additionally, even after combining our Amex booking with our Hilton Diamond status, the level of service did not feel consistent with what we would expect at that tier.\n\nOn a positive note, the dining options at the hotel were excellent. Every restaurant we tried exceeded expectations, and the speakeasy was easily one of the most unique and enjoyable bar experiences we’ve had, we highly recommend. While we didn’t have the chance to dine at the rooftop bar, we heard great feedback from other guests, and the views alone make it a worthwhile spot to visit.",
+              "languageCode": "en"
+            },
+            "originalText": {
+              "text": "Our stay unfortunately started off on the wrong foot, as we had to request two room changes upon arrival. The first room had a persistent high-pitched noise coming from the TV which was difficult to ignore. After reporting it, we were moved to a second room, but it was clear it had not been properly prepared despite being labeled as “ready.” There was an unfolded hand towel left by the sink, and the bed linens appeared used, which made us uncomfortable.\n\nThankfully, the third room we were assigned was clean and problem-free, and we were able to settle in without further issues. Expect for the fact that we had NO HOT WATER one night and the receptionist didnt seem to really care once I brought it to their attention. Another thing to note, is that no matter what room in the hotel you are in, expect to hear frequent outside noise as the hotel is located in a busy downtown area.\n\nWe were disappointed with the lack of communication regarding benefits from the American Express Hotel Collection. Typically, we receive a clear explanation or written summary of the included credits, but that was not provided during this stay. Additionally, even after combining our Amex booking with our Hilton Diamond status, the level of service did not feel consistent with what we would expect at that tier.\n\nOn a positive note, the dining options at the hotel were excellent. Every restaurant we tried exceeded expectations, and the speakeasy was easily one of the most unique and enjoyable bar experiences we’ve had, we highly recommend. While we didn’t have the chance to dine at the rooftop bar, we heard great feedback from other guests, and the views alone make it a worthwhile spot to visit.",
+              "languageCode": "en"
+            },
+            "authorAttribution": {
+              "displayName": "Javier Dominguez Jr",
+              "uri": "https://www.google.com/maps/contrib/116189197027861207312/reviews",
+              "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJmbev5JUzE7XXlz7X9FkkBingPtFKQZ3rIhNyE55GWf9brTA=s128-c0x00000000-cc-rp-mo-ba2"
+            },
+            "publishTime": "2026-05-01T16:00:08.391977542Z",
+            "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21wZmFscFphMkkyTVd0b2RWVnFNMGRXZFY5c2JWRRAB&d=17924085&t=1",
+            "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21wZmFscFphMkkyTVd0b2RWVnFNMGRXZFY5c2JWRRAB!2m1!1s0x864e991782906fe9:0xb6120416c77d45f2"
+          }
+        ]
+      }
+    ]
+  }
+]

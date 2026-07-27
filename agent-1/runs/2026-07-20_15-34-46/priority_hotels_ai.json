@@ -1,0 +1,1034 @@
+[
+  {
+    "search_location": "Dallas, Texas",
+    "radius_miles": 10,
+    "hotel_name": "Aloft by Marriott Dallas Downtown",
+    "address": "1033 Young St, Dallas, TX 75202, USA",
+    "rating": 4.2,
+    "user_rating_count": 1838,
+    "business_status": "OPERATIONAL",
+    "distress_score": 4,
+    "distress_reasons": "Negative review signal: smell | Negative review signal: refund | Renovation signals in reviews: 40.0%",
+    "review_trend_score": 0,
+    "review_volume_recent": 5,
+    "review_volume_prior": 0,
+    "review_volume_change_pct": 100.0,
+    "avg_rating_recent": 4.6,
+    "avg_rating_prior": 0.0,
+    "review_rating_delta": 0,
+    "complaint_rate_recent": 0.2,
+    "complaint_rate_prior": 0.0,
+    "review_complaint_delta": 0.2,
+    "year_built": "",
+    "property_age": "",
+    "renovation_signal_rate": 0.4,
+    "renovation_needed": true,
+    "physical_condition_score": 2,
+    "google_maps_url": "https://maps.google.com/?cid=17420470079725830816&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "source_provenance": "Google Places | REGRID",
+    "franchise_affiliated": false,
+    "current_brand": "",
+    "former_brand": "",
+    "brand_status": "NONE",
+    "franchise_loss_date": "",
+    "franchise_confidence": "Error",
+    "franchise_evidence": "404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}",
+    "recent_distress_news": "",
+    "ownership_context": "",
+    "owner_name": "M6 DEV DALLAS LLC",
+    "owner_company": "M6 DEV DALLAS LLC",
+    "mailing_address": "620 NEWPORT CENTER DR NEWPORT BEACH CA 92660-6420",
+    "owner_phone": "",
+    "owner_confidence": "High",
+    "owner_evidence": "Retrieved from Regrid parcel 1033 Young St",
+    "ownership_since": "2008-04-16",
+    "ownership_length_years": 18,
+    "attom_year_built": 1925,
+    "is_older_than_20_years": "Yes",
+    "room_count": 193,
+    "price_tier": "",
+    "signals": {
+      "review_decline": false,
+      "review_rating_delta": 0,
+      "review_volume_decline": false,
+      "complaint_increase": false,
+      "sentiment_decline": false,
+      "sentiment_trend": "Improving",
+      "review_activity_trend": "Increasing",
+      "positive_reviews_recent": 5,
+      "negative_reviews_recent": 1,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "renovation_needed": true,
+      "old_property": true,
+      "physical_condition_score": 2,
+      "franchise_loss": false,
+      "former_brand": "",
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "brand_status": "NONE",
+      "recent_distress_news": "",
+      "ownership_context": "",
+      "cmbs_watchlist": false,
+      "cmbs_special_servicing": false,
+      "cmbs_delinquent": false,
+      "long_term_owner": true,
+      "ownership_length_years": 18,
+      "room_count": 193,
+      "distress_score": 4
+    },
+    "review_themes": {
+      "cleanliness": 11.1,
+      "staff": 66.7,
+      "maintenance": 22.2
+    },
+    "llm_analysis": {
+      "distress_probability": 0.55,
+      "seller_fatigue_probability": 0.85,
+      "opportunity_score": 72,
+      "llm_star_rating": 3.8,
+      "top_distress_signals": [
+        "Extremely long ownership tenure of 18 years indicating high seller fatigue",
+        "Low physical condition score of 2 out of 5 with significant deferred capital expenditures",
+        "High renovation signal rate of 40% in guest reviews",
+        "Negative review signals regarding room odor and billing refund disputes"
+      ],
+      "investment_thesis": "An attractive value-add opportunity to acquire a well-located downtown Dallas hotel from a fatigued, 18-year long-term owner. The property suffers from significant deferred maintenance, evidenced by a physical condition score of 2 and recurring guest complaints about odors and dated rooms. A new sponsor can recapitalize the asset, execute a comprehensive Property Improvement Plan to resolve the 40% renovation signal rate, and unlock substantial upside in a strong metropolitan market.",
+      "acquisition_strategy": "Owner Fatigue Opportunity",
+      "review_summary": "While guest sentiment has shown recent signs of improvement, historical feedback reveals persistent issues with room cleanliness, unpleasant odors, and recurring maintenance failures that lead to refund requests. A substantial forty percent of reviews contain renovation signals, highlighting the property's aging infrastructure and the critical need for a comprehensive physical modernization under new ownership.",
+      "recommended_action": "Owner Fatigue Opportunity",
+      "confidence": "LOW",
+      "distress_summary": ""
+    },
+    "final_lead_score": 68.4,
+    "entity": {
+      "hotel_name": "Aloft by Marriott Dallas Downtown",
+      "address": "1033 Young St, Dallas, TX 75202, USA",
+      "place_id": "ChIJd8ztkRmZToYRoAJhaj3xwfE",
+      "latitude": null,
+      "longitude": null,
+      "rating": 4.2,
+      "user_rating_count": 1838,
+      "business_status": "OPERATIONAL",
+      "google_maps_url": "https://maps.google.com/?cid=17420470079725830816&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+      "reviews": [
+        {
+          "name": "places/ChIJd8ztkRmZToYRoAJhaj3xwfE/reviews/Ci9DQUlRQUNvZENodHljRjlvT25wTmQzbFBUMHRVVHpWTFFWcFFSMHR0WlcxTFlYYxAB",
+          "relativePublishTimeDescription": "2 months ago",
+          "rating": 4,
+          "text": {
+            "text": "The room was clean and the staff were really helpful and nice. Parking can be confusing, so make sure if you park where it says Platinum you let the staff members know. They will charge you inside the hotel. Do not pay the fee outside and inside-the hotel will give you a discounted rate for 24hrs. I made a mistake and paid double but the staff members gave me a refund without a problem.\n\nThe only complaint I have is that there was a weird smell in the room. I could not pin point what it was because the room was in fact clean. I should had let a staff member know but it wasn't that strong. Other than that everything was great. The view was great and the TV worked without problems. I checked in and out without any difficulty.  They do have karaoke nights and a bar at the bottom. This is great if you want ambience.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "The room was clean and the staff were really helpful and nice. Parking can be confusing, so make sure if you park where it says Platinum you let the staff members know. They will charge you inside the hotel. Do not pay the fee outside and inside-the hotel will give you a discounted rate for 24hrs. I made a mistake and paid double but the staff members gave me a refund without a problem.\n\nThe only complaint I have is that there was a weird smell in the room. I could not pin point what it was because the room was in fact clean. I should had let a staff member know but it wasn't that strong. Other than that everything was great. The view was great and the TV worked without problems. I checked in and out without any difficulty.  They do have karaoke nights and a bar at the bottom. This is great if you want ambience.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Lupita Guillen-Salinas",
+            "uri": "https://www.google.com/maps/contrib/114655478127248079663/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLskGDs-qOSplYUWZzH-NMKMdlZTj8AUzGI5aZK_Rrg-U1xMw=s128-c0x00000000-cc-rp-mo-ba2"
+          },
+          "publishTime": "2026-05-11T00:54:13.921795899Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25wTmQzbFBUMHRVVHpWTFFWcFFSMHR0WlcxTFlYYxAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25wTmQzbFBUMHRVVHpWTFFWcFFSMHR0WlcxTFlYYxAB!2m1!1s0x864e991991edcc77:0xf1c1f13d6a6102a0"
+        },
+        {
+          "name": "places/ChIJd8ztkRmZToYRoAJhaj3xwfE/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xoamJtaHhPWGgwZVdsYVZVdFBkbTVEWW1jMVIwRRAB",
+          "relativePublishTimeDescription": "2 months ago",
+          "rating": 5,
+          "text": {
+            "text": "I had such a beautiful and memorable stay at Aloft Austin Downtown. The hotel itself has such a vibrant and modern atmosphere, and being right in the heart of Austin made everything so convenient and enjoyable. From the moment we arrived, everything just felt easy, welcoming, and well taken care of.\n\nWhat made this stay even more special was that we were celebrating my partner’s anniversary. It turned what was already a great trip into something truly meaningful and unforgettable. Every little moment felt extra special, and the overall experience gave us memories that we’ll always hold onto.\n\nA huge thank you to Ellaine, who genuinely made our stay even more beautiful. Her warmth, kindness, and attention to detail did not go unnoticed. She went above and beyond to make sure everything felt personal and comfortable, and that kind of service really makes a difference. It’s rare to come across someone who creates such a genuine connection with guests.\n\nOverall, it was more than just a hotel stay—it was an experience filled with great energy, meaningful moments, and exceptional service. I would absolutely come back and highly recommend this place to anyone looking for something both fun and memorable in Austin.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "I had such a beautiful and memorable stay at Aloft Austin Downtown. The hotel itself has such a vibrant and modern atmosphere, and being right in the heart of Austin made everything so convenient and enjoyable. From the moment we arrived, everything just felt easy, welcoming, and well taken care of.\n\nWhat made this stay even more special was that we were celebrating my partner’s anniversary. It turned what was already a great trip into something truly meaningful and unforgettable. Every little moment felt extra special, and the overall experience gave us memories that we’ll always hold onto.\n\nA huge thank you to Ellaine, who genuinely made our stay even more beautiful. Her warmth, kindness, and attention to detail did not go unnoticed. She went above and beyond to make sure everything felt personal and comfortable, and that kind of service really makes a difference. It’s rare to come across someone who creates such a genuine connection with guests.\n\nOverall, it was more than just a hotel stay—it was an experience filled with great energy, meaningful moments, and exceptional service. I would absolutely come back and highly recommend this place to anyone looking for something both fun and memorable in Austin.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Joey McQueen",
+            "uri": "https://www.google.com/maps/contrib/109705499015071258589/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocItJsiTLg-iwyg4EHjNm3p8-tyTeFsdqSnbdHOn3m-olEvAIA=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2026-04-24T06:58:23.148987120Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xoamJtaHhPWGgwZVdsYVZVdFBkbTVEWW1jMVIwRRAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xoamJtaHhPWGgwZVdsYVZVdFBkbTVEWW1jMVIwRRAB!2m1!1s0x864e991991edcc77:0xf1c1f13d6a6102a0"
+        },
+        {
+          "name": "places/ChIJd8ztkRmZToYRoAJhaj3xwfE/reviews/Ci9DQUlRQUNvZENodHljRjlvT21ka2QzbDZWbWR3ZFVWc1dqWTJaR2wxV0ZWNVRYYxAB",
+          "relativePublishTimeDescription": "a month ago",
+          "rating": 4,
+          "text": {
+            "text": "This hotel was perfect for my last minute stay (I booked around 440 and checked in at 530). The front desk attendants that I interacted with (Christian and another taller, black guy on my Saturday night and an older black guy on Sunday at checkout) were extremely kind, professional and personable.\n\nThe hotel lobby is quite large (including a bar-I didn’t get to try, a pool table, sitting areas, grab and go breakfast cafe-didn’t try but it was pricey, gym-nice and clean) The room was clean and roomy with a decent view, the ironing board is pretty short and my toilet had issues flushing at times but it was nothing that would deter me from booking again. Overall, I enjoyed my stay here and it was conveniently located as well, I was able to walk safely and solo to the AT@T Discovery Center. Parking was $17 daily through the hotel and $30 through the actual lot so that was a nice deal. The parking lot was huge but a little ways from the front door. However, they do have carts and up front parking for overnight guests when they don’t fill up. They also have nightly entertainment in the lobby from a solo guitar player… also, the bathroom door is the side mirror and it slides (took me a second to realize that)",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "This hotel was perfect for my last minute stay (I booked around 440 and checked in at 530). The front desk attendants that I interacted with (Christian and another taller, black guy on my Saturday night and an older black guy on Sunday at checkout) were extremely kind, professional and personable.\n\nThe hotel lobby is quite large (including a bar-I didn’t get to try, a pool table, sitting areas, grab and go breakfast cafe-didn’t try but it was pricey, gym-nice and clean) The room was clean and roomy with a decent view, the ironing board is pretty short and my toilet had issues flushing at times but it was nothing that would deter me from booking again. Overall, I enjoyed my stay here and it was conveniently located as well, I was able to walk safely and solo to the AT@T Discovery Center. Parking was $17 daily through the hotel and $30 through the actual lot so that was a nice deal. The parking lot was huge but a little ways from the front door. However, they do have carts and up front parking for overnight guests when they don’t fill up. They also have nightly entertainment in the lobby from a solo guitar player… also, the bathroom door is the side mirror and it slides (took me a second to realize that)",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Halee C",
+            "uri": "https://www.google.com/maps/contrib/106042790310143699422/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWMnBaen9T31fm1FwEItrZHykH8vqBIROALBlxhcL7eWy7w1e8N=s128-c0x00000000-cc-rp-mo-ba2"
+          },
+          "publishTime": "2026-05-21T18:29:28.587983328Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21ka2QzbDZWbWR3ZFVWc1dqWTJaR2wxV0ZWNVRYYxAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21ka2QzbDZWbWR3ZFVWc1dqWTJaR2wxV0ZWNVRYYxAB!2m1!1s0x864e991991edcc77:0xf1c1f13d6a6102a0"
+        },
+        {
+          "name": "places/ChIJd8ztkRmZToYRoAJhaj3xwfE/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pCSU0xQktVbU5LUzFCemFtWXdWMUZSYTA5V1QxRRAB",
+          "relativePublishTimeDescription": "3 months ago",
+          "rating": 5,
+          "text": {
+            "text": "I'd never stayed at an Aloft prior to booking this one and I was immediately impressed. I love all things modern and this hotel is definitely that. I am huge on customer service and the entire staff was amazing! The location is top tier. There are so many restaurants and attractions within walking distance. I loved that breakfast was available and there is a bar inside for a night cap. It was the perfect hotel for my birthday staycation. I will definitely be back! Hopefully sooner than later.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "I'd never stayed at an Aloft prior to booking this one and I was immediately impressed. I love all things modern and this hotel is definitely that. I am huge on customer service and the entire staff was amazing! The location is top tier. There are so many restaurants and attractions within walking distance. I loved that breakfast was available and there is a bar inside for a night cap. It was the perfect hotel for my birthday staycation. I will definitely be back! Hopefully sooner than later.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Kaybee",
+            "uri": "https://www.google.com/maps/contrib/116209584328900358464/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocL7ejk0MJtCH3kY4TAsynu08epBXesiX_jjF2qE1dF_P06baw=s128-c0x00000000-cc-rp-mo-ba2"
+          },
+          "publishTime": "2026-04-06T16:51:23.733532271Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pCSU0xQktVbU5LUzFCemFtWXdWMUZSYTA5V1QxRRAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pCSU0xQktVbU5LUzFCemFtWXdWMUZSYTA5V1QxRRAB!2m1!1s0x864e991991edcc77:0xf1c1f13d6a6102a0"
+        },
+        {
+          "name": "places/ChIJd8ztkRmZToYRoAJhaj3xwfE/reviews/Ci9DQUlRQUNvZENodHljRjlvT25sUlRESndiR0o2UVRWVlQwZzFSRVpxVW1wSVdYYxAB",
+          "relativePublishTimeDescription": "3 months ago",
+          "rating": 5,
+          "text": {
+            "text": "My stay March 7-9 exceeded all expectations. The atmosphere was modern and comfortable, the food was consistently good, and the staff went above and beyond to make the experience enjoyable. Lovethe story on the history of the building. I especially want to highlight the bartenders—Sally, Will, and Jason. They were superb in every way: friendly, attentive, and incredibly skilled.  Thank you team TEQUILA  😉 .They turned a simple night at the bar into one of the highlights of my trip. I’ll absolutely be returning the next time I'm in the area.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "My stay March 7-9 exceeded all expectations. The atmosphere was modern and comfortable, the food was consistently good, and the staff went above and beyond to make the experience enjoyable. Lovethe story on the history of the building. I especially want to highlight the bartenders—Sally, Will, and Jason. They were superb in every way: friendly, attentive, and incredibly skilled.  Thank you team TEQUILA  😉 .They turned a simple night at the bar into one of the highlights of my trip. I’ll absolutely be returning the next time I'm in the area.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "BJa T",
+            "uri": "https://www.google.com/maps/contrib/117335090750471415620/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWodSnTO4dvdl9Fob9RDl5cdMkKCUNmTnF4SgjjVTNa8T7wkEv_=s128-c0x00000000-cc-rp-mo-ba2"
+          },
+          "publishTime": "2026-04-11T23:35:16.263487938Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25sUlRESndiR0o2UVRWVlQwZzFSRVpxVW1wSVdYYxAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25sUlRESndiR0o2UVRWVlQwZzFSRVpxVW1wSVdYYxAB!2m1!1s0x864e991991edcc77:0xf1c1f13d6a6102a0"
+        }
+      ],
+      "signals": {
+        "review_decline": false,
+        "review_rating_delta": 0,
+        "review_volume_decline": false,
+        "complaint_increase": false,
+        "sentiment_decline": false,
+        "sentiment_trend": "Improving",
+        "review_activity_trend": "Increasing",
+        "positive_reviews_recent": 5,
+        "negative_reviews_recent": 1,
+        "positive_reviews_prior": 0,
+        "negative_reviews_prior": 0,
+        "renovation_needed": true,
+        "old_property": true,
+        "physical_condition_score": 2,
+        "franchise_loss": false,
+        "former_brand": "",
+        "franchise_affiliated": false,
+        "current_brand": "",
+        "brand_status": "NONE",
+        "recent_distress_news": "",
+        "ownership_context": "",
+        "cmbs_watchlist": false,
+        "cmbs_special_servicing": false,
+        "cmbs_delinquent": false,
+        "long_term_owner": true,
+        "ownership_length_years": 18,
+        "room_count": 193,
+        "distress_score": 4
+      },
+      "review_themes": {
+        "cleanliness": 11.1,
+        "staff": 66.7,
+        "maintenance": 22.2
+      },
+      "heuristic_scores": {
+        "distress_score": 4,
+        "distress_reasons": [
+          "Negative review signal: smell",
+          "Negative review signal: refund",
+          "Renovation signals in reviews: 40.0%"
+        ],
+        "review_trend_score": 0,
+        "review_volume_recent": 5,
+        "review_volume_prior": 0,
+        "review_volume_change_pct": 100.0,
+        "avg_rating_recent": 4.6,
+        "avg_rating_prior": 0.0,
+        "review_rating_delta": 0,
+        "complaint_rate_recent": 0.2,
+        "complaint_rate_prior": 0.0,
+        "review_complaint_delta": 0.2,
+        "year_built": "",
+        "property_age": "",
+        "renovation_signal_rate": 0.4,
+        "renovation_needed": true,
+        "physical_condition_score": 2,
+        "positive_reviews_recent": 5,
+        "negative_reviews_recent": 1,
+        "positive_reviews_prior": 0,
+        "negative_reviews_prior": 0,
+        "sentiment_delta": -4,
+        "sentiment_trend": "Improving",
+        "review_activity_trend": "Increasing"
+      },
+      "llm_analysis": {
+        "distress_probability": 0.55,
+        "seller_fatigue_probability": 0.85,
+        "opportunity_score": 72,
+        "llm_star_rating": 3.8,
+        "top_distress_signals": [
+          "Extremely long ownership tenure of 18 years indicating high seller fatigue",
+          "Low physical condition score of 2 out of 5 with significant deferred capital expenditures",
+          "High renovation signal rate of 40% in guest reviews",
+          "Negative review signals regarding room odor and billing refund disputes"
+        ],
+        "investment_thesis": "An attractive value-add opportunity to acquire a well-located downtown Dallas hotel from a fatigued, 18-year long-term owner. The property suffers from significant deferred maintenance, evidenced by a physical condition score of 2 and recurring guest complaints about odors and dated rooms. A new sponsor can recapitalize the asset, execute a comprehensive Property Improvement Plan to resolve the 40% renovation signal rate, and unlock substantial upside in a strong metropolitan market.",
+        "acquisition_strategy": "Owner Fatigue Opportunity",
+        "review_summary": "While guest sentiment has shown recent signs of improvement, historical feedback reveals persistent issues with room cleanliness, unpleasant odors, and recurring maintenance failures that lead to refund requests. A substantial forty percent of reviews contain renovation signals, highlighting the property's aging infrastructure and the critical need for a comprehensive physical modernization under new ownership.",
+        "recommended_action": "Owner Fatigue Opportunity",
+        "confidence": "LOW",
+        "distress_summary": ""
+      },
+      "owner_data": {
+        "owner_name": "M6 DEV DALLAS LLC",
+        "owner_company": "M6 DEV DALLAS LLC",
+        "mailing_address": "620 NEWPORT CENTER DR NEWPORT BEACH CA 92660-6420",
+        "owner_phone": "",
+        "ownership_since": "2008-04-16",
+        "ownership_length_years": 18,
+        "attom_year_built": 1925,
+        "is_older_than_20_years": "Yes",
+        "room_count": 193
+      },
+      "cmbs_data": {},
+      "franchise_data": {
+        "franchise_affiliated": false,
+        "current_brand": "",
+        "former_brand": "",
+        "brand_status": "NONE",
+        "franchise_confidence": "Error",
+        "recent_distress_news": "",
+        "ownership_context": ""
+      },
+      "source_location": "Dallas, Texas",
+      "radius_miles": 10
+    },
+    "lead_reason": "Aging property; Long-term ownership",
+    "created_at": "2026-07-20T10:04:13.637398",
+    "place_id": "ChIJd8ztkRmZToYRoAJhaj3xwfE",
+    "feedback_rule_applied": "",
+    "feedback_penalty": 0,
+    "rank": 1,
+    "llm_distress_probability": 0.55,
+    "llm_seller_fatigue_probability": 0.85,
+    "llm_opportunity_score": 72,
+    "llm_confidence": "LOW",
+    "llm_top_distress_signals": "Extremely long ownership tenure of 18 years indicating high seller fatigue | Low physical condition score of 2 out of 5 with significant deferred capital expenditures | High renovation signal rate of 40% in guest reviews | Negative review signals regarding room odor and billing refund disputes",
+    "llm_investment_thesis": "An attractive value-add opportunity to acquire a well-located downtown Dallas hotel from a fatigued, 18-year long-term owner. The property suffers from significant deferred maintenance, evidenced by a physical condition score of 2 and recurring guest complaints about odors and dated rooms. A new sponsor can recapitalize the asset, execute a comprehensive Property Improvement Plan to resolve the 40% renovation signal rate, and unlock substantial upside in a strong metropolitan market.",
+    "llm_recommended_action": "Owner Fatigue Opportunity",
+    "llm_distress_summary": "",
+    "llm_review_summary": "While guest sentiment has shown recent signs of improvement, historical feedback reveals persistent issues with room cleanliness, unpleasant odors, and recurring maintenance failures that lead to refund requests. A substantial forty percent of reviews contain renovation signals, highlighting the property's aging infrastructure and the critical need for a comprehensive physical modernization under new ownership.",
+    "suppress_digest": true,
+    "last_score": 68.4,
+    "last_resurfaced": null
+  },
+  {
+    "search_location": "Dallas, Texas",
+    "radius_miles": 10,
+    "hotel_name": "Residence Inn by Marriott Dallas Downtown",
+    "address": "1712 Commerce St, Dallas, TX 75201, USA",
+    "rating": 4.3,
+    "user_rating_count": 665,
+    "business_status": "OPERATIONAL",
+    "distress_score": 4,
+    "distress_reasons": "Negative review signal: rude | Negative review signal: disappointing | Renovation signals in reviews: 40.0%",
+    "review_trend_score": 0,
+    "review_volume_recent": 5,
+    "review_volume_prior": 0,
+    "review_volume_change_pct": 100.0,
+    "avg_rating_recent": 3.8,
+    "avg_rating_prior": 0.0,
+    "review_rating_delta": 0,
+    "complaint_rate_recent": 0.4,
+    "complaint_rate_prior": 0.0,
+    "review_complaint_delta": 0.4,
+    "year_built": "",
+    "property_age": "",
+    "renovation_signal_rate": 0.4,
+    "renovation_needed": true,
+    "physical_condition_score": 2,
+    "google_maps_url": "https://maps.google.com/?cid=9460440632902304882&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "source_provenance": "Google Places | REGRID",
+    "franchise_affiliated": false,
+    "current_brand": "",
+    "former_brand": "",
+    "brand_status": "NONE",
+    "franchise_loss_date": "",
+    "franchise_confidence": "Error",
+    "franchise_evidence": "404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}",
+    "recent_distress_news": "",
+    "ownership_context": "",
+    "owner_name": "SUPREME BRIGHT DALLAS II LLC",
+    "owner_company": "SUPREME BRIGHT DALLAS II LLC",
+    "mailing_address": "1785 STATE HIGHWAY 26 GRAPEVINE TX 76051-2217",
+    "owner_phone": "",
+    "owner_confidence": "High",
+    "owner_evidence": "Retrieved from Regrid parcel 1712 Commerce St",
+    "ownership_since": "2015-03-30",
+    "ownership_length_years": 11,
+    "attom_year_built": "",
+    "is_older_than_20_years": "",
+    "room_count": "",
+    "price_tier": "",
+    "signals": {
+      "review_decline": false,
+      "review_rating_delta": 0,
+      "review_volume_decline": false,
+      "complaint_increase": false,
+      "sentiment_decline": false,
+      "sentiment_trend": "Improving",
+      "review_activity_trend": "Increasing",
+      "positive_reviews_recent": 3,
+      "negative_reviews_recent": 1,
+      "positive_reviews_prior": 0,
+      "negative_reviews_prior": 0,
+      "renovation_needed": true,
+      "old_property": false,
+      "physical_condition_score": 2,
+      "franchise_loss": false,
+      "former_brand": "",
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "brand_status": "NONE",
+      "recent_distress_news": "",
+      "ownership_context": "",
+      "cmbs_watchlist": false,
+      "cmbs_special_servicing": false,
+      "cmbs_delinquent": false,
+      "long_term_owner": true,
+      "ownership_length_years": 11,
+      "room_count": "",
+      "distress_score": 4
+    },
+    "review_themes": {
+      "staff": 77.8,
+      "maintenance": 22.2
+    },
+    "llm_analysis": {
+      "distress_probability": 0.45,
+      "seller_fatigue_probability": 0.75,
+      "opportunity_score": 58,
+      "llm_star_rating": 3.2,
+      "top_distress_signals": [
+        "Long-term ownership of 11 years indicating potential holding cycle fatigue",
+        "Poor physical condition score of 2 out of 5 with clear renovation needs",
+        "High frequency of renovation-related complaints in 40% of recent reviews",
+        "Recent average rating decline to 3.8 with notable service complaints"
+      ],
+      "investment_thesis": "This property presents a prime recapitalization and repositioning opportunity in Downtown Dallas. An 11-year long-term owner has deferred essential maintenance, resulting in a low physical condition score and rising renovation-related complaints. An incoming investor can acquire the asset, resolve the capital expenditure backlog through a PIP, and implement hands-on operational management to restore the property's competitive standing.",
+      "recommended_acquisition_strategy": "Owner Fatigue Opportunity",
+      "review_summary": "Recent guest feedback indicates a clear trajectory of disappointment, specifically highlighting rude service encounters and physical property decline. Operational concerns are underscored by a high frequency of renovation-related complaints, suggesting that deferred maintenance is beginning to impact guest satisfaction despite historically positive ratings.",
+      "recommended_action": "Owner Fatigue Opportunity",
+      "confidence": "LOW",
+      "distress_summary": ""
+    },
+    "final_lead_score": 57.8,
+    "entity": {
+      "hotel_name": "Residence Inn by Marriott Dallas Downtown",
+      "address": "1712 Commerce St, Dallas, TX 75201, USA",
+      "place_id": "ChIJD1-KPR-ZToYRckTQzqE8SoM",
+      "latitude": null,
+      "longitude": null,
+      "rating": 4.3,
+      "user_rating_count": 665,
+      "business_status": "OPERATIONAL",
+      "google_maps_url": "https://maps.google.com/?cid=9460440632902304882&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+      "reviews": [
+        {
+          "name": "places/ChIJD1-KPR-ZToYRckTQzqE8SoM/reviews/Ci9DQUlRQUNvZENodHljRjlvT2twMmNXcEdTV1JrYlRGSE9EQkpiazVEYUMxV1ZVRRAB",
+          "relativePublishTimeDescription": "2 months ago",
+          "rating": 4,
+          "text": {
+            "text": "I checked out of the Element Hotel in Dallas because it felt more like staying at a no-tell motel, and the service was disappointing. Thankfully, the Residence Inn Dallas was a much better experience.\nThe location is perfect, the rooms are spacious, and having a full kitchen made the stay even more comfortable. Check-in was excellent, and the front desk staff member was kind enough to let me check in around 10 AM, which I really appreciated.\nMy only suggestion would be to add more towel holders in the bathroom. There was only one small hanger, but for a couple, at least two would be helpful.\n\nOverall, I had a great stay and would definitely recommend this hotel.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "I checked out of the Element Hotel in Dallas because it felt more like staying at a no-tell motel, and the service was disappointing. Thankfully, the Residence Inn Dallas was a much better experience.\nThe location is perfect, the rooms are spacious, and having a full kitchen made the stay even more comfortable. Check-in was excellent, and the front desk staff member was kind enough to let me check in around 10 AM, which I really appreciated.\nMy only suggestion would be to add more towel holders in the bathroom. There was only one small hanger, but for a couple, at least two would be helpful.\n\nOverall, I had a great stay and would definitely recommend this hotel.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Marie Kang-Scott",
+            "uri": "https://www.google.com/maps/contrib/116063246922556439149/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKogkj9zhHmRBryNEshq2pobemDwIL2awJB-UKRA1KrZsd6lQ=s128-c0x00000000-cc-rp-mo-ba6"
+          },
+          "publishTime": "2026-05-12T14:35:46.368027977Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2twMmNXcEdTV1JrYlRGSE9EQkpiazVEYUMxV1ZVRRAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2twMmNXcEdTV1JrYlRGSE9EQkpiazVEYUMxV1ZVRRAB!2m1!1s0x864e991f3d8a5f0f:0x834a3ca1ced04472"
+        },
+        {
+          "name": "places/ChIJD1-KPR-ZToYRckTQzqE8SoM/reviews/Ci9DQUlRQUNvZENodHljRjlvT21JMFoxWlBTMmRxTVROQlptMVlOVzVNZWtWUlZFRRAB",
+          "relativePublishTimeDescription": "a month ago",
+          "rating": 5,
+          "text": {
+            "text": "The room is very spacious and comfy. The hotel services are excellent, and the breakfast is great! Reasonable and affordable prices for my one-week's stay. A few minutes' walk from the St Paul DART station, so it is very easy to connect to the Dallas Fort Worth International Airport by using the Orange line. You can also make use of the Green line for participating in the State Fair of Texas at the Fair Park. Highly recommended if this is the first time you visit Dallas!",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "The room is very spacious and comfy. The hotel services are excellent, and the breakfast is great! Reasonable and affordable prices for my one-week's stay. A few minutes' walk from the St Paul DART station, so it is very easy to connect to the Dallas Fort Worth International Airport by using the Orange line. You can also make use of the Green line for participating in the State Fair of Texas at the Fair Park. Highly recommended if this is the first time you visit Dallas!",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "CIDA",
+            "uri": "https://www.google.com/maps/contrib/108998575306994491516/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUp5vkzgVue0CAomQGK9YNrclkdCdv4ESnvOA5p1RdcrQwhT5fB=s128-c0x00000000-cc-rp-mo-ba2"
+          },
+          "publishTime": "2026-06-07T12:43:34.024076125Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21JMFoxWlBTMmRxTVROQlptMVlOVzVNZWtWUlZFRRAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21JMFoxWlBTMmRxTVROQlptMVlOVzVNZWtWUlZFRRAB!2m1!1s0x864e991f3d8a5f0f:0x834a3ca1ced04472"
+        },
+        {
+          "name": "places/ChIJD1-KPR-ZToYRckTQzqE8SoM/reviews/Ci9DQUlRQUNvZENodHljRjlvT2xSb01uZFFaRUZsUjFKZlRVbG5ORk5WY0ROelQxRRAB",
+          "relativePublishTimeDescription": "2 months ago",
+          "rating": 4,
+          "text": {
+            "text": "Was great as a place to stay. We got the studio room for 2 adults and was way spacious and nice. The room was clean. The only downside was that there are three different check in stations for the three different hotels and it's confusing. Valet parking is something you kind of need to opt for as parking is a full on stress. The valet parking is great but it just another cost to your travel.Rest it was a pleasant stay.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Was great as a place to stay. We got the studio room for 2 adults and was way spacious and nice. The room was clean. The only downside was that there are three different check in stations for the three different hotels and it's confusing. Valet parking is something you kind of need to opt for as parking is a full on stress. The valet parking is great but it just another cost to your travel.Rest it was a pleasant stay.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "kristina pradhan",
+            "uri": "https://www.google.com/maps/contrib/113044896522665329674/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKSCUmO86qV3LH8lGdT68AsYXyzCmeJjyBtcslaDiXDFGvnGRM=s128-c0x00000000-cc-rp-mo-ba2"
+          },
+          "publishTime": "2026-05-10T23:33:24.811654234Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2xSb01uZFFaRUZsUjFKZlRVbG5ORk5WY0ROelQxRRAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2xSb01uZFFaRUZsUjFKZlRVbG5ORk5WY0ROelQxRRAB!2m1!1s0x864e991f3d8a5f0f:0x834a3ca1ced04472"
+        },
+        {
+          "name": "places/ChIJD1-KPR-ZToYRckTQzqE8SoM/reviews/Ci9DQUlRQUNvZENodHljRjlvT2w5emJHVkthVUp6TUROcFJWOUNNbG8xVGxrMVgzYxAB",
+          "relativePublishTimeDescription": "4 months ago",
+          "rating": 5,
+          "text": {
+            "text": "I only stayed here for a night before I fly back to my home country. Upon arriving the lady at the reception, I think her name Constantine or something (pardon me if I got it wrong) was so nice and polite, she made me feel so welcomed. The general manager was kind enough to give me a late check out at 2pm looking at my flight was at 10pm at night. I definitely will come back here again for sure. Thank you for the awesome hospitality!",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "I only stayed here for a night before I fly back to my home country. Upon arriving the lady at the reception, I think her name Constantine or something (pardon me if I got it wrong) was so nice and polite, she made me feel so welcomed. The general manager was kind enough to give me a late check out at 2pm looking at my flight was at 10pm at night. I definitely will come back here again for sure. Thank you for the awesome hospitality!",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Wendy’s Loving Life",
+            "uri": "https://www.google.com/maps/contrib/102499963291513258090/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVyBmj4I3vAxtN0T3DoMAY5lSG2gW2j-WVQtHxJ119sv5MOkpFC=s128-c0x00000000-cc-rp-mo-ba2"
+          },
+          "publishTime": "2026-03-07T19:34:37.782126452Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2w5emJHVkthVUp6TUROcFJWOUNNbG8xVGxrMVgzYxAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2w5emJHVkthVUp6TUROcFJWOUNNbG8xVGxrMVgzYxAB!2m1!1s0x864e991f3d8a5f0f:0x834a3ca1ced04472"
+        },
+        {
+          "name": "places/ChIJD1-KPR-ZToYRckTQzqE8SoM/reviews/Ci9DQUlRQUNvZENodHljRjlvT2poSE1GSkNORGx2V2xJNWFGaHlZazUwY1c5MldGRRAB",
+          "relativePublishTimeDescription": "a month ago",
+          "rating": 1,
+          "text": {
+            "text": "Front desk night shift person was bizarrely aggressive and rude - the man started throwing insults and literally tried to start a fight over absolutely nothing. Even when I tried to disengage and politely told him to have a nice night, he just wouldn’t stop escalating.  I’ll be recommending everyone to avoid this place to avoid having to deal with an unhinged egomaniac every time they enter the building.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Front desk night shift person was bizarrely aggressive and rude - the man started throwing insults and literally tried to start a fight over absolutely nothing. Even when I tried to disengage and politely told him to have a nice night, he just wouldn’t stop escalating.  I’ll be recommending everyone to avoid this place to avoid having to deal with an unhinged egomaniac every time they enter the building.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Jesse Kovacs",
+            "uri": "https://www.google.com/maps/contrib/108407946561198214597/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVs6eE0FnFbdMLQrRuJ-nerf7Bw4YjU3uKv6uhTHTtcNdrbHs9D=s128-c0x00000000-cc-rp-mo-ba2"
+          },
+          "publishTime": "2026-06-05T08:06:16.526006247Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2poSE1GSkNORGx2V2xJNWFGaHlZazUwY1c5MldGRRAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2poSE1GSkNORGx2V2xJNWFGaHlZazUwY1c5MldGRRAB!2m1!1s0x864e991f3d8a5f0f:0x834a3ca1ced04472"
+        }
+      ],
+      "signals": {
+        "review_decline": false,
+        "review_rating_delta": 0,
+        "review_volume_decline": false,
+        "complaint_increase": false,
+        "sentiment_decline": false,
+        "sentiment_trend": "Improving",
+        "review_activity_trend": "Increasing",
+        "positive_reviews_recent": 3,
+        "negative_reviews_recent": 1,
+        "positive_reviews_prior": 0,
+        "negative_reviews_prior": 0,
+        "renovation_needed": true,
+        "old_property": false,
+        "physical_condition_score": 2,
+        "franchise_loss": false,
+        "former_brand": "",
+        "franchise_affiliated": false,
+        "current_brand": "",
+        "brand_status": "NONE",
+        "recent_distress_news": "",
+        "ownership_context": "",
+        "cmbs_watchlist": false,
+        "cmbs_special_servicing": false,
+        "cmbs_delinquent": false,
+        "long_term_owner": true,
+        "ownership_length_years": 11,
+        "room_count": "",
+        "distress_score": 4
+      },
+      "review_themes": {
+        "staff": 77.8,
+        "maintenance": 22.2
+      },
+      "heuristic_scores": {
+        "distress_score": 4,
+        "distress_reasons": [
+          "Negative review signal: rude",
+          "Negative review signal: disappointing",
+          "Renovation signals in reviews: 40.0%"
+        ],
+        "review_trend_score": 0,
+        "review_volume_recent": 5,
+        "review_volume_prior": 0,
+        "review_volume_change_pct": 100.0,
+        "avg_rating_recent": 3.8,
+        "avg_rating_prior": 0.0,
+        "review_rating_delta": 0,
+        "complaint_rate_recent": 0.4,
+        "complaint_rate_prior": 0.0,
+        "review_complaint_delta": 0.4,
+        "year_built": "",
+        "property_age": "",
+        "renovation_signal_rate": 0.4,
+        "renovation_needed": true,
+        "physical_condition_score": 2,
+        "positive_reviews_recent": 3,
+        "negative_reviews_recent": 1,
+        "positive_reviews_prior": 0,
+        "negative_reviews_prior": 0,
+        "sentiment_delta": -2,
+        "sentiment_trend": "Improving",
+        "review_activity_trend": "Increasing"
+      },
+      "llm_analysis": {
+        "distress_probability": 0.45,
+        "seller_fatigue_probability": 0.75,
+        "opportunity_score": 58,
+        "llm_star_rating": 3.2,
+        "top_distress_signals": [
+          "Long-term ownership of 11 years indicating potential holding cycle fatigue",
+          "Poor physical condition score of 2 out of 5 with clear renovation needs",
+          "High frequency of renovation-related complaints in 40% of recent reviews",
+          "Recent average rating decline to 3.8 with notable service complaints"
+        ],
+        "investment_thesis": "This property presents a prime recapitalization and repositioning opportunity in Downtown Dallas. An 11-year long-term owner has deferred essential maintenance, resulting in a low physical condition score and rising renovation-related complaints. An incoming investor can acquire the asset, resolve the capital expenditure backlog through a PIP, and implement hands-on operational management to restore the property's competitive standing.",
+        "recommended_acquisition_strategy": "Owner Fatigue Opportunity",
+        "review_summary": "Recent guest feedback indicates a clear trajectory of disappointment, specifically highlighting rude service encounters and physical property decline. Operational concerns are underscored by a high frequency of renovation-related complaints, suggesting that deferred maintenance is beginning to impact guest satisfaction despite historically positive ratings.",
+        "recommended_action": "Owner Fatigue Opportunity",
+        "confidence": "LOW",
+        "distress_summary": ""
+      },
+      "owner_data": {
+        "owner_name": "SUPREME BRIGHT DALLAS II LLC",
+        "owner_company": "SUPREME BRIGHT DALLAS II LLC",
+        "mailing_address": "1785 STATE HIGHWAY 26 GRAPEVINE TX 76051-2217",
+        "owner_phone": "",
+        "ownership_since": "2015-03-30",
+        "ownership_length_years": 11,
+        "attom_year_built": "",
+        "is_older_than_20_years": "",
+        "room_count": ""
+      },
+      "cmbs_data": {},
+      "franchise_data": {
+        "franchise_affiliated": false,
+        "current_brand": "",
+        "former_brand": "",
+        "brand_status": "NONE",
+        "franchise_confidence": "Error",
+        "recent_distress_news": "",
+        "ownership_context": ""
+      },
+      "source_location": "Dallas, Texas",
+      "radius_miles": 10
+    },
+    "lead_reason": "Long-term ownership",
+    "created_at": "2026-07-20T10:04:29.064869",
+    "place_id": "ChIJD1-KPR-ZToYRckTQzqE8SoM",
+    "feedback_rule_applied": "",
+    "feedback_penalty": 0,
+    "rank": 2,
+    "llm_distress_probability": 0.45,
+    "llm_seller_fatigue_probability": 0.75,
+    "llm_opportunity_score": 58,
+    "llm_confidence": "LOW",
+    "llm_top_distress_signals": "Long-term ownership of 11 years indicating potential holding cycle fatigue | Poor physical condition score of 2 out of 5 with clear renovation needs | High frequency of renovation-related complaints in 40% of recent reviews | Recent average rating decline to 3.8 with notable service complaints",
+    "llm_investment_thesis": "This property presents a prime recapitalization and repositioning opportunity in Downtown Dallas. An 11-year long-term owner has deferred essential maintenance, resulting in a low physical condition score and rising renovation-related complaints. An incoming investor can acquire the asset, resolve the capital expenditure backlog through a PIP, and implement hands-on operational management to restore the property's competitive standing.",
+    "llm_recommended_action": "Owner Fatigue Opportunity",
+    "llm_distress_summary": "",
+    "llm_review_summary": "Recent guest feedback indicates a clear trajectory of disappointment, specifically highlighting rude service encounters and physical property decline. Operational concerns are underscored by a high frequency of renovation-related complaints, suggesting that deferred maintenance is beginning to impact guest satisfaction despite historically positive ratings.",
+    "suppress_digest": true,
+    "last_score": 57.8,
+    "last_resurfaced": null
+  },
+  {
+    "search_location": "Dallas, Texas",
+    "radius_miles": 10,
+    "hotel_name": "TownePlace Suites by Marriott Dallas Downtown",
+    "address": "555 Evergreen St, Dallas, TX 75201, USA",
+    "rating": 3.8,
+    "user_rating_count": 399,
+    "business_status": "OPERATIONAL",
+    "distress_score": 5,
+    "distress_reasons": "Moderate-to-low rating with enough reviews: 399 | Negative review signal: worst | Negative review signal: noise | Renovation signals in reviews: 40.0%",
+    "review_trend_score": 0,
+    "review_volume_recent": 4,
+    "review_volume_prior": 1,
+    "review_volume_change_pct": 300.0,
+    "avg_rating_recent": 4.5,
+    "avg_rating_prior": 5.0,
+    "review_rating_delta": 0,
+    "complaint_rate_recent": 0.25,
+    "complaint_rate_prior": 0.0,
+    "review_complaint_delta": 0.25,
+    "year_built": "",
+    "property_age": "",
+    "renovation_signal_rate": 0.4,
+    "renovation_needed": true,
+    "physical_condition_score": 2,
+    "google_maps_url": "https://maps.google.com/?cid=11508226735723190284&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "source_provenance": "Google Places",
+    "franchise_affiliated": false,
+    "current_brand": "",
+    "former_brand": "",
+    "brand_status": "NONE",
+    "franchise_loss_date": "",
+    "franchise_confidence": "Error",
+    "franchise_evidence": "404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.', 'status': 'NOT_FOUND'}}",
+    "recent_distress_news": "",
+    "ownership_context": "",
+    "owner_name": "",
+    "owner_company": "",
+    "mailing_address": "",
+    "owner_phone": "",
+    "owner_confidence": "Low",
+    "owner_evidence": "",
+    "ownership_since": "",
+    "ownership_length_years": 0,
+    "attom_year_built": "",
+    "is_older_than_20_years": "",
+    "room_count": "",
+    "price_tier": "",
+    "signals": {
+      "review_decline": false,
+      "review_rating_delta": 0,
+      "review_volume_decline": false,
+      "complaint_increase": false,
+      "sentiment_decline": false,
+      "sentiment_trend": "Improving",
+      "review_activity_trend": "Increasing",
+      "positive_reviews_recent": 4,
+      "negative_reviews_recent": 1,
+      "positive_reviews_prior": 1,
+      "negative_reviews_prior": 0,
+      "renovation_needed": true,
+      "old_property": false,
+      "physical_condition_score": 2,
+      "franchise_loss": false,
+      "former_brand": "",
+      "franchise_affiliated": false,
+      "current_brand": "",
+      "brand_status": "NONE",
+      "recent_distress_news": "",
+      "ownership_context": "",
+      "cmbs_watchlist": false,
+      "cmbs_special_servicing": false,
+      "cmbs_delinquent": false,
+      "long_term_owner": false,
+      "ownership_length_years": 0,
+      "room_count": "",
+      "distress_score": 5
+    },
+    "review_themes": {
+      "staff": 42.9,
+      "maintenance": 28.6,
+      "noise": 28.6
+    },
+    "llm_analysis": {
+      "distress_probability": 0.45,
+      "seller_fatigue_probability": 0.35,
+      "opportunity_score": 52,
+      "llm_star_rating": 2.5,
+      "top_distress_signals": [
+        "Low physical condition score of 2 out of 5",
+        "High frequency of renovation-related complaints (40% signal rate)",
+        "Sub-optimal overall guest rating of 3.8"
+      ],
+      "investment_thesis": "The property presents a value-add opportunity in a strong downtown market, currently held back by deferred maintenance and a lagging physical condition. A targeted light renovation play can address the prominent guest complaints regarding property wear, unlock operational upside, and reposition the asset to capture market-level ADR.",
+      "recommended_strategy": "Light Renovation Play",
+      "review_summary": "Guests frequently highlight issues regarding the property's physical condition, with a notable portion of feedback centering on renovation needs and noise disturbances. While overall sentiment has shown recent signs of improvement, persistent concerns over deferred maintenance and aging facilities continue to cap the hotel's performance.",
+      "confidence": "LOW",
+      "recommended_action": "Monitor",
+      "distress_summary": ""
+    },
+    "final_lead_score": 42.8,
+    "entity": {
+      "hotel_name": "TownePlace Suites by Marriott Dallas Downtown",
+      "address": "555 Evergreen St, Dallas, TX 75201, USA",
+      "place_id": "ChIJcW2RYR6ZToYRDBhvMT5vtZ8",
+      "latitude": null,
+      "longitude": null,
+      "rating": 3.8,
+      "user_rating_count": 399,
+      "business_status": "OPERATIONAL",
+      "google_maps_url": "https://maps.google.com/?cid=11508226735723190284&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+      "reviews": [
+        {
+          "name": "places/ChIJcW2RYR6ZToYRDBhvMT5vtZ8/reviews/Ci9DQUlRQUNvZENodHljRjlvT2tGcmEwRnNha1JIV1VWVGQxVkRRVzV5ZVVwUFFrRRAB",
+          "relativePublishTimeDescription": "6 months ago",
+          "rating": 5,
+          "text": {
+            "text": "The biggest hotel room I've stayed in and at an affordable price! So spacious for a King bed, sofa bed and a kitchenette! Convenient 12pm checkout! Hallways are wide, our room had a great view of the tall buildings in Downtown. The room was clean and welcoming, the hotel is walking distance to Main Street. The front staff are nice and friendly, always available to assist, check in and out was a breeze! Free breakfast offered a variety of items, all hot and satisfying! Parking lot across the street is affordable with an easy to pay process online. 10/10, will stay here at this hotel again!",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "The biggest hotel room I've stayed in and at an affordable price! So spacious for a King bed, sofa bed and a kitchenette! Convenient 12pm checkout! Hallways are wide, our room had a great view of the tall buildings in Downtown. The room was clean and welcoming, the hotel is walking distance to Main Street. The front staff are nice and friendly, always available to assist, check in and out was a breeze! Free breakfast offered a variety of items, all hot and satisfying! Parking lot across the street is affordable with an easy to pay process online. 10/10, will stay here at this hotel again!",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Sophie C",
+            "uri": "https://www.google.com/maps/contrib/100271658658109169622/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVrO5pKpeb7NWfon14a8S4tmyMGzN6tHNR8qzeJgEFI6fZocSo=s128-c0x00000000-cc-rp-mo-ba4"
+          },
+          "publishTime": "2026-01-02T07:43:39.957907581Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2tGcmEwRnNha1JIV1VWVGQxVkRRVzV5ZVVwUFFrRRAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2tGcmEwRnNha1JIV1VWVGQxVkRRVzV5ZVVwUFFrRRAB!2m1!1s0x864e991e61916d71:0x9fb56f3e316f180c"
+        },
+        {
+          "name": "places/ChIJcW2RYR6ZToYRDBhvMT5vtZ8/reviews/Ci9DQUlRQUNvZENodHljRjlvT2pkTE9XMW5PWFJrUWt0Nk1FOVVUMGhJYjNod1ZYYxAB",
+          "relativePublishTimeDescription": "2 weeks ago",
+          "rating": 3,
+          "text": {
+            "text": "Big room, as other reviews say, sure. I worked afternoon/late afternoon to night during the grand majority of my month & 1 week here. They only cleaned my room 3 times. Floor creek and random noises at night, guess they decide to work at night, & loudly, too? Or the guests. Not for kids. Worst or all, my shower water was hot. Not at all warm. Hot. Didn’t matter if i put the facet all the way down for cold, it would stay hot or close. It would either stay hot or would turn the way it should be after waiting for such a long time. Plumbing problems, on top of all else. The TV had a swivel, but if i would turn it too far to it’s extent, it turns turn off.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Big room, as other reviews say, sure. I worked afternoon/late afternoon to night during the grand majority of my month & 1 week here. They only cleaned my room 3 times. Floor creek and random noises at night, guess they decide to work at night, & loudly, too? Or the guests. Not for kids. Worst or all, my shower water was hot. Not at all warm. Hot. Didn’t matter if i put the facet all the way down for cold, it would stay hot or close. It would either stay hot or would turn the way it should be after waiting for such a long time. Plumbing problems, on top of all else. The TV had a swivel, but if i would turn it too far to it’s extent, it turns turn off.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Alejandro Robles",
+            "uri": "https://www.google.com/maps/contrib/100013561251199925159/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjW9IhMnOssAUJhB-TQ_b44rZSKLF-XBCmLAd0kByagKH-p7npErgw=s128-c0x00000000-cc-rp-mo-ba3"
+          },
+          "publishTime": "2026-06-29T18:32:04.389841154Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2pkTE9XMW5PWFJrUWt0Nk1FOVVUMGhJYjNod1ZYYxAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2pkTE9XMW5PWFJrUWt0Nk1FOVVUMGhJYjNod1ZYYxAB!2m1!1s0x864e991e61916d71:0x9fb56f3e316f180c"
+        },
+        {
+          "name": "places/ChIJcW2RYR6ZToYRDBhvMT5vtZ8/reviews/Ci9DQUlRQUNvZENodHljRjlvT21rMWVuQXdSblI0Y2pWbU1uSm9OVTE0VWsxVVprRRAB",
+          "relativePublishTimeDescription": "2 months ago",
+          "rating": 5,
+          "text": {
+            "text": "The staff has been very accommodating. The food is great. There are no flies lol The staff is AMAZING!! The room is basically a small loft apartment. We love it here and my family that have came to visit us say that they really like the layout and would definitely stay here on their next visit. Parking is limited and they do valet but thats basically all of downtown Dallas. Yes, there are homeless people but again, that is ALL OF DOWNTOWN DALLAS. The building is over 100 years old which adds character. Everthing is close by or within reasonable distance :)",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "The staff has been very accommodating. The food is great. There are no flies lol The staff is AMAZING!! The room is basically a small loft apartment. We love it here and my family that have came to visit us say that they really like the layout and would definitely stay here on their next visit. Parking is limited and they do valet but thats basically all of downtown Dallas. Yes, there are homeless people but again, that is ALL OF DOWNTOWN DALLAS. The building is over 100 years old which adds character. Everthing is close by or within reasonable distance :)",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Kristal Munoz",
+            "uri": "https://www.google.com/maps/contrib/112752849409638715782/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUZoKWMZMTBgkU_viINI9WvWDpSGkWYPnds0btcPTSgOOkMhcACeA=s128-c0x00000000-cc-rp-mo-ba2"
+          },
+          "publishTime": "2026-04-28T19:17:01.615274961Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT21rMWVuQXdSblI0Y2pWbU1uSm9OVTE0VWsxVVprRRAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21rMWVuQXdSblI0Y2pWbU1uSm9OVTE0VWsxVVprRRAB!2m1!1s0x864e991e61916d71:0x9fb56f3e316f180c"
+        },
+        {
+          "name": "places/ChIJcW2RYR6ZToYRDBhvMT5vtZ8/reviews/Ci9DQUlRQUNvZENodHljRjlvT2psSVZscFlaa1pSVm5aTmRERnlPRU5MZFhWdWVYYxAB",
+          "relativePublishTimeDescription": "2 months ago",
+          "rating": 5,
+          "text": {
+            "text": "Located in the heart of the city. Minutes from Love Field airport , myerson symphony , Perot Museum to name a few. Rooms remodeled new carpets this month. Very spacious with kitchen and sofa.  Great view . Valet parking . A few homeless hanging around outside building perimeter but didn't seem to bother anyone. Bar opens at 5pm. Free breakfast.  Nice pool.",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Located in the heart of the city. Minutes from Love Field airport , myerson symphony , Perot Museum to name a few. Rooms remodeled new carpets this month. Very spacious with kitchen and sofa.  Great view . Valet parking . A few homeless hanging around outside building perimeter but didn't seem to bother anyone. Bar opens at 5pm. Free breakfast.  Nice pool.",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "Kathy B",
+            "uri": "https://www.google.com/maps/contrib/106872547427627237582/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWk6Bkr5tj3-kDtkvyfXCih6j5VgcSC8ipySN2U40IaaD7CBpABdQ=s128-c0x00000000-cc-rp-mo-ba5"
+          },
+          "publishTime": "2026-05-19T15:59:08.141257959Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT2psSVZscFlaa1pSVm5aTmRERnlPRU5MZFhWdWVYYxAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT2psSVZscFlaa1pSVm5aTmRERnlPRU5MZFhWdWVYYxAB!2m1!1s0x864e991e61916d71:0x9fb56f3e316f180c"
+        },
+        {
+          "name": "places/ChIJcW2RYR6ZToYRDBhvMT5vtZ8/reviews/Ci9DQUlRQUNvZENodHljRjlvT25GTGFqTkZNMWRtTkhGNE9WOHlPV2QyYlRsS09WRRAB",
+          "relativePublishTimeDescription": "3 months ago",
+          "rating": 5,
+          "text": {
+            "text": "Josh at the front desk was the first person we encountered in the hotel. He quickly got us checked in and made us feel so welcome. Having had a long day of travel already behind us, this we just what we needed. We saw home a few more times while we were there, always remembering us. Everyone else we encountered were also very helpful (shout out to the valet peeps!). The room was quite spacious and had a very comfortable vibe. The location couldn’t have been better. Away from the melee of downtown center, it was a quick walk almost anywhere we wanted to go. Highly recommend!",
+            "languageCode": "en"
+          },
+          "originalText": {
+            "text": "Josh at the front desk was the first person we encountered in the hotel. He quickly got us checked in and made us feel so welcome. Having had a long day of travel already behind us, this we just what we needed. We saw home a few more times while we were there, always remembering us. Everyone else we encountered were also very helpful (shout out to the valet peeps!). The room was quite spacious and had a very comfortable vibe. The location couldn’t have been better. Away from the melee of downtown center, it was a quick walk almost anywhere we wanted to go. Highly recommend!",
+            "languageCode": "en"
+          },
+          "authorAttribution": {
+            "displayName": "J NB",
+            "uri": "https://www.google.com/maps/contrib/115720719217771377821/reviews",
+            "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWOEweSPU9Uz5BEQl2PVY0K38tUxtfbgQZ_PkpTOxsOjn-OLOHM=s128-c0x00000000-cc-rp-mo"
+          },
+          "publishTime": "2026-03-23T13:49:12.671691348Z",
+          "flagContentUri": "https://www.google.com/local/content/rap/report?postId=Ci9DQUlRQUNvZENodHljRjlvT25GTGFqTkZNMWRtTkhGNE9WOHlPV2QyYlRsS09WRRAB&d=17924085&t=1",
+          "googleMapsUri": "https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT25GTGFqTkZNMWRtTkhGNE9WOHlPV2QyYlRsS09WRRAB!2m1!1s0x864e991e61916d71:0x9fb56f3e316f180c"
+        }
+      ],
+      "signals": {
+        "review_decline": false,
+        "review_rating_delta": 0,
+        "review_volume_decline": false,
+        "complaint_increase": false,
+        "sentiment_decline": false,
+        "sentiment_trend": "Improving",
+        "review_activity_trend": "Increasing",
+        "positive_reviews_recent": 4,
+        "negative_reviews_recent": 1,
+        "positive_reviews_prior": 1,
+        "negative_reviews_prior": 0,
+        "renovation_needed": true,
+        "old_property": false,
+        "physical_condition_score": 2,
+        "franchise_loss": false,
+        "former_brand": "",
+        "franchise_affiliated": false,
+        "current_brand": "",
+        "brand_status": "NONE",
+        "recent_distress_news": "",
+        "ownership_context": "",
+        "cmbs_watchlist": false,
+        "cmbs_special_servicing": false,
+        "cmbs_delinquent": false,
+        "long_term_owner": false,
+        "ownership_length_years": 0,
+        "room_count": "",
+        "distress_score": 5
+      },
+      "review_themes": {
+        "staff": 42.9,
+        "maintenance": 28.6,
+        "noise": 28.6
+      },
+      "heuristic_scores": {
+        "distress_score": 5,
+        "distress_reasons": [
+          "Moderate-to-low rating with enough reviews: 399",
+          "Negative review signal: worst",
+          "Negative review signal: noise",
+          "Renovation signals in reviews: 40.0%"
+        ],
+        "review_trend_score": 0,
+        "review_volume_recent": 4,
+        "review_volume_prior": 1,
+        "review_volume_change_pct": 300.0,
+        "avg_rating_recent": 4.5,
+        "avg_rating_prior": 5.0,
+        "review_rating_delta": 0,
+        "complaint_rate_recent": 0.25,
+        "complaint_rate_prior": 0.0,
+        "review_complaint_delta": 0.25,
+        "year_built": "",
+        "property_age": "",
+        "renovation_signal_rate": 0.4,
+        "renovation_needed": true,
+        "physical_condition_score": 2,
+        "positive_reviews_recent": 4,
+        "negative_reviews_recent": 1,
+        "positive_reviews_prior": 1,
+        "negative_reviews_prior": 0,
+        "sentiment_delta": -2,
+        "sentiment_trend": "Improving",
+        "review_activity_trend": "Increasing"
+      },
+      "llm_analysis": {
+        "distress_probability": 0.45,
+        "seller_fatigue_probability": 0.35,
+        "opportunity_score": 52,
+        "llm_star_rating": 2.5,
+        "top_distress_signals": [
+          "Low physical condition score of 2 out of 5",
+          "High frequency of renovation-related complaints (40% signal rate)",
+          "Sub-optimal overall guest rating of 3.8"
+        ],
+        "investment_thesis": "The property presents a value-add opportunity in a strong downtown market, currently held back by deferred maintenance and a lagging physical condition. A targeted light renovation play can address the prominent guest complaints regarding property wear, unlock operational upside, and reposition the asset to capture market-level ADR.",
+        "recommended_strategy": "Light Renovation Play",
+        "review_summary": "Guests frequently highlight issues regarding the property's physical condition, with a notable portion of feedback centering on renovation needs and noise disturbances. While overall sentiment has shown recent signs of improvement, persistent concerns over deferred maintenance and aging facilities continue to cap the hotel's performance.",
+        "confidence": "LOW",
+        "recommended_action": "Monitor",
+        "distress_summary": ""
+      },
+      "owner_data": {
+        "owner_name": "",
+        "owner_company": "",
+        "mailing_address": "",
+        "owner_phone": "",
+        "ownership_since": "",
+        "ownership_length_years": 0,
+        "attom_year_built": "",
+        "is_older_than_20_years": "",
+        "room_count": ""
+      },
+      "cmbs_data": {},
+      "franchise_data": {
+        "franchise_affiliated": false,
+        "current_brand": "",
+        "former_brand": "",
+        "brand_status": "NONE",
+        "franchise_confidence": "Error",
+        "recent_distress_news": "",
+        "ownership_context": ""
+      },
+      "source_location": "Dallas, Texas",
+      "radius_miles": 10
+    },
+    "lead_reason": "",
+    "created_at": "2026-07-20T10:03:57.725271",
+    "place_id": "ChIJcW2RYR6ZToYRDBhvMT5vtZ8",
+    "feedback_rule_applied": "",
+    "feedback_penalty": 0,
+    "rank": 3,
+    "llm_distress_probability": 0.45,
+    "llm_seller_fatigue_probability": 0.35,
+    "llm_opportunity_score": 52,
+    "llm_confidence": "LOW",
+    "llm_top_distress_signals": "Low physical condition score of 2 out of 5 | High frequency of renovation-related complaints (40% signal rate) | Sub-optimal overall guest rating of 3.8",
+    "llm_investment_thesis": "The property presents a value-add opportunity in a strong downtown market, currently held back by deferred maintenance and a lagging physical condition. A targeted light renovation play can address the prominent guest complaints regarding property wear, unlock operational upside, and reposition the asset to capture market-level ADR.",
+    "llm_recommended_action": "Monitor",
+    "llm_distress_summary": "",
+    "llm_review_summary": "Guests frequently highlight issues regarding the property's physical condition, with a notable portion of feedback centering on renovation needs and noise disturbances. While overall sentiment has shown recent signs of improvement, persistent concerns over deferred maintenance and aging facilities continue to cap the hotel's performance.",
+    "suppress_digest": true,
+    "last_score": 42.8,
+    "last_resurfaced": null
+  }
+]
