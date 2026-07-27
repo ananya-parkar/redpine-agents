@@ -1,13 +1,9 @@
 requests>=2.31.0
 beautifulsoup4>=4.12.0
-lxml>=5.0.0              
-trafilatura>=1.8.0       
-tavily-python>=0.5.0       
-openai>=1.30.0
+lxml>=5.0.0
 pandas>=2.2.0
-openpyxl>=3.1.2
+trafilatura>=1.8.0
 python-dotenv>=1.0.1
 psycopg2-binary>=2.9.9
-rapidfuzz>=3.9.0
-XlsxWriter>=3.2.0 
+openpyxl>=3.1.2
 anthropic>=0.58.2
